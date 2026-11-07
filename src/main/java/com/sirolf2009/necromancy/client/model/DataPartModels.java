@@ -43,8 +43,11 @@ import net.minecraft.util.profiling.ProfilerFiller;
  * {@code "hide"} list) names; a child bone named without its parent keeps its true place (its parents' poses come
  * along, without their cubes). A bone below another bone of the same group comes along with that one. Optional per part: {@code "scale"}, {@code "animator"}; per file: {@code "scale"} for
  * every part (multiplied with a part's own), {@code "translucent": true}, {@code "full_bright": true}, and
- * {@code "yaw": 180} for a model built facing +z (points are then given in the model's own space and turned with it).
- * A group with a pivot may also have a {@code "rotation"} in degrees, added to its rest pose (folded wings).
+ * {@code "yaw"} in degrees for a model built facing another way (180 for one facing +z; points are given in the model's
+ * own space and turned with it), {@code "pose": {"bone": [x, y, z]}} to give bones another rest rotation in degrees
+ * (a crest folded away, fins drooping), {@code "eyes": "ns:textures/..."} for a glowing eye layer and
+ * {@code "glint": true} for the enchantment shimmer. A group with a pivot may also have a {@code "rotation"} in
+ * degrees, added to its rest pose (folded wings).
  */
 public final class DataPartModels extends SimpleJsonResourceReloadListener {
     private static final Map<String, PartAnimator> ANIMATORS = new LinkedHashMap<>();
@@ -111,10 +114,20 @@ public final class DataPartModels extends SimpleJsonResourceReloadListener {
         if (json.has("hide")) {
             json.getAsJsonArray("hide").forEach(e -> named.add(e.getAsString()));
         }
-        Split split = new Split(bones, parents, named);
+        Map<String, float[]> poses = new java.util.HashMap<>();
+        if (json.has("pose")) {
+            for (Map.Entry<String, JsonElement> e : json.getAsJsonObject("pose").entrySet()) {
+                float[] r = new float[3];
+                for (int i = 0; i < 3; i++) {
+                    r[i] = e.getValue().getAsJsonArray().get(i).getAsFloat() * net.minecraft.util.Mth.DEG_TO_RAD;
+                }
+                poses.put(e.getKey(), r);
+            }
+        }
+        Split split = new Split(bones, parents, named, poses);
         boolean translucent = json.has("translucent") && json.get("translucent").getAsBoolean();
         float fileScale = json.has("scale") ? json.get("scale").getAsFloat() : 1F;
-        boolean turned = json.has("yaw") && Math.round(json.get("yaw").getAsFloat()) == 180;
+        float turned = json.has("yaw") ? json.get("yaw").getAsFloat() * net.minecraft.util.Mth.DEG_TO_RAD : 0F;
         for (PartType type : PartType.values()) {
             JsonObject p = json.has(type.getSerializedName()) ? json.getAsJsonObject(type.getSerializedName()) : null;
             if (p == null) {
@@ -168,6 +181,12 @@ public final class DataPartModels extends SimpleJsonResourceReloadListener {
             if (json.has("full_bright") && json.get("full_bright").getAsBoolean()) {
                 model.fullBright();
             }
+            if (json.has("eyes")) {
+                model.layer(PartLayer.eyes(ResourceLocation.parse(json.get("eyes").getAsString())));
+            }
+            if (json.has("glint") && json.get("glint").getAsBoolean()) {
+                model.layer(PartLayer.retexture(texture, t -> RenderType.entityGlint()));
+            }
             builder.put(type, model);
         }
     }
@@ -214,13 +233,20 @@ public final class DataPartModels extends SimpleJsonResourceReloadListener {
     }
 
     /** Takes bones out of a model: each with its own children except those named elsewhere, at its true place. */
-    record Split(Map<String, ModelPart> bones, Map<String, String> parents, java.util.Set<String> named) {
+    record Split(Map<String, ModelPart> bones, Map<String, String> parents, java.util.Set<String> named, Map<String, float[]> poses) {
+        /** The bone's rest pose, with the file's rotation for it if it gives one. */
+        PartPose pose(String name, ModelPart bone) {
+            PartPose pose = bone.getInitialPose();
+            float[] r = poses.get(name);
+            return r == null ? pose : PartPose.offsetAndRotation(pose.x, pose.y, pose.z, r[0], r[1], r[2]);
+        }
+
         ModelPart take(String name, java.util.Collection<String> keep) {
-            ModelPart bone = prune(bones.get(name), keep);
+            ModelPart bone = prune(name, bones.get(name), keep);
             String child = name;
             for (String parent = parents.get(name); parent != null; parent = parents.get(parent)) {
                 ModelPart wrapper = new ModelPart(List.of(), new java.util.HashMap<>(Map.of(child, bone)));
-                wrapper.setInitialPose(bones.get(parent).getInitialPose());
+                wrapper.setInitialPose(pose(parent, bones.get(parent)));
                 wrapper.resetPose();
                 bone = wrapper;
                 child = parent;
@@ -229,15 +255,15 @@ public final class DataPartModels extends SimpleJsonResourceReloadListener {
         }
 
         /** A copy of the bone whose children skip the bones other entries of the file name (they draw those). */
-        private ModelPart prune(ModelPart bone, java.util.Collection<String> keep) {
+        private ModelPart prune(String name, ModelPart bone, java.util.Collection<String> keep) {
             Map<String, ModelPart> children = new LinkedHashMap<>();
             bone.children.forEach((childName, child) -> {
                 if (!named.contains(childName) || keep.contains(childName)) {
-                    children.put(childName, prune(child, keep));
+                    children.put(childName, prune(childName, child, keep));
                 }
             });
             ModelPart copy = new ModelPart(bone.cubes, children);
-            copy.setInitialPose(bone.getInitialPose());
+            copy.setInitialPose(pose(name, bone));
             copy.resetPose();
             return copy;
         }
@@ -287,21 +313,29 @@ public final class DataPartModels extends SimpleJsonResourceReloadListener {
         return List.of(root);
     }
 
-    /** A model built facing +z, turned half round about the vertical axis through x = z = 0 (its rest pose turned). */
-    private static List<ModelPart> turn(List<ModelPart> parts, boolean turned) {
-        if (turned) {
+    /** A model built facing another way, turned about the vertical axis through x = z = 0 (its rest pose turned). */
+    private static List<ModelPart> turn(List<ModelPart> parts, float yaw) {
+        if (yaw != 0F) {
+            org.joml.Quaternionf turn = new org.joml.Quaternionf().rotationY(yaw);
             for (ModelPart part : parts) {
                 PartPose pose = part.getInitialPose();
-                // Ry(pi) * Rz(a) Ry(b) Rx(c) = Rz(-a) Ry(b + pi) Rx(c)
-                part.setInitialPose(PartPose.offsetAndRotation(-pose.x, pose.y, -pose.z, pose.xRot, pose.yRot + net.minecraft.util.Mth.PI, -pose.zRot));
+                // the part inside a parent turned by yaw: T(Ry p) Ry R
+                org.joml.Vector3f offset = turn.transform(new org.joml.Vector3f(pose.x, pose.y, pose.z));
+                org.joml.Vector3f euler = new org.joml.Quaternionf(turn).mul(new org.joml.Quaternionf().rotationZYX(pose.zRot, pose.yRot, pose.xRot))
+                        .getEulerAnglesZYX(new org.joml.Vector3f());
+                part.setInitialPose(PartPose.offsetAndRotation(offset.x, offset.y, offset.z, euler.x, euler.y, euler.z));
                 part.resetPose();
             }
         }
         return parts;
     }
 
-    private static float[] turn(float[] point, boolean turned) {
-        return turned ? new float[] { -point[0], point[1], -point[2] } : point;
+    private static float[] turn(float[] point, float yaw) {
+        if (yaw == 0F) {
+            return point;
+        }
+        org.joml.Vector3f p = new org.joml.Quaternionf().rotationY(yaw).transform(new org.joml.Vector3f(point[0], point[1], point[2]));
+        return new float[] { p.x, p.y, p.z };
     }
 
     private static float[] point(JsonObject o, String key) {

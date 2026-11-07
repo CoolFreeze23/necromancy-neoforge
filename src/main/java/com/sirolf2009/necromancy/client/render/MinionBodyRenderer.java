@@ -71,12 +71,13 @@ public final class MinionBodyRenderer {
             hip = GROUND;
         }
         if (legs != null) {
-            // legs are scaled around the ground under them, so they keep standing on it
+            // legs are scaled around the ground under their hip, so they keep standing on it where the body is
+            Vector3f under = new Vector3f(legs.hip().x, GROUND.y, legs.hip().z);
             poseStack.pushPose();
-            scaleAround(poseStack, legs.scale(), GROUND);
+            scaleAround(poseStack, legs.scale(), under);
             draw(legs, false, BodyPartLocation.LEGS, pose, poseStack, buffers, light, overlay, color, null);
             poseStack.popPose();
-            hip = scaled(legs.hip(), GROUND, legs.scale());
+            hip = scaled(legs.hip(), under, legs.scale());
         }
         poseStack.pushPose();
         if (torso != null) {
