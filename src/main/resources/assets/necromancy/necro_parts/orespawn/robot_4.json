@@ -1,0 +1,55 @@
+{
+  "mob": "orespawn:robot_4",
+  "requires": "orespawn",
+  "geo": "orespawn:geo/entity/robot4.geo.json",
+  "texture": "orespawn:textures/entity/robot4.png",
+  "scale": 0.56,
+  "head": {
+    "groups": [
+      {
+        "bones": ["head", "neck"],
+        "pivot": [-1.0, -22.0, -3.0]
+      }
+    ],
+    "plug": [-1.0, -22.0, -3.0],
+    "animator": "look"
+  },
+  "torso": {
+    "groups": [
+      {
+        "bones": ["chest", "torso", "stomach", "hips", "lefttopspinebase", "lefttopspinetip", "lowerleftspinebase", "lowerleftspinetip", "lowerrightspinebase", "lowerrightspinetip", "middleleftspinebase", "middleleftspinetip", "middlerightspinebase", "middlerightspinetip", "righttopspinebase", "righttopspinetip"]
+      }
+    ],
+    "plug": [-1.0, 3.9, 6.0],
+    "neck": [-1.0, -22.0, -3.0],
+    "shoulder_left": [7.0, -18.0, 4.0],
+    "shoulder_right": [-9.0, -18.0, 4.0]
+  },
+  "arm": {
+    "left": {
+      "bones": ["rightsholder", "rightupperarm", "rightlowerarm", "rightsholdergaurd", "sholdergaurdtip", "sheildbase", "sheildend", "sheildtip"],
+      "pivot": [7.0, -18.0, 4.0]
+    },
+    "right": {
+      "bones": ["leftsholder", "leftupperarm", "bottomcannonpiece", "cannonammo", "cannonbase", "cannonend", "glowycannonbit1", "glowycannonbit2", "glowycannonbit3", "glowycannonbit4", "glowycannonbit5", "leftcannonpiece", "rightcannonpiece", "topcannonpiece"],
+      "pivot": [-9.0, -18.0, 4.0]
+    },
+    "plug_left": [7.0, -18.0, 4.0],
+    "plug_right": [-9.0, -18.0, 4.0],
+    "animator": "golem_arm"
+  },
+  "legs": {
+    "groups": [
+      {
+        "bones": ["rightthigh", "rightcalf", "rightshin", "rightkneegaurd", "rightfootback", "rightfootbase", "rightfootfront", "rightfoottip"],
+        "pivot": [5.0, -3.0, 6.0]
+      },
+      {
+        "bones": ["leftthigh", "leftcalf", "leftshin", "leftkneegaurd", "leftfootback", "leftfootbase", "leftfootfront", "leftfoottip"],
+        "pivot": [-8.0, -3.0, 6.0]
+      }
+    ],
+    "hip": [-1.0, 3.9, 6.0],
+    "animator": "walk_pair"
+  }
+}

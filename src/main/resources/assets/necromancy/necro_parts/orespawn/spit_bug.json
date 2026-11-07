@@ -1,0 +1,63 @@
+{
+  "mob": "orespawn:spit_bug",
+  "requires": "orespawn",
+  "geo": "orespawn:geo/entity/spitbug.geo.json",
+  "texture": "orespawn:textures/entity/spitbug.png",
+  "scale": 0.62,
+  "head": {
+    "groups": [
+      {
+        "bones": ["upperjawbase", "upperjawbasepart1", "upperjawbasepart2", "upperjawbasepart3", "lowerjawbase", "lowerjawbasepart1", "lowerjawbasepart10", "lowerjawbasepart11", "lowerjawbasepart2", "lowerjawbasepart3", "lowerjawbasepart4", "lowerjawbasepart5", "lowerjawbasepart6", "lowerjawbasepart7", "lowerjawbasepart8", "lowerjawbasepart9", "tooth1", "tooth2", "tooth3", "tooth4", "tooth5", "eye1", "eye2"],
+        "pivot": [0.0, 1.0, -6.0]
+      }
+    ],
+    "plug": [0.0, 1.0, -6.0],
+    "animator": "look"
+  },
+  "torso": {
+    "groups": [
+      {
+        "bones": ["bodybase", "bodybasepart10", "bodybasepart11", "bodybasepart12", "bodybasepart13", "bodybasepart14", "bodybasepart15", "bodybasepart2", "bodybasepart3", "bodybasepart4", "bodybasepart5", "bodybasepart6", "bodybasepart7", "bodybasepart8", "bodybasepart9", "legintersection", "legintersectionpart2", "legintersectionpart3"]
+      }
+    ],
+    "plug": [0.0, 8.0, 1.0],
+    "neck": [0.0, 1.0, -6.0],
+    "shoulder_left": [5.0, -11.0, -14.0],
+    "shoulder_right": [-5.0, -11.0, -14.0]
+  },
+  "arm": {
+    "left": {
+      "bones": ["arm1start", "arm1", "arm1part2", "arm1end"],
+      "pivot": [5.0, -11.0, -14.0]
+    },
+    "right": {
+      "bones": ["arm2start", "arm2", "arm2part2", "arm2end"],
+      "pivot": [-5.0, -11.0, -14.0]
+    },
+    "plug_left": [5.0, -11.0, -14.0],
+    "plug_right": [-5.0, -11.0, -14.0],
+    "animator": "arm"
+  },
+  "legs": {
+    "groups": [
+      {
+        "bones": ["leg1start", "leg1startpart2", "leg1startpart3", "leg1", "leg1part2", "leg1part2b", "leg1part2c", "leg1part2d", "leg1part3", "leg1part3b", "leg1part3c"],
+        "pivot": [4.0, 3.0, -4.0]
+      },
+      {
+        "bones": ["leg2start", "leg2startpart2", "leg2startpart3", "leg2", "leg2part2", "leg2part2b", "leg2part2c", "leg2part2d", "leg2part3", "leg2part3b", "leg2part3c"],
+        "pivot": [-4.0, 3.0, -4.0]
+      },
+      {
+        "bones": ["leg4start", "leg4startpart2", "leg4startpart3", "leg4", "leg4part2", "leg4part2b", "leg4part2c", "leg4part2d", "leg4part3", "leg4part3b", "leg4part3c"],
+        "pivot": [-4.0, 3.0, 6.0]
+      },
+      {
+        "bones": ["leg3start", "leg3startpart2", "leg3startpart3", "leg3", "leg3part2", "leg3part2b", "leg3part2c", "leg3part2d", "leg3part3", "leg3part3b", "leg3part3c"],
+        "pivot": [4.0, 3.0, 6.0]
+      }
+    ],
+    "hip": [0.0, 8.0, 1.0],
+    "animator": "walk_pair"
+  }
+}

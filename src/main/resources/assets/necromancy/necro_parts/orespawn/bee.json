@@ -1,0 +1,51 @@
+{
+  "mob": "orespawn:bee",
+  "requires": "orespawn",
+  "geo": "orespawn:geo/entity/bee.geo.json",
+  "texture": "orespawn:textures/entity/bee.png",
+  "scale": 0.46,
+  "head": {
+    "groups": [
+      {
+        "bones": ["Head", "LA1", "LA2", "LA3", "RA1", "RA2", "RA3", "LeftPom", "RightPom", "LeftPincerExtra", "LeftPincerMain", "RightPincerExtra", "RightPincerMain"],
+        "pivot": [0.0, -13.0, -28.0]
+      }
+    ],
+    "plug": [0.0, -6.0, -28.0],
+    "animator": "look"
+  },
+  "torso": {
+    "groups": [
+      {
+        "bones": ["MainBody", "Neck", "Abdomnem5", "Abdomnem4"]
+      }
+    ],
+    "plug": [0.0, 2.0, 0.0],
+    "neck": [0.0, -6.0, -28.0],
+    "shoulder_left": [3.0, -14.0, -15.0],
+    "shoulder_right": [-4.0, -14.0, -15.0]
+  },
+  "arm": {
+    "left": {
+      "bones": ["WingLeft"],
+      "pivot": [3.0, -14.0, -15.0]
+    },
+    "right": {
+      "bones": ["WingRight"],
+      "pivot": [-4.0, -14.0, -15.0]
+    },
+    "plug_left": [3.0, -14.0, -15.0],
+    "plug_right": [-4.0, -14.0, -15.0],
+    "animator": "none"
+  },
+  "legs": {
+    "groups": [
+      {
+        "bones": ["Abdomnem3", "Abdomnem2", "Abdomnem1", "Sting"],
+        "pivot": [0.0, 1.0, -2.0]
+      }
+    ],
+    "hip": [0.0, 2.0, 0.0],
+    "animator": "none"
+  }
+}

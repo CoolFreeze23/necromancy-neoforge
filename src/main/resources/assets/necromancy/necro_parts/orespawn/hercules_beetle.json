@@ -1,0 +1,63 @@
+{
+  "mob": "orespawn:hercules_beetle",
+  "requires": "orespawn",
+  "geo": "orespawn:geo/entity/herculesbeetle.geo.json",
+  "texture": "orespawn:textures/entity/herculesbeetle.png",
+  "scale": 0.95,
+  "head": {
+    "groups": [
+      {
+        "bones": ["head1", "head2", "head3", "head4", "head5", "head6", "head7", "head8", "jaw1", "jaw2", "jaw3", "jaw4", "jaw5", "jaw6", "jaw7", "jaw8", "jaw9"],
+        "pivot": [0.0, 16.0, 0.0]
+      }
+    ],
+    "plug": [0.0, 16.0, 0.0],
+    "animator": "look"
+  },
+  "torso": {
+    "groups": [
+      {
+        "bones": ["body1", "body2"]
+      }
+    ],
+    "plug": [0.0, 16.0, 2.5],
+    "neck": [0.0, 16.0, 0.0],
+    "shoulder_left": [6.0, 15.0, -5.0],
+    "shoulder_right": [-6.0, 15.0, -5.0]
+  },
+  "arm": {
+    "left": {
+      "bones": ["lfleg1", "lfleg2", "lfleg3"],
+      "pivot": [6.0, 15.0, -5.0]
+    },
+    "right": {
+      "bones": ["rfleg1", "rfleg2", "rfleg3"],
+      "pivot": [-6.0, 15.0, -5.0]
+    },
+    "plug_left": [6.0, 15.0, -5.0],
+    "plug_right": [-6.0, 15.0, -5.0],
+    "animator": "front_leg"
+  },
+  "legs": {
+    "groups": [
+      {
+        "bones": ["lmleg1", "lmleg2", "lmleg3"],
+        "pivot": [6.0, 15.0, 0.0]
+      },
+      {
+        "bones": ["rmleg1", "rmleg2", "rmleg3"],
+        "pivot": [-6.0, 15.0, 0.0]
+      },
+      {
+        "bones": ["rrleg1", "rrleg2", "rrleg3"],
+        "pivot": [-6.0, 15.0, 5.0]
+      },
+      {
+        "bones": ["lrleg1", "lrleg2", "lrleg3"],
+        "pivot": [6.0, 15.0, 5.0]
+      }
+    ],
+    "hip": [0.0, 16.0, 2.5],
+    "animator": "walk_pair"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "mob": "orespawn:robot_3",
+  "requires": "orespawn",
+  "geo": "orespawn:geo/entity/robot3.geo.json",
+  "texture": "orespawn:textures/entity/robot3.png",
+  "scale": 0.23,
+  "head": {
+    "groups": [
+      {
+        "bones": ["lazer"],
+        "pivot": [0.5, -72.0, -21.0]
+      }
+    ],
+    "plug": [0.5, -72.0, -21.0],
+    "animator": "look"
+  },
+  "torso": {
+    "groups": [
+      {
+        "bones": ["body1", "body2", "body3", "body4", "waist1", "waist2", "waist3", "hips"]
+      }
+    ],
+    "plug": [0.0, -27.0, 0.0],
+    "neck": [0.5, -72.0, -21.0],
+    "shoulder_left": [24.0, -92.0, 2.0],
+    "shoulder_right": [-23.0, -92.0, 2.0]
+  },
+  "arm": {
+    "left": {
+      "bones": ["larm1", "larm2", "larm3"],
+      "pivot": [24.0, -92.0, 2.0]
+    },
+    "right": {
+      "bones": ["rarm1", "rarm2", "rarm3"],
+      "pivot": [-23.0, -92.0, 2.0]
+    },
+    "plug_left": [24.0, -92.0, 2.0],
+    "plug_right": [-23.0, -92.0, 2.0],
+    "animator": "golem_arm"
+  },
+  "legs": {
+    "groups": [
+      {
+        "bones": ["lleg2", "lleg1"],
+        "pivot": [9.0, -31.0, 0.0]
+      },
+      {
+        "bones": ["rleg2", "rleg1"],
+        "pivot": [-9.0, -31.0, 0.0]
+      }
+    ],
+    "hip": [0.0, -27.0, 0.0],
+    "animator": "walk_pair"
+  }
+}

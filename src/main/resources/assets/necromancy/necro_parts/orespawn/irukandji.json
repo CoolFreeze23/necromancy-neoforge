@@ -1,0 +1,18 @@
+{
+  "mob": "orespawn:irukandji",
+  "requires": "orespawn",
+  "geo": "orespawn:geo/entity/irukandji.geo.json",
+  "texture": "orespawn:textures/entity/irukandji.png",
+  "scale": 0.3,
+  "torso": {
+    "groups": [
+      {
+        "bones": ["body", "t11", "t12", "t21", "t22", "t31", "t32", "t41", "t42"]
+      }
+    ],
+    "plug": [0.0, 24.0, 0.0],
+    "neck": [0.0, 6.0, 0.0],
+    "shoulder_left": [2.0, 8.0, 0.0],
+    "shoulder_right": [-2.0, 8.0, 0.0]
+  }
+}

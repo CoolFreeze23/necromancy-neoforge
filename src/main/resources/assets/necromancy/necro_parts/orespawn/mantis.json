@@ -1,0 +1,63 @@
+{
+  "mob": "orespawn:mantis",
+  "requires": "orespawn",
+  "geo": "orespawn:geo/entity/mantis.geo.json",
+  "texture": "orespawn:textures/entity/mantis.png",
+  "scale": 0.47,
+  "head": {
+    "groups": [
+      {
+        "bones": ["head1", "head2", "leye", "reye", "lantenna", "rantenna", "neck2"],
+        "pivot": [0.5, -14.0, -28.0]
+      }
+    ],
+    "plug": [0.5, -9.8, -29.5],
+    "animator": "look"
+  },
+  "torso": {
+    "groups": [
+      {
+        "bones": ["thorax", "abdomen", "neck1", "lfwing", "lrwing", "rfwing", "rrwing"]
+      }
+    ],
+    "plug": [0.5, -2.0, 4.0],
+    "neck": [0.5, -9.8, -29.5],
+    "shoulder_left": [2.0, -14.0, -23.0],
+    "shoulder_right": [-1.0, -14.0, -23.0]
+  },
+  "arm": {
+    "left": {
+      "bones": ["larm1", "larm2", "larm3"],
+      "pivot": [2.0, -14.0, -23.0]
+    },
+    "right": {
+      "bones": ["rarm1", "rarm2", "rarm3"],
+      "pivot": [-1.0, -14.0, -23.0]
+    },
+    "plug_left": [2.0, -14.0, -23.0],
+    "plug_right": [-1.0, -14.0, -23.0],
+    "animator": "arm"
+  },
+  "legs": {
+    "groups": [
+      {
+        "bones": ["lfleg3", "lfleg4", "lfleg2", "lfleg1"],
+        "pivot": [2.0, -5.0, 0.0]
+      },
+      {
+        "bones": ["rlfleg3", "rfleg4", "rfleg2", "rfleg1"],
+        "pivot": [-1.0, -5.0, 0.0]
+      },
+      {
+        "bones": ["rrleg3", "rrleg4", "rrleg2", "rrleg1"],
+        "pivot": [-1.0, 0.0, 8.0]
+      },
+      {
+        "bones": ["lrleg3", "lrleg4", "lrleg2", "lrleg1"],
+        "pivot": [2.0, 0.0, 8.0]
+      }
+    ],
+    "hip": [0.5, -2.0, 4.0],
+    "animator": "walk_pair"
+  }
+}

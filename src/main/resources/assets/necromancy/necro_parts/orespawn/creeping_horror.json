@@ -1,0 +1,63 @@
+{
+  "mob": "orespawn:creeping_horror",
+  "requires": "orespawn",
+  "geo": "orespawn:geo/entity/creepinghorror.geo.json",
+  "texture": "orespawn:textures/entity/creepinghorror.png",
+  "scale": 1.35,
+  "head": {
+    "groups": [
+      {
+        "bones": ["body", "insides1", "insides2", "insides3", "insides4", "insides5"],
+        "pivot": [0.0, 23.0, 0.0]
+      }
+    ],
+    "plug": [0.0, 23.0, 0.0],
+    "animator": "none"
+  },
+  "torso": {
+    "groups": [
+      {
+        "bones": ["body", "insides1", "insides2", "insides3", "insides4", "insides5", "spike1", "spike2", "spike3", "spike4", "spike5", "tailseg1", "tailseg2", "tailseg3"]
+      }
+    ],
+    "plug": [0.0, 23.0, 0.0],
+    "neck": [0.0, 23.0, 0.0],
+    "shoulder_left": [3.0, 19.0, -3.0],
+    "shoulder_right": [-3.0, 19.0, -3.0]
+  },
+  "arm": {
+    "left": {
+      "bones": ["pincer2", "pincer2part2"],
+      "pivot": [3.0, 19.0, -3.0]
+    },
+    "right": {
+      "bones": ["pincer1", "pincer1part2"],
+      "pivot": [-3.0, 19.0, -3.0]
+    },
+    "plug_left": [3.0, 19.0, -3.0],
+    "plug_right": [-3.0, 19.0, -3.0],
+    "animator": "arm"
+  },
+  "legs": {
+    "groups": [
+      {
+        "bones": ["leg1", "leg1part2"],
+        "pivot": [4.0, 18.0, -2.0]
+      },
+      {
+        "bones": ["leg3", "leg3part2"],
+        "pivot": [-4.0, 18.0, -2.0]
+      },
+      {
+        "bones": ["leg4", "leg4part2"],
+        "pivot": [-4.0, 18.0, 2.0]
+      },
+      {
+        "bones": ["leg2", "leg2part2"],
+        "pivot": [4.0, 18.0, 2.0]
+      }
+    ],
+    "hip": [0.0, 23.0, 0.0],
+    "animator": "walk_pair"
+  }
+}

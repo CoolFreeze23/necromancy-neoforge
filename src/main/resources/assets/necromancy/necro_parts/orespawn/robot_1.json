@@ -1,0 +1,32 @@
+{
+  "mob": "orespawn:robot_1",
+  "requires": "orespawn",
+  "geo": "orespawn:geo/entity/robot1.geo.json",
+  "texture": "orespawn:textures/entity/robot1.png",
+  "scale": 0.58,
+  "torso": {
+    "groups": [
+      {
+        "bones": ["Shape1", "Shape10", "Shape11", "Shape12", "Shape13", "Shape14", "Shape15", "Shape15a", "Shape16", "Shape17", "Shape18", "Shape2", "Shape2a", "Shape3", "Shape4", "Shape5", "Shape6", "Shape7", "Shape8", "Shape9", "key1", "key2", "key3", "key4", "key5"]
+      }
+    ],
+    "plug": [0.5, 22.0, 0.5],
+    "neck": [0.5, 13.0, 0.5],
+    "shoulder_left": [5.0, 17.0, 0.5],
+    "shoulder_right": [-4.0, 17.0, 0.5]
+  },
+  "legs": {
+    "groups": [
+      {
+        "bones": ["lfoot"],
+        "pivot": [2.0, 19.0, 0.0]
+      },
+      {
+        "bones": ["rfoot"],
+        "pivot": [-3.0, 19.0, 0.0]
+      }
+    ],
+    "hip": [0.5, 22.0, 0.5],
+    "animator": "walk_pair"
+  }
+}
