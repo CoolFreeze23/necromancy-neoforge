@@ -158,6 +158,20 @@ public class SmokeClient {
                     furnace.resize(mc, furnace.width, furnace.height);
                 }
             }
+            case "useitem" -> {
+                // the player uses the held item on the top of a block, on the server
+                String[] xyz = parts[1].split(" ");
+                BlockPos pos = new BlockPos(Integer.parseInt(xyz[0]), Integer.parseInt(xyz[1]), Integer.parseInt(xyz[2]));
+                var server = mc.getSingleplayerServer();
+                var uuid = mc.player.getUUID();
+                server.execute(() -> {
+                    var player = server.getPlayerList().getPlayer(uuid);
+                    var hit = new BlockHitResult(Vec3.atCenterOf(pos).add(0, 0.5, 0), Direction.UP, pos, false);
+                    var result = player.getMainHandItem().useOn(new net.minecraft.world.item.context.UseOnContext(player, net.minecraft.world.InteractionHand.MAIN_HAND, hit));
+                    report.add("useitem " + parts[1] + " -> " + result);
+                });
+                wait = 2;
+            }
             case "useblock" -> {
                 String[] xyz = parts[1].split(" ");
                 BlockPos pos = new BlockPos(Integer.parseInt(xyz[0]), Integer.parseInt(xyz[1]), Integer.parseInt(xyz[2]));

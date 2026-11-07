@@ -259,7 +259,7 @@ public class NecroLanguage extends LanguageProvider {
         add("gui.necromancy.altar.raise", "Raise");
         add("gui.necromancy.altar.raise.tooltip", "Bind the soul to the body and raise your Minion. The body, the blood and the soul are used up.");
         add("gui.necromancy.altar.weight", "Weight %s / %s");
-        add("gui.necromancy.altar.shrine", "Shrine tier %s (%s points)");
+        add("gui.necromancy.altar.shrine", "Shrine %s (%s pts)");
         add("gui.necromancy.altar.tier.1", "I");
         add("gui.necromancy.altar.tier.2", "II");
         add("gui.necromancy.altar.tier.3", "III");

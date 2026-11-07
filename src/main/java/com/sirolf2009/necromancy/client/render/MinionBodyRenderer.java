@@ -38,6 +38,10 @@ public final class MinionBodyRenderer {
         @Nullable
         ResourceLocation mob(BodyPartLocation location);
 
+        /** Called after a head or arm is drawn, with the pose stack at that part's model space (held items, helmets). */
+        default void decorate(BodyPartLocation location, ModelPart part, PoseStack poseStack, MultiBufferSource buffers, int light) {
+        }
+
         default boolean saddled() {
             return false;
         }
@@ -126,6 +130,10 @@ public final class MinionBodyRenderer {
             translate(poseStack, -plug.x, -plug.y, -plug.z);
         }
         draw(part, right, location, pose, poseStack, buffers, light, overlay, color, null);
+        List<ModelPart> drawn = part.parts(right);
+        if (!drawn.isEmpty()) {
+            body.decorate(location, drawn.get(0), poseStack, buffers, light);
+        }
         poseStack.popPose();
     }
 

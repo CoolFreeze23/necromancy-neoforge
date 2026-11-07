@@ -6,7 +6,6 @@
   "item.necromancy.netherite_scythe": "Netherite Scythe",
   "item.necromancy.abomination_heart": "Abomination Heart",
   "entity.necromancy.abomination": "Abomination",
-
   "tooltip.necromancy.necronomicon": "Use it to read. Use it on planks beside two cobblestone to bind an altar.",
   "tooltip.necromancy.soul_harvest": "Soul Harvest: your Minions' kills near you fill your bottles too",
   "tooltip.necromancy.scepter.order": "Order: %s",
@@ -18,13 +17,11 @@
   "tooltip.necromancy.remains.part": "%s: %s",
   "tooltip.necromancy.remains.kills": "Kills: %s",
   "tooltip.necromancy.remains.help": "Put it in the altar's soul slot to raise it again",
-
   "location.necromancy.head": "Head",
   "location.necromancy.torso": "Torso",
   "location.necromancy.arm_left": "Left arm",
   "location.necromancy.arm_right": "Right arm",
   "location.necromancy.legs": "Legs",
-
   "order.necromancy.follow": "Follow",
   "order.necromancy.stay": "Stay",
   "order.necromancy.guard": "Guard",
@@ -33,14 +30,12 @@
   "stance.necromancy.passive": "Passive",
   "stance.necromancy.defensive": "Defensive",
   "stance.necromancy.aggressive": "Aggressive",
-
   "rank.necromancy.0": "Fresh Corpse",
   "rank.necromancy.1": "Shambler",
   "rank.necromancy.2": "Ghoul",
   "rank.necromancy.3": "Wight",
   "rank.necromancy.4": "Dread Knight",
   "rank.necromancy.5": "Revenant",
-
   "gui.necromancy.minion.health": "Health %s",
   "gui.necromancy.minion.attack": "Attack %s",
   "gui.necromancy.minion.armor": "Armour %s",
@@ -50,7 +45,6 @@
   "gui.necromancy.minion.stance": "Stance: %s",
   "gui.necromancy.minion.kills": "Kills: %s",
   "gui.necromancy.minion.bound": "Bound to a Phylactery",
-
   "message.necromancy.minion.rank_up": "%s has become a %s!",
   "message.necromancy.scepter.selected": "%s selected (%s in all)",
   "message.necromancy.scepter.deselected": "%s let go",

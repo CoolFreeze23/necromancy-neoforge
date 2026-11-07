@@ -32,6 +32,7 @@ import net.minecraft.world.phys.AABB;
 public class NecroItemRenderer extends BlockEntityWithoutLevelRenderer {
     public static final ResourceLocation BLOOD_SCYTHE_TEXTURE = Necromancy.id("textures/item/blood_scythe_model.png");
     public static final ResourceLocation BONE_SCYTHE_TEXTURE = Necromancy.id("textures/item/bone_scythe_model.png");
+    public static final ResourceLocation NETHERITE_SCYTHE_TEXTURE = Necromancy.id("textures/item/netherite_scythe_model.png");
     /** The mobs whose part items are drawn here (the others have sprites). */
     public static final Set<String> MODEL_PART_MOBS = Set.of("husk", "drowned", "bogged", "wither_skeleton", "blaze", "slime", "mooshroom", "snow_golem",
             "armadillo", "goat", "night_crawler");
@@ -78,6 +79,8 @@ public class NecroItemRenderer extends BlockEntityWithoutLevelRenderer {
             renderScythe(bloodScythe, BLOOD_SCYTHE_TEXTURE, poseStack, buffers, light, overlay);
         } else if (stack.is(NecroItems.BONE_SCYTHE.get())) {
             renderScythe(boneScythe, BONE_SCYTHE_TEXTURE, poseStack, buffers, light, overlay);
+        } else if (stack.is(NecroItems.NETHERITE_SCYTHE.get())) {
+            renderScythe(boneScythe, NETHERITE_SCYTHE_TEXTURE, poseStack, buffers, light, overlay);
         } else {
             NecroMobRegistry.partOf(stack).ifPresent(ref -> {
                 PartModel part = NecroMobModels.get(ref.mob().id(), ref.type());
@@ -129,6 +132,7 @@ public class NecroItemRenderer extends BlockEntityWithoutLevelRenderer {
         items.add(NecroItems.SEWING_MACHINE.get());
         items.add(NecroItems.BLOOD_SCYTHE.get());
         items.add(NecroItems.BONE_SCYTHE.get());
+        items.add(NecroItems.NETHERITE_SCYTHE.get());
         NecroItems.BODY_PARTS.forEach((mob, parts) -> {
             if (MODEL_PART_MOBS.contains(mob)) {
                 parts.values().forEach(item -> items.add(item.get()));

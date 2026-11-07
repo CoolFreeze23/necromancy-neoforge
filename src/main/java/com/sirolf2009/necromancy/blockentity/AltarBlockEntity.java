@@ -76,7 +76,7 @@ public class AltarBlockEntity extends BaseContainerBlockEntity {
     public static final int INFO_SIZE = 6;
 
     private Shrine.State shrine = new Shrine.State(0, 1);
-    private long shrineScannedAt = Long.MIN_VALUE;
+    private long shrineScannedAt = NEVER_SCANNED;
 
     private NonNullList<ItemStack> items = NonNullList.withSize(SIZE, ItemStack.EMPTY);
     private BlockState originalBase = Blocks.OAK_PLANKS.defaultBlockState();
@@ -235,7 +235,7 @@ public class AltarBlockEntity extends BaseContainerBlockEntity {
             player.displayClientMessage(Component.translatable("message.necromancy.altar.needs_blood_and_soul"), true);
             return false;
         }
-        shrineScannedAt = Long.MIN_VALUE;
+        shrineScannedAt = NEVER_SCANNED;
         if (shrine().tier() < 3) {
             player.displayClientMessage(Component.translatable("message.necromancy.rite.needs_tier_3"), true);
             return false;
@@ -314,7 +314,7 @@ public class AltarBlockEntity extends BaseContainerBlockEntity {
             return false;
         }
         MinionCensus census = MinionCensus.get(server.getServer());
-        shrineScannedAt = Long.MIN_VALUE;
+        shrineScannedAt = NEVER_SCANNED;
         int max = shrine().minionCap();
         if (max >= 0 && census.count(player.getUUID()) >= max && !creative) {
             player.sendSystemMessage(Component.translatable("message.necromancy.altar.too_many"));

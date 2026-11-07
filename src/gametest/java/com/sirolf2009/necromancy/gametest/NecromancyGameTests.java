@@ -276,7 +276,7 @@ public class NecromancyGameTests {
         }
         state = Shrine.scan(h.getLevel(), h.absolutePos(base));
         h.assertTrue(state.tier() == 3, "skulls should reach tier III: " + state);
-        h.assertTrue(altar.shrine().tier() >= 1, "altar reads its shrine");
+        h.assertTrue(altar.shrine().tier() == 3 && altar.shrine().minionCap() == 8, "the altar reads its own shrine: " + altar.shrine());
         h.succeed();
     }
 

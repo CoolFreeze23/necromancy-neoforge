@@ -6,7 +6,6 @@
   "item.necromancy.netherite_scythe": "Foice de Netherita",
   "item.necromancy.abomination_heart": "Coração da Abominação",
   "entity.necromancy.abomination": "Abominação",
-
   "tooltip.necromancy.necronomicon": "Use para ler. Use em tábuas ao lado de dois pedregulhos para selar um altar.",
   "tooltip.necromancy.soul_harvest": "Colheita de Almas: os abates dos seus Lacaios perto de você também enchem os seus frascos",
   "tooltip.necromancy.scepter.order": "Ordem: %s",
@@ -18,13 +17,11 @@
   "tooltip.necromancy.remains.part": "%s: %s",
   "tooltip.necromancy.remains.kills": "Abates: %s",
   "tooltip.necromancy.remains.help": "Coloque no espaço da alma do altar para erguê-lo de novo",
-
   "location.necromancy.head": "Cabeça",
   "location.necromancy.torso": "Torso",
   "location.necromancy.arm_left": "Braço esquerdo",
   "location.necromancy.arm_right": "Braço direito",
   "location.necromancy.legs": "Pernas",
-
   "order.necromancy.follow": "Seguir",
   "order.necromancy.stay": "Ficar",
   "order.necromancy.guard": "Vigiar",
@@ -33,14 +30,12 @@
   "stance.necromancy.passive": "Passiva",
   "stance.necromancy.defensive": "Defensiva",
   "stance.necromancy.aggressive": "Agressiva",
-
   "rank.necromancy.0": "Cadáver Fresco",
   "rank.necromancy.1": "Morto-Vivo",
   "rank.necromancy.2": "Carniçal",
   "rank.necromancy.3": "Espectro",
   "rank.necromancy.4": "Cavaleiro do Pavor",
   "rank.necromancy.5": "Revenante",
-
   "gui.necromancy.minion.health": "Vida %s",
   "gui.necromancy.minion.attack": "Ataque %s",
   "gui.necromancy.minion.armor": "Armadura %s",
@@ -50,7 +45,6 @@
   "gui.necromancy.minion.stance": "Postura: %s",
   "gui.necromancy.minion.kills": "Abates: %s",
   "gui.necromancy.minion.bound": "Preso a um Filactério",
-
   "message.necromancy.minion.rank_up": "%s virou %s!",
   "message.necromancy.scepter.selected": "%s escolhido (%s no total)",
   "message.necromancy.scepter.deselected": "%s dispensado",

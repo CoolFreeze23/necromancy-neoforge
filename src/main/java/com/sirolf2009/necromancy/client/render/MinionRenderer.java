@@ -10,6 +10,7 @@ import com.sirolf2009.necromancy.client.model.PartAnimator;
 import com.sirolf2009.necromancy.entity.MinionEntity;
 
 import net.minecraft.client.model.EntityModel;
+import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.LivingEntityRenderer;
@@ -22,9 +23,68 @@ import net.minecraft.resources.ResourceLocation;
 public class MinionRenderer extends MobRenderer<MinionEntity, MinionRenderer.EmptyModel> {
     private static final ResourceLocation NONE = ResourceLocation.withDefaultNamespace("textures/entity/zombie/zombie.png");
 
+    private static net.minecraft.client.renderer.ItemInHandRenderer itemInHand;
+    private static ModelPart helmet;
+
     public MinionRenderer(EntityRendererProvider.Context context) {
         super(context, new EmptyModel(), 0.5F);
+        itemInHand = context.getItemInHandRenderer();
+        helmet = context.bakeLayer(net.minecraft.client.model.geom.ModelLayers.PLAYER_OUTER_ARMOR).getChild("head");
         addLayer(new BodyLayer(this));
+    }
+
+    /** Held items at the end of each arm (right arm: main hand) and a worn helmet on the head. */
+    static void decorate(MinionEntity minion, BodyPartLocation location, ModelPart part, PoseStack poseStack, MultiBufferSource buffers, int light) {
+        if (location == BodyPartLocation.HEAD) {
+            renderHelmet(minion, part, poseStack, buffers, light);
+            return;
+        }
+        boolean left = location == BodyPartLocation.ARM_LEFT;
+        net.minecraft.world.item.ItemStack stack = left ? minion.getOffhandItem() : minion.getMainHandItem();
+        if (stack.isEmpty() || itemInHand == null) {
+            return;
+        }
+        poseStack.pushPose();
+        part.translateAndRotate(poseStack);
+        poseStack.mulPose(com.mojang.math.Axis.XP.rotationDegrees(-90.0F));
+        poseStack.mulPose(com.mojang.math.Axis.YP.rotationDegrees(180.0F));
+        poseStack.translate((left ? -1 : 1) / 16.0F, 0.125F, -0.625F);
+        itemInHand.renderItem(minion, stack, left ? net.minecraft.world.item.ItemDisplayContext.THIRD_PERSON_LEFT_HAND
+                : net.minecraft.world.item.ItemDisplayContext.THIRD_PERSON_RIGHT_HAND, left, poseStack, buffers, light);
+        poseStack.popPose();
+    }
+
+    private static void renderHelmet(MinionEntity minion, ModelPart head, PoseStack poseStack, MultiBufferSource buffers, int light) {
+        net.minecraft.world.item.ItemStack stack = minion.getItemBySlot(net.minecraft.world.entity.EquipmentSlot.HEAD);
+        if (stack.isEmpty() || helmet == null) {
+            return;
+        }
+        poseStack.pushPose();
+        head.translateAndRotate(poseStack);
+        if (stack.getItem() instanceof net.minecraft.world.item.ArmorItem armor) {
+            var layers = armor.getMaterial().value().layers();
+            helmet.resetPose();
+            helmet.setPos(0, 0, 0);
+            int color = stack.is(net.minecraft.tags.ItemTags.DYEABLE)
+                    ? net.minecraft.util.FastColor.ARGB32.opaque(net.minecraft.world.item.component.DyedItemColor.getOrDefault(stack, -6265536)) : -1;
+            for (var layer : layers) {
+                var texture = layer.texture(false);
+                int tint = layer.dyeable() ? color : -1;
+                helmet.render(poseStack, buffers.getBuffer(net.minecraft.client.renderer.RenderType.armorCutoutNoCull(texture)), light,
+                        net.minecraft.client.renderer.texture.OverlayTexture.NO_OVERLAY, tint);
+            }
+            if (stack.hasFoil()) {
+                helmet.render(poseStack, buffers.getBuffer(net.minecraft.client.renderer.RenderType.armorEntityGlint()), light,
+                        net.minecraft.client.renderer.texture.OverlayTexture.NO_OVERLAY);
+            }
+        } else if (itemInHand != null) {
+            // pumpkins, mob heads and blocks sit on the head like vanilla's custom head layer
+            poseStack.translate(0.0F, -0.25F, 0.0F);
+            poseStack.mulPose(com.mojang.math.Axis.YP.rotationDegrees(180.0F));
+            poseStack.scale(0.625F, -0.625F, -0.625F);
+            itemInHand.renderItem(minion, stack, net.minecraft.world.item.ItemDisplayContext.HEAD, false, poseStack, buffers, light);
+        }
+        poseStack.popPose();
     }
 
     @Override
@@ -55,6 +115,11 @@ public class MinionRenderer extends MobRenderer<MinionEntity, MinionRenderer.Emp
             @Override
             public boolean saddled() {
                 return minion.isSaddled();
+            }
+
+            @Override
+            public void decorate(BodyPartLocation location, ModelPart part, PoseStack poseStack, MultiBufferSource buffers, int light) {
+                MinionRenderer.decorate(minion, location, part, poseStack, buffers, light);
             }
 
             @Override
@@ -95,7 +160,7 @@ public class MinionRenderer extends MobRenderer<MinionEntity, MinionRenderer.Emp
             poseStack.pushPose();
             poseStack.scale(1.05F, 1.02F, 1.05F);
             poseStack.translate(0, -0.015, 0);
-            MinionBodyRenderer.render(body(minion), pose, poseStack, swirl, light, net.minecraft.client.renderer.texture.OverlayTexture.NO_OVERLAY, 0xFF808080);
+            MinionBodyRenderer.render(MinionBodyRenderer.of(minion.parts()), pose, poseStack, swirl, light, net.minecraft.client.renderer.texture.OverlayTexture.NO_OVERLAY, 0xFF808080);
             poseStack.popPose();
         }
     }

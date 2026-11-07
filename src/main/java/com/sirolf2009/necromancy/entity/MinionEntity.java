@@ -439,6 +439,10 @@ public class MinionEntity extends TamableAnimal implements RangedAttackMob, Item
         if (tag.contains("Soul")) {
             soul = SoulData.CODEC.parse(net.minecraft.nbt.NbtOps.INSTANCE, tag.get("Soul")).result().orElse(SoulData.UNKNOWN);
         }
+        // a Minion made with /summon has parts but no saved modifiers yet: give them now (and full health if none was given)
+        if (!level().isClientSide && !map.isEmpty()) {
+            applyPartAttributes(!tag.contains("Health"));
+        }
         steering.readAdditionalSaveData(tag);
     }
 

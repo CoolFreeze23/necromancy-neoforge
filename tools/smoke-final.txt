@@ -1,0 +1,52 @@
+# Combined check in pt_br: equipped Minions, the altar screen with its side panel, tooltips. (tools/smoke.sh tools/smoke-final.txt)
+wait 20
+gamerule doMobSpawning false
+gamerule doDaylightCycle false
+time set 6000
+weather clear
+kill @e[type=!player]
+summon necromancy:minion 0 -60 0 {NoAI:1b,Rotation:[180f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:iron_golem",arm_left:"necromancy:skeleton",arm_right:"necromancy:skeleton",legs:"necromancy:zombie"},HandItems:[{id:"minecraft:bow",count:1},{id:"minecraft:shield",count:1}],ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}]}
+summon necromancy:minion 3 -60 0 {NoAI:1b,Rotation:[180f,0f],Parts:{head:"necromancy:villager",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:spider"},HandItems:[{id:"necromancy:netherite_scythe",count:1},{}],ArmorItems:[{},{},{},{id:"minecraft:carved_pumpkin",count:1}]}
+summon necromancy:minion -3 -60 0 {NoAI:1b,Rotation:[180f,0f],Parts:{head:"necromancy:wither_skeleton",torso:"necromancy:wither_skeleton",arm_left:"necromancy:wither_skeleton",arm_right:"necromancy:wither_skeleton",legs:"necromancy:wither_skeleton"},HandItems:[{id:"minecraft:stone_sword",count:1},{}],ArmorItems:[{},{},{},{id:"minecraft:golden_helmet",count:1}]}
+tp @s 0 -59 5 facing 0 -59 0
+hud off
+wait 40
+shot minions_equipped
+hud on
+fill 6 -61 -6 10 -61 -2 minecraft:stone
+setblock 7 -60 -4 minecraft:oak_planks
+setblock 8 -60 -4 minecraft:cobblestone
+setblock 9 -60 -4 minecraft:cobblestone
+setblock 6 -60 -6 minecraft:candle[candles=4,lit=true]
+setblock 10 -60 -6 minecraft:soul_lantern
+setblock 6 -60 -2 minecraft:wither_skeleton_skull
+tp @s 7 -59 -1 facing 7 -60 -4
+item replace entity @s weapon.mainhand with necromancy:necronomicon
+wait 10
+useitem 7 -60 -4
+wait 20
+item replace entity @s weapon.mainhand with air
+useblock 7 -60 -4
+wait 20
+item replace entity @s container.0 with necromancy:jar_of_blood 4
+item replace entity @s container.1 with necromancy:soul_in_a_jar 4
+item replace entity @s container.2 with minecraft:zombie_head
+item replace entity @s container.3 with necromancy:cow_torso
+item replace entity @s container.4 with necromancy:spider_legs
+data merge block 7 -60 -4 {Items:[{Slot:0b,id:"necromancy:jar_of_blood",count:1},{Slot:1b,id:"necromancy:soul_in_a_jar",count:1},{Slot:2b,id:"minecraft:zombie_head",count:1},{Slot:3b,id:"necromancy:cow_torso",count:1},{Slot:4b,id:"necromancy:spider_legs",count:1},{Slot:5b,id:"necromancy:zombie_arm",count:1},{Slot:6b,id:"necromancy:skeleton_arm",count:1}]}
+closegui
+wait 10
+useblock 7 -60 -4
+wait 30
+shot altar_screen
+closegui
+item replace entity @s weapon.mainhand with necromancy:iron_golem_torso
+tooltip on
+wait 10
+shot tooltip_part
+item replace entity @s weapon.mainhand with necromancy:bone_scepter
+wait 10
+shot tooltip_scepter
+tooltip off
+execute if block 7 -60 -4 necromancy:summoning_altar run say ALTAR BOUND
+report done
