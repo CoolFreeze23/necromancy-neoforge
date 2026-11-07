@@ -47,7 +47,9 @@ import net.minecraft.util.profiling.ProfilerFiller;
  * own space and turned with it), {@code "pose": {"bone": [x, y, z]}} to give bones another rest rotation in degrees
  * (a crest folded away, fins drooping), {@code "eyes": "ns:textures/..."} for a glowing eye layer and
  * {@code "glint": true} for the enchantment shimmer. A group with a pivot may also have a {@code "rotation"} in
- * degrees, added to its rest pose (folded wings); any group may have an {@code "offset"} that moves its bones.
+ * degrees, added to its rest pose (folded wings); any group, and any part, may have an {@code "offset"} that moves its
+ * bones (legs lifted out of the ground). Animators: none, look, look_first, walk_pair, scuttle, arm, zombie_arm,
+ * front_leg, spin, sway, tentacles, wobble, golem_arm, flap.
  */
 public final class DataPartModels extends SimpleJsonResourceReloadListener {
     private static final Map<String, PartAnimator> ANIMATORS = new LinkedHashMap<>();
@@ -65,6 +67,7 @@ public final class DataPartModels extends SimpleJsonResourceReloadListener {
         ANIMATORS.put("sway", PartAnimator.SWAY);
         ANIMATORS.put("tentacles", PartAnimator.TENTACLES);
         ANIMATORS.put("wobble", PartAnimator.WOBBLE);
+        ANIMATORS.put("flap", PartAnimator.FLAP);
         ANIMATORS.put("golem_arm", PartAnimator.GOLEM_ARM);
     }
 
@@ -135,8 +138,8 @@ public final class DataPartModels extends SimpleJsonResourceReloadListener {
             }
             PartModel model;
             if (type == PartType.ARM) {
-                List<ModelPart> left = turn(group(split, p.getAsJsonObject("left"), file), turned);
-                List<ModelPart> right = turn(group(split, p.getAsJsonObject("right"), file), turned);
+                List<ModelPart> left = turn(offset(group(split, p.getAsJsonObject("left"), file), p), turned);
+                List<ModelPart> right = turn(offset(group(split, p.getAsJsonObject("right"), file), p), turned);
                 float[] l = turn(point(p, "plug_left"), turned);
                 float[] r = turn(point(p, "plug_right"), turned);
                 model = PartModel.arms(texture, left, right).plugs(l[0], l[1], l[2], r[0], r[1], r[2]);
@@ -145,7 +148,7 @@ public final class DataPartModels extends SimpleJsonResourceReloadListener {
                 for (JsonElement g : p.getAsJsonArray("groups")) {
                     parts.addAll(group(split, g.getAsJsonObject(), file));
                 }
-                turn(parts, turned);
+                turn(offset(parts, p), turned);
                 model = PartModel.of(texture, parts.toArray(ModelPart[]::new));
                 if (p.has("plug")) {
                     model.plug(turn(point(p, "plug"), turned));
@@ -319,6 +322,19 @@ public final class DataPartModels extends SimpleJsonResourceReloadListener {
                 rest[1] * net.minecraft.util.Mth.DEG_TO_RAD, rest[2] * net.minecraft.util.Mth.DEG_TO_RAD));
         root.resetPose();
         return List.of(root);
+    }
+
+    /** A part's {@code "offset"}: every one of its bones moved by it. */
+    private static List<ModelPart> offset(List<ModelPart> parts, JsonObject part) {
+        if (part.has("offset")) {
+            float[] o = point(part, "offset");
+            for (ModelPart bone : parts) {
+                PartPose pose = bone.getInitialPose();
+                bone.setInitialPose(PartPose.offsetAndRotation(pose.x + o[0], pose.y + o[1], pose.z + o[2], pose.xRot, pose.yRot, pose.zRot));
+                bone.resetPose();
+            }
+        }
+        return parts;
     }
 
     /** A model built facing another way, turned about the vertical axis through x = z = 0 (its rest pose turned). */

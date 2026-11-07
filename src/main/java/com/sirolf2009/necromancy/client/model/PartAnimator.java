@@ -164,6 +164,19 @@ public interface PartAnimator {
     };
 
     /** A slow wobble for jelly (slime parts): squashes and stretches around each part's pivot. */
+    /**
+     * Wings: a steady flap, faster while moving, each side mirrored (arms: the side comes from the arm; any other part:
+     * even parts are the left wing, odd parts the right).
+     */
+    PartAnimator FLAP = (parts, location, pose) -> {
+        float beat = Mth.sin(pose.ageInTicks() * (0.6F + pose.limbSwingAmount() * 0.6F)) * (0.35F + pose.limbSwingAmount() * 0.25F);
+        for (int i = 0; i < parts.size(); i++) {
+            boolean right = location == com.sirolf2009.necromancy.api.BodyPartLocation.ARM_RIGHT
+                    || location != com.sirolf2009.necromancy.api.BodyPartLocation.ARM_LEFT && i % 2 == 1;
+            parts.get(i).zRot += right ? beat : -beat;
+        }
+    };
+
     PartAnimator WOBBLE = (parts, location, pose) -> {
         float squash = Mth.sin(pose.ageInTicks() * 0.15F) * 0.03F + Mth.abs(Mth.sin(pose.limbSwing() * 0.6662F)) * 0.08F * pose.limbSwingAmount();
         for (ModelPart part : parts) {
