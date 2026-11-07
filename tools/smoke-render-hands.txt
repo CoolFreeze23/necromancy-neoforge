@@ -1,0 +1,91 @@
+# Held items on armour stands (scythes against a vanilla sword), and the item icons on the hotbar
+# (tools/smoke.sh tools/smoke-render-hands.txt)
+wait 20
+gamerule doMobSpawning false
+gamerule doDaylightCycle false
+time set 6000
+weather clear
+hud off
+kill @e[type=!player]
+summon armor_stand 0 -60 0 {ShowArms:1b,NoBasePlate:1b,Rotation:[0f,0f],Pose:{RightArm:[-15f,0f,0f],LeftArm:[-15f,0f,0f]},HandItems:[{id:"necromancy:blood_scythe",count:1},{id:"minecraft:diamond_sword",count:1}],ArmorItems:[{},{},{},{id:"necromancy:isaacs_head",count:1}]}
+summon armor_stand 3 -60 0 {ShowArms:1b,NoBasePlate:1b,Rotation:[0f,0f],Pose:{RightArm:[-15f,0f,0f],LeftArm:[-15f,0f,0f]},HandItems:[{id:"necromancy:bone_scythe",count:1},{id:"necromancy:sewing_machine",count:1}]}
+summon armor_stand 6 -60 0 {ShowArms:1b,NoBasePlate:1b,Rotation:[0f,0f],Pose:{RightArm:[-15f,0f,0f],LeftArm:[-15f,0f,0f]},HandItems:[{id:"necromancy:blaze_head",count:1},{id:"necromancy:night_crawler_arm",count:1}]}
+tp @s 3 -59 5 facing 3 -59 0
+wait 30
+shot stands_front
+tp @s 9 -59 0 facing 3 -59 0
+wait 20
+shot stands_side_east
+tp @s -4 -59 0 facing 3 -59 0
+wait 20
+shot stands_side_west
+tp @s 3 -60 -6 0 0
+item replace entity @s weapon.mainhand with necromancy:blood_scythe
+item replace entity @s weapon.offhand with minecraft:diamond_sword
+hud on
+wait 20
+shot first_person_blood
+item replace entity @s weapon.mainhand with necromancy:bone_scythe
+item replace entity @s weapon.offhand with air
+wait 20
+shot first_person_bone
+item replace entity @s weapon.mainhand with necromancy:snow_golem_head
+item replace entity @s weapon.offhand with necromancy:sewing_machine
+wait 20
+shot first_person_parts
+clear @s
+item replace entity @s hotbar.0 with necromancy:husk_head
+item replace entity @s hotbar.1 with necromancy:husk_torso
+item replace entity @s hotbar.2 with necromancy:husk_arm
+item replace entity @s hotbar.3 with necromancy:husk_legs
+item replace entity @s hotbar.4 with necromancy:drowned_head
+item replace entity @s hotbar.5 with necromancy:drowned_torso
+item replace entity @s hotbar.6 with necromancy:drowned_arm
+item replace entity @s hotbar.7 with necromancy:drowned_legs
+item replace entity @s hotbar.8 with necromancy:blood_scythe
+wait 10
+shot hotbar1
+item replace entity @s hotbar.0 with necromancy:bogged_head
+item replace entity @s hotbar.1 with necromancy:bogged_torso
+item replace entity @s hotbar.2 with necromancy:bogged_arm
+item replace entity @s hotbar.3 with necromancy:bogged_legs
+item replace entity @s hotbar.4 with necromancy:wither_skeleton_torso
+item replace entity @s hotbar.5 with necromancy:wither_skeleton_arm
+item replace entity @s hotbar.6 with necromancy:wither_skeleton_legs
+item replace entity @s hotbar.7 with necromancy:sewing_machine
+item replace entity @s hotbar.8 with necromancy:bone_scythe
+wait 10
+shot hotbar2
+item replace entity @s hotbar.0 with necromancy:blaze_head
+item replace entity @s hotbar.1 with necromancy:blaze_torso
+item replace entity @s hotbar.2 with necromancy:blaze_legs
+item replace entity @s hotbar.3 with necromancy:slime_head
+item replace entity @s hotbar.4 with necromancy:slime_torso
+item replace entity @s hotbar.5 with necromancy:slime_legs
+item replace entity @s hotbar.6 with necromancy:goat_head
+item replace entity @s hotbar.7 with necromancy:armadillo_head
+item replace entity @s hotbar.8 with necromancy:armadillo_torso
+wait 10
+shot hotbar3
+item replace entity @s hotbar.0 with necromancy:mooshroom_head
+item replace entity @s hotbar.1 with necromancy:mooshroom_torso
+item replace entity @s hotbar.2 with necromancy:mooshroom_arm
+item replace entity @s hotbar.3 with necromancy:mooshroom_legs
+item replace entity @s hotbar.4 with necromancy:snow_golem_head
+item replace entity @s hotbar.5 with necromancy:snow_golem_torso
+item replace entity @s hotbar.6 with necromancy:snow_golem_arm
+item replace entity @s hotbar.7 with necromancy:snow_golem_legs
+item replace entity @s hotbar.8 with necromancy:armadillo_legs
+wait 10
+shot hotbar4
+item replace entity @s hotbar.0 with necromancy:night_crawler_head
+item replace entity @s hotbar.1 with necromancy:night_crawler_torso
+item replace entity @s hotbar.2 with necromancy:night_crawler_arm
+item replace entity @s hotbar.3 with necromancy:night_crawler_legs
+item replace entity @s hotbar.4 with minecraft:zombie_head
+item replace entity @s hotbar.5 with minecraft:diamond_sword
+item replace entity @s hotbar.6 with necromancy:isaacs_head
+item replace entity @s hotbar.7 with air
+item replace entity @s hotbar.8 with air
+wait 10
+shot hotbar5

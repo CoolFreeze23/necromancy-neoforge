@@ -1,0 +1,41 @@
+# Summoning Altar and Sewing Machine renderers, close up (tools/smoke.sh tools/smoke-render-altar.txt)
+wait 20
+gamerule doMobSpawning false
+gamerule doDaylightCycle false
+time set 18000
+effect give @s minecraft:night_vision infinite 0 true
+weather clear
+hud off
+kill @e[type=!player]
+# altar facing east: pedestal at x=0, table over x=1 and x=2
+setblock 0 -60 0 necromancy:summoning_altar[facing=east]{Items:[{Slot:2b,id:"minecraft:zombie_head",count:1},{Slot:3b,id:"necromancy:zombie_torso",count:1},{Slot:4b,id:"necromancy:zombie_legs",count:1},{Slot:5b,id:"necromancy:skeleton_arm",count:1},{Slot:6b,id:"necromancy:zombie_arm",count:1}]}
+setblock 1 -60 0 necromancy:altar_side[facing=east,distance=1]
+setblock 2 -60 0 necromancy:altar_side[facing=east,distance=2]
+# altar facing north with a cow-chicken-wolf body: pedestal at z=-6, table over z=-7 and z=-8
+setblock 8 -60 -6 necromancy:summoning_altar[facing=north]{Items:[{Slot:2b,id:"necromancy:wolf_head",count:1},{Slot:3b,id:"necromancy:cow_torso",count:1},{Slot:4b,id:"necromancy:chicken_legs",count:1},{Slot:5b,id:"necromancy:cow_arm",count:1},{Slot:6b,id:"necromancy:villager_arm",count:1}]}
+setblock 8 -60 -7 necromancy:altar_side[facing=north,distance=1]
+setblock 8 -60 -8 necromancy:altar_side[facing=north,distance=2]
+# an empty altar facing west
+setblock -6 -60 0 necromancy:summoning_altar[facing=west]
+setblock -7 -60 0 necromancy:altar_side[facing=west,distance=1]
+setblock -8 -60 0 necromancy:altar_side[facing=west,distance=2]
+setblock 0 -60 6 necromancy:sewing_machine[facing=south]
+setblock 2 -60 6 necromancy:sewing_machine[facing=east]
+tp @s 1 -57.5 3.5 facing 1 -59 0.5
+wait 40
+shot altar_east_side
+tp @s -1.5 -57.5 -2.5 facing 1.2 -59 0.5
+wait 20
+shot altar_east_back
+tp @s 4.5 -57 0.5 facing 0.5 -59 0.5
+wait 20
+shot altar_east_foot
+tp @s 11 -57.5 -7 facing 8.5 -59 -7
+wait 20
+shot altar_north_side
+tp @s -7 -57.5 3 facing -7 -59.5 0.5
+wait 20
+shot altar_west_empty
+tp @s 1 -59 8.5 facing 1 -60 6.5
+wait 20
+shot sewing_close

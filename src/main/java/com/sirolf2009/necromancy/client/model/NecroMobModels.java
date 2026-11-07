@@ -66,5 +66,29 @@ public final class NecroMobModels {
             parts.put(type, model);
             return this;
         }
+
+        /** A part put earlier (to add layers to a part made by a shared body plan). */
+        @Nullable
+        public PartModel get(PartType type) {
+            return parts.get(type);
+        }
+
+        /** Adds a layer to every part put so far. */
+        public Builder layer(PartLayer layer) {
+            parts.values().forEach(part -> part.layer(layer));
+            return this;
+        }
+
+        /** Draws every part put so far bigger or smaller. */
+        public Builder scale(float scale) {
+            parts.values().forEach(part -> part.scale(scale));
+            return this;
+        }
+
+        /** Every part put so far lit like a light source. */
+        public Builder fullBright() {
+            parts.values().forEach(PartModel::fullBright);
+            return this;
+        }
     }
 }
