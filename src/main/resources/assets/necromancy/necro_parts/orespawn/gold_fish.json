@@ -1,0 +1,28 @@
+{
+  "mob": "orespawn:gold_fish",
+  "requires": "orespawn",
+  "geo": "orespawn:geo/entity/goldfish.geo.json",
+  "texture": "orespawn:textures/entity/goldfish.png",
+  "scale": 1.0,
+  "head": {
+    "groups": [
+      {
+        "bones": ["Head", "Jaw", "Mouth"],
+        "pivot": [0.0, 14.0, -5.0]
+      }
+    ],
+    "plug": [0.0, 14.0, -5.0],
+    "animator": "look"
+  },
+  "torso": {
+    "groups": [
+      {
+        "bones": ["Body", "Bottomfin", "Bottomfin1", "Bottomfin2", "Caudalfin1", "Caudalfin2", "Dorsalfin", "Pectoralfin1", "Pectoralfin2", "Pectoralfin3", "Pectoralfin4", "Tail1", "Tail2"]
+      }
+    ],
+    "plug": [0.0, 16.0, 0.0],
+    "neck": [0.0, 14.0, -5.0],
+    "shoulder_left": [2.0, 14.0, -3.0],
+    "shoulder_right": [-2.0, 14.0, -3.0]
+  }
+}

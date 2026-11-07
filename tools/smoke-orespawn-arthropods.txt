@@ -1,0 +1,871 @@
+# OreSpawn arthropods, sea creatures and robots as Minion parts: each Minion next to its creature, then mixed with zombie parts
+wait 20
+difficulty easy
+gamerule doMobSpawning false
+gamerule doDaylightCycle false
+time set 6000
+weather clear
+gamerule doWeatherCycle false
+hud off
+kill @e[type=!player]
+tp @s 0 -50 0 180 10
+wait 20
+summon orespawn:emperor_scorpion 11.97 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+fill -1 -40 -1 1 -40 1 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 0.00 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:emperor_scorpion",torso:"orespawn:emperor_scorpion",arm_left:"orespawn:emperor_scorpion",arm_right:"orespawn:emperor_scorpion",legs:"orespawn:emperor_scorpion"}}
+fill -1 -40 -81 1 -40 -79 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 0.00 -60 -80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:emperor_scorpion",torso:"orespawn:emperor_scorpion",arm_left:"orespawn:emperor_scorpion",arm_right:"orespawn:emperor_scorpion",legs:"orespawn:emperor_scorpion"}}
+fill -8 -40 79 -6 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion -6.74 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:emperor_scorpion",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+fill -3 -40 79 -1 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion -2.25 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:emperor_scorpion",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+fill 1 -40 79 3 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 2.25 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:emperor_scorpion"}}
+fill 6 -40 79 8 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 6.74 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:emperor_scorpion",arm_right:"orespawn:emperor_scorpion",legs:"necromancy:zombie"}}
+tp @s 0 -58.59 4.31 180 8
+wait 40
+shot emperor_scorpion_front
+hitboxes on
+tp @s -0.41 -58.46 -75.26 180 8
+wait 25
+shot emperor_scorpion_side
+hitboxes off
+tp @s 8.45 -57.11 91.26 143 12
+wait 30
+shot emperor_scorpion_mix
+tp @s 11.97 -57.14 7.16 180 8
+wait 25
+shot emperor_scorpion_real
+tp @s 80 -50 0 180 10
+wait 20
+summon orespawn:scorpion 87.36 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+fill 79 -40 -1 81 -40 1 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 80.00 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:scorpion",torso:"orespawn:scorpion",arm_left:"orespawn:scorpion",arm_right:"orespawn:scorpion",legs:"orespawn:scorpion"}}
+fill 79 -40 -81 81 -40 -79 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 80.00 -60 -80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:scorpion",torso:"orespawn:scorpion",arm_left:"orespawn:scorpion",arm_right:"orespawn:scorpion",legs:"orespawn:scorpion"}}
+fill 75 -40 79 77 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 76.17 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:scorpion",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+fill 78 -40 79 80 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 78.72 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:scorpion",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+fill 80 -40 79 82 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 81.28 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:scorpion"}}
+fill 83 -40 79 85 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 83.83 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:scorpion",arm_right:"orespawn:scorpion",legs:"necromancy:zombie"}}
+tp @s 80 -59.02 3.08 180 8
+wait 40
+shot scorpion_front
+hitboxes on
+tp @s 79.92 -59.02 -77.00 180 8
+wait 25
+shot scorpion_side
+hitboxes off
+tp @s 85.18 -57.76 86.91 143 12
+wait 30
+shot scorpion_mix
+tp @s 87.36 -59.28 2.65 180 8
+wait 25
+shot scorpion_real
+tp @s 160 -50 0 180 10
+wait 20
+summon orespawn:hercules_beetle 172.41 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+fill 159 -40 -1 161 -40 1 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 160.00 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:hercules_beetle",torso:"orespawn:hercules_beetle",arm_left:"orespawn:hercules_beetle",arm_right:"orespawn:hercules_beetle",legs:"orespawn:hercules_beetle"}}
+fill 159 -40 -81 161 -40 -79 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 160.00 -60 -80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:hercules_beetle",torso:"orespawn:hercules_beetle",arm_left:"orespawn:hercules_beetle",arm_right:"orespawn:hercules_beetle",legs:"orespawn:hercules_beetle"}}
+fill 150 -40 79 152 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 151.00 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:hercules_beetle",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+fill 156 -40 79 158 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 157.00 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:hercules_beetle",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+fill 162 -40 79 164 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 163.00 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:hercules_beetle"}}
+fill 168 -40 79 170 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 169.00 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:hercules_beetle",arm_right:"orespawn:hercules_beetle",legs:"necromancy:zombie"}}
+tp @s 160 -58.35 6.79 180 8
+wait 40
+shot hercules_beetle_front
+hitboxes on
+tp @s 158.63 -58.13 -73.06 180 8
+wait 25
+shot hercules_beetle_side
+hitboxes off
+tp @s 170.98 -56.60 94.64 143 12
+wait 30
+shot hercules_beetle_mix
+tp @s 172.41 -58.31 6.03 180 8
+wait 25
+shot hercules_beetle_real
+tp @s 240 -50 0 180 10
+wait 20
+summon orespawn:mantis 250.18 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+fill 239 -40 -1 241 -40 1 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 240.00 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:mantis",torso:"orespawn:mantis",arm_left:"orespawn:mantis",arm_right:"orespawn:mantis",legs:"orespawn:mantis"}}
+fill 239 -40 -81 241 -40 -79 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 240.00 -60 -80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:mantis",torso:"orespawn:mantis",arm_left:"orespawn:mantis",arm_right:"orespawn:mantis",legs:"orespawn:mantis"}}
+fill 234 -40 79 236 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 234.75 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:mantis",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+fill 237 -40 79 239 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 238.25 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:mantis",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+fill 241 -40 79 243 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 241.75 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:mantis"}}
+fill 244 -40 79 246 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 245.25 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:mantis",arm_right:"orespawn:mantis",legs:"necromancy:zombie"}}
+tp @s 240 -58.45 3.66 180 8
+wait 40
+shot mantis_front
+hitboxes on
+tp @s 240.19 -58.48 -76.30 180 8
+wait 25
+shot mantis_side
+hitboxes off
+tp @s 246.78 -57.44 89.05 143 12
+wait 30
+shot mantis_mix
+tp @s 250.18 -56.91 6.87 180 8
+wait 25
+shot mantis_real
+tp @s 320 -50 0 180 10
+wait 20
+summon orespawn:spit_bug 328.53 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+fill 319 -40 -1 321 -40 1 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 320.00 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:spit_bug",torso:"orespawn:spit_bug",arm_left:"orespawn:spit_bug",arm_right:"orespawn:spit_bug",legs:"orespawn:spit_bug"}}
+fill 319 -40 -81 321 -40 -79 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 320.00 -60 -80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:spit_bug",torso:"orespawn:spit_bug",arm_left:"orespawn:spit_bug",arm_right:"orespawn:spit_bug",legs:"orespawn:spit_bug"}}
+fill 314 -40 79 316 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 315.07 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:spit_bug",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+fill 317 -40 79 319 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 318.36 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:spit_bug",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+fill 321 -40 79 323 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 321.64 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:spit_bug"}}
+fill 324 -40 79 326 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 324.93 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:spit_bug",arm_right:"orespawn:spit_bug",legs:"necromancy:zombie"}}
+tp @s 320 -58.60 3.51 180 8
+wait 40
+shot spit_bug_front
+hitboxes on
+tp @s 319.99 -58.58 -76.34 180 8
+wait 25
+shot spit_bug_side
+hitboxes off
+tp @s 326.42 -57.52 88.56 143 12
+wait 30
+shot spit_bug_mix
+tp @s 328.53 -58.48 3.90 180 8
+wait 25
+shot spit_bug_real
+tp @s 400 -50 0 180 10
+wait 20
+summon orespawn:trooper_bug 410.94 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+fill 399 -40 -1 401 -40 1 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 400.00 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:trooper_bug",torso:"orespawn:trooper_bug",arm_left:"orespawn:trooper_bug",arm_right:"orespawn:trooper_bug",legs:"orespawn:trooper_bug"}}
+fill 399 -40 -81 401 -40 -79 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 400.00 -60 -80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:trooper_bug",torso:"orespawn:trooper_bug",arm_left:"orespawn:trooper_bug",arm_right:"orespawn:trooper_bug",legs:"orespawn:trooper_bug"}}
+fill 392 -40 79 394 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 393.50 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:trooper_bug",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+fill 397 -40 79 399 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 397.83 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:trooper_bug",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+fill 401 -40 79 403 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 402.17 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:trooper_bug"}}
+fill 406 -40 79 408 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 406.50 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:trooper_bug",arm_right:"orespawn:trooper_bug",legs:"necromancy:zombie"}}
+tp @s 400 -58.28 4.49 180 8
+wait 40
+shot trooper_bug_front
+hitboxes on
+tp @s 399.86 -58.24 -75.40 180 8
+wait 25
+shot trooper_bug_side
+hitboxes off
+tp @s 408.18 -57.16 90.91 143 12
+wait 30
+shot trooper_bug_mix
+tp @s 410.94 -57.06 7.00 180 8
+wait 25
+shot trooper_bug_real
+tp @s 480 -50 0 180 10
+wait 20
+summon orespawn:bee 488.44 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+fill 479 -40 -1 481 -40 1 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 480.00 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:bee",torso:"orespawn:bee",arm_left:"orespawn:bee",arm_right:"orespawn:bee",legs:"orespawn:bee"}}
+fill 479 -40 -81 481 -40 -79 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 480.00 -60 -80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:bee",torso:"orespawn:bee",arm_left:"orespawn:bee",arm_right:"orespawn:bee",legs:"orespawn:bee"}}
+fill 475 -40 79 477 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 476.34 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:bee",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+fill 478 -40 79 480 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 478.78 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:bee",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+fill 480 -40 79 482 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 481.22 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:bee"}}
+fill 483 -40 79 485 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 483.66 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:bee",arm_right:"orespawn:bee",legs:"necromancy:zombie"}}
+tp @s 480 -58.66 3.67 180 8
+wait 40
+shot bee_front
+hitboxes on
+tp @s 479.50 -58.66 -76.84 180 8
+wait 25
+shot bee_side
+hitboxes off
+tp @s 485.00 -57.80 86.66 143 12
+wait 30
+shot bee_mix
+tp @s 488.44 -57.28 5.34 180 8
+wait 25
+shot bee_real
+tp @s 560 -50 0 180 10
+wait 20
+summon orespawn:brutalfly 572.88 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+fill 559 -40 -1 561 -40 1 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 560.00 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:brutalfly",torso:"orespawn:brutalfly",arm_left:"orespawn:brutalfly",arm_right:"orespawn:brutalfly"}}
+fill 559 -40 -81 561 -40 -79 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 560.00 -60 -80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:brutalfly",torso:"orespawn:brutalfly",arm_left:"orespawn:brutalfly",arm_right:"orespawn:brutalfly"}}
+fill 556 -40 79 558 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 556.50 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:brutalfly",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+fill 559 -40 79 561 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 560.00 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:brutalfly",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+fill 562 -40 79 564 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 563.50 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:brutalfly",arm_right:"orespawn:brutalfly",legs:"necromancy:zombie"}}
+tp @s 560 -58.63 3.36 180 8
+wait 40
+shot brutalfly_front
+hitboxes on
+tp @s 560.38 -58.61 -76.15 180 8
+wait 25
+shot brutalfly_side
+hitboxes off
+tp @s 565.31 -57.74 87.08 143 12
+wait 30
+shot brutalfly_mix
+tp @s 572.88 -56.69 11.22 180 8
+wait 25
+shot brutalfly_real
+tp @s 640 -50 0 180 10
+wait 20
+summon orespawn:cater_killer 651.91 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+fill 639 -40 -1 641 -40 1 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 640.00 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:cater_killer",torso:"orespawn:cater_killer"}}
+fill 639 -40 -81 641 -40 -79 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 640.00 -60 -80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:cater_killer",torso:"orespawn:cater_killer"}}
+fill 637 -40 79 639 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 638.36 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:cater_killer",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+fill 641 -40 79 643 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 641.64 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:cater_killer",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+tp @s 640 -58.44 3.28 180 8
+wait 40
+shot cater_killer_front
+hitboxes on
+tp @s 640.20 -58.41 -76.34 180 8
+wait 25
+shot cater_killer_side
+hitboxes off
+tp @s 643.66 -58.07 84.88 143 12
+wait 30
+shot cater_killer_mix
+tp @s 651.91 -56.17 8.72 180 8
+wait 25
+shot cater_killer_real
+tp @s 720 -50 0 180 10
+wait 20
+summon orespawn:creeping_horror 728.24 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+fill 719 -40 -1 721 -40 1 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 720.00 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:creeping_horror",torso:"orespawn:creeping_horror",arm_left:"orespawn:creeping_horror",arm_right:"orespawn:creeping_horror",legs:"orespawn:creeping_horror"}}
+fill 719 -40 -81 721 -40 -79 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 720.00 -60 -80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:creeping_horror",torso:"orespawn:creeping_horror",arm_left:"orespawn:creeping_horror",arm_right:"orespawn:creeping_horror",legs:"orespawn:creeping_horror"}}
+fill 713 -40 79 715 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 714.17 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:creeping_horror",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+fill 717 -40 79 719 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 718.06 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:creeping_horror",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+fill 721 -40 79 723 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 721.94 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:creeping_horror"}}
+fill 725 -40 79 727 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 725.83 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:creeping_horror",arm_right:"orespawn:creeping_horror",legs:"necromancy:zombie"}}
+tp @s 720 -58.85 3.78 180 8
+wait 40
+shot creeping_horror_front
+hitboxes on
+tp @s 720.42 -58.88 -75.98 180 8
+wait 25
+shot creeping_horror_side
+hitboxes off
+tp @s 727.43 -57.31 89.90 143 12
+wait 30
+shot creeping_horror_mix
+tp @s 728.24 -59.35 3.04 180 8
+wait 25
+shot creeping_horror_real
+tp @s 800 -50 0 180 10
+wait 20
+summon orespawn:lurking_terror 808.92 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+fill 799 -40 -1 801 -40 1 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 800.00 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:lurking_terror",torso:"orespawn:lurking_terror",arm_left:"orespawn:lurking_terror",arm_right:"orespawn:lurking_terror",legs:"orespawn:lurking_terror"}}
+fill 799 -40 -81 801 -40 -79 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 800.00 -60 -80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:lurking_terror",torso:"orespawn:lurking_terror",arm_left:"orespawn:lurking_terror",arm_right:"orespawn:lurking_terror",legs:"orespawn:lurking_terror"}}
+fill 794 -40 79 796 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 794.52 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:lurking_terror",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+fill 797 -40 79 799 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 798.17 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:lurking_terror",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+fill 801 -40 79 803 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 801.83 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:lurking_terror"}}
+fill 804 -40 79 806 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 805.48 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:lurking_terror",arm_right:"orespawn:lurking_terror",legs:"necromancy:zombie"}}
+tp @s 800 -58.86 2.85 180 8
+wait 40
+shot lurking_terror_front
+hitboxes on
+tp @s 800.27 -58.73 -76.01 180 8
+wait 25
+shot lurking_terror_side
+hitboxes off
+tp @s 807.04 -57.39 89.38 143 12
+wait 30
+shot lurking_terror_mix
+tp @s 808.92 -58.79 3.42 180 8
+wait 25
+shot lurking_terror_real
+tp @s 880 -50 0 180 10
+wait 20
+summon orespawn:cave_fisher 888.52 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+fill 879 -40 -1 881 -40 1 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 880.00 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:cave_fisher",torso:"orespawn:cave_fisher",arm_left:"orespawn:cave_fisher",arm_right:"orespawn:cave_fisher",legs:"orespawn:cave_fisher"}}
+fill 879 -40 -81 881 -40 -79 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 880.00 -60 -80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:cave_fisher",torso:"orespawn:cave_fisher",arm_left:"orespawn:cave_fisher",arm_right:"orespawn:cave_fisher",legs:"orespawn:cave_fisher"}}
+fill 872 -40 79 874 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 873.36 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:cave_fisher",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+fill 877 -40 79 879 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 877.78 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:cave_fisher",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+fill 881 -40 79 883 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 882.22 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:cave_fisher"}}
+fill 886 -40 79 888 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 886.64 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:cave_fisher",arm_right:"orespawn:cave_fisher",legs:"necromancy:zombie"}}
+tp @s 880 -58.85 3.98 180 8
+wait 40
+shot cave_fisher_front
+hitboxes on
+tp @s 879.78 -58.71 -75.31 180 8
+wait 25
+shot cave_fisher_side
+hitboxes off
+tp @s 888.34 -57.13 91.12 143 12
+wait 30
+shot cave_fisher_mix
+tp @s 888.52 -59.41 2.61 180 8
+wait 25
+shot cave_fisher_real
+tp @s 960 -50 0 180 10
+wait 20
+summon orespawn:irukandji 966.07 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+fill 959 -40 -1 961 -40 1 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 960.00 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:irukandji"}}
+fill 959 -40 -81 961 -40 -79 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 960.00 -60 -80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:irukandji"}}
+fill 959 -40 79 961 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 960.00 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:irukandji",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+tp @s 960 -59.07 2.58 180 8
+wait 40
+shot irukandji_front
+hitboxes on
+tp @s 960.00 -59.07 -77.42 180 8
+wait 25
+shot irukandji_side
+hitboxes off
+tp @s 962.70 -58.26 83.60 143 12
+wait 30
+shot irukandji_mix
+tp @s 966.07 -59.64 1.85 180 8
+wait 25
+shot irukandji_real
+tp @s 1040 -50 0 180 10
+wait 20
+summon orespawn:urchin 1047.44 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+fill 1039 -40 -1 1041 -40 1 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 1040.00 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:urchin"}}
+fill 1039 -40 -81 1041 -40 -79 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 1040.00 -60 -80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:urchin"}}
+fill 1039 -40 79 1041 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 1040.00 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:urchin",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+tp @s 1040 -58.38 3.54 180 8
+wait 40
+shot urchin_front
+hitboxes on
+tp @s 1040.02 -58.38 -76.44 180 8
+wait 25
+shot urchin_side
+hitboxes off
+tp @s 1042.70 -58.26 83.60 143 12
+wait 30
+shot urchin_mix
+tp @s 1047.44 -58.00 4.27 180 8
+wait 25
+shot urchin_real
+tp @s 1120 -50 0 180 10
+wait 20
+summon orespawn:sea_monster 1131.07 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+fill 1119 -40 -1 1121 -40 1 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 1120.00 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:sea_monster",torso:"orespawn:sea_monster"}}
+fill 1119 -40 -81 1121 -40 -79 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 1120.00 -60 -80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:sea_monster",torso:"orespawn:sea_monster"}}
+fill 1117 -40 79 1119 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 1118.03 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:sea_monster",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+fill 1121 -40 79 1123 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 1121.97 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:sea_monster",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+tp @s 1120 -58.42 3.02 180 8
+wait 40
+shot sea_monster_front
+hitboxes on
+tp @s 1120.47 -58.31 -75.75 180 8
+wait 25
+shot sea_monster_side
+hitboxes off
+tp @s 1124.22 -57.96 85.62 143 12
+wait 30
+shot sea_monster_mix
+tp @s 1131.07 -57.79 4.58 180 8
+wait 25
+shot sea_monster_real
+tp @s 1200 -50 0 180 10
+wait 20
+summon orespawn:sea_viper 1216.90 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+fill 1199 -40 -1 1201 -40 1 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 1200.00 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:sea_viper",torso:"orespawn:sea_viper"}}
+fill 1199 -40 -81 1201 -40 -79 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 1200.00 -60 -80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:sea_viper",torso:"orespawn:sea_viper"}}
+fill 1196 -40 79 1198 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 1197.00 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:sea_viper",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+fill 1202 -40 79 1204 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 1203.00 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:sea_viper",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+tp @s 1200 -58.43 0.12 180 8
+wait 40
+shot sea_viper_front
+hitboxes on
+tp @s 1203.37 -57.38 -69.50 180 8
+wait 25
+shot sea_viper_side
+hitboxes off
+tp @s 1205.94 -57.61 87.92 143 12
+wait 30
+shot sea_viper_mix
+tp @s 1216.90 -58.82 3.06 180 8
+wait 25
+shot sea_viper_real
+tp @s 1280 -50 0 180 10
+wait 20
+summon orespawn:attack_squid 1287.61 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+fill 1279 -40 -1 1281 -40 1 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 1280.00 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:attack_squid",torso:"orespawn:attack_squid",legs:"orespawn:attack_squid"}}
+fill 1279 -40 -81 1281 -40 -79 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 1280.00 -60 -80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:attack_squid",torso:"orespawn:attack_squid",legs:"orespawn:attack_squid"}}
+fill 1276 -40 79 1278 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 1277.04 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:attack_squid",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+fill 1279 -40 79 1281 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 1280.00 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:attack_squid",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+fill 1282 -40 79 1284 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 1282.96 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:attack_squid"}}
+tp @s 1280 -58.69 3.52 180 8
+wait 40
+shot attack_squid_front
+hitboxes on
+tp @s 1279.82 -58.68 -76.64 180 8
+wait 25
+shot attack_squid_side
+hitboxes off
+tp @s 1284.63 -57.87 86.17 143 12
+wait 30
+shot attack_squid_mix
+tp @s 1287.61 -59.15 2.71 180 8
+wait 25
+shot attack_squid_real
+tp @s 1360 -50 0 180 10
+wait 20
+summon orespawn:crab 1372.44 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Fscale:1.0f}
+fill 1359 -40 -1 1361 -40 1 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 1360.00 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:crab",torso:"orespawn:crab",arm_left:"orespawn:crab",arm_right:"orespawn:crab",legs:"orespawn:crab"}}
+fill 1359 -40 -81 1361 -40 -79 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 1360.00 -60 -80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:crab",torso:"orespawn:crab",arm_left:"orespawn:crab",arm_right:"orespawn:crab",legs:"orespawn:crab"}}
+fill 1351 -40 79 1353 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 1352.06 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:crab",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+fill 1356 -40 79 1358 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 1357.35 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:crab",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+fill 1362 -40 79 1364 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 1362.65 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:crab"}}
+fill 1367 -40 79 1369 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 1367.94 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:crab",arm_right:"orespawn:crab",legs:"necromancy:zombie"}}
+tp @s 1360 -58.46 5.63 180 8
+wait 40
+shot crab_front
+hitboxes on
+tp @s 1359.84 -58.58 -75.30 180 8
+wait 25
+shot crab_side
+hitboxes off
+tp @s 1369.79 -56.84 93.06 143 12
+wait 30
+shot crab_mix
+tp @s 1372.44 -57.45 9.33 180 8
+wait 25
+shot crab_real
+tp @s 1440 -50 0 180 10
+wait 20
+summon orespawn:skate 1447.11 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+fill 1439 -40 -1 1441 -40 1 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 1440.00 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:skate",torso:"orespawn:skate"}}
+fill 1439 -40 -81 1441 -40 -79 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 1440.00 -60 -80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:skate",torso:"orespawn:skate"}}
+fill 1438 -40 79 1440 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 1438.80 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:skate",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+fill 1440 -40 79 1442 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 1441.20 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:skate",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+tp @s 1440 -59.06 2.23 180 8
+wait 40
+shot skate_front
+hitboxes on
+tp @s 1440.37 -59.02 -77.17 180 8
+wait 25
+shot skate_side
+hitboxes off
+tp @s 1442.92 -58.22 83.89 143 12
+wait 30
+shot skate_mix
+tp @s 1447.11 -59.65 1.95 180 8
+wait 25
+shot skate_real
+tp @s 1520 -50 0 180 10
+wait 20
+summon orespawn:flounder 1527.07 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+fill 1519 -40 -1 1521 -40 1 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 1520.00 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:flounder",torso:"orespawn:flounder"}}
+fill 1519 -40 -81 1521 -40 -79 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 1520.00 -60 -80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:flounder",torso:"orespawn:flounder"}}
+fill 1518 -40 79 1520 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 1518.80 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:flounder",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+fill 1520 -40 79 1522 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 1521.20 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:flounder",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+tp @s 1520 -59.12 2.38 180 8
+wait 40
+shot flounder_front
+hitboxes on
+tp @s 1520.12 -59.12 -77.50 180 8
+wait 25
+shot flounder_side
+hitboxes off
+tp @s 1522.92 -58.22 83.89 143 12
+wait 30
+shot flounder_mix
+tp @s 1527.07 -59.65 2.39 180 8
+wait 25
+shot flounder_real
+tp @s 1600 -50 0 180 10
+wait 20
+summon orespawn:gold_fish 1607.79 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+fill 1599 -40 -1 1601 -40 1 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 1600.00 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:gold_fish",torso:"orespawn:gold_fish"}}
+fill 1599 -40 -81 1601 -40 -79 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 1600.00 -60 -80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:gold_fish",torso:"orespawn:gold_fish"}}
+fill 1598 -40 79 1600 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 1598.61 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:gold_fish",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+fill 1600 -40 79 1602 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 1601.39 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:gold_fish",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+tp @s 1600 -58.65 2.94 180 8
+wait 40
+shot gold_fish_front
+hitboxes on
+tp @s 1600.24 -58.64 -76.79 180 8
+wait 25
+shot gold_fish_side
+hitboxes off
+tp @s 1603.24 -58.15 84.32 143 12
+wait 30
+shot gold_fish_mix
+tp @s 1607.79 -59.20 2.50 180 8
+wait 25
+shot gold_fish_real
+tp @s 1680 -50 0 180 10
+wait 20
+summon orespawn:cloud_shark 1688.21 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+fill 1679 -40 -1 1681 -40 1 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 1680.00 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:cloud_shark",torso:"orespawn:cloud_shark"}}
+fill 1679 -40 -81 1681 -40 -79 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 1680.00 -60 -80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:cloud_shark",torso:"orespawn:cloud_shark"}}
+fill 1677 -40 79 1679 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 1678.48 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:cloud_shark",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+fill 1681 -40 79 1683 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 1681.52 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:cloud_shark",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+tp @s 1680 -58.68 2.54 180 8
+wait 40
+shot cloud_shark_front
+hitboxes on
+tp @s 1680.59 -58.63 -76.56 180 8
+wait 25
+shot cloud_shark_side
+hitboxes off
+tp @s 1683.46 -58.11 84.61 143 12
+wait 30
+shot cloud_shark_mix
+tp @s 1688.21 -59.12 2.69 180 8
+wait 25
+shot cloud_shark_real
+tp @s 1760 -50 0 180 10
+wait 20
+summon orespawn:robot_1 1766.64 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+fill 1759 -40 -1 1761 -40 1 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 1760.00 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:robot_1",legs:"orespawn:robot_1"}}
+fill 1759 -40 -81 1761 -40 -79 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 1760.00 -60 -80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:robot_1",legs:"orespawn:robot_1"}}
+fill 1758 -40 79 1760 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 1758.80 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:robot_1",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+fill 1760 -40 79 1762 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 1761.20 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:robot_1"}}
+tp @s 1760 -59.12 2.41 180 8
+wait 40
+shot robot_1_front
+hitboxes on
+tp @s 1760.09 -59.12 -77.50 180 8
+wait 25
+shot robot_1_side
+hitboxes off
+tp @s 1762.92 -58.22 83.89 143 12
+wait 30
+shot robot_1_mix
+tp @s 1766.64 -59.23 2.46 180 8
+wait 25
+shot robot_1_real
+tp @s 1840 -50 0 180 10
+wait 20
+summon orespawn:robot_2 1849.25 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+fill 1839 -40 -1 1841 -40 1 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 1840.00 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:robot_2",torso:"orespawn:robot_2",arm_left:"orespawn:robot_2",arm_right:"orespawn:robot_2",legs:"orespawn:robot_2"}}
+fill 1839 -40 -81 1841 -40 -79 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 1840.00 -60 -80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:robot_2",torso:"orespawn:robot_2",arm_left:"orespawn:robot_2",arm_right:"orespawn:robot_2",legs:"orespawn:robot_2"}}
+fill 1835 -40 79 1837 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 1835.86 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:robot_2",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+fill 1838 -40 79 1840 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 1838.62 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:robot_2",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+fill 1840 -40 79 1842 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 1841.38 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:robot_2"}}
+fill 1843 -40 79 1845 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 1844.14 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:robot_2",arm_right:"orespawn:robot_2",legs:"necromancy:zombie"}}
+tp @s 1840 -58.26 3.69 180 8
+wait 40
+shot robot_2_front
+hitboxes on
+tp @s 1840.03 -58.26 -76.28 180 8
+wait 25
+shot robot_2_side
+hitboxes off
+tp @s 1845.53 -57.69 87.38 143 12
+wait 30
+shot robot_2_mix
+tp @s 1849.25 -55.93 7.34 180 8
+wait 25
+shot robot_2_real
+tp @s 1920 -50 0 180 10
+wait 20
+summon orespawn:robot_3 1927.98 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+fill 1919 -40 -1 1921 -40 1 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 1920.00 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:robot_3",torso:"orespawn:robot_3",arm_left:"orespawn:robot_3",arm_right:"orespawn:robot_3",legs:"orespawn:robot_3"}}
+fill 1919 -40 -81 1921 -40 -79 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 1920.00 -60 -80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:robot_3",torso:"orespawn:robot_3",arm_left:"orespawn:robot_3",arm_right:"orespawn:robot_3",legs:"orespawn:robot_3"}}
+fill 1915 -40 79 1917 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 1916.40 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:robot_3",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+fill 1918 -40 79 1920 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 1918.80 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:robot_3",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+fill 1920 -40 79 1922 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 1921.20 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:robot_3"}}
+fill 1923 -40 79 1925 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 1923.60 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:robot_3",arm_right:"orespawn:robot_3",legs:"necromancy:zombie"}}
+tp @s 1920 -58.45 3.43 180 8
+wait 40
+shot robot_3_front
+hitboxes on
+tp @s 1920.02 -58.45 -76.54 180 8
+wait 25
+shot robot_3_side
+hitboxes off
+tp @s 1924.93 -57.81 86.58 143 12
+wait 30
+shot robot_3_mix
+tp @s 1927.98 -57.08 5.64 180 8
+wait 25
+shot robot_3_real
+tp @s 2000 -50 0 180 10
+wait 20
+summon orespawn:robot_4 2007.95 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+fill 1999 -40 -1 2001 -40 1 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 2000.00 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:robot_4",torso:"orespawn:robot_4",arm_left:"orespawn:robot_4",arm_right:"orespawn:robot_4",legs:"orespawn:robot_4"}}
+fill 1999 -40 -81 2001 -40 -79 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 2000.00 -60 -80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:robot_4",torso:"orespawn:robot_4",arm_left:"orespawn:robot_4",arm_right:"orespawn:robot_4",legs:"orespawn:robot_4"}}
+fill 1995 -40 79 1997 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 1996.40 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:robot_4",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+fill 1998 -40 79 2000 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 1998.80 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:robot_4",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+fill 2000 -40 79 2002 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 2001.20 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:robot_4"}}
+fill 2003 -40 79 2005 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 2003.60 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:robot_4",arm_right:"orespawn:robot_4",legs:"necromancy:zombie"}}
+tp @s 2000 -58.45 3.36 180 8
+wait 40
+shot robot_4_front
+hitboxes on
+tp @s 2000.10 -58.45 -76.54 180 8
+wait 25
+shot robot_4_side
+hitboxes off
+tp @s 2004.93 -57.81 86.58 143 12
+wait 30
+shot robot_4_mix
+tp @s 2007.95 -57.57 4.92 180 8
+wait 25
+shot robot_4_real
+tp @s 2080 -50 0 180 10
+wait 20
+summon orespawn:robot_5 2087.37 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+fill 2079 -40 -1 2081 -40 1 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 2080.00 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:robot_5",legs:"orespawn:robot_5"}}
+fill 2079 -40 -81 2081 -40 -79 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 2080.00 -60 -80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:robot_5",legs:"orespawn:robot_5"}}
+fill 2078 -40 79 2080 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 2078.80 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:robot_5",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+fill 2080 -40 79 2082 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 2081.20 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:robot_5"}}
+tp @s 2080 -59.12 2.72 180 8
+wait 40
+shot robot_5_front
+hitboxes on
+tp @s 2079.79 -59.12 -77.46 180 8
+wait 25
+shot robot_5_side
+hitboxes off
+tp @s 2082.92 -58.22 83.89 143 12
+wait 30
+shot robot_5_mix
+tp @s 2087.37 -58.82 3.06 180 8
+wait 25
+shot robot_5_real
+tp @s 2160 -50 0 180 10
+wait 20
+summon orespawn:giant_robot 2168.78 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+fill 2159 -40 -1 2161 -40 1 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 2160.00 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:giant_robot",torso:"necromancy:zombie",arm_left:"orespawn:giant_robot",arm_right:"orespawn:giant_robot",legs:"necromancy:zombie"}}
+fill 2159 -40 -81 2161 -40 -79 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 2160.00 -60 -80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:giant_robot",torso:"necromancy:zombie",arm_left:"orespawn:giant_robot",arm_right:"orespawn:giant_robot",legs:"necromancy:zombie"}}
+fill 2158 -40 79 2160 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 2158.78 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:giant_robot",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+fill 2160 -40 79 2162 -40 81 minecraft:oak_leaves[persistent=true]
+summon necromancy:minion 2161.22 -60 80.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:giant_robot",arm_right:"orespawn:giant_robot",legs:"necromancy:zombie"}}
+tp @s 2160 -56.98 5.61 180 8
+wait 40
+shot giant_robot_front
+hitboxes on
+tp @s 2159.93 -56.98 -74.46 180 8
+wait 25
+shot giant_robot_side
+hitboxes off
+tp @s 2162.95 -58.21 83.94 143 12
+wait 30
+shot giant_robot_mix
+tp @s 2168.78 -54.69 10.94 180 8
+wait 25
+shot giant_robot_real
+tp @s 0 -59 -200 0 0
+hud on
+clear @s
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:emperor_scorpion",type:"head"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:scorpion",type:"head"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:hercules_beetle",type:"head"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:mantis",type:"head"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:spit_bug",type:"head"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:trooper_bug",type:"head"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:bee",type:"head"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:brutalfly",type:"head"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:cater_killer",type:"head"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:creeping_horror",type:"head"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:lurking_terror",type:"head"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:cave_fisher",type:"head"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:sea_monster",type:"head"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:sea_viper",type:"head"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:attack_squid",type:"head"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:crab",type:"head"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:skate",type:"head"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:flounder",type:"head"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:gold_fish",type:"head"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:cloud_shark",type:"head"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:robot_2",type:"head"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:robot_3",type:"head"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:robot_4",type:"head"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:giant_robot",type:"head"}]
+wait 10
+inventory
+wait 10
+shot inventory_heads
+closegui
+clear @s
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:emperor_scorpion",type:"torso"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:scorpion",type:"torso"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:hercules_beetle",type:"torso"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:mantis",type:"torso"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:spit_bug",type:"torso"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:trooper_bug",type:"torso"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:bee",type:"torso"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:brutalfly",type:"torso"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:cater_killer",type:"torso"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:creeping_horror",type:"torso"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:lurking_terror",type:"torso"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:cave_fisher",type:"torso"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:irukandji",type:"torso"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:urchin",type:"torso"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:sea_monster",type:"torso"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:sea_viper",type:"torso"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:attack_squid",type:"torso"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:crab",type:"torso"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:skate",type:"torso"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:flounder",type:"torso"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:gold_fish",type:"torso"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:cloud_shark",type:"torso"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:robot_1",type:"torso"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:robot_2",type:"torso"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:robot_3",type:"torso"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:robot_4",type:"torso"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:robot_5",type:"torso"}]
+wait 10
+inventory
+wait 10
+shot inventory_torsos
+closegui
+clear @s
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:emperor_scorpion",type:"legs"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:emperor_scorpion",type:"arm"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:scorpion",type:"legs"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:scorpion",type:"arm"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:hercules_beetle",type:"legs"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:hercules_beetle",type:"arm"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:mantis",type:"legs"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:mantis",type:"arm"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:spit_bug",type:"legs"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:spit_bug",type:"arm"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:trooper_bug",type:"legs"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:trooper_bug",type:"arm"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:bee",type:"legs"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:bee",type:"arm"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:brutalfly",type:"arm"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:creeping_horror",type:"legs"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:creeping_horror",type:"arm"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:lurking_terror",type:"legs"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:lurking_terror",type:"arm"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:cave_fisher",type:"legs"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:cave_fisher",type:"arm"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:attack_squid",type:"legs"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:crab",type:"legs"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:crab",type:"arm"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:robot_1",type:"legs"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:robot_2",type:"legs"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:robot_2",type:"arm"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:robot_3",type:"legs"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:robot_3",type:"arm"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:robot_4",type:"legs"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:robot_4",type:"arm"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:robot_5",type:"legs"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:giant_robot",type:"arm"}]
+wait 10
+inventory
+wait 10
+shot inventory_legs_arms
+closegui
+report done

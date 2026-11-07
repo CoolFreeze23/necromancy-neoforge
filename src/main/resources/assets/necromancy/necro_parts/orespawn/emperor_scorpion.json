@@ -1,0 +1,79 @@
+{
+  "mob": "orespawn:emperor_scorpion",
+  "requires": "orespawn",
+  "geo": "orespawn:geo/entity/emperorscorpion.geo.json",
+  "texture": "orespawn:textures/entity/emperorscorpion.png",
+  "scale": 0.62,
+  "head": {
+    "groups": [
+      {
+        "bones": ["Head", "Lefteye", "Righteye", "LeftMandible", "LeftManPart2", "RightMandible", "RightManPart2"],
+        "pivot": [0.0, 17.0, -8.0]
+      }
+    ],
+    "plug": [0.0, 17.0, -8.0],
+    "animator": "look"
+  },
+  "torso": {
+    "groups": [
+      {
+        "bones": ["Seg1", "Seg2", "Seg3", "Seg4", "Seg5", "Seg6", "Seg7", "Seg8", "Tailseg1"]
+      }
+    ],
+    "plug": [0.0, 17.0, -1.0],
+    "neck": [0.0, 17.0, -8.0],
+    "shoulder_left": [7.0, 13.0, -22.0],
+    "shoulder_right": [-7.0, 13.0, -22.0]
+  },
+  "arm": {
+    "left": {
+      "bones": ["LeftShoulder"],
+      "pivot": [7.0, 13.0, -22.0]
+    },
+    "right": {
+      "bones": ["RightShoulder"],
+      "pivot": [-7.0, 13.0, -22.0]
+    },
+    "plug_left": [7.0, 13.0, -22.0],
+    "plug_right": [-7.0, 13.0, -22.0],
+    "animator": "arm"
+  },
+  "legs": {
+    "groups": [
+      {
+        "bones": ["Leg1Seg1"],
+        "pivot": [9.0, 13.0, -10.0]
+      },
+      {
+        "bones": ["Leg5Seg1"],
+        "pivot": [-9.0, 13.0, -10.0]
+      },
+      {
+        "bones": ["Leg6Seg1"],
+        "pivot": [-8.5, 13.0, -4.0]
+      },
+      {
+        "bones": ["Leg2Seg1"],
+        "pivot": [8.5, 13.0, -4.0]
+      },
+      {
+        "bones": ["Leg3Seg1"],
+        "pivot": [9.5, 13.0, 2.0]
+      },
+      {
+        "bones": ["Leg7Seg1"],
+        "pivot": [-9.5, 13.0, 2.0]
+      },
+      {
+        "bones": ["Leg8Seg1"],
+        "pivot": [-9.0, 13.0, 8.0]
+      },
+      {
+        "bones": ["Leg4Seg1"],
+        "pivot": [9.0, 13.0, 8.0]
+      }
+    ],
+    "hip": [0.0, 17.0, -1.0],
+    "animator": "walk_pair"
+  }
+}

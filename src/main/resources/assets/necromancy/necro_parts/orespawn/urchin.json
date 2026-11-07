@@ -1,0 +1,18 @@
+{
+  "mob": "orespawn:urchin",
+  "requires": "orespawn",
+  "geo": "orespawn:geo/entity/urchin.geo.json",
+  "texture": "orespawn:textures/entity/urchin.png",
+  "scale": 0.6,
+  "torso": {
+    "groups": [
+      {
+        "bones": ["center", "if1", "if2", "if3", "if4", "of1", "of2", "of3", "of4", "tis1", "tis2", "tis3", "tis4", "tos1", "tos2", "tos3", "tos4"]
+      }
+    ],
+    "plug": [0.5, 24.0, 0.5],
+    "neck": [0.5, -8.0, 0.5],
+    "shoulder_left": [3.0, 0.0, 0.5],
+    "shoulder_right": [-2.0, 0.0, 0.5]
+  }
+}

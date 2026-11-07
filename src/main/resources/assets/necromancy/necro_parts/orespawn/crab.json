@@ -1,0 +1,79 @@
+{
+  "mob": "orespawn:crab",
+  "requires": "orespawn",
+  "geo": "orespawn:geo/entity/crab.geo.json",
+  "texture": "orespawn:textures/entity/crab.png",
+  "scale": 0.5,
+  "head": {
+    "groups": [
+      {
+        "bones": ["Leye1", "Leye2", "Reye1", "Reye2", "Lmouth", "Rmouth"],
+        "pivot": [0.0, 3.0, -9.5]
+      }
+    ],
+    "plug": [0.0, 3.0, -9.5],
+    "animator": "look"
+  },
+  "torso": {
+    "groups": [
+      {
+        "bones": ["body1", "body2", "body3", "body4", "body5", "body6"]
+      }
+    ],
+    "plug": [0.0, 5.0, 15.0],
+    "neck": [0.0, 3.0, -9.5],
+    "shoulder_left": [31.0, -2.0, -8.0],
+    "shoulder_right": [-31.0, -2.0, -8.0]
+  },
+  "arm": {
+    "left": {
+      "bones": ["Lclaw1", "Lclaw2", "Lclaw3", "Lclaw4", "Lclaw5"],
+      "pivot": [31.0, -2.0, -8.0]
+    },
+    "right": {
+      "bones": ["Rclaw1", "Rclaw2", "Rclaw3", "Rclaw4", "Rclaw5"],
+      "pivot": [-31.0, -2.0, -8.0]
+    },
+    "plug_left": [31.0, -2.0, -8.0],
+    "plug_right": [-31.0, -2.0, -8.0],
+    "animator": "arm"
+  },
+  "legs": {
+    "groups": [
+      {
+        "bones": ["leg1__i0", "leg2__i0", "leg3__i0"],
+        "pivot": [36.0, 3.0, 0.0]
+      },
+      {
+        "bones": ["leg1__i4", "leg2__i4", "leg3__i4"],
+        "pivot": [-36.0, 3.0, 0.0]
+      },
+      {
+        "bones": ["leg1__i5", "leg2__i5", "leg3__i5"],
+        "pivot": [-36.0, 3.0, 10.0]
+      },
+      {
+        "bones": ["leg1__i1", "leg2__i1", "leg3__i1"],
+        "pivot": [36.0, 3.0, 10.0]
+      },
+      {
+        "bones": ["leg1__i2", "leg2__i2", "leg3__i2"],
+        "pivot": [36.0, 3.0, 20.0]
+      },
+      {
+        "bones": ["leg1__i6", "leg2__i6", "leg3__i6"],
+        "pivot": [-36.0, 3.0, 20.0]
+      },
+      {
+        "bones": ["leg1__i7", "leg2__i7", "leg3__i7"],
+        "pivot": [-36.0, 3.0, 30.0]
+      },
+      {
+        "bones": ["leg1__i3", "leg2__i3", "leg3__i3"],
+        "pivot": [36.0, 3.0, 30.0]
+      }
+    ],
+    "hip": [0.0, 5.0, 15.0],
+    "animator": "walk_pair"
+  }
+}

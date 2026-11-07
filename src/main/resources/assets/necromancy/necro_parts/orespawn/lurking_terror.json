@@ -1,0 +1,71 @@
+{
+  "mob": "orespawn:lurking_terror",
+  "requires": "orespawn",
+  "geo": "orespawn:geo/entity/lurkingterror.geo.json",
+  "texture": "orespawn:textures/entity/lurkingterror.png",
+  "scale": 0.71,
+  "head": {
+    "groups": [
+      {
+        "bones": ["head", "jaw1", "jaw1part2", "jaw1tooth1", "jaw1tooth2", "jaw1tooth3", "jaw1tooth4", "jaw1tooth5", "jaw1tooth6", "jaw2", "jaw2part2", "jaw2tooth1", "jaw2tooth2", "jaw2tooth3", "jaw2tooth4", "jaw2tooth5", "jaw2tooth6", "jaw3", "jaw3part2", "jaw3tooth1", "jaw3tooth2", "jaw3tooth3", "jaw3tooth4", "jaw3tooth5", "jaw3tooth6", "jaw4", "jaw4part2", "jaw4tooth1", "jaw4tooth2", "jaw4tooth3", "jaw4tooth4", "jaw4tooth5", "jaw4tooth6", "tonguepart1", "tonguepart2", "tonguepart3"],
+        "pivot": [0.0, 13.0, -8.0]
+      }
+    ],
+    "plug": [0.0, 13.0, -8.0],
+    "animator": "look"
+  },
+  "torso": {
+    "groups": [
+      {
+        "bones": ["body", "thorax", "abdomen"]
+      }
+    ],
+    "plug": [0.0, 14.0, 1.5],
+    "neck": [0.0, 13.0, -8.0],
+    "shoulder_left": [2.0, 6.0, -3.0],
+    "shoulder_right": [-2.0, 6.0, -3.0]
+  },
+  "arm": {
+    "left": {
+      "bones": ["wing_2", "wing_4"],
+      "pivot": [2.0, 6.0, -3.0]
+    },
+    "right": {
+      "bones": ["wing_1", "wing_3"],
+      "pivot": [-2.0, 6.0, -3.0]
+    },
+    "plug_left": [2.0, 6.0, -3.0],
+    "plug_right": [-2.0, 6.0, -3.0],
+    "animator": "none"
+  },
+  "legs": {
+    "groups": [
+      {
+        "bones": ["leg2", "leg2part2", "leg2part3"],
+        "pivot": [4.0, 10.0, -1.0]
+      },
+      {
+        "bones": ["leg1", "leg1part2", "leg1part3"],
+        "pivot": [-4.0, 10.0, -1.0]
+      },
+      {
+        "bones": ["leg3", "leg3part2", "leg3part3"],
+        "pivot": [-4.0, 10.0, 1.0]
+      },
+      {
+        "bones": ["leg4", "leg4part2", "leg4part3"],
+        "pivot": [4.0, 10.0, 1.0]
+      },
+      {
+        "bones": ["leg5", "leg5part2"],
+        "pivot": [4.0, 10.0, 4.0]
+      },
+      {
+        "bones": ["leg6", "leg6part2"],
+        "pivot": [-4.0, 10.0, 4.0]
+      }
+    ],
+    "hip": [0.0, 14.0, 1.5],
+    "animator": "walk_pair"
+  }
+}

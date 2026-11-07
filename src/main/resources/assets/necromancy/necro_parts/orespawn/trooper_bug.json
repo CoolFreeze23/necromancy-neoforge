@@ -1,0 +1,63 @@
+{
+  "mob": "orespawn:trooper_bug",
+  "requires": "orespawn",
+  "geo": "orespawn:geo/entity/trooperbug.geo.json",
+  "texture": "orespawn:textures/entity/trooperbug.png",
+  "scale": 0.56,
+  "head": {
+    "groups": [
+      {
+        "bones": ["jawbase", "jawbase2", "jawbase3", "jawbase4", "jawbase5", "jawbase6", "jawbase7", "jawbase8", "jawbase9", "jawend", "jawleft", "jawright", "upperjawbase", "upperjawbase2", "upperjawbase3", "upperjawbase4", "upperjawbaseleft", "upperjawbaseright", "upperjawend", "upperjawleftend", "upperjawridgeleft", "upperjawridgeright", "upperjawrightend", "innermouth", "innermouth2", "tooth1", "tooth2", "tooth3", "tooth4", "tooth5", "tooth6", "tongue", "tonguepart2", "mouthedge1", "mouthedge2", "mouthedge3", "mouthedge4", "eye1", "eye2", "eyebase1", "eyebase2"],
+        "pivot": [0.0, -12.0, -8.0]
+      }
+    ],
+    "plug": [0.0, 0.0, -8.0],
+    "animator": "look"
+  },
+  "torso": {
+    "groups": [
+      {
+        "bones": ["headbase", "headbase10", "headbase2", "headbase3", "headbase4", "headbase5", "headbase6", "headbase7", "headbase8", "headbase9", "headleftridge", "headrightridge", "antenna1", "antenna1part2", "antenna2", "antenna2part2", "headstart", "legintersection", "legintersectionb"]
+      }
+    ],
+    "plug": [0.0, 5.5, 0.0],
+    "neck": [0.0, 0.0, -8.0],
+    "shoulder_left": [9.0, -20.0, -3.0],
+    "shoulder_right": [-9.0, -20.0, -3.0]
+  },
+  "arm": {
+    "left": {
+      "bones": ["arm2part1", "arm2part2", "arm2part2b", "arm2part2c", "arm2part3", "arm2part3b", "arm2start", "arm3part1", "arm3part1b", "arm3part1c", "arm3start"],
+      "pivot": [9.0, -20.0, -3.0]
+    },
+    "right": {
+      "bones": ["arm1part1", "arm1part2", "arm1part2b", "arm1part2c", "arm1part3", "arm1part3b", "arm1start", "arm4part1", "arm4part1b", "arm4part1c", "arm4start"],
+      "pivot": [-9.0, -20.0, -3.0]
+    },
+    "plug_left": [9.0, -20.0, -3.0],
+    "plug_right": [-9.0, -20.0, -3.0],
+    "animator": "arm"
+  },
+  "legs": {
+    "groups": [
+      {
+        "bones": ["leg2start", "leg2shoulder", "leg2shoulderpart2", "leg2elbow", "leg2part1", "leg2part1b", "leg2part2", "leg2part2b", "leg2part2c", "leg2part3", "leg2part3b", "leg2part3c", "leg2part3d"],
+        "pivot": [7.0, 0.0, -7.0]
+      },
+      {
+        "bones": ["leg1start", "leg1shoulder", "leg1shoulderpart2", "leg1elbow", "leg1part1", "leg1part1b", "leg1part2", "leg1part2b", "leg1part2c", "leg1part3", "leg1part3b", "leg1part3c", "leg1part3d"],
+        "pivot": [-7.0, 0.0, -7.0]
+      },
+      {
+        "bones": ["leg4start", "leg4shoulder", "leg4shoulderpart2", "leg4elbow", "leg4part1", "leg4part1b", "leg4part2", "leg4part2b", "leg4part2c", "leg4part3", "leg4part3b", "leg4part3c", "leg4part3d"],
+        "pivot": [-7.0, 0.0, 7.0]
+      },
+      {
+        "bones": ["leg3start", "leg3shoulder", "leg3shoulderpart2", "leg3elbow", "leg3part1", "leg3part1b", "leg3part2", "leg3part2b", "leg3part2c", "leg3part3", "leg3part3b", "leg3part3c", "leg3part3d"],
+        "pivot": [7.0, 0.0, 7.0]
+      }
+    ],
+    "hip": [0.0, 5.5, 0.0],
+    "animator": "walk_pair"
+  }
+}

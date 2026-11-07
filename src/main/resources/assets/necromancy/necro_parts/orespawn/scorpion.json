@@ -1,0 +1,79 @@
+{
+  "mob": "orespawn:scorpion",
+  "requires": "orespawn",
+  "geo": "orespawn:geo/entity/scorpion.geo.json",
+  "texture": "orespawn:textures/entity/scorpion.png",
+  "scale": 1.0,
+  "head": {
+    "groups": [
+      {
+        "bones": ["head"],
+        "pivot": [0.0, 20.5, -4.0]
+      }
+    ],
+    "plug": [0.0, 20.5, -4.0],
+    "animator": "look"
+  },
+  "torso": {
+    "groups": [
+      {
+        "bones": ["body", "tail1", "tail2", "tail3", "tail4", "tail5", "tail6"]
+      }
+    ],
+    "plug": [0.0, 21.0, 0.0],
+    "neck": [0.0, 20.5, -4.0],
+    "shoulder_left": [1.0, 18.0, -6.0],
+    "shoulder_right": [-1.0, 18.0, -6.0]
+  },
+  "arm": {
+    "left": {
+      "bones": ["larm2", "larm1", "lclaw"],
+      "pivot": [1.0, 18.0, -6.0]
+    },
+    "right": {
+      "bones": ["rarm2", "rarm1", "rclaw"],
+      "pivot": [-1.0, 18.0, -6.0]
+    },
+    "plug_left": [1.0, 18.0, -6.0],
+    "plug_right": [-1.0, 18.0, -6.0],
+    "animator": "arm"
+  },
+  "legs": {
+    "groups": [
+      {
+        "bones": ["lleg1"],
+        "pivot": [2.0, 18.0, -3.0]
+      },
+      {
+        "bones": ["rleg1"],
+        "pivot": [-2.0, 18.0, -1.0]
+      },
+      {
+        "bones": ["rleg2"],
+        "pivot": [-2.0, 18.0, 1.0]
+      },
+      {
+        "bones": ["lleg2"],
+        "pivot": [2.0, 18.0, -1.0]
+      },
+      {
+        "bones": ["lleg3"],
+        "pivot": [2.0, 18.0, 1.0]
+      },
+      {
+        "bones": ["rleg3"],
+        "pivot": [-2.0, 18.0, 3.0]
+      },
+      {
+        "bones": ["rleg4"],
+        "pivot": [-2.0, 18.0, 5.0]
+      },
+      {
+        "bones": ["lleg4"],
+        "pivot": [2.0, 18.0, 3.0]
+      }
+    ],
+    "hip": [0.0, 21.0, 0.0],
+    "animator": "walk_pair"
+  }
+}

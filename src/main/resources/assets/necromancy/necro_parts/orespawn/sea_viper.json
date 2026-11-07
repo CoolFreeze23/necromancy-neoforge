@@ -1,0 +1,28 @@
+{
+  "mob": "orespawn:sea_viper",
+  "requires": "orespawn",
+  "geo": "orespawn:geo/entity/seaviper.geo.json",
+  "texture": "orespawn:textures/entity/seaviper.png",
+  "scale": 0.83,
+  "head": {
+    "groups": [
+      {
+        "bones": ["Head", "MouthTop", "MouthBottom", "FangLeft", "FangRight", "ForkLeft", "ForkRight", "ToungBase", "MiddleTounge", "EyeLeft", "EyeRight"],
+        "pivot": [0.0, 6.0, -8.0]
+      }
+    ],
+    "plug": [0.0, 6.0, -8.0],
+    "animator": "look"
+  },
+  "torso": {
+    "groups": [
+      {
+        "bones": ["Neck", "tBase", "t10", "t11", "t12", "t13", "t14", "t15", "t16", "t17", "t18", "t19", "t2", "t20", "t21", "t3", "t4", "t5", "t6", "t7", "t8", "t9", "TailTip"]
+      }
+    ],
+    "plug": [0.0, 24.0, 20.0],
+    "neck": [0.0, 6.0, -8.0],
+    "shoulder_left": [4.0, 8.0, -2.0],
+    "shoulder_right": [-4.0, 8.0, -2.0]
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "mob": "orespawn:cater_killer",
+  "requires": "orespawn",
+  "geo": "orespawn:geo/entity/caterkiller.geo.json",
+  "texture": "orespawn:textures/entity/caterkiller.png",
+  "scale": 0.3,
+  "head": {
+    "groups": [
+      {
+        "bones": ["Head", "falsehead", "ljaw", "rjaw", "ltusk1", "ltusk2", "rtusk1", "rtusk2"],
+        "pivot": [0.0, -8.0, -12.0]
+      }
+    ],
+    "plug": [0.0, 0.0, -12.0],
+    "animator": "look"
+  },
+  "torso": {
+    "groups": [
+      {
+        "bones": ["seg1_0", "seg1lleg_0", "seg1rleg_0", "seg1lspike_0", "seg1rspike_0", "seg1ltopspike_0", "seg1rtopspike_0"]
+      },
+      {
+        "bones": ["seg1_1", "seg1lleg_1", "seg1rleg_1", "seg1lspike_1", "seg1rspike_1", "seg1ltopspike_1", "seg1rtopspike_1"],
+        "offset": [0, 8, 14]
+      },
+      {
+        "bones": ["seg1_2", "seg1lleg_2", "seg1rleg_2", "seg1lspike_2", "seg1rspike_2", "seg1ltopspike_2", "seg1rtopspike_2"],
+        "offset": [0, 16, 28]
+      },
+      {
+        "bones": ["seg2_0", "seg2lfoot_0", "seg2rfoot_0", "seg2lspike_0", "seg2rspike_0", "seg2ltopspike_0", "seg2rtopspike_0"],
+        "offset": [0, 0, 7]
+      },
+      {
+        "bones": ["seg2_1", "seg2lfoot_1", "seg2rfoot_1", "seg2lspike_1", "seg2rspike_1", "seg2ltopspike_1", "seg2rtopspike_1"],
+        "offset": [0, 0, 23]
+      },
+      {
+        "bones": ["seg2_2", "seg2lfoot_2", "seg2rfoot_2", "seg2lspike_2", "seg2rspike_2", "seg2ltopspike_2", "seg2rtopspike_2"],
+        "offset": [0, 0, 39]
+      },
+      {
+        "bones": ["seg2_3", "seg2lfoot_3", "seg2rfoot_3", "seg2lspike_3", "seg2rspike_3", "seg2ltopspike_3", "seg2rtopspike_3"],
+        "offset": [0, 0, 55]
+      },
+      {
+        "bones": ["seg2_4", "seg2lfoot_4", "seg2rfoot_4", "seg2lspike_4", "seg2rspike_4", "seg2ltopspike_4", "seg2rtopspike_4"],
+        "offset": [0, 0, 71]
+      },
+      {
+        "bones": ["seg2_5", "seg2lfoot_5", "seg2rfoot_5", "seg2lspike_5", "seg2rspike_5", "seg2ltopspike_5", "seg2rtopspike_5"],
+        "offset": [0, 0, 87]
+      },
+      {
+        "bones": ["seg3", "seg3lbackspike", "seg3lfoot", "seg3lspike", "seg3ltopspike", "seg3rbackspike", "seg3rfoot", "seg3rspike", "seg3rtopspike"],
+        "offset": [0, 0, 87]
+      }
+    ],
+    "plug": [0.0, 24.0, 32.0],
+    "neck": [0.0, 0.0, -12.0],
+    "shoulder_left": [14.0, -25.0, -5.0],
+    "shoulder_right": [-13.0, -25.0, -5.0]
+  }
+}

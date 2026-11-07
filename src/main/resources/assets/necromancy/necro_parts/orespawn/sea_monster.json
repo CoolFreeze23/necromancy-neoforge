@@ -1,0 +1,28 @@
+{
+  "mob": "orespawn:sea_monster",
+  "requires": "orespawn",
+  "geo": "orespawn:geo/entity/seamonster.geo.json",
+  "texture": "orespawn:textures/entity/seamonster.png",
+  "scale": 0.41,
+  "head": {
+    "groups": [
+      {
+        "bones": ["TopJaw", "BottomJaw", "LeftEye", "RightEye"],
+        "pivot": [0.0, -23.0, -29.0]
+      }
+    ],
+    "plug": [0.0, -18.5, -29.0],
+    "animator": "look"
+  },
+  "torso": {
+    "groups": [
+      {
+        "bones": ["BodyFront", "BodyBack", "NeckBase", "Neck2", "Neck3", "Neck4", "Neck5", "Neck6", "TailBase", "Tail2", "Tail3", "Tail4", "Tail5", "Tail6", "TailTip", "FinBackLeft", "FinBackRight", "FinFrontLeft", "FinFrontRight"]
+      }
+    ],
+    "plug": [0.0, 24.0, 10.0],
+    "neck": [0.0, -18.5, -29.0],
+    "shoulder_left": [8.0, 12.0, 0.0],
+    "shoulder_right": [-8.0, 12.0, 0.0]
+  }
+}

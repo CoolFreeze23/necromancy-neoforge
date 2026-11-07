@@ -1,0 +1,31 @@
+{
+  "mob": "orespawn:giant_robot",
+  "requires": "orespawn",
+  "geo": "orespawn:geo/entity/giantrobot.geo.json",
+  "texture": "orespawn:textures/entity/giantrobot.png",
+  "scale": 0.35,
+  "head": {
+    "groups": [
+      {
+        "bones": ["head", "neck"],
+        "pivot": [0.0, -128.0, 0.0]
+      }
+    ],
+    "plug": [0.0, -128.0, 0.0],
+    "animator": "look",
+    "scale": 1.5
+  },
+  "arm": {
+    "left": {
+      "bones": ["arm1__i0", "arm2__i0", "arm3__i0", "knuckles__i0"],
+      "pivot": [26.0, -120.0, 0.0]
+    },
+    "right": {
+      "bones": ["arm1__i1", "arm2__i1", "arm3__i1", "knuckles__i1"],
+      "pivot": [-26.0, -120.0, 0.0]
+    },
+    "plug_left": [26.0, -120.0, 0.0],
+    "plug_right": [-26.0, -120.0, 0.0],
+    "animator": "golem_arm"
+  }
+}

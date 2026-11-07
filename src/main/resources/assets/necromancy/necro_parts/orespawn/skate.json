@@ -1,0 +1,28 @@
+{
+  "mob": "orespawn:skate",
+  "requires": "orespawn",
+  "geo": "orespawn:geo/entity/skate.geo.json",
+  "texture": "orespawn:textures/entity/skate.png",
+  "scale": 1.2,
+  "head": {
+    "groups": [
+      {
+        "bones": ["body"],
+        "pivot": [0.0, 23.0, 0.0]
+      }
+    ],
+    "plug": [0.0, 23.0, 0.0],
+    "animator": "none"
+  },
+  "torso": {
+    "groups": [
+      {
+        "bones": ["body", "tail1", "Shape1"]
+      }
+    ],
+    "plug": [0.0, 23.0, 0.0],
+    "neck": [0.0, 23.0, 0.0],
+    "shoulder_left": [4.0, 22.5, 0.0],
+    "shoulder_right": [-4.0, 22.5, 0.0]
+  }
+}

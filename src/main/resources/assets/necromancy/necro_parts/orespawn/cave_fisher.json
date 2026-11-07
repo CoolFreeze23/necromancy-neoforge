@@ -1,0 +1,71 @@
+{
+  "mob": "orespawn:cave_fisher",
+  "requires": "orespawn",
+  "geo": "orespawn:geo/entity/cavefisher.geo.json",
+  "texture": "orespawn:textures/entity/cavefisher.png",
+  "scale": 1.6,
+  "head": {
+    "groups": [
+      {
+        "bones": ["HeadBase", "HeadMid", "HeadEnd", "Nose", "EyeLeft", "EyeRight"],
+        "pivot": [0.0, 19.0, -4.0]
+      }
+    ],
+    "plug": [0.0, 21.0, -4.0],
+    "animator": "look"
+  },
+  "torso": {
+    "groups": [
+      {
+        "bones": ["BodyLow1", "BodyLow2", "BodyTopLeft1", "BodyTopLeft2", "BodyTopLeft3", "BodyTopLeft4", "BodyTopRight1", "BodyTopRight2", "BodyTopRight3", "BodyTopRight4", "Spine1", "Spine2", "Spine3", "Spine4", "Spine5", "TailBase", "TailTuft"]
+      }
+    ],
+    "plug": [0.0, 20.7, 4.5],
+    "neck": [0.0, 21.0, -4.0],
+    "shoulder_left": [4.7, 17.5, -3.0],
+    "shoulder_right": [-4.7, 17.5, -3.0]
+  },
+  "arm": {
+    "left": {
+      "bones": ["LeftArmSeg1", "LeftArmSeg2", "LeftArmSeg3", "LeftArmSeg4", "LeftArmSeg5", "LeftClawBase", "LeftClawLow", "LeftClawTop"],
+      "pivot": [4.7, 17.5, -3.0]
+    },
+    "right": {
+      "bones": ["RightArmSeg1", "RightArmSeg2", "RightArmSeg3", "RightArmSeg4", "RightArmSeg5", "RightClawBase", "RightClawLow", "RightClawTop"],
+      "pivot": [-4.7, 17.5, -3.0]
+    },
+    "plug_left": [4.7, 17.5, -3.0],
+    "plug_right": [-4.7, 17.5, -3.0],
+    "animator": "arm"
+  },
+  "legs": {
+    "groups": [
+      {
+        "bones": ["LFLeg1", "LFLeg2", "LFLeg3", "LFLeg4", "LFLeg5", "LFLeg6"],
+        "pivot": [5.0, 18.0, 0.5]
+      },
+      {
+        "bones": ["RFLeg1", "RFLeg2", "RFLeg3", "RFLeg4", "RFLeg5", "RFLeg6"],
+        "pivot": [-5.0, 18.0, 0.5]
+      },
+      {
+        "bones": ["RMLeg1", "RMLeg2", "RMLeg3", "RMLeg4", "RMLeg5", "RMLeg6"],
+        "pivot": [-5.0, 18.0, 4.5]
+      },
+      {
+        "bones": ["LMLeg1", "LMLeg2", "LMLeg3", "LMLeg4", "LMLeg5", "LMLeg6"],
+        "pivot": [5.0, 18.0, 4.5]
+      },
+      {
+        "bones": ["LBLeg1", "LBLeg2", "LBLeg3", "LBLeg4", "LBLeg5", "LBLeg6"],
+        "pivot": [5.0, 18.0, 8.5]
+      },
+      {
+        "bones": ["RBLeg1", "RBLeg2", "RBLeg3", "RBLeg4", "RBLeg5", "RBLeg6"],
+        "pivot": [-5.0, 18.0, 8.5]
+      }
+    ],
+    "hip": [0.0, 20.7, 4.5],
+    "animator": "walk_pair"
+  }
+}

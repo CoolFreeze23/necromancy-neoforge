@@ -1,0 +1,32 @@
+{
+  "mob": "orespawn:robot_5",
+  "requires": "orespawn",
+  "geo": "orespawn:geo/entity/robot5.geo.json",
+  "texture": "orespawn:textures/entity/robot5.png",
+  "scale": 0.62,
+  "torso": {
+    "groups": [
+      {
+        "bones": ["stand", "swivel", "barrel1", "barrel2", "ammobox", "drivebox", "axle"]
+      }
+    ],
+    "plug": [0.0, 20.5, 0.0],
+    "neck": [0.0, -2.0, 0.0],
+    "shoulder_left": [2.0, 0.0, 0.0],
+    "shoulder_right": [-2.0, 0.0, 0.0]
+  },
+  "legs": {
+    "groups": [
+      {
+        "bones": ["lwheel1", "lwheel2"],
+        "pivot": [6.0, 19.0, 0.0]
+      },
+      {
+        "bones": ["rwheel1", "rwheel2"],
+        "pivot": [-8.0, 19.0, 0.0]
+      }
+    ],
+    "hip": [0.0, 20.5, 0.0],
+    "animator": "none"
+  }
+}
