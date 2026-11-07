@@ -1,11 +1,15 @@
 package com.sirolf2009.necromancy.client.model;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Function;
 
 import org.joml.Vector3f;
 
+import com.mojang.blaze3d.vertex.PoseStack;
+
 import net.minecraft.client.model.geom.ModelPart;
+import net.minecraft.world.phys.AABB;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.resources.ResourceLocation;
 
@@ -34,6 +38,10 @@ public final class PartModel {
     private PartAnimator animator = PartAnimator.NONE;
     private Function<ResourceLocation, RenderType> renderType = RenderType::entityCutoutNoCull;
     private float scale = 1F;
+    private final List<PartLayer> layers = new ArrayList<>();
+    private boolean fullBright;
+    private AABB bounds;
+    private AABB boundsRight;
 
     private PartModel(ResourceLocation texture, List<ModelPart> parts, List<ModelPart> rightParts) {
         this.texture = texture;
@@ -53,6 +61,10 @@ public final class PartModel {
     public PartModel plug(float x, float y, float z) {
         this.plug = new Vector3f(x, y, z);
         return this;
+    }
+
+    public PartModel plug(float[] point) {
+        return plug(point[0], point[1], point[2]);
     }
 
     /** Arm shoulders: left plug and right plug. */
@@ -92,6 +104,88 @@ public final class PartModel {
     public PartModel scale(float scale) {
         this.scale = scale;
         return this;
+    }
+
+    /** Something drawn over the part (eyes, wool, an outer layer, a block). */
+    public PartModel layer(PartLayer layer) {
+        this.layers.add(layer);
+        return this;
+    }
+
+    /** Lit like a light source (blaze). */
+    public PartModel fullBright() {
+        this.fullBright = true;
+        return this;
+    }
+
+    public List<PartLayer> layers() {
+        return layers;
+    }
+
+    public boolean isFullBright() {
+        return fullBright;
+    }
+
+    /** Frames the item icon around this box instead of the cubes (when a layer draws something big, like a pumpkin). */
+    public PartModel iconBox(float minX, float minY, float minZ, float maxX, float maxY, float maxZ) {
+        this.bounds = new AABB(minX, minY, minZ, maxX, maxY, maxZ);
+        this.boundsRight = this.bounds;
+        return this;
+    }
+
+    /** The box around the part in its baked pose, layers included, in model units (for framing item icons). */
+    public AABB bounds(boolean right) {
+        if (right && rightParts.isEmpty()) {
+            right = false;
+        }
+        AABB cached = right ? boundsRight : bounds;
+        if (cached == null) {
+            List<ModelPart> list = parts(right);
+            for (ModelPart part : list) {
+                part.resetPose();
+            }
+            List<ModelPart> all = new ArrayList<>(list);
+            for (PartLayer layer : layers) {
+                all.addAll(layer.boundsParts(list));
+            }
+            cached = boundsOf(all);
+            if (right) {
+                boundsRight = cached;
+            } else {
+                bounds = cached;
+            }
+        }
+        return cached;
+    }
+
+    /** The box around the cubes of these parts as they are posed now, in model units (1/16 block, y down). */
+    public static AABB boundsOf(List<ModelPart> parts) {
+        float[] box = { Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE, -Float.MAX_VALUE, -Float.MAX_VALUE, -Float.MAX_VALUE };
+        PoseStack poseStack = new PoseStack();
+        Vector3f corner = new Vector3f();
+        for (ModelPart part : parts) {
+            if (!part.visible) {
+                continue;
+            }
+            part.visit(poseStack, (pose, path, index, cube) -> {
+                for (int i = 0; i < 8; i++) {
+                    corner.set((i & 1) == 0 ? cube.minX : cube.maxX, (i & 2) == 0 ? cube.minY : cube.maxY, (i & 4) == 0 ? cube.minZ : cube.maxZ);
+                    corner.div(16F);
+                    pose.pose().transformPosition(corner);
+                    corner.mul(16F);
+                    box[0] = Math.min(box[0], corner.x);
+                    box[1] = Math.min(box[1], corner.y);
+                    box[2] = Math.min(box[2], corner.z);
+                    box[3] = Math.max(box[3], corner.x);
+                    box[4] = Math.max(box[4], corner.y);
+                    box[5] = Math.max(box[5], corner.z);
+                }
+            });
+        }
+        if (box[0] > box[3]) {
+            return new AABB(0, 0, 0, 0, 0, 0);
+        }
+        return new AABB(box[0], box[1], box[2], box[3], box[4], box[5]);
     }
 
     public ResourceLocation texture() {

@@ -1,0 +1,38 @@
+# Teddy, Night Crawler and the Isaac family close up, and mixed Minions (tools/smoke.sh tools/smoke-render-entities.txt)
+wait 20
+difficulty easy
+gamerule doMobSpawning false
+gamerule doDaylightCycle false
+time set 18000
+effect give @s minecraft:night_vision infinite 0 true
+weather clear
+hud off
+kill @e[type=!player]
+summon necromancy:teddy -1 -60 0 {NoAI:1b,Rotation:[0f,0f],PersistenceRequired:1b}
+summon necromancy:teddy 0 -60 0 {NoAI:1b,Rotation:[0f,0f],PersistenceRequired:1b,State:"sitting"}
+summon necromancy:night_crawler 2 -60 0 {NoAI:1b,Rotation:[0f,0f],PersistenceRequired:1b}
+summon necromancy:isaac_head 4 -60 0 {NoAI:1b,Rotation:[0f,0f],PersistenceRequired:1b}
+tp @s 1.5 -59 3.5 facing 1.5 -59.5 0
+wait 30
+shot teddy_crawler_front
+tp @s 5 -59 1 facing 1 -59.5 0
+wait 20
+shot teddy_crawler_side
+kill @e[type=!player]
+# mixed bodies
+summon necromancy:minion -6 -60 0 {NoAI:1b,Rotation:[0f,0f],Parts:{head:"necromancy:creeper",torso:"necromancy:iron_golem",arm_left:"necromancy:enderman",arm_right:"necromancy:chicken",legs:"necromancy:spider"}}
+summon necromancy:minion -3 -60 0 {NoAI:1b,Rotation:[0f,0f],Parts:{head:"necromancy:squid",torso:"necromancy:villager",arm_left:"necromancy:witch",arm_right:"necromancy:zombified_piglin",legs:"necromancy:cow"}}
+summon necromancy:minion 0 -60 0 {NoAI:1b,Rotation:[0f,0f],Parts:{head:"necromancy:snow_golem",torso:"necromancy:slime",arm_left:"necromancy:night_crawler",arm_right:"necromancy:skeleton",legs:"necromancy:blaze"}}
+summon necromancy:minion 3 -60 0 {NoAI:1b,Rotation:[0f,0f],Parts:{head:"necromancy:isaac",torso:"necromancy:sheep",arm_left:"necromancy:snow_golem",arm_right:"necromancy:mooshroom",legs:"necromancy:armadillo"}}
+summon necromancy:minion 6 -60 0 {NoAI:1b,Rotation:[0f,0f],Parts:{head:"necromancy:enderman",torso:"necromancy:night_crawler",arm_left:"necromancy:iron_golem",arm_right:"necromancy:drowned",legs:"necromancy:squid"}}
+summon necromancy:minion 9 -60 0 {NoAI:1b,Rotation:[0f,0f],Parts:{head:"necromancy:night_crawler",torso:"necromancy:night_crawler",arm_left:"necromancy:night_crawler",arm_right:"necromancy:night_crawler",legs:"necromancy:night_crawler"}}
+summon necromancy:night_crawler 10.5 -60 0 {NoAI:1b,Rotation:[0f,0f],PersistenceRequired:1b}
+tp @s 1.5 -58.5 9 facing 1.5 -59 0
+wait 30
+shot mixed_front
+tp @s -9 -58.5 6 facing 1 -59 0
+wait 20
+shot mixed_side
+tp @s 9.75 -58.8 3 facing 9.75 -59.2 0
+wait 20
+shot crawler_pair

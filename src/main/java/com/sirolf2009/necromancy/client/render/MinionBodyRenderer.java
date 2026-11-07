@@ -13,9 +13,11 @@ import com.sirolf2009.necromancy.api.BodyPartLocation;
 import com.sirolf2009.necromancy.api.PartType;
 import com.sirolf2009.necromancy.client.model.NecroMobModels;
 import com.sirolf2009.necromancy.client.model.PartAnimator;
+import com.sirolf2009.necromancy.client.model.PartLayer;
 import com.sirolf2009.necromancy.client.model.PartModel;
 
 import net.minecraft.client.model.geom.ModelPart;
+import net.minecraft.client.renderer.LightTexture;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.resources.ResourceLocation;
 
@@ -26,6 +28,7 @@ import net.minecraft.resources.ResourceLocation;
  */
 public final class MinionBodyRenderer {
     private static final Vector3f DEFAULT_HIP = new Vector3f(0, 12, 0);
+    private static final Vector3f GROUND = new Vector3f(0, 24, 0);
 
     private MinionBodyRenderer() {
     }
@@ -53,26 +56,59 @@ public final class MinionBodyRenderer {
         PartModel legs = model(body, BodyPartLocation.LEGS);
         PartModel torso = model(body, BodyPartLocation.TORSO);
 
+        Vector3f hip = DEFAULT_HIP;
         if (legs != null) {
+            // legs are scaled around the ground under them, so they keep standing on it
+            poseStack.pushPose();
+            scaleAround(poseStack, legs.scale(), GROUND);
             draw(legs, false, BodyPartLocation.LEGS, pose, poseStack, buffers, light, overlay, color, null);
+            poseStack.popPose();
+            hip = scaled(legs.hip(), GROUND, legs.scale());
         }
-        Vector3f hip = legs != null ? legs.hip() : DEFAULT_HIP;
         poseStack.pushPose();
         if (torso != null) {
             Vector3f waist = torso.plug(false);
             translate(poseStack, hip.x - waist.x, hip.y - waist.y, hip.z - waist.z);
             ResourceLocation torsoMob = body.mob(BodyPartLocation.TORSO);
             ResourceLocation saddle = body.saddled() && torsoMob != null ? body.saddleTexture(torsoMob) : null;
+            poseStack.pushPose();
+            scaleAround(poseStack, torso.scale(), waist);
             draw(torso, false, BodyPartLocation.TORSO, pose, poseStack, buffers, light, overlay, color, saddle);
-            attach(body, BodyPartLocation.HEAD, torso.neck(), false, pose, poseStack, buffers, light, overlay, color);
-            attach(body, BodyPartLocation.ARM_LEFT, torso.shoulder(false), false, pose, poseStack, buffers, light, overlay, color);
-            attach(body, BodyPartLocation.ARM_RIGHT, torso.shoulder(true), true, pose, poseStack, buffers, light, overlay, color);
+            poseStack.popPose();
+            float s = torso.scale();
+            attach(body, BodyPartLocation.HEAD, scaled(torso.neck(), waist, s), false, pose, poseStack, buffers, light, overlay, color);
+            attach(body, BodyPartLocation.ARM_LEFT, scaled(torso.shoulder(false), waist, s), false, pose, poseStack, buffers, light, overlay, color);
+            attach(body, BodyPartLocation.ARM_RIGHT, scaled(torso.shoulder(true), waist, s), true, pose, poseStack, buffers, light, overlay, color);
         } else {
             // a floating head (wolf, goat or Isaac head alone, in the altar preview)
             translate(poseStack, 0, hip.y - 12, 0);
             attach(body, BodyPartLocation.HEAD, new Vector3f(0, 12, 0), false, pose, poseStack, buffers, light, overlay, color);
         }
         poseStack.popPose();
+    }
+
+    /** Draws one part alone in its own model space (item icons): baked pose, no animation. */
+    public static void renderPart(PartModel part, boolean right, PoseStack poseStack, MultiBufferSource buffers, int light, int overlay, int color) {
+        List<ModelPart> parts = part.parts(right);
+        for (ModelPart p : parts) {
+            p.resetPose();
+        }
+        drawPosed(part, parts, poseStack, buffers, light, overlay, color, null);
+    }
+
+    private static Vector3f scaled(Vector3f point, Vector3f origin, float scale) {
+        if (scale == 1F) {
+            return point;
+        }
+        return new Vector3f(point).sub(origin).mul(scale).add(origin);
+    }
+
+    private static void scaleAround(PoseStack poseStack, float scale, Vector3f origin) {
+        if (scale != 1F) {
+            translate(poseStack, origin.x, origin.y, origin.z);
+            poseStack.scale(scale, scale, scale);
+            translate(poseStack, -origin.x, -origin.y, -origin.z);
+        }
     }
 
     private static void attach(Body body, BodyPartLocation location, Vector3f socket, boolean right, PartAnimator.Pose pose, PoseStack poseStack,
@@ -100,9 +136,20 @@ public final class MinionBodyRenderer {
             p.resetPose();
         }
         part.animator().animate(parts, location, pose);
+        drawPosed(part, parts, poseStack, buffers, light, overlay, color, overlayTexture);
+    }
+
+    private static void drawPosed(PartModel part, List<ModelPart> parts, PoseStack poseStack, MultiBufferSource buffers, int light, int overlay,
+            int color, @Nullable ResourceLocation overlayTexture) {
+        if (part.isFullBright()) {
+            light = LightTexture.FULL_BRIGHT;
+        }
         VertexConsumer consumer = buffers.getBuffer(part.renderType(part.texture()));
         for (ModelPart p : parts) {
             p.render(poseStack, consumer, light, overlay, color);
+        }
+        for (PartLayer layer : part.layers()) {
+            layer.render(parts, poseStack, buffers, light, overlay, color);
         }
         if (overlayTexture != null) {
             VertexConsumer saddle = buffers.getBuffer(part.renderType(overlayTexture));

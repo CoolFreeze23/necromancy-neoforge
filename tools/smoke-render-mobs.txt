@@ -1,0 +1,118 @@
+# Every mob's Minion next to the vanilla mob (tools/smoke.sh tools/smoke-render-mobs.txt)
+wait 20
+difficulty easy
+gamerule doMobSpawning false
+gamerule doDaylightCycle false
+time set 18000
+effect give @s minecraft:night_vision infinite 0 true
+weather clear
+gamerule doWeatherCycle false
+hud off
+kill @e[type=!player]
+wait 10
+kill @e[type=!player]
+summon necromancy:minion -7.0 -60 3 {NoAI:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon minecraft:zombie -5.4 -60 3 {NoAI:1b,Rotation:[0f,0f],PersistenceRequired:1b}
+summon necromancy:minion -2.8 -60 3 {NoAI:1b,Rotation:[0f,0f],Parts:{head:"necromancy:skeleton",torso:"necromancy:skeleton",arm_left:"necromancy:skeleton",arm_right:"necromancy:skeleton",legs:"necromancy:skeleton"}}
+summon minecraft:skeleton -1.2 -60 3 {NoAI:1b,Rotation:[0f,0f],PersistenceRequired:1b}
+summon necromancy:minion 1.4 -60 3 {NoAI:1b,Rotation:[0f,0f],Parts:{head:"necromancy:enderman",torso:"necromancy:enderman",arm_left:"necromancy:enderman",arm_right:"necromancy:enderman",legs:"necromancy:enderman"}}
+summon minecraft:enderman 3.0 -60 3 {NoAI:1b,Rotation:[0f,0f],PersistenceRequired:1b}
+summon necromancy:minion 5.6 -60 3 {NoAI:1b,Rotation:[0f,0f],Parts:{head:"necromancy:iron_golem",torso:"necromancy:iron_golem",arm_left:"necromancy:iron_golem",arm_right:"necromancy:iron_golem",legs:"necromancy:iron_golem"}}
+summon minecraft:iron_golem 7.2 -60 3 {NoAI:1b,Rotation:[0f,0f],PersistenceRequired:1b}
+tp @s 0 -59.5 12 180 12
+wait 30
+shot row0_front
+tp @s -10 -58.5 8 facing -2 -59.3 3
+wait 20
+shot row0_side
+kill @e[type=!player]
+summon necromancy:minion -7.0 -60 3 {NoAI:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombified_piglin",torso:"necromancy:zombified_piglin",arm_left:"necromancy:zombified_piglin",arm_right:"necromancy:zombified_piglin",legs:"necromancy:zombified_piglin"}}
+summon minecraft:zombified_piglin -5.4 -60 3 {NoAI:1b,Rotation:[0f,0f],PersistenceRequired:1b}
+summon necromancy:minion -2.8 -60 3 {NoAI:1b,Rotation:[0f,0f],Parts:{head:"necromancy:villager",torso:"necromancy:villager",arm_left:"necromancy:villager",arm_right:"necromancy:villager",legs:"necromancy:villager"}}
+summon minecraft:villager -1.2 -60 3 {NoAI:1b,Rotation:[0f,0f],PersistenceRequired:1b}
+summon necromancy:minion 1.4 -60 3 {NoAI:1b,Rotation:[0f,0f],Parts:{head:"necromancy:witch",torso:"necromancy:witch",arm_left:"necromancy:witch",arm_right:"necromancy:witch",legs:"necromancy:witch"}}
+summon minecraft:witch 3.0 -60 3 {NoAI:1b,Rotation:[0f,0f],PersistenceRequired:1b}
+summon necromancy:minion 5.6 -60 3 {NoAI:1b,Rotation:[0f,0f],Parts:{head:"necromancy:husk",torso:"necromancy:husk",arm_left:"necromancy:husk",arm_right:"necromancy:husk",legs:"necromancy:husk"}}
+summon minecraft:husk 7.2 -60 3 {NoAI:1b,Rotation:[0f,0f],PersistenceRequired:1b}
+tp @s 0 -59.5 12 180 12
+wait 30
+shot row1_front
+tp @s -10 -58.5 8 facing -2 -59.3 3
+wait 20
+shot row1_side
+kill @e[type=!player]
+summon necromancy:minion -7.0 -60 3 {NoAI:1b,Rotation:[0f,0f],Parts:{head:"necromancy:drowned",torso:"necromancy:drowned",arm_left:"necromancy:drowned",arm_right:"necromancy:drowned",legs:"necromancy:drowned"}}
+summon minecraft:drowned -5.4 -60 3 {NoAI:1b,Rotation:[0f,0f],PersistenceRequired:1b}
+summon necromancy:minion -2.8 -60 3 {NoAI:1b,Rotation:[0f,0f],Parts:{head:"necromancy:bogged",torso:"necromancy:bogged",arm_left:"necromancy:bogged",arm_right:"necromancy:bogged",legs:"necromancy:bogged"}}
+summon minecraft:bogged -1.2 -60 3 {NoAI:1b,Rotation:[0f,0f],PersistenceRequired:1b}
+summon necromancy:minion 1.4 -60 3 {NoAI:1b,Rotation:[0f,0f],Parts:{head:"necromancy:wither_skeleton",torso:"necromancy:wither_skeleton",arm_left:"necromancy:wither_skeleton",arm_right:"necromancy:wither_skeleton",legs:"necromancy:wither_skeleton"}}
+summon minecraft:wither_skeleton 3.0 -60 3 {NoAI:1b,Rotation:[0f,0f],PersistenceRequired:1b}
+summon necromancy:minion 5.6 -60 3 {NoAI:1b,Rotation:[0f,0f],Parts:{head:"necromancy:blaze",torso:"necromancy:blaze",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:blaze"}}
+summon minecraft:blaze 7.2 -60 3 {NoAI:1b,Rotation:[0f,0f],PersistenceRequired:1b}
+tp @s 0 -59.5 12 180 12
+wait 30
+shot row2_front
+tp @s -10 -58.5 8 facing -2 -59.3 3
+wait 20
+shot row2_side
+kill @e[type=!player]
+summon necromancy:minion -7.0 -60 3 {NoAI:1b,Rotation:[0f,0f],Parts:{head:"necromancy:cow",torso:"necromancy:cow",arm_left:"necromancy:cow",arm_right:"necromancy:cow",legs:"necromancy:cow"}}
+summon minecraft:cow -5.4 -60 3 {NoAI:1b,Rotation:[0f,0f],PersistenceRequired:1b}
+summon necromancy:minion -2.8 -60 3 {NoAI:1b,Rotation:[0f,0f],Parts:{head:"necromancy:pig",torso:"necromancy:pig",arm_left:"necromancy:pig",arm_right:"necromancy:pig",legs:"necromancy:pig"}}
+summon minecraft:pig -1.2 -60 3 {NoAI:1b,Rotation:[0f,0f],PersistenceRequired:1b}
+summon necromancy:minion 1.4 -60 3 {NoAI:1b,Rotation:[0f,0f],Parts:{head:"necromancy:sheep",torso:"necromancy:sheep",arm_left:"necromancy:sheep",arm_right:"necromancy:sheep",legs:"necromancy:sheep"}}
+summon minecraft:sheep 3.0 -60 3 {NoAI:1b,Rotation:[0f,0f],PersistenceRequired:1b,Color:0b}
+summon necromancy:minion 5.6 -60 3 {NoAI:1b,Rotation:[0f,0f],Parts:{head:"necromancy:mooshroom",torso:"necromancy:mooshroom",arm_left:"necromancy:mooshroom",arm_right:"necromancy:mooshroom",legs:"necromancy:mooshroom"}}
+summon minecraft:mooshroom 7.2 -60 3 {NoAI:1b,Rotation:[0f,0f],PersistenceRequired:1b,Type:"red"}
+tp @s 0 -59.5 12 180 12
+wait 30
+shot row3_front
+tp @s -10 -58.5 8 facing -2 -59.3 3
+wait 20
+shot row3_side
+kill @e[type=!player]
+summon necromancy:minion -7.0 -60 3 {NoAI:1b,Rotation:[0f,0f],Parts:{head:"necromancy:chicken",torso:"necromancy:chicken",arm_left:"necromancy:chicken",arm_right:"necromancy:chicken",legs:"necromancy:chicken"}}
+summon minecraft:chicken -5.4 -60 3 {NoAI:1b,Rotation:[0f,0f],PersistenceRequired:1b}
+summon necromancy:minion -2.8 -60 3 {NoAI:1b,Rotation:[0f,0f],Parts:{head:"necromancy:spider",torso:"necromancy:spider",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:spider"}}
+summon minecraft:spider -1.2 -60 3 {NoAI:1b,Rotation:[0f,0f],PersistenceRequired:1b}
+summon necromancy:minion 1.4 -60 3 {NoAI:1b,Rotation:[0f,0f],Parts:{head:"necromancy:cave_spider",torso:"necromancy:cave_spider",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:cave_spider"}}
+summon minecraft:cave_spider 3.0 -60 3 {NoAI:1b,Rotation:[0f,0f],PersistenceRequired:1b}
+summon necromancy:minion 5.6 -60 3 {NoAI:1b,Rotation:[0f,0f],Parts:{head:"necromancy:creeper",torso:"necromancy:creeper",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:creeper"}}
+summon minecraft:creeper 7.2 -60 3 {NoAI:1b,Rotation:[0f,0f],PersistenceRequired:1b}
+tp @s 0 -59.5 12 180 12
+wait 30
+shot row4_front
+tp @s -10 -58.5 8 facing -2 -59.3 3
+wait 20
+shot row4_side
+kill @e[type=!player]
+summon necromancy:minion -7.0 -60 3 {NoAI:1b,Rotation:[0f,0f],Parts:{head:"necromancy:squid",torso:"necromancy:squid",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:squid"}}
+summon minecraft:squid -5.4 -60 3 {NoAI:1b,Rotation:[0f,0f],PersistenceRequired:1b}
+summon necromancy:minion -2.8 -60 3 {NoAI:1b,Rotation:[0f,0f],Parts:{head:"necromancy:slime",torso:"necromancy:slime",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:slime"}}
+summon minecraft:slime -1.2 -60 3 {NoAI:1b,Rotation:[0f,0f],PersistenceRequired:1b}
+summon necromancy:minion 1.4 -60 3 {NoAI:1b,Rotation:[0f,0f],Parts:{head:"necromancy:snow_golem",torso:"necromancy:snow_golem",arm_left:"necromancy:snow_golem",arm_right:"necromancy:snow_golem",legs:"necromancy:snow_golem"}}
+summon minecraft:snow_golem 3.0 -60 3 {NoAI:1b,Rotation:[0f,0f],PersistenceRequired:1b}
+summon necromancy:minion 5.6 -60 3 {NoAI:1b,Rotation:[0f,0f],Parts:{head:"necromancy:armadillo",torso:"necromancy:armadillo",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:armadillo"}}
+summon minecraft:armadillo 7.2 -60 3 {NoAI:1b,Rotation:[0f,0f],PersistenceRequired:1b}
+tp @s 0 -59.5 12 180 12
+wait 30
+shot row5_front
+tp @s -10 -58.5 8 facing -2 -59.3 3
+wait 20
+shot row5_side
+kill @e[type=!player]
+summon necromancy:minion -7.0 -60 3 {NoAI:1b,Rotation:[0f,0f],Parts:{head:"necromancy:night_crawler",torso:"necromancy:night_crawler",arm_left:"necromancy:night_crawler",arm_right:"necromancy:night_crawler",legs:"necromancy:night_crawler"}}
+summon necromancy:night_crawler -5.4 -60 3 {NoAI:1b,Rotation:[0f,0f],PersistenceRequired:1b}
+summon necromancy:minion -2.8 -60 3 {NoAI:1b,Rotation:[0f,0f],Parts:{head:"necromancy:wolf",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon minecraft:wolf -1.2 -60 3 {NoAI:1b,Rotation:[0f,0f],PersistenceRequired:1b}
+summon necromancy:minion 1.4 -60 3 {NoAI:1b,Rotation:[0f,0f],Parts:{head:"necromancy:goat",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon minecraft:goat 3.0 -60 3 {NoAI:1b,Rotation:[0f,0f],PersistenceRequired:1b}
+summon necromancy:minion 5.6 -60 3 {NoAI:1b,Rotation:[0f,0f],Parts:{head:"necromancy:isaac",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:isaac 7.2 -60 3 {NoAI:1b,Rotation:[0f,0f],PersistenceRequired:1b}
+tp @s 0 -59.5 12 180 12
+wait 30
+shot row6_front
+tp @s -10 -58.5 8 facing -2 -59.3 3
+wait 20
+shot row6_side
+kill @e[type=!player]
