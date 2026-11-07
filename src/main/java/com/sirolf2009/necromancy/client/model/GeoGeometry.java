@@ -58,6 +58,18 @@ public final class GeoGeometry {
         return build(geometry.getAsJsonArray("bones"), texW, texH);
     }
 
+    /** Each bone's parent bone, by name (root bones are absent). */
+    public static Map<String, String> parents(ResourceLocation geo) {
+        Map<String, String> parents = new LinkedHashMap<>();
+        for (JsonElement element : geometry(geo).getAsJsonArray("bones")) {
+            JsonObject b = element.getAsJsonObject();
+            if (b.has("parent")) {
+                parents.put(b.get("name").getAsString(), b.get("parent").getAsString());
+            }
+        }
+        return parents;
+    }
+
     private static synchronized JsonObject geometry(ResourceLocation geo) {
         return CACHE.computeIfAbsent(geo, id -> {
             var resource = Minecraft.getInstance().getResourceManager().getResource(id)

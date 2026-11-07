@@ -1,0 +1,38 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "type": "necromancy:sewing_shaped",
+  "key": {
+    "B": {
+      "item": "minecraft:bone"
+    },
+    "E": {
+      "item": "minecraft:calcite"
+    },
+    "L": {
+      "item": "necromancy:skin"
+    },
+    "M": {
+      "item": "necromancy:muscle"
+    }
+  },
+  "pattern": [
+    "LLLL",
+    "BMEB",
+    "LLLL"
+  ],
+  "result": {
+    "count": 1,
+    "id": "necromancy:creature_part",
+    "components": {
+      "necromancy:creature_part": {
+        "mob": "orespawn:cliff_racer",
+        "type": "arm"
+      }
+    }
+  }
+}

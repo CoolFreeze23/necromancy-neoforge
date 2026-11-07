@@ -51,6 +51,7 @@ public class Necromancy {
 
         com.sirolf2009.necromancy.item.CreaturePartItem.bind(NecroItems.CREATURE_PART);
         VanillaNecroMobs.register();
+        com.sirolf2009.necromancy.compat.OreSpawnCompat.register();
 
         container.registerConfig(ModConfig.Type.COMMON, NecroConfig.SPEC);
     }

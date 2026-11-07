@@ -39,8 +39,10 @@ import net.minecraft.util.profiling.ProfilerFiller;
  *              "hip": [0, 2, 11], "animator": "walk_pair" } }
  * }</pre>
  * A group with a {@code pivot} becomes one part turning about that point (its bones re-based onto it); without one,
- * each bone is its own part. Optional per part: {@code "scale"}, {@code "animator"}; per file: {@code "scale"} for
- * every part, {@code "translucent": true}, {@code "full_bright": true}.
+ * each bone is its own part. A bone brings its child bones along, except children that another part (or the file's
+ * {@code "hide"} list) names; a child bone named without its parent keeps its true place (its parents' poses come
+ * along, without their cubes). A bone below another bone of the same group comes along with that one. Optional per part: {@code "scale"}, {@code "animator"}; per file: {@code "scale"} for
+ * every part (multiplied with a part's own), {@code "translucent": true}, {@code "full_bright": true}.
  */
 public final class DataPartModels extends SimpleJsonResourceReloadListener {
     private static final Map<String, PartAnimator> ANIMATORS = new LinkedHashMap<>();
@@ -78,13 +80,17 @@ public final class DataPartModels extends SimpleJsonResourceReloadListener {
         GeoGeometry.invalidate();
         int count = 0;
         for (Map.Entry<ResourceLocation, JsonElement> entry : files.entrySet()) {
-            JsonObject json = entry.getValue().getAsJsonObject();
-            ResourceLocation mob = ResourceLocation.parse(json.get("mob").getAsString());
-            if (json.has("requires") && !net.neoforged.fml.ModList.get().isLoaded(json.get("requires").getAsString())) {
-                continue;
+            try {
+                JsonObject json = entry.getValue().getAsJsonObject();
+                if (json.has("requires") && !net.neoforged.fml.ModList.get().isLoaded(json.get("requires").getAsString())) {
+                    continue;
+                }
+                ResourceLocation mob = ResourceLocation.parse(json.get("mob").getAsString());
+                NecroMobModels.register(mob, builder -> build(entry.getKey(), json, builder));
+                count++;
+            } catch (RuntimeException e) {
+                Necromancy.LOGGER.error("Minion part file {} is broken: {}", entry.getKey(), e.toString());
             }
-            NecroMobModels.register(mob, builder -> build(entry.getKey(), json, builder));
-            count++;
         }
         NecroMobModels.invalidate();
         Necromancy.LOGGER.info("Loaded {} Minion part sets from resources", count);
@@ -92,8 +98,20 @@ public final class DataPartModels extends SimpleJsonResourceReloadListener {
 
     static void build(ResourceLocation file, JsonObject json, NecroMobModels.Builder builder) {
         ResourceLocation texture = ResourceLocation.parse(json.get("texture").getAsString());
-        Map<String, ModelPart> bones = bones(json);
+        Map<String, String> parents = new LinkedHashMap<>();
+        Map<String, ModelPart> bones = bones(json, parents);
+        java.util.Set<String> named = new java.util.HashSet<>();
+        for (PartType type : PartType.values()) {
+            if (json.has(type.getSerializedName())) {
+                collectNames(json.getAsJsonObject(type.getSerializedName()), named);
+            }
+        }
+        if (json.has("hide")) {
+            json.getAsJsonArray("hide").forEach(e -> named.add(e.getAsString()));
+        }
+        Split split = new Split(bones, parents, named);
         boolean translucent = json.has("translucent") && json.get("translucent").getAsBoolean();
+        float fileScale = json.has("scale") ? json.get("scale").getAsFloat() : 1F;
         for (PartType type : PartType.values()) {
             JsonObject p = json.has(type.getSerializedName()) ? json.getAsJsonObject(type.getSerializedName()) : null;
             if (p == null) {
@@ -101,15 +119,15 @@ public final class DataPartModels extends SimpleJsonResourceReloadListener {
             }
             PartModel model;
             if (type == PartType.ARM) {
-                List<ModelPart> left = group(bones, p.getAsJsonObject("left"), file);
-                List<ModelPart> right = group(bones, p.getAsJsonObject("right"), file);
+                List<ModelPart> left = group(split, p.getAsJsonObject("left"), file);
+                List<ModelPart> right = group(split, p.getAsJsonObject("right"), file);
                 float[] l = point(p, "plug_left");
                 float[] r = point(p, "plug_right");
                 model = PartModel.arms(texture, left, right).plugs(l[0], l[1], l[2], r[0], r[1], r[2]);
             } else {
                 List<ModelPart> parts = new ArrayList<>();
                 for (JsonElement g : p.getAsJsonArray("groups")) {
-                    parts.addAll(group(bones, g.getAsJsonObject(), file));
+                    parts.addAll(group(split, g.getAsJsonObject(), file));
                 }
                 model = PartModel.of(texture, parts.toArray(ModelPart[]::new));
                 if (p.has("plug")) {
@@ -136,8 +154,9 @@ public final class DataPartModels extends SimpleJsonResourceReloadListener {
                     case TORSO -> PartAnimator.NONE;
                 });
             }
-            if (p.has("scale")) {
-                model.scale(p.get("scale").getAsFloat());
+            float partScale = fileScale * (p.has("scale") ? p.get("scale").getAsFloat() : 1F);
+            if (partScale != 1F) {
+                model.scale(partScale);
             }
             if (translucent) {
                 model.renderType(RenderType::entityTranslucent);
@@ -147,39 +166,102 @@ public final class DataPartModels extends SimpleJsonResourceReloadListener {
             }
             builder.put(type, model);
         }
-        if (json.has("scale")) {
-            builder.scale(json.get("scale").getAsFloat());
+    }
+
+    private static void collectNames(JsonObject part, java.util.Set<String> into) {
+        for (String key : List.of("groups", "left", "right")) {
+            if (!part.has(key)) {
+                continue;
+            }
+            JsonElement e = part.get(key);
+            List<JsonObject> groups = new ArrayList<>();
+            if (e.isJsonArray()) {
+                e.getAsJsonArray().forEach(g -> groups.add(g.getAsJsonObject()));
+            } else {
+                groups.add(e.getAsJsonObject());
+            }
+            for (JsonObject g : groups) {
+                g.getAsJsonArray("bones").forEach(b -> into.add(b.getAsString()));
+            }
         }
     }
 
-    private static Map<String, ModelPart> bones(JsonObject json) {
+    private static Map<String, ModelPart> bones(JsonObject json, Map<String, String> parents) {
         if (json.has("geo")) {
-            return GeoGeometry.bones(ResourceLocation.parse(json.get("geo").getAsString()));
+            ResourceLocation geo = ResourceLocation.parse(json.get("geo").getAsString());
+            parents.putAll(GeoGeometry.parents(geo));
+            return GeoGeometry.bones(geo);
         }
         String[] layer = json.get("layer").getAsString().split("#");
         ModelPart root = Minecraft.getInstance().getEntityModels().bakeLayer(new ModelLayerLocation(ResourceLocation.parse(layer[0]),
                 layer.length > 1 ? layer[1] : "main"));
         Map<String, ModelPart> map = new LinkedHashMap<>();
-        collect(root, map);
+        collect(root, null, map, parents);
         return map;
     }
 
-    private static void collect(ModelPart part, Map<String, ModelPart> into) {
-        part.children.forEach((name, child) -> {
-            into.putIfAbsent(name, child);
-            collect(child, into);
+    private static void collect(ModelPart part, @javax.annotation.Nullable String name, Map<String, ModelPart> into, Map<String, String> parents) {
+        part.children.forEach((childName, child) -> {
+            if (into.putIfAbsent(childName, child) == null && name != null) {
+                parents.put(childName, name);
+            }
+            collect(child, childName, into, parents);
         });
     }
 
-    /** The bones of one group: one part turning about the group pivot, or each bone as its own part. */
-    private static List<ModelPart> group(Map<String, ModelPart> bones, JsonObject group, ResourceLocation file) {
-        List<ModelPart> parts = new ArrayList<>();
-        for (JsonElement b : group.getAsJsonArray("bones")) {
-            ModelPart bone = bones.get(b.getAsString());
-            if (bone == null) {
-                throw new IllegalArgumentException(file + ": no bone '" + b.getAsString() + "', known: " + bones.keySet());
+    /** Takes bones out of a model: each with its own children except those named elsewhere, at its true place. */
+    record Split(Map<String, ModelPart> bones, Map<String, String> parents, java.util.Set<String> named) {
+        ModelPart take(String name, java.util.Collection<String> keep) {
+            ModelPart bone = prune(bones.get(name), keep);
+            String child = name;
+            for (String parent = parents.get(name); parent != null; parent = parents.get(parent)) {
+                ModelPart wrapper = new ModelPart(List.of(), new java.util.HashMap<>(Map.of(child, bone)));
+                wrapper.setInitialPose(bones.get(parent).getInitialPose());
+                wrapper.resetPose();
+                bone = wrapper;
+                child = parent;
             }
-            parts.add(bone);
+            return bone;
+        }
+
+        /** A copy of the bone whose children skip the bones other entries of the file name (they draw those). */
+        private ModelPart prune(ModelPart bone, java.util.Collection<String> keep) {
+            Map<String, ModelPart> children = new LinkedHashMap<>();
+            bone.children.forEach((childName, child) -> {
+                if (!named.contains(childName) || keep.contains(childName)) {
+                    children.put(childName, prune(child, keep));
+                }
+            });
+            ModelPart copy = new ModelPart(bone.cubes, children);
+            copy.setInitialPose(bone.getInitialPose());
+            copy.resetPose();
+            return copy;
+        }
+
+        /** Is {@code name} below one of {@code others} in the bone tree? */
+        boolean under(String name, java.util.Collection<String> others) {
+            for (String parent = parents.get(name); parent != null; parent = parents.get(parent)) {
+                if (others.contains(parent)) {
+                    return true;
+                }
+            }
+            return false;
+        }
+    }
+
+    /** The bones of one group: one part turning about the group pivot, or each bone as its own part. */
+    private static List<ModelPart> group(Split split, JsonObject group, ResourceLocation file) {
+        List<ModelPart> parts = new ArrayList<>();
+        List<String> names = new ArrayList<>();
+        group.getAsJsonArray("bones").forEach(b -> names.add(b.getAsString()));
+        for (String name : names) {
+            if (!split.bones().containsKey(name)) {
+                throw new IllegalArgumentException(file + ": no bone '" + name + "', known: " + split.bones().keySet());
+            }
+            // a bone below another bone of this group stays inside that one
+            if (!split.under(name, names)) {
+                parts.add(split.take(name, names));
+            }
         }
         if (!group.has("pivot")) {
             return parts;

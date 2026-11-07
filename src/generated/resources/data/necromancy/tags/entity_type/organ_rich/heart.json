@@ -4,6 +4,66 @@
     "minecraft:ravager",
     "minecraft:cow",
     "minecraft:mooshroom",
-    "minecraft:pig"
+    "minecraft:pig",
+    {
+      "id": "orespawn:alosaurus",
+      "required": false
+    },
+    {
+      "id": "orespawn:apple_cow",
+      "required": false
+    },
+    {
+      "id": "orespawn:basilisk",
+      "required": false
+    },
+    {
+      "id": "orespawn:camarasaurus",
+      "required": false
+    },
+    {
+      "id": "orespawn:crystal_cow",
+      "required": false
+    },
+    {
+      "id": "orespawn:dungeon_beast",
+      "required": false
+    },
+    {
+      "id": "orespawn:enchanted_apple_cow",
+      "required": false
+    },
+    {
+      "id": "orespawn:gold_cow",
+      "required": false
+    },
+    {
+      "id": "orespawn:golden_apple_cow",
+      "required": false
+    },
+    {
+      "id": "orespawn:hammerhead",
+      "required": false
+    },
+    {
+      "id": "orespawn:hydrolisc",
+      "required": false
+    },
+    {
+      "id": "orespawn:nastysaurus",
+      "required": false
+    },
+    {
+      "id": "orespawn:red_cow",
+      "required": false
+    },
+    {
+      "id": "orespawn:sea_viper",
+      "required": false
+    },
+    {
+      "id": "orespawn:trex",
+      "required": false
+    }
   ]
 }

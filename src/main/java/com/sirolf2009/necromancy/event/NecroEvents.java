@@ -92,9 +92,34 @@ public final class NecroEvents {
         }
         if (killer instanceof com.sirolf2009.necromancy.entity.MinionEntity minion) {
             minion.addKill(event.getEntity());
-            if (minion.getOwner() instanceof Player owner) {
-                ScytheItem.harvestForMinion(owner, event.getEntity());
+            if (minion.getOwner() instanceof Player owner && !ScytheItem.harvestForMinion(owner, event.getEntity())
+                    && (minion.hasFlag(com.sirolf2009.necromancy.api.BodyPartLocation.ARM_LEFT, com.sirolf2009.necromancy.api.TraitFlag.REAPS)
+                            || minion.hasFlag(com.sirolf2009.necromancy.api.BodyPartLocation.ARM_RIGHT, com.sirolf2009.necromancy.api.TraitFlag.REAPS))
+                    && !(event.getEntity() instanceof Player) && owner.distanceToSqr(minion) < 256) {
+                // a reaping arm bottles the soul as a scythe would
+                ScytheItem.bottleSoul(owner, event.getEntity());
             }
+        }
+    }
+
+    /** Takes away the cobwebs and other blocks Minion traits put down for a while. */
+    @SubscribeEvent
+    public static void placedBlocks(net.neoforged.neoforge.event.tick.LevelTickEvent.Post event) {
+        if (event.getLevel() instanceof net.minecraft.server.level.ServerLevel level && level.getGameTime() % 20 == 0) {
+            com.sirolf2009.necromancy.world.PlacedBlocks.tick(level);
+        }
+    }
+
+    /** A cloud a Minion leaves when it dies (or any effect it gives out) never touches its master's side. */
+    @SubscribeEvent
+    public static void friendlyEffects(net.neoforged.neoforge.event.entity.living.MobEffectEvent.Applicable event) {
+        Entity source = event.getEffectSource();
+        if (source instanceof net.minecraft.world.entity.AreaEffectCloud cloud) {
+            source = cloud.getOwner();
+        }
+        if (source instanceof com.sirolf2009.necromancy.entity.MinionEntity minion && minion != event.getEntity() && minion.isFriendly(event.getEntity())
+                && event.getEffectInstance().getEffect().value().getCategory() == net.minecraft.world.effect.MobEffectCategory.HARMFUL) {
+            event.setResult(net.neoforged.neoforge.event.entity.living.MobEffectEvent.Applicable.Result.DO_NOT_APPLY);
         }
     }
 

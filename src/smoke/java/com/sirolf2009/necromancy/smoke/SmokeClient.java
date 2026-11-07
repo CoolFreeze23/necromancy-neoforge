@@ -49,7 +49,7 @@ import java.util.function.Function;
  * a line is a server command, or "wait N", "shot NAME", "hud on|off", "view 0|1|2", "screen NAME|none", or "report TEXT".
  * a line is a server command, or "wait N", "shot NAME", "hud on|off", "view 0|1|2", "report TEXT",
  * "useblock X Y Z" (the player right-clicks the block), "closegui", "inventory", "book" (toggles the
- * open furnace screen's recipe book) or "tooltip on|off" (draws the held item's tooltip over the HUD).
+ * open furnace screen's recipe book), "tooltip on|off" (draws the held item's tooltip over the HUD) or "hitboxes on|off".
  */
 @Mod(value = Necromancy.MOD_ID, dist = Dist.CLIENT)
 public class SmokeClient {
@@ -171,6 +171,7 @@ public class SmokeClient {
                 default -> null;
             });
             case "tooltip" -> tooltip = parts[1].equals("on");
+            case "hitboxes" -> mc.getEntityRenderDispatcher().setRenderHitBoxes(parts[1].equals("on"));
             case "closegui" -> mc.player.closeContainer();
             case "inventory" -> mc.setScreen(new InventoryScreen(mc.player));
             case "book" -> {

@@ -24,6 +24,6 @@ else
 fi
 rc=$?
 echo "gradle exit $rc"
-grep -nE 'Critical injection|InjectionError|MixinTransformerError|SMOKE:|Unable to load model|Failed to load|Couldn.t parse|Missing textures|Exception in|Caused by:|Reported exception|Crash report saved|FATAL' build/smoke.log | cut -c1-260 | head -40
+grep -nE 'Critical injection|InjectionError|MixinTransformerError|SMOKE:|Unable to load model|Failed to load|Couldn.t parse|Missing textures|Exception in|Caused by:|Reported exception|Crash report saved|FATAL|Could not build the Minion parts|Minion part file' build/smoke.log | cut -c1-260 | head -40
 [ -f run-smoke/smoke-out/report.txt ] && { echo "--- report ($(wc -l < run-smoke/smoke-out/report.txt) lines)"; head -${REPORT_LINES:-60} run-smoke/smoke-out/report.txt | cut -c1-200; }
 exit $rc

@@ -55,6 +55,14 @@ public final class NecroTabs {
                         output.accept(item.get());
                     }
                 }
+                // creatures of other mods (OreSpawn): one creature part item per mob and part
+                for (var mob : com.sirolf2009.necromancy.api.NecroMobRegistry.all()) {
+                    for (var type : com.sirolf2009.necromancy.api.PartType.values()) {
+                        if (mob.isCreaturePart(type)) {
+                            output.accept(mob.partStack(type));
+                        }
+                    }
+                }
             })
             .build());
 

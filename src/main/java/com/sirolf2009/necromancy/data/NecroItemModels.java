@@ -19,7 +19,7 @@ import net.neoforged.neoforge.common.data.ExistingFileHelper;
  */
 public class NecroItemModels extends ItemModelProvider {
     /** Items whose models are hand-written (block entity, OBJ or multi-part models). */
-    public static final Set<String> HAND_MADE = Set.of("sewing_machine", "blood_scythe", "bone_scythe", "netherite_scythe", "bone_scepter", "phylactery", "minion_remains");
+    public static final Set<String> HAND_MADE = Set.of("creature_part", "sewing_machine", "blood_scythe", "bone_scythe", "netherite_scythe", "bone_scepter", "phylactery", "minion_remains");
     /** Mobs whose body part items are modelled by hand (they have no flat icon). */
     public static final Set<String> HAND_MADE_PART_MOBS = Set.of("husk", "drowned", "bogged", "wither_skeleton", "blaze", "slime", "mooshroom",
             "snow_golem", "armadillo", "goat", "night_crawler");

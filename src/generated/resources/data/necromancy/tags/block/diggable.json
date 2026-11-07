@@ -1,0 +1,21 @@
+{
+  "values": [
+    "minecraft:dirt",
+    "minecraft:coarse_dirt",
+    "minecraft:rooted_dirt",
+    "minecraft:grass_block",
+    "minecraft:podzol",
+    "minecraft:mycelium",
+    "minecraft:sand",
+    "minecraft:red_sand",
+    "minecraft:gravel",
+    "minecraft:clay",
+    "minecraft:mud",
+    "minecraft:soul_sand",
+    "minecraft:soul_soil",
+    {
+      "id": "orespawn:mole_dirt",
+      "required": false
+    }
+  ]
+}

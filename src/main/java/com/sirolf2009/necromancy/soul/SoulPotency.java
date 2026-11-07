@@ -74,7 +74,11 @@ public enum SoulPotency implements StringRepresentable {
         if (victim.getType().is(com.sirolf2009.necromancy.registry.NecroTags.LEGENDARY_SOULS)) {
             return LEGENDARY;
         }
-        SoulPotency potency = ofHealth(victim.getAttributeValue(Attributes.MAX_HEALTH));
+        double health = victim.getAttributeValue(Attributes.MAX_HEALTH);
+        if (net.minecraft.core.registries.BuiltInRegistries.ENTITY_TYPE.getKey(victim.getType()).getNamespace().equals("orespawn")) {
+            health *= com.sirolf2009.necromancy.NecroConfig.ORESPAWN_SOUL_HEALTH.get();
+        }
+        SoulPotency potency = ofHealth(health);
         if (victim instanceof net.minecraft.world.entity.raid.Raider raider && raider.isPatrolLeader()) {
             potency = potency.stronger();
         }

@@ -17,6 +17,70 @@
     "minecraft:shulker",
     "minecraft:armor_stand",
     "necromancy:minion",
-    "necromancy:teddy"
+    "necromancy:teddy",
+    {
+      "id": "orespawn:ghost",
+      "required": false
+    },
+    {
+      "id": "orespawn:ghost_skelly",
+      "required": false
+    },
+    {
+      "id": "orespawn:giant_robot",
+      "required": false
+    },
+    {
+      "id": "orespawn:irukandji",
+      "required": false
+    },
+    {
+      "id": "orespawn:jeffery",
+      "required": false
+    },
+    {
+      "id": "orespawn:leaf_monster",
+      "required": false
+    },
+    {
+      "id": "orespawn:robot_1",
+      "required": false
+    },
+    {
+      "id": "orespawn:robot_2",
+      "required": false
+    },
+    {
+      "id": "orespawn:robot_3",
+      "required": false
+    },
+    {
+      "id": "orespawn:robot_4",
+      "required": false
+    },
+    {
+      "id": "orespawn:robot_5",
+      "required": false
+    },
+    {
+      "id": "orespawn:rotator",
+      "required": false
+    },
+    {
+      "id": "orespawn:rubber_ducky",
+      "required": false
+    },
+    {
+      "id": "orespawn:triffid",
+      "required": false
+    },
+    {
+      "id": "orespawn:urchin",
+      "required": false
+    },
+    {
+      "id": "orespawn:vortex",
+      "required": false
+    }
   ]
 }

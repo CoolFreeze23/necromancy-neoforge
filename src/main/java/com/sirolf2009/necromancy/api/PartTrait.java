@@ -40,6 +40,16 @@ public interface PartTrait {
         return false;
     }
 
+    /** The tooltip line naming this trait. */
+    default net.minecraft.network.chat.Component name() {
+        return net.minecraft.network.chat.Component.translatable("trait." + id().getNamespace() + "." + id().getPath());
+    }
+
+    /** The tooltip line under the name: what the trait does. */
+    default net.minecraft.network.chat.Component description() {
+        return net.minecraft.network.chat.Component.translatable("trait." + id().getNamespace() + "." + id().getPath() + ".desc");
+    }
+
     /** Shown in the tooltip; false for traits that only exist as flags of a bigger mechanic. */
     default boolean visible() {
         return true;

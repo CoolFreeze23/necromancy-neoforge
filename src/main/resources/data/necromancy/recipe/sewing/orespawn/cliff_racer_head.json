@@ -1,0 +1,38 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "type": "necromancy:sewing_shaped",
+  "key": {
+    "B": {
+      "item": "necromancy:brains"
+    },
+    "E": {
+      "item": "minecraft:spider_eye"
+    },
+    "F": {
+      "item": "minecraft:calcite"
+    },
+    "S": {
+      "item": "necromancy:skin"
+    }
+  },
+  "pattern": [
+    "SSSS",
+    "SBFS",
+    "SEES"
+  ],
+  "result": {
+    "count": 1,
+    "id": "necromancy:creature_part",
+    "components": {
+      "necromancy:creature_part": {
+        "mob": "orespawn:cliff_racer",
+        "type": "head"
+      }
+    }
+  }
+}

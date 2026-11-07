@@ -38,11 +38,13 @@ import net.neoforged.neoforge.items.ItemHandlerHelper;
  * <li>Collector: two Enderman arms. Picks up items within 12 blocks (only the off-hand item's kind, if it holds one).</li>
  * <li>Reaper: a scythe in hand. Keeps two adults of each kind of animal within 8 blocks and culls one extra adult every
  * 30 seconds (never babies, named, leashed or tamed animals), bottling souls with the glass bottles in its pack.</li>
+ * <li>Forager: a part with a harvesting forager trait (a beaver's teeth, a molenoid's claws). Breaks the blocks it is made
+ * for near its post and packs their drops (needs mobGriefing; never near beds, chests or the altar, never in claims).</li>
  * </ul>
  */
 public class MinionWorkGoal extends Goal {
     public enum Job {
-        FARMER, COLLECTOR, REAPER
+        FARMER, COLLECTOR, REAPER, FORAGER
     }
 
     private static final int RADIUS = 8;
@@ -70,6 +72,26 @@ public class MinionWorkGoal extends Goal {
         }
         if (minion.hasFlag(BodyPartLocation.HEAD, TraitFlag.THINKS) && minion.hasArms() && minion.getMainHandItem().getItem() instanceof HoeItem) {
             return Job.FARMER;
+        }
+        if (forager(minion, false) != null) {
+            return Job.FORAGER;
+        }
+        return null;
+    }
+
+    /** The Minion's forager trait: a harvesting one under the Work order, or (grazing) one that eats. */
+    @Nullable
+    public static com.sirolf2009.necromancy.trait.DataTraits.Forager forager(MinionEntity minion, boolean eat) {
+        for (BodyPartLocation location : BodyPartLocation.values()) {
+            var mob = minion.part(location);
+            if (mob == null) {
+                continue;
+            }
+            for (var trait : mob.traits(location.type())) {
+                if (trait instanceof com.sirolf2009.necromancy.trait.DataTraits.Forager forager && forager.eat == eat && (eat || forager.needsWork)) {
+                    return forager;
+                }
+            }
         }
         return null;
     }
@@ -112,6 +134,7 @@ public class MinionWorkGoal extends Goal {
             case FARMER -> farm(level, pack);
             case COLLECTOR -> collect(level, pack);
             case REAPER -> reap(level, pack);
+            case FORAGER -> forage(level, pack);
         }
     }
 
@@ -156,6 +179,41 @@ public class MinionWorkGoal extends Goal {
         minion.getMainHandItem().hurtAndBreak(1, minion, net.minecraft.world.entity.EquipmentSlot.MAINHAND);
         targetCrop = null;
         cooldown = 40;
+    }
+
+    private void forage(ServerLevel level, SimpleContainer pack) {
+        var forager = forager(minion, false);
+        if (forager == null || !level.getGameRules().getBoolean(net.minecraft.world.level.GameRules.RULE_MOBGRIEFING)) {
+            cooldown = 100;
+            return;
+        }
+        BlockPos post = minion.workPost();
+        if (targetCrop == null || !level.getBlockState(targetCrop).is(forager.blocks)) {
+            targetCrop = MinionForageGoal.find(level, minion, post, forager);
+            cooldown = 20;
+            if (targetCrop == null) {
+                cooldown = 100;
+                return;
+            }
+        }
+        if (minion.distanceToSqr(targetCrop.getX() + 0.5, targetCrop.getY(), targetCrop.getZ() + 0.5) > 6.25) {
+            minion.getNavigation().moveTo(targetCrop.getX() + 0.5, targetCrop.getY(), targetCrop.getZ() + 0.5, 0.9);
+            cooldown = 10;
+            return;
+        }
+        BlockState state = level.getBlockState(targetCrop);
+        if (MinionForageGoal.mayBreak(level, minion, targetCrop, state)) {
+            minion.swing(net.minecraft.world.InteractionHand.MAIN_HAND);
+            for (ItemStack drop : Block.getDrops(state, level, targetCrop, level.getBlockEntity(targetCrop), minion, minion.getMainHandItem())) {
+                ItemStack rest = pack.addItem(drop);
+                if (!rest.isEmpty()) {
+                    minion.spawnAtLocation(rest);
+                }
+            }
+            level.destroyBlock(targetCrop, false, minion);
+        }
+        targetCrop = null;
+        cooldown = forager.interval;
     }
 
     private static boolean isRipe(BlockState state) {

@@ -1,14 +1,15 @@
-// 1.21.1	2026-11-08T02:11:41.6627926	Tags for minecraft:entity_type mod id necromancy
+// 1.21.1	2026-11-08T04:32:03.9590675	Tags for minecraft:entity_type mod id necromancy
 f2232310923bec1945a922db9243fcac96d582a7 data/minecraft/tags/entity_type/ignores_poison_and_regen.json
 f2232310923bec1945a922db9243fcac96d582a7 data/minecraft/tags/entity_type/inverted_healing_and_harm.json
 f2232310923bec1945a922db9243fcac96d582a7 data/minecraft/tags/entity_type/sensitive_to_smite.json
 f2232310923bec1945a922db9243fcac96d582a7 data/minecraft/tags/entity_type/undead.json
-017163b70344f3661c3bff56b15d5cc0b5cafb61 data/necromancy/tags/entity_type/bloodless.json
-5e5f4d7a54c25242a7c07cd9dc3e4a0beea9074b data/necromancy/tags/entity_type/legendary_souls.json
+ffd7be72fde6a8ccb38b7ed93fd4c41771e4e6b8 data/necromancy/tags/entity_type/bloodless.json
+5bf3e49ad0cac7b48daaee3bbb603545f93cc9ac data/necromancy/tags/entity_type/legendary_souls.json
 298c9b953f121b50c468a077827058c0cbb04f17 data/necromancy/tags/entity_type/minion_ignores.json
-999760f4a02fe6a47bd3b7e60834d4b0524a39d9 data/necromancy/tags/entity_type/organ_rich/brains.json
-818744b6387a3e357095712d72b895ec500b138c data/necromancy/tags/entity_type/organ_rich/heart.json
-773a92f7fdbc29148bcebe7f186759b713766a6f data/necromancy/tags/entity_type/organ_rich/lungs.json
-bfa5943a99eb5bf10495ae60b03df16794502725 data/necromancy/tags/entity_type/organ_rich/lungs_plenty.json
-d02c05955ce6bdb47665cd9b5ea1ed92e7a0e8f2 data/necromancy/tags/entity_type/organ_rich/muscle.json
+5a4b5839354b6924ccbd7c0baa0d9c9465bc541e data/necromancy/tags/entity_type/no_soul.json
+c08c184ceca3105fa593dfc3109d69cef12d7337 data/necromancy/tags/entity_type/organ_rich/brains.json
+b4e94c507e04463f0f3f257ee8d0a4917b1bde1f data/necromancy/tags/entity_type/organ_rich/heart.json
+e65b73ce365efdb907e730c6237d14a6441ac768 data/necromancy/tags/entity_type/organ_rich/lungs.json
+78fb00a9e01ab2e84feb759791161369d6cc30a2 data/necromancy/tags/entity_type/organ_rich/lungs_plenty.json
+2da41e957a5b6e207e52151f49bdfc95c5d58489 data/necromancy/tags/entity_type/organ_rich/muscle.json
 eb0b16b9c1c356ebec7cf67cbdc8d64681901e19 data/necromancy/tags/entity_type/replaceable_undead.json

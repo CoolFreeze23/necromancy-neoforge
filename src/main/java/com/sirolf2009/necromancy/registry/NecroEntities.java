@@ -51,6 +51,10 @@ public final class NecroEntities {
             () -> EntityType.Builder.<BloodTearEntity>of(BloodTearEntity::new, MobCategory.MISC).sized(0.25F, 0.25F).clientTrackingRange(4).updateInterval(10)
                     .build(Necromancy.MOD_ID + ":blood_tear"));
 
+    public static final DeferredHolder<EntityType<?>, EntityType<com.sirolf2009.necromancy.entity.PartBoltEntity>> PART_BOLT = ENTITIES.register("part_bolt",
+            () -> EntityType.Builder.<com.sirolf2009.necromancy.entity.PartBoltEntity>of(com.sirolf2009.necromancy.entity.PartBoltEntity::new, MobCategory.MISC)
+                    .sized(0.3F, 0.3F).clientTrackingRange(4).updateInterval(10).build(Necromancy.MOD_ID + ":part_bolt"));
+
     private NecroEntities() {
     }
 }

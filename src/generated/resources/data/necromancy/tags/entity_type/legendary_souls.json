@@ -3,6 +3,42 @@
     "minecraft:wither",
     "minecraft:ender_dragon",
     "minecraft:warden",
-    "minecraft:elder_guardian"
+    "minecraft:elder_guardian",
+    {
+      "id": "orespawn:godzilla",
+      "required": false
+    },
+    {
+      "id": "orespawn:kraken",
+      "required": false
+    },
+    {
+      "id": "orespawn:the_king",
+      "required": false
+    },
+    {
+      "id": "orespawn:the_queen",
+      "required": false
+    },
+    {
+      "id": "orespawn:the_prince_teen",
+      "required": false
+    },
+    {
+      "id": "orespawn:the_prince_adult",
+      "required": false
+    },
+    {
+      "id": "orespawn:alien_boss",
+      "required": false
+    },
+    {
+      "id": "orespawn:pitch_black",
+      "required": false
+    },
+    {
+      "id": "orespawn:mothra",
+      "required": false
+    }
   ]
 }

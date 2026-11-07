@@ -16,6 +16,7 @@ public final class NecroConfig {
     public static final ModConfigSpec.ConfigValue<java.util.List<? extends Integer>> SHRINE_TIER_CAPS;
     public static final ModConfigSpec.BooleanValue SOUL_POTENCY;
     public static final ModConfigSpec.BooleanValue CREEPER_TORSO_BREAKS_BLOCKS;
+    public static final ModConfigSpec.DoubleValue ORESPAWN_SOUL_HEALTH;
 
     static {
         ModConfigSpec.Builder b = new ModConfigSpec.Builder();
@@ -43,6 +44,10 @@ public final class NecroConfig {
                 .define("classicStats", false);
         CREEPER_TORSO_BREAKS_BLOCKS = b.comment("A Minion with a Creeper torso explodes when it dies. Should that explosion break blocks (also needs mobGriefing)?")
                 .define("creeperTorsoBreaksBlocks", false);
+        b.pop();
+        b.push("compat");
+        ORESPAWN_SOUL_HEALTH = b.comment("OreSpawn creatures have far more health than vanilla ones. Their health counts this much when a soul's potency is read from it (1 = as is).")
+                .defineInRange("oreSpawnSoulHealthFactor", 0.5, 0.05, 1.0);
         b.pop();
         b.push("drops");
         ORGAN_DROP_CHANCE = b.comment("Multiplier on the organ drop chances (brains, heart, lungs 2%, muscle 5%, skin 15%, more from organ-rich creatures, +1% per Looting or Reaping level). 0 turns organ drops off.")

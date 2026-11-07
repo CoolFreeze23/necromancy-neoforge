@@ -39,6 +39,9 @@ public class NecroMob {
     private Supplier<Ingredient> essence = () -> Ingredient.EMPTY;
     private final Map<PartType, Supplier<Ingredient>> essenceOverrides = new EnumMap<>(PartType.class);
     private boolean saddleable;
+    private Mount mount = Mount.PIG;
+    @Nullable
+    private String nameKey;
     private float riderOffset;
     private Supplier<SoundEvent> ambientSound;
     private Supplier<SoundEvent> hurtSound;
@@ -58,7 +61,7 @@ public class NecroMob {
 
     /** Translation key of the mob's display name, used in tooltips and the altar screen. */
     public String translationKey() {
-        return "necromob." + id.getNamespace() + "." + id.getPath();
+        return nameKey != null ? nameKey : "necromob." + id.getNamespace() + "." + id.getPath();
     }
 
     // --- building ---
@@ -142,6 +145,19 @@ public class NecroMob {
         return this;
     }
 
+    /** Name the mob with another translation key (a creature of another mod: its own entity name). */
+    public NecroMob name(String translationKey) {
+        this.nameKey = translationKey;
+        return this;
+    }
+
+    /** A saddleable torso that rides differently from the pig: seats, water, direct steering, a jump bar. */
+    public NecroMob mount(float riderOffset, Mount mount) {
+        saddleable(riderOffset);
+        this.mount = mount;
+        return this;
+    }
+
     public NecroMob sounds(Supplier<SoundEvent> ambient, Supplier<SoundEvent> hurt, Supplier<SoundEvent> death) {
         this.ambientSound = ambient;
         this.hurtSound = hurt;
@@ -222,6 +238,10 @@ public class NecroMob {
         return saddleable;
     }
 
+    public Mount mount() {
+        return mount;
+    }
+
     public float riderOffset() {
         return riderOffset;
     }
@@ -255,6 +275,14 @@ public class NecroMob {
 
     public float torsoWidth() {
         return torsoWidth;
+    }
+
+    /**
+     * How a saddled torso rides. {@code direct}: steered with the movement keys like a horse (otherwise with a Brain on a
+     * Stick, like a pig); {@code water}: full speed only in water; {@code jump}: strength of the horse jump bar (0 for none).
+     */
+    public record Mount(int seats, boolean water, boolean direct, float jump, float speedBonus) {
+        public static final Mount PIG = new Mount(1, false, false, 0F, 0F);
     }
 
     public record ExtraAttribute(Holder<Attribute> attribute, double amount, AttributeModifier.Operation operation) {

@@ -1,5 +1,9 @@
 {
   "values": [
-    "minecraft:ghast"
+    "minecraft:ghast",
+    {
+      "id": "orespawn:whale",
+      "required": false
+    }
   ]
 }

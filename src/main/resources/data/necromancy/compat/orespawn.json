@@ -1,0 +1,8627 @@
+{
+ "requires": "orespawn",
+ "tags": {
+  "necromancy:legendary_souls": [
+   "orespawn:godzilla",
+   "orespawn:kraken",
+   "orespawn:the_king",
+   "orespawn:the_queen",
+   "orespawn:the_prince_teen",
+   "orespawn:the_prince_adult",
+   "orespawn:alien_boss",
+   "orespawn:pitch_black",
+   "orespawn:mothra"
+  ],
+  "necromancy:no_soul": [
+   "orespawn:king_head",
+   "orespawn:queen_head",
+   "orespawn:godzilla_head",
+   "orespawn:coin",
+   "orespawn:island",
+   "orespawn:island_too",
+   "orespawn:elevator",
+   "orespawn:rock_base",
+   "orespawn:tshirt",
+   "orespawn:purple_power",
+   "orespawn:ant_robot",
+   "orespawn:spider_robot"
+  ],
+  "necromancy:bloodless": [
+   "orespawn:ghost",
+   "orespawn:ghost_skelly",
+   "orespawn:giant_robot",
+   "orespawn:irukandji",
+   "orespawn:jeffery",
+   "orespawn:leaf_monster",
+   "orespawn:robot_1",
+   "orespawn:robot_2",
+   "orespawn:robot_3",
+   "orespawn:robot_4",
+   "orespawn:robot_5",
+   "orespawn:rotator",
+   "orespawn:rubber_ducky",
+   "orespawn:triffid",
+   "orespawn:urchin",
+   "orespawn:vortex"
+  ],
+  "necromancy:organ_rich/brains": [
+   "orespawn:alien",
+   "orespawn:band_p",
+   "orespawn:ender_knight",
+   "orespawn:ender_reaper",
+   "orespawn:gamma_metroid"
+  ],
+  "necromancy:organ_rich/heart": [
+   "orespawn:alosaurus",
+   "orespawn:apple_cow",
+   "orespawn:basilisk",
+   "orespawn:camarasaurus",
+   "orespawn:crystal_cow",
+   "orespawn:dungeon_beast",
+   "orespawn:enchanted_apple_cow",
+   "orespawn:gold_cow",
+   "orespawn:golden_apple_cow",
+   "orespawn:hammerhead",
+   "orespawn:hydrolisc",
+   "orespawn:nastysaurus",
+   "orespawn:red_cow",
+   "orespawn:sea_viper",
+   "orespawn:trex"
+  ],
+  "necromancy:organ_rich/muscle": [
+   "orespawn:baryonyx",
+   "orespawn:cassowary",
+   "orespawn:cater_killer",
+   "orespawn:gazelle",
+   "orespawn:hercules_beetle",
+   "orespawn:molenoid",
+   "orespawn:ostrich",
+   "orespawn:pointysaurus",
+   "orespawn:trooper_bug",
+   "orespawn:velocity_raptor",
+   "orespawn:worm_large"
+  ],
+  "necromancy:organ_rich/lungs": [
+   "orespawn:baby_dragon",
+   "orespawn:bee",
+   "orespawn:brutalfly",
+   "orespawn:cephadrome",
+   "orespawn:cliff_racer",
+   "orespawn:dragon",
+   "orespawn:kyuubi",
+   "orespawn:leon",
+   "orespawn:leonopteryx",
+   "orespawn:sea_monster",
+   "orespawn:spyro",
+   "orespawn:stinky",
+   "orespawn:terrible_terror",
+   "orespawn:water_dragon"
+  ],
+  "necromancy:organ_rich/lungs_plenty": [
+   "orespawn:whale"
+  ]
+ },
+ "mobs": [
+  {
+   "mob": "trex",
+   "entity": "orespawn:trex",
+   "weight": 4,
+   "shape": [
+    1.2,
+    1.0,
+    1.2
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": "orespawn:trex_living",
+    "hurt": "orespawn:alo_hurt",
+    "death": "orespawn:trex_death"
+   },
+   "essence": {
+    "default": "orespawn:trex_tooth"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      1.5,
+      1,
+      1,
+      0,
+      2
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.attack_knockback",
+       "amount": 0.5
+      }
+     ],
+     "traits": [
+      {
+       "type": "on_hit_toss",
+       "horizontal": 1.2,
+       "vertical": 0.1,
+       "chance": 1.0,
+       "cooldown": 0
+      },
+      {
+       "type": "aura",
+       "effect": "minecraft:weakness",
+       "amplifier": 0,
+       "duration": 60,
+       "radius": 6,
+       "interval": 200,
+       "targets": "enemies",
+       "needs_los": false
+      }
+     ]
+    },
+    "torso": {
+     "stats": [
+      4,
+      0,
+      2,
+      0,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.armor",
+       "amount": 4
+      },
+      {
+       "attribute": "minecraft:generic.scale",
+       "amount": 0.1
+      }
+     ],
+     "traits": [
+      {
+       "type": "flag",
+       "flags": [
+        "cactus_proof"
+       ]
+      }
+     ]
+    },
+    "legs": {
+     "stats": [
+      2,
+      0,
+      3,
+      2.5,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.step_height",
+       "amount": 0.5
+      }
+     ],
+     "traits": []
+    }
+   }
+  },
+  {
+   "mob": "nastysaurus",
+   "entity": "orespawn:nastysaurus",
+   "weight": 4,
+   "shape": [
+    1.2,
+    1.0,
+    1.1
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": "orespawn:alo_living",
+    "hurt": "orespawn:alo_hurt",
+    "death": "orespawn:alo_death"
+   },
+   "essence": {
+    "default": "minecraft:flint"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      1.5,
+      1,
+      1,
+      0,
+      1.5
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "on_hit_toss",
+       "horizontal": 1.2,
+       "vertical": 0.1,
+       "chance": 1.0,
+       "cooldown": 0
+      }
+     ]
+    },
+    "torso": {
+     "stats": [
+      4,
+      0,
+      2,
+      0,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.armor",
+       "amount": 4
+      }
+     ],
+     "traits": [
+      {
+       "type": "on_hurt_reflect",
+       "fraction": 0.2,
+       "flat": 0.0,
+       "max": 4,
+       "ignite_seconds": 0,
+       "melee_only": true
+      }
+     ]
+    },
+    "arm": {
+     "stats": [
+      0.75,
+      0,
+      0,
+      0,
+      1.25
+     ],
+     "attributes": [],
+     "traits": []
+    },
+    "legs": {
+     "stats": [
+      2,
+      0,
+      3,
+      2.5,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.step_height",
+       "amount": 0.5
+      }
+     ],
+     "traits": []
+    }
+   }
+  },
+  {
+   "mob": "alosaurus",
+   "entity": "orespawn:alosaurus",
+   "weight": 3,
+   "shape": [
+    1.1,
+    0.9,
+    1.0
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": "orespawn:alo_living",
+    "hurt": "orespawn:alo_hurt",
+    "death": "orespawn:alo_death"
+   },
+   "essence": {
+    "default": "minecraft:bone_block"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      1,
+      1,
+      0.5,
+      0,
+      1
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "on_hit_toss",
+       "horizontal": 1.2,
+       "vertical": 0.1,
+       "chance": 1.0,
+       "cooldown": 0
+      }
+     ]
+    },
+    "torso": {
+     "stats": [
+      3,
+      0,
+      1,
+      0,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.armor",
+       "amount": 2
+      }
+     ],
+     "traits": []
+    },
+    "legs": {
+     "stats": [
+      1.5,
+      0,
+      3,
+      3,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.step_height",
+       "amount": 0.5
+      }
+     ],
+     "traits": []
+    }
+   }
+  },
+  {
+   "mob": "cryolophosaurus",
+   "entity": "orespawn:cryolophosaurus",
+   "weight": 1,
+   "shape": [
+    0.5,
+    0.45,
+    0.5
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": "orespawn:cryo_living",
+    "hurt": "orespawn:cryo_hurt",
+    "death": "orespawn:cryo_death"
+   },
+   "essence": {
+    "default": "minecraft:snowball"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      0.5,
+      1,
+      0,
+      0,
+      0.5
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "pack",
+       "per_ally": 1,
+       "max": 2,
+       "radius": 8
+      }
+     ]
+    },
+    "torso": {
+     "stats": [
+      0.75,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attributes": [],
+     "traits": []
+    },
+    "legs": {
+     "stats": [
+      0.5,
+      0,
+      1,
+      3.5,
+      0
+     ],
+     "attributes": [],
+     "traits": []
+    }
+   }
+  },
+  {
+   "mob": "baryonyx",
+   "entity": "orespawn:baryonyx",
+   "weight": 3,
+   "shape": [
+    1.0,
+    0.9,
+    0.9
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": null,
+    "hurt": "orespawn:duck_hurt",
+    "death": "orespawn:duck_hurt"
+   },
+   "essence": {
+    "default": "minecraft:salmon"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      1,
+      1,
+      0.5,
+      0,
+      1
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "bane",
+       "target": "#minecraft:aquatic",
+       "multiplier": 1.5
+      }
+     ]
+    },
+    "torso": {
+     "stats": [
+      2.5,
+      0,
+      1,
+      0,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.oxygen_bonus",
+       "amount": 4
+      }
+     ],
+     "traits": []
+    },
+    "arm": {
+     "stats": [
+      0.5,
+      0,
+      0,
+      0,
+      1
+     ],
+     "attributes": [],
+     "traits": []
+    },
+    "legs": {
+     "stats": [
+      1,
+      0,
+      2,
+      2.5,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.water_movement_efficiency",
+       "amount": 0.5
+      }
+     ],
+     "traits": []
+    }
+   }
+  },
+  {
+   "mob": "velocity_raptor",
+   "entity": "orespawn:velocity_raptor",
+   "weight": 2,
+   "shape": [
+    0.55,
+    0.45,
+    0.45
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": null,
+    "hurt": "orespawn:cryo_hurt",
+    "death": "orespawn:cryo_death"
+   },
+   "essence": {
+    "default": "minecraft:sugar"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      0.75,
+      1.5,
+      0,
+      0.5,
+      0.75
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "pack",
+       "per_ally": 1,
+       "max": 3,
+       "radius": 8
+      }
+     ]
+    },
+    "torso": {
+     "stats": [
+      1,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attributes": [],
+     "traits": []
+    },
+    "arm": {
+     "stats": [
+      0.25,
+      0,
+      0,
+      0,
+      0.5
+     ],
+     "attributes": [],
+     "traits": []
+    },
+    "legs": {
+     "stats": [
+      0.5,
+      0,
+      1,
+      4,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.jump_strength",
+       "amount": 0.1
+      },
+      {
+       "attribute": "minecraft:generic.fall_damage_multiplier",
+       "amount": -0.5
+      }
+     ],
+     "traits": [
+      {
+       "type": "leap",
+       "min_range": 3,
+       "max_range": 8,
+       "horizontal": 0.6,
+       "vertical": 0.45,
+       "cooldown": 80
+      }
+     ]
+    }
+   }
+  },
+  {
+   "mob": "basilisk",
+   "entity": "orespawn:basilisk",
+   "weight": 4,
+   "shape": [
+    0.0,
+    0.9,
+    1.0
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": "orespawn:basilisk_living",
+    "hurt": "orespawn:alo_hurt",
+    "death": "orespawn:emperorscorpion_death"
+   },
+   "essence": {
+    "default": "orespawn:basilisk_scale"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      2,
+      1.5,
+      1,
+      0,
+      2
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "on_hit_effect",
+       "effect": "minecraft:poison",
+       "duration": 200,
+       "amplifier": 0,
+       "chance": 0.33,
+       "cooldown": 0
+      },
+      {
+       "type": "aura",
+       "effect": "minecraft:slowness",
+       "amplifier": 2,
+       "duration": 60,
+       "radius": 8,
+       "interval": 100,
+       "targets": "enemies",
+       "needs_los": true
+      }
+     ]
+    },
+    "torso": {
+     "stats": [
+      5,
+      0,
+      2,
+      0,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.armor",
+       "amount": 4
+      }
+     ],
+     "traits": [
+      {
+       "type": "flag",
+       "flags": [
+        "fire_proof"
+       ]
+      },
+      {
+       "type": "regen",
+       "amount": 1,
+       "interval": 75,
+       "condition": "always"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "mob": "kyuubi",
+   "entity": "orespawn:kyuubi",
+   "weight": 3,
+   "shape": [
+    0.6,
+    0.5,
+    0.5
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": "orespawn:kyuubi_living",
+    "hurt": "orespawn:alo_hurt",
+    "death": "orespawn:alo_death"
+   },
+   "essence": {
+    "default": "minecraft:fire_charge"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      1,
+      1,
+      0,
+      0,
+      0.5
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "ranged",
+       "projectile": "minecraft:small_fireball",
+       "cooldown": 40,
+       "range": 8,
+       "min_range": 0,
+       "count": 1,
+       "spread": 0.0,
+       "velocity": 1.6
+      },
+      {
+       "type": "flag",
+       "flags": [
+        "hurt_by_water"
+       ]
+      }
+     ]
+    },
+    "torso": {
+     "stats": [
+      2.5,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.burning_time",
+       "amount": -0.5
+      }
+     ],
+     "traits": [
+      {
+       "type": "flag",
+       "flags": [
+        "fire_proof",
+        "hurt_by_water"
+       ]
+      }
+     ]
+    },
+    "arm": {
+     "stats": [
+      0.5,
+      0,
+      0,
+      0,
+      0.75
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "on_hit_ignite",
+       "seconds": 3,
+       "chance": 1.0
+      },
+      {
+       "type": "flag",
+       "flags": [
+        "hurt_by_water"
+       ]
+      }
+     ]
+    },
+    "legs": {
+     "stats": [
+      1,
+      0,
+      1,
+      3,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.burning_time",
+       "amount": -0.5
+      }
+     ],
+     "traits": [
+      {
+       "type": "flag",
+       "flags": [
+        "fire_proof",
+        "hurt_by_water"
+       ]
+      }
+     ]
+    }
+   }
+  },
+  {
+   "mob": "pointysaurus",
+   "entity": "orespawn:pointysaurus",
+   "weight": 3,
+   "shape": [
+    0.6,
+    0.8,
+    1.2
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": "orespawn:alo_living",
+    "hurt": "orespawn:alo_hurt",
+    "death": "orespawn:alo_death"
+   },
+   "essence": {
+    "default": "minecraft:pointed_dripstone"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      1,
+      1,
+      1,
+      0,
+      1
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.attack_knockback",
+       "amount": 0.5
+      }
+     ],
+     "traits": [
+      {
+       "type": "charge",
+       "min_run": 4,
+       "window": 40,
+       "multiplier": 1.5,
+       "knockback": 1.2,
+       "cooldown": 100
+      }
+     ]
+    },
+    "torso": {
+     "stats": [
+      3,
+      0,
+      1.5,
+      0,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.armor",
+       "amount": 4
+      }
+     ],
+     "traits": []
+    },
+    "legs": {
+     "stats": [
+      1,
+      0,
+      3,
+      2,
+      0
+     ],
+     "attributes": [],
+     "traits": []
+    }
+   }
+  },
+  {
+   "mob": "camarasaurus",
+   "entity": "orespawn:camarasaurus",
+   "weight": 2,
+   "shape": [
+    0.9,
+    0.8,
+    1.2
+   ],
+   "saddleable": true,
+   "rider_offset": 0.1,
+   "sounds": {
+    "ambient": null,
+    "hurt": "orespawn:cryo_hurt",
+    "death": "orespawn:cryo_death"
+   },
+   "essence": {
+    "default": "minecraft:fern"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      0.5,
+      1.5,
+      0,
+      0,
+      0
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "forager",
+       "blocks": "#minecraft:leaves",
+       "radius": 6,
+       "interval": 200,
+       "action": "eat",
+       "heal": 2,
+       "needs_order": "hurt"
+      }
+     ]
+    },
+    "torso": {
+     "stats": [
+      2.5,
+      0,
+      1,
+      0,
+      0
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "mount",
+       "seats": 2,
+       "medium": "land",
+       "steering": "saddle_direct",
+       "jump": 0.0,
+       "speed_bonus": 0.0
+      }
+     ]
+    },
+    "legs": {
+     "stats": [
+      1.5,
+      0,
+      2,
+      2,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.step_height",
+       "amount": 0.5
+      },
+      {
+       "attribute": "minecraft:generic.fall_damage_multiplier",
+       "amount": -0.3
+      }
+     ],
+     "traits": []
+    }
+   }
+  },
+  {
+   "mob": "hammerhead",
+   "entity": "orespawn:hammerhead",
+   "weight": 4,
+   "shape": [
+    1.0,
+    1.0,
+    1.4
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": "orespawn:hammerhead_living",
+    "hurt": "orespawn:alo_hurt",
+    "death": "orespawn:hammerhead_death"
+   },
+   "essence": {
+    "default": "minecraft:experience_bottle"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      2,
+      1,
+      1.5,
+      0,
+      2
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.attack_knockback",
+       "amount": 1.0
+      }
+     ],
+     "traits": [
+      {
+       "type": "charge",
+       "min_run": 4,
+       "window": 40,
+       "multiplier": 1.5,
+       "knockback": 1.1,
+       "cooldown": 120
+      },
+      {
+       "type": "on_hit_toss",
+       "horizontal": 0.4,
+       "vertical": 0.85,
+       "chance": 1.0,
+       "cooldown": 40
+      }
+     ]
+    },
+    "torso": {
+     "stats": [
+      5,
+      0,
+      2,
+      0,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.armor",
+       "amount": 6
+      }
+     ],
+     "traits": [
+      {
+       "type": "flag",
+       "flags": [
+        "cactus_proof"
+       ]
+      }
+     ]
+    },
+    "legs": {
+     "stats": [
+      2.5,
+      0,
+      3,
+      1.5,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.step_height",
+       "amount": 0.5
+      },
+      {
+       "attribute": "minecraft:generic.armor",
+       "amount": 2
+      }
+     ],
+     "traits": []
+    }
+   }
+  },
+  {
+   "mob": "lizard",
+   "entity": "orespawn:lizard",
+   "weight": 2,
+   "shape": [
+    0.35,
+    0.4,
+    0.8
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": null,
+    "hurt": "orespawn:alo_hurt",
+    "death": "orespawn:alo_death"
+   },
+   "essence": {
+    "default": "minecraft:dead_bush"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      0.75,
+      1,
+      0,
+      0,
+      0.75
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "bane",
+       "target": "#minecraft:arthropod",
+       "multiplier": 1.5
+      }
+     ]
+    },
+    "torso": {
+     "stats": [
+      1.5,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.burning_time",
+       "amount": -0.3
+      }
+     ],
+     "traits": [
+      {
+       "type": "flag",
+       "flags": [
+        "cactus_proof"
+       ]
+      }
+     ]
+    },
+    "legs": {
+     "stats": [
+      0.75,
+      0,
+      1,
+      3,
+      0
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "flag",
+       "flags": [
+        "climbs"
+       ]
+      }
+     ]
+    }
+   }
+  },
+  {
+   "mob": "beaver",
+   "entity": "orespawn:beaver",
+   "weight": 1,
+   "shape": [
+    0.25,
+    0.4,
+    0.5
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": null,
+    "hurt": "orespawn:scorpion_hit",
+    "death": "orespawn:cryo_death"
+   },
+   "essence": {
+    "default": "#minecraft:logs"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      0.5,
+      1,
+      0,
+      0,
+      0.5
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "forager",
+       "blocks": "#minecraft:logs",
+       "radius": 8,
+       "interval": 100,
+       "action": "harvest",
+       "heal": 0,
+       "needs_order": "work"
+      }
+     ]
+    },
+    "torso": {
+     "stats": [
+      1,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.oxygen_bonus",
+       "amount": 4
+      }
+     ],
+     "traits": []
+    },
+    "legs": {
+     "stats": [
+      0.25,
+      0,
+      1,
+      2,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.water_movement_efficiency",
+       "amount": 0.5
+      }
+     ],
+     "traits": []
+    }
+   }
+  },
+  {
+   "mob": "chipmunk",
+   "entity": "orespawn:chipmunk",
+   "weight": 1,
+   "shape": [
+    0.2,
+    0.3,
+    0.35
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": null,
+    "hurt": "orespawn:scorpion_hit",
+    "death": "orespawn:cryo_death"
+   },
+   "essence": {
+    "default": "minecraft:sweet_berries"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      0.25,
+      1,
+      0,
+      0,
+      0.25
+     ],
+     "attributes": [],
+     "traits": []
+    },
+    "torso": {
+     "stats": [
+      0.5,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "produce",
+       "items": [
+        {
+         "item": "minecraft:wheat_seeds",
+         "weight": 3
+        },
+        {
+         "item": "minecraft:pumpkin_seeds",
+         "weight": 1
+        },
+        {
+         "item": "minecraft:melon_seeds",
+         "weight": 1
+        }
+       ],
+       "interval": [
+        6000,
+        12000
+       ],
+       "count": [
+        1,
+        3
+       ]
+      }
+     ]
+    },
+    "legs": {
+     "stats": [
+      0.25,
+      0,
+      0.5,
+      3,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.scale",
+       "amount": -0.15
+      }
+     ],
+     "traits": []
+    }
+   }
+  },
+  {
+   "mob": "gazelle",
+   "entity": "orespawn:gazelle",
+   "weight": 1,
+   "shape": [
+    0.75,
+    0.6,
+    0.6
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": null,
+    "hurt": "orespawn:scorpion_hit",
+    "death": "orespawn:cryo_death"
+   },
+   "essence": {
+    "default": "minecraft:wheat"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      0.5,
+      1.5,
+      0,
+      0,
+      0
+     ],
+     "attributes": [],
+     "traits": []
+    },
+    "torso": {
+     "stats": [
+      1,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attributes": [],
+     "traits": []
+    },
+    "legs": {
+     "stats": [
+      0.25,
+      0,
+      1,
+      4,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.jump_strength",
+       "amount": 0.1
+      }
+     ],
+     "traits": []
+    }
+   }
+  },
+  {
+   "mob": "rat",
+   "entity": "orespawn:rat",
+   "weight": 1,
+   "shape": [
+    0.2,
+    0.3,
+    0.35
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": "orespawn:ratlive",
+    "hurt": "orespawn:rathit",
+    "death": "orespawn:ratdead"
+   },
+   "essence": {
+    "default": "orespawn:cheese"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      0.25,
+      1,
+      0,
+      0,
+      0.5
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "on_hit_effect",
+       "effect": "minecraft:hunger",
+       "duration": 140,
+       "amplifier": 0,
+       "chance": 0.25,
+       "cooldown": 0
+      }
+     ]
+    },
+    "torso": {
+     "stats": [
+      0.5,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attributes": [],
+     "traits": []
+    },
+    "legs": {
+     "stats": [
+      0.25,
+      0,
+      0.5,
+      3,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.scale",
+       "amount": -0.15
+      }
+     ],
+     "traits": [
+      {
+       "type": "flag",
+       "flags": [
+        "climbs"
+       ]
+      }
+     ]
+    }
+   }
+  },
+  {
+   "mob": "easter_bunny",
+   "entity": "orespawn:easter_bunny",
+   "weight": 1,
+   "shape": [
+    0.35,
+    0.4,
+    0.4
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": null,
+    "hurt": "orespawn:duck_hurt",
+    "death": "orespawn:duck_hurt"
+   },
+   "essence": {
+    "default": "minecraft:carrot"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      0.25,
+      1,
+      0,
+      0,
+      0
+     ],
+     "attributes": [],
+     "traits": []
+    },
+    "torso": {
+     "stats": [
+      0.5,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "produce",
+       "items": [
+        {
+         "item": "minecraft:egg",
+         "weight": 18
+        },
+        {
+         "item": "minecraft:rabbit_foot",
+         "weight": 1
+        },
+        {
+         "item": "minecraft:cocoa_beans",
+         "weight": 1
+        }
+       ],
+       "interval": [
+        6000,
+        12000
+       ],
+       "count": [
+        1,
+        1
+       ]
+      }
+     ]
+    },
+    "arm": {
+     "stats": [
+      0.1,
+      0,
+      0,
+      0,
+      0.25
+     ],
+     "attributes": [],
+     "traits": []
+    },
+    "legs": {
+     "stats": [
+      0.25,
+      0,
+      0.5,
+      3.5,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.jump_strength",
+       "amount": 0.2
+      },
+      {
+       "attribute": "minecraft:generic.fall_damage_multiplier",
+       "amount": -0.5
+      }
+     ],
+     "traits": []
+    }
+   }
+  },
+  {
+   "mob": "whale",
+   "entity": "orespawn:whale",
+   "weight": 3,
+   "shape": [
+    0.0,
+    1.0,
+    1.4
+   ],
+   "saddleable": true,
+   "rider_offset": 0.3,
+   "sounds": {
+    "ambient": "minecraft:entity.generic.splash",
+    "hurt": "orespawn:little_splat",
+    "death": "orespawn:big_splat"
+   },
+   "essence": {
+    "default": "minecraft:nautilus_shell"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      1.5,
+      1,
+      1,
+      0,
+      0.5
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.attack_knockback",
+       "amount": 0.5
+      }
+     ],
+     "traits": [
+      {
+       "type": "on_hit_toss",
+       "horizontal": 0.8,
+       "vertical": 0.3,
+       "chance": 1.0,
+       "cooldown": 0
+      }
+     ]
+    },
+    "torso": {
+     "stats": [
+      4,
+      0,
+      1.5,
+      0,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.oxygen_bonus",
+       "amount": 10
+      },
+      {
+       "attribute": "minecraft:generic.water_movement_efficiency",
+       "amount": 1.0
+      }
+     ],
+     "traits": [
+      {
+       "type": "mount",
+       "seats": 2,
+       "medium": "water",
+       "steering": "saddle_direct",
+       "jump": 0.0,
+       "speed_bonus": 0.0
+      },
+      {
+       "type": "environment",
+       "condition": "dry",
+       "attribute_multipliers": {
+        "movement_speed": 0.7
+       }
+      }
+     ]
+    }
+   }
+  },
+  {
+   "mob": "peacock",
+   "entity": "orespawn:peacock",
+   "weight": 1,
+   "shape": [
+    0.5,
+    0.5,
+    0.45
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": "orespawn:peacocklive",
+    "hurt": "orespawn:peacockhit",
+    "death": "orespawn:peacockdead"
+   },
+   "essence": {
+    "default": "orespawn:peacock_feather"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      0.5,
+      1.5,
+      0,
+      0,
+      0.25
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "bane",
+       "target": "#minecraft:arthropod",
+       "multiplier": 1.5
+      }
+     ]
+    },
+    "torso": {
+     "stats": [
+      0.75,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "produce",
+       "items": [
+        {
+         "item": "orespawn:peacock_feather",
+         "weight": 1
+        }
+       ],
+       "interval": [
+        12000,
+        24000
+       ],
+       "count": [
+        1,
+        1
+       ]
+      }
+     ]
+    },
+    "legs": {
+     "stats": [
+      0.25,
+      0,
+      1,
+      3,
+      0
+     ],
+     "attributes": [],
+     "traits": []
+    }
+   }
+  },
+  {
+   "mob": "ostrich",
+   "entity": "orespawn:ostrich",
+   "weight": 2,
+   "shape": [
+    1.0,
+    0.6,
+    0.6
+   ],
+   "saddleable": true,
+   "rider_offset": 0.1,
+   "sounds": {
+    "ambient": null,
+    "hurt": "orespawn:cryo_hurt",
+    "death": "orespawn:cryo_death"
+   },
+   "essence": {
+    "default": "minecraft:hay_block"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      0.5,
+      1,
+      0,
+      0,
+      0.5
+     ],
+     "attributes": [],
+     "traits": []
+    },
+    "torso": {
+     "stats": [
+      1.5,
+      0,
+      0.5,
+      0,
+      0
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "mount",
+       "seats": 1,
+       "medium": "land",
+       "steering": "saddle_direct",
+       "jump": 0.6,
+       "speed_bonus": 0.2
+      }
+     ]
+    },
+    "legs": {
+     "stats": [
+      1,
+      0,
+      2,
+      4,
+      0.5
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.jump_strength",
+       "amount": 0.15
+      },
+      {
+       "attribute": "minecraft:generic.step_height",
+       "amount": 0.4
+      }
+     ],
+     "traits": [
+      {
+       "type": "on_hit_toss",
+       "horizontal": 0.6,
+       "vertical": 0.2,
+       "chance": 0.5,
+       "cooldown": 0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "mob": "cassowary",
+   "entity": "orespawn:cassowary",
+   "weight": 2,
+   "shape": [
+    0.7,
+    0.5,
+    0.5
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": null,
+    "hurt": "orespawn:duck_hurt",
+    "death": "orespawn:duck_hurt"
+   },
+   "essence": {
+    "default": "minecraft:egg"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      0.5,
+      1,
+      0.5,
+      0,
+      0.5
+     ],
+     "attributes": [],
+     "traits": []
+    },
+    "torso": {
+     "stats": [
+      1,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attributes": [],
+     "traits": []
+    },
+    "legs": {
+     "stats": [
+      0.75,
+      0,
+      2,
+      3,
+      0.75
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "on_hit_effect",
+       "effect": "minecraft:slowness",
+       "duration": 60,
+       "amplifier": 1,
+       "chance": 0.3,
+       "cooldown": 0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "mob": "dungeon_beast",
+   "entity": "orespawn:dungeon_beast",
+   "weight": 3,
+   "shape": [
+    0.6,
+    0.6,
+    0.9
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": null,
+    "hurt": "orespawn:dbhit",
+    "death": "orespawn:dbdead"
+   },
+   "essence": {
+    "default": "minecraft:mossy_cobblestone"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      1,
+      1,
+      1,
+      0,
+      1
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "charge",
+       "min_run": 3,
+       "window": 40,
+       "multiplier": 1.5,
+       "knockback": 0.8,
+       "cooldown": 100
+      }
+     ]
+    },
+    "torso": {
+     "stats": [
+      3,
+      0,
+      1,
+      0,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.armor",
+       "amount": 2
+      }
+     ],
+     "traits": [
+      {
+       "type": "flag",
+       "flags": [
+        "in_wall_proof",
+        "cactus_proof"
+       ]
+      }
+     ]
+    },
+    "arm": {
+     "stats": [
+      0.75,
+      0,
+      0,
+      0,
+      1
+     ],
+     "attributes": [],
+     "traits": []
+    },
+    "legs": {
+     "stats": [
+      1,
+      0,
+      3,
+      2.5,
+      0
+     ],
+     "attributes": [],
+     "traits": []
+    }
+   }
+  },
+  {
+   "mob": "cannon_fodder",
+   "entity": "orespawn:cannon_fodder",
+   "weight": 1,
+   "shape": [
+    0.3,
+    0.35,
+    0.5
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": null,
+    "hurt": "minecraft:entity.generic.hurt",
+    "death": "minecraft:entity.generic.death"
+   },
+   "essence": {
+    "default": "orespawn:corn_cob"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      0.5,
+      1,
+      0,
+      0,
+      0.5
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "pack",
+       "per_ally": 0.5,
+       "max": 3,
+       "radius": 8
+      }
+     ]
+    },
+    "torso": {
+     "stats": [
+      1,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attributes": [],
+     "traits": []
+    },
+    "legs": {
+     "stats": [
+      0.25,
+      0,
+      1,
+      3,
+      0
+     ],
+     "attributes": [],
+     "traits": []
+    }
+   }
+  },
+  {
+   "mob": "molenoid",
+   "entity": "orespawn:molenoid",
+   "weight": 4,
+   "shape": [
+    0.7,
+    0.8,
+    1.3
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": "orespawn:molenoid_living",
+    "hurt": "orespawn:molenoid_hit",
+    "death": "orespawn:molenoid_death"
+   },
+   "essence": {
+    "default": "orespawn:molenoid_nose"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      1.5,
+      1.5,
+      1,
+      0,
+      1
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "flag",
+       "flags": [
+        "in_wall_proof"
+       ]
+      }
+     ]
+    },
+    "torso": {
+     "stats": [
+      4,
+      0,
+      2,
+      0,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.armor",
+       "amount": 4
+      }
+     ],
+     "traits": [
+      {
+       "type": "flag",
+       "flags": [
+        "in_wall_proof"
+       ]
+      }
+     ]
+    },
+    "arm": {
+     "stats": [
+      1,
+      0,
+      0.5,
+      0,
+      1.5
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "forager",
+       "blocks": "#necromancy:diggable",
+       "radius": 6,
+       "interval": 40,
+       "action": "harvest",
+       "heal": 0,
+       "needs_order": "work"
+      }
+     ]
+    },
+    "legs": {
+     "stats": [
+      2,
+      0,
+      3,
+      1.5,
+      0
+     ],
+     "attributes": [],
+     "traits": []
+    }
+   }
+  },
+  {
+   "mob": "stinky",
+   "entity": "orespawn:stinky",
+   "weight": 3,
+   "shape": [
+    0.6,
+    0.7,
+    0.9
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": null,
+    "hurt": "orespawn:duck_hurt",
+    "death": "orespawn:cryo_death"
+   },
+   "essence": {
+    "default": "minecraft:charcoal"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      1,
+      1,
+      0,
+      0,
+      0.75
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "produce",
+       "items": [
+        {
+         "item": "minecraft:coal",
+         "weight": 1
+        }
+       ],
+       "interval": [
+        6000,
+        12000
+       ],
+       "count": [
+        1,
+        1
+       ],
+       "sound": "orespawn:fart"
+      }
+     ]
+    },
+    "torso": {
+     "stats": [
+      3,
+      0,
+      1,
+      0,
+      0
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "on_hurt_effect",
+       "effect": "minecraft:nausea",
+       "duration": 100,
+       "amplifier": 0,
+       "chance": 0.25,
+       "melee_only": true
+      },
+      {
+       "type": "produce",
+       "items": [
+        {
+         "item": "minecraft:bone",
+         "weight": 4
+        },
+        {
+         "item": "minecraft:string",
+         "weight": 4
+        },
+        {
+         "item": "minecraft:wheat",
+         "weight": 4
+        },
+        {
+         "item": "minecraft:sand",
+         "weight": 3
+        },
+        {
+         "item": "minecraft:rotten_flesh",
+         "weight": 3
+        },
+        {
+         "item": "minecraft:melon_seeds",
+         "weight": 2
+        },
+        {
+         "item": "minecraft:gold_nugget",
+         "weight": 1
+        },
+        {
+         "item": "orespawn:uranium_nugget",
+         "weight": 1
+        },
+        {
+         "item": "orespawn:titanium_nugget",
+         "weight": 1
+        },
+        {
+         "item": "minecraft:emerald",
+         "weight": 1
+        }
+       ],
+       "interval": [
+        9000,
+        18000
+       ],
+       "count": [
+        1,
+        1
+       ]
+      }
+     ]
+    },
+    "arm": {
+     "stats": [
+      0.5,
+      0,
+      0,
+      0,
+      0.25
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.gravity",
+       "amount": -0.015
+      },
+      {
+       "attribute": "minecraft:generic.safe_fall_distance",
+       "amount": 6
+      }
+     ],
+     "traits": [
+      {
+       "type": "glide",
+       "fall_speed": 0.12,
+       "needs": 2,
+       "horizontal_boost": 0.0
+      }
+     ]
+    },
+    "legs": {
+     "stats": [
+      1,
+      0,
+      2,
+      2.5,
+      0
+     ],
+     "attributes": [],
+     "traits": []
+    }
+   }
+  },
+  {
+   "mob": "hydrolisc",
+   "entity": "orespawn:hydrolisc",
+   "weight": 3,
+   "shape": [
+    0.4,
+    0.5,
+    0.8
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": null,
+    "hurt": "orespawn:cryo_hurt",
+    "death": "orespawn:cryo_death"
+   },
+   "essence": {
+    "default": "orespawn:blue_fish"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      1,
+      1,
+      0,
+      0,
+      0.25
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "transfuse",
+       "amount": 2,
+       "interval": 40,
+       "owner_threshold": 0.5,
+       "self_floor": 0.3
+      }
+     ]
+    },
+    "torso": {
+     "stats": [
+      3,
+      0,
+      1,
+      0,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.armor",
+       "amount": 4
+      },
+      {
+       "attribute": "minecraft:generic.oxygen_bonus",
+       "amount": 6
+      }
+     ],
+     "traits": [
+      {
+       "type": "regen",
+       "amount": 1,
+       "interval": 60,
+       "condition": "in_water"
+      }
+     ]
+    },
+    "legs": {
+     "stats": [
+      1,
+      0,
+      2,
+      2.5,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.water_movement_efficiency",
+       "amount": 0.5
+      }
+     ],
+     "traits": []
+    }
+   }
+  },
+  {
+   "mob": "gamma_metroid",
+   "entity": "orespawn:gamma_metroid",
+   "weight": 3,
+   "shape": [
+    0.5,
+    0.7,
+    0.9
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": "orespawn:wtf_living",
+    "hurt": "orespawn:duck_hurt",
+    "death": "orespawn:alo_death"
+   },
+   "essence": {
+    "default": "minecraft:iron_ingot"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      1,
+      1,
+      0,
+      0,
+      1
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "lifesteal",
+       "fraction": 0.25,
+       "max_per_hit": 4
+      }
+     ]
+    },
+    "torso": {
+     "stats": [
+      3,
+      0,
+      1,
+      0,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.armor",
+       "amount": 3
+      }
+     ],
+     "traits": [
+      {
+       "type": "last_stand",
+       "threshold": 0.3,
+       "cooldown": 1200,
+       "heal_fraction": 0.0,
+       "effects": [
+        {
+         "effect": "minecraft:resistance",
+         "duration": 100,
+         "amplifier": 2
+        },
+        {
+         "effect": "minecraft:slowness",
+         "duration": 100,
+         "amplifier": 3
+        }
+       ],
+       "damage_multiplier": 0.5
+      }
+     ]
+    },
+    "legs": {
+     "stats": [
+      1,
+      0,
+      2,
+      2,
+      0
+     ],
+     "attributes": [],
+     "traits": []
+    }
+   }
+  },
+  {
+   "mob": "dragon",
+   "entity": "orespawn:dragon",
+   "weight": 4,
+   "shape": [
+    0.9,
+    0.9,
+    1.2
+   ],
+   "saddleable": true,
+   "rider_offset": 0.3,
+   "sounds": {
+    "ambient": "orespawn:roar1",
+    "hurt": "orespawn:alo_hurt",
+    "death": "orespawn:alo_death"
+   },
+   "essence": {
+    "default": "minecraft:dragon_breath"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      2,
+      1.5,
+      1,
+      0,
+      1.5
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "ranged",
+       "projectile": "minecraft:small_fireball",
+       "cooldown": 100,
+       "range": 16,
+       "min_range": 4,
+       "count": 3,
+       "spread": 0.15,
+       "velocity": 1.6
+      }
+     ]
+    },
+    "torso": {
+     "stats": [
+      5,
+      0,
+      2,
+      0,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.armor",
+       "amount": 4
+      }
+     ],
+     "traits": [
+      {
+       "type": "flag",
+       "flags": [
+        "fire_proof"
+       ]
+      },
+      {
+       "type": "mount",
+       "seats": 1,
+       "medium": "land",
+       "steering": "saddle_direct",
+       "jump": 0.5,
+       "speed_bonus": 0.0
+      }
+     ]
+    },
+    "arm": {
+     "stats": [
+      0.75,
+      0,
+      0,
+      0,
+      0.5
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.gravity",
+       "amount": -0.02
+      },
+      {
+       "attribute": "minecraft:generic.safe_fall_distance",
+       "amount": 10
+      }
+     ],
+     "traits": [
+      {
+       "type": "glide",
+       "fall_speed": 0.1,
+       "needs": 2,
+       "horizontal_boost": 0.04
+      }
+     ]
+    },
+    "legs": {
+     "stats": [
+      2,
+      0,
+      3,
+      2,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.burning_time",
+       "amount": -0.5
+      }
+     ],
+     "traits": [
+      {
+       "type": "flag",
+       "flags": [
+        "fire_proof"
+       ]
+      }
+     ]
+    }
+   }
+  },
+  {
+   "mob": "baby_dragon",
+   "entity": "orespawn:baby_dragon",
+   "weight": 2,
+   "shape": [
+    0.4,
+    0.5,
+    0.6
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": "orespawn:roar1",
+    "hurt": "orespawn:alo_hurt",
+    "death": "orespawn:alo_death"
+   },
+   "essence": {
+    "default": "minecraft:magma_cream"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      0.75,
+      1,
+      0,
+      0,
+      0.5
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "ranged",
+       "projectile": "minecraft:small_fireball",
+       "cooldown": 80,
+       "range": 10,
+       "min_range": 3,
+       "count": 1,
+       "spread": 0.0,
+       "velocity": 1.6
+      }
+     ]
+    },
+    "torso": {
+     "stats": [
+      1.5,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "flag",
+       "flags": [
+        "fire_proof"
+       ]
+      }
+     ]
+    },
+    "arm": {
+     "stats": [
+      0.25,
+      0,
+      0,
+      0,
+      0.25
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.gravity",
+       "amount": -0.01
+      },
+      {
+       "attribute": "minecraft:generic.safe_fall_distance",
+       "amount": 4
+      }
+     ],
+     "traits": [
+      {
+       "type": "glide",
+       "fall_speed": 0.16,
+       "needs": 2,
+       "horizontal_boost": 0.0
+      }
+     ]
+    },
+    "legs": {
+     "stats": [
+      0.75,
+      0,
+      1,
+      3,
+      0
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "flag",
+       "flags": [
+        "fire_proof"
+       ]
+      }
+     ]
+    }
+   }
+  },
+  {
+   "mob": "spyro",
+   "entity": "orespawn:spyro",
+   "weight": 3,
+   "shape": [
+    0.4,
+    0.5,
+    0.6
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": "orespawn:roar",
+    "hurt": "orespawn:duck_hurt",
+    "death": "orespawn:cryo_death"
+   },
+   "essence": {
+    "default": "minecraft:flint_and_steel"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      1,
+      1,
+      0,
+      0,
+      0.5
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "ranged",
+       "projectile": "minecraft:small_fireball",
+       "cooldown": 60,
+       "range": 12,
+       "min_range": 3,
+       "count": 1,
+       "spread": 0.0,
+       "velocity": 1.6
+      }
+     ]
+    },
+    "torso": {
+     "stats": [
+      2.5,
+      0,
+      0.5,
+      0,
+      0
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "flag",
+       "flags": [
+        "fire_proof"
+       ]
+      }
+     ]
+    },
+    "arm": {
+     "stats": [
+      0.5,
+      0,
+      0,
+      0,
+      0.5
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.gravity",
+       "amount": -0.015
+      },
+      {
+       "attribute": "minecraft:generic.safe_fall_distance",
+       "amount": 6
+      }
+     ],
+     "traits": [
+      {
+       "type": "glide",
+       "fall_speed": 0.13,
+       "needs": 2,
+       "horizontal_boost": 0.0
+      }
+     ]
+    },
+    "legs": {
+     "stats": [
+      1,
+      0,
+      1,
+      3,
+      0
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "flag",
+       "flags": [
+        "fire_proof"
+       ]
+      }
+     ]
+    }
+   }
+  },
+  {
+   "mob": "water_dragon",
+   "entity": "orespawn:water_dragon",
+   "weight": 4,
+   "shape": [
+    0.5,
+    0.8,
+    1.0
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": null,
+    "hurt": "orespawn:waterdragon_hurt",
+    "death": "orespawn:waterdragon_death"
+   },
+   "essence": {
+    "default": "orespawn:water_dragon_scale"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      1.5,
+      1,
+      1,
+      0,
+      1
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "ranged",
+       "projectile": "necromancy:part_bolt",
+       "cooldown": 60,
+       "range": 14,
+       "min_range": 0,
+       "count": 1,
+       "spread": 0.0,
+       "velocity": 1.6,
+       "damage": 4,
+       "item": "orespawn:water_ball",
+       "effect": "minecraft:slowness",
+       "effect_duration": 40,
+       "effect_amplifier": 0
+      },
+      {
+       "type": "flag",
+       "flags": [
+        "breathes_water"
+       ]
+      }
+     ]
+    },
+    "torso": {
+     "stats": [
+      4,
+      0,
+      1.5,
+      0,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.armor",
+       "amount": 3
+      },
+      {
+       "attribute": "minecraft:generic.oxygen_bonus",
+       "amount": 10
+      }
+     ],
+     "traits": [
+      {
+       "type": "flag",
+       "flags": [
+        "breathes_water"
+       ]
+      },
+      {
+       "type": "regen",
+       "amount": 1,
+       "interval": 80,
+       "condition": "in_water"
+      }
+     ]
+    },
+    "legs": {
+     "stats": [
+      1.5,
+      0,
+      2,
+      2,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.water_movement_efficiency",
+       "amount": 1.0
+      }
+     ],
+     "traits": []
+    }
+   }
+  },
+  {
+   "mob": "leon",
+   "entity": "orespawn:leon",
+   "weight": 4,
+   "shape": [
+    0.0,
+    1.0,
+    1.4
+   ],
+   "saddleable": true,
+   "rider_offset": 0.4,
+   "sounds": {
+    "ambient": "orespawn:leon_living",
+    "hurt": "orespawn:leon_hit",
+    "death": "orespawn:leon_death"
+   },
+   "essence": {
+    "default": "minecraft:diamond"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      2,
+      1.5,
+      1,
+      0,
+      2
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.attack_knockback",
+       "amount": 0.5
+      }
+     ],
+     "traits": [
+      {
+       "type": "on_hit_toss",
+       "horizontal": 1.5,
+       "vertical": 0.3,
+       "chance": 1.0,
+       "cooldown": 0
+      }
+     ]
+    },
+    "torso": {
+     "stats": [
+      5,
+      0,
+      2,
+      0,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.armor",
+       "amount": 4
+      }
+     ],
+     "traits": [
+      {
+       "type": "mount",
+       "seats": 1,
+       "medium": "land",
+       "steering": "saddle_direct",
+       "jump": 0.7,
+       "speed_bonus": 0.1
+      }
+     ]
+    },
+    "arm": {
+     "stats": [
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.gravity",
+       "amount": -0.02
+      },
+      {
+       "attribute": "minecraft:generic.safe_fall_distance",
+       "amount": 12
+      }
+     ],
+     "traits": [
+      {
+       "type": "glide",
+       "fall_speed": 0.08,
+       "needs": 2,
+       "horizontal_boost": 0.06
+      }
+     ]
+    },
+    "legs": {
+     "stats": [
+      2,
+      0,
+      3,
+      2,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.step_height",
+       "amount": 0.5
+      }
+     ],
+     "traits": []
+    }
+   }
+  },
+  {
+   "mob": "cephadrome",
+   "entity": "orespawn:cephadrome",
+   "weight": 4,
+   "shape": [
+    0.8,
+    0.9,
+    1.3
+   ],
+   "saddleable": true,
+   "rider_offset": 0.3,
+   "sounds": {
+    "ambient": "orespawn:mothrawings",
+    "hurt": "orespawn:alo_hurt",
+    "death": "orespawn:alo_death"
+   },
+   "essence": {
+    "default": "minecraft:prismarine_shard"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      2,
+      1.5,
+      1,
+      0,
+      2
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "bane",
+       "target": "large",
+       "multiplier": 1.5
+      }
+     ]
+    },
+    "torso": {
+     "stats": [
+      5,
+      0,
+      2,
+      0,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.armor",
+       "amount": 4
+      }
+     ],
+     "traits": [
+      {
+       "type": "mount",
+       "seats": 1,
+       "medium": "land",
+       "steering": "saddle_direct",
+       "jump": 0.5,
+       "speed_bonus": 0.15
+      },
+      {
+       "type": "flag",
+       "flags": [
+        "cactus_proof"
+       ]
+      }
+     ]
+    },
+    "arm": {
+     "stats": [
+      1,
+      0,
+      0,
+      0,
+      0.5
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.gravity",
+       "amount": -0.02
+      },
+      {
+       "attribute": "minecraft:generic.safe_fall_distance",
+       "amount": 10
+      }
+     ],
+     "traits": [
+      {
+       "type": "glide",
+       "fall_speed": 0.1,
+       "needs": 2,
+       "horizontal_boost": 0.05
+      }
+     ]
+    },
+    "legs": {
+     "stats": [
+      2,
+      0,
+      2.5,
+      2,
+      0
+     ],
+     "attributes": [],
+     "traits": []
+    }
+   }
+  },
+  {
+   "mob": "terrible_terror",
+   "entity": "orespawn:terrible_terror",
+   "weight": 2,
+   "shape": [
+    0.3,
+    0.4,
+    0.5
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": "orespawn:terribleterror_living",
+    "hurt": "orespawn:terribleterror_hit",
+    "death": "orespawn:terribleterror_dead"
+   },
+   "essence": {
+    "default": "minecraft:blaze_powder"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      0.5,
+      1,
+      0,
+      0,
+      0.75
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "on_hit_ignite",
+       "seconds": 2,
+       "chance": 0.3
+      }
+     ]
+    },
+    "torso": {
+     "stats": [
+      1,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "environment",
+       "condition": "daylight",
+       "attribute_multipliers": {
+        "attack_damage": 0.7,
+        "movement_speed": 0.7
+       }
+      }
+     ]
+    },
+    "arm": {
+     "stats": [
+      0.25,
+      0,
+      0,
+      0,
+      0.25
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.gravity",
+       "amount": -0.01
+      },
+      {
+       "attribute": "minecraft:generic.safe_fall_distance",
+       "amount": 4
+      }
+     ],
+     "traits": [
+      {
+       "type": "glide",
+       "fall_speed": 0.15,
+       "needs": 2,
+       "horizontal_boost": 0.0
+      }
+     ]
+    },
+    "legs": {
+     "stats": [
+      0.5,
+      0,
+      1,
+      3,
+      0
+     ],
+     "attributes": [],
+     "traits": []
+    }
+   }
+  },
+  {
+   "mob": "emperor_scorpion",
+   "entity": "orespawn:emperor_scorpion",
+   "weight": 4,
+   "shape": [
+    0.6,
+    0.6,
+    1.4
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": null,
+    "hurt": "orespawn:alo_hurt",
+    "death": "orespawn:emperorscorpion_death"
+   },
+   "essence": {
+    "default": "orespawn:emperor_scorpion_scale"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      1.5,
+      1,
+      1,
+      0,
+      1
+     ],
+     "attributes": [],
+     "traits": []
+    },
+    "torso": {
+     "stats": [
+      5,
+      0,
+      2,
+      0,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.armor",
+       "amount": 5
+      }
+     ],
+     "traits": [
+      {
+       "type": "on_hit_effect",
+       "effect": "minecraft:poison",
+       "duration": 90,
+       "amplifier": 1,
+       "chance": 0.33,
+       "cooldown": 0
+      },
+      {
+       "type": "summon",
+       "entity": "spawnling:scorpion",
+       "count": 2,
+       "cooldown": 600,
+       "max_alive": 4,
+       "lifetime": 600,
+       "trigger": "combat",
+       "scale": -0.5
+      }
+     ]
+    },
+    "arm": {
+     "stats": [
+      1,
+      0,
+      1,
+      0,
+      1.5
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "on_hit_effect",
+       "effect": "minecraft:slowness",
+       "duration": 40,
+       "amplifier": 1,
+       "chance": 0.5,
+       "cooldown": 0
+      }
+     ]
+    },
+    "legs": {
+     "stats": [
+      2,
+      0,
+      3,
+      2,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.step_height",
+       "amount": 0.5
+      }
+     ],
+     "traits": [
+      {
+       "type": "flag",
+       "flags": [
+        "cactus_proof"
+       ]
+      }
+     ]
+    }
+   }
+  },
+  {
+   "mob": "scorpion",
+   "entity": "orespawn:scorpion",
+   "weight": 2,
+   "shape": [
+    0.3,
+    0.35,
+    0.7
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": "orespawn:scorpion_living",
+    "hurt": "orespawn:scorpion_hit",
+    "death": "orespawn:cryo_death"
+   },
+   "essence": {
+    "default": "minecraft:sandstone"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      0.5,
+      1,
+      0,
+      0,
+      0.25
+     ],
+     "attributes": [],
+     "traits": []
+    },
+    "torso": {
+     "stats": [
+      1.5,
+      0,
+      0.5,
+      0,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.armor",
+       "amount": 2
+      }
+     ],
+     "traits": [
+      {
+       "type": "on_hit_effect",
+       "effect": "minecraft:poison",
+       "duration": 60,
+       "amplifier": 0,
+       "chance": 0.25,
+       "cooldown": 0
+      }
+     ]
+    },
+    "arm": {
+     "stats": [
+      0.25,
+      0,
+      0,
+      0,
+      0.5
+     ],
+     "attributes": [],
+     "traits": []
+    },
+    "legs": {
+     "stats": [
+      0.5,
+      0,
+      1,
+      2,
+      0
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "flag",
+       "flags": [
+        "cactus_proof"
+       ]
+      }
+     ]
+    }
+   }
+  },
+  {
+   "mob": "hercules_beetle",
+   "entity": "orespawn:hercules_beetle",
+   "weight": 4,
+   "shape": [
+    0.5,
+    0.8,
+    1.4
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": null,
+    "hurt": "orespawn:alo_hurt",
+    "death": "orespawn:hercules_death"
+   },
+   "essence": {
+    "default": "minecraft:obsidian"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      1.5,
+      1,
+      2,
+      0,
+      2
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.attack_knockback",
+       "amount": 0.5
+      }
+     ],
+     "traits": [
+      {
+       "type": "on_hit_toss",
+       "horizontal": 0.45,
+       "vertical": 1.25,
+       "chance": 1.0,
+       "cooldown": 20
+      }
+     ]
+    },
+    "torso": {
+     "stats": [
+      5,
+      0,
+      2,
+      0,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.armor",
+       "amount": 6
+      }
+     ],
+     "traits": [
+      {
+       "type": "flag",
+       "flags": [
+        "fire_proof"
+       ]
+      }
+     ]
+    },
+    "arm": {
+     "stats": [
+      0.75,
+      0,
+      0.5,
+      0,
+      1
+     ],
+     "attributes": [],
+     "traits": []
+    },
+    "legs": {
+     "stats": [
+      2,
+      0,
+      3,
+      1.5,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.burning_time",
+       "amount": -0.5
+      }
+     ],
+     "traits": [
+      {
+       "type": "flag",
+       "flags": [
+        "fire_proof"
+       ]
+      }
+     ]
+    }
+   }
+  },
+  {
+   "mob": "mantis",
+   "entity": "orespawn:mantis",
+   "weight": 3,
+   "shape": [
+    0.9,
+    0.6,
+    0.6
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": "orespawn:beebuzz",
+    "hurt": "orespawn:dragonfly_hurt",
+    "death": "orespawn:alo_death"
+   },
+   "essence": {
+    "default": "orespawn:mantis_claw"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      1,
+      1.5,
+      0,
+      0,
+      0.5
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "flag",
+       "flags": [
+        "hurt_by_water"
+       ]
+      }
+     ]
+    },
+    "torso": {
+     "stats": [
+      3,
+      0,
+      0.5,
+      0,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.gravity",
+       "amount": -0.01
+      },
+      {
+       "attribute": "minecraft:generic.safe_fall_distance",
+       "amount": 4
+      }
+     ],
+     "traits": [
+      {
+       "type": "glide",
+       "fall_speed": 0.18,
+       "needs": 1,
+       "horizontal_boost": 0.0
+      },
+      {
+       "type": "flag",
+       "flags": [
+        "hurt_by_water"
+       ]
+      }
+     ]
+    },
+    "arm": {
+     "stats": [
+      0.75,
+      0,
+      0,
+      0,
+      1.5
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "lifesteal",
+       "fraction": 0.15,
+       "max_per_hit": 3
+      }
+     ]
+    },
+    "legs": {
+     "stats": [
+      1,
+      0,
+      2,
+      3,
+      0
+     ],
+     "attributes": [],
+     "traits": []
+    }
+   }
+  },
+  {
+   "mob": "spit_bug",
+   "entity": "orespawn:spit_bug",
+   "weight": 3,
+   "shape": [
+    0.7,
+    0.6,
+    0.8
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": "orespawn:clatter",
+    "hurt": "orespawn:crunch",
+    "death": "orespawn:emperorscorpion_death"
+   },
+   "essence": {
+    "default": "orespawn:amethyst_gem"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      1,
+      1,
+      0,
+      0,
+      0.5
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "ranged",
+       "projectile": "necromancy:part_bolt",
+       "cooldown": 140,
+       "range": 16,
+       "min_range": 0,
+       "count": 4,
+       "spread": 0.2,
+       "velocity": 1.1,
+       "damage": 2,
+       "item": "orespawn:acid",
+       "effect": "minecraft:poison",
+       "effect_duration": 40,
+       "effect_amplifier": 0
+      }
+     ]
+    },
+    "torso": {
+     "stats": [
+      3,
+      0,
+      1,
+      0,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.armor",
+       "amount": 2
+      }
+     ],
+     "traits": []
+    },
+    "arm": {
+     "stats": [
+      0.5,
+      0,
+      0,
+      0,
+      0.75
+     ],
+     "attributes": [],
+     "traits": []
+    },
+    "legs": {
+     "stats": [
+      1,
+      0,
+      2,
+      3,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.fall_damage_multiplier",
+       "amount": -1.0
+      }
+     ],
+     "traits": [
+      {
+       "type": "leap",
+       "min_range": 4,
+       "max_range": 10,
+       "horizontal": 0.75,
+       "vertical": 0.5,
+       "cooldown": 100
+      }
+     ]
+    }
+   }
+  },
+  {
+   "mob": "trooper_bug",
+   "entity": "orespawn:trooper_bug",
+   "weight": 4,
+   "shape": [
+    0.9,
+    0.8,
+    1.2
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": "orespawn:clatter",
+    "hurt": "orespawn:crunch",
+    "death": "orespawn:emperorscorpion_death"
+   },
+   "essence": {
+    "default": "orespawn:jumpy_bug_scale"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      1.5,
+      1,
+      1,
+      0,
+      1.5
+     ],
+     "attributes": [],
+     "traits": []
+    },
+    "torso": {
+     "stats": [
+      5,
+      0,
+      2,
+      0,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.armor",
+       "amount": 4
+      }
+     ],
+     "traits": [
+      {
+       "type": "summon",
+       "entity": "spawnling:spit_bug",
+       "count": 1,
+       "cooldown": 1200,
+       "max_alive": 1,
+       "lifetime": 400,
+       "trigger": "combat",
+       "scale": -0.5
+      }
+     ]
+    },
+    "arm": {
+     "stats": [
+      1,
+      0,
+      0,
+      0,
+      1.25
+     ],
+     "attributes": [],
+     "traits": []
+    },
+    "legs": {
+     "stats": [
+      2,
+      0,
+      3,
+      2.5,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.fall_damage_multiplier",
+       "amount": -1.0
+      }
+     ],
+     "traits": [
+      {
+       "type": "leap",
+       "min_range": 4,
+       "max_range": 8,
+       "horizontal": 1.15,
+       "vertical": 0.6,
+       "cooldown": 100
+      },
+      {
+       "type": "flag",
+       "flags": [
+        "cactus_proof"
+       ]
+      }
+     ]
+    }
+   }
+  },
+  {
+   "mob": "bee",
+   "entity": "orespawn:bee",
+   "weight": 3,
+   "shape": [
+    0.6,
+    0.7,
+    0.8
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": "orespawn:beebuzz",
+    "hurt": "orespawn:dragonfly_hurt",
+    "death": "orespawn:alo_death"
+   },
+   "essence": {
+    "default": "minecraft:honeycomb"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      1,
+      1,
+      0,
+      0,
+      0.75
+     ],
+     "attributes": [],
+     "traits": []
+    },
+    "torso": {
+     "stats": [
+      3,
+      0,
+      0.5,
+      0,
+      0
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "on_hit_effect",
+       "effect": "minecraft:poison",
+       "duration": 60,
+       "amplifier": 0,
+       "chance": 0.33,
+       "cooldown": 0
+      },
+      {
+       "type": "environment",
+       "condition": "water_or_rain",
+       "damage": 1,
+       "interval": 20
+      }
+     ]
+    },
+    "arm": {
+     "stats": [
+      0.25,
+      0,
+      0,
+      0,
+      0.25
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.gravity",
+       "amount": -0.02
+      },
+      {
+       "attribute": "minecraft:generic.safe_fall_distance",
+       "amount": 8
+      }
+     ],
+     "traits": [
+      {
+       "type": "glide",
+       "fall_speed": 0.12,
+       "needs": 2,
+       "horizontal_boost": 0.0
+      }
+     ]
+    },
+    "legs": {
+     "stats": [
+      0.75,
+      0,
+      1,
+      2.5,
+      0
+     ],
+     "attributes": [],
+     "traits": []
+    }
+   }
+  },
+  {
+   "mob": "brutalfly",
+   "entity": "orespawn:brutalfly",
+   "weight": 3,
+   "shape": [
+    0.0,
+    0.6,
+    0.8
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": null,
+    "hurt": "minecraft:entity.bee.hurt",
+    "death": "minecraft:entity.generic.explode"
+   },
+   "essence": {
+    "default": "orespawn:moth_scale"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      1,
+      1,
+      0,
+      0,
+      0.5
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "ranged",
+       "projectile": "minecraft:small_fireball",
+       "cooldown": 80,
+       "range": 14,
+       "min_range": 3,
+       "count": 1,
+       "spread": 0.0,
+       "velocity": 1.6
+      }
+     ]
+    },
+    "torso": {
+     "stats": [
+      3,
+      0,
+      0.5,
+      0,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.burning_time",
+       "amount": -0.5
+      }
+     ],
+     "traits": [
+      {
+       "type": "flag",
+       "flags": [
+        "fire_proof"
+       ]
+      },
+      {
+       "type": "regen",
+       "amount": 1,
+       "interval": 100,
+       "condition": "always"
+      }
+     ]
+    },
+    "arm": {
+     "stats": [
+      0.25,
+      0,
+      0,
+      0,
+      0.25
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.gravity",
+       "amount": -0.02
+      },
+      {
+       "attribute": "minecraft:generic.safe_fall_distance",
+       "amount": 10
+      }
+     ],
+     "traits": [
+      {
+       "type": "glide",
+       "fall_speed": 0.1,
+       "needs": 2,
+       "horizontal_boost": 0.03
+      }
+     ]
+    }
+   }
+  },
+  {
+   "mob": "cater_killer",
+   "entity": "orespawn:cater_killer",
+   "weight": 4,
+   "shape": [
+    0.0,
+    0.9,
+    1.3
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": "orespawn:caterkiller_living",
+    "hurt": "orespawn:caterkiller_hit",
+    "death": "orespawn:caterkiller_death"
+   },
+   "essence": {
+    "default": "orespawn:caterkiller_jaw"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      2,
+      1,
+      1,
+      0,
+      2
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "on_hit_block",
+       "block": "minecraft:cobweb",
+       "chance": 0.25,
+       "lifetime": 100,
+       "cooldown": 60
+      }
+     ]
+    },
+    "torso": {
+     "stats": [
+      5,
+      0,
+      2,
+      0,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.armor",
+       "amount": 4
+      }
+     ],
+     "traits": [
+      {
+       "type": "on_hurt_reflect",
+       "fraction": 0.15,
+       "flat": 0.0,
+       "max": 3,
+       "ignite_seconds": 0,
+       "melee_only": true
+      },
+      {
+       "type": "summon",
+       "entity": "orespawn:butterfly",
+       "count": 6,
+       "cooldown": 0,
+       "max_alive": 6,
+       "lifetime": 200,
+       "trigger": "death",
+       "scale": 0
+      },
+      {
+       "type": "forager",
+       "blocks": "#minecraft:leaves",
+       "radius": 6,
+       "interval": 200,
+       "action": "eat",
+       "heal": 2,
+       "needs_order": "hurt"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "mob": "creeping_horror",
+   "entity": "orespawn:creeping_horror",
+   "weight": 2,
+   "shape": [
+    0.3,
+    0.3,
+    0.7
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": "orespawn:creepinghorror_living",
+    "hurt": "orespawn:creepinghorror_hit",
+    "death": "orespawn:creepinghorror_dead"
+   },
+   "essence": {
+    "default": "minecraft:cobweb"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      0.5,
+      1.5,
+      0,
+      0,
+      0.5
+     ],
+     "attributes": [],
+     "traits": []
+    },
+    "torso": {
+     "stats": [
+      1.5,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "environment",
+       "condition": "daylight",
+       "attribute_multipliers": {
+        "attack_damage": 0.7,
+        "movement_speed": 0.7
+       }
+      }
+     ]
+    },
+    "arm": {
+     "stats": [
+      0.25,
+      0,
+      0,
+      0,
+      0.5
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "on_hit_effect",
+       "effect": "minecraft:weakness",
+       "duration": 60,
+       "amplifier": 0,
+       "chance": 0.25,
+       "cooldown": 0
+      }
+     ]
+    },
+    "legs": {
+     "stats": [
+      0.5,
+      0,
+      1,
+      3,
+      0
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "flag",
+       "flags": [
+        "climbs"
+       ]
+      }
+     ]
+    }
+   }
+  },
+  {
+   "mob": "lurking_terror",
+   "entity": "orespawn:lurking_terror",
+   "weight": 2,
+   "shape": [
+    0.4,
+    0.5,
+    0.8
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": "orespawn:lurkinghorror_living",
+    "hurt": "orespawn:lurkinghorror_hit",
+    "death": "orespawn:lurkinghorror_dead"
+   },
+   "essence": {
+    "default": "minecraft:feather"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      1,
+      1,
+      0,
+      0,
+      1
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "charge",
+       "min_run": 0,
+       "window": 0,
+       "multiplier": 1.5,
+       "knockback": 0.3,
+       "cooldown": 200
+      }
+     ]
+    },
+    "torso": {
+     "stats": [
+      1.5,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attributes": [],
+     "traits": []
+    },
+    "arm": {
+     "stats": [
+      0.25,
+      0,
+      0,
+      0,
+      0.25
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.gravity",
+       "amount": -0.01
+      },
+      {
+       "attribute": "minecraft:generic.safe_fall_distance",
+       "amount": 4
+      }
+     ],
+     "traits": [
+      {
+       "type": "glide",
+       "fall_speed": 0.15,
+       "needs": 2,
+       "horizontal_boost": 0.0
+      }
+     ]
+    },
+    "legs": {
+     "stats": [
+      0.5,
+      0,
+      1,
+      3,
+      0
+     ],
+     "attributes": [],
+     "traits": []
+    }
+   }
+  },
+  {
+   "mob": "cave_fisher",
+   "entity": "orespawn:cave_fisher",
+   "weight": 2,
+   "shape": [
+    0.35,
+    0.4,
+    0.9
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": null,
+    "hurt": "orespawn:cryo_hurt",
+    "death": "orespawn:cryo_death"
+   },
+   "essence": {
+    "default": "minecraft:fishing_rod"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      0.5,
+      1.5,
+      0,
+      0,
+      0.5
+     ],
+     "attributes": [],
+     "traits": []
+    },
+    "torso": {
+     "stats": [
+      1.5,
+      0,
+      0.5,
+      0,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.armor",
+       "amount": 2
+      }
+     ],
+     "traits": [
+      {
+       "type": "flag",
+       "flags": [
+        "cactus_proof"
+       ]
+      }
+     ]
+    },
+    "arm": {
+     "stats": [
+      0.25,
+      0,
+      0,
+      0,
+      0.5
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "pull",
+       "radius": 8,
+       "strength": 0.45,
+       "interval": 100,
+       "targets": "target"
+      }
+     ]
+    },
+    "legs": {
+     "stats": [
+      0.5,
+      0,
+      1,
+      2.5,
+      0
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "flag",
+       "flags": [
+        "climbs"
+       ]
+      }
+     ]
+    }
+   }
+  },
+  {
+   "mob": "irukandji",
+   "entity": "orespawn:irukandji",
+   "weight": 2,
+   "shape": [
+    0.0,
+    0.3,
+    0.3
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": null,
+    "hurt": "orespawn:little_splat",
+    "death": "orespawn:ratdead"
+   },
+   "essence": {
+    "default": "orespawn:dead_irukandji"
+   },
+   "parts": {
+    "torso": {
+     "stats": [
+      0.25,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.oxygen_bonus",
+       "amount": 6
+      }
+     ],
+     "traits": [
+      {
+       "type": "on_hit_effect",
+       "effect": "minecraft:poison",
+       "duration": 100,
+       "amplifier": 1,
+       "chance": 1.0,
+       "cooldown": 0
+      },
+      {
+       "type": "on_hit_effect",
+       "effect": "minecraft:nausea",
+       "duration": 160,
+       "amplifier": 0,
+       "chance": 1.0,
+       "cooldown": 0
+      },
+      {
+       "type": "on_hurt_reflect",
+       "fraction": 0.0,
+       "flat": 4,
+       "max": 4,
+       "ignite_seconds": 0,
+       "melee_only": true
+      },
+      {
+       "type": "flag",
+       "flags": [
+        "breathes_water"
+       ]
+      },
+      {
+       "type": "environment",
+       "condition": "dry",
+       "damage": 1,
+       "interval": 40
+      }
+     ]
+    }
+   }
+  },
+  {
+   "mob": "urchin",
+   "entity": "orespawn:urchin",
+   "weight": 2,
+   "shape": [
+    0.0,
+    0.6,
+    0.7
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": "orespawn:kyuubi_living",
+    "hurt": "orespawn:glasshit",
+    "death": "orespawn:glassdead"
+   },
+   "essence": {
+    "default": "orespawn:sunspot_urchin"
+   },
+   "parts": {
+    "torso": {
+     "stats": [
+      1.5,
+      0,
+      1,
+      0,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.armor",
+       "amount": 2
+      }
+     ],
+     "traits": [
+      {
+       "type": "on_hurt_reflect",
+       "fraction": 0.0,
+       "flat": 2,
+       "max": 2,
+       "ignite_seconds": 3,
+       "melee_only": true
+      },
+      {
+       "type": "flag",
+       "flags": [
+        "fire_proof"
+       ]
+      }
+     ]
+    }
+   }
+  },
+  {
+   "mob": "ant",
+   "entity": "orespawn:ant",
+   "weight": 1,
+   "shape": [
+    0.2,
+    0.25,
+    0.4
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": null,
+    "hurt": "minecraft:entity.silverfish.hurt",
+    "death": "minecraft:entity.silverfish.death"
+   },
+   "essence": {
+    "default": "orespawn:ant_block"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      0.25,
+      1,
+      0,
+      0,
+      0.25
+     ],
+     "attributes": [],
+     "traits": []
+    },
+    "torso": {
+     "stats": [
+      0.5,
+      0,
+      0.5,
+      0,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.scale",
+       "amount": -0.1
+      }
+     ],
+     "traits": []
+    },
+    "legs": {
+     "stats": [
+      0.25,
+      0,
+      1,
+      2.5,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.scale",
+       "amount": -0.15
+      }
+     ],
+     "traits": [
+      {
+       "type": "flag",
+       "flags": [
+        "climbs"
+       ]
+      }
+     ]
+    }
+   }
+  },
+  {
+   "mob": "red_ant",
+   "entity": "orespawn:red_ant",
+   "weight": 1,
+   "shape": [
+    0.2,
+    0.25,
+    0.4
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": null,
+    "hurt": "minecraft:entity.silverfish.hurt",
+    "death": "minecraft:entity.silverfish.death"
+   },
+   "essence": {
+    "default": "orespawn:red_ant_block"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      0.25,
+      1,
+      0,
+      0,
+      0.25
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "on_hit_ignite",
+       "seconds": 1,
+       "chance": 0.3
+      }
+     ]
+    },
+    "torso": {
+     "stats": [
+      0.5,
+      0,
+      0.5,
+      0,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.scale",
+       "amount": -0.1
+      }
+     ],
+     "traits": []
+    },
+    "legs": {
+     "stats": [
+      0.25,
+      0,
+      1,
+      2.5,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.scale",
+       "amount": -0.15
+      }
+     ],
+     "traits": [
+      {
+       "type": "flag",
+       "flags": [
+        "climbs"
+       ]
+      }
+     ]
+    }
+   }
+  },
+  {
+   "mob": "rainbow_ant",
+   "entity": "orespawn:rainbow_ant",
+   "weight": 1,
+   "shape": [
+    0.2,
+    0.25,
+    0.4
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": null,
+    "hurt": "minecraft:entity.silverfish.hurt",
+    "death": "minecraft:entity.silverfish.death"
+   },
+   "essence": {
+    "default": "orespawn:rainbow_ant_block"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      0.25,
+      1,
+      0,
+      0,
+      0.25
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "on_hit_effect",
+       "effect": "minecraft:glowing",
+       "duration": 200,
+       "amplifier": 0,
+       "chance": 1.0,
+       "cooldown": 0
+      }
+     ]
+    },
+    "torso": {
+     "stats": [
+      0.5,
+      0,
+      0.5,
+      0,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.scale",
+       "amount": -0.1
+      }
+     ],
+     "traits": []
+    },
+    "legs": {
+     "stats": [
+      0.25,
+      0,
+      1,
+      2.5,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.scale",
+       "amount": -0.15
+      }
+     ],
+     "traits": [
+      {
+       "type": "flag",
+       "flags": [
+        "climbs"
+       ]
+      }
+     ]
+    }
+   }
+  },
+  {
+   "mob": "unstable_ant",
+   "entity": "orespawn:unstable_ant",
+   "weight": 1,
+   "shape": [
+    0.2,
+    0.25,
+    0.4
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": null,
+    "hurt": "minecraft:entity.silverfish.hurt",
+    "death": "minecraft:entity.silverfish.death"
+   },
+   "essence": {
+    "default": "orespawn:unstable_ant_block"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      0.25,
+      1,
+      0,
+      0,
+      0.25
+     ],
+     "attributes": [],
+     "traits": []
+    },
+    "torso": {
+     "stats": [
+      0.5,
+      0,
+      0.5,
+      0,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.scale",
+       "amount": -0.1
+      }
+     ],
+     "traits": [
+      {
+       "type": "on_death_explode",
+       "power": 1.0,
+       "fire": false,
+       "breaks_blocks": false
+      }
+     ]
+    },
+    "legs": {
+     "stats": [
+      0.25,
+      0,
+      1,
+      2.5,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.scale",
+       "amount": -0.15
+      }
+     ],
+     "traits": [
+      {
+       "type": "flag",
+       "flags": [
+        "climbs"
+       ]
+      }
+     ]
+    }
+   }
+  },
+  {
+   "mob": "termite",
+   "entity": "orespawn:termite",
+   "weight": 1,
+   "shape": [
+    0.2,
+    0.25,
+    0.4
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": null,
+    "hurt": "minecraft:entity.silverfish.hurt",
+    "death": "minecraft:entity.silverfish.death"
+   },
+   "essence": {
+    "default": "orespawn:termite_block"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      0.25,
+      1,
+      0,
+      0,
+      0.5
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "forager",
+       "blocks": "#minecraft:planks",
+       "radius": 5,
+       "interval": 200,
+       "action": "eat",
+       "heal": 2,
+       "needs_order": "hurt"
+      }
+     ]
+    },
+    "torso": {
+     "stats": [
+      0.5,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.scale",
+       "amount": -0.1
+      }
+     ],
+     "traits": []
+    },
+    "legs": {
+     "stats": [
+      0.25,
+      0,
+      1,
+      2.5,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.scale",
+       "amount": -0.15
+      }
+     ],
+     "traits": [
+      {
+       "type": "flag",
+       "flags": [
+        "climbs"
+       ]
+      }
+     ]
+    }
+   }
+  },
+  {
+   "mob": "cricket",
+   "entity": "orespawn:cricket",
+   "weight": 1,
+   "shape": [
+    0.25,
+    0.2,
+    0.35
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": "orespawn:cricket",
+    "hurt": "minecraft:entity.silverfish.hurt",
+    "death": "minecraft:entity.silverfish.death"
+   },
+   "essence": {
+    "default": "minecraft:short_grass"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      0.25,
+      1,
+      0,
+      0,
+      0
+     ],
+     "attributes": [],
+     "traits": []
+    },
+    "torso": {
+     "stats": [
+      0.5,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attributes": [],
+     "traits": []
+    },
+    "legs": {
+     "stats": [
+      0.25,
+      0,
+      0.5,
+      2.5,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.jump_strength",
+       "amount": 0.25
+      },
+      {
+       "attribute": "minecraft:generic.fall_damage_multiplier",
+       "amount": -0.75
+      },
+      {
+       "attribute": "minecraft:generic.scale",
+       "amount": -0.1
+      }
+     ],
+     "traits": []
+    }
+   }
+  },
+  {
+   "mob": "stink_bug",
+   "entity": "orespawn:stink_bug",
+   "weight": 1,
+   "shape": [
+    0.2,
+    0.3,
+    0.5
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": null,
+    "hurt": "minecraft:entity.silverfish.hurt",
+    "death": "orespawn:fart"
+   },
+   "essence": {
+    "default": "orespawn:dead_stink_bug"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      0.25,
+      1,
+      0,
+      0,
+      0.25
+     ],
+     "attributes": [],
+     "traits": []
+    },
+    "torso": {
+     "stats": [
+      0.75,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "on_death_cloud",
+       "effect": "minecraft:poison",
+       "duration": 100,
+       "amplifier": 0,
+       "radius": 4.0,
+       "cloud_duration": 200
+      },
+      {
+       "type": "on_hurt_effect",
+       "effect": "minecraft:nausea",
+       "duration": 60,
+       "amplifier": 0,
+       "chance": 0.2,
+       "melee_only": true
+      }
+     ]
+    },
+    "legs": {
+     "stats": [
+      0.25,
+      0,
+      0.5,
+      2,
+      0
+     ],
+     "attributes": [],
+     "traits": []
+    }
+   }
+  },
+  {
+   "mob": "dragonfly",
+   "entity": "orespawn:dragonfly",
+   "weight": 1,
+   "shape": [
+    0.0,
+    0.25,
+    0.6
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": "orespawn:dragonfly_living",
+    "hurt": "orespawn:dragonfly_hurt",
+    "death": "orespawn:dragonfly_death"
+   },
+   "essence": {
+    "default": "minecraft:sugar_cane"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      0.25,
+      1.5,
+      0,
+      0,
+      0.5
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "bane",
+       "target": "small",
+       "multiplier": 1.5
+      }
+     ]
+    },
+    "torso": {
+     "stats": [
+      0.5,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attributes": [],
+     "traits": []
+    },
+    "arm": {
+     "stats": [
+      0.1,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.gravity",
+       "amount": -0.02
+      },
+      {
+       "attribute": "minecraft:generic.safe_fall_distance",
+       "amount": 8
+      }
+     ],
+     "traits": [
+      {
+       "type": "glide",
+       "fall_speed": 0.1,
+       "needs": 2,
+       "horizontal_boost": 0.04
+      }
+     ]
+    }
+   }
+  },
+  {
+   "mob": "mosquito",
+   "entity": "orespawn:mosquito",
+   "weight": 1,
+   "shape": [
+    0.0,
+    0.15,
+    0.2
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": "orespawn:mosquito",
+    "hurt": "minecraft:entity.bee.hurt",
+    "death": "minecraft:entity.bee.death"
+   },
+   "essence": {
+    "default": "orespawn:mosquito_seed"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      0.1,
+      1,
+      0,
+      0,
+      0.25
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "lifesteal",
+       "fraction": 0.5,
+       "max_per_hit": 1
+      }
+     ]
+    },
+    "torso": {
+     "stats": [
+      0.25,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attributes": [],
+     "traits": []
+    },
+    "arm": {
+     "stats": [
+      0.05,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.gravity",
+       "amount": -0.01
+      },
+      {
+       "attribute": "minecraft:generic.safe_fall_distance",
+       "amount": 4
+      }
+     ],
+     "traits": [
+      {
+       "type": "glide",
+       "fall_speed": 0.15,
+       "needs": 2,
+       "horizontal_boost": 0.0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "mob": "butterfly",
+   "entity": "orespawn:butterfly",
+   "weight": 1,
+   "shape": [
+    0.0,
+    0.15,
+    0.3
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": null,
+    "hurt": "minecraft:entity.bee.hurt",
+    "death": "minecraft:entity.bee.death"
+   },
+   "essence": {
+    "default": "orespawn:butterfly_seed"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      0.1,
+      1,
+      0,
+      0,
+      0
+     ],
+     "attributes": [],
+     "traits": []
+    },
+    "torso": {
+     "stats": [
+      0.25,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attributes": [],
+     "traits": []
+    },
+    "arm": {
+     "stats": [
+      0.05,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.gravity",
+       "amount": -0.03
+      },
+      {
+       "attribute": "minecraft:generic.safe_fall_distance",
+       "amount": 16
+      }
+     ],
+     "traits": [
+      {
+       "type": "glide",
+       "fall_speed": 0.06,
+       "needs": 2,
+       "horizontal_boost": 0.03
+      }
+     ]
+    }
+   }
+  },
+  {
+   "mob": "luna_moth",
+   "entity": "orespawn:luna_moth",
+   "weight": 1,
+   "shape": [
+    0.0,
+    0.15,
+    0.3
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": null,
+    "hurt": "minecraft:entity.bee.hurt",
+    "death": "minecraft:entity.bee.death"
+   },
+   "essence": {
+    "default": "orespawn:moth_seed"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      0.1,
+      1,
+      0,
+      0,
+      0
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "environment",
+       "condition": "night",
+       "attribute_multipliers": {
+        "follow_range": 1.5
+       }
+      }
+     ]
+    },
+    "torso": {
+     "stats": [
+      0.25,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attributes": [],
+     "traits": []
+    },
+    "arm": {
+     "stats": [
+      0.05,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.gravity",
+       "amount": -0.025
+      },
+      {
+       "attribute": "minecraft:generic.safe_fall_distance",
+       "amount": 12
+      }
+     ],
+     "traits": [
+      {
+       "type": "glide",
+       "fall_speed": 0.08,
+       "needs": 2,
+       "horizontal_boost": 0.02
+      }
+     ]
+    }
+   }
+  },
+  {
+   "mob": "vampire_butterfly",
+   "entity": "orespawn:vampire_butterfly",
+   "weight": 1,
+   "shape": [
+    0.0,
+    0.15,
+    0.3
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": null,
+    "hurt": "orespawn:mosquito",
+    "death": "minecraft:entity.bee.death"
+   },
+   "essence": {
+    "default": "minecraft:fermented_spider_eye"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      0.25,
+      1,
+      0,
+      0,
+      0.25
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "lifesteal",
+       "fraction": 0.5,
+       "max_per_hit": 2
+      },
+      {
+       "type": "on_hit_effect",
+       "effect": "minecraft:weakness",
+       "duration": 100,
+       "amplifier": 0,
+       "chance": 0.5,
+       "cooldown": 0
+      },
+      {
+       "type": "flag",
+       "flags": [
+        "burns_in_sun"
+       ]
+      }
+     ]
+    },
+    "torso": {
+     "stats": [
+      0.25,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attributes": [],
+     "traits": []
+    },
+    "arm": {
+     "stats": [
+      0.05,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.gravity",
+       "amount": -0.02
+      },
+      {
+       "attribute": "minecraft:generic.safe_fall_distance",
+       "amount": 8
+      }
+     ],
+     "traits": [
+      {
+       "type": "glide",
+       "fall_speed": 0.1,
+       "needs": 2,
+       "horizontal_boost": 0.0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "mob": "firefly",
+   "entity": "orespawn:firefly",
+   "weight": 1,
+   "shape": [
+    0.15,
+    0.2,
+    0.3
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": null,
+    "hurt": "minecraft:entity.bee.hurt",
+    "death": "minecraft:entity.bee.death"
+   },
+   "essence": {
+    "default": "orespawn:firefly_seed"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      0.1,
+      1,
+      0,
+      0,
+      0
+     ],
+     "attributes": [],
+     "traits": []
+    },
+    "torso": {
+     "stats": [
+      0.25,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "emits_light",
+       "level": 12,
+       "condition": "dark"
+      }
+     ]
+    },
+    "arm": {
+     "stats": [
+      0.05,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.gravity",
+       "amount": -0.015
+      },
+      {
+       "attribute": "minecraft:generic.safe_fall_distance",
+       "amount": 6
+      }
+     ],
+     "traits": [
+      {
+       "type": "glide",
+       "fall_speed": 0.12,
+       "needs": 2,
+       "horizontal_boost": 0.0
+      }
+     ]
+    },
+    "legs": {
+     "stats": [
+      0.1,
+      0,
+      0.5,
+      2,
+      0
+     ],
+     "attributes": [],
+     "traits": []
+    }
+   }
+  },
+  {
+   "mob": "cliff_racer",
+   "entity": "orespawn:cliff_racer",
+   "weight": 1,
+   "shape": [
+    0.0,
+    0.3,
+    0.5
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": "orespawn:cliffracer",
+    "hurt": "minecraft:entity.parrot.hurt",
+    "death": "minecraft:entity.parrot.death"
+   },
+   "essence": {
+    "default": "minecraft:calcite"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      0.25,
+      1.5,
+      0,
+      0,
+      0.25
+     ],
+     "attributes": [],
+     "traits": []
+    },
+    "torso": {
+     "stats": [
+      0.5,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attributes": [],
+     "traits": []
+    },
+    "arm": {
+     "stats": [
+      0.1,
+      0,
+      0,
+      0,
+      0.1
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.gravity",
+       "amount": -0.02
+      },
+      {
+       "attribute": "minecraft:generic.safe_fall_distance",
+       "amount": 8
+      }
+     ],
+     "traits": [
+      {
+       "type": "glide",
+       "fall_speed": 0.1,
+       "needs": 2,
+       "horizontal_boost": 0.04
+      }
+     ]
+    }
+   }
+  },
+  {
+   "mob": "cockateil",
+   "entity": "orespawn:cockateil",
+   "weight": 1,
+   "shape": [
+    0.2,
+    0.3,
+    0.3
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": "orespawn:birds",
+    "hurt": "orespawn:duck_hurt",
+    "death": "orespawn:duck_hurt"
+   },
+   "essence": {
+    "default": "minecraft:wheat_seeds"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      0.25,
+      1,
+      0,
+      0,
+      0.25
+     ],
+     "attributes": [],
+     "traits": []
+    },
+    "torso": {
+     "stats": [
+      0.25,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attributes": [],
+     "traits": []
+    },
+    "arm": {
+     "stats": [
+      0.1,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.gravity",
+       "amount": -0.02
+      },
+      {
+       "attribute": "minecraft:generic.safe_fall_distance",
+       "amount": 8
+      },
+      {
+       "attribute": "minecraft:generic.fall_damage_multiplier",
+       "amount": -0.5
+      }
+     ],
+     "traits": [
+      {
+       "type": "glide",
+       "fall_speed": 0.1,
+       "needs": 2,
+       "horizontal_boost": 0.0
+      }
+     ]
+    },
+    "legs": {
+     "stats": [
+      0.1,
+      0,
+      0,
+      1,
+      0
+     ],
+     "attributes": [],
+     "traits": []
+    }
+   }
+  },
+  {
+   "mob": "ruby_bird",
+   "entity": "orespawn:ruby_bird",
+   "weight": 1,
+   "shape": [
+    0.2,
+    0.3,
+    0.3
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": "orespawn:rubybird",
+    "hurt": "orespawn:duck_hurt",
+    "death": "orespawn:duck_hurt"
+   },
+   "essence": {
+    "default": "orespawn:ruby"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      0.25,
+      1,
+      0,
+      0,
+      0.25
+     ],
+     "attributes": [],
+     "traits": []
+    },
+    "torso": {
+     "stats": [
+      0.25,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "produce",
+       "items": [
+        {
+         "item": "orespawn:ruby",
+         "weight": 1
+        }
+       ],
+       "interval": [
+        48000,
+        72000
+       ],
+       "count": [
+        1,
+        1
+       ]
+      }
+     ]
+    },
+    "arm": {
+     "stats": [
+      0.1,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.gravity",
+       "amount": -0.02
+      },
+      {
+       "attribute": "minecraft:generic.safe_fall_distance",
+       "amount": 8
+      },
+      {
+       "attribute": "minecraft:generic.fall_damage_multiplier",
+       "amount": -0.5
+      }
+     ],
+     "traits": [
+      {
+       "type": "glide",
+       "fall_speed": 0.1,
+       "needs": 2,
+       "horizontal_boost": 0.0
+      }
+     ]
+    },
+    "legs": {
+     "stats": [
+      0.1,
+      0,
+      0,
+      1,
+      0
+     ],
+     "attributes": [],
+     "traits": []
+    }
+   }
+  },
+  {
+   "mob": "rubber_ducky",
+   "entity": "orespawn:rubber_ducky",
+   "weight": 1,
+   "shape": [
+    0.0,
+    0.35,
+    0.35
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": "orespawn:duck_hurt",
+    "hurt": "orespawn:duck_hurt",
+    "death": "orespawn:duck_hurt"
+   },
+   "essence": {
+    "default": "minecraft:yellow_dye"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      0.25,
+      1,
+      0,
+      0,
+      0.5
+     ],
+     "attributes": [],
+     "traits": []
+    },
+    "torso": {
+     "stats": [
+      0.75,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.oxygen_bonus",
+       "amount": 4
+      }
+     ],
+     "traits": [
+      {
+       "type": "flag",
+       "flags": [
+        "floats"
+       ]
+      },
+      {
+       "type": "damage_filter",
+       "types": [
+        "minecraft:drown"
+       ],
+       "multiplier": 0.0,
+       "condition": "always"
+      },
+      {
+       "type": "on_hurt_knockback",
+       "strength": 0.8,
+       "chance": 0.3
+      }
+     ]
+    },
+    "arm": {
+     "stats": [
+      0.1,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attributes": [],
+     "traits": []
+    }
+   }
+  },
+  {
+   "mob": "frog",
+   "entity": "orespawn:frog",
+   "weight": 1,
+   "shape": [
+    0.3,
+    0.35,
+    0.5
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": "orespawn:frog1",
+    "hurt": "orespawn:scorpion_hit",
+    "death": "orespawn:big_splat"
+   },
+   "essence": {
+    "default": "minecraft:lily_pad"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      0.25,
+      1,
+      0,
+      0,
+      0.25
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "bane",
+       "target": "#minecraft:arthropod",
+       "multiplier": 1.5
+      },
+      {
+       "type": "pull",
+       "radius": 4,
+       "strength": 0.3,
+       "interval": 80,
+       "targets": "target"
+      }
+     ]
+    },
+    "torso": {
+     "stats": [
+      0.5,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.oxygen_bonus",
+       "amount": 4
+      }
+     ],
+     "traits": []
+    },
+    "legs": {
+     "stats": [
+      0.25,
+      0,
+      0.5,
+      2,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.jump_strength",
+       "amount": 0.2
+      },
+      {
+       "attribute": "minecraft:generic.fall_damage_multiplier",
+       "amount": -0.5
+      },
+      {
+       "attribute": "minecraft:generic.water_movement_efficiency",
+       "amount": 0.5
+      }
+     ],
+     "traits": []
+    }
+   }
+  },
+  {
+   "mob": "fairy",
+   "entity": "orespawn:fairy",
+   "weight": 2,
+   "shape": [
+    0.35,
+    0.3,
+    0.3
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": null,
+    "hurt": "orespawn:rathit",
+    "death": "orespawn:big_splat"
+   },
+   "essence": {
+    "default": "minecraft:glow_berries"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      0.5,
+      1.5,
+      0,
+      0,
+      0.25
+     ],
+     "attributes": [],
+     "traits": []
+    },
+    "torso": {
+     "stats": [
+      1,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.gravity",
+       "amount": -0.02
+      },
+      {
+       "attribute": "minecraft:generic.safe_fall_distance",
+       "amount": 10
+      }
+     ],
+     "traits": [
+      {
+       "type": "glide",
+       "fall_speed": 0.1,
+       "needs": 1,
+       "horizontal_boost": 0.0
+      },
+      {
+       "type": "emits_light",
+       "level": 8,
+       "condition": "dark"
+      }
+     ]
+    },
+    "arm": {
+     "stats": [
+      0.25,
+      0,
+      0,
+      0,
+      0.5
+     ],
+     "attributes": [],
+     "traits": []
+    },
+    "legs": {
+     "stats": [
+      0.25,
+      0,
+      0.5,
+      3,
+      0
+     ],
+     "attributes": [],
+     "traits": []
+    }
+   }
+  },
+  {
+   "mob": "sea_monster",
+   "entity": "orespawn:sea_monster",
+   "weight": 3,
+   "shape": [
+    0.0,
+    0.9,
+    1.0
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": "orespawn:seamonster_living",
+    "hurt": "orespawn:seamonster_hit",
+    "death": "orespawn:seamonster_death"
+   },
+   "essence": {
+    "default": "orespawn:sea_monster_scale"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      1.5,
+      1,
+      0.5,
+      0,
+      1
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "flag",
+       "flags": [
+        "breathes_water"
+       ]
+      }
+     ]
+    },
+    "torso": {
+     "stats": [
+      3.5,
+      0,
+      1.5,
+      0,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.oxygen_bonus",
+       "amount": 10
+      },
+      {
+       "attribute": "minecraft:generic.water_movement_efficiency",
+       "amount": 0.75
+      }
+     ],
+     "traits": [
+      {
+       "type": "flag",
+       "flags": [
+        "breathes_water"
+       ]
+      },
+      {
+       "type": "regen",
+       "amount": 1,
+       "interval": 60,
+       "condition": "in_water"
+      },
+      {
+       "type": "environment",
+       "condition": "dry",
+       "attribute_multipliers": {
+        "movement_speed": 0.7
+       }
+      }
+     ]
+    }
+   }
+  },
+  {
+   "mob": "sea_viper",
+   "entity": "orespawn:sea_viper",
+   "weight": 4,
+   "shape": [
+    0.0,
+    0.9,
+    1.0
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": "orespawn:seaviper_living",
+    "hurt": "orespawn:seaviper_hit",
+    "death": "orespawn:seaviper_death"
+   },
+   "essence": {
+    "default": "orespawn:sea_viper_tongue"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      2,
+      1,
+      1,
+      0,
+      2
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "on_hit_effect",
+       "effect": "minecraft:poison",
+       "duration": 100,
+       "amplifier": 1,
+       "chance": 0.5,
+       "cooldown": 0
+      },
+      {
+       "type": "flag",
+       "flags": [
+        "breathes_water"
+       ]
+      }
+     ]
+    },
+    "torso": {
+     "stats": [
+      5,
+      0,
+      2,
+      0,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.armor",
+       "amount": 3
+      },
+      {
+       "attribute": "minecraft:generic.oxygen_bonus",
+       "amount": 10
+      },
+      {
+       "attribute": "minecraft:generic.water_movement_efficiency",
+       "amount": 1.0
+      }
+     ],
+     "traits": [
+      {
+       "type": "flag",
+       "flags": [
+        "breathes_water"
+       ]
+      },
+      {
+       "type": "regen",
+       "amount": 1,
+       "interval": 100,
+       "condition": "in_water"
+      },
+      {
+       "type": "environment",
+       "condition": "dry",
+       "attribute_multipliers": {
+        "movement_speed": 0.6
+       }
+      }
+     ]
+    }
+   }
+  },
+  {
+   "mob": "attack_squid",
+   "entity": "orespawn:attack_squid",
+   "weight": 2,
+   "shape": [
+    0.6,
+    0.6,
+    0.75
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": null,
+    "hurt": "orespawn:squid_hurt",
+    "death": "orespawn:squid_death"
+   },
+   "essence": {
+    "default": "orespawn:water_ball"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      0.5,
+      1,
+      0,
+      0,
+      0.5
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "ranged",
+       "projectile": "necromancy:part_bolt",
+       "cooldown": 60,
+       "range": 12,
+       "min_range": 0,
+       "count": 1,
+       "spread": 0.0,
+       "velocity": 1.6,
+       "damage": 2,
+       "item": "orespawn:water_ball"
+      },
+      {
+       "type": "ranged",
+       "projectile": "necromancy:part_bolt",
+       "cooldown": 180,
+       "range": 12,
+       "min_range": 0,
+       "count": 1,
+       "spread": 0.0,
+       "velocity": 1.6,
+       "damage": 1,
+       "item": "minecraft:ink_sac",
+       "effect": "minecraft:blindness",
+       "effect_duration": 100,
+       "effect_amplifier": 0
+      }
+     ]
+    },
+    "torso": {
+     "stats": [
+      1.5,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.oxygen_bonus",
+       "amount": 4
+      }
+     ],
+     "traits": [
+      {
+       "type": "on_hurt_effect",
+       "effect": "minecraft:blindness",
+       "duration": 40,
+       "amplifier": 0,
+       "chance": 0.25,
+       "melee_only": true
+      },
+      {
+       "type": "environment",
+       "condition": "dry",
+       "damage": 1,
+       "interval": 40
+      }
+     ]
+    },
+    "legs": {
+     "stats": [
+      0.5,
+      0,
+      1,
+      2,
+      0.5
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.water_movement_efficiency",
+       "amount": 1.0
+      },
+      {
+       "attribute": "minecraft:generic.oxygen_bonus",
+       "amount": 4
+      }
+     ],
+     "traits": []
+    }
+   }
+  },
+  {
+   "mob": "crab",
+   "entity": "orespawn:crab",
+   "weight": 3,
+   "shape": [
+    0.5,
+    0.5,
+    1.2
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": null,
+    "hurt": "orespawn:leaves_hit",
+    "death": "orespawn:big_splat"
+   },
+   "essence": {
+    "default": "orespawn:raw_crab_meat"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      0.5,
+      1,
+      0,
+      0,
+      0.5
+     ],
+     "attributes": [],
+     "traits": []
+    },
+    "torso": {
+     "stats": [
+      3,
+      0,
+      1.5,
+      0,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.armor",
+       "amount": 4
+      }
+     ],
+     "traits": [
+      {
+       "type": "regen",
+       "amount": 1,
+       "interval": 120,
+       "condition": "in_water"
+      },
+      {
+       "type": "flag",
+       "flags": [
+        "cactus_proof"
+       ]
+      }
+     ]
+    },
+    "arm": {
+     "stats": [
+      0.75,
+      0,
+      0.5,
+      0,
+      1.25
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "on_hit_toss",
+       "horizontal": 1.15,
+       "vertical": 0.48,
+       "chance": 1.0,
+       "cooldown": 20
+      }
+     ]
+    },
+    "legs": {
+     "stats": [
+      1,
+      0,
+      3,
+      2,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.water_movement_efficiency",
+       "amount": 0.5
+      }
+     ],
+     "traits": []
+    }
+   }
+  },
+  {
+   "mob": "skate",
+   "entity": "orespawn:skate",
+   "weight": 1,
+   "shape": [
+    0.0,
+    0.2,
+    0.7
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": null,
+    "hurt": "minecraft:entity.cod.hurt",
+    "death": "orespawn:ratdead"
+   },
+   "essence": {
+    "default": "minecraft:kelp"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      0.25,
+      1,
+      0,
+      0,
+      0.5
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "flag",
+       "flags": [
+        "breathes_water"
+       ]
+      }
+     ]
+    },
+    "torso": {
+     "stats": [
+      1,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.water_movement_efficiency",
+       "amount": 1.0
+      },
+      {
+       "attribute": "minecraft:generic.oxygen_bonus",
+       "amount": 4
+      }
+     ],
+     "traits": [
+      {
+       "type": "flag",
+       "flags": [
+        "breathes_water"
+       ]
+      },
+      {
+       "type": "environment",
+       "condition": "dry",
+       "damage": 1,
+       "interval": 40
+      }
+     ]
+    }
+   }
+  },
+  {
+   "mob": "flounder",
+   "entity": "orespawn:flounder",
+   "weight": 1,
+   "shape": [
+    0.0,
+    0.15,
+    0.5
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": "minecraft:entity.generic.splash",
+    "hurt": "orespawn:little_splat",
+    "death": "orespawn:ratdead"
+   },
+   "essence": {
+    "default": "minecraft:cod"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      0.25,
+      1,
+      0,
+      0,
+      0
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "flag",
+       "flags": [
+        "breathes_water"
+       ]
+      }
+     ]
+    },
+    "torso": {
+     "stats": [
+      0.75,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.water_movement_efficiency",
+       "amount": 0.5
+      },
+      {
+       "attribute": "minecraft:generic.oxygen_bonus",
+       "amount": 4
+      }
+     ],
+     "traits": [
+      {
+       "type": "flag",
+       "flags": [
+        "breathes_water"
+       ]
+      },
+      {
+       "type": "damage_filter",
+       "types": [
+        "#minecraft:is_projectile"
+       ],
+       "multiplier": 0.75,
+       "condition": "always"
+      },
+      {
+       "type": "environment",
+       "condition": "dry",
+       "damage": 1,
+       "interval": 40
+      }
+     ]
+    }
+   }
+  },
+  {
+   "mob": "gold_fish",
+   "entity": "orespawn:gold_fish",
+   "weight": 1,
+   "shape": [
+    0.0,
+    0.3,
+    0.4
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": "minecraft:entity.generic.splash",
+    "hurt": "minecraft:entity.generic.splash",
+    "death": "orespawn:little_splat"
+   },
+   "essence": {
+    "default": "minecraft:raw_gold"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      0.25,
+      1,
+      0,
+      0,
+      0.25
+     ],
+     "attributes": [],
+     "traits": []
+    },
+    "torso": {
+     "stats": [
+      0.5,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.gravity",
+       "amount": -0.03
+      },
+      {
+       "attribute": "minecraft:generic.safe_fall_distance",
+       "amount": 12
+      }
+     ],
+     "traits": [
+      {
+       "type": "glide",
+       "fall_speed": 0.12,
+       "needs": 1,
+       "horizontal_boost": 0.0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "mob": "cloud_shark",
+   "entity": "orespawn:cloud_shark",
+   "weight": 2,
+   "shape": [
+    0.0,
+    0.4,
+    0.7
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": "minecraft:entity.generic.splash",
+    "hurt": "orespawn:little_splat",
+    "death": "orespawn:big_splat"
+   },
+   "essence": {
+    "default": "minecraft:paper"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      0.75,
+      1.5,
+      0,
+      0,
+      0.75
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "bane",
+       "target": "airborne",
+       "multiplier": 1.5
+      }
+     ]
+    },
+    "torso": {
+     "stats": [
+      1.5,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.gravity",
+       "amount": -0.02
+      },
+      {
+       "attribute": "minecraft:generic.safe_fall_distance",
+       "amount": 10
+      }
+     ],
+     "traits": [
+      {
+       "type": "glide",
+       "fall_speed": 0.12,
+       "needs": 1,
+       "horizontal_boost": 0.0
+      },
+      {
+       "type": "environment",
+       "condition": "daylight",
+       "attribute_multipliers": {
+        "attack_damage": 0.8
+       }
+      }
+     ]
+    }
+   }
+  },
+  {
+   "mob": "worm_small",
+   "entity": "orespawn:worm_small",
+   "weight": 1,
+   "shape": [
+    0.0,
+    0.4,
+    0.3
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": null,
+    "hurt": "orespawn:little_splat",
+    "death": "orespawn:little_splat"
+   },
+   "essence": {
+    "default": "minecraft:rooted_dirt"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      0.25,
+      1,
+      0,
+      0,
+      0.5
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "on_hit_disarm",
+       "slots": [
+        "feet"
+       ],
+       "chance": 0.15,
+       "to_pack": false
+      }
+     ]
+    },
+    "torso": {
+     "stats": [
+      0.75,
+      0,
+      0.5,
+      0,
+      0
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "flag",
+       "flags": [
+        "in_wall_proof"
+       ]
+      }
+     ]
+    }
+   }
+  },
+  {
+   "mob": "worm_medium",
+   "entity": "orespawn:worm_medium",
+   "weight": 2,
+   "shape": [
+    0.0,
+    0.6,
+    0.5
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": null,
+    "hurt": "orespawn:little_splat",
+    "death": "orespawn:big_splat"
+   },
+   "essence": {
+    "default": "minecraft:coarse_dirt"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      0.75,
+      1,
+      0.5,
+      0,
+      1
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "on_hit_disarm",
+       "slots": [
+        "feet",
+        "legs"
+       ],
+       "chance": 0.15,
+       "to_pack": false
+      }
+     ]
+    },
+    "torso": {
+     "stats": [
+      2,
+      0,
+      1,
+      0,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.armor",
+       "amount": 2
+      }
+     ],
+     "traits": [
+      {
+       "type": "flag",
+       "flags": [
+        "in_wall_proof"
+       ]
+      }
+     ]
+    }
+   }
+  },
+  {
+   "mob": "worm_large",
+   "entity": "orespawn:worm_large",
+   "weight": 3,
+   "shape": [
+    0.0,
+    0.9,
+    0.9
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": null,
+    "hurt": "orespawn:big_splat",
+    "death": "orespawn:alo_death"
+   },
+   "essence": {
+    "default": "orespawn:worm_tooth"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      1.5,
+      1,
+      1,
+      0,
+      1
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "on_hit_disarm",
+       "slots": [
+        "head",
+        "chest",
+        "mainhand"
+       ],
+       "chance": 0.25,
+       "to_pack": false
+      }
+     ]
+    },
+    "torso": {
+     "stats": [
+      4,
+      0,
+      1.5,
+      0,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.armor",
+       "amount": 4
+      }
+     ],
+     "traits": [
+      {
+       "type": "flag",
+       "flags": [
+        "in_wall_proof"
+       ]
+      },
+      {
+       "type": "summon",
+       "entity": "spawnling:worm_small",
+       "count": 2,
+       "cooldown": 600,
+       "max_alive": 4,
+       "lifetime": 400,
+       "trigger": "combat",
+       "scale": -0.5
+      }
+     ]
+    }
+   }
+  },
+  {
+   "mob": "leaf_monster",
+   "entity": "orespawn:leaf_monster",
+   "weight": 1,
+   "shape": [
+    0.5,
+    0.6,
+    0.6
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": null,
+    "hurt": "orespawn:leaves_hit",
+    "death": "orespawn:leaves_death"
+   },
+   "essence": {
+    "default": "#minecraft:leaves"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      0.25,
+      1,
+      0,
+      0,
+      0.25
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "charge",
+       "min_run": 0,
+       "window": 0,
+       "multiplier": 1.5,
+       "knockback": 0.2,
+       "cooldown": 200
+      }
+     ]
+    },
+    "torso": {
+     "stats": [
+      1,
+      0,
+      0.5,
+      0,
+      0
+     ],
+     "attributes": [],
+     "traits": []
+    },
+    "arm": {
+     "stats": [
+      0.1,
+      0,
+      0,
+      0,
+      0.25
+     ],
+     "attributes": [],
+     "traits": []
+    },
+    "legs": {
+     "stats": [
+      0.25,
+      0,
+      1,
+      2,
+      0
+     ],
+     "attributes": [],
+     "traits": []
+    }
+   }
+  },
+  {
+   "mob": "triffid",
+   "entity": "orespawn:triffid",
+   "weight": 3,
+   "shape": [
+    0.6,
+    0.9,
+    0.8
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": "orespawn:triffid_living",
+    "hurt": "orespawn:triffid_hit",
+    "death": "orespawn:triffid_dead"
+   },
+   "essence": {
+    "default": "orespawn:green_goo"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      1,
+      1.5,
+      0,
+      0,
+      1
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "on_hit_effect",
+       "effect": "minecraft:poison",
+       "duration": 60,
+       "amplifier": 0,
+       "chance": 0.3,
+       "cooldown": 0
+      }
+     ]
+    },
+    "torso": {
+     "stats": [
+      3,
+      0,
+      1.5,
+      0,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.armor",
+       "amount": 2
+      }
+     ],
+     "traits": [
+      {
+       "type": "damage_filter",
+       "types": [
+        "*"
+       ],
+       "multiplier": 0.25,
+       "condition": "idle"
+      },
+      {
+       "type": "flag",
+       "flags": [
+        "cactus_proof"
+       ]
+      }
+     ]
+    },
+    "legs": {
+     "stats": [
+      1,
+      0,
+      4,
+      0.5,
+      0
+     ],
+     "attributes": [],
+     "traits": []
+    }
+   }
+  },
+  {
+   "mob": "alien",
+   "entity": "orespawn:alien",
+   "weight": 3,
+   "shape": [
+    1.1,
+    0.9,
+    0.7
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": "orespawn:alien_living",
+    "hurt": "orespawn:alien_hurt",
+    "death": "orespawn:alien_death"
+   },
+   "essence": {
+    "default": "minecraft:clock"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      1,
+      1.5,
+      0,
+      0,
+      0.75
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "on_hit_effect",
+       "effect": "minecraft:poison",
+       "duration": 100,
+       "amplifier": 0,
+       "chance": 0.2,
+       "cooldown": 0
+      }
+     ]
+    },
+    "torso": {
+     "stats": [
+      3,
+      0,
+      1,
+      0,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.armor",
+       "amount": 2
+      }
+     ],
+     "traits": [
+      {
+       "type": "regen",
+       "amount": 1,
+       "interval": 40,
+       "condition": "always"
+      }
+     ]
+    },
+    "arm": {
+     "stats": [
+      0.75,
+      0,
+      0,
+      0,
+      1.25
+     ],
+     "attributes": [],
+     "traits": []
+    },
+    "legs": {
+     "stats": [
+      1,
+      0,
+      3,
+      3,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.jump_strength",
+       "amount": 0.1
+      },
+      {
+       "attribute": "minecraft:generic.step_height",
+       "amount": 0.5
+      }
+     ],
+     "traits": [
+      {
+       "type": "leap",
+       "min_range": 4,
+       "max_range": 10,
+       "horizontal": 0.6,
+       "vertical": 0.5,
+       "cooldown": 100
+      }
+     ]
+    }
+   }
+  },
+  {
+   "mob": "ender_knight",
+   "entity": "orespawn:ender_knight",
+   "weight": 3,
+   "shape": [
+    1.3,
+    0.8,
+    0.6
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": "minecraft:entity.enderman.ambient",
+    "hurt": "minecraft:entity.enderman.hurt",
+    "death": "minecraft:entity.enderman.death"
+   },
+   "essence": {
+    "default": "minecraft:ender_eye"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      1,
+      1,
+      0.5,
+      1,
+      0.5
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "teleport",
+       "mode": "to_target",
+       "min_distance": 6,
+       "chance": 1.0,
+       "radius": 8,
+       "cooldown": 100
+      },
+      {
+       "type": "flag",
+       "flags": [
+        "hurt_by_water"
+       ]
+      }
+     ]
+    },
+    "torso": {
+     "stats": [
+      3,
+      0,
+      1,
+      0,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.armor",
+       "amount": 3
+      }
+     ],
+     "traits": [
+      {
+       "type": "teleport",
+       "mode": "away_when_hurt",
+       "min_distance": 0,
+       "chance": 0.5,
+       "radius": 8,
+       "cooldown": 60
+      },
+      {
+       "type": "flag",
+       "flags": [
+        "hurt_by_water"
+       ]
+      }
+     ]
+    },
+    "arm": {
+     "stats": [
+      0.75,
+      0,
+      0,
+      0,
+      1.5
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "teleport",
+       "mode": "victim",
+       "min_distance": 0,
+       "chance": 0.15,
+       "radius": 6,
+       "cooldown": 100
+      },
+      {
+       "type": "flag",
+       "flags": [
+        "hurt_by_water"
+       ]
+      }
+     ]
+    },
+    "legs": {
+     "stats": [
+      1,
+      0,
+      3,
+      3,
+      0
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "flag",
+       "flags": [
+        "hurt_by_water"
+       ]
+      }
+     ]
+    }
+   }
+  },
+  {
+   "mob": "ender_reaper",
+   "entity": "orespawn:ender_reaper",
+   "weight": 3,
+   "shape": [
+    1.3,
+    0.8,
+    0.7
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": "minecraft:entity.enderman.ambient",
+    "hurt": "minecraft:entity.enderman.hurt",
+    "death": "minecraft:entity.enderman.death"
+   },
+   "essence": {
+    "default": "minecraft:chorus_fruit"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      1,
+      1.5,
+      0.5,
+      1,
+      0.5
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "teleport",
+       "mode": "to_target",
+       "min_distance": 6,
+       "chance": 1.0,
+       "radius": 8,
+       "cooldown": 100
+      },
+      {
+       "type": "flag",
+       "flags": [
+        "hurt_by_water"
+       ]
+      }
+     ]
+    },
+    "torso": {
+     "stats": [
+      3,
+      0,
+      1,
+      0,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.gravity",
+       "amount": -0.01
+      },
+      {
+       "attribute": "minecraft:generic.safe_fall_distance",
+       "amount": 6
+      }
+     ],
+     "traits": [
+      {
+       "type": "glide",
+       "fall_speed": 0.15,
+       "needs": 1,
+       "horizontal_boost": 0.0
+      },
+      {
+       "type": "flag",
+       "flags": [
+        "hurt_by_water"
+       ]
+      }
+     ]
+    },
+    "arm": {
+     "stats": [
+      0.75,
+      0,
+      0,
+      0,
+      1.5
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "on_hit_effect",
+       "effect": "minecraft:wither",
+       "duration": 60,
+       "amplifier": 0,
+       "chance": 0.5,
+       "cooldown": 0
+      },
+      {
+       "type": "flag",
+       "flags": [
+        "reaps",
+        "hurt_by_water"
+       ]
+      }
+     ]
+    },
+    "legs": {
+     "stats": [
+      1,
+      0,
+      3,
+      3,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.step_height",
+       "amount": 0.5
+      }
+     ],
+     "traits": [
+      {
+       "type": "flag",
+       "flags": [
+        "hurt_by_water"
+       ]
+      }
+     ]
+    }
+   }
+  },
+  {
+   "mob": "band_p",
+   "entity": "orespawn:band_p",
+   "weight": 2,
+   "shape": [
+    0.75,
+    0.75,
+    0.6
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": "minecraft:entity.villager.ambient",
+    "hurt": "minecraft:entity.villager.hurt",
+    "death": "minecraft:entity.villager.death"
+   },
+   "essence": {
+    "default": "minecraft:emerald"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      0.75,
+      1.5,
+      0,
+      0,
+      0
+     ],
+     "attributes": [],
+     "traits": []
+    },
+    "torso": {
+     "stats": [
+      2,
+      0,
+      0.5,
+      0,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.armor",
+       "amount": 2
+      }
+     ],
+     "traits": []
+    },
+    "arm": {
+     "stats": [
+      0.5,
+      0,
+      0,
+      0,
+      0.25
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "on_hit_disarm",
+       "slots": [
+        "mainhand",
+        "offhand"
+       ],
+       "chance": 0.25,
+       "to_pack": true
+      }
+     ]
+    },
+    "legs": {
+     "stats": [
+      1,
+      0,
+      2,
+      3.5,
+      0
+     ],
+     "attributes": [],
+     "traits": []
+    }
+   }
+  },
+  {
+   "mob": "spider_driver",
+   "entity": "orespawn:spider_driver",
+   "weight": 2,
+   "shape": [
+    0.45,
+    0.5,
+    1.2
+   ],
+   "saddleable": true,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": "minecraft:entity.spider.ambient",
+    "hurt": "minecraft:entity.spider.hurt",
+    "death": "minecraft:entity.spider.death"
+   },
+   "essence": {
+    "default": "minecraft:redstone"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      0.5,
+      1,
+      0,
+      0,
+      0.5
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "on_hit_effect",
+       "effect": "minecraft:poison",
+       "duration": 60,
+       "amplifier": 0,
+       "chance": 0.5,
+       "cooldown": 0
+      }
+     ]
+    },
+    "torso": {
+     "stats": [
+      2,
+      0,
+      0.5,
+      0,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.armor",
+       "amount": 2
+      }
+     ],
+     "traits": [
+      {
+       "type": "mount",
+       "seats": 1,
+       "medium": "land",
+       "steering": "brain_on_a_stick",
+       "jump": 0.0,
+       "speed_bonus": 0.0
+      }
+     ]
+    },
+    "legs": {
+     "stats": [
+      0.5,
+      0,
+      1,
+      2,
+      0.5
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "flag",
+       "flags": [
+        "climbs"
+       ]
+      }
+     ]
+    }
+   }
+  },
+  {
+   "mob": "robot_1",
+   "entity": "orespawn:robot_1",
+   "weight": 1,
+   "shape": [
+    0.2,
+    0.35,
+    0.4
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": "orespawn:kyuubi_living",
+    "hurt": "orespawn:scorpion_hit",
+    "death": "orespawn:robot1_death"
+   },
+   "essence": {
+    "default": "minecraft:tnt"
+   },
+   "parts": {
+    "torso": {
+     "stats": [
+      0.5,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "on_death_explode",
+       "power": 2.0,
+       "fire": false,
+       "breaks_blocks": false
+      }
+     ]
+    },
+    "legs": {
+     "stats": [
+      0.25,
+      0,
+      0.5,
+      3,
+      0
+     ],
+     "attributes": [],
+     "traits": []
+    }
+   }
+  },
+  {
+   "mob": "robot_2",
+   "entity": "orespawn:robot_2",
+   "weight": 4,
+   "shape": [
+    0.9,
+    1.0,
+    1.3
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": "orespawn:robot_living",
+    "hurt": "orespawn:robot_hurt",
+    "death": "orespawn:robot_death"
+   },
+   "essence": {
+    "default": "minecraft:piston"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      1,
+      1,
+      1,
+      0,
+      0.5
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.armor",
+       "amount": 2
+      }
+     ],
+     "traits": []
+    },
+    "torso": {
+     "stats": [
+      5,
+      0,
+      2,
+      0,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.armor",
+       "amount": 6
+      },
+      {
+       "attribute": "minecraft:generic.explosion_knockback_resistance",
+       "amount": 0.5
+      }
+     ],
+     "traits": [
+      {
+       "type": "flag",
+       "flags": [
+        "sinks"
+       ]
+      }
+     ]
+    },
+    "arm": {
+     "stats": [
+      1,
+      0,
+      1,
+      0,
+      1.5
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.armor",
+       "amount": 1
+      }
+     ],
+     "traits": [
+      {
+       "type": "on_hit_toss",
+       "horizontal": 0.6,
+       "vertical": 0.6,
+       "chance": 1.0,
+       "cooldown": 20
+      }
+     ]
+    },
+    "legs": {
+     "stats": [
+      3,
+      0,
+      3,
+      1,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.armor",
+       "amount": 3
+      },
+      {
+       "attribute": "minecraft:generic.step_height",
+       "amount": 0.5
+      }
+     ],
+     "traits": [
+      {
+       "type": "flag",
+       "flags": [
+        "sinks"
+       ]
+      }
+     ]
+    }
+   }
+  },
+  {
+   "mob": "robot_3",
+   "entity": "orespawn:robot_3",
+   "weight": 3,
+   "shape": [
+    0.8,
+    0.8,
+    1.0
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": "orespawn:robot_living",
+    "hurt": "orespawn:robot_hurt",
+    "death": "orespawn:robot_death"
+   },
+   "essence": {
+    "default": "minecraft:dispenser"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      1,
+      1,
+      0.5,
+      0,
+      0
+     ],
+     "attributes": [],
+     "traits": []
+    },
+    "torso": {
+     "stats": [
+      3,
+      0,
+      1.5,
+      0,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.armor",
+       "amount": 4
+      }
+     ],
+     "traits": [
+      {
+       "type": "flag",
+       "flags": [
+        "sinks"
+       ]
+      }
+     ]
+    },
+    "arm": {
+     "stats": [
+      0.5,
+      0,
+      0,
+      0,
+      0.5
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "ranged",
+       "projectile": "necromancy:part_bolt",
+       "cooldown": 70,
+       "range": 16,
+       "min_range": 0,
+       "count": 1,
+       "spread": 0.0,
+       "velocity": 1.6,
+       "damage": 4,
+       "item": "orespawn:laser_ball",
+       "ignite": 1
+      }
+     ]
+    },
+    "legs": {
+     "stats": [
+      1.5,
+      0,
+      3,
+      2,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.armor",
+       "amount": 2
+      }
+     ],
+     "traits": []
+    }
+   }
+  },
+  {
+   "mob": "robot_4",
+   "entity": "orespawn:robot_4",
+   "weight": 3,
+   "shape": [
+    0.8,
+    0.8,
+    1.0
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": "orespawn:robot_living",
+    "hurt": "orespawn:robot_hurt",
+    "death": "orespawn:robot_death"
+   },
+   "essence": {
+    "default": "minecraft:repeater"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      1,
+      1,
+      0.5,
+      0,
+      0.5
+     ],
+     "attributes": [],
+     "traits": []
+    },
+    "torso": {
+     "stats": [
+      3.5,
+      0,
+      1.5,
+      0,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.armor",
+       "amount": 4
+      }
+     ],
+     "traits": [
+      {
+       "type": "damage_filter",
+       "types": [
+        "#minecraft:is_projectile"
+       ],
+       "multiplier": 0.5,
+       "condition": "always"
+      },
+      {
+       "type": "flag",
+       "flags": [
+        "sinks"
+       ]
+      }
+     ]
+    },
+    "arm": {
+     "stats": [
+      0.75,
+      0,
+      0.5,
+      0,
+      1.25
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "on_hit_toss",
+       "horizontal": 2.0,
+       "vertical": 0.2,
+       "chance": 1.0,
+       "cooldown": 20
+      }
+     ]
+    },
+    "legs": {
+     "stats": [
+      1.5,
+      0,
+      3,
+      2,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.armor",
+       "amount": 2
+      }
+     ],
+     "traits": []
+    }
+   }
+  },
+  {
+   "mob": "robot_5",
+   "entity": "orespawn:robot_5",
+   "weight": 2,
+   "shape": [
+    0.4,
+    0.6,
+    0.8
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": "orespawn:robot_living",
+    "hurt": "orespawn:robot_hurt",
+    "death": "orespawn:robot_death"
+   },
+   "essence": {
+    "default": "minecraft:observer"
+   },
+   "parts": {
+    "torso": {
+     "stats": [
+      2,
+      0,
+      1,
+      0,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.armor",
+       "amount": 2
+      }
+     ],
+     "traits": [
+      {
+       "type": "ranged",
+       "projectile": "necromancy:part_bolt",
+       "cooldown": 60,
+       "range": 30,
+       "min_range": 6,
+       "count": 1,
+       "spread": 0.0,
+       "velocity": 1.8,
+       "damage": 5,
+       "item": "orespawn:laser_ball"
+      }
+     ]
+    },
+    "legs": {
+     "stats": [
+      0.5,
+      0,
+      2,
+      3.5,
+      0
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.jump_strength",
+       "amount": -0.3
+      },
+      {
+       "attribute": "minecraft:generic.step_height",
+       "amount": -0.4
+      }
+     ],
+     "traits": []
+    }
+   }
+  },
+  {
+   "mob": "giant_robot",
+   "entity": "orespawn:giant_robot",
+   "weight": 4,
+   "shape": [
+    0.75,
+    0.75,
+    0.6
+   ],
+   "saddleable": false,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": "orespawn:robot_living",
+    "hurt": "orespawn:robot_hurt",
+    "death": "orespawn:robot_death"
+   },
+   "essence": {
+    "default": "minecraft:redstone_block"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      2,
+      1.5,
+      1,
+      0,
+      1
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.armor",
+       "amount": 2
+      }
+     ],
+     "traits": [
+      {
+       "type": "ranged",
+       "projectile": "necromancy:part_bolt",
+       "cooldown": 120,
+       "range": 16,
+       "min_range": 4,
+       "count": 1,
+       "spread": 0.0,
+       "velocity": 2.0,
+       "damage": 6,
+       "item": "orespawn:laser_ball",
+       "explosion": 1.0
+      }
+     ]
+    },
+    "arm": {
+     "stats": [
+      1,
+      0,
+      1,
+      0,
+      1.5
+     ],
+     "attributes": [
+      {
+       "attribute": "minecraft:generic.armor",
+       "amount": 2
+      }
+     ],
+     "traits": [
+      {
+       "type": "on_hit_toss",
+       "horizontal": 2.2,
+       "vertical": 0.25,
+       "chance": 1.0,
+       "cooldown": 20
+      }
+     ]
+    }
+   }
+  },
+  {
+   "mob": "red_cow",
+   "entity": "orespawn:red_cow",
+   "weight": 1,
+   "shape": [
+    0.75,
+    0.6,
+    0.9
+   ],
+   "saddleable": true,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": "minecraft:entity.cow.ambient",
+    "hurt": "minecraft:entity.cow.hurt",
+    "death": "minecraft:entity.cow.death"
+   },
+   "essence": {
+    "default": "minecraft:apple"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      0.5,
+      1,
+      0,
+      0,
+      0
+     ],
+     "attributes": [],
+     "traits": []
+    },
+    "torso": {
+     "stats": [
+      1,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "interact_yield",
+       "use_item": "minecraft:bucket",
+       "result": "minecraft:milk_bucket",
+       "count": [
+        1,
+        1
+       ],
+       "cooldown": 1200,
+       "consume": "replace",
+       "sound": "minecraft:entity.cow.milk"
+      },
+      {
+       "type": "produce",
+       "items": [
+        {
+         "item": "minecraft:apple",
+         "weight": 1
+        }
+       ],
+       "interval": [
+        6000,
+        12000
+       ],
+       "count": [
+        1,
+        1
+       ]
+      }
+     ]
+    },
+    "arm": {
+     "stats": [
+      0.25,
+      0,
+      0,
+      0,
+      0.25
+     ],
+     "attributes": [],
+     "traits": []
+    },
+    "legs": {
+     "stats": [
+      0.25,
+      0,
+      1,
+      3,
+      0
+     ],
+     "attributes": [],
+     "traits": []
+    }
+   }
+  },
+  {
+   "mob": "apple_cow",
+   "entity": "orespawn:apple_cow",
+   "weight": 1,
+   "shape": [
+    0.75,
+    0.6,
+    0.9
+   ],
+   "saddleable": true,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": "minecraft:entity.cow.ambient",
+    "hurt": "minecraft:entity.cow.hurt",
+    "death": "minecraft:entity.cow.death"
+   },
+   "essence": {
+    "default": "orespawn:apple_tree_seed"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      0.5,
+      1,
+      0,
+      0,
+      0
+     ],
+     "attributes": [],
+     "traits": []
+    },
+    "torso": {
+     "stats": [
+      1,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "interact_yield",
+       "use_item": "minecraft:bucket",
+       "result": "minecraft:milk_bucket",
+       "count": [
+        1,
+        1
+       ],
+       "cooldown": 1200,
+       "consume": "replace",
+       "sound": "minecraft:entity.cow.milk"
+      },
+      {
+       "type": "interact_yield",
+       "use_item": "minecraft:shears",
+       "result": "minecraft:apple",
+       "count": [
+        1,
+        2
+       ],
+       "cooldown": 2400,
+       "consume": "damage"
+      }
+     ]
+    },
+    "arm": {
+     "stats": [
+      0.25,
+      0,
+      0,
+      0,
+      0.25
+     ],
+     "attributes": [],
+     "traits": []
+    },
+    "legs": {
+     "stats": [
+      0.25,
+      0,
+      1,
+      3,
+      0
+     ],
+     "attributes": [],
+     "traits": []
+    }
+   }
+  },
+  {
+   "mob": "crystal_cow",
+   "entity": "orespawn:crystal_cow",
+   "weight": 1,
+   "shape": [
+    0.75,
+    0.6,
+    0.9
+   ],
+   "saddleable": true,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": "minecraft:entity.cow.ambient",
+    "hurt": "minecraft:entity.cow.hurt",
+    "death": "minecraft:entity.cow.death"
+   },
+   "essence": {
+    "default": "orespawn:crystal_apple"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      0.5,
+      1,
+      0,
+      0,
+      0
+     ],
+     "attributes": [],
+     "traits": []
+    },
+    "torso": {
+     "stats": [
+      1,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "interact_yield",
+       "use_item": "minecraft:bucket",
+       "result": "minecraft:milk_bucket",
+       "count": [
+        1,
+        1
+       ],
+       "cooldown": 1200,
+       "consume": "replace",
+       "sound": "minecraft:entity.cow.milk"
+      },
+      {
+       "type": "produce",
+       "items": [
+        {
+         "item": "orespawn:crystal_apple",
+         "weight": 1
+        }
+       ],
+       "interval": [
+        12000,
+        24000
+       ],
+       "count": [
+        1,
+        1
+       ]
+      }
+     ]
+    },
+    "arm": {
+     "stats": [
+      0.25,
+      0,
+      0,
+      0,
+      0.25
+     ],
+     "attributes": [],
+     "traits": []
+    },
+    "legs": {
+     "stats": [
+      0.25,
+      0,
+      1,
+      3,
+      0
+     ],
+     "attributes": [],
+     "traits": []
+    }
+   }
+  },
+  {
+   "mob": "gold_cow",
+   "entity": "orespawn:gold_cow",
+   "weight": 2,
+   "shape": [
+    0.75,
+    0.6,
+    0.9
+   ],
+   "saddleable": true,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": "minecraft:entity.cow.ambient",
+    "hurt": "minecraft:entity.cow.hurt",
+    "death": "minecraft:entity.cow.death"
+   },
+   "essence": {
+    "default": "minecraft:gold_block"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      0.5,
+      1,
+      0,
+      0,
+      0
+     ],
+     "attributes": [],
+     "traits": []
+    },
+    "torso": {
+     "stats": [
+      1,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "interact_yield",
+       "use_item": "minecraft:bucket",
+       "result": "minecraft:milk_bucket",
+       "count": [
+        1,
+        1
+       ],
+       "cooldown": 1200,
+       "consume": "replace",
+       "sound": "minecraft:entity.cow.milk"
+      },
+      {
+       "type": "produce",
+       "items": [
+        {
+         "item": "minecraft:golden_apple",
+         "weight": 1
+        }
+       ],
+       "interval": [
+        48000,
+        72000
+       ],
+       "count": [
+        1,
+        1
+       ]
+      }
+     ]
+    },
+    "arm": {
+     "stats": [
+      0.25,
+      0,
+      0,
+      0,
+      0.25
+     ],
+     "attributes": [],
+     "traits": []
+    },
+    "legs": {
+     "stats": [
+      0.25,
+      0,
+      1,
+      3,
+      0
+     ],
+     "attributes": [],
+     "traits": []
+    }
+   }
+  },
+  {
+   "mob": "golden_apple_cow",
+   "entity": "orespawn:golden_apple_cow",
+   "weight": 2,
+   "shape": [
+    0.75,
+    0.6,
+    0.9
+   ],
+   "saddleable": true,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": "minecraft:entity.cow.ambient",
+    "hurt": "minecraft:entity.cow.hurt",
+    "death": "minecraft:entity.cow.death"
+   },
+   "essence": {
+    "default": "minecraft:golden_apple"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      0.5,
+      1,
+      0,
+      0,
+      0
+     ],
+     "attributes": [],
+     "traits": []
+    },
+    "torso": {
+     "stats": [
+      1,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "interact_yield",
+       "use_item": "minecraft:bucket",
+       "result": "minecraft:milk_bucket",
+       "count": [
+        1,
+        1
+       ],
+       "cooldown": 1200,
+       "consume": "replace",
+       "sound": "minecraft:entity.cow.milk"
+      },
+      {
+       "type": "interact_yield",
+       "use_item": "minecraft:shears",
+       "result": "minecraft:golden_apple",
+       "count": [
+        1,
+        1
+       ],
+       "cooldown": 48000,
+       "consume": "damage"
+      }
+     ]
+    },
+    "arm": {
+     "stats": [
+      0.25,
+      0,
+      0,
+      0,
+      0.25
+     ],
+     "attributes": [],
+     "traits": []
+    },
+    "legs": {
+     "stats": [
+      0.25,
+      0,
+      1,
+      3,
+      0
+     ],
+     "attributes": [],
+     "traits": []
+    }
+   }
+  },
+  {
+   "mob": "enchanted_apple_cow",
+   "entity": "orespawn:enchanted_apple_cow",
+   "weight": 2,
+   "shape": [
+    0.75,
+    0.6,
+    0.9
+   ],
+   "saddleable": true,
+   "rider_offset": 0.0,
+   "sounds": {
+    "ambient": "minecraft:entity.cow.ambient",
+    "hurt": "minecraft:entity.cow.hurt",
+    "death": "minecraft:entity.cow.death"
+   },
+   "essence": {
+    "default": "minecraft:lapis_lazuli"
+   },
+   "parts": {
+    "head": {
+     "stats": [
+      0.5,
+      1,
+      0,
+      0,
+      0
+     ],
+     "attributes": [],
+     "traits": []
+    },
+    "torso": {
+     "stats": [
+      1,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attributes": [],
+     "traits": [
+      {
+       "type": "interact_yield",
+       "use_item": "minecraft:bucket",
+       "result": "minecraft:milk_bucket",
+       "count": [
+        1,
+        1
+       ],
+       "cooldown": 1200,
+       "consume": "replace",
+       "sound": "minecraft:entity.cow.milk"
+      },
+      {
+       "type": "aura",
+       "effect": "minecraft:absorption",
+       "amplifier": 0,
+       "duration": 600,
+       "radius": 8,
+       "interval": 6000,
+       "targets": "owner",
+       "needs_los": false
+      }
+     ]
+    },
+    "arm": {
+     "stats": [
+      0.25,
+      0,
+      0,
+      0,
+      0.25
+     ],
+     "attributes": [],
+     "traits": []
+    },
+    "legs": {
+     "stats": [
+      0.25,
+      0,
+      1,
+      3,
+      0
+     ],
+     "attributes": [],
+     "traits": []
+    }
+   }
+  }
+ ]
+}

@@ -57,9 +57,8 @@ public class BodyPartItem extends Item {
             }
             for (PartTrait trait : ref.mob().traits(ref.type())) {
                 if (trait.visible()) {
-                    String key = "trait." + trait.id().getNamespace() + "." + trait.id().getPath();
-                    tooltip.add(Component.translatable(key).withStyle(ChatFormatting.GOLD));
-                    tooltip.add(Component.literal("  ").append(Component.translatable(key + ".desc")).withStyle(ChatFormatting.DARK_GRAY));
+                    tooltip.add(trait.name().copy().withStyle(ChatFormatting.GOLD));
+                    tooltip.add(Component.literal("  ").append(trait.description()).withStyle(ChatFormatting.DARK_GRAY));
                 }
             }
             tooltip.add(Component.translatable("tooltip.necromancy.weight", ref.mob().weight()).withStyle(ChatFormatting.DARK_GRAY));

@@ -8,6 +8,26 @@
     "minecraft:illusioner",
     "minecraft:piglin",
     "minecraft:piglin_brute",
-    "minecraft:enderman"
+    "minecraft:enderman",
+    {
+      "id": "orespawn:alien",
+      "required": false
+    },
+    {
+      "id": "orespawn:band_p",
+      "required": false
+    },
+    {
+      "id": "orespawn:ender_knight",
+      "required": false
+    },
+    {
+      "id": "orespawn:ender_reaper",
+      "required": false
+    },
+    {
+      "id": "orespawn:gamma_metroid",
+      "required": false
+    }
   ]
 }

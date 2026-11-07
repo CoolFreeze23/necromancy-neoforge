@@ -27,6 +27,7 @@ import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.Mth;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -77,7 +78,7 @@ import net.minecraft.world.phys.Vec3;
  * parts (original NecroAPI modifiers), it follows and fights for its master, sits on command, can be saddled when its
  * torso allows it and steered with a Brain on a Stick, and an Isaac head makes it shoot tears.
  */
-public class MinionEntity extends TamableAnimal implements RangedAttackMob, ItemSteerable, Saddleable {
+public class MinionEntity extends TamableAnimal implements RangedAttackMob, ItemSteerable, Saddleable, net.minecraft.world.entity.PlayerRideableJumping {
     private static final Map<BodyPartLocation, EntityDataAccessor<String>> DATA_PARTS = new EnumMap<>(BodyPartLocation.class);
     private static final EntityDataAccessor<Boolean> DATA_SADDLE = SynchedEntityData.defineId(MinionEntity.class, EntityDataSerializers.BOOLEAN);
     private static final EntityDataAccessor<Integer> DATA_BOOST_TIME = SynchedEntityData.defineId(MinionEntity.class, EntityDataSerializers.INT);
@@ -136,7 +137,7 @@ public class MinionEntity extends TamableAnimal implements RangedAttackMob, Item
         goalSelector.addGoal(1, new FloatGoal(this) {
             @Override
             public boolean canUse() {
-                return !hasFlag(com.sirolf2009.necromancy.api.TraitFlag.SINKS) && super.canUse();
+                return (hasFlag(com.sirolf2009.necromancy.api.TraitFlag.FLOATS) || !hasFlag(com.sirolf2009.necromancy.api.TraitFlag.SINKS)) && super.canUse();
             }
         });
         goalSelector.addGoal(2, new SitWhenOrderedToGoal(this));
@@ -173,6 +174,7 @@ public class MinionEntity extends TamableAnimal implements RangedAttackMob, Item
         goalSelector.addGoal(6, new net.minecraft.world.entity.ai.goal.MoveTowardsRestrictionGoal(this, 1.0));
         goalSelector.addGoal(6, new com.sirolf2009.necromancy.entity.goal.MinionPatrolGoal(this));
         goalSelector.addGoal(6, new com.sirolf2009.necromancy.entity.goal.MinionWorkGoal(this));
+        goalSelector.addGoal(7, new com.sirolf2009.necromancy.entity.goal.MinionForageGoal(this));
         goalSelector.addGoal(7, new TemptGoal(this, 1.0, stack -> stack.is(NecroItems.BRAIN_ON_A_STICK.get()), false));
         goalSelector.addGoal(8, new WaterAvoidingRandomStrollGoal(this, 0.8) {
             @Override
@@ -400,6 +402,10 @@ public class MinionEntity extends TamableAnimal implements RangedAttackMob, Item
             tag.putInt("PatrolIndex", patrolIndex);
         }
         steering.addAdditionalSaveData(tag);
+        if (spawnlingOf != null) {
+            tag.putUUID("SpawnlingOf", spawnlingOf);
+            tag.putInt("SpawnlingLife", spawnlingLife);
+        }
     }
 
     @Override
@@ -444,6 +450,10 @@ public class MinionEntity extends TamableAnimal implements RangedAttackMob, Item
             applyPartAttributes(!tag.contains("Health"));
         }
         steering.readAdditionalSaveData(tag);
+        if (tag.hasUUID("SpawnlingOf")) {
+            spawnlingOf = tag.getUUID("SpawnlingOf");
+            spawnlingLife = tag.getInt("SpawnlingLife");
+        }
     }
 
     // --- behaviour ---
@@ -457,6 +467,16 @@ public class MinionEntity extends TamableAnimal implements RangedAttackMob, Item
         if (!level().isClientSide && tickCount % 40 == 0 && getHealth() < getMaxHealth()
                 && isInFluidType(com.sirolf2009.necromancy.registry.NecroFluids.BLOOD_TYPE.value())) {
             heal(1F);
+        }
+        if (!level().isClientSide) {
+            if (attackAnimation > 0 || getDeltaMovement().horizontalDistanceSqr() > 1.0E-5) {
+                lastActiveTick = tickCount;
+            }
+            if (spawnlingOf != null && (--spawnlingLife <= 0 || tickCount % 20 == 0
+                    && !(((ServerLevel) level()).getEntity(spawnlingOf) instanceof MinionEntity summoner && summoner.isAlive()))) {
+                crumble();
+                return;
+            }
         }
         if (!level().isClientSide && tickCount > 20 && part(BodyPartLocation.HEAD) == null) {
             // a body without a head does not hold together (as in the original)
@@ -610,7 +630,7 @@ public class MinionEntity extends TamableAnimal implements RangedAttackMob, Item
 
     /** Counts a kill (the Minion landed the killing blow on something with at least 10 health) and ranks up. */
     public void addKill(LivingEntity victim) {
-        if (victim.getMaxHealth() < 10 || victim == getOwner()) {
+        if (victim.getMaxHealth() < 10 || victim == getOwner() || isSpawnling()) {
             return;
         }
         int before = rank();
@@ -749,6 +769,166 @@ public class MinionEntity extends TamableAnimal implements RangedAttackMob, Item
     }
 
     private final Map<String, Integer> cooldowns = new java.util.HashMap<>();
+    private final Map<String, double[]> traitState = new java.util.HashMap<>();
+    private int lastActiveTick;
+    @Nullable
+    private BlockPos lightPos;
+    @Nullable
+    private UUID spawnlingOf;
+    private int spawnlingLife;
+    private int pendingJump;
+
+    /** Starts the named cooldown now, whether or not it has run out. */
+    public void setCooldown(String key, int ticks) {
+        cooldowns.put(key, tickCount + ticks);
+    }
+
+    /** Scratch numbers a trait keeps on this Minion (not saved), made with the given length on first use. */
+    public double[] traitState(String key, int length) {
+        return traitState.computeIfAbsent(key, k -> new double[length]);
+    }
+
+    /** Ticks since the Minion last moved or swung. */
+    public int idleTicks() {
+        return tickCount - lastActiveTick;
+    }
+
+    /** In the open sun, where an undead mob would burn. */
+    public boolean isInSunlight() {
+        return isSunBurnTick();
+    }
+
+    /** Never to be harmed by this Minion's traits: itself, its master, its master's Minions and pets, and players not set as enemies. */
+    public boolean isFriendly(Entity entity) {
+        if (entity == this) {
+            return true;
+        }
+        LivingEntity owner = getOwner();
+        if (owner == null) {
+            return entity instanceof MinionEntity other && other.getOwnerUUID() == null;
+        }
+        if (entity == owner) {
+            return true;
+        }
+        if (entity instanceof Player player) {
+            return !isEnemyListed(player);
+        }
+        return entity instanceof LivingEntity living && !wantsToAttack(living, owner);
+    }
+
+    // --- the light a glowing part keeps at its eyes ---
+
+    @Nullable
+    public BlockPos lightPos() {
+        return lightPos;
+    }
+
+    public void setLightPos(@Nullable BlockPos pos) {
+        lightPos = pos;
+    }
+
+    public void clearLight() {
+        if (lightPos != null && !level().isClientSide && level().isLoaded(lightPos) && level().getBlockState(lightPos).is(net.minecraft.world.level.block.Blocks.LIGHT)) {
+            level().setBlock(lightPos, net.minecraft.world.level.block.Blocks.AIR.defaultBlockState(), 3);
+        }
+        lightPos = null;
+    }
+
+    @Override
+    public void remove(RemovalReason reason) {
+        clearLight();
+        super.remove(reason);
+    }
+
+    // --- spawnlings: small temporary Minions a summoning part calls up ---
+
+    public boolean isSpawnling() {
+        return spawnlingOf != null;
+    }
+
+    /** The living spawnlings this Minion called up. */
+    public java.util.List<MinionEntity> spawnlings() {
+        return level().getEntitiesOfClass(MinionEntity.class, getBoundingBox().inflate(32), m -> getUUID().equals(m.spawnlingOf) && m.isAlive());
+    }
+
+    /**
+     * A spawnling of {@code source}: every part that creature has, the summoner's master and target, Aggressive, shrunk by
+     * {@code scale}. It never drops anything or gains rank, and crumbles after {@code lifetime} ticks or when its summoner dies.
+     */
+    public static void spawnling(MinionEntity summoner, NecroMob source, int lifetime, double scale) {
+        if (!(summoner.level() instanceof ServerLevel level)) {
+            return;
+        }
+        Map<BodyPartLocation, ResourceLocation> parts = new EnumMap<>(BodyPartLocation.class);
+        for (BodyPartLocation location : BodyPartLocation.values()) {
+            if (source.hasPart(location.type())) {
+                parts.put(location, source.id());
+            }
+        }
+        if (!parts.containsKey(BodyPartLocation.HEAD)) {
+            return;
+        }
+        MinionEntity spawnling = com.sirolf2009.necromancy.registry.NecroEntities.MINION.get().create(level);
+        if (spawnling == null) {
+            return;
+        }
+        spawnling.setParts(parts);
+        double x = summoner.getX() + (summoner.getRandom().nextDouble() - 0.5) * 2;
+        double z = summoner.getZ() + (summoner.getRandom().nextDouble() - 0.5) * 2;
+        spawnling.moveTo(x, summoner.getY(), z, summoner.getRandom().nextFloat() * 360F, 0F);
+        if (summoner.getOwnerUUID() != null) {
+            spawnling.setTame(true, false);
+            spawnling.setOwnerUUID(summoner.getOwnerUUID());
+        }
+        spawnling.setStance(MinionStance.AGGRESSIVE);
+        spawnling.spawnlingOf = summoner.getUUID();
+        spawnling.spawnlingLife = lifetime;
+        spawnling.applyPartAttributes(true);
+        spawnling.modifier(Attributes.SCALE, Necromancy.id("spawnling"), scale, AttributeModifier.Operation.ADD_VALUE);
+        spawnling.setTarget(summoner.getTarget());
+        level.addFreshEntity(spawnling);
+        level.sendParticles(net.minecraft.core.particles.ParticleTypes.SOUL, x, summoner.getY() + 0.3, z, 8, 0.2, 0.3, 0.2, 0.03);
+    }
+
+    private void crumble() {
+        if (level() instanceof ServerLevel server) {
+            server.sendParticles(net.minecraft.core.particles.ParticleTypes.SOUL, getX(), getY(0.5), getZ(), 10, 0.25, 0.3, 0.25, 0.03);
+        }
+        discard();
+    }
+
+    @Override
+    protected boolean shouldDropLoot() {
+        return !isSpawnling() && super.shouldDropLoot();
+    }
+
+    @Override
+    public boolean causeFallDamage(float fallDistance, float multiplier, DamageSource source) {
+        if (isCoolingDown("leap_landing")) {
+            return false;
+        }
+        return super.causeFallDamage(fallDistance, multiplier, source);
+    }
+
+    @Override
+    public boolean isInvulnerableTo(DamageSource source) {
+        if (hasFlag(com.sirolf2009.necromancy.api.TraitFlag.CACTUS_PROOF) && (source.is(net.minecraft.world.damagesource.DamageTypes.CACTUS)
+                || source.is(net.minecraft.world.damagesource.DamageTypes.SWEET_BERRY_BUSH))) {
+            return true;
+        }
+        if (hasFlag(com.sirolf2009.necromancy.api.TraitFlag.IN_WALL_PROOF) && source.is(net.minecraft.world.damagesource.DamageTypes.IN_WALL)) {
+            return true;
+        }
+        return super.isInvulnerableTo(source);
+    }
+
+    @Override
+    public boolean canDrownInFluidType(net.neoforged.neoforge.fluids.FluidType type) {
+        if (hasFlag(BodyPartLocation.HEAD, com.sirolf2009.necromancy.api.TraitFlag.BREATHES_WATER) || hasFlag(BodyPartLocation.TORSO, com.sirolf2009.necromancy.api.TraitFlag.BREATHES_WATER)) {
+            return false;
+        }
+        return super.canDrownInFluidType(type);
+    }
 
     /** True (and restarts the timer) when the named cooldown has run out. Per Minion, not saved. */
     public boolean cooldown(String key, int ticks) {
@@ -773,7 +953,7 @@ public class MinionEntity extends TamableAnimal implements RangedAttackMob, Item
     @Override
     public boolean fireImmune() {
         return super.fireImmune() || hasFlag(BodyPartLocation.TORSO, com.sirolf2009.necromancy.api.TraitFlag.FIRE_PROOF)
-                && hasFlag(BodyPartLocation.LEGS, com.sirolf2009.necromancy.api.TraitFlag.FIRE_PROOF);
+                && (part(BodyPartLocation.LEGS) == null || hasFlag(BodyPartLocation.LEGS, com.sirolf2009.necromancy.api.TraitFlag.FIRE_PROOF));
     }
 
     @Override
@@ -792,6 +972,7 @@ public class MinionEntity extends TamableAnimal implements RangedAttackMob, Item
             igniteForSeconds(8);
         }
         super.aiStep();
+        com.sirolf2009.necromancy.trait.DataTraits.glide(this);
     }
 
     @Override
@@ -819,6 +1000,11 @@ public class MinionEntity extends TamableAnimal implements RangedAttackMob, Item
             }
         }
         return super.hurt(source, amount);
+    }
+
+    /** A player the master told Minions to fight (an enemy, or anyone not a friend when set to aggressive). */
+    public boolean isEnemyListed(LivingEntity target) {
+        return isOrderedTarget(target);
     }
 
     private boolean isOrderedTarget(LivingEntity target) {
@@ -913,6 +1099,11 @@ public class MinionEntity extends TamableAnimal implements RangedAttackMob, Item
             boolean mine = isOwnedBy(player);
             return mine || stack.is(Items.SADDLE) ? InteractionResult.CONSUME : InteractionResult.PASS;
         }
+        if (!isOwnedBy(player) && isSaddled() && getOwner() != null && getFirstPassenger() == getOwner() && canAddPassenger(player)
+                && !player.isSecondaryUseActive()) {
+            player.startRiding(this);
+            return InteractionResult.SUCCESS;
+        }
         if (!isOwnedBy(player)) {
             if (NecroConfig.MINION_GRIEF_MESSAGES.get() && getOwner() != null) {
                 player.sendSystemMessage(Component.translatable("message.necromancy.minion.obey_only", getDisplayName(), getOwner().getDisplayName()));
@@ -988,9 +1179,11 @@ public class MinionEntity extends TamableAnimal implements RangedAttackMob, Item
     public void die(DamageSource source) {
         if (!level().isClientSide) {
             forEachTrait((location, trait) -> trait.onDeath(this, location, source));
-            dropRemains();
+            if (!isSpawnling()) {
+                dropRemains();
+            }
         }
-        if (!level().isClientSide && level().getServer() != null) {
+        if (!level().isClientSide && level().getServer() != null && !isSpawnling()) {
             UUID owner = getOwnerUUID();
             if (owner != null) {
                 MinionCensus.get(level().getServer()).remove(owner);
@@ -1027,6 +1220,9 @@ public class MinionEntity extends TamableAnimal implements RangedAttackMob, Item
 
     @Override
     protected void dropEquipment() {
+        if (isSpawnling()) {
+            return;
+        }
         super.dropEquipment();
         for (ItemStack stack : pack.removeAllItems()) {
             spawnAtLocation(stack);
@@ -1098,7 +1294,7 @@ public class MinionEntity extends TamableAnimal implements RangedAttackMob, Item
     @Override
     public LivingEntity getControllingPassenger() {
         if (isSaddled() && getFirstPassenger() instanceof Player player && isOwnedBy(player)
-                && (player.isHolding(NecroItems.BRAIN_ON_A_STICK.get()))) {
+                && (mountSpec().direct() || player.isHolding(NecroItems.BRAIN_ON_A_STICK.get()))) {
             return player;
         }
         return super.getControllingPassenger();
@@ -1110,23 +1306,78 @@ public class MinionEntity extends TamableAnimal implements RangedAttackMob, Item
         setRot(player.getYRot(), player.getXRot() * 0.5F);
         yRotO = yBodyRot = yHeadRot = getYRot();
         steering.tickBoost();
+        NecroMob.Mount mount = mountSpec();
+        if (mount.water() && isInWater()) {
+            // swim where the rider looks
+            double up = -Mth.sin(player.getXRot() * Mth.DEG_TO_RAD) * 0.06 * (player.zza > 0 ? 1 : 0);
+            setDeltaMovement(getDeltaMovement().add(0, up + 0.005, 0));
+        }
+        if (pendingJump > 0 && onGround()) {
+            float strength = mount.jump() * Math.min(1F, pendingJump / 90F);
+            Vec3 motion = getDeltaMovement();
+            setDeltaMovement(motion.x, 0.42 + 0.6 * strength, motion.z);
+            hasImpulse = true;
+            pendingJump = 0;
+        }
     }
 
     @Override
     protected Vec3 getRiddenInput(Player player, Vec3 travelVector) {
+        if (mountSpec().direct()) {
+            float forward = player.zza <= 0 ? player.zza * 0.25F : player.zza;
+            return new Vec3(player.xxa * 0.5F, 0.0, forward);
+        }
         return new Vec3(0.0, 0.0, 1.0);
     }
 
     @Override
     protected float getRiddenSpeed(Player player) {
-        return (float) (getAttributeValue(Attributes.MOVEMENT_SPEED) * 0.9 * steering.boostFactor());
+        NecroMob.Mount mount = mountSpec();
+        double speed = getAttributeValue(Attributes.MOVEMENT_SPEED) * (1 + mount.speedBonus());
+        if (mount.water()) {
+            speed *= isInWater() ? 1.6 : 0.3;
+        }
+        return (float) (mount.direct() ? speed : speed * 0.9 * steering.boostFactor());
+    }
+
+    /** How the torso rides (the pig's way unless its mount trait says otherwise). */
+    public NecroMob.Mount mountSpec() {
+        NecroMob torso = part(BodyPartLocation.TORSO);
+        return torso == null ? NecroMob.Mount.PIG : torso.mount();
+    }
+
+    @Override
+    protected boolean canAddPassenger(Entity passenger) {
+        return getPassengers().size() < mountSpec().seats();
+    }
+
+    @Override
+    public boolean canJump() {
+        return isSaddled() && mountSpec().jump() > 0;
+    }
+
+    @Override
+    public void onPlayerJump(int power) {
+        if (canJump() && power > 0) {
+            pendingJump = power;
+        }
+    }
+
+    @Override
+    public void handleStartJump(int power) {
+    }
+
+    @Override
+    public void handleStopJump() {
     }
 
     @Override
     protected Vec3 getPassengerAttachmentPoint(Entity passenger, EntityDimensions dimensions, float scale) {
         NecroMob torso = part(BodyPartLocation.TORSO);
         float offset = torso == null ? 0 : torso.riderOffset();
-        return new Vec3(0, dimensions.height() * 0.62F + offset, 0);
+        // a second seat sits behind the first
+        float back = getPassengers().indexOf(passenger) > 0 ? -Math.max(0.5F, dimensions.width() * 0.45F) : 0F;
+        return new Vec3(0, dimensions.height() * 0.62F + offset, back);
     }
 
     @Override

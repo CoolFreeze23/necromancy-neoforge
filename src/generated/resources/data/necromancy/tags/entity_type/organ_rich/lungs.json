@@ -2,6 +2,62 @@
   "values": [
     "minecraft:blaze",
     "minecraft:breeze",
-    "minecraft:phantom"
+    "minecraft:phantom",
+    {
+      "id": "orespawn:baby_dragon",
+      "required": false
+    },
+    {
+      "id": "orespawn:bee",
+      "required": false
+    },
+    {
+      "id": "orespawn:brutalfly",
+      "required": false
+    },
+    {
+      "id": "orespawn:cephadrome",
+      "required": false
+    },
+    {
+      "id": "orespawn:cliff_racer",
+      "required": false
+    },
+    {
+      "id": "orespawn:dragon",
+      "required": false
+    },
+    {
+      "id": "orespawn:kyuubi",
+      "required": false
+    },
+    {
+      "id": "orespawn:leon",
+      "required": false
+    },
+    {
+      "id": "orespawn:leonopteryx",
+      "required": false
+    },
+    {
+      "id": "orespawn:sea_monster",
+      "required": false
+    },
+    {
+      "id": "orespawn:spyro",
+      "required": false
+    },
+    {
+      "id": "orespawn:stinky",
+      "required": false
+    },
+    {
+      "id": "orespawn:terrible_terror",
+      "required": false
+    },
+    {
+      "id": "orespawn:water_dragon",
+      "required": false
+    }
   ]
 }

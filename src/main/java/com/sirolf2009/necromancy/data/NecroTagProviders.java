@@ -44,6 +44,10 @@ public final class NecroTagProviders {
             shrineFocus();
             tag(BlockTags.MINEABLE_WITH_AXE).add(NecroBlocks.SUMMONING_ALTAR.get());
             tag(BlockTags.MINEABLE_WITH_PICKAXE).add(NecroBlocks.ALTAR_SIDE.get(), NecroBlocks.SEWING_MACHINE.get());
+            // soft ground a digging part (OreSpawn's Molenoid) works through
+            tag(NecroTags.DIGGABLE).add(Blocks.DIRT, Blocks.COARSE_DIRT, Blocks.ROOTED_DIRT, Blocks.GRASS_BLOCK, Blocks.PODZOL, Blocks.MYCELIUM,
+                    Blocks.SAND, Blocks.RED_SAND, Blocks.GRAVEL, Blocks.CLAY, Blocks.MUD, Blocks.SOUL_SAND, Blocks.SOUL_SOIL)
+                    .addOptional(net.minecraft.resources.ResourceLocation.fromNamespaceAndPath("orespawn", "mole_dirt"));
         }
 
         /** What the Necronomicon binds: planks in the middle, two cobblestones in a row beside it. */
@@ -117,6 +121,12 @@ public final class NecroTagProviders {
             }
 
             organAffinity();
+            tag(NecroTags.NO_SOUL);
+            // OreSpawn's creatures, optional so the tags load without it
+            com.sirolf2009.necromancy.compat.OreSpawnCompat.tags().forEach((path, ids) -> {
+                var builder = tag(TagKey.create(net.minecraft.core.registries.Registries.ENTITY_TYPE, Necromancy.id(path)));
+                ids.forEach(builder::addOptional);
+            });
         }
 
         /** Which creatures are rich in which organ (docs/REVIEW.md #8). */

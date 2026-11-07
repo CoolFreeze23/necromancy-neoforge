@@ -133,6 +133,7 @@ public class NecroItemRenderer extends BlockEntityWithoutLevelRenderer {
         items.add(NecroItems.BLOOD_SCYTHE.get());
         items.add(NecroItems.BONE_SCYTHE.get());
         items.add(NecroItems.NETHERITE_SCYTHE.get());
+        items.add(NecroItems.CREATURE_PART.get());
         NecroItems.BODY_PARTS.forEach((mob, parts) -> {
             if (MODEL_PART_MOBS.contains(mob)) {
                 parts.values().forEach(item -> items.add(item.get()));

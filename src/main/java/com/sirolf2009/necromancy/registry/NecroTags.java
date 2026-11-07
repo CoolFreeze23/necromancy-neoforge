@@ -18,6 +18,8 @@ public final class NecroTags {
     public static final TagKey<EntityType<?>> MINION_IGNORES = TagKey.create(Registries.ENTITY_TYPE, Necromancy.id("minion_ignores"));
 
     /** Souls reaped from these are Legendary (bosses). */
+    /** Creatures that have no soul to bottle (OreSpawn's robots, its boss heads and props). */
+    public static final TagKey<EntityType<?>> NO_SOUL = TagKey.create(Registries.ENTITY_TYPE, Necromancy.id("no_soul"));
     public static final TagKey<EntityType<?>> LEGENDARY_SOULS = TagKey.create(Registries.ENTITY_TYPE, Necromancy.id("legendary_souls"));
 
     /** Shrine décor around the altar (docs/REVIEW.md #6). */
@@ -28,6 +30,8 @@ public final class NecroTags {
     public static final TagKey<Block> FOCUS_DRAGON = TagKey.create(Registries.BLOCK, Necromancy.id("altar_focus/dragon"));
 
     /** The middle block of an unbound altar: any planks. */
+    /** Soft ground a digging forager part breaks. */
+    public static final TagKey<Block> DIGGABLE = TagKey.create(Registries.BLOCK, Necromancy.id("diggable"));
     public static final TagKey<Block> ALTAR_BASE = TagKey.create(Registries.BLOCK, Necromancy.id("altar_base"));
     /** The two side blocks of an unbound altar: cobblestone. */
     public static final TagKey<Block> ALTAR_SIDES = TagKey.create(Registries.BLOCK, Necromancy.id("altar_sides"));

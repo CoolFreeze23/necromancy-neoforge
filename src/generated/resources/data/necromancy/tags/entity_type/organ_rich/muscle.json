@@ -4,6 +4,50 @@
     "minecraft:hoglin",
     "minecraft:goat",
     "minecraft:camel",
-    "minecraft:horse"
+    "minecraft:horse",
+    {
+      "id": "orespawn:baryonyx",
+      "required": false
+    },
+    {
+      "id": "orespawn:cassowary",
+      "required": false
+    },
+    {
+      "id": "orespawn:cater_killer",
+      "required": false
+    },
+    {
+      "id": "orespawn:gazelle",
+      "required": false
+    },
+    {
+      "id": "orespawn:hercules_beetle",
+      "required": false
+    },
+    {
+      "id": "orespawn:molenoid",
+      "required": false
+    },
+    {
+      "id": "orespawn:ostrich",
+      "required": false
+    },
+    {
+      "id": "orespawn:pointysaurus",
+      "required": false
+    },
+    {
+      "id": "orespawn:trooper_bug",
+      "required": false
+    },
+    {
+      "id": "orespawn:velocity_raptor",
+      "required": false
+    },
+    {
+      "id": "orespawn:worm_large",
+      "required": false
+    }
   ]
 }

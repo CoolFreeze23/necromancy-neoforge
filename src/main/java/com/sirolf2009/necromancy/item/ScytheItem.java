@@ -72,7 +72,11 @@ public class ScytheItem extends SwordItem {
         return holding && !(victim instanceof Player) && owner.distanceToSqr(victim) < 256 && bottleSoul(owner, victim);
     }
 
-    private static boolean bottleSoul(Player player, LivingEntity victim) {
+    /** Fills one of the player's glass bottles with the victim's soul. False without a bottle or for a soulless creature. */
+    public static boolean bottleSoul(Player player, LivingEntity victim) {
+        if (victim.getType().is(NecroTags.NO_SOUL)) {
+            return false;
+        }
         var inventory = player.getInventory();
         int bottle = -1;
         for (int i = 0; i < inventory.getContainerSize(); i++) {

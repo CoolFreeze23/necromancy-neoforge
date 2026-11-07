@@ -1,4 +1,4 @@
-// 1.21.1	2026-11-08T02:01:46.3004869	Tags for minecraft:block mod id necromancy
+// 1.21.1	2026-11-08T04:32:03.9605874	Tags for minecraft:block mod id necromancy
 976b46dcdde4b86534a71689d5cef651cf478e3d data/minecraft/tags/block/mineable/axe.json
 667bc39e1fac14a8c9a68ef2d5859ce8cdb52efd data/minecraft/tags/block/mineable/pickaxe.json
 eb3c0e588c14fccd0a90d2090948169302feae6a data/necromancy/tags/block/altar_base.json
@@ -8,3 +8,4 @@ c36a2d273721714004ee06ba61bae9de465b865f data/necromancy/tags/block/altar_focus/
 b9ba2510b9d0d4ef5a2d1ded0a9f479ef75f5cb0 data/necromancy/tags/block/altar_focus/heads.json
 31e10e1930e7d3c1aa057519bfb71d2b1669a956 data/necromancy/tags/block/altar_focus/soul_lights.json
 b19fe50c32a3e60ae3d96047e66a79cd2563840d data/necromancy/tags/block/altar_sides.json
+0466faccf2920d9df1e18c0f517a63bff4fc9c9c data/necromancy/tags/block/diggable.json
