@@ -433,7 +433,7 @@ public class MinionEntity extends TamableAnimal implements RangedAttackMob, Item
             MinionOrder order = MinionOrder.byName(tag.getString("Order"));
             BlockPos post = net.minecraft.nbt.NbtUtils.readBlockPos(tag, order == MinionOrder.WORK ? "WorkPost" : "GuardPost").orElse(null);
             workContainer = net.minecraft.nbt.NbtUtils.readBlockPos(tag, "WorkContainer").orElse(null);
-            giveOrder(order, post, route);
+            giveOrder(order, post, route, true);
             patrolIndex = tag.getInt("PatrolIndex");
         }
         if (tag.contains("Soul")) {
@@ -489,6 +489,10 @@ public class MinionEntity extends TamableAnimal implements RangedAttackMob, Item
 
     /** Gives an order. {@code pos} is the guard post for GUARD; PATROL uses {@code route}. */
     public void giveOrder(MinionOrder order, @Nullable BlockPos pos, java.util.List<BlockPos> route) {
+        giveOrder(order, pos, route, false);
+    }
+
+    private void giveOrder(MinionOrder order, @Nullable BlockPos pos, java.util.List<BlockPos> route, boolean loading) {
         entityData.set(DATA_ORDER, order.ordinal());
         setOrderedToSit(order == MinionOrder.STAY);
         navigation.stop();
@@ -499,7 +503,8 @@ public class MinionEntity extends TamableAnimal implements RangedAttackMob, Item
             }
             case WORK -> {
                 workPost = pos != null ? pos.immutable() : blockPosition();
-                if (level().getCapability(net.neoforged.neoforge.capabilities.Capabilities.ItemHandler.BLOCK, workPost, null) != null) {
+                if (!loading && level().isLoaded(workPost)
+                        && level().getCapability(net.neoforged.neoforge.capabilities.Capabilities.ItemHandler.BLOCK, workPost, null) != null) {
                     workContainer = workPost;
                 }
                 restrictTo(workPost, 10);
