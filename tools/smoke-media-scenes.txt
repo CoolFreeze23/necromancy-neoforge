@@ -1,0 +1,54 @@
+# README screenshots and GIF frames (run with lang:en_us): tools/smoke.sh tools/smoke-media.txt
+wait 20
+gamerule doMobSpawning false
+gamerule doDaylightCycle false
+gamerule doWeatherCycle false
+gamerule mobGriefing false
+weather clear
+time set 12600
+kill @e[type=!player]
+hud off
+
+# ---------- the shrine (hero shot) ----------
+fill -6 -61 -6 6 -61 6 minecraft:polished_deepslate
+fill -6 -61 -6 6 -61 -6 minecraft:deepslate_tiles
+fill -6 -61 6 6 -61 6 minecraft:deepslate_tiles
+setblock -1 -60 0 minecraft:oak_planks
+setblock 0 -60 0 minecraft:cobblestone
+setblock 1 -60 0 minecraft:cobblestone
+item replace entity @s weapon.mainhand with necromancy:necronomicon
+useitem -1 -60 0
+wait 5
+item replace entity @s weapon.mainhand with air
+data merge block -1 -60 0 {Items:[{Slot:2b,id:"minecraft:zombie_head",count:1},{Slot:3b,id:"necromancy:iron_golem_torso",count:1},{Slot:4b,id:"necromancy:spider_legs",count:1},{Slot:5b,id:"necromancy:enderman_arm",count:1},{Slot:6b,id:"necromancy:witch_arm",count:1}]}
+setblock -3 -60 -2 minecraft:candle[candles=4,lit=true]
+setblock 3 -60 -2 minecraft:candle[candles=3,lit=true]
+setblock -3 -60 2 minecraft:soul_lantern
+setblock 3 -60 2 minecraft:soul_lantern
+setblock -4 -60 0 minecraft:wither_skeleton_skull[rotation=4]
+setblock 4 -60 0 minecraft:skeleton_skull[rotation=12]
+setblock -2 -61 3 necromancy:blood
+setblock -1 -61 3 necromancy:blood
+summon necromancy:minion -4 -60 3 {NoAI:1b,Rotation:[140f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:cow",arm_left:"necromancy:skeleton",arm_right:"necromancy:skeleton",legs:"necromancy:spider"},HandItems:[{id:"minecraft:bow",count:1},{}]}
+summon necromancy:minion 0 -60 -3 {NoAI:1b,Rotation:[160f,0f],Parts:{head:"necromancy:blaze",torso:"necromancy:wither_skeleton",arm_left:"necromancy:wither_skeleton",arm_right:"necromancy:wither_skeleton",legs:"necromancy:enderman"},HandItems:[{id:"necromancy:bone_scythe",count:1},{}]}
+summon necromancy:minion 4 -60 3 {NoAI:1b,Rotation:[220f,0f],Parts:{head:"necromancy:wolf",torso:"necromancy:pig",arm_left:"necromancy:chicken",arm_right:"necromancy:chicken",legs:"necromancy:pig"},Saddle:1b}
+tp @s -0.5 -58.3 5.8 facing -0.5 -59.7 -0.5
+wait 60
+shot hero
+
+# ---------- cemetery ----------
+kill @e[type=!player]
+time set 6000
+place template necromancy:village/plains/cemetery 100 -62 0
+fill 98 -62 -2 115 -50 13 minecraft:air replace minecraft:jigsaw
+tp @s 112 -55 -5 facing 106 -60 5
+wait 40
+shot cemetery
+
+# ---------- nether chalice ----------
+fill 190 -64 -10 214 -61 14 minecraft:lava
+place feature necromancy:nether_chalice 200 -61 0
+tp @s 213 -37 -6 facing 201 -42 8
+wait 40
+shot chalice
+report done

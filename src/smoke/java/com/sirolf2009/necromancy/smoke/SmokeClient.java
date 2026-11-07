@@ -216,6 +216,7 @@ public class SmokeClient {
                 server.execute(() -> {
                     var player = server.getPlayerList().getPlayer(uuid);
                     var minions = player.serverLevel().getEntitiesOfClass(com.sirolf2009.necromancy.entity.MinionEntity.class, player.getBoundingBox().inflate(8));
+                    minions.sort(java.util.Comparator.comparingDouble(player::distanceToSqr));
                     if (!minions.isEmpty()) {
                         var minion = minions.get(0);
                         minion.tame(player);

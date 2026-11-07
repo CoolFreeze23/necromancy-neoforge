@@ -1,0 +1,29 @@
+# The two fight GIFs, close up: tools/smoke.sh tools/smoke-media-gifs.txt
+wait 20
+gamerule doMobSpawning false
+gamerule doDaylightCycle false
+gamerule mobGriefing false
+time set 6000
+weather clear
+kill @e[type=!player]
+hud off
+fill -8 -61 40 8 -61 56 minecraft:coarse_dirt
+summon necromancy:minion -2 -60 45 {Stance:"aggressive",Rotation:[0f,0f],Parts:{head:"necromancy:blaze",torso:"necromancy:zombie",arm_left:"necromancy:witch",arm_right:"necromancy:witch",legs:"necromancy:zombie"}}
+summon necromancy:minion 0 -60 44.5 {Stance:"aggressive",Rotation:[0f,0f],Parts:{head:"necromancy:wolf",torso:"necromancy:iron_golem",arm_left:"necromancy:iron_golem",arm_right:"necromancy:iron_golem",legs:"necromancy:enderman"}}
+summon necromancy:minion 2 -60 45 {Stance:"aggressive",Rotation:[0f,0f],Parts:{head:"necromancy:isaac",torso:"necromancy:skeleton",arm_left:"necromancy:skeleton",arm_right:"necromancy:skeleton",legs:"necromancy:skeleton"},HandItems:[{id:"minecraft:bow",count:1},{}]}
+summon minecraft:zombie -2 -60 49 {Rotation:[180f,0f],ArmorItems:[{},{},{},{id:"minecraft:leather_helmet",count:1}]}
+summon minecraft:zombie 0 -60 50 {Rotation:[180f,0f],ArmorItems:[{},{},{},{id:"minecraft:leather_helmet",count:1}]}
+summon minecraft:husk 2 -60 49 {Rotation:[180f,0f]}
+summon minecraft:zombie 1 -60 52 {Rotation:[180f,0f],ArmorItems:[{},{},{},{id:"minecraft:leather_helmet",count:1}]}
+summon minecraft:skeleton -1 -60 53 {Rotation:[180f,0f],ArmorItems:[{},{},{},{id:"minecraft:leather_helmet",count:1}]}
+tp @s 7 -57.6 46.5 facing 0 -59.6 48
+wait 4
+burst battle 50
+kill @e[type=!player]
+summon necromancy:abomination 0 -60 51 {Rotation:[180f,0f],Parts:{head:"necromancy:enderman",torso:"necromancy:iron_golem",arm_left:"necromancy:wither_skeleton",arm_right:"necromancy:night_crawler",legs:"necromancy:blaze"}}
+summon necromancy:minion -1.5 -60 47 {Stance:"aggressive",Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"},HandItems:[{id:"minecraft:iron_sword",count:1},{}]}
+summon necromancy:minion 1.5 -60 47 {Stance:"aggressive",Parts:{head:"necromancy:husk",torso:"necromancy:husk",arm_left:"necromancy:husk",arm_right:"necromancy:husk",legs:"necromancy:husk"},HandItems:[{id:"minecraft:iron_axe",count:1},{}]}
+tp @s 7.5 -57 46 facing 0 -58.6 49.5
+wait 4
+burst abomination 50
+report done
