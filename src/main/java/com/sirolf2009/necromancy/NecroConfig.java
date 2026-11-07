@@ -12,6 +12,9 @@ public final class NecroConfig {
     public static final ModConfigSpec.DoubleValue ORGAN_DROP_CHANCE;
     public static final ModConfigSpec.BooleanValue MINION_GRIEF_MESSAGES;
     public static final ModConfigSpec.BooleanValue CLASSIC_STATS;
+    public static final ModConfigSpec.BooleanValue USE_SHRINE_TIERS;
+    public static final ModConfigSpec.ConfigValue<java.util.List<? extends Integer>> SHRINE_TIER_CAPS;
+    public static final ModConfigSpec.BooleanValue SOUL_POTENCY;
     public static final ModConfigSpec.BooleanValue CREEPER_TORSO_BREAKS_BLOCKS;
 
     static {
@@ -23,8 +26,15 @@ public final class NecroConfig {
                 .defineInRange("rarityIsaacs", 30, 0, 100000);
         b.pop();
         b.push("minions");
-        MAX_MINIONS = b.comment("How many living Minions one player may have at once. -1 means no limit (the old max_minion_spawn server property).")
+        USE_SHRINE_TIERS = b.comment("The décor around the altar (candles, soul lights, blood, mob heads) sets how many Minions a player may keep.",
+                "Off: maxMinionsPerPlayer applies instead.")
+                .define("useShrineTiers", true);
+        SHRINE_TIER_CAPS = b.comment("Minions allowed at shrine tier I, II and III.")
+                .defineList("shrineTierCaps", java.util.List.of(3, 5, 8), () -> 3, o -> o instanceof Integer i && i >= -1);
+        MAX_MINIONS = b.comment("With useShrineTiers off: how many living Minions one player may have at once. -1 means no limit (the old max_minion_spawn server property).")
                 .defineInRange("maxMinionsPerPlayer", -1, -1, 1000);
+        SOUL_POTENCY = b.comment("A soul can only animate a body whose parts weigh up to its potency (from the reaped creature's health). Off: any soul animates any body.")
+                .define("soulPotency", true);
         MINION_GRIEF_MESSAGES = b.comment("Minions talk to their master in chat (\"Your bidding?\", sit/follow replies).")
                 .define("minionChat", true);
         b.pop();

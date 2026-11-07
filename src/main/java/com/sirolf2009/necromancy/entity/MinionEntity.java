@@ -16,6 +16,7 @@ import com.sirolf2009.necromancy.registry.NecroAttachments;
 import com.sirolf2009.necromancy.registry.NecroItems;
 import com.sirolf2009.necromancy.registry.NecroSounds;
 import com.sirolf2009.necromancy.registry.NecroTags;
+import com.sirolf2009.necromancy.soul.SoulData;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
@@ -139,6 +140,18 @@ public class MinionEntity extends TamableAnimal implements RangedAttackMob, Item
         targetSelector.addGoal(2, new OwnerHurtTargetGoal(this));
         targetSelector.addGoal(3, new HurtByTargetGoal(this).setAlertOthers());
         targetSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, Player.class, 10, true, false, this::isOrderedTarget));
+    }
+
+    // --- soul ---
+
+    private SoulData soul = SoulData.UNKNOWN;
+
+    public SoulData soul() {
+        return soul;
+    }
+
+    public void setSoul(SoulData soul) {
+        this.soul = soul;
     }
 
     // --- body parts ---
@@ -301,6 +314,7 @@ public class MinionEntity extends TamableAnimal implements RangedAttackMob, Item
         if (isPowered()) {
             tag.putBoolean("Powered", true);
         }
+        SoulData.CODEC.encodeStart(net.minecraft.nbt.NbtOps.INSTANCE, soul).result().ifPresent(t -> tag.put("Soul", t));
         steering.addAdditionalSaveData(tag);
     }
 
@@ -319,6 +333,9 @@ public class MinionEntity extends TamableAnimal implements RangedAttackMob, Item
         }
         setParts(map);
         entityData.set(DATA_POWERED, tag.getBoolean("Powered"));
+        if (tag.contains("Soul")) {
+            soul = SoulData.CODEC.parse(net.minecraft.nbt.NbtOps.INSTANCE, tag.get("Soul")).result().orElse(SoulData.UNKNOWN);
+        }
         steering.readAdditionalSaveData(tag);
     }
 

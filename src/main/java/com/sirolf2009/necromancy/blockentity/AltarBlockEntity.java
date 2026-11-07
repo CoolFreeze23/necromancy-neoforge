@@ -18,7 +18,11 @@ import com.sirolf2009.necromancy.registry.NecroEntities;
 import com.sirolf2009.necromancy.registry.NecroItems;
 import com.sirolf2009.necromancy.registry.NecroSounds;
 
+import com.sirolf2009.necromancy.soul.Shrine;
+import com.sirolf2009.necromancy.soul.SoulData;
+
 import net.minecraft.advancements.CriteriaTriggers;
+import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.NonNullList;
@@ -61,6 +65,17 @@ public class AltarBlockEntity extends BaseContainerBlockEntity {
     public static final int ARM_RIGHT = 5;
     public static final int ARM_LEFT = 6;
     public static final int SIZE = 7;
+
+    public static final int INFO_WEIGHT = 0;
+    public static final int INFO_SOUL_CAP = 1;
+    public static final int INFO_POINTS = 2;
+    public static final int INFO_TIER = 3;
+    public static final int INFO_MINIONS = 4;
+    public static final int INFO_MINION_CAP = 5;
+    public static final int INFO_SIZE = 6;
+
+    private Shrine.State shrine = new Shrine.State(0, 1);
+    private long shrineScannedAt = Long.MIN_VALUE;
 
     private NonNullList<ItemStack> items = NonNullList.withSize(SIZE, ItemStack.EMPTY);
     private BlockState originalBase = Blocks.OAK_PLANKS.defaultBlockState();
@@ -111,6 +126,58 @@ public class AltarBlockEntity extends BaseContainerBlockEntity {
         return map;
     }
 
+    /** Total weight of the body on the altar: each part counts its mob's weight (both arms count). */
+    public int bodyWeight() {
+        int weight = 0;
+        for (ResourceLocation mob : parts().values()) {
+            NecroMob necro = NecroMobRegistry.get(mob);
+            weight += necro == null ? 0 : necro.weight();
+        }
+        return weight;
+    }
+
+    /** The heaviest body the soul in the soul slot can animate, or 0 with no soul. */
+    public int soulCap() {
+        ItemStack soul = items.get(SOUL);
+        return soul.is(NecroItems.SOUL_IN_A_JAR.get()) ? SoulData.get(soul).potency().weightCap() : 0;
+    }
+
+    /** The shrine around this altar, rescanned at most once a second. */
+    public Shrine.State shrine() {
+        if (level != null && level.getGameTime() - shrineScannedAt >= 20) {
+            shrine = Shrine.scan(level, worldPosition);
+            shrineScannedAt = level.getGameTime();
+        }
+        return shrine;
+    }
+
+    /** Values for the altar screen's side panel, read for one player. */
+    public ContainerData infoData(Player player) {
+        return new ContainerData() {
+            @Override
+            public int get(int index) {
+                return switch (index) {
+                    case INFO_WEIGHT -> bodyWeight();
+                    case INFO_SOUL_CAP -> NecroConfig.SOUL_POTENCY.get() ? soulCap() : 0;
+                    case INFO_POINTS -> shrine().points();
+                    case INFO_TIER -> shrine().tier();
+                    case INFO_MINIONS -> level != null && level.getServer() != null ? MinionCensus.get(level.getServer()).count(player.getUUID()) : 0;
+                    case INFO_MINION_CAP -> shrine().minionCap();
+                    default -> 0;
+                };
+            }
+
+            @Override
+            public void set(int index, int value) {
+            }
+
+            @Override
+            public int getCount() {
+                return INFO_SIZE;
+            }
+        };
+    }
+
     public boolean hasRitualItems() {
         return items.get(BLOOD).is(NecroItems.JAR_OF_BLOOD.get()) && items.get(SOUL).is(NecroItems.SOUL_IN_A_JAR.get());
     }
@@ -144,8 +211,13 @@ public class AltarBlockEntity extends BaseContainerBlockEntity {
             player.displayClientMessage(Component.translatable("message.necromancy.altar.needs_body"), true);
             return false;
         }
+        if (!creative && NecroConfig.SOUL_POTENCY.get() && bodyWeight() > soulCap()) {
+            player.displayClientMessage(Component.translatable("message.necromancy.altar.too_heavy", bodyWeight(), soulCap()), true);
+            return false;
+        }
         MinionCensus census = MinionCensus.get(server.getServer());
-        int max = NecroConfig.MAX_MINIONS.get();
+        shrineScannedAt = Long.MIN_VALUE;
+        int max = shrine().minionCap();
         if (max >= 0 && census.count(player.getUUID()) >= max && !creative) {
             player.sendSystemMessage(Component.translatable("message.necromancy.altar.too_many"));
             LightningBolt bolt = EntityType.LIGHTNING_BOLT.create(server);
@@ -161,6 +233,7 @@ public class AltarBlockEntity extends BaseContainerBlockEntity {
             return false;
         }
         minion.setParts(parts());
+        minion.setSoul(SoulData.get(items.get(SOUL)));
         minion.tame(player);
         BlockPos spawn = findSpawnPos();
         minion.moveTo(spawn.getX() + 0.5, spawn.getY(), spawn.getZ() + 0.5, player.getYRot() + 180F, 0F);

@@ -64,7 +64,8 @@ public final class NecroItems {
     // Tools of the trade
     public static final DeferredItem<NecronomiconItem> NECRONOMICON = ITEMS.register("necronomicon", () -> new NecronomiconItem(new Item.Properties().stacksTo(1).rarity(Rarity.UNCOMMON)));
     public static final DeferredItem<BoneNeedleItem> BONE_NEEDLE = ITEMS.register("bone_needle", () -> new BoneNeedleItem(new Item.Properties().durability(10)));
-    public static final DeferredItem<Item> SOUL_IN_A_JAR = ITEMS.registerSimpleItem("soul_in_a_jar", new Item.Properties().rarity(Rarity.UNCOMMON));
+    public static final DeferredItem<com.sirolf2009.necromancy.item.SoulJarItem> SOUL_IN_A_JAR = ITEMS.register("soul_in_a_jar",
+            () -> new com.sirolf2009.necromancy.item.SoulJarItem(new Item.Properties().rarity(Rarity.UNCOMMON)));
     public static final DeferredItem<Item> JAR_OF_BLOOD = ITEMS.registerSimpleItem("jar_of_blood", new Item.Properties().craftRemainder(Items.GLASS_BOTTLE));
     public static final DeferredItem<BrainOnAStickItem> BRAIN_ON_A_STICK = ITEMS.register("brain_on_a_stick",
             () -> new BrainOnAStickItem(new Item.Properties().durability(25)));

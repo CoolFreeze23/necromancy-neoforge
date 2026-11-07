@@ -51,6 +51,8 @@ public class ScytheItem extends SwordItem {
         }
         inventory.getItem(bottle).shrink(1);
         ItemStack soul = new ItemStack(NecroItems.SOUL_IN_A_JAR.get());
+        soul.set(com.sirolf2009.necromancy.registry.NecroComponents.SOUL.get(),
+                com.sirolf2009.necromancy.soul.SoulData.of(victim.getType(), com.sirolf2009.necromancy.soul.SoulPotency.of(victim)));
         if (!inventory.add(soul)) {
             player.drop(soul, false);
         }

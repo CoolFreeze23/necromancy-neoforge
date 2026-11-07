@@ -7,6 +7,7 @@ import com.sirolf2009.necromancy.mobs.VanillaNecroMobs;
 import com.sirolf2009.necromancy.registry.NecroAttachments;
 import com.sirolf2009.necromancy.registry.NecroBlockEntities;
 import com.sirolf2009.necromancy.registry.NecroBlocks;
+import com.sirolf2009.necromancy.registry.NecroComponents;
 import com.sirolf2009.necromancy.registry.NecroEntities;
 import com.sirolf2009.necromancy.registry.NecroFluids;
 import com.sirolf2009.necromancy.registry.NecroItems;
@@ -34,6 +35,7 @@ public class Necromancy {
         NecroFluids.TYPES.register(modBus);
         NecroFluids.FLUIDS.register(modBus);
         NecroBlocks.BLOCKS.register(modBus);
+        NecroComponents.COMPONENTS.register(modBus);
         NecroItems.ITEMS.register(modBus);
         NecroItems.ARMOR_MATERIALS.register(modBus);
         NecroEntities.ENTITIES.register(modBus);
