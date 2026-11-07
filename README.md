@@ -37,6 +37,7 @@ now *does* something, you command your undead, they work and rank up, and an end
 
 - [The art in five steps](#the-art-in-five-steps)
 - [Any creature, any body](#any-creature-any-body)
+- [OreSpawn's creatures](#orespawns-creatures)
 - [The Sewing Machine](#the-sewing-machine)
 - [The Summoning Altar and the shrine](#the-summoning-altar-and-the-shrine)
 - [Commanding the dead](#commanding-the-dead)
@@ -105,6 +106,48 @@ Enderman and Blaze parts hate water.
 
 **Souls have weight.** A soul remembers what it was reaped from. A chicken's soul can lift a light body; an
 Iron Golem's can lift almost anything. Heavy builds are a late-game reward, not a free win.
+
+## OreSpawn's creatures
+
+With [OreSpawn](https://github.com/CoolFreeze23/Orespawn) installed, **97 of its creatures** lend their bodies too:
+**314 parts**, from the T-Rex's skull and the Dragon's wings to an ant's six legs. Each part is cut from the
+creature's own model and drawn with its own texture, and the parts fit any other creature's, OreSpawn's or vanilla's.
+
+<img src="docs/media/orespawn_pairs.png" alt="Five OreSpawn Minions standing in front of the creatures they are made of" width="100%">
+
+What OreSpawn's creatures do comes with their parts:
+
+- **Strikes and senses.** Poisonous, burning and tossing bites, disarming claws, cobwebs that clear away on their own,
+  banes against sea creatures, arthropods and fliers, charges and pounces.
+- **Ranged parts.** The robots' lasers and the dragons' fire, plus acid, water and ink, each shot drawn as OreSpawn's
+  own projectile.
+- **Gliding wings** on 24 creatures, which glide their Minion down slowly.
+- **Mounts.** Saddle a torso and steer with the movement keys. The Ostrich, Dragon, Leonopteryx and Cephadrome have
+  a horse's jump bar. The Camarasaurus seats two, and so does the Whale, which swims.
+- **New jobs.** The Beaver fells trees under the Work order and the Molenoid digs. The **Ender Reaper's arms bottle
+  the soul of everything they kill**, as a scythe does.
+- **Broods.** The Emperor Scorpion and the Trooper Bug call small temporary spawnlings into the fight.
+- **Hides.** Thorny, cactus-proof, water-breathing, glowing in the dark, self-mending, or a shell that clams shut.
+
+<div align="center">
+<img src="docs/media/orespawn_chimeras.png" alt="Five chimeras stitched from OreSpawn creatures" width="49%">
+<img src="docs/media/tooltip_orespawn.png" alt="The tooltip of an Ender Reaper arm" width="49%">
+</div>
+
+<img src="docs/media/orespawn_battle.gif" alt="Three OreSpawn chimeras fighting zombies" width="100%">
+
+How it works:
+
+- **Recipes and names.** The parts are sewn from each creature's own drops on the Sewing Machine. JEI lists every
+  recipe. Creature names follow OreSpawn's English and the CrazyCraft pack's Brazilian Portuguese.
+- **Soul potency.** OreSpawn's creatures have far more health than vanilla ones, so their health counts half
+  (`oreSpawnSoulHealthFactor`).
+- **Optional.** Without OreSpawn, none of this loads and nothing is missing.
+- **Resource packs.** Every part, OreSpawn's or vanilla's, is drawn from the creature's own texture and model files.
+  A resource pack that retextures a creature retextures its Minion parts as well, as long as it keeps the model's bone
+  names.
+
+The design is in [`docs/ORESPAWN_REVIEW.md`](docs/ORESPAWN_REVIEW.md).
 
 ## The Sewing Machine
 
@@ -186,6 +229,7 @@ it weakens it tears off parts and raises the dead around it. Kill it for a **Leg
 - soul potency on or off
 - organ drop rate
 - whether a Creeper torso breaks blocks
+- how much of an OreSpawn creature's health counts towards its soul's potency
 - `classicStats`, which restores the exact 1.7.1 numbers
 
 ## Português do Brasil
@@ -201,6 +245,8 @@ are translated.
 ./gradlew runData        # regenerates models, recipes, loot, tags, advancements and both languages
 ./gradlew runGameTestServer
 ```
+
+To run the OreSpawn GameTests too, put the OreSpawn and GeckoLib jars in `runmods/` and add `-PwithOreSpawn`.
 
 - **Requirements:** Java 21, NeoForge 21.1.
 - **Data:** generated data lives in `src/generated/resources`. Hand-written texts (the guide, feature texts) are

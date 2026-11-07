@@ -42,8 +42,12 @@ def present(name):
     return os.path.exists(os.path.join(src, name + '.png'))
 
 
+CROPS = {'orespawn_pairs': (40, 150, 1240, 450), 'orespawn_chimeras': (40, 140, 1240, 440), 'tooltip_orespawn': (90, 40, 1105, 290)}
+
 for name in [n for n in SCENES if present(n)]:
     img = Image.open(os.path.join(src, name + '.png')).convert('RGB')
+    if name in CROPS:
+        img = img.crop(CROPS[name])
     save(img.resize((960, int(img.height * 960 / img.width)), Image.LANCZOS), name + '.png')
 
 for name, extra in [(n, e) for n, e in SCREENS.items() if present(n)]:
@@ -57,7 +61,7 @@ if present('guide'):
 
 for name in [n for n in TOOLTIPS if present(n)]:
     img = Image.open(os.path.join(src, name + '.png')).convert('RGB')
-    save(img.crop((60, 30, 700, 260)), name + '.png')
+    save(img.crop(CROPS.get(name, (60, 30, 700, 260))), name + '.png')
 
 for name, width in GIFS.items():
     files = sorted(glob.glob(os.path.join(src, name + '_*.png')))

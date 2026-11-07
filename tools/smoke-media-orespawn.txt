@@ -14,24 +14,24 @@ summon necromancy:minion -9 -60 0 {NoAI:1b,Rotation:[0f,0f],Parts:{head:"orespaw
 summon orespawn:alosaurus -9 -60 -6 {NoAI:1b,Rotation:[0f,0f],PersistenceRequired:1b}
 summon necromancy:minion -4.5 -60 0 {NoAI:1b,Rotation:[0f,0f],Parts:{head:"orespawn:alien",torso:"orespawn:alien",arm_left:"orespawn:alien",arm_right:"orespawn:alien",legs:"orespawn:alien"}}
 summon orespawn:alien -4.5 -60 -5 {NoAI:1b,Rotation:[0f,0f],PersistenceRequired:1b}
-summon necromancy:minion 0 -60 0 {NoAI:1b,Rotation:[0f,0f],Parts:{head:"orespawn:hercules_beetle",torso:"orespawn:hercules_beetle",arm_left:"orespawn:hercules_beetle",arm_right:"orespawn:hercules_beetle",legs:"orespawn:hercules_beetle"}}
-summon orespawn:hercules_beetle 0 -60 -6 {NoAI:1b,Rotation:[0f,0f],PersistenceRequired:1b}
+summon necromancy:minion 0 -60 0 {NoAI:1b,Rotation:[0f,0f],Parts:{head:"orespawn:kyuubi",torso:"orespawn:kyuubi",arm_left:"orespawn:kyuubi",arm_right:"orespawn:kyuubi",legs:"orespawn:kyuubi"}}
+summon orespawn:kyuubi 0 -60 -5 {NoAI:1b,Rotation:[0f,0f],PersistenceRequired:1b}
 summon necromancy:minion 4.5 -60 0 {NoAI:1b,Rotation:[0f,0f],Parts:{head:"orespawn:peacock",torso:"orespawn:peacock",arm_left:"orespawn:peacock",arm_right:"orespawn:peacock",legs:"orespawn:peacock"}}
 summon orespawn:peacock 4.5 -60 -5 {NoAI:1b,Rotation:[0f,0f],PersistenceRequired:1b}
 summon necromancy:minion 9 -60 0 {NoAI:1b,Rotation:[0f,0f],Parts:{head:"orespawn:robot_4",torso:"orespawn:robot_4",arm_left:"orespawn:robot_4",arm_right:"orespawn:robot_4",legs:"orespawn:robot_4"}}
 summon orespawn:robot_4 9 -60 -5 {NoAI:1b,Rotation:[0f,0f],PersistenceRequired:1b}
-tp @s 0 -56.5 13 facing 0 -59.5 -2
+tp @s 0 -57.6 10 facing 0 -59 -2
 wait 60
 shot orespawn_pairs
 kill @e[type=!player]
 wait 5
 # ---------- chimeras across the whole bestiary ----------
-summon necromancy:minion -8 -60 30 {NoAI:1b,Rotation:[0f,0f],Parts:{head:"orespawn:baryonyx",torso:"orespawn:nastysaurus",arm_left:"orespawn:baryonyx",arm_right:"orespawn:baryonyx",legs:"orespawn:emperor_scorpion"}}
-summon necromancy:minion -4 -60 30 {NoAI:1b,Rotation:[0f,0f],Parts:{head:"orespawn:robot_2",torso:"orespawn:robot_3",arm_left:"orespawn:cephadrome",arm_right:"orespawn:cephadrome",legs:"orespawn:robot_4"}}
-summon necromancy:minion 0 -60 30 {NoAI:1b,Rotation:[0f,0f],Parts:{head:"orespawn:cryolophosaurus",torso:"orespawn:lizard",arm_left:"orespawn:easter_bunny",arm_right:"orespawn:easter_bunny",legs:"orespawn:gazelle"}}
-summon necromancy:minion 4 -60 30 {NoAI:1b,Rotation:[0f,0f],Parts:{head:"orespawn:ender_reaper",torso:"orespawn:robot_4",arm_left:"orespawn:ender_knight",arm_right:"orespawn:ender_knight",legs:"orespawn:alien"}}
-summon necromancy:minion 8 -60 30 {NoAI:1b,Rotation:[0f,0f],Parts:{head:"orespawn:worm_large",torso:"orespawn:red_cow",arm_left:"orespawn:red_cow",arm_right:"orespawn:red_cow",legs:"orespawn:red_cow"}}
-tp @s 0 -57 40 facing 0 -59.2 30
+summon necromancy:minion -6.5 -60 30 {NoAI:1b,Rotation:[0f,0f],Parts:{head:"orespawn:baryonyx",torso:"orespawn:nastysaurus",arm_left:"orespawn:baryonyx",arm_right:"orespawn:baryonyx",legs:"orespawn:emperor_scorpion"}}
+summon necromancy:minion -3.3 -60 30 {NoAI:1b,Rotation:[0f,0f],Parts:{head:"orespawn:robot_2",torso:"orespawn:robot_3",arm_left:"orespawn:cephadrome",arm_right:"orespawn:cephadrome",legs:"orespawn:robot_4"}}
+summon necromancy:minion 0 -60 30 {NoAI:1b,Rotation:[0f,0f],Parts:{head:"orespawn:trex",torso:"orespawn:hercules_beetle",arm_left:"orespawn:mantis",arm_right:"orespawn:mantis",legs:"orespawn:ostrich"}}
+summon necromancy:minion 3.3 -60 30 {NoAI:1b,Rotation:[0f,0f],Parts:{head:"orespawn:ender_reaper",torso:"orespawn:robot_4",arm_left:"orespawn:ender_knight",arm_right:"orespawn:ender_knight",legs:"orespawn:alien"}}
+summon necromancy:minion 6.5 -60 30 {NoAI:1b,Rotation:[0f,0f],Parts:{head:"orespawn:worm_large",torso:"orespawn:red_cow",arm_left:"orespawn:red_cow",arm_right:"orespawn:red_cow",legs:"orespawn:red_cow"}}
+tp @s 0 -57.8 39 facing 0 -59.2 30
 wait 60
 shot orespawn_chimeras
 kill @e[type=!player]
@@ -41,12 +41,12 @@ fill -8 -61 60 8 -61 76 minecraft:coarse_dirt
 summon necromancy:minion -2 -60 65 {Stance:"aggressive",Rotation:[0f,0f],Parts:{head:"orespawn:baryonyx",torso:"orespawn:nastysaurus",arm_left:"orespawn:baryonyx",arm_right:"orespawn:baryonyx",legs:"orespawn:emperor_scorpion"}}
 summon necromancy:minion 0.5 -60 64.5 {Stance:"aggressive",Rotation:[0f,0f],Parts:{head:"orespawn:ender_reaper",torso:"orespawn:robot_4",arm_left:"orespawn:ender_knight",arm_right:"orespawn:ender_knight",legs:"orespawn:alien"}}
 summon necromancy:minion 3 -60 65 {Stance:"aggressive",Rotation:[0f,0f],Parts:{head:"orespawn:trex",torso:"orespawn:hercules_beetle",arm_left:"orespawn:mantis",arm_right:"orespawn:mantis",legs:"orespawn:ostrich"}}
-summon minecraft:zombie -2 -60 69 {Rotation:[180f,0f],ArmorItems:[{},{},{},{id:"minecraft:leather_helmet",count:1}]}
-summon minecraft:zombie 0 -60 70 {Rotation:[180f,0f],ArmorItems:[{},{},{},{id:"minecraft:leather_helmet",count:1}]}
-summon minecraft:husk 2 -60 69 {Rotation:[180f,0f]}
+summon minecraft:zombie -2 -60 71 {Rotation:[180f,0f],ArmorItems:[{},{},{},{id:"minecraft:leather_helmet",count:1}]}
+summon minecraft:zombie 0 -60 72 {Rotation:[180f,0f],ArmorItems:[{},{},{},{id:"minecraft:leather_helmet",count:1}]}
+summon minecraft:husk 2 -60 71 {Rotation:[180f,0f]}
 summon minecraft:zombie 1 -60 72 {Rotation:[180f,0f],ArmorItems:[{},{},{},{id:"minecraft:leather_helmet",count:1}]}
 summon minecraft:skeleton -1 -60 73 {Rotation:[180f,0f],ArmorItems:[{},{},{},{id:"minecraft:leather_helmet",count:1}]}
-tp @s 8 -57.4 66 facing 0 -59.4 68
+tp @s -7.5 -58.2 67 facing 0 -59.4 68
 wait 4
 burst orespawn_battle 50
 kill @e[type=!player]

@@ -77,6 +77,29 @@ These follow the design review in `docs/REVIEW.md`:
 - **The Necronomicon is a guide book (#15)** with an advancement tree.
 - **The Rite of the Abomination (#17).** A repeatable boss raised at a tier III shrine with an Ominous Bottle.
 
+## OreSpawn's creatures
+
+`docs/ORESPAWN_REVIEW.md` is the design: 97 creatures, 314 parts and 32 parameterised trait types. Its data,
+`docs/orespawn_parts_spec.json`, goes through `tools/gen_orespawn.py` to make three things:
+
+- `data/necromancy/compat/orespawn.json`, the creatures read at start-up when OreSpawn is present
+  (`compat/OreSpawnCompat`);
+- the 314 sewing recipes, loaded only with OreSpawn;
+- the creature names (`necromob.orespawn.*`), from OreSpawn's English and the CrazyCraft pack's Portuguese.
+
+How it is built:
+
+- **Parts.** All parts are one item, `necromancy:creature_part`, whose `necromancy:creature_part` component names the
+  mob and part type.
+- **Traits** are built from data by `trait/DataTraits`. Spawnlings, mounts, gliding and the light a part gives are
+  handled in `MinionEntity`. Cobwebs that clear away later are tracked in `world/PlacedBlocks`.
+- **Looks.** Each creature has a file in `assets/necromancy/necro_parts/orespawn/`. `client/model/DataPartModels` and
+  `GeoGeometry` read OreSpawn's GeckoLib geometry into model parts. A file can choose bones and split child bones from
+  their parents, set rest poses, offsets, a whole-model turn, layers and animators. Each look was checked beside the
+  real creature and in mixed bodies.
+- **Tests.** `src/gametest/.../OreSpawnGameTests` runs with OreSpawn present: `GRADLE_ARGS=-PwithOreSpawn
+  tools/hubcheck.sh`, with the jars in `runmods/`. The hidden client with OreSpawn is `tools/smoke-orespawn.sh <script>`.
+
 ## Left out
 
 The Scent Burner and its shaders (the original author had already removed them as broken), the special-scythe web
