@@ -53,6 +53,7 @@ public final class NecroClient {
     @SubscribeEvent
     public static void renderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(NecroEntities.MINION.get(), MinionRenderer::new);
+        event.registerEntityRenderer(NecroEntities.ABOMINATION.get(), MinionRenderer::new);
         event.registerEntityRenderer(NecroEntities.TEAR.get(), ThrownItemRenderer::new);
         event.registerEntityRenderer(NecroEntities.BLOOD_TEAR.get(), ThrownItemRenderer::new);
         ClientParts.registerRenderers(event);

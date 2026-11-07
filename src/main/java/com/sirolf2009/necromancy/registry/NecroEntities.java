@@ -23,6 +23,9 @@ public final class NecroEntities {
     public static final DeferredHolder<EntityType<?>, EntityType<MinionEntity>> MINION = ENTITIES.register("minion",
             () -> EntityType.Builder.of(MinionEntity::new, MobCategory.CREATURE).sized(0.6F, 1.8F).eyeHeight(1.62F).clientTrackingRange(10)
                     .build(Necromancy.MOD_ID + ":minion"));
+    public static final DeferredHolder<EntityType<?>, EntityType<com.sirolf2009.necromancy.entity.AbominationEntity>> ABOMINATION = ENTITIES.register("abomination",
+            () -> EntityType.Builder.of(com.sirolf2009.necromancy.entity.AbominationEntity::new, MobCategory.MONSTER).sized(0.8F, 2.0F).eyeHeight(1.7F)
+                    .clientTrackingRange(10).fireImmune().build(Necromancy.MOD_ID + ":abomination"));
     public static final DeferredHolder<EntityType<?>, EntityType<TeddyEntity>> TEDDY = ENTITIES.register("teddy",
             () -> EntityType.Builder.of(TeddyEntity::new, MobCategory.CREATURE).sized(0.6F, 0.8F).clientTrackingRange(10)
                     .build(Necromancy.MOD_ID + ":teddy"));

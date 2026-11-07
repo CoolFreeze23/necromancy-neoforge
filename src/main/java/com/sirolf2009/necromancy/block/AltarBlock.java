@@ -70,6 +70,13 @@ public class AltarBlock extends BaseEntityBlock {
         return new AltarBlockEntity(pos, state);
     }
 
+    @Nullable
+    @Override
+    public <T extends BlockEntity> net.minecraft.world.level.block.entity.BlockEntityTicker<T> getTicker(Level level, BlockState state,
+            net.minecraft.world.level.block.entity.BlockEntityType<T> type) {
+        return level.isClientSide ? null : createTickerHelper(type, com.sirolf2009.necromancy.registry.NecroBlockEntities.ALTAR.get(), AltarBlockEntity::serverTick);
+    }
+
     @Override
     protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hit) {
         if (!(level.getBlockEntity(pos) instanceof AltarBlockEntity altar)) {

@@ -27,6 +27,7 @@ public final class NecroModEvents {
     @SubscribeEvent
     public static void attributes(EntityAttributeCreationEvent event) {
         event.put(NecroEntities.MINION.get(), MinionEntity.createAttributes().build());
+        event.put(NecroEntities.ABOMINATION.get(), com.sirolf2009.necromancy.entity.AbominationEntity.createAbominationAttributes().build());
         event.put(NecroEntities.TEDDY.get(), TeddyEntity.createAttributes().build());
         event.put(NecroEntities.NIGHT_CRAWLER.get(), NightCrawlerEntity.createAttributes().build());
         event.put(NecroEntities.ISAAC.get(), IsaacBodyEntity.createAttributes().build());

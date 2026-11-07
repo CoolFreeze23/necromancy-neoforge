@@ -947,7 +947,7 @@ public class MinionEntity extends TamableAnimal implements RangedAttackMob, Item
      * A Minion bound to a Phylactery leaves Minion Remains to raise it again. Any other Minion scatters: each part has a
      * one in four chance to drop as its item (docs/REVIEW.md #7).
      */
-    private void dropRemains() {
+    protected void dropRemains() {
         if (isBound()) {
             ItemStack remains = new ItemStack(NecroItems.MINION_REMAINS.get());
             remains.set(com.sirolf2009.necromancy.registry.NecroComponents.MINION_BUILD.get(),

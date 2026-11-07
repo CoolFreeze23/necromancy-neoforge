@@ -37,6 +37,7 @@ import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.ContainerHelper;
 import net.minecraft.world.entity.EntityType;
@@ -104,7 +105,7 @@ public class AltarBlockEntity extends BaseContainerBlockEntity {
             return stack.is(NecroItems.JAR_OF_BLOOD.get());
         }
         if (slot == SOUL) {
-            return stack.is(NecroItems.SOUL_IN_A_JAR.get()) || stack.is(NecroItems.MINION_REMAINS.get()) && stack.has(com.sirolf2009.necromancy.registry.NecroComponents.MINION_BUILD.get());
+            return stack.is(NecroItems.SOUL_IN_A_JAR.get()) || stack.is(net.minecraft.world.item.Items.OMINOUS_BOTTLE) || stack.is(NecroItems.MINION_REMAINS.get()) && stack.has(com.sirolf2009.necromancy.registry.NecroComponents.MINION_BUILD.get());
         }
         BodyPartLocation location = locationOf(slot);
         return location != null && NecroMobRegistry.partOf(stack).map(ref -> ref.fits(location)).orElse(false);
@@ -211,10 +212,93 @@ public class AltarBlockEntity extends BaseContainerBlockEntity {
         return Math.min(15, score - (score > 0 ? 1 : 0));
     }
 
+    // --- the Rite of the Abomination (docs/REVIEW.md #17) ---
+
+    private static final int RITE_TICKS = 100;
+    private int riteTicks;
+    private long lastRiteDay = -1;
+
+    private boolean isRite() {
+        return items.get(SOUL).is(net.minecraft.world.item.Items.OMINOUS_BOTTLE);
+    }
+
+    /** Starts the Rite: an Ominous Bottle and a Jar of Blood on an empty altar, at a tier III shrine, at night or in a storm. */
+    private boolean tryRite(Player player, ServerLevel server) {
+        if (riteTicks > 0) {
+            return false;
+        }
+        if (!parts().isEmpty()) {
+            player.displayClientMessage(Component.translatable("message.necromancy.rite.empty_altar"), true);
+            return false;
+        }
+        if (!items.get(BLOOD).is(NecroItems.JAR_OF_BLOOD.get())) {
+            player.displayClientMessage(Component.translatable("message.necromancy.altar.needs_blood_and_soul"), true);
+            return false;
+        }
+        shrineScannedAt = Long.MIN_VALUE;
+        if (shrine().tier() < 3) {
+            player.displayClientMessage(Component.translatable("message.necromancy.rite.needs_tier_3"), true);
+            return false;
+        }
+        if (server.isDay() && !server.isThundering()) {
+            player.displayClientMessage(Component.translatable("message.necromancy.rite.needs_night"), true);
+            return false;
+        }
+        long day = server.getDayTime() / 24000L;
+        if (day == lastRiteDay) {
+            player.displayClientMessage(Component.translatable("message.necromancy.rite.once_a_day"), true);
+            return false;
+        }
+        lastRiteDay = day;
+        if (!player.getAbilities().instabuild) {
+            removeItem(SOUL, 1);
+            removeItem(BLOOD, 1);
+        }
+        riteTicks = RITE_TICKS;
+        server.playSound(null, worldPosition, SoundEvents.WITHER_SPAWN, SoundSource.HOSTILE, 0.6F, 0.6F);
+        player.sendSystemMessage(Component.translatable("message.necromancy.rite.begun"));
+        setChanged();
+        return true;
+    }
+
+    public static void serverTick(net.minecraft.world.level.Level level, BlockPos pos, BlockState state, AltarBlockEntity altar) {
+        if (altar.riteTicks <= 0 || !(level instanceof ServerLevel server)) {
+            return;
+        }
+        altar.riteTicks--;
+        Vec3 top = Vec3.atBottomCenterOf(pos.above());
+        server.sendParticles(ParticleTypes.SOUL_FIRE_FLAME, top.x, top.y + 0.2, top.z, 4, 0.6, 0.2, 0.6, 0.02);
+        server.sendParticles(ParticleTypes.SCULK_SOUL, top.x, top.y + 1, top.z, 2, 0.8, 0.8, 0.8, 0.02);
+        if (altar.riteTicks % 25 == 0) {
+            LightningBolt bolt = EntityType.LIGHTNING_BOLT.create(server);
+            if (bolt != null) {
+                bolt.moveTo(top.add(server.random.nextGaussian() * 3, 0, server.random.nextGaussian() * 3));
+                bolt.setVisualOnly(true);
+                server.addFreshEntity(bolt);
+            }
+        }
+        if (altar.riteTicks == 0) {
+            var boss = com.sirolf2009.necromancy.registry.NecroEntities.ABOMINATION.get().create(server);
+            if (boss != null) {
+                boss.setParts(com.sirolf2009.necromancy.entity.AbominationEntity.randomBody(server.random));
+                boss.moveTo(top.x, top.y, top.z, server.random.nextFloat() * 360F, 0);
+                boss.finalizeSpawn(server, server.getCurrentDifficultyAt(pos), MobSpawnType.EVENT, null);
+                boss.applyPartAttributes(true);
+                boss.setPersistenceRequired();
+                server.addFreshEntity(boss);
+                server.playSound(null, pos, SoundEvents.ENDER_DRAGON_GROWL, SoundSource.HOSTILE, 1.5F, 0.6F);
+            }
+            altar.setChanged();
+        }
+    }
+
     /** Raises the Minion. Called on sneak-use and by the Raise button. Returns true if a Minion rose. */
     public boolean tryRaise(Player player) {
         if (!(level instanceof ServerLevel server) || !(player instanceof ServerPlayer serverPlayer)) {
             return false;
+        }
+        if (isRite()) {
+            return tryRite(player, server);
         }
         boolean creative = player.getAbilities().instabuild;
         if (!creative && !hasRitualItems()) {
@@ -358,12 +442,16 @@ public class AltarBlockEntity extends BaseContainerBlockEntity {
             originalSide2 = NbtUtils.readBlockState(blocks, tag.getCompound("OriginalSide2"));
         }
         previewAge = 0;
+        riteTicks = tag.getInt("RiteTicks");
+        lastRiteDay = tag.contains("LastRiteDay") ? tag.getLong("LastRiteDay") : -1;
     }
 
     @Override
     protected void saveAdditional(CompoundTag tag, HolderLookup.Provider registries) {
         super.saveAdditional(tag, registries);
         ContainerHelper.saveAllItems(tag, items, true, registries);
+        tag.putInt("RiteTicks", riteTicks);
+        tag.putLong("LastRiteDay", lastRiteDay);
         tag.put("OriginalBase", NbtUtils.writeBlockState(originalBase));
         tag.put("OriginalSide1", NbtUtils.writeBlockState(originalSide1));
         tag.put("OriginalSide2", NbtUtils.writeBlockState(originalSide2));

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "B": { "item": "minecraft:bone" },
+    "E": { "item": "minecraft:spider_eye" }
+  },
+  "pattern": [
+    "  E",
+    " B ",
+    "B  "
+  ],
+  "result": { "count": 1, "id": "necromancy:bone_scepter" }
+}
