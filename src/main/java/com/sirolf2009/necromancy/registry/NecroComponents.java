@@ -44,6 +44,11 @@ public final class NecroComponents {
     public static final Supplier<DataComponentType<List<BlockPos>>> PATROL_ROUTE = COMPONENTS.registerComponentType("patrol_route",
             b -> b.persistent(BlockPos.CODEC.listOf()).networkSynchronized(BlockPos.STREAM_CODEC.apply(ByteBufCodecs.list())));
 
+    /** The generic creature part: which mob and which part it is. */
+    public static final Supplier<DataComponentType<com.sirolf2009.necromancy.item.CreaturePartItem.Part>> CREATURE_PART = COMPONENTS.registerComponentType(
+            "creature_part", b -> b.persistent(com.sirolf2009.necromancy.item.CreaturePartItem.Part.CODEC)
+                    .networkSynchronized(com.sirolf2009.necromancy.item.CreaturePartItem.Part.STREAM_CODEC));
+
     private NecroComponents() {
     }
 }

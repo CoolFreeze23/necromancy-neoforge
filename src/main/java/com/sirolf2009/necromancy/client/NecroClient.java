@@ -87,6 +87,7 @@ public final class NecroClient {
     @SubscribeEvent
     public static void reload(RegisterClientReloadListenersEvent event) {
         event.registerReloadListener((ResourceManagerReloadListener) manager -> NecroMobModels.invalidate());
+        event.registerReloadListener(new com.sirolf2009.necromancy.client.model.DataPartModels());
     }
 
     @SubscribeEvent

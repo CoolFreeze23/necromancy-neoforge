@@ -88,7 +88,20 @@ public class SmokeClient {
         }
     }
 
+    private String burstName;
+    private int burstLeft;
+    private int burstFrame;
+
     private void tick(Minecraft mc) throws IOException {
+        if (burstLeft > 0) {
+            // one frame every other tick (about 10 fps of game time) while a "burst" runs
+            if (mc.level != null && mc.level.getGameTime() % 2 == 0) {
+                Screenshot.grab(dir.toFile(), String.format("%s_%03d.png", burstName, burstFrame++), mc.getMainRenderTarget(), m -> {
+                });
+                burstLeft--;
+            }
+            return;
+        }
         if (--wait > 0) return;
         switch (state) {
             case 0 -> {
@@ -142,6 +155,14 @@ public class SmokeClient {
                 });
                 wait = 5;
             }
+            case "burst" -> {
+                // "burst NAME FRAMES": NAME_000.png ... at about 10 fps, for GIFs
+                String[] args = parts[1].split(" ");
+                burstName = args[0];
+                burstLeft = Integer.parseInt(args[1]);
+                burstFrame = 0;
+                wait = 1;
+            }
             case "hud" -> mc.options.hideGui = !parts[1].equals("on");
             case "view" -> mc.options.setCameraType(net.minecraft.client.CameraType.values()[Integer.parseInt(parts[1])]);
             case "report" -> report.add(parts[1]);
@@ -159,6 +180,35 @@ public class SmokeClient {
                 }
             }
             case "guide" -> com.sirolf2009.necromancy.client.NecroClientEvents.openGuide();
+            case "raise" -> {
+                // the player raises the Minion on the altar at X Y Z (as the Raise button does)
+                String[] xyz = parts[1].split(" ");
+                BlockPos pos = new BlockPos(Integer.parseInt(xyz[0]), Integer.parseInt(xyz[1]), Integer.parseInt(xyz[2]));
+                var server = mc.getSingleplayerServer();
+                var uuid = mc.player.getUUID();
+                server.execute(() -> {
+                    var player = server.getPlayerList().getPlayer(uuid);
+                    if (player.serverLevel().getBlockEntity(pos) instanceof com.sirolf2009.necromancy.blockentity.AltarBlockEntity altar) {
+                        report.add("raise " + parts[1] + " -> " + altar.tryRaise(player));
+                    }
+                });
+                wait = 2;
+            }
+            case "menuslot" -> {
+                // puts an item into slot I of the open menu on the server: "menuslot I namespace:item [count]"
+                String[] args = parts[1].split(" ");
+                int index = Integer.parseInt(args[0]);
+                var item = BuiltInRegistries.ITEM.get(net.minecraft.resources.ResourceLocation.parse(args[1]));
+                int count = args.length > 2 ? Integer.parseInt(args[2]) : 1;
+                var server = mc.getSingleplayerServer();
+                var uuid = mc.player.getUUID();
+                server.execute(() -> {
+                    var player = server.getPlayerList().getPlayer(uuid);
+                    player.containerMenu.getSlot(index).set(new ItemStack(item, count));
+                    player.containerMenu.broadcastChanges();
+                });
+                wait = 1;
+            }
             case "minionmenu" -> {
                 // tame the nearest Minion to the player and open its screen the way a sneak + empty-hand use does
                 var server = mc.getSingleplayerServer();
@@ -169,9 +219,9 @@ public class SmokeClient {
                     if (!minions.isEmpty()) {
                         var minion = minions.get(0);
                         minion.tame(player);
-                        player.setShiftKeyDown(true);
-                        minion.mobInteract(player, net.minecraft.world.InteractionHand.MAIN_HAND);
-                        player.setShiftKeyDown(false);
+                        player.openMenu(new net.minecraft.world.SimpleMenuProvider(
+                                (id, inventory, p) -> new com.sirolf2009.necromancy.menu.MinionMenu(id, inventory, minion), minion.getDisplayName()),
+                                buf -> buf.writeVarInt(minion.getId()));
                     }
                 });
                 wait = 10;

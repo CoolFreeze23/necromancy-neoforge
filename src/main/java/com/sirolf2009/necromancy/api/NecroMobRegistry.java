@@ -40,9 +40,16 @@ public final class NecroMobRegistry {
         return id == null ? null : MOBS.get(id);
     }
 
+    /** Reads a creature part stack's mob and type (set by the component registry). */
+    public static java.util.function.Function<ItemStack, PartRef> CREATURE_PART_READER = stack -> null;
+
     public static Optional<PartRef> partOf(ItemStack stack) {
         if (stack.isEmpty()) {
             return Optional.empty();
+        }
+        PartRef creature = CREATURE_PART_READER.apply(stack);
+        if (creature != null) {
+            return Optional.of(creature);
         }
         return Optional.ofNullable(index().get(stack.getItem()));
     }
@@ -51,7 +58,11 @@ public final class NecroMobRegistry {
         if (byItem == null) {
             Map<Item, PartRef> map = new LinkedHashMap<>();
             for (NecroMob mob : MOBS.values()) {
-                mob.parts().forEach((type, item) -> map.putIfAbsent(item.get(), new PartRef(mob, type)));
+                mob.parts().forEach((type, item) -> {
+                    if (!mob.isCreaturePart(type)) {
+                        map.putIfAbsent(item.get(), new PartRef(mob, type));
+                    }
+                });
             }
             byItem = map;
         }

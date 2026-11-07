@@ -159,7 +159,7 @@ public class AbominationEntity extends MinionEntity {
         setParts(body);
         applyPartAttributes(false);
         if (mob != null) {
-            mob.partItem(lost.type()).ifPresent(item -> spawnAtLocation(new ItemStack(item)));
+            spawnAtLocation(mob.partStack(lost.type()));
         }
         playSound(SoundEvents.ZOMBIE_BREAK_WOODEN_DOOR, 1.5F, 0.6F);
         server.sendParticles(ParticleTypes.DAMAGE_INDICATOR, getX(), getY(0.6), getZ(), 20, 0.6, 0.6, 0.6, 0.2);
@@ -183,7 +183,7 @@ public class AbominationEntity extends MinionEntity {
         for (BodyPartLocation location : BodyPartLocation.values()) {
             NecroMob mob = part(location);
             if (mob != null) {
-                mob.partItem(location.type()).ifPresent(item -> spawnAtLocation(new ItemStack(item)));
+                spawnAtLocation(mob.partStack(location.type()));
             }
         }
         ItemStack heart = new ItemStack(NecroItems.SOUL_IN_A_JAR.get());

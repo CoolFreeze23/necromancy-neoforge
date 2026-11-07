@@ -154,9 +154,11 @@ public final class NecroEvents {
         return (trader, random) -> new MerchantOffer(new ItemCost(item, count), new ItemStack(Items.EMERALD), uses, xp, 0.05F);
     }
 
+    /** The Necromancer deals in the sewn parts of vanilla creatures (parts with an item of their own). */
     private static List<Item> sewnParts() {
         return NecroMobRegistry.all().stream()
-                .flatMap(mob -> mob.parts().entrySet().stream().filter(e -> mob.isSewable(e.getKey())).map(e -> (Item) e.getValue().get()))
+                .flatMap(mob -> mob.parts().entrySet().stream().filter(e -> mob.isSewable(e.getKey()) && !mob.isCreaturePart(e.getKey()))
+                        .map(e -> (Item) e.getValue().get()))
                 .toList();
     }
 

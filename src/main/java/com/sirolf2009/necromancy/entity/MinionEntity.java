@@ -1014,7 +1014,10 @@ public class MinionEntity extends TamableAnimal implements RangedAttackMob, Item
         for (BodyPartLocation location : BodyPartLocation.values()) {
             NecroMob mob = part(location);
             if (mob != null && random.nextFloat() < 0.25F) {
-                mob.partItem(location.type()).ifPresent(item -> spawnAtLocation(new ItemStack(item)));
+                ItemStack part = mob.partStack(location.type());
+                if (!part.isEmpty()) {
+                    spawnAtLocation(part);
+                }
             }
         }
         if (level() instanceof ServerLevel server) {

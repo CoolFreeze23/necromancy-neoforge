@@ -99,6 +99,10 @@ public final class NecroItems {
     public static final DeferredItem<Item> TEAR = ITEMS.registerSimpleItem("tear");
     public static final DeferredItem<Item> BLOOD_TEAR = ITEMS.registerSimpleItem("blood_tear");
 
+    /** Body parts of other mods' creatures: one item, the mob and part type in a component. */
+    public static final DeferredItem<com.sirolf2009.necromancy.item.CreaturePartItem> CREATURE_PART = ITEMS.register("creature_part",
+            () -> new com.sirolf2009.necromancy.item.CreaturePartItem(new Item.Properties()));
+
     public static final DeferredItem<BlockItem> SEWING_MACHINE = ITEMS.registerSimpleBlockItem(NecroBlocks.SEWING_MACHINE);
 
     public static final DeferredItem<DeferredSpawnEggItem> TEDDY_SPAWN_EGG = egg("teddy", NecroEntities.TEDDY, 0x63451D, 0xFF0000);

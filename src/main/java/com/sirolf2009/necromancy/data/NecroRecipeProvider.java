@@ -109,6 +109,9 @@ public class NecroRecipeProvider extends RecipeProvider {
                 if (!mob.isSewable(type)) {
                     continue;
                 }
+                if (mob.isCreaturePart(type)) {
+                    continue;
+                }
                 Item item = mob.partItem(type).orElseThrow();
                 Ingredient essence = mob.essence(type);
                 String shape = type.getSerializedName() + " " + Arrays.stream(essence.getItems())

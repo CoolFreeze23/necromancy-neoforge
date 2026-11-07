@@ -26,6 +26,12 @@ public class NecroMob {
     private final ResourceLocation id;
     private final Map<PartType, Supplier<? extends Item>> parts = new EnumMap<>(PartType.class);
     private final Map<PartType, Boolean> sewableParts = new EnumMap<>(PartType.class);
+    private final java.util.Set<PartType> creatureParts = java.util.EnumSet.noneOf(PartType.class);
+    /** Set by the item registry: the generic creature part item. */
+    public static Supplier<? extends Item> CREATURE_PART_ITEM = () -> net.minecraft.world.item.Items.AIR;
+    /** Set by the item registry: builds a creature part stack for a mob and type. */
+    public static java.util.function.BiFunction<ResourceLocation, PartType, net.minecraft.world.item.ItemStack> CREATURE_PART_STACK =
+            (mob, type) -> net.minecraft.world.item.ItemStack.EMPTY;
     private final Map<BodyPartLocation, PartStats> stats = new EnumMap<>(BodyPartLocation.class);
     private final Map<BodyPartLocation, PartStats> classicStats = new EnumMap<>(BodyPartLocation.class);
     private final Map<PartType, List<PartTrait>> traits = new EnumMap<>(PartType.class);
@@ -61,6 +67,17 @@ public class NecroMob {
     public NecroMob part(PartType type, Supplier<? extends Item> item) {
         parts.put(type, item);
         sewableParts.put(type, true);
+        return this;
+    }
+
+    /**
+     * A sewn part that has no item of its own: it is the generic {@code necromancy:creature_part} item carrying this mob
+     * and part type (creatures of other mods, which can have hundreds of parts).
+     */
+    public NecroMob creaturePart(PartType type) {
+        parts.put(type, CREATURE_PART_ITEM);
+        sewableParts.put(type, true);
+        creatureParts.add(type);
         return this;
     }
 
@@ -154,6 +171,19 @@ public class NecroMob {
 
     public boolean isSewable(PartType type) {
         return sewableParts.getOrDefault(type, false);
+    }
+
+    /** Is this part the generic creature part item (rather than an item of its own)? */
+    public boolean isCreaturePart(PartType type) {
+        return creatureParts.contains(type);
+    }
+
+    /** One of this part, ready to drop or sell: its own item, or a creature part stack. */
+    public net.minecraft.world.item.ItemStack partStack(PartType type) {
+        if (creatureParts.contains(type)) {
+            return CREATURE_PART_STACK.apply(id, type);
+        }
+        return partItem(type).map(net.minecraft.world.item.ItemStack::new).orElse(net.minecraft.world.item.ItemStack.EMPTY);
     }
 
     public Optional<Item> partItem(PartType type) {

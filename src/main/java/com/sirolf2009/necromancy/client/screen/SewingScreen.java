@@ -35,7 +35,7 @@ public class SewingScreen extends AbstractContainerScreen<SewingMenu> {
 
     @Override
     protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
-        graphics.drawString(font, playerInventoryTitle, inventoryLabelX, inventoryLabelY, 0x404040, false);
+        // the 4x4 grid reaches down to the inventory, so (like the original) there is no "Inventory" label
         graphics.drawString(font, Component.translatable("gui.necromancy.sewing.needle"), 88, 8, 0x404040, false);
         graphics.drawString(font, Component.translatable("gui.necromancy.sewing.thread"), 88, 72, 0x404040, false);
         if (!menu.isReady()) {

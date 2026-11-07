@@ -49,6 +49,7 @@ public class Necromancy {
         NecroVillagers.register(modBus);
         NecroWorldgen.register(modBus);
 
+        com.sirolf2009.necromancy.item.CreaturePartItem.bind(NecroItems.CREATURE_PART);
         VanillaNecroMobs.register();
 
         container.registerConfig(ModConfig.Type.COMMON, NecroConfig.SPEC);
