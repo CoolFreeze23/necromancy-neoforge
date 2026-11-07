@@ -1,0 +1,36 @@
+# OreSpawn Minions next to their creatures with a resource pack enabled (the pack is set in run-smoke/options.txt)
+wait 20
+difficulty easy
+gamerule doMobSpawning false
+gamerule doDaylightCycle false
+time set 6000
+weather clear
+gamerule doWeatherCycle false
+hud off
+kill @e[type=!player]
+wait 10
+summon necromancy:minion -9 -60 0 {NoAI:1b,Rotation:[0f,0f],Parts:{head:"orespawn:trex",torso:"orespawn:trex",legs:"orespawn:trex"}}
+summon orespawn:trex -9 -60 8 {NoAI:1b,Rotation:[0f,0f],PersistenceRequired:1b}
+summon necromancy:minion -3 -60 0 {NoAI:1b,Rotation:[0f,0f],Parts:{head:"orespawn:alien",torso:"orespawn:alien",arm_left:"orespawn:alien",arm_right:"orespawn:alien",legs:"orespawn:alien"}}
+summon orespawn:alien -3 -60 5 {NoAI:1b,Rotation:[0f,0f],PersistenceRequired:1b}
+summon necromancy:minion 1 -60 0 {NoAI:1b,Rotation:[0f,0f],Parts:{head:"orespawn:molenoid",torso:"orespawn:molenoid",arm_left:"orespawn:molenoid",arm_right:"orespawn:molenoid",legs:"orespawn:molenoid"}}
+summon orespawn:molenoid 1 -60 5 {NoAI:1b,Rotation:[0f,0f],PersistenceRequired:1b}
+summon necromancy:minion 5 -60 0 {NoAI:1b,Rotation:[0f,0f],Parts:{head:"orespawn:ant",torso:"orespawn:ant",legs:"orespawn:ant"}}
+summon orespawn:ant 5 -60 3 {NoAI:1b,Rotation:[0f,0f],PersistenceRequired:1b}
+summon necromancy:minion 9 -60 0 {NoAI:1b,Rotation:[0f,0f],Parts:{head:"orespawn:gamma_metroid",torso:"orespawn:gamma_metroid",arm_left:"orespawn:gamma_metroid",arm_right:"orespawn:gamma_metroid",legs:"orespawn:gamma_metroid"}}
+summon orespawn:gamma_metroid 9 -60 5 {NoAI:1b,Rotation:[0f,0f],PersistenceRequired:1b}
+tp @s 0 -56 -12 0 18
+wait 60
+shot pack_front_row
+tp @s -16 -57 4 -90 15
+wait 30
+shot pack_side_row
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:trex",type:"head"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:alien",type:"torso"}]
+give @s necromancy:creature_part[necromancy:creature_part={mob:"orespawn:molenoid",type:"arm"}]
+hud on
+inventory
+wait 10
+shot pack_inventory
+closegui
+report done
