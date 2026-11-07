@@ -172,11 +172,12 @@ public class MinionEntity extends TamableAnimal implements RangedAttackMob, Item
         });
         goalSelector.addGoal(6, new net.minecraft.world.entity.ai.goal.MoveTowardsRestrictionGoal(this, 1.0));
         goalSelector.addGoal(6, new com.sirolf2009.necromancy.entity.goal.MinionPatrolGoal(this));
+        goalSelector.addGoal(6, new com.sirolf2009.necromancy.entity.goal.MinionWorkGoal(this));
         goalSelector.addGoal(7, new TemptGoal(this, 1.0, stack -> stack.is(NecroItems.BRAIN_ON_A_STICK.get()), false));
         goalSelector.addGoal(8, new WaterAvoidingRandomStrollGoal(this, 0.8) {
             @Override
             public boolean canUse() {
-                return order() != MinionOrder.PATROL && super.canUse();
+                return order() != MinionOrder.PATROL && order() != MinionOrder.WORK && super.canUse();
             }
         });
         goalSelector.addGoal(10, new LookAtPlayerGoal(this, Player.class, 8.0F));
@@ -383,6 +384,13 @@ public class MinionEntity extends TamableAnimal implements RangedAttackMob, Item
         if (guardPost != null) {
             tag.put("GuardPost", net.minecraft.nbt.NbtUtils.writeBlockPos(guardPost));
         }
+        if (workPost != null) {
+            tag.put("WorkPost", net.minecraft.nbt.NbtUtils.writeBlockPos(workPost));
+        }
+        if (workContainer != null) {
+            tag.put("WorkContainer", net.minecraft.nbt.NbtUtils.writeBlockPos(workContainer));
+        }
+        tag.put("Pack", pack.createTag(registryAccess()));
         if (!patrolRoute.isEmpty()) {
             net.minecraft.nbt.ListTag route = new net.minecraft.nbt.ListTag();
             patrolRoute.forEach(p -> route.add(net.minecraft.nbt.NbtUtils.writeBlockPos(p)));
@@ -408,6 +416,7 @@ public class MinionEntity extends TamableAnimal implements RangedAttackMob, Item
         setParts(map);
         entityData.set(DATA_POWERED, tag.getBoolean("Powered"));
         entityData.set(DATA_KILLS, tag.getInt("Kills"));
+        pack.fromTag(tag.getList("Pack", net.minecraft.nbt.Tag.TAG_COMPOUND), registryAccess());
         entityData.set(DATA_BOUND, tag.getBoolean("Bound"));
         if (tag.contains("Stance")) {
             entityData.set(DATA_STANCE, MinionStance.byName(tag.getString("Stance")).ordinal());
@@ -420,7 +429,8 @@ public class MinionEntity extends TamableAnimal implements RangedAttackMob, Item
         }
         if (tag.contains("Order")) {
             MinionOrder order = MinionOrder.byName(tag.getString("Order"));
-            BlockPos post = net.minecraft.nbt.NbtUtils.readBlockPos(tag, "GuardPost").orElse(null);
+            BlockPos post = net.minecraft.nbt.NbtUtils.readBlockPos(tag, order == MinionOrder.WORK ? "WorkPost" : "GuardPost").orElse(null);
+            workContainer = net.minecraft.nbt.NbtUtils.readBlockPos(tag, "WorkContainer").orElse(null);
             giveOrder(order, post, route);
             patrolIndex = tag.getInt("PatrolIndex");
         }
@@ -452,6 +462,11 @@ public class MinionEntity extends TamableAnimal implements RangedAttackMob, Item
 
     @Nullable
     private BlockPos guardPost;
+    @Nullable
+    private BlockPos workPost;
+    @Nullable
+    private BlockPos workContainer;
+    private final net.minecraft.world.SimpleContainer pack = new net.minecraft.world.SimpleContainer(9);
     private final java.util.List<BlockPos> patrolRoute = new java.util.ArrayList<>();
     private int patrolIndex;
 
@@ -480,6 +495,13 @@ public class MinionEntity extends TamableAnimal implements RangedAttackMob, Item
                 guardPost = pos != null ? pos.immutable() : blockPosition();
                 restrictTo(guardPost, 12);
             }
+            case WORK -> {
+                workPost = pos != null ? pos.immutable() : blockPosition();
+                if (level().getCapability(net.neoforged.neoforge.capabilities.Capabilities.ItemHandler.BLOCK, workPost, null) != null) {
+                    workContainer = workPost;
+                }
+                restrictTo(workPost, 10);
+            }
             case PATROL -> {
                 patrolRoute.clear();
                 patrolRoute.addAll(route.stream().limit(4).map(BlockPos::immutable).toList());
@@ -491,6 +513,21 @@ public class MinionEntity extends TamableAnimal implements RangedAttackMob, Item
                 clearRestriction();
             }
         }
+    }
+
+    @Nullable
+    public BlockPos workPost() {
+        return workPost;
+    }
+
+    @Nullable
+    public BlockPos workContainer() {
+        return workContainer;
+    }
+
+    /** What the Minion gathered on the job, until it takes it to its container. */
+    public net.minecraft.world.SimpleContainer pack() {
+        return pack;
     }
 
     public java.util.List<BlockPos> patrolRoute() {
@@ -969,6 +1006,9 @@ public class MinionEntity extends TamableAnimal implements RangedAttackMob, Item
     @Override
     protected void dropEquipment() {
         super.dropEquipment();
+        for (ItemStack stack : pack.removeAllItems()) {
+            spawnAtLocation(stack);
+        }
         if (isSaddled()) {
             spawnAtLocation(Items.SADDLE);
         }

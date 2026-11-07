@@ -32,9 +32,10 @@ import net.minecraft.world.level.Level;
  * Commands Minions (docs/REVIEW.md #2).
  * <ul>
  * <li>Use on your Minion: select or deselect it. Sneak: select all of yours within 24 blocks.</li>
- * <li>Use in the air: choose the order (Follow, Stay, Guard, Patrol). Sneak: change the selected Minions' stance.</li>
+ * <li>Use in the air: choose the order (Follow, Stay, Guard, Patrol, Work). Sneak: change the selected Minions' stance.</li>
  * <li>Use on a block: give the order there (Guard guards that block). With Patrol chosen, each use adds a waypoint and
- * sends the selected Minions along the route; sneak-use on a block clears the route.</li>
+ * sends the selected Minions along the route; sneak-use on a block clears the route. With Work chosen, use it on a chest
+ * (or any container): that is where they work and store the yield.</li>
  * </ul>
  */
 public class BoneScepterItem extends Item {
@@ -113,7 +114,7 @@ public class BoneScepterItem extends Item {
         }
         ItemStack stack = context.getItemInHand();
         MinionOrder order = order(stack);
-        BlockPos pos = context.getClickedPos().relative(context.getClickedFace());
+        BlockPos pos = order == MinionOrder.WORK ? context.getClickedPos() : context.getClickedPos().relative(context.getClickedFace());
         List<BlockPos> route = new ArrayList<>(stack.getOrDefault(NecroComponents.PATROL_ROUTE.get(), List.of()));
         if (order == MinionOrder.PATROL) {
             if (player.isSecondaryUseActive()) {

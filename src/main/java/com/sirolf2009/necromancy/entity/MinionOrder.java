@@ -14,7 +14,9 @@ public enum MinionOrder implements StringRepresentable {
     /** Hold a post: stays within 12 blocks of it and attacks hostile creatures that come close. */
     GUARD,
     /** Walk a route of up to four points, fighting what it meets. */
-    PATROL;
+    PATROL,
+    /** Do the job its parts and tools allow at its post, storing the yield in a linked container (MinionWorkGoal). */
+    WORK;
 
     @Override
     public String getSerializedName() {

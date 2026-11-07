@@ -45,7 +45,7 @@ for s in ['health', 'attack', 'speed', 'knockback', 'follow']:
     dynamic.add('tooltip.necromancy.stat.' + s)
 for s in ['health', 'attack', 'armor', 'speed', 'follow']:
     dynamic.add('gui.necromancy.minion.' + s)
-for o in ['follow', 'stay', 'guard', 'patrol']:
+for o in ['follow', 'stay', 'guard', 'patrol', 'work']:
     dynamic.add('order.necromancy.' + o)
 for s in ['passive', 'defensive', 'aggressive']:
     dynamic.add('stance.necromancy.' + s)
