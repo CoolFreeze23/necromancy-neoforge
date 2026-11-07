@@ -4,30 +4,27 @@
   "geo": "orespawn:geo/entity/stinkbug.geo.json",
   "texture": "orespawn:textures/entity/stinkbug.png",
   "scale": 1.8,
-  "head": {
-    "groups": [
-      {"bones": ["head", "jaw", "h1", "h2"], "pivot": [0, 19.5, -4]}
-    ],
-    "plug": [0, 23, -6],
-    "animator": "look"
-  },
+  "head": { "groups": [{ "bones": ["head", "jaw", "h1", "h2"], "pivot": [0, 19.5, -4] }], "plug": [0, 23, -4], "animator": "look" },
   "torso": {
     "groups": [
-      {"bones": ["body", "b1", "b2", "b3", "b4", "b5", "b6", "b7", "b8", "b9", "b10", "tail", "t1", "t2", "t3", "t4", "t5", "t6", "t7", "t8", "t9", "t10", "t11", "t12", "t13", "t14", "t15", "t16", "t17", "t18", "t19", "t20", "t21", "t22"]}
+      {
+        "bones": ["body", "b1", "b2", "b3", "b4", "b5", "b6", "b7", "b8", "b9", "b10", "tail", "t1", "t2", "t3", "t4", "t5", "t6", "t7",
+          "t8", "t9", "t10", "t11", "t12", "t13", "t14", "t15", "t16", "t17", "t18", "t19", "t20", "t21", "t22"]
+      }
     ],
     "plug": [0, 22, 0],
-    "neck": [0, 23, -6],
+    "neck": [0, 23, -4],
     "shoulder_left": [4, 19, -2],
     "shoulder_right": [-4, 19, -2]
   },
   "legs": {
     "groups": [
-      {"bones": ["l1", "f1"], "pivot": [3, 21.5, -3]},
-      {"bones": ["l4", "f4"], "pivot": [-3, 21.5, -3]},
-      {"bones": ["l5", "f5"], "pivot": [-3, 21.5, 0]},
-      {"bones": ["l2", "f2"], "pivot": [3, 21.5, 0]},
-      {"bones": ["l3", "f3"], "pivot": [3, 21.5, 3]},
-      {"bones": ["l6", "f6"], "pivot": [-3, 21.5, 3]}
+      { "bones": ["l1", "f1"], "pivot": [3, 21.5, -3] },
+      { "bones": ["l4", "f4"], "pivot": [-3, 21.5, -3] },
+      { "bones": ["l5", "f5"], "pivot": [-3, 21.5, 0] },
+      { "bones": ["l2", "f2"], "pivot": [3, 21.5, 0] },
+      { "bones": ["l3", "f3"], "pivot": [3, 21.5, 3] },
+      { "bones": ["l6", "f6"], "pivot": [-3, 21.5, 3] }
     ],
     "hip": [0, 22, 0],
     "animator": "walk_pair"

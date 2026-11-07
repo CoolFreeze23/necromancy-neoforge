@@ -5,36 +5,33 @@
   "texture": "orespawn:textures/entity/fireflytexture.png",
   "scale": 0.75,
   "head": {
-    "groups": [
-      {"bones": ["head", "mouth", "eye_left", "eye_right"], "pivot": [-1.5, 8, -3.5]}
-    ],
+    "groups": [{ "bones": ["head", "mouth", "eye_left", "eye_right"], "pivot": [-1.5, 8, -3.5] }],
     "plug": [-1.5, 10, -5.5],
     "animator": "look"
   },
   "torso": {
-    "groups": [
-      {"bones": ["body", "TailLight"]}
-    ],
+    "groups": [{ "bones": ["body", "TailLight"] }],
     "plug": [-1.5, 11, -1.5],
     "neck": [-1.5, 10, -5.5],
     "shoulder_left": [2, 7, -1],
     "shoulder_right": [-5, 7, -1]
   },
   "arm": {
-    "left": {"bones": ["wing_left"], "pivot": [1, 6, -1]},
-    "right": {"bones": ["wing_right"], "pivot": [-4, 6, -1]},
+    "left": { "bones": ["wing_left"], "pivot": [1, 6, -1] },
+    "right": { "bones": ["wing_right"], "pivot": [-4, 6, -1] },
     "plug_left": [2, 7, -1],
     "plug_right": [-5, 7, -1],
-    "animator": "none"
+    "animator": "flap"
   },
   "legs": {
     "groups": [
-      {"bones": ["front_leg_left_"], "pivot": [-1, 10, -3]},
-      {"bones": ["front_leg_right"], "pivot": [-3, 10, -3]},
-      {"bones": ["back_leg_right"], "pivot": [-3, 10, -1]},
-      {"bones": ["back_leg_left"], "pivot": [-1, 10, -1]}
+      { "bones": ["front_leg_left_"], "pivot": [-1, 10, -3] },
+      { "bones": ["front_leg_right"], "pivot": [-3, 10, -3] },
+      { "bones": ["back_leg_right"], "pivot": [-3, 10, -1] },
+      { "bones": ["back_leg_left"], "pivot": [-1, 10, -1] }
     ],
-    "hip": [-1.5, 11, -1.5],
+    "hip": [0, 19.84, -1.5],
+    "offset": [1.5, 8.84, 0],
     "animator": "walk_pair"
   }
 }

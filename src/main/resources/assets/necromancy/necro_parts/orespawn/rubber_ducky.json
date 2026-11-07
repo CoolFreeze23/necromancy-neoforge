@@ -4,27 +4,19 @@
   "geo": "orespawn:geo/entity/rubberducky.geo.json",
   "texture": "orespawn:textures/entity/rubberducky.png",
   "scale": 1.4,
-  "head": {
-    "groups": [
-      {"bones": ["head", "beak", "neck"], "pivot": [0, 19.5, -1]}
-    ],
-    "plug": [0, 20, -1],
-    "animator": "look"
-  },
+  "head": { "groups": [{ "bones": ["head", "beak", "neck"], "pivot": [0, 19.5, -1] }], "plug": [0, 20, -1], "animator": "look" },
   "torso": {
-    "groups": [
-      {"bones": ["body", "back", "bottom"]}
-    ],
+    "groups": [{ "bones": ["body", "back", "bottom"] }],
     "plug": [0, 24, 0],
     "neck": [0, 20, -1],
     "shoulder_left": [4, 21.5, 0.5],
     "shoulder_right": [-4, 21.5, 0.5]
   },
   "arm": {
-    "left": {"bones": ["lwing"], "pivot": [3, 21, 0.5]},
-    "right": {"bones": ["rwing"], "pivot": [-3, 21, 0.5]},
+    "left": { "bones": ["lwing"], "pivot": [3, 21, 0.5] },
+    "right": { "bones": ["rwing"], "pivot": [-3, 21, 0.5] },
     "plug_left": [4, 21.5, 0.5],
     "plug_right": [-4, 21.5, 0.5],
-    "animator": "none"
+    "animator": "flap"
   }
 }

@@ -3,25 +3,42 @@
   "requires": "orespawn",
   "geo": "orespawn:geo/entity/alien.geo.json",
   "texture": "orespawn:textures/entity/alien.png",
-  "scale": 0.75,
+  "scale": 1.1,
+  "pose": {
+    "fan": [-106, 0, 0],
+    "fanl1": [-106, 0, 0],
+    "fanl2": [-106, 0, 0],
+    "fanl3": [-106, 0, 0],
+    "fanl4": [-106, 0, 0],
+    "fanl5": [-106, 0, 0],
+    "fanl6": [-106, 0, 0],
+    "fanl7": [-106, 0, 0],
+    "fanr1": [-106, 0, 0],
+    "fanr2": [-106, 0, 0],
+    "fanr3": [-106, 0, 0],
+    "fanr4": [-106, 0, 0],
+    "fanr5": [-106, 0, 0],
+    "fanr6": [-106, 0, 0],
+    "fanr7": [-106, 0, 0]
+  },
   "head": {
-    "groups": [ { "bones": ["neck", "fan", "fanl1", "fanl2", "fanl3", "fanl4", "fanl5", "fanl6", "fanl7",
-                            "fanr1", "fanr2", "fanr3", "fanr4", "fanr5", "fanr6", "fanr7"], "pivot": [0, -2.5, -8] } ],
+    "groups": [
+      {
+        "bones": ["neck", "fan", "fanl1", "fanl2", "fanl3", "fanl4", "fanl5", "fanl6", "fanl7", "fanr1", "fanr2", "fanr3", "fanr4",
+          "fanr5", "fanr6", "fanr7"],
+        "pivot": [0, -2.5, -8]
+      }
+    ],
     "plug": [0, 0, -9]
   },
   "torso": {
-    "groups": [ { "bones": ["torso", "stomach", "tail1"] } ],
+    "groups": [{ "bones": ["torso", "stomach", "tail1"] }],
     "plug": [0, 8, 6],
     "neck": [0, 0, -9],
     "shoulder_left": [5.5, -1, -6],
     "shoulder_right": [-5.5, -1, -6]
   },
-  "arm": {
-    "left": { "bones": ["arml1"] },
-    "right": { "bones": ["armr1"] },
-    "plug_left": [5.5, -1, -6],
-    "plug_right": [-5.5, -1, -6]
-  },
+  "arm": { "left": { "bones": ["arml1"] }, "right": { "bones": ["armr1"] }, "plug_left": [5.5, -1, -6], "plug_right": [-5.5, -1, -6] },
   "legs": {
     "groups": [
       { "bones": ["lThigh", "lShin", "lShin1", "lFoot"], "pivot": [4.5, 7, 8] },

@@ -4,17 +4,9 @@
   "geo": "orespawn:geo/entity/cryolophosaurus.geo.json",
   "texture": "orespawn:textures/entity/cryolophosaurus.png",
   "scale": 0.54,
-  "head": {
-    "groups": [
-      { "bones": ["shape3", "shape11", "jaw", "shape9"], "pivot": [4, 2, -7] }
-    ],
-    "plug": [4, 2, -7],
-    "animator": "look"
-  },
+  "head": { "groups": [{ "bones": ["shape3", "shape11", "jaw", "shape9"], "pivot": [4, 2, -7] }], "plug": [4, 2, -7], "animator": "look" },
   "torso": {
-    "groups": [
-      { "bones": ["shape1", "shape2", "shape5", "shape6", "shape7", "shape8", "shape16", "shape17"] }
-    ],
+    "groups": [{ "bones": ["shape1", "shape2", "shape5", "shape6", "shape7", "shape8", "shape16", "shape17"] }],
     "plug": [4, 9, 12],
     "neck": [4, 2, -7],
     "shoulder_left": [9, 2, 1.5],
@@ -25,7 +17,8 @@
       { "bones": ["leftleg", "leftleg2", "leftleg3", "leftleg4"], "pivot": [8, 2, 12] },
       { "bones": ["rightleg", "rightleg2", "rightleg3", "rightleg4"], "pivot": [0, 2, 12] }
     ],
-    "hip": [4, 9, 12],
+    "hip": [0, 9, 12],
+    "offset": [-4, 0, 0],
     "animator": "walk_pair"
   }
 }

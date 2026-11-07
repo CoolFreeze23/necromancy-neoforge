@@ -5,13 +5,18 @@
   "texture": "orespawn:textures/entity/molenoid.png",
   "scale": 1.15,
   "head": {
-    "groups": [ { "bones": ["head1", "head2", "head3", "nosestar1", "nosestar2", "nosestar3", "nosestar4", "nosestar5", "nosestar6"], "pivot": [0, 12, -4] } ],
-    "plug": [0, 19, -9]
+    "groups": [
+      {
+        "bones": ["head1", "head2", "head3", "nosestar1", "nosestar2", "nosestar3", "nosestar4", "nosestar5", "nosestar6"],
+        "pivot": [0, 12, -4]
+      }
+    ],
+    "plug": [0, 19, -4]
   },
   "torso": {
-    "groups": [ { "bones": ["shoulders", "body", "butt", "tail"] } ],
+    "groups": [{ "bones": ["shoulders", "body", "butt", "tail"] }],
     "plug": [0, 21, 54],
-    "neck": [0, 19, -9],
+    "neck": [0, 19, -4],
     "shoulder_left": [17, 10, -2],
     "shoulder_right": [-17, 10, -2]
   },

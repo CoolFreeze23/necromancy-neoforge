@@ -3,21 +3,23 @@
   "requires": "orespawn",
   "layer": "minecraft:spider#main",
   "texture": "orespawn:textures/entity/spider_driver.png",
+  "eyes": "minecraft:textures/entity/spider_eyes.png",
   "scale": 1.6,
-  "head": {
-    "groups": [ { "bones": ["head"] } ],
-    "plug": [0, 19, -7]
-  },
+  "head": { "groups": [{ "bones": ["head"] }], "plug": [0, 19, -3] },
   "torso": {
-    "groups": [ { "bones": ["body0", "body1"] } ],
+    "groups": [{ "bones": ["body0", "body1"] }],
     "plug": [0, 15, 0],
-    "neck": [0, 19, -7],
+    "neck": [0, 19, -3],
     "shoulder_left": [4, 15, -1],
     "shoulder_right": [-4, 15, -1]
   },
   "legs": {
-    "groups": [ { "bones": ["right_hind_leg", "left_hind_leg", "right_middle_hind_leg", "left_middle_hind_leg",
-                            "right_middle_front_leg", "left_middle_front_leg", "right_front_leg", "left_front_leg"] } ],
+    "groups": [
+      {
+        "bones": ["right_hind_leg", "left_hind_leg", "right_middle_hind_leg", "left_middle_hind_leg", "right_middle_front_leg",
+          "left_middle_front_leg", "right_front_leg", "left_front_leg"]
+      }
+    ],
     "hip": [0, 15, 0],
     "animator": "scuttle"
   }

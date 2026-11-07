@@ -3,28 +3,20 @@
   "requires": "orespawn",
   "geo": "orespawn:geo/entity/butterfly.geo.json",
   "texture": "orespawn:textures/entity/butterfly.png",
-  "scale": 1.0,
-  "head": {
-    "groups": [
-      {"bones": ["head"], "pivot": [0.5, 17.5, -4]}
-    ],
-    "plug": [0.5, 18, -4.5],
-    "animator": "look"
-  },
+  "scale": 1,
+  "head": { "groups": [{ "bones": ["head"], "pivot": [0.5, 17.5, -4] }], "plug": [0.5, 18, -4.5], "animator": "look" },
   "torso": {
-    "groups": [
-      {"bones": ["body"]}
-    ],
+    "groups": [{ "bones": ["body"] }],
     "plug": [0.5, 18, 0],
     "neck": [0.5, 18, -4.5],
     "shoulder_left": [2, 18, 0],
     "shoulder_right": [-1, 18, 0]
   },
   "arm": {
-    "left": {"bones": ["leftwing", "leftwing2", "leftwing3", "leftwing4"], "pivot": [1, 17.5, 0]},
-    "right": {"bones": ["rightwing", "rightwing2", "rightwing3", "rightwing4"], "pivot": [0, 17.5, 0]},
+    "left": { "bones": ["leftwing", "leftwing2", "leftwing3", "leftwing4"], "pivot": [1, 17.5, 0] },
+    "right": { "bones": ["rightwing", "rightwing2", "rightwing3", "rightwing4"], "pivot": [0, 17.5, 0] },
     "plug_left": [2, 18, 0],
     "plug_right": [-1, 18, 0],
-    "animator": "none"
+    "animator": "flap"
   }
 }

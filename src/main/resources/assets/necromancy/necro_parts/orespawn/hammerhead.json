@@ -8,7 +8,7 @@
     "groups": [
       {
         "bones": ["neck", "neck_armour", "head", "snout", "horn_base", "horn_1", "horn_2", "horn_L", "horn_R", "fan1", "Lfan2", "Lfan3",
-                  "Rfan2", "Rfan3", "Lear", "Rear"],
+          "Rfan2", "Rfan3", "Lear", "Rear"],
         "pivot": [0.5, 13, -12]
       }
     ],
@@ -19,7 +19,7 @@
     "groups": [
       {
         "bones": ["chest", "abdomen", "back_armour1", "back_armour_2", "back_armour_3", "back_armour_3R", "back_armour_4",
-                  "back_armour_4R", "tail"]
+          "back_armour_4R", "tail"]
       }
     ],
     "plug": [0.5, 14, 2],
@@ -36,7 +36,8 @@
       { "bones": ["leg_3", "leg_3b"], "pivot": [9, 9, 14] },
       { "bones": ["leg_3R", "leg_3Rb"], "pivot": [-8, 9, 14] }
     ],
-    "hip": [0.5, 14, 2],
+    "hip": [0.5, 13.01, 2],
+    "offset": [0, -0.99, 0],
     "animator": "walk_pair"
   }
 }

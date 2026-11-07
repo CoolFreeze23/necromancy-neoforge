@@ -5,9 +5,7 @@
   "texture": "orespawn:textures/entity/baryonyx.png",
   "scale": 0.9,
   "head": {
-    "groups": [
-      { "bones": ["shape4", "shape5", "shape14", "shape52"], "pivot": [0, -11, -20] }
-    ],
+    "groups": [{ "bones": ["shape4", "shape5", "shape14", "shape52"], "pivot": [0, -11, -20] }],
     "plug": [0, -11, -20],
     "animator": "look"
   },
@@ -15,9 +13,8 @@
     "groups": [
       {
         "bones": ["shape1", "shape6", "shape7", "shape2", "shape3", "shape27", "shape28", "shape29", "shape30", "shape31", "shape32",
-                  "shape33", "shape34", "shape35", "shape36", "shape37", "shape38", "shape39", "shape40", "shape41",
-                  "shape42", "shape43", "shape44", "shape45", "shape46", "shape47", "shape48", "shape49", "shape50",
-                  "shape51"]
+          "shape33", "shape34", "shape35", "shape36", "shape37", "shape38", "shape39", "shape40", "shape41", "shape42",
+          "shape43", "shape44", "shape45", "shape46", "shape47", "shape48", "shape49", "shape50", "shape51"]
       }
     ],
     "plug": [0, 2, 8],
@@ -37,7 +34,8 @@
       { "bones": ["shape13", "shape15", "shape17"], "pivot": [6.5, -15, 2] },
       { "bones": ["shape24", "shape25", "shape26"], "pivot": [-6.5, -15, 2] }
     ],
-    "hip": [0, 2, 8],
+    "hip": [0, 3, 8],
+    "offset": [0, 1, 0],
     "animator": "walk_pair"
   }
 }

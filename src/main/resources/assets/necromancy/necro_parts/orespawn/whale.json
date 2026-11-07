@@ -4,14 +4,16 @@
   "geo": "orespawn:geo/entity/whale.geo.json",
   "texture": "orespawn:textures/entity/whale.png",
   "scale": 1.2,
-  "head": {
-    "groups": [ { "bones": ["head", "jaw"], "pivot": [0, 16, -1] } ],
-    "plug": [0, 22.4, -11]
-  },
+  "pose": { "lfin1": [0, -5, 5], "lfin2": [0, -5, 10], "rfin1": [0, 5, -5], "rfin2": [0, 5, -10] },
+  "head": { "groups": [{ "bones": ["head", "jaw"], "pivot": [0, 16, -1] }], "plug": [0, 22.4, 0] },
   "torso": {
-    "groups": [ { "bones": ["body", "belly", "back", "backfin", "lfin1", "lfin2", "rfin1", "rfin2", "tail1", "tail2", "tailfin1", "tailfin2"] } ],
-    "plug": [0, 14, 26],
-    "neck": [0, 22.4, -11],
+    "groups": [
+      {
+        "bones": ["body", "belly", "back", "backfin", "lfin1", "lfin2", "rfin1", "rfin2", "tail1", "tail2", "tailfin1", "tailfin2"]
+      }
+    ],
+    "plug": [0, 24, 26],
+    "neck": [0, 22.4, 0],
     "shoulder_left": [11, 12, 8],
     "shoulder_right": [-11, 12, 8]
   }
