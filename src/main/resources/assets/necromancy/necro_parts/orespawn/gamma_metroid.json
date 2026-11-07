@@ -1,0 +1,28 @@
+{
+  "mob": "orespawn:gamma_metroid",
+  "requires": "orespawn",
+  "geo": "orespawn:geo/entity/gammametroid.geo.json",
+  "texture": "orespawn:textures/entity/gammametroid.png",
+  "scale": 0.78,
+  "translucent": true,
+  "head": {
+    "groups": [ { "bones": ["head", "beakupper", "beaklower", "lefttusk", "righttusk", "middletusk"], "pivot": [0, 4, -8] } ],
+    "plug": [0, 7, -8]
+  },
+  "torso": {
+    "groups": [ { "bones": ["shell1", "shell2", "shell3", "shell4", "bellyoutside", "bellyinside", "core"] } ],
+    "plug": [0, 16, 2],
+    "neck": [0, 7, -8],
+    "shoulder_left": [9, 4, 0],
+    "shoulder_right": [-9, 4, 0]
+  },
+  "legs": {
+    "groups": [
+      { "bones": ["lfupperleg", "lflowerleg"], "pivot": [8, 8, -2] },
+      { "bones": ["rfupperleg", "rflowerleg"], "pivot": [-8, 8, -2] },
+      { "bones": ["rrupperleg", "rrlowerleg"], "pivot": [-8, 9, 7] },
+      { "bones": ["lrupperleg", "lrlowerleg"], "pivot": [8, 9, 7] }
+    ],
+    "hip": [0, 16, 2]
+  }
+}

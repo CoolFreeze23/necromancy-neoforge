@@ -1,0 +1,31 @@
+{
+  "mob": "orespawn:easter_bunny",
+  "requires": "orespawn",
+  "geo": "orespawn:geo/entity/easterbunny.geo.json",
+  "texture": "orespawn:textures/entity/easterbunny.png",
+  "scale": 1.0,
+  "head": {
+    "groups": [ { "bones": ["head", "nose", "lear", "rear"], "pivot": [0, 15, -1.5] } ],
+    "plug": [0, 16, -1.5]
+  },
+  "torso": {
+    "groups": [ { "bones": ["body", "upperbody", "tail"] } ],
+    "plug": [0, 21, 1],
+    "neck": [0, 16, -1.5],
+    "shoulder_left": [1, 19, -3.5],
+    "shoulder_right": [-1, 19, -3.5]
+  },
+  "arm": {
+    "left": { "bones": ["lpaw"] },
+    "right": { "bones": ["rpaw"] },
+    "plug_left": [1, 19, -3.5],
+    "plug_right": [-1, 19, -3.5]
+  },
+  "legs": {
+    "groups": [
+      { "bones": ["lleg", "lfoot"], "pivot": [3.5, 21, 1] },
+      { "bones": ["rleg", "rfoot"], "pivot": [-3.5, 21, 1] }
+    ],
+    "hip": [0, 21, 1]
+  }
+}

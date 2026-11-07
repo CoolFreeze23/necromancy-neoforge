@@ -1,0 +1,31 @@
+{
+  "mob": "orespawn:molenoid",
+  "requires": "orespawn",
+  "geo": "orespawn:geo/entity/molenoid.geo.json",
+  "texture": "orespawn:textures/entity/molenoid.png",
+  "scale": 1.15,
+  "head": {
+    "groups": [ { "bones": ["head1", "head2", "head3", "nosestar1", "nosestar2", "nosestar3", "nosestar4", "nosestar5", "nosestar6"], "pivot": [0, 12, -4] } ],
+    "plug": [0, 19, -9]
+  },
+  "torso": {
+    "groups": [ { "bones": ["shoulders", "body", "butt", "tail"] } ],
+    "plug": [0, 21, 54],
+    "neck": [0, 19, -9],
+    "shoulder_left": [17, 10, -2],
+    "shoulder_right": [-17, 10, -2]
+  },
+  "arm": {
+    "left": { "bones": ["larm", "lhand", "lclaw1", "lclaw2", "lclaw3", "lclaw4"], "pivot": [13, 8, 0] },
+    "right": { "bones": ["rarm", "rhand", "rclaw1", "rclaw2", "rclaw3", "rclaw4"], "pivot": [-14, 8, 0] },
+    "plug_left": [17, 10, -2],
+    "plug_right": [-17, 10, -2]
+  },
+  "legs": {
+    "groups": [
+      { "bones": ["lleg", "lfoot", "ltoe1", "ltoe2", "ltoe3", "ltoe4"], "pivot": [14, 9, 58] },
+      { "bones": ["rleg", "rfoot", "rtoe1", "rtoe2", "rtoe3", "rtoe4"], "pivot": [-14, 9, 58] }
+    ],
+    "hip": [0, 21, 54]
+  }
+}

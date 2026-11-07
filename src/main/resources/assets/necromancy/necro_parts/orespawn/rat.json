@@ -1,0 +1,22 @@
+{
+  "mob": "orespawn:rat",
+  "requires": "orespawn",
+  "geo": "orespawn:geo/entity/rat.geo.json",
+  "texture": "orespawn:textures/entity/rat.png",
+  "scale": 2.4,
+  "head": {
+    "groups": [ { "bones": ["head", "nose", "lear", "rear"], "pivot": [0.5, 21, -3] } ],
+    "plug": [0.5, 22, -5]
+  },
+  "torso": {
+    "groups": [ { "bones": ["body", "body2", "tail1", "tail2"] } ],
+    "plug": [0.5, 22, 2],
+    "neck": [0.5, 22, -5],
+    "shoulder_left": [4, 20, -1],
+    "shoulder_right": [-3, 20, -1]
+  },
+  "legs": {
+    "groups": [ { "bones": ["lfleg", "rfleg", "rrleg", "lrleg"] } ],
+    "hip": [0.5, 22, 2]
+  }
+}

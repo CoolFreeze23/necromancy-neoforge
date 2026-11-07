@@ -1,0 +1,29 @@
+{
+  "mob": "orespawn:stinky",
+  "requires": "orespawn",
+  "geo": "orespawn:geo/entity/stinky.geo.json",
+  "texture": "orespawn:textures/entity/stinky.png",
+  "scale": 1.4,
+  "head": {
+    "groups": [ { "bones": ["head", "snout", "neck", "Lhorn1", "Lhorn2", "Rhorn1", "Rhorn2"], "pivot": [0, 13, -6.5] } ],
+    "plug": [0, 12, -6.5]
+  },
+  "torso": {
+    "groups": [ { "bones": ["body", "neck1", "neckbase", "tail1", "tail2", "tail3", "tail4"] } ],
+    "plug": [0, 16, 1],
+    "neck": [0, 12, -6.5],
+    "shoulder_left": [5, 14, 0],
+    "shoulder_right": [-5, 14, 0]
+  },
+  "arm": {
+    "left": { "bones": ["Rwing"] },
+    "right": { "bones": ["Lwing"] },
+    "plug_left": [5, 14, 0],
+    "plug_right": [-5, 14, 0],
+    "animator": "none"
+  },
+  "legs": {
+    "groups": [ { "bones": ["Rleg2", "Lleg2", "Lleg1", "Rleg1"] } ],
+    "hip": [0, 16, 1]
+  }
+}

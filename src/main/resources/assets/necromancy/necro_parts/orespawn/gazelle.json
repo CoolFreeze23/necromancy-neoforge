@@ -1,0 +1,27 @@
+{
+  "mob": "orespawn:gazelle",
+  "requires": "orespawn",
+  "geo": "orespawn:geo/entity/gazelle.geo.json",
+  "texture": "orespawn:textures/entity/gazelletexture.png",
+  "scale": 0.7,
+  "head": {
+    "groups": [ { "bones": ["head", "nose", "mouth", "lear", "rear", "la1", "la2", "la3", "ra1", "ra2", "ra3"], "pivot": [0, -7, -6] } ],
+    "plug": [0, -6, -6]
+  },
+  "torso": {
+    "groups": [ { "bones": ["Body", "Chest", "neck", "throatfluff", "tail"] } ],
+    "plug": [0, 7, 0],
+    "neck": [0, -6, -6],
+    "shoulder_left": [4, 2, -4],
+    "shoulder_right": [-4, 2, -4]
+  },
+  "legs": {
+    "groups": [
+      { "bones": ["lfleg1", "lfleg2", "lfleg3", "lfleg4"], "pivot": [3, 6, -4] },
+      { "bones": ["rfleg1", "rfleg2", "rfleg3", "rfleg4"], "pivot": [-3, 6, -4] },
+      { "bones": ["rrleg1", "rrleg2", "rrleg3", "rrleg4", "rrleg5"], "pivot": [-3, 4, 4.5] },
+      { "bones": ["lrleg1", "lrleg2", "lrleg3", "lrleg4", "lrleg5"], "pivot": [3, 4, 4.5] }
+    ],
+    "hip": [0, 7, 0]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "mob": "orespawn:cannon_fodder",
+  "requires": "orespawn",
+  "geo": "orespawn:geo/entity/cannonfodder.geo.json",
+  "texture": "orespawn:textures/entity/cannon_fodder.png",
+  "scale": 1.0,
+  "head": {
+    "groups": [ { "bones": ["head"] } ],
+    "plug": [0, 14, -7]
+  },
+  "torso": {
+    "groups": [ { "bones": ["body"] } ],
+    "plug": [0, 15, 2],
+    "neck": [0, 14, -7],
+    "shoulder_left": [5, 11, -2],
+    "shoulder_right": [-5, 11, -2]
+  },
+  "legs": {
+    "groups": [ { "bones": ["leg_front_left", "leg_front_right", "leg_back_right", "leg_back_left"] } ],
+    "hip": [0, 15, 2]
+  }
+}

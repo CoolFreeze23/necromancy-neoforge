@@ -1,0 +1,28 @@
+{
+  "mob": "orespawn:band_p",
+  "requires": "orespawn",
+  "geo": "orespawn:geo/entity/bandp.geo.json",
+  "texture": "orespawn:textures/entity/bandp_bandit.png",
+  "scale": 1.1,
+  "head": {
+    "groups": [ { "bones": ["head"] } ],
+    "plug": [0, 2, 3]
+  },
+  "torso": {
+    "groups": [ { "bones": ["belly", "chest"] } ],
+    "plug": [0, 16, 2],
+    "neck": [0, 2, 3],
+    "shoulder_left": [6, 4, 3],
+    "shoulder_right": [-6, 4, 3]
+  },
+  "arm": {
+    "left": { "bones": ["larm"] },
+    "right": { "bones": ["rarm"] },
+    "plug_left": [6, 4, 3],
+    "plug_right": [-6, 4, 3]
+  },
+  "legs": {
+    "groups": [ { "bones": ["lleg", "rleg"] } ],
+    "hip": [0, 16, 2]
+  }
+}
