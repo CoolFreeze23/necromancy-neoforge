@@ -42,7 +42,9 @@ import net.minecraft.util.profiling.ProfilerFiller;
  * each bone is its own part. A bone brings its child bones along, except children that another part (or the file's
  * {@code "hide"} list) names; a child bone named without its parent keeps its true place (its parents' poses come
  * along, without their cubes). A bone below another bone of the same group comes along with that one. Optional per part: {@code "scale"}, {@code "animator"}; per file: {@code "scale"} for
- * every part (multiplied with a part's own), {@code "translucent": true}, {@code "full_bright": true}.
+ * every part (multiplied with a part's own), {@code "translucent": true}, {@code "full_bright": true}, and
+ * {@code "yaw": 180} for a model built facing +z (points are then given in the model's own space and turned with it).
+ * A group with a pivot may also have a {@code "rotation"} in degrees, added to its rest pose (folded wings).
  */
 public final class DataPartModels extends SimpleJsonResourceReloadListener {
     private static final Map<String, PartAnimator> ANIMATORS = new LinkedHashMap<>();
@@ -112,6 +114,7 @@ public final class DataPartModels extends SimpleJsonResourceReloadListener {
         Split split = new Split(bones, parents, named);
         boolean translucent = json.has("translucent") && json.get("translucent").getAsBoolean();
         float fileScale = json.has("scale") ? json.get("scale").getAsFloat() : 1F;
+        boolean turned = json.has("yaw") && Math.round(json.get("yaw").getAsFloat()) == 180;
         for (PartType type : PartType.values()) {
             JsonObject p = json.has(type.getSerializedName()) ? json.getAsJsonObject(type.getSerializedName()) : null;
             if (p == null) {
@@ -119,28 +122,29 @@ public final class DataPartModels extends SimpleJsonResourceReloadListener {
             }
             PartModel model;
             if (type == PartType.ARM) {
-                List<ModelPart> left = group(split, p.getAsJsonObject("left"), file);
-                List<ModelPart> right = group(split, p.getAsJsonObject("right"), file);
-                float[] l = point(p, "plug_left");
-                float[] r = point(p, "plug_right");
+                List<ModelPart> left = turn(group(split, p.getAsJsonObject("left"), file), turned);
+                List<ModelPart> right = turn(group(split, p.getAsJsonObject("right"), file), turned);
+                float[] l = turn(point(p, "plug_left"), turned);
+                float[] r = turn(point(p, "plug_right"), turned);
                 model = PartModel.arms(texture, left, right).plugs(l[0], l[1], l[2], r[0], r[1], r[2]);
             } else {
                 List<ModelPart> parts = new ArrayList<>();
                 for (JsonElement g : p.getAsJsonArray("groups")) {
                     parts.addAll(group(split, g.getAsJsonObject(), file));
                 }
+                turn(parts, turned);
                 model = PartModel.of(texture, parts.toArray(ModelPart[]::new));
                 if (p.has("plug")) {
-                    model.plug(point(p, "plug"));
+                    model.plug(turn(point(p, "plug"), turned));
                 }
                 if (type == PartType.TORSO) {
-                    float[] neck = point(p, "neck");
-                    float[] l = point(p, "shoulder_left");
-                    float[] r = point(p, "shoulder_right");
+                    float[] neck = turn(point(p, "neck"), turned);
+                    float[] l = turn(point(p, "shoulder_left"), turned);
+                    float[] r = turn(point(p, "shoulder_right"), turned);
                     model.neck(neck[0], neck[1], neck[2]).shoulders(l[0], l[1], l[2], r[0], r[1], r[2]);
                 }
                 if (type == PartType.LEGS) {
-                    float[] hip = point(p, "hip");
+                    float[] hip = turn(point(p, "hip"), turned);
                     model.hip(hip[0], hip[1], hip[2]);
                 }
             }
@@ -276,9 +280,28 @@ public final class DataPartModels extends SimpleJsonResourceReloadListener {
             children.put("bone" + i++, bone);
         }
         ModelPart root = new ModelPart(List.of(), children);
-        root.setInitialPose(PartPose.offset(pivot[0], pivot[1], pivot[2]));
+        float[] rest = group.has("rotation") ? point(group, "rotation") : new float[3];
+        root.setInitialPose(PartPose.offsetAndRotation(pivot[0], pivot[1], pivot[2], rest[0] * net.minecraft.util.Mth.DEG_TO_RAD,
+                rest[1] * net.minecraft.util.Mth.DEG_TO_RAD, rest[2] * net.minecraft.util.Mth.DEG_TO_RAD));
         root.resetPose();
         return List.of(root);
+    }
+
+    /** A model built facing +z, turned half round about the vertical axis through x = z = 0 (its rest pose turned). */
+    private static List<ModelPart> turn(List<ModelPart> parts, boolean turned) {
+        if (turned) {
+            for (ModelPart part : parts) {
+                PartPose pose = part.getInitialPose();
+                // Ry(pi) * Rz(a) Ry(b) Rx(c) = Rz(-a) Ry(b + pi) Rx(c)
+                part.setInitialPose(PartPose.offsetAndRotation(-pose.x, pose.y, -pose.z, pose.xRot, pose.yRot + net.minecraft.util.Mth.PI, -pose.zRot));
+                part.resetPose();
+            }
+        }
+        return parts;
+    }
+
+    private static float[] turn(float[] point, boolean turned) {
+        return turned ? new float[] { -point[0], point[1], -point[2] } : point;
     }
 
     private static float[] point(JsonObject o, String key) {

@@ -52,6 +52,11 @@ public final class MinionBodyRenderer {
         }
     }
 
+    private static boolean legless(@javax.annotation.Nullable ResourceLocation torsoMob) {
+        com.sirolf2009.necromancy.api.NecroMob mob = com.sirolf2009.necromancy.api.NecroMobRegistry.get(torsoMob);
+        return mob != null && !mob.hasPart(com.sirolf2009.necromancy.api.PartType.LEGS);
+    }
+
     public static Body of(Map<BodyPartLocation, ResourceLocation> parts) {
         return parts::get;
     }
@@ -61,6 +66,10 @@ public final class MinionBodyRenderer {
         PartModel torso = model(body, BodyPartLocation.TORSO);
 
         Vector3f hip = DEFAULT_HIP;
+        if (legs == null && legless(body.mob(BodyPartLocation.TORSO))) {
+            // a creature that has no legs at all (a worm, a snake, a fish) rests its body on the ground
+            hip = GROUND;
+        }
         if (legs != null) {
             // legs are scaled around the ground under them, so they keep standing on it
             poseStack.pushPose();
