@@ -6614,9 +6614,9 @@
    "saddleable": false,
    "rider_offset": 0.0,
    "shape": [
-    0.3,
-    0.3,
-    0.7
+    0.2,
+    0.15,
+    1.0
    ],
    "sounds": {
     "ambient": "orespawn:creepinghorror_living",
@@ -6895,9 +6895,9 @@
    "saddleable": false,
    "rider_offset": 0.0,
    "shape": [
-    0.35,
-    0.4,
-    0.9
+    0.2,
+    0.15,
+    1.2
    ],
    "sounds": {
     "ambient": null,
@@ -7057,8 +7057,8 @@
    "saddleable": false,
    "rider_offset": 0.0,
    "shape": [
-    0.0,
-    0.6,
+    0,
+    1.4,
     0.7
    ],
    "sounds": {

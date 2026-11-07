@@ -47,7 +47,7 @@ import net.minecraft.util.profiling.ProfilerFiller;
  * own space and turned with it), {@code "pose": {"bone": [x, y, z]}} to give bones another rest rotation in degrees
  * (a crest folded away, fins drooping), {@code "eyes": "ns:textures/..."} for a glowing eye layer and
  * {@code "glint": true} for the enchantment shimmer. A group with a pivot may also have a {@code "rotation"} in
- * degrees, added to its rest pose (folded wings).
+ * degrees, added to its rest pose (folded wings); any group may have an {@code "offset"} that moves its bones.
  */
 public final class DataPartModels extends SimpleJsonResourceReloadListener {
     private static final Map<String, PartAnimator> ANIMATORS = new LinkedHashMap<>();
@@ -290,7 +290,15 @@ public final class DataPartModels extends SimpleJsonResourceReloadListener {
             }
             // a bone below another bone of this group stays inside that one
             if (!split.under(name, names)) {
-                parts.add(split.take(name, names));
+                ModelPart bone = split.take(name, names);
+                if (group.has("offset")) {
+                    // the group moved as a whole (body segments that sit elsewhere in the creature's animation)
+                    float[] o = point(group, "offset");
+                    PartPose pose = bone.getInitialPose();
+                    bone.setInitialPose(PartPose.offsetAndRotation(pose.x + o[0], pose.y + o[1], pose.z + o[2], pose.xRot, pose.yRot, pose.zRot));
+                    bone.resetPose();
+                }
+                parts.add(bone);
             }
         }
         if (!group.has("pivot")) {
