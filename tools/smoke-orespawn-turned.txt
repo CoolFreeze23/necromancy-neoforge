@@ -1,0 +1,30 @@
+# Turned OreSpawn models (kyuubi yaw 180, dungeon beast yaw 90) beside their creatures, then walking
+wait 20
+difficulty easy
+gamerule doMobSpawning false
+gamerule doDaylightCycle false
+time set 6000
+weather clear
+hud off
+kill @e[type=!player]
+kill @e[type=item]
+wait 10
+summon necromancy:minion -4 -60 0 {NoAI:1b,Rotation:[0f,0f],Parts:{head:"orespawn:kyuubi",torso:"orespawn:kyuubi",arm_left:"orespawn:kyuubi",arm_right:"orespawn:kyuubi",legs:"orespawn:kyuubi"}}
+summon orespawn:kyuubi -4 -60 4 {NoAI:1b,Rotation:[0f,0f],PersistenceRequired:1b}
+summon necromancy:minion 4 -60 0 {NoAI:1b,Rotation:[0f,0f],Parts:{head:"orespawn:dungeon_beast",torso:"orespawn:dungeon_beast",arm_left:"orespawn:dungeon_beast",arm_right:"orespawn:dungeon_beast",legs:"orespawn:dungeon_beast"}}
+summon orespawn:dungeon_beast 4 -60 5 {NoAI:1b,Rotation:[0f,0f],PersistenceRequired:1b}
+tp @s 0 -57 14 180 15
+wait 60
+shot turned_front
+tp @s -12 -57.5 2 -90 12
+wait 30
+shot turned_side
+kill @e[type=!player]
+kill @e[type=item]
+wait 5
+summon necromancy:minion -2 -60 6 {Rotation:[90f,0f],Parts:{head:"orespawn:kyuubi",torso:"orespawn:kyuubi",arm_left:"orespawn:kyuubi",arm_right:"orespawn:kyuubi",legs:"orespawn:kyuubi"}}
+summon necromancy:minion 2 -60 6 {Rotation:[90f,0f],Parts:{head:"orespawn:dungeon_beast",torso:"orespawn:dungeon_beast",arm_left:"orespawn:dungeon_beast",arm_right:"orespawn:dungeon_beast",legs:"orespawn:dungeon_beast"}}
+tp @s 0 -58 -4 0 10
+wait 20
+burst turned_walk 40
+report done

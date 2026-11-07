@@ -144,11 +144,11 @@ public final class DataPartModels extends SimpleJsonResourceReloadListener {
                 float[] r = turn(point(p, "plug_right"), turned);
                 model = PartModel.arms(texture, left, right).plugs(l[0], l[1], l[2], r[0], r[1], r[2]);
             } else {
-                List<ModelPart> parts = new ArrayList<>();
+                List<ModelPart> grouped = new ArrayList<>();
                 for (JsonElement g : p.getAsJsonArray("groups")) {
-                    parts.addAll(group(split, g.getAsJsonObject(), file));
+                    grouped.addAll(group(split, g.getAsJsonObject(), file));
                 }
-                turn(offset(parts, p), turned);
+                List<ModelPart> parts = turn(offset(grouped, p), turned);
                 model = PartModel.of(texture, parts.toArray(ModelPart[]::new));
                 if (p.has("plug")) {
                     model.plug(turn(point(p, "plug"), turned));
@@ -317,11 +317,20 @@ public final class DataPartModels extends SimpleJsonResourceReloadListener {
             children.put("bone" + i++, bone);
         }
         ModelPart root = new ModelPart(List.of(), children);
-        float[] rest = group.has("rotation") ? point(group, "rotation") : new float[3];
-        root.setInitialPose(PartPose.offsetAndRotation(pivot[0], pivot[1], pivot[2], rest[0] * net.minecraft.util.Mth.DEG_TO_RAD,
-                rest[1] * net.minecraft.util.Mth.DEG_TO_RAD, rest[2] * net.minecraft.util.Mth.DEG_TO_RAD));
+        if (!group.has("rotation")) {
+            root.setInitialPose(PartPose.offset(pivot[0], pivot[1], pivot[2]));
+            root.resetPose();
+            return List.of(root);
+        }
+        // a rest rotation sits inside an unturned joint, so animators move the joint in the Minion's own frame
+        float[] rest = point(group, "rotation");
+        root.setInitialPose(PartPose.rotation(rest[0] * net.minecraft.util.Mth.DEG_TO_RAD, rest[1] * net.minecraft.util.Mth.DEG_TO_RAD,
+                rest[2] * net.minecraft.util.Mth.DEG_TO_RAD));
         root.resetPose();
-        return List.of(root);
+        ModelPart joint = new ModelPart(List.of(), new java.util.HashMap<>(Map.of("rest", root)));
+        joint.setInitialPose(PartPose.offset(pivot[0], pivot[1], pivot[2]));
+        joint.resetPose();
+        return List.of(joint);
     }
 
     /** A part's {@code "offset"}: every one of its bones moved by it. */
@@ -337,21 +346,30 @@ public final class DataPartModels extends SimpleJsonResourceReloadListener {
         return parts;
     }
 
-    /** A model built facing another way, turned about the vertical axis through x = z = 0 (its rest pose turned). */
+    /**
+     * A model built facing another way, turned about the vertical axis through x = z = 0. Each part becomes an unturned
+     * joint at its turned place holding the turned part, so animators (which assume a model facing -z) move the joint
+     * the right way: legs swing forward and back, heads nod up and down.
+     */
     private static List<ModelPart> turn(List<ModelPart> parts, float yaw) {
-        if (yaw != 0F) {
-            org.joml.Quaternionf turn = new org.joml.Quaternionf().rotationY(yaw);
-            for (ModelPart part : parts) {
-                PartPose pose = part.getInitialPose();
-                // the part inside a parent turned by yaw: T(Ry p) Ry R
-                org.joml.Vector3f offset = turn.transform(new org.joml.Vector3f(pose.x, pose.y, pose.z));
-                org.joml.Vector3f euler = new org.joml.Quaternionf(turn).mul(new org.joml.Quaternionf().rotationZYX(pose.zRot, pose.yRot, pose.xRot))
-                        .getEulerAnglesZYX(new org.joml.Vector3f());
-                part.setInitialPose(PartPose.offsetAndRotation(offset.x, offset.y, offset.z, euler.x, euler.y, euler.z));
-                part.resetPose();
-            }
+        if (yaw == 0F) {
+            return parts;
         }
-        return parts;
+        org.joml.Quaternionf turn = new org.joml.Quaternionf().rotationY(yaw);
+        List<ModelPart> joints = new ArrayList<>();
+        for (ModelPart part : parts) {
+            PartPose pose = part.getInitialPose();
+            org.joml.Vector3f at = turn.transform(new org.joml.Vector3f(pose.x, pose.y, pose.z));
+            org.joml.Vector3f euler = new org.joml.Quaternionf(turn).mul(new org.joml.Quaternionf().rotationZYX(pose.zRot, pose.yRot, pose.xRot))
+                    .getEulerAnglesZYX(new org.joml.Vector3f());
+            part.setInitialPose(PartPose.rotation(euler.x, euler.y, euler.z));
+            part.resetPose();
+            ModelPart joint = new ModelPart(List.of(), new java.util.HashMap<>(Map.of("turned", part)));
+            joint.setInitialPose(PartPose.offset(at.x, at.y, at.z));
+            joint.resetPose();
+            joints.add(joint);
+        }
+        return joints;
     }
 
     private static float[] turn(float[] point, float yaw) {

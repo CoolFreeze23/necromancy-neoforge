@@ -2,6 +2,7 @@
 
 usage: python -I tools/make_media.py <screenshots dir> <out dir>
 Scenes are scaled to 960 px wide; screens are cropped to their window; frame bursts become looping GIFs (~10 fps).
+Pictures missing from the run are skipped, so one script can redo a few of them.
 """
 import glob
 import os
@@ -12,10 +13,10 @@ from PIL import Image
 src, out = sys.argv[1], sys.argv[2]
 os.makedirs(out, exist_ok=True)
 
-SCENES = ['hero', 'lineup', 'cemetery', 'chalice']
+SCENES = ['hero', 'lineup', 'cemetery', 'chalice', 'orespawn_pairs', 'orespawn_chimeras']
 SCREENS = {'altar_screen': 230, 'sewing_screen': 0, 'minion_screen': 0}  # extra width to the right (altar side panel)
-TOOLTIPS = ['tooltip_part', 'tooltip_soul']
-GIFS = {'raise': 640, 'battle': 640, 'abomination': 640}
+TOOLTIPS = ['tooltip_part', 'tooltip_soul', 'tooltip_orespawn']
+GIFS = {'raise': 640, 'battle': 640, 'abomination': 640, 'orespawn_battle': 640}
 
 
 def save(img, name):
@@ -37,19 +38,24 @@ def window_box(img, extra_right):
     return (max(0, min(xs) - pad), max(0, min(ys) - pad), min(img.width, max(xs) + pad + extra_right), min(img.height, max(ys) + pad))
 
 
-for name in SCENES:
+def present(name):
+    return os.path.exists(os.path.join(src, name + '.png'))
+
+
+for name in [n for n in SCENES if present(n)]:
     img = Image.open(os.path.join(src, name + '.png')).convert('RGB')
     save(img.resize((960, int(img.height * 960 / img.width)), Image.LANCZOS), name + '.png')
 
-for name, extra in SCREENS.items():
+for name, extra in [(n, e) for n, e in SCREENS.items() if present(n)]:
     img = Image.open(os.path.join(src, name + '.png')).convert('RGB')
     save(img.crop(window_box(img, extra)), name + '.png')
 
-guide = Image.open(os.path.join(src, 'guide.png')).convert('RGB')
-w, h = guide.size
-save(guide.crop((w // 2 - 170, 0, w // 2 + 170, 380)), 'guide.png')
+if present('guide'):
+    guide = Image.open(os.path.join(src, 'guide.png')).convert('RGB')
+    w, h = guide.size
+    save(guide.crop((w // 2 - 170, 0, w // 2 + 170, 380)), 'guide.png')
 
-for name in TOOLTIPS:
+for name in [n for n in TOOLTIPS if present(n)]:
     img = Image.open(os.path.join(src, name + '.png')).convert('RGB')
     save(img.crop((60, 30, 700, 260)), name + '.png')
 
