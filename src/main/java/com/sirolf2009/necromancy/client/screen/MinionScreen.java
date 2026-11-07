@@ -22,7 +22,6 @@ import net.minecraft.world.entity.player.Inventory;
  * portrait, stats on the right, and the parts, soul, rank, order and stance in the tooltip of the portrait.
  */
 public class MinionScreen extends AbstractContainerScreen<MinionMenu> {
-    private static final ResourceLocation BACKGROUND = ResourceLocation.withDefaultNamespace("textures/gui/container/horse.png");
     private static final ResourceLocation SLOT = ResourceLocation.withDefaultNamespace("container/slot");
     private static final ResourceLocation SADDLE_SLOT = ResourceLocation.withDefaultNamespace("container/horse/saddle_slot");
     private float mouseX;
@@ -31,8 +30,8 @@ public class MinionScreen extends AbstractContainerScreen<MinionMenu> {
     public MinionScreen(MinionMenu menu, Inventory inventory, Component title) {
         super(menu, inventory, title);
         imageWidth = 176;
-        imageHeight = 166;
-        inventoryLabelY = imageHeight - 94;
+        imageHeight = 184;
+        inventoryLabelY = MinionMenu.INVENTORY_Y - 11;
     }
 
     @Override
@@ -42,7 +41,7 @@ public class MinionScreen extends AbstractContainerScreen<MinionMenu> {
         super.render(graphics, mouseX, mouseY, partialTick);
         renderTooltip(graphics, mouseX, mouseY);
         MinionEntity minion = menu.minion();
-        if (minion != null && isHovering(26, 18, 52, 52, mouseX, mouseY)) {
+        if (minion != null && isHovering(26, 17, 52, 72, mouseX, mouseY)) {
             graphics.renderComponentTooltip(font, details(minion), mouseX, mouseY);
         }
     }
@@ -51,9 +50,7 @@ public class MinionScreen extends AbstractContainerScreen<MinionMenu> {
     protected void renderBg(GuiGraphics graphics, float partialTick, int mouseX, int mouseY) {
         int x = leftPos;
         int y = topPos;
-        graphics.blit(BACKGROUND, x, y, 0, 0, imageWidth, imageHeight);
-        // cover the horse chest area with plain panel colour, then draw our slots
-        graphics.fill(x + 98, y + 17, x + 170, y + 71, 0xFFC6C6C6);
+        panel(graphics, x, y, imageWidth, imageHeight);
         for (int i = 0; i < 4; i++) {
             graphics.blitSprite(SLOT, x + 7, y + 17 + i * 18, 18, 18);
         }
@@ -62,10 +59,32 @@ public class MinionScreen extends AbstractContainerScreen<MinionMenu> {
         if (menu.slots.get(6).isActive()) {
             graphics.blitSprite(SADDLE_SLOT, x + 79, y + 53, 18, 18);
         }
+        // portrait window
+        graphics.fill(x + 26, y + 17, x + 78, y + 89, 0xFF373737);
+        graphics.fill(x + 27, y + 18, x + 77, y + 88, 0xFF000000);
+        for (int row = 0; row < 3; row++) {
+            for (int col = 0; col < 9; col++) {
+                graphics.blitSprite(SLOT, x + 7 + col * 18, y + MinionMenu.INVENTORY_Y - 1 + row * 18, 18, 18);
+            }
+        }
+        for (int col = 0; col < 9; col++) {
+            graphics.blitSprite(SLOT, x + 7 + col * 18, y + MinionMenu.INVENTORY_Y + 57, 18, 18);
+        }
         MinionEntity minion = menu.minion();
         if (minion != null) {
-            InventoryScreen.renderEntityInInventoryFollowsMouse(graphics, x + 26, y + 18, x + 78, y + 70, 17, 0.25F, mouseX, mouseY, minion);
+            InventoryScreen.renderEntityInInventoryFollowsMouse(graphics, x + 27, y + 18, x + 77, y + 88, 20, 0.25F, mouseX, mouseY, minion);
         }
+    }
+
+    /** A plain vanilla-style window: light grey with the bevelled border. */
+    private static void panel(GuiGraphics g, int x, int y, int w, int h) {
+        g.fill(x + 1, y, x + w - 1, y + h, 0xFF000000);
+        g.fill(x, y + 1, x + w, y + h - 1, 0xFF000000);
+        g.fill(x + 1, y + 1, x + w - 1, y + h - 1, 0xFFC6C6C6);
+        g.fill(x + 1, y + 1, x + w - 2, y + 3, 0xFFFFFFFF);
+        g.fill(x + 1, y + 1, x + 3, y + h - 2, 0xFFFFFFFF);
+        g.fill(x + 3, y + h - 3, x + w - 1, y + h - 1, 0xFF555555);
+        g.fill(x + w - 3, y + 3, x + w - 1, y + h - 1, 0xFF555555);
     }
 
     @Override
@@ -81,8 +100,9 @@ public class MinionScreen extends AbstractContainerScreen<MinionMenu> {
         line(graphics, x, y, "health", String.format("%.0f/%.0f", minion.getHealth(), minion.getMaxHealth()));
         line(graphics, x, y + 10, "attack", String.format("%.1f", menu.attackDamage()));
         line(graphics, x, y + 20, "armor", String.format("%.0f", minion.getAttributeValue(Attributes.ARMOR)));
-        // blocks per second on foot, as the F3 screen counts it
-        line(graphics, x, y + 30, "speed", String.format("%.1f", minion.getAttributeValue(Attributes.MOVEMENT_SPEED) * 43.17));
+        // blocks per second on foot: a mob's walk input is its speed too, so it moves at about 43.17 x speed^2 (a zombie: 2.3)
+        double speed = minion.getAttributeValue(Attributes.MOVEMENT_SPEED);
+        line(graphics, x, y + 30, "speed", String.format("%.1f", 43.17 * speed * speed));
         line(graphics, x, y + 40, "follow", String.format("%.0f", menu.followRange()));
         graphics.drawString(font, Component.translatable("rank.necromancy." + minion.rank()), x, y + 51,
                 minion.rank() >= 5 ? 0x8B0000 : 0x404040, false);

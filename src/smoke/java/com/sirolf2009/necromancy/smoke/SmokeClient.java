@@ -158,6 +158,24 @@ public class SmokeClient {
                     furnace.resize(mc, furnace.width, furnace.height);
                 }
             }
+            case "guide" -> com.sirolf2009.necromancy.client.NecroClientEvents.openGuide();
+            case "minionmenu" -> {
+                // tame the nearest Minion to the player and open its screen the way a sneak + empty-hand use does
+                var server = mc.getSingleplayerServer();
+                var uuid = mc.player.getUUID();
+                server.execute(() -> {
+                    var player = server.getPlayerList().getPlayer(uuid);
+                    var minions = player.serverLevel().getEntitiesOfClass(com.sirolf2009.necromancy.entity.MinionEntity.class, player.getBoundingBox().inflate(8));
+                    if (!minions.isEmpty()) {
+                        var minion = minions.get(0);
+                        minion.tame(player);
+                        player.setShiftKeyDown(true);
+                        minion.mobInteract(player, net.minecraft.world.InteractionHand.MAIN_HAND);
+                        player.setShiftKeyDown(false);
+                    }
+                });
+                wait = 10;
+            }
             case "useitem" -> {
                 // the player uses the held item on the top of a block, on the server
                 String[] xyz = parts[1].split(" ");

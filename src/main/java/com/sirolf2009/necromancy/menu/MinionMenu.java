@@ -35,6 +35,8 @@ public class MinionMenu extends AbstractContainerMenu {
     private static final ResourceLocation[] EMPTY_ARMOR = { InventoryMenu.EMPTY_ARMOR_SLOT_HELMET, InventoryMenu.EMPTY_ARMOR_SLOT_CHESTPLATE,
             InventoryMenu.EMPTY_ARMOR_SLOT_LEGGINGS, InventoryMenu.EMPTY_ARMOR_SLOT_BOOTS };
     public static final int EQUIPMENT_SLOTS = 7;
+    /** The player's inventory sits lower than in vanilla screens, under the fourth armour slot. */
+    public static final int INVENTORY_Y = 102;
 
     @Nullable
     private final MinionEntity minion;
@@ -93,11 +95,11 @@ public class MinionMenu extends AbstractContainerMenu {
         });
         for (int row = 0; row < 3; row++) {
             for (int col = 0; col < 9; col++) {
-                addSlot(new Slot(inventory, col + row * 9 + 9, 8 + col * 18, 84 + row * 18));
+                addSlot(new Slot(inventory, col + row * 9 + 9, 8 + col * 18, INVENTORY_Y + row * 18));
             }
         }
         for (int col = 0; col < 9; col++) {
-            addSlot(new Slot(inventory, col, 8 + col * 18, 142));
+            addSlot(new Slot(inventory, col, 8 + col * 18, INVENTORY_Y + 58));
         }
         addDataSlots(data);
     }
