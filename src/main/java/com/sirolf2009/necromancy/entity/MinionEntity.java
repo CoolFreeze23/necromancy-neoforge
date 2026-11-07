@@ -303,6 +303,8 @@ public class MinionEntity extends TamableAnimal implements RangedAttackMob, Item
         modifier(Attributes.KNOCKBACK_RESISTANCE, PARTS_MODIFIER, knockback, AttributeModifier.Operation.ADD_MULTIPLIED_BASE);
         modifier(Attributes.MOVEMENT_SPEED, PARTS_MODIFIER, speed, AttributeModifier.Operation.ADD_MULTIPLIED_BASE);
         modifier(Attributes.ATTACK_DAMAGE, PARTS_MODIFIER, damage, AttributeModifier.Operation.ADD_MULTIPLIED_BASE);
+        modifier(Attributes.MAX_HEALTH, Necromancy.id("legendary"), soul.potency() == com.sirolf2009.necromancy.soul.SoulPotency.LEGENDARY ? 0.2 : 0,
+                AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
         // extra attributes: one modifier per attribute and operation; clear the old ones first
         for (var holder : net.minecraft.core.registries.BuiltInRegistries.ATTRIBUTE.holders().toList()) {
             AttributeInstance instance = getAttribute(holder);
@@ -797,6 +799,14 @@ public class MinionEntity extends TamableAnimal implements RangedAttackMob, Item
             amount = box[0];
             if (amount <= 0) {
                 return false;
+            }
+            // a Legendary soul refuses to leave: the first lethal blow every ten minutes leaves it at one health
+            if (amount >= getHealth() && soul.potency() == com.sirolf2009.necromancy.soul.SoulPotency.LEGENDARY
+                    && !source.is(net.minecraft.tags.DamageTypeTags.BYPASSES_INVULNERABILITY) && cooldown("undying", 12000)) {
+                setHealth(1F);
+                addEffect(new net.minecraft.world.effect.MobEffectInstance(net.minecraft.world.effect.MobEffects.REGENERATION, 200, 1));
+                level().broadcastEntityEvent(this, (byte) 35);
+                return true;
             }
         }
         return super.hurt(source, amount);

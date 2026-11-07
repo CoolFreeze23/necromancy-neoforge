@@ -62,17 +62,19 @@ for k in ['friend', 'enemy', 'forget']:
 for i in range(1, 13):
     dynamic.add('book.necromancy.guide.%d' % i)
 
-needed = literal | dynamic
+needed = {k for k in literal | dynamic if not k.endswith('.')}
 status = 0
 for lang in langs:
     candidates = glob.glob(os.path.join(root, 'src', '*', 'resources', 'assets', 'necromancy', 'lang', lang + '.json'))
-    if not candidates:
+    if not candidates and not glob.glob(os.path.join(root, 'src', 'main', 'lang-src', lang, '*.json')):
         print('%s: no file' % lang)
         status = 1
         continue
     data = {}
     for c in candidates:
         data.update(json.load(open(c, encoding='utf-8')))
+    for frag in glob.glob(os.path.join(root, 'src', 'main', 'lang-src', lang, '*.json')):
+        data.update(json.load(open(frag, encoding='utf-8')))
     missing = sorted(k for k in needed if k not in data)
     print('%s: %d keys, %d needed by code, %d missing' % (lang, len(data), len(needed), len(missing)))
     for k in missing:

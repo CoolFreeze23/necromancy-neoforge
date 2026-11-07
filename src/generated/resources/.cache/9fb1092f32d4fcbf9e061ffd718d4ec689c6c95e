@@ -1,4 +1,4 @@
-// 1.21.1	2026-11-08T02:01:46.300991	Recipes
+// 1.21.1	2026-11-08T02:11:41.6643028	Recipes
 35705551c9456d7147a00c10216542389fde44c3 data/necromancy/advancement/recipes/combat/blood_scythe.json
 3e4886e429486ee4bd36c9a7dd4ef634787b7270 data/necromancy/advancement/recipes/combat/bone_scythe.json
 fece73a3701ad3a0cf9904b24ea0ff242c1bfbad data/necromancy/advancement/recipes/decorations/sewing_machine.json
@@ -51,17 +51,17 @@ d682844793dcba54db65d90c95ff1a1f0e0f7c42 data/necromancy/recipe/sewing/enderman_
 fa8d2b968f45801a4c55cefc0a3587736747ed92 data/necromancy/recipe/sewing/husk_legs.json
 a89aa8e56f04f2d6d3032646d3899e80d44ba5ed data/necromancy/recipe/sewing/husk_torso.json
 83a0f96427586c38c822c9d6c712645f94cf13b2 data/necromancy/recipe/sewing/iron_golem_arm.json
-9e98455436981d3f8183aa956404276c710ca31c data/necromancy/recipe/sewing/iron_golem_head.json
+91554a00f64a8239718dd08c16522126a02c03f3 data/necromancy/recipe/sewing/iron_golem_head.json
 596fd2f259230ba1d3aeacb5b585968e4c6d58d8 data/necromancy/recipe/sewing/iron_golem_legs.json
 fe4fc847f2a50668afe99a9ad40ae49210a5454d data/necromancy/recipe/sewing/iron_golem_torso.json
 91caf7c23668069405682e196461c09c10d49c50 data/necromancy/recipe/sewing/mooshroom_arm.json
 4365e8b361ab9f651f172cec3fa1a6473f76cd72 data/necromancy/recipe/sewing/mooshroom_head.json
 3547e8eb3c73efe4fb5a2334ecb0da4b22fb8639 data/necromancy/recipe/sewing/mooshroom_legs.json
 19f89f20b391eaa2153dd08310dbd0e216e30644 data/necromancy/recipe/sewing/mooshroom_torso.json
-eb409aaefeec9826158a5702d7027b1b3de737c0 data/necromancy/recipe/sewing/night_crawler_arm.json
-d2e091814936e8fc8588dfdcb45fce2e90452971 data/necromancy/recipe/sewing/night_crawler_head.json
-fa38eb09208c06a632c7339cc821cfe42ad5c9a5 data/necromancy/recipe/sewing/night_crawler_legs.json
-b95a072537af78a2f0b3df69a5f1ce0a97b36e2f data/necromancy/recipe/sewing/night_crawler_torso.json
+7503837caf04c2404f78bc79d926d50d86d5dc2f data/necromancy/recipe/sewing/night_crawler_arm.json
+463e46bd2fc391852651f18163cd013970f30e38 data/necromancy/recipe/sewing/night_crawler_head.json
+debc44de4d4d0b577b120cc34dc02f1a802f2080 data/necromancy/recipe/sewing/night_crawler_legs.json
+a7da8c832a4fa9f46a1f7206e6961845a66b80d6 data/necromancy/recipe/sewing/night_crawler_torso.json
 3543ef45781537919933207be90e20ae1c53a70f data/necromancy/recipe/sewing/pig_arm.json
 7c97ea99a54b0867bcdccad36fca1037b3e27954 data/necromancy/recipe/sewing/pig_head.json
 8a388b90015029769e3f73c80ecf173f19e9b2e8 data/necromancy/recipe/sewing/pig_legs.json

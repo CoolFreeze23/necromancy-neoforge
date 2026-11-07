@@ -80,7 +80,7 @@ public final class VanillaNecroMobs {
                 .trait(ARM, Traits.WATER_HURTS).trait(PartType.LEGS, Traits.WATER_HURTS)
                 .sounds(sound(SoundEvents.ENDERMAN_AMBIENT), sound(SoundEvents.ENDERMAN_HURT), sound(SoundEvents.ENDERMAN_DEATH));
         sewn("iron_golem", () -> Ingredient.of(Items.IRON_BLOCK)).weight(4).shape(0.8F, 0.9F, 1.2F)
-                .essence(PartType.HEAD, () -> Ingredient.of(Items.CARVED_PUMPKIN))
+                .essence(PartType.HEAD, () -> Ingredient.of(Items.POPPY))
                 .stats(HEAD, PartStats.of(1, 1, 2, 0, 0.5))
                 .stats(TORSO, PartStats.of(5, 0, 2, 0, 0))
                 .armStats(PartStats.of(1, 0, 1, 0, 1.5))
@@ -266,7 +266,7 @@ public final class VanillaNecroMobs {
                 .trait(PartType.HEAD, Traits.RAM)
                 .attribute(PartType.HEAD, Attributes.ATTACK_KNOCKBACK, 1.0)
                 .sounds(sound(SoundEvents.GOAT_AMBIENT), sound(SoundEvents.GOAT_HURT), sound(SoundEvents.GOAT_DEATH));
-        sewn("night_crawler", () -> Ingredient.of(Items.ENDER_PEARL)).weight(3).shape(0.9F, 0.7F, 0.6F)
+        sewn("night_crawler", () -> Ingredient.of(Items.PHANTOM_MEMBRANE)).weight(3).shape(0.9F, 0.7F, 0.6F)
                 .stats(HEAD, PartStats.of(1, 1.5, 0, 0, 0.75))
                 .stats(TORSO, PartStats.of(2, 0, 0, 0, 0))
                 .armStats(PartStats.of(0.5, 0, 0, 0, 0.75))

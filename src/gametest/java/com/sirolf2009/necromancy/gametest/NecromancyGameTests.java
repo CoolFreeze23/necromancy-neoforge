@@ -113,15 +113,23 @@ public class NecromancyGameTests {
                 }
             }
         }
-        h.assertTrue(missing.isEmpty(), "no sewing recipe for " + missing);
+        h.assertTrue(missing.isEmpty(), missing.size() + " parts have no sewing recipe, e.g. " + missing.subList(0, Math.min(3, missing.size())));
         h.succeed();
     }
 
     /** The zombie torso shape from the original mod matches on the 4x4 grid. */
     @GameTest(template = "platform")
     public static void sewingGridMatchesTheOriginalShape(GameTestHelper h) {
-        TransientCraftingContainer grid = new TransientCraftingContainer(new net.minecraft.world.inventory.InventoryMenu(
-                new net.minecraft.world.entity.player.Inventory(h.makeMockPlayer(GameType.SURVIVAL)), false, h.makeMockPlayer(GameType.SURVIVAL)) {
+        TransientCraftingContainer grid = new TransientCraftingContainer(new net.minecraft.world.inventory.AbstractContainerMenu(null, 0) {
+            @Override
+            public ItemStack quickMoveStack(Player player, int index) {
+                return ItemStack.EMPTY;
+            }
+
+            @Override
+            public boolean stillValid(Player player) {
+                return true;
+            }
         }, 4, 4);
         String[] rows = { " LL ", "BHUB", "LEEL", "BLLB" };
         for (int y = 0; y < 4; y++) {
@@ -187,6 +195,7 @@ public class NecromancyGameTests {
     /** A server player for the altar (it needs one), removed again when the test ends. */
     private static net.minecraft.server.level.ServerPlayer raiser(GameTestHelper h) {
         var player = h.makeMockServerPlayerInLevel();
+        player.setGameMode(GameType.SURVIVAL);
         player.moveTo(h.absoluteVec(FLOOR.above(2).getCenter()));
         CLEANUP.add(player);
         return player;

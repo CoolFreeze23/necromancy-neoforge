@@ -106,6 +106,7 @@ public final class NecroTagProviders {
                     EntityType.VEX, EntityType.ALLAY, EntityType.SHULKER, EntityType.ARMOR_STAND,
                     NecroEntities.MINION.get(), NecroEntities.TEDDY.get());
             tag(NecroTags.REPLACEABLE_UNDEAD).add(EntityType.ZOMBIE, EntityType.SKELETON);
+            tag(NecroTags.MINION_IGNORES).add(EntityType.CREEPER, EntityType.ENDERMAN, EntityType.ZOMBIFIED_PIGLIN, EntityType.PIGLIN);
             tag(NecroTags.LEGENDARY_SOULS).add(EntityType.WITHER, EntityType.ENDER_DRAGON, EntityType.WARDEN, EntityType.ELDER_GUARDIAN);
 
             // Minions are undead: Smite hurts them, Harming heals them, Regeneration and Poison do nothing.

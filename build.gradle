@@ -16,12 +16,18 @@ repositories {
     maven {
         name = "Jared's maven"
         url = 'https://maven.blamejared.com/'
-        content { includeGroup 'mezz.jei' }
+        content {
+            includeGroup 'mezz.jei'
+            includeGroup 'net.mezzdev.config'
+        }
     }
     maven {
         name = 'ModMaven'
         url = 'https://modmaven.dev'
-        content { includeGroup 'mezz.jei' }
+        content {
+            includeGroup 'mezz.jei'
+            includeGroup 'net.mezzdev.config'
+        }
     }
 }
 
@@ -75,6 +81,7 @@ neoForge {
             programArguments.addAll('--mod', project.mod_id, '--all',
                     '--output', file('src/generated/resources/').getAbsolutePath(),
                     '--existing', file('src/main/resources/').getAbsolutePath())
+            systemProperty 'necromancy.langsrc', file('src/main/lang-src').getAbsolutePath()
         }
         gameTestServer {
             type = "gameTestServer"

@@ -88,6 +88,8 @@ public final class NecroLootTables {
                     .withPool(single(Items.LEATHER, 1)));
             // A Minion's body is the soul's to keep: the organ modifier skips it too (#necromancy:bloodless).
             add(NecroEntities.MINION.get(), LootTable.lootTable());
+            // the Abomination drops its parts, its heart and organs in code
+            add(NecroEntities.ABOMINATION.get(), LootTable.lootTable());
         }
 
         private static LootPool.Builder single(ItemLike item, int count) {

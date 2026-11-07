@@ -38,6 +38,7 @@ public final class NecroDataGen {
         generator.addProvider(event.includeClient(), new NecroBlockStates(output, files));
         generator.addProvider(event.includeClient(), new NecroSoundDefinitions(output, files));
         generator.addProvider(event.includeClient(), new NecroLanguage(output));
+        generator.addProvider(event.includeClient(), new NecroLanguage.Fragments(output, "pt_br"));
 
         // server: the enchantment first, so the tag providers can see it
         DatapackBuiltinEntriesProvider builtins = generator.addProvider(event.includeServer(), new DatapackBuiltinEntriesProvider(output, lookup,

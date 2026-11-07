@@ -71,6 +71,13 @@ public final class NecroClient {
         event.register(NecroMenus.MINION.get(), com.sirolf2009.necromancy.client.screen.MinionScreen::new);
     }
 
+    /** Sewing recipes have no recipe book tab; say so, so the client does not warn about every one of them. */
+    @SubscribeEvent
+    public static void recipeBook(net.neoforged.neoforge.client.event.RegisterRecipeBookCategoriesEvent event) {
+        event.registerRecipeCategoryFinder(com.sirolf2009.necromancy.registry.NecroRecipes.SEWING.get(),
+                recipe -> net.minecraft.client.RecipeBookCategories.UNKNOWN);
+    }
+
     @SubscribeEvent
     public static void keys(RegisterKeyMappingsEvent event) {
         event.register(SHOOT_TEAR);

@@ -65,6 +65,7 @@ public class NecroLanguage extends LanguageProvider {
         tags();
         config();
         jei();
+        fragments(this::add, "en_us");
         checkComplete();
     }
 
@@ -401,6 +402,40 @@ public class NecroLanguage extends LanguageProvider {
     }
 
     // ------------------------------------------------------------------ completeness check
+
+    /**
+     * Adds the hand-written key files in {@code src/main/lang-src/<lang>/} (the guide book and later features). The data
+     * run passes the folder as the {@code necromancy.langsrc} system property.
+     */
+    static void fragments(java.util.function.BiConsumer<String, String> add, String lang) {
+        java.nio.file.Path dir = java.nio.file.Path.of(System.getProperty("necromancy.langsrc", "src/main/lang-src"), lang);
+        if (!java.nio.file.Files.isDirectory(dir)) {
+            throw new IllegalStateException("Language fragments not found: " + dir.toAbsolutePath());
+        }
+        try (var files = java.nio.file.Files.list(dir)) {
+            for (java.nio.file.Path file : files.filter(f -> f.toString().endsWith(".json")).sorted().toList()) {
+                var json = com.google.gson.JsonParser.parseString(java.nio.file.Files.readString(file, java.nio.charset.StandardCharsets.UTF_8)).getAsJsonObject();
+                json.entrySet().forEach(e -> add.accept(e.getKey(), e.getValue().getAsString()));
+            }
+        } catch (java.io.IOException e) {
+            throw new java.io.UncheckedIOException(e);
+        }
+    }
+
+    /** Another language built only from its fragment files (Brazilian Portuguese). */
+    public static class Fragments extends LanguageProvider {
+        private final String lang;
+
+        public Fragments(PackOutput output, String lang) {
+            super(output, Necromancy.MOD_ID, lang);
+            this.lang = lang;
+        }
+
+        @Override
+        protected void addTranslations() {
+            fragments(this::add, lang);
+        }
+    }
 
     private void checkComplete() {
         Set<String> missing = new TreeSet<>();
