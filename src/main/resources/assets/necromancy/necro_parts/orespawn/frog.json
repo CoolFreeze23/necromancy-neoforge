@@ -1,0 +1,33 @@
+{
+  "mob": "orespawn:frog",
+  "requires": "orespawn",
+  "geo": "orespawn:geo/entity/frog.geo.json",
+  "texture": "orespawn:textures/entity/frogtexture.png",
+  "scale": 1.85,
+  "head": {
+    "groups": [
+      {"bones": ["body", "leye", "reye"], "pivot": [0, 24, 2]}
+    ],
+    "plug": [0, 24, 2],
+    "animator": "look"
+  },
+  "torso": {
+    "groups": [
+      {"bones": ["jaw"]}
+    ],
+    "plug": [0, 24, -1.6],
+    "neck": [0, 24, 2],
+    "shoulder_left": [5, 22, -1.6],
+    "shoulder_right": [-5, 22, -1.6]
+  },
+  "legs": {
+    "groups": [
+      {"bones": ["lfleg"], "pivot": [3, 20, 0]},
+      {"bones": ["rfleg"], "pivot": [-3, 20, 0]},
+      {"bones": ["rleg1", "rleg2"], "pivot": [-3, 22, 3]},
+      {"bones": ["lleg1", "lleg2"], "pivot": [3, 22, 3]}
+    ],
+    "hip": [0, 24, -1.6],
+    "animator": "walk_pair"
+  }
+}

@@ -1,0 +1,737 @@
+# OreSpawn small insects and critters: each Minion next to its creature, then mixed with zombie parts
+# (tools/smoke-orespawn.sh tools/smoke-orespawn-critters.txt)
+wait 20
+difficulty easy
+gamerule doMobSpawning false
+gamerule doDaylightCycle false
+time set 6000
+weather clear
+gamerule doWeatherCycle false
+gamemode spectator
+hud off
+kill @e[type=!player]
+wait 10
+
+# --- ant
+tp @s 0 -60 6 180 0
+wait 10
+fill -8 -50 -48 8 -50 8 minecraft:oak_leaves[persistent=true]
+fill -7 -59 -46 7 -59 4 minecraft:light[level=15]
+wait 20
+summon orespawn:ant -1.75 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],attributes:[{id:"minecraft:generic.scale",base:5.4d}]}
+summon necromancy:minion 1.75 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:ant",torso:"orespawn:ant",legs:"orespawn:ant"}}
+summon orespawn:ant -1.75 -60 -14 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],attributes:[{id:"minecraft:generic.scale",base:5.4d}]}
+summon necromancy:minion 1.75 -60 -14 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:ant",torso:"orespawn:ant",legs:"orespawn:ant"}}
+summon necromancy:minion -3 -60 -28 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:ant",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 0 -60 -28 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:ant",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 3 -60 -28 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:ant"}}
+summon necromancy:minion -3 -60 -42 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:ant",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 0 -60 -42 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:ant",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 3 -60 -42 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:ant"}}
+wait 40
+hitboxes on
+tp @s 0 -60.9 3.3 180 6
+wait 15
+shot ant_1front
+hitboxes off
+tp @s 0 -60.9 -10.7 180 6
+wait 15
+shot ant_2side
+tp @s 0 -60.4 -23.4 180 5
+wait 15
+shot ant_3mix_front
+tp @s 0 -60.4 -37.4 180 5
+wait 15
+shot ant_4mix_side
+tp @s 0.00 -59.8 3.0 150 24
+wait 10
+shot ant_5real_34
+tp @s 3.50 -59.8 3.0 150 24
+wait 10
+shot ant_6minion_34
+
+# --- red_ant
+tp @s 32 -60 6 180 0
+wait 10
+fill 24 -50 -48 40 -50 8 minecraft:oak_leaves[persistent=true]
+fill 25 -59 -46 39 -59 4 minecraft:light[level=15]
+wait 20
+summon orespawn:red_ant 30.25 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],attributes:[{id:"minecraft:generic.scale",base:3.86d}]}
+summon necromancy:minion 33.75 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:red_ant",torso:"orespawn:red_ant",legs:"orespawn:red_ant"}}
+summon orespawn:red_ant 30.25 -60 -14 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],attributes:[{id:"minecraft:generic.scale",base:3.86d}]}
+summon necromancy:minion 33.75 -60 -14 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:red_ant",torso:"orespawn:red_ant",legs:"orespawn:red_ant"}}
+summon necromancy:minion 29 -60 -28 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:red_ant",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 32 -60 -28 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:red_ant",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 35 -60 -28 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:red_ant"}}
+summon necromancy:minion 29 -60 -42 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:red_ant",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 32 -60 -42 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:red_ant",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 35 -60 -42 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:red_ant"}}
+wait 40
+hitboxes on
+tp @s 32 -60.9 3.3 180 6
+wait 15
+shot red_ant_1front
+hitboxes off
+tp @s 32 -60.9 -10.7 180 6
+wait 15
+shot red_ant_2side
+tp @s 32 -60.4 -23.4 180 5
+wait 15
+shot red_ant_3mix_front
+tp @s 32 -60.4 -37.4 180 5
+wait 15
+shot red_ant_4mix_side
+tp @s 32.00 -59.8 3.0 150 24
+wait 10
+shot red_ant_5real_34
+tp @s 35.50 -59.8 3.0 150 24
+wait 10
+shot red_ant_6minion_34
+
+# --- rainbow_ant
+tp @s 64 -60 6 180 0
+wait 10
+fill 56 -50 -48 72 -50 8 minecraft:oak_leaves[persistent=true]
+fill 57 -59 -46 71 -59 4 minecraft:light[level=15]
+wait 20
+summon orespawn:rainbow_ant 62.25 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],attributes:[{id:"minecraft:generic.scale",base:5.4d}]}
+summon necromancy:minion 65.75 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:rainbow_ant",torso:"orespawn:rainbow_ant",legs:"orespawn:rainbow_ant"}}
+summon orespawn:rainbow_ant 62.25 -60 -14 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],attributes:[{id:"minecraft:generic.scale",base:5.4d}]}
+summon necromancy:minion 65.75 -60 -14 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:rainbow_ant",torso:"orespawn:rainbow_ant",legs:"orespawn:rainbow_ant"}}
+summon necromancy:minion 61 -60 -28 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:rainbow_ant",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 64 -60 -28 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:rainbow_ant",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 67 -60 -28 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:rainbow_ant"}}
+summon necromancy:minion 61 -60 -42 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:rainbow_ant",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 64 -60 -42 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:rainbow_ant",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 67 -60 -42 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:rainbow_ant"}}
+wait 40
+hitboxes on
+tp @s 64 -60.9 3.3 180 6
+wait 15
+shot rainbow_ant_1front
+hitboxes off
+tp @s 64 -60.9 -10.7 180 6
+wait 15
+shot rainbow_ant_2side
+tp @s 64 -60.4 -23.4 180 5
+wait 15
+shot rainbow_ant_3mix_front
+tp @s 64 -60.4 -37.4 180 5
+wait 15
+shot rainbow_ant_4mix_side
+tp @s 64.00 -59.8 3.0 150 24
+wait 10
+shot rainbow_ant_5real_34
+tp @s 67.50 -59.8 3.0 150 24
+wait 10
+shot rainbow_ant_6minion_34
+
+# --- unstable_ant
+tp @s 96 -60 6 180 0
+wait 10
+fill 88 -50 -48 104 -50 8 minecraft:oak_leaves[persistent=true]
+fill 89 -59 -46 103 -59 4 minecraft:light[level=15]
+wait 20
+summon orespawn:unstable_ant 94.25 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],attributes:[{id:"minecraft:generic.scale",base:5.4d}]}
+summon necromancy:minion 97.75 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:unstable_ant",torso:"orespawn:unstable_ant",legs:"orespawn:unstable_ant"}}
+summon orespawn:unstable_ant 94.25 -60 -14 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],attributes:[{id:"minecraft:generic.scale",base:5.4d}]}
+summon necromancy:minion 97.75 -60 -14 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:unstable_ant",torso:"orespawn:unstable_ant",legs:"orespawn:unstable_ant"}}
+summon necromancy:minion 93 -60 -28 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:unstable_ant",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 96 -60 -28 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:unstable_ant",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 99 -60 -28 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:unstable_ant"}}
+summon necromancy:minion 93 -60 -42 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:unstable_ant",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 96 -60 -42 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:unstable_ant",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 99 -60 -42 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:unstable_ant"}}
+wait 40
+hitboxes on
+tp @s 96 -60.9 3.3 180 6
+wait 15
+shot unstable_ant_1front
+hitboxes off
+tp @s 96 -60.9 -10.7 180 6
+wait 15
+shot unstable_ant_2side
+tp @s 96 -60.4 -23.4 180 5
+wait 15
+shot unstable_ant_3mix_front
+tp @s 96 -60.4 -37.4 180 5
+wait 15
+shot unstable_ant_4mix_side
+tp @s 96.00 -59.8 3.0 150 24
+wait 10
+shot unstable_ant_5real_34
+tp @s 99.50 -59.8 3.0 150 24
+wait 10
+shot unstable_ant_6minion_34
+
+# --- termite
+tp @s 128 -60 6 180 0
+wait 10
+fill 120 -50 -48 136 -50 8 minecraft:oak_leaves[persistent=true]
+fill 121 -59 -46 135 -59 4 minecraft:light[level=15]
+wait 20
+summon orespawn:termite 126.25 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],attributes:[{id:"minecraft:generic.scale",base:3.86d}]}
+summon necromancy:minion 129.75 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:termite",torso:"orespawn:termite",legs:"orespawn:termite"}}
+summon orespawn:termite 126.25 -60 -14 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],attributes:[{id:"minecraft:generic.scale",base:3.86d}]}
+summon necromancy:minion 129.75 -60 -14 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:termite",torso:"orespawn:termite",legs:"orespawn:termite"}}
+summon necromancy:minion 125 -60 -28 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:termite",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 128 -60 -28 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:termite",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 131 -60 -28 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:termite"}}
+summon necromancy:minion 125 -60 -42 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:termite",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 128 -60 -42 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:termite",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 131 -60 -42 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:termite"}}
+wait 40
+hitboxes on
+tp @s 128 -60.9 3.3 180 6
+wait 15
+shot termite_1front
+hitboxes off
+tp @s 128 -60.9 -10.7 180 6
+wait 15
+shot termite_2side
+tp @s 128 -60.4 -23.4 180 5
+wait 15
+shot termite_3mix_front
+tp @s 128 -60.4 -37.4 180 5
+wait 15
+shot termite_4mix_side
+tp @s 128.00 -59.8 3.0 150 24
+wait 10
+shot termite_5real_34
+tp @s 131.50 -59.8 3.0 150 24
+wait 10
+shot termite_6minion_34
+
+# --- cricket
+tp @s 160 -60 6 180 0
+wait 10
+fill 152 -50 -48 168 -50 8 minecraft:oak_leaves[persistent=true]
+fill 153 -59 -46 167 -59 4 minecraft:light[level=15]
+wait 20
+summon orespawn:cricket 158.25 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],attributes:[{id:"minecraft:generic.scale",base:3.6d}]}
+summon necromancy:minion 161.75 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:cricket",torso:"orespawn:cricket",legs:"orespawn:cricket"}}
+summon orespawn:cricket 158.25 -60 -14 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],attributes:[{id:"minecraft:generic.scale",base:3.6d}]}
+summon necromancy:minion 161.75 -60 -14 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:cricket",torso:"orespawn:cricket",legs:"orespawn:cricket"}}
+summon necromancy:minion 157 -60 -28 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:cricket",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 160 -60 -28 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:cricket",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 163 -60 -28 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:cricket"}}
+summon necromancy:minion 157 -60 -42 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:cricket",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 160 -60 -42 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:cricket",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 163 -60 -42 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:cricket"}}
+wait 40
+hitboxes on
+tp @s 160 -60.9 3.3 180 6
+wait 15
+shot cricket_1front
+hitboxes off
+tp @s 160 -60.9 -10.7 180 6
+wait 15
+shot cricket_2side
+tp @s 160 -60.4 -23.4 180 5
+wait 15
+shot cricket_3mix_front
+tp @s 160 -60.4 -37.4 180 5
+wait 15
+shot cricket_4mix_side
+tp @s 160.00 -59.8 3.0 150 24
+wait 10
+shot cricket_5real_34
+tp @s 163.50 -59.8 3.0 150 24
+wait 10
+shot cricket_6minion_34
+
+# --- stink_bug
+tp @s 192 -60 6 180 0
+wait 10
+fill 184 -50 -48 200 -50 8 minecraft:oak_leaves[persistent=true]
+fill 185 -59 -46 199 -59 4 minecraft:light[level=15]
+wait 20
+summon orespawn:stink_bug 190.25 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],attributes:[{id:"minecraft:generic.scale",base:2.12d}]}
+summon necromancy:minion 193.75 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:stink_bug",torso:"orespawn:stink_bug",legs:"orespawn:stink_bug"}}
+summon orespawn:stink_bug 190.25 -60 -14 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],attributes:[{id:"minecraft:generic.scale",base:2.12d}]}
+summon necromancy:minion 193.75 -60 -14 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:stink_bug",torso:"orespawn:stink_bug",legs:"orespawn:stink_bug"}}
+summon necromancy:minion 189 -60 -28 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:stink_bug",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 192 -60 -28 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:stink_bug",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 195 -60 -28 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:stink_bug"}}
+summon necromancy:minion 189 -60 -42 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:stink_bug",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 192 -60 -42 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:stink_bug",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 195 -60 -42 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:stink_bug"}}
+wait 40
+hitboxes on
+tp @s 192 -60.9 3.3 180 6
+wait 15
+shot stink_bug_1front
+hitboxes off
+tp @s 192 -60.9 -10.7 180 6
+wait 15
+shot stink_bug_2side
+tp @s 192 -60.4 -23.4 180 5
+wait 15
+shot stink_bug_3mix_front
+tp @s 192 -60.4 -37.4 180 5
+wait 15
+shot stink_bug_4mix_side
+tp @s 192.00 -59.8 3.0 150 24
+wait 10
+shot stink_bug_5real_34
+tp @s 195.50 -59.8 3.0 150 24
+wait 10
+shot stink_bug_6minion_34
+
+# --- dragonfly
+tp @s 224 -60 6 180 0
+wait 10
+fill 216 -50 -48 232 -50 8 minecraft:oak_leaves[persistent=true]
+fill 217 -59 -46 231 -59 4 minecraft:light[level=15]
+wait 20
+summon orespawn:dragonfly 222.25 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],attributes:[{id:"minecraft:generic.scale",base:0.93d}]}
+summon necromancy:minion 225.75 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:dragonfly",torso:"orespawn:dragonfly",arm_left:"orespawn:dragonfly",arm_right:"orespawn:dragonfly"}}
+summon orespawn:dragonfly 222.25 -60 -14 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],attributes:[{id:"minecraft:generic.scale",base:0.93d}]}
+summon necromancy:minion 225.75 -60 -14 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:dragonfly",torso:"orespawn:dragonfly",arm_left:"orespawn:dragonfly",arm_right:"orespawn:dragonfly"}}
+summon necromancy:minion 221 -60 -28 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:dragonfly",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 224 -60 -28 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:dragonfly",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 227 -60 -28 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:dragonfly",arm_right:"orespawn:dragonfly",legs:"necromancy:zombie"}}
+summon necromancy:minion 221 -60 -42 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:dragonfly",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 224 -60 -42 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:dragonfly",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 227 -60 -42 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:dragonfly",arm_right:"orespawn:dragonfly",legs:"necromancy:zombie"}}
+wait 40
+hitboxes on
+tp @s 224 -60.9 3.3 180 6
+wait 15
+shot dragonfly_1front
+hitboxes off
+tp @s 224 -60.9 -10.7 180 6
+wait 15
+shot dragonfly_2side
+tp @s 224 -60.4 -23.4 180 5
+wait 15
+shot dragonfly_3mix_front
+tp @s 224 -60.4 -37.4 180 5
+wait 15
+shot dragonfly_4mix_side
+tp @s 224.00 -59.8 3.0 150 24
+wait 10
+shot dragonfly_5real_34
+tp @s 227.50 -59.8 3.0 150 24
+wait 10
+shot dragonfly_6minion_34
+
+# --- mosquito
+tp @s 256 -60 6 180 0
+wait 10
+fill 248 -50 -48 264 -50 8 minecraft:oak_leaves[persistent=true]
+fill 249 -59 -46 263 -59 4 minecraft:light[level=15]
+wait 20
+summon orespawn:mosquito 254.25 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],attributes:[{id:"minecraft:generic.scale",base:2.4d}]}
+summon necromancy:minion 257.75 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:mosquito",torso:"orespawn:mosquito",arm_left:"orespawn:mosquito",arm_right:"orespawn:mosquito"}}
+summon orespawn:mosquito 254.25 -60 -14 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],attributes:[{id:"minecraft:generic.scale",base:2.4d}]}
+summon necromancy:minion 257.75 -60 -14 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:mosquito",torso:"orespawn:mosquito",arm_left:"orespawn:mosquito",arm_right:"orespawn:mosquito"}}
+summon necromancy:minion 253 -60 -28 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:mosquito",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 256 -60 -28 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:mosquito",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 259 -60 -28 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:mosquito",arm_right:"orespawn:mosquito",legs:"necromancy:zombie"}}
+summon necromancy:minion 253 -60 -42 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:mosquito",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 256 -60 -42 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:mosquito",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 259 -60 -42 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:mosquito",arm_right:"orespawn:mosquito",legs:"necromancy:zombie"}}
+wait 40
+hitboxes on
+tp @s 256 -60.9 3.3 180 6
+wait 15
+shot mosquito_1front
+hitboxes off
+tp @s 256 -60.9 -10.7 180 6
+wait 15
+shot mosquito_2side
+tp @s 256 -60.4 -23.4 180 5
+wait 15
+shot mosquito_3mix_front
+tp @s 256 -60.4 -37.4 180 5
+wait 15
+shot mosquito_4mix_side
+tp @s 256.00 -59.8 3.0 150 24
+wait 10
+shot mosquito_5real_34
+tp @s 259.50 -59.8 3.0 150 24
+wait 10
+shot mosquito_6minion_34
+
+# --- butterfly
+tp @s 288 -60 6 180 0
+wait 10
+fill 280 -50 -48 296 -50 8 minecraft:oak_leaves[persistent=true]
+fill 281 -59 -46 295 -59 4 minecraft:light[level=15]
+wait 20
+summon orespawn:butterfly 286.25 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],attributes:[{id:"minecraft:generic.scale",base:1.0d}]}
+summon necromancy:minion 289.75 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:butterfly",torso:"orespawn:butterfly",arm_left:"orespawn:butterfly",arm_right:"orespawn:butterfly"}}
+summon orespawn:butterfly 286.25 -60 -14 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],attributes:[{id:"minecraft:generic.scale",base:1.0d}]}
+summon necromancy:minion 289.75 -60 -14 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:butterfly",torso:"orespawn:butterfly",arm_left:"orespawn:butterfly",arm_right:"orespawn:butterfly"}}
+summon necromancy:minion 285 -60 -28 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:butterfly",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 288 -60 -28 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:butterfly",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 291 -60 -28 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:butterfly",arm_right:"orespawn:butterfly",legs:"necromancy:zombie"}}
+summon necromancy:minion 285 -60 -42 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:butterfly",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 288 -60 -42 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:butterfly",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 291 -60 -42 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:butterfly",arm_right:"orespawn:butterfly",legs:"necromancy:zombie"}}
+wait 40
+hitboxes on
+tp @s 288 -60.9 3.3 180 6
+wait 15
+shot butterfly_1front
+hitboxes off
+tp @s 288 -60.9 -10.7 180 6
+wait 15
+shot butterfly_2side
+tp @s 288 -60.4 -23.4 180 5
+wait 15
+shot butterfly_3mix_front
+tp @s 288 -60.4 -37.4 180 5
+wait 15
+shot butterfly_4mix_side
+tp @s 288.00 -59.8 3.0 150 24
+wait 10
+shot butterfly_5real_34
+tp @s 291.50 -59.8 3.0 150 24
+wait 10
+shot butterfly_6minion_34
+
+# --- luna_moth
+tp @s 320 -60 6 180 0
+wait 10
+fill 312 -50 -48 328 -50 8 minecraft:oak_leaves[persistent=true]
+fill 313 -59 -46 327 -59 4 minecraft:light[level=15]
+wait 20
+summon orespawn:luna_moth 318.25 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],attributes:[{id:"minecraft:generic.scale",base:1.0d}]}
+summon necromancy:minion 321.75 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:luna_moth",torso:"orespawn:luna_moth",arm_left:"orespawn:luna_moth",arm_right:"orespawn:luna_moth"}}
+summon orespawn:luna_moth 318.25 -60 -14 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],attributes:[{id:"minecraft:generic.scale",base:1.0d}]}
+summon necromancy:minion 321.75 -60 -14 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:luna_moth",torso:"orespawn:luna_moth",arm_left:"orespawn:luna_moth",arm_right:"orespawn:luna_moth"}}
+summon necromancy:minion 317 -60 -28 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:luna_moth",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 320 -60 -28 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:luna_moth",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 323 -60 -28 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:luna_moth",arm_right:"orespawn:luna_moth",legs:"necromancy:zombie"}}
+summon necromancy:minion 317 -60 -42 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:luna_moth",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 320 -60 -42 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:luna_moth",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 323 -60 -42 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:luna_moth",arm_right:"orespawn:luna_moth",legs:"necromancy:zombie"}}
+wait 40
+hitboxes on
+tp @s 320 -60.9 3.3 180 6
+wait 15
+shot luna_moth_1front
+hitboxes off
+tp @s 320 -60.9 -10.7 180 6
+wait 15
+shot luna_moth_2side
+tp @s 320 -60.4 -23.4 180 5
+wait 15
+shot luna_moth_3mix_front
+tp @s 320 -60.4 -37.4 180 5
+wait 15
+shot luna_moth_4mix_side
+tp @s 320.00 -59.8 3.0 150 24
+wait 10
+shot luna_moth_5real_34
+tp @s 323.50 -59.8 3.0 150 24
+wait 10
+shot luna_moth_6minion_34
+
+# --- vampire_butterfly
+tp @s 352 -60 6 180 0
+wait 10
+fill 344 -50 -48 360 -50 8 minecraft:oak_leaves[persistent=true]
+fill 345 -59 -46 359 -59 4 minecraft:light[level=15]
+wait 20
+summon orespawn:vampire_butterfly 350.25 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],attributes:[{id:"minecraft:generic.scale",base:1.0d}]}
+summon necromancy:minion 353.75 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:vampire_butterfly",torso:"orespawn:vampire_butterfly",arm_left:"orespawn:vampire_butterfly",arm_right:"orespawn:vampire_butterfly"}}
+summon orespawn:vampire_butterfly 350.25 -60 -14 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],attributes:[{id:"minecraft:generic.scale",base:1.0d}]}
+summon necromancy:minion 353.75 -60 -14 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:vampire_butterfly",torso:"orespawn:vampire_butterfly",arm_left:"orespawn:vampire_butterfly",arm_right:"orespawn:vampire_butterfly"}}
+summon necromancy:minion 349 -60 -28 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:vampire_butterfly",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 352 -60 -28 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:vampire_butterfly",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 355 -60 -28 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:vampire_butterfly",arm_right:"orespawn:vampire_butterfly",legs:"necromancy:zombie"}}
+summon necromancy:minion 349 -60 -42 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:vampire_butterfly",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 352 -60 -42 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:vampire_butterfly",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 355 -60 -42 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:vampire_butterfly",arm_right:"orespawn:vampire_butterfly",legs:"necromancy:zombie"}}
+wait 40
+hitboxes on
+tp @s 352 -60.9 3.3 180 6
+wait 15
+shot vampire_butterfly_1front
+hitboxes off
+tp @s 352 -60.9 -10.7 180 6
+wait 15
+shot vampire_butterfly_2side
+tp @s 352 -60.4 -23.4 180 5
+wait 15
+shot vampire_butterfly_3mix_front
+tp @s 352 -60.4 -37.4 180 5
+wait 15
+shot vampire_butterfly_4mix_side
+tp @s 352.00 -59.8 3.0 150 24
+wait 10
+shot vampire_butterfly_5real_34
+tp @s 355.50 -59.8 3.0 150 24
+wait 10
+shot vampire_butterfly_6minion_34
+
+# --- firefly
+tp @s 384 -60 6 180 0
+wait 10
+fill 376 -50 -48 392 -50 8 minecraft:oak_leaves[persistent=true]
+fill 377 -59 -46 391 -59 4 minecraft:light[level=15]
+wait 20
+summon orespawn:firefly 382.25 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],attributes:[{id:"minecraft:generic.scale",base:1.0d}]}
+summon necromancy:minion 385.75 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:firefly",torso:"orespawn:firefly",arm_left:"orespawn:firefly",arm_right:"orespawn:firefly",legs:"orespawn:firefly"}}
+summon orespawn:firefly 382.25 -60 -14 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],attributes:[{id:"minecraft:generic.scale",base:1.0d}]}
+summon necromancy:minion 385.75 -60 -14 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:firefly",torso:"orespawn:firefly",arm_left:"orespawn:firefly",arm_right:"orespawn:firefly",legs:"orespawn:firefly"}}
+summon necromancy:minion 381 -60 -28 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:firefly",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 384 -60 -28 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:firefly",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 387 -60 -28 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:firefly",arm_right:"orespawn:firefly",legs:"orespawn:firefly"}}
+summon necromancy:minion 381 -60 -42 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:firefly",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 384 -60 -42 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:firefly",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 387 -60 -42 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:firefly",arm_right:"orespawn:firefly",legs:"orespawn:firefly"}}
+wait 40
+hitboxes on
+tp @s 384 -60.9 3.3 180 6
+wait 15
+shot firefly_1front
+hitboxes off
+tp @s 384 -60.9 -10.7 180 6
+wait 15
+shot firefly_2side
+tp @s 384 -60.4 -23.4 180 5
+wait 15
+shot firefly_3mix_front
+tp @s 384 -60.4 -37.4 180 5
+wait 15
+shot firefly_4mix_side
+tp @s 384.00 -59.8 3.0 150 24
+wait 10
+shot firefly_5real_34
+tp @s 387.50 -59.8 3.0 150 24
+wait 10
+shot firefly_6minion_34
+
+# --- cliff_racer
+tp @s 416 -60 6 180 0
+wait 10
+fill 408 -50 -48 424 -50 8 minecraft:oak_leaves[persistent=true]
+fill 409 -59 -46 423 -59 4 minecraft:light[level=15]
+wait 20
+summon orespawn:cliff_racer 414.25 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],attributes:[{id:"minecraft:generic.scale",base:1.0d}]}
+summon necromancy:minion 417.75 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:cliff_racer",torso:"orespawn:cliff_racer",arm_left:"orespawn:cliff_racer",arm_right:"orespawn:cliff_racer"}}
+summon orespawn:cliff_racer 414.25 -60 -14 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],attributes:[{id:"minecraft:generic.scale",base:1.0d}]}
+summon necromancy:minion 417.75 -60 -14 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:cliff_racer",torso:"orespawn:cliff_racer",arm_left:"orespawn:cliff_racer",arm_right:"orespawn:cliff_racer"}}
+summon necromancy:minion 413 -60 -28 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:cliff_racer",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 416 -60 -28 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:cliff_racer",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 419 -60 -28 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:cliff_racer",arm_right:"orespawn:cliff_racer",legs:"necromancy:zombie"}}
+summon necromancy:minion 413 -60 -42 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:cliff_racer",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 416 -60 -42 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:cliff_racer",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 419 -60 -42 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:cliff_racer",arm_right:"orespawn:cliff_racer",legs:"necromancy:zombie"}}
+wait 40
+hitboxes on
+tp @s 416 -60.9 3.3 180 6
+wait 15
+shot cliff_racer_1front
+hitboxes off
+tp @s 416 -60.9 -10.7 180 6
+wait 15
+shot cliff_racer_2side
+tp @s 416 -60.4 -23.4 180 5
+wait 15
+shot cliff_racer_3mix_front
+tp @s 416 -60.4 -37.4 180 5
+wait 15
+shot cliff_racer_4mix_side
+tp @s 416.00 -59.8 3.0 150 24
+wait 10
+shot cliff_racer_5real_34
+tp @s 419.50 -59.8 3.0 150 24
+wait 10
+shot cliff_racer_6minion_34
+
+# --- cockateil
+tp @s 448 -60 6 180 0
+wait 10
+fill 440 -50 -48 456 -50 8 minecraft:oak_leaves[persistent=true]
+fill 441 -59 -46 455 -59 4 minecraft:light[level=15]
+wait 20
+summon orespawn:cockateil 446.25 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],attributes:[{id:"minecraft:generic.scale",base:1.93d}],BirdType:0}
+summon necromancy:minion 449.75 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:cockateil",torso:"orespawn:cockateil",arm_left:"orespawn:cockateil",arm_right:"orespawn:cockateil",legs:"orespawn:cockateil"}}
+summon orespawn:cockateil 446.25 -60 -14 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],attributes:[{id:"minecraft:generic.scale",base:1.93d}],BirdType:0}
+summon necromancy:minion 449.75 -60 -14 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:cockateil",torso:"orespawn:cockateil",arm_left:"orespawn:cockateil",arm_right:"orespawn:cockateil",legs:"orespawn:cockateil"}}
+summon necromancy:minion 445 -60 -28 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:cockateil",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 448 -60 -28 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:cockateil",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 451 -60 -28 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:cockateil",arm_right:"orespawn:cockateil",legs:"orespawn:cockateil"}}
+summon necromancy:minion 445 -60 -42 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:cockateil",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 448 -60 -42 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:cockateil",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 451 -60 -42 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:cockateil",arm_right:"orespawn:cockateil",legs:"orespawn:cockateil"}}
+wait 40
+hitboxes on
+tp @s 448 -60.9 3.3 180 6
+wait 15
+shot cockateil_1front
+hitboxes off
+tp @s 448 -60.9 -10.7 180 6
+wait 15
+shot cockateil_2side
+tp @s 448 -60.4 -23.4 180 5
+wait 15
+shot cockateil_3mix_front
+tp @s 448 -60.4 -37.4 180 5
+wait 15
+shot cockateil_4mix_side
+tp @s 448.00 -59.8 3.0 150 24
+wait 10
+shot cockateil_5real_34
+tp @s 451.50 -59.8 3.0 150 24
+wait 10
+shot cockateil_6minion_34
+
+# --- ruby_bird
+tp @s 480 -60 6 180 0
+wait 10
+fill 472 -50 -48 488 -50 8 minecraft:oak_leaves[persistent=true]
+fill 473 -59 -46 487 -59 4 minecraft:light[level=15]
+wait 20
+summon orespawn:ruby_bird 478.25 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],attributes:[{id:"minecraft:generic.scale",base:1.93d}],BirdType:5}
+summon necromancy:minion 481.75 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:ruby_bird",torso:"orespawn:ruby_bird",arm_left:"orespawn:ruby_bird",arm_right:"orespawn:ruby_bird",legs:"orespawn:ruby_bird"}}
+summon orespawn:ruby_bird 478.25 -60 -14 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],attributes:[{id:"minecraft:generic.scale",base:1.93d}],BirdType:5}
+summon necromancy:minion 481.75 -60 -14 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:ruby_bird",torso:"orespawn:ruby_bird",arm_left:"orespawn:ruby_bird",arm_right:"orespawn:ruby_bird",legs:"orespawn:ruby_bird"}}
+summon necromancy:minion 477 -60 -28 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:ruby_bird",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 480 -60 -28 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:ruby_bird",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 483 -60 -28 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:ruby_bird",arm_right:"orespawn:ruby_bird",legs:"orespawn:ruby_bird"}}
+summon necromancy:minion 477 -60 -42 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:ruby_bird",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 480 -60 -42 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:ruby_bird",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 483 -60 -42 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:ruby_bird",arm_right:"orespawn:ruby_bird",legs:"orespawn:ruby_bird"}}
+wait 40
+hitboxes on
+tp @s 480 -60.9 3.3 180 6
+wait 15
+shot ruby_bird_1front
+hitboxes off
+tp @s 480 -60.9 -10.7 180 6
+wait 15
+shot ruby_bird_2side
+tp @s 480 -60.4 -23.4 180 5
+wait 15
+shot ruby_bird_3mix_front
+tp @s 480 -60.4 -37.4 180 5
+wait 15
+shot ruby_bird_4mix_side
+tp @s 480.00 -59.8 3.0 150 24
+wait 10
+shot ruby_bird_5real_34
+tp @s 483.50 -59.8 3.0 150 24
+wait 10
+shot ruby_bird_6minion_34
+
+# --- rubber_ducky
+tp @s 512 -60 6 180 0
+wait 10
+fill 504 -50 -48 520 -50 8 minecraft:oak_leaves[persistent=true]
+fill 505 -59 -46 519 -59 4 minecraft:light[level=15]
+wait 20
+summon orespawn:rubber_ducky 510.25 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],attributes:[{id:"minecraft:generic.scale",base:1.87d}]}
+summon necromancy:minion 513.75 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:rubber_ducky",torso:"orespawn:rubber_ducky",arm_left:"orespawn:rubber_ducky",arm_right:"orespawn:rubber_ducky"}}
+summon orespawn:rubber_ducky 510.25 -60 -14 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],attributes:[{id:"minecraft:generic.scale",base:1.87d}]}
+summon necromancy:minion 513.75 -60 -14 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:rubber_ducky",torso:"orespawn:rubber_ducky",arm_left:"orespawn:rubber_ducky",arm_right:"orespawn:rubber_ducky"}}
+summon necromancy:minion 509 -60 -28 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:rubber_ducky",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 512 -60 -28 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:rubber_ducky",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 515 -60 -28 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:rubber_ducky",arm_right:"orespawn:rubber_ducky",legs:"necromancy:zombie"}}
+summon necromancy:minion 509 -60 -42 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:rubber_ducky",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 512 -60 -42 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:rubber_ducky",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 515 -60 -42 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:rubber_ducky",arm_right:"orespawn:rubber_ducky",legs:"necromancy:zombie"}}
+wait 40
+hitboxes on
+tp @s 512 -60.9 3.3 180 6
+wait 15
+shot rubber_ducky_1front
+hitboxes off
+tp @s 512 -60.9 -10.7 180 6
+wait 15
+shot rubber_ducky_2side
+tp @s 512 -60.4 -23.4 180 5
+wait 15
+shot rubber_ducky_3mix_front
+tp @s 512 -60.4 -37.4 180 5
+wait 15
+shot rubber_ducky_4mix_side
+tp @s 512.00 -59.8 3.0 150 24
+wait 10
+shot rubber_ducky_5real_34
+tp @s 515.50 -59.8 3.0 150 24
+wait 10
+shot rubber_ducky_6minion_34
+
+# --- frog
+tp @s 544 -60 6 180 0
+wait 10
+fill 536 -50 -48 552 -50 8 minecraft:oak_leaves[persistent=true]
+fill 537 -59 -46 551 -59 4 minecraft:light[level=15]
+wait 20
+summon orespawn:frog 542.25 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],attributes:[{id:"minecraft:generic.scale",base:1.85d}]}
+summon necromancy:minion 545.75 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:frog",torso:"orespawn:frog",legs:"orespawn:frog"}}
+summon orespawn:frog 542.25 -60 -14 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],attributes:[{id:"minecraft:generic.scale",base:1.85d}]}
+summon necromancy:minion 545.75 -60 -14 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:frog",torso:"orespawn:frog",legs:"orespawn:frog"}}
+summon necromancy:minion 541 -60 -28 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:frog",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 544 -60 -28 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:frog",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 547 -60 -28 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:frog"}}
+summon necromancy:minion 541 -60 -42 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:frog",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 544 -60 -42 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:frog",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 547 -60 -42 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:frog"}}
+wait 40
+hitboxes on
+tp @s 544 -60.9 3.3 180 6
+wait 15
+shot frog_1front
+hitboxes off
+tp @s 544 -60.9 -10.7 180 6
+wait 15
+shot frog_2side
+tp @s 544 -60.4 -23.4 180 5
+wait 15
+shot frog_3mix_front
+tp @s 544 -60.4 -37.4 180 5
+wait 15
+shot frog_4mix_side
+tp @s 544.00 -59.8 3.0 150 24
+wait 10
+shot frog_5real_34
+tp @s 547.50 -59.8 3.0 150 24
+wait 10
+shot frog_6minion_34
+
+# --- fairy
+tp @s 576 -60 6 180 0
+wait 10
+fill 568 -50 -48 584 -50 8 minecraft:oak_leaves[persistent=true]
+fill 569 -59 -46 583 -59 4 minecraft:light[level=15]
+wait 20
+summon orespawn:fairy 574.25 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],attributes:[{id:"minecraft:generic.scale",base:1.71d}]}
+summon necromancy:minion 577.75 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:fairy",torso:"orespawn:fairy",arm_left:"orespawn:fairy",arm_right:"orespawn:fairy",legs:"orespawn:fairy"}}
+summon orespawn:fairy 574.25 -60 -14 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],attributes:[{id:"minecraft:generic.scale",base:1.71d}]}
+summon necromancy:minion 577.75 -60 -14 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:fairy",torso:"orespawn:fairy",arm_left:"orespawn:fairy",arm_right:"orespawn:fairy",legs:"orespawn:fairy"}}
+summon necromancy:minion 573 -60 -28 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:fairy",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 576 -60 -28 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:fairy",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 579 -60 -28 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:fairy",arm_right:"orespawn:fairy",legs:"orespawn:fairy"}}
+summon necromancy:minion 573 -60 -42 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:fairy",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 576 -60 -42 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:fairy",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 579 -60 -42 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:fairy",arm_right:"orespawn:fairy",legs:"orespawn:fairy"}}
+wait 40
+hitboxes on
+tp @s 576 -60.9 3.3 180 6
+wait 15
+shot fairy_1front
+hitboxes off
+tp @s 576 -60.9 -10.7 180 6
+wait 15
+shot fairy_2side
+tp @s 576 -60.4 -23.4 180 5
+wait 15
+shot fairy_3mix_front
+tp @s 576 -60.4 -37.4 180 5
+wait 15
+shot fairy_4mix_side
+tp @s 576.00 -59.8 3.0 150 24
+wait 10
+shot fairy_5real_34
+tp @s 579.50 -59.8 3.0 150 24
+wait 10
+shot fairy_6minion_34
+
+report done

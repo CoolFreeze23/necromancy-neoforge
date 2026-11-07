@@ -1,0 +1,35 @@
+{
+  "mob": "orespawn:cricket",
+  "requires": "orespawn",
+  "geo": "orespawn:geo/entity/cricket.geo.json",
+  "texture": "orespawn:textures/entity/cricket.png",
+  "scale": 2.0,
+  "head": {
+    "groups": [
+      {"bones": ["head"], "pivot": [0.5, 21.5, -3]}
+    ],
+    "plug": [0.5, 23.3, -4.5],
+    "animator": "look"
+  },
+  "torso": {
+    "groups": [
+      {"bones": ["body", "abdomen"]}
+    ],
+    "plug": [0.5, 23, 0],
+    "neck": [0.5, 23.3, -4.5],
+    "shoulder_left": [3, 22, -1.5],
+    "shoulder_right": [-2, 22, -1.5]
+  },
+  "legs": {
+    "groups": [
+      {"bones": ["lfleg"], "pivot": [2, 22, -2.5]},
+      {"bones": ["rfleg"], "pivot": [-1, 22, -2.5]},
+      {"bones": ["rrleg"], "pivot": [-1, 22, 0]},
+      {"bones": ["lrleg"], "pivot": [2, 22, 0]},
+      {"bones": ["lleg1", "lleg2"], "pivot": [2, 22, 1]},
+      {"bones": ["rleg1", "rleg2"], "pivot": [-1, 22, 1]}
+    ],
+    "hip": [0.5, 23, 0],
+    "animator": "walk_pair"
+  }
+}
