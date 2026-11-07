@@ -41,6 +41,9 @@ public record TearShotPayload(boolean blood) implements CustomPacketPayload {
             return;
         }
         player.getPersistentData().putLong("necromancy:last_tear", now);
+        if (payload.blood() && !player.getAbilities().instabuild) {
+            player.hurt(player.damageSources().magic(), 1F);
+        }
         TearEntity tear = payload.blood() ? new BloodTearEntity(player.level(), player) : new TearEntity(player.level(), player);
         tear.shootFromRotation(player, player.getXRot(), player.getYHeadRot(), 0F, 1.5F, 1F);
         player.level().addFreshEntity(tear);

@@ -14,6 +14,9 @@ public final class NecroTags {
     /** Natural spawns that Night Crawlers and Isaac may replace. */
     public static final TagKey<EntityType<?>> REPLACEABLE_UNDEAD = TagKey.create(Registries.ENTITY_TYPE, Necromancy.id("replaceable_undead"));
 
+    /** Hostile creatures an aggressive Minion leaves alone unless they provoke it (creepers, endermen, ...). */
+    public static final TagKey<EntityType<?>> MINION_IGNORES = TagKey.create(Registries.ENTITY_TYPE, Necromancy.id("minion_ignores"));
+
     /** Souls reaped from these are Legendary (bosses). */
     public static final TagKey<EntityType<?>> LEGENDARY_SOULS = TagKey.create(Registries.ENTITY_TYPE, Necromancy.id("legendary_souls"));
 

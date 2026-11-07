@@ -63,7 +63,7 @@ public final class NecroEvents {
         EntityType<? extends Mob> replacement = null;
         if (crawlers > 0 && random.nextInt(crawlers) == 0) {
             replacement = NecroEntities.NIGHT_CRAWLER.get();
-        } else if (isaacs > 0 && random.nextInt(isaacs) == 0) {
+        } else if (isaacs > 0 && event.getY() < 40 && random.nextInt(isaacs) == 0) {
             replacement = NecroEntities.ISAAC.get();
         }
         if (replacement == null) {
@@ -80,7 +80,7 @@ public final class NecroEvents {
         level.addFreshEntity(spawned);
     }
 
-    /** A scythe kill bottles the victim's soul. */
+    /** A scythe kill bottles the victim's soul; a Minion's kill counts towards its rank (and Soul Harvest). */
     @SubscribeEvent
     public static void reapSouls(LivingDeathEvent event) {
         if (event.getEntity().level().isClientSide) {
@@ -89,6 +89,21 @@ public final class NecroEvents {
         Entity killer = event.getSource().getEntity();
         if (killer instanceof Player player && event.getSource().getDirectEntity() == player) {
             ScytheItem.reapSoul(player, event.getEntity());
+        }
+        if (killer instanceof com.sirolf2009.necromancy.entity.MinionEntity minion) {
+            minion.addKill(event.getEntity());
+            if (minion.getOwner() instanceof Player owner) {
+                ScytheItem.harvestForMinion(owner, event.getEntity());
+            }
+        }
+    }
+
+    /** Wading in blood makes a living player hungry. */
+    @SubscribeEvent
+    public static void bloodBath(net.neoforged.neoforge.event.tick.PlayerTickEvent.Post event) {
+        Player player = event.getEntity();
+        if (!player.level().isClientSide && player.tickCount % 20 == 0 && player.isInFluidType(com.sirolf2009.necromancy.registry.NecroFluids.BLOOD_TYPE.value())) {
+            player.addEffect(new net.minecraft.world.effect.MobEffectInstance(net.minecraft.world.effect.MobEffects.HUNGER, 60, 0, false, false, true));
         }
     }
 

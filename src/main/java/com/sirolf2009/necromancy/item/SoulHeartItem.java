@@ -17,7 +17,7 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.gameevent.GameEvent;
 
-/** Isaac's Soul Heart: sewn from flesh, tears and a soul, it wakes a random Necromancy creature where it is used. */
+/** Isaac's Soul Heart: sewn from flesh, tears and a soul, it wakes Isaac where it is used (a repeatable way to his head). */
 public class SoulHeartItem extends Item {
     public SoulHeartItem(Properties properties) {
         super(properties);
@@ -29,8 +29,7 @@ public class SoulHeartItem extends Item {
             return InteractionResult.SUCCESS;
         }
         BlockPos pos = context.getClickedPos().relative(context.getClickedFace());
-        List<EntityType<?>> choices = List.of(NecroEntities.ISAAC.get(), NecroEntities.TEDDY.get(), NecroEntities.NIGHT_CRAWLER.get());
-        EntityType<?> type = choices.get(level.random.nextInt(choices.size()));
+        EntityType<?> type = NecroEntities.ISAAC.get();
         var entity = type.spawn(level, context.getItemInHand(), context.getPlayer(), pos, MobSpawnType.SPAWN_EGG, true,
                 !pos.equals(context.getClickedPos()) && context.getClickedFace() == net.minecraft.core.Direction.UP);
         if (entity != null) {

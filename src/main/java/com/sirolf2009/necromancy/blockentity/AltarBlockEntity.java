@@ -104,7 +104,7 @@ public class AltarBlockEntity extends BaseContainerBlockEntity {
             return stack.is(NecroItems.JAR_OF_BLOOD.get());
         }
         if (slot == SOUL) {
-            return stack.is(NecroItems.SOUL_IN_A_JAR.get());
+            return stack.is(NecroItems.SOUL_IN_A_JAR.get()) || stack.is(NecroItems.MINION_REMAINS.get()) && stack.has(com.sirolf2009.necromancy.registry.NecroComponents.MINION_BUILD.get());
         }
         BodyPartLocation location = locationOf(slot);
         return location != null && NecroMobRegistry.partOf(stack).map(ref -> ref.fits(location)).orElse(false);
@@ -116,7 +116,17 @@ public class AltarBlockEntity extends BaseContainerBlockEntity {
     }
 
     /** The mob each body slot currently holds a part of, for the preview and the raise. */
+    /** The Remains in the soul slot, if any: they bring their own body. */
+    @Nullable
+    public com.sirolf2009.necromancy.soul.MinionBuild remains() {
+        return items.get(SOUL).get(com.sirolf2009.necromancy.registry.NecroComponents.MINION_BUILD.get());
+    }
+
     public Map<BodyPartLocation, ResourceLocation> parts() {
+        com.sirolf2009.necromancy.soul.MinionBuild remains = remains();
+        if (remains != null) {
+            return remains.locations();
+        }
         Map<BodyPartLocation, ResourceLocation> map = new EnumMap<>(BodyPartLocation.class);
         for (int slot = HEAD; slot <= ARM_LEFT; slot++) {
             BodyPartLocation location = locationOf(slot);
@@ -139,6 +149,9 @@ public class AltarBlockEntity extends BaseContainerBlockEntity {
     /** The heaviest body the soul in the soul slot can animate, or 0 with no soul. */
     public int soulCap() {
         ItemStack soul = items.get(SOUL);
+        if (remains() != null) {
+            return remains().soul().potency().weightCap();
+        }
         return soul.is(NecroItems.SOUL_IN_A_JAR.get()) ? SoulData.get(soul).potency().weightCap() : 0;
     }
 
@@ -179,7 +192,8 @@ public class AltarBlockEntity extends BaseContainerBlockEntity {
     }
 
     public boolean hasRitualItems() {
-        return items.get(BLOOD).is(NecroItems.JAR_OF_BLOOD.get()) && items.get(SOUL).is(NecroItems.SOUL_IN_A_JAR.get());
+        boolean blood = items.get(BLOOD).is(NecroItems.JAR_OF_BLOOD.get()) || remains() != null && shrine().tier() >= 3;
+        return blood && isValid(SOUL, items.get(SOUL));
     }
 
     public boolean hasBody() {
@@ -232,8 +246,13 @@ public class AltarBlockEntity extends BaseContainerBlockEntity {
         if (minion == null) {
             return false;
         }
+        com.sirolf2009.necromancy.soul.MinionBuild remains = remains();
         minion.setParts(parts());
-        minion.setSoul(SoulData.get(items.get(SOUL)));
+        minion.setSoul(remains != null ? remains.soul() : SoulData.get(items.get(SOUL)));
+        if (remains != null) {
+            remains.name().ifPresent(minion::setCustomName);
+            minion.restoreKills(remains.kills());
+        }
         minion.tame(player);
         BlockPos spawn = findSpawnPos();
         minion.moveTo(spawn.getX() + 0.5, spawn.getY(), spawn.getZ() + 0.5, player.getYRot() + 180F, 0F);
@@ -249,8 +268,13 @@ public class AltarBlockEntity extends BaseContainerBlockEntity {
         server.sendParticles(ParticleTypes.SOUL, minion.getX(), minion.getY() + 1, minion.getZ(), 30, 0.4, 0.8, 0.4, 0.03);
         server.sendParticles(ParticleTypes.DAMAGE_INDICATOR, minion.getX(), minion.getY() + 0.5, minion.getZ(), 10, 0.4, 0.3, 0.4, 0.1);
         if (!creative) {
-            for (int i = 0; i < SIZE; i++) {
-                removeItem(i, 1);
+            if (remains != null) {
+                removeItem(SOUL, 1);
+                removeItem(BLOOD, 1);
+            } else {
+                for (int i = 0; i < SIZE; i++) {
+                    removeItem(i, 1);
+                }
             }
         }
         setChanged();

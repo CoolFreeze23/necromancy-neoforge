@@ -18,6 +18,9 @@ public final class NecroMenus {
     public static final DeferredHolder<MenuType<?>, MenuType<SewingMenu>> SEWING = MENUS.register("sewing_machine",
             () -> IMenuTypeExtension.create(SewingMenu::fromNetwork));
 
+    public static final DeferredHolder<MenuType<?>, MenuType<com.sirolf2009.necromancy.menu.MinionMenu>> MINION = MENUS.register("minion",
+            () -> IMenuTypeExtension.create(com.sirolf2009.necromancy.menu.MinionMenu::fromNetwork));
+
     private NecroMenus() {
     }
 }

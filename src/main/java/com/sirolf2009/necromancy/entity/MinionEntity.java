@@ -82,6 +82,13 @@ public class MinionEntity extends TamableAnimal implements RangedAttackMob, Item
     private static final EntityDataAccessor<Boolean> DATA_SADDLE = SynchedEntityData.defineId(MinionEntity.class, EntityDataSerializers.BOOLEAN);
     private static final EntityDataAccessor<Integer> DATA_BOOST_TIME = SynchedEntityData.defineId(MinionEntity.class, EntityDataSerializers.INT);
     private static final EntityDataAccessor<Boolean> DATA_POWERED = SynchedEntityData.defineId(MinionEntity.class, EntityDataSerializers.BOOLEAN);
+    private static final EntityDataAccessor<Integer> DATA_ORDER = SynchedEntityData.defineId(MinionEntity.class, EntityDataSerializers.INT);
+    private static final EntityDataAccessor<Integer> DATA_STANCE = SynchedEntityData.defineId(MinionEntity.class, EntityDataSerializers.INT);
+    private static final EntityDataAccessor<Integer> DATA_KILLS = SynchedEntityData.defineId(MinionEntity.class, EntityDataSerializers.INT);
+    private static final EntityDataAccessor<Boolean> DATA_BOUND = SynchedEntityData.defineId(MinionEntity.class, EntityDataSerializers.BOOLEAN);
+    /** Kills needed for each rank (docs/REVIEW.md #12). */
+    public static final int[] RANK_KILLS = { 10, 30, 75, 150, 300 };
+    private static final ResourceLocation RANK_MODIFIER = Necromancy.id("rank");
 
     static {
         for (BodyPartLocation location : BodyPartLocation.values()) {
@@ -118,6 +125,10 @@ public class MinionEntity extends TamableAnimal implements RangedAttackMob, Item
         builder.define(DATA_SADDLE, false);
         builder.define(DATA_BOOST_TIME, 0);
         builder.define(DATA_POWERED, false);
+        builder.define(DATA_ORDER, MinionOrder.FOLLOW.ordinal());
+        builder.define(DATA_STANCE, MinionStance.DEFENSIVE.ordinal());
+        builder.define(DATA_KILLS, 0);
+        builder.define(DATA_BOUND, false);
     }
 
     @Override
@@ -129,17 +140,67 @@ public class MinionEntity extends TamableAnimal implements RangedAttackMob, Item
             }
         });
         goalSelector.addGoal(2, new SitWhenOrderedToGoal(this));
-        goalSelector.addGoal(4, new LeapAtTargetGoal(this, 0.4F));
-        goalSelector.addGoal(5, new MeleeAttackGoal(this, 1.0, true));
-        goalSelector.addGoal(6, new FollowOwnerGoal(this, 1.0, 10.0F, 2.0F));
+        goalSelector.addGoal(3, new net.minecraft.world.entity.ai.goal.PanicGoal(this, 1.3) {
+            @Override
+            public boolean canUse() {
+                return stance() == MinionStance.PASSIVE && super.canUse();
+            }
+        });
+        goalSelector.addGoal(4, new com.sirolf2009.necromancy.entity.goal.MinionRangedGoal(this));
+        goalSelector.addGoal(4, new LeapAtTargetGoal(this, 0.4F) {
+            @Override
+            public boolean canUse() {
+                return !hasRangedWeapon() && super.canUse();
+            }
+        });
+        goalSelector.addGoal(5, new MeleeAttackGoal(this, 1.0, true) {
+            @Override
+            public boolean canUse() {
+                return !hasRangedWeapon() && super.canUse();
+            }
+        });
+        goalSelector.addGoal(6, new FollowOwnerGoal(this, 1.0, 10.0F, 2.0F) {
+            @Override
+            public boolean canUse() {
+                return order() == MinionOrder.FOLLOW && super.canUse();
+            }
+
+            @Override
+            public boolean canContinueToUse() {
+                return order() == MinionOrder.FOLLOW && super.canContinueToUse();
+            }
+        });
+        goalSelector.addGoal(6, new net.minecraft.world.entity.ai.goal.MoveTowardsRestrictionGoal(this, 1.0));
+        goalSelector.addGoal(6, new com.sirolf2009.necromancy.entity.goal.MinionPatrolGoal(this));
         goalSelector.addGoal(7, new TemptGoal(this, 1.0, stack -> stack.is(NecroItems.BRAIN_ON_A_STICK.get()), false));
-        goalSelector.addGoal(8, new WaterAvoidingRandomStrollGoal(this, 1.0));
+        goalSelector.addGoal(8, new WaterAvoidingRandomStrollGoal(this, 0.8) {
+            @Override
+            public boolean canUse() {
+                return order() != MinionOrder.PATROL && super.canUse();
+            }
+        });
         goalSelector.addGoal(10, new LookAtPlayerGoal(this, Player.class, 8.0F));
         goalSelector.addGoal(10, new RandomLookAroundGoal(this));
-        targetSelector.addGoal(1, new OwnerHurtByTargetGoal(this));
-        targetSelector.addGoal(2, new OwnerHurtTargetGoal(this));
-        targetSelector.addGoal(3, new HurtByTargetGoal(this).setAlertOthers());
+        targetSelector.addGoal(1, new OwnerHurtByTargetGoal(this) {
+            @Override
+            public boolean canUse() {
+                return stance() != MinionStance.PASSIVE && super.canUse();
+            }
+        });
+        targetSelector.addGoal(2, new OwnerHurtTargetGoal(this) {
+            @Override
+            public boolean canUse() {
+                return stance() != MinionStance.PASSIVE && super.canUse();
+            }
+        });
+        targetSelector.addGoal(3, new HurtByTargetGoal(this) {
+            @Override
+            public boolean canUse() {
+                return stance() != MinionStance.PASSIVE && super.canUse();
+            }
+        }.setAlertOthers());
         targetSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, Player.class, 10, true, false, this::isOrderedTarget));
+        targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, Mob.class, 10, true, false, this::isHuntedMonster));
     }
 
     // --- soul ---
@@ -315,6 +376,19 @@ public class MinionEntity extends TamableAnimal implements RangedAttackMob, Item
             tag.putBoolean("Powered", true);
         }
         SoulData.CODEC.encodeStart(net.minecraft.nbt.NbtOps.INSTANCE, soul).result().ifPresent(t -> tag.put("Soul", t));
+        tag.putString("Order", order().getSerializedName());
+        tag.putString("Stance", stance().getSerializedName());
+        tag.putInt("Kills", kills());
+        tag.putBoolean("Bound", isBound());
+        if (guardPost != null) {
+            tag.put("GuardPost", net.minecraft.nbt.NbtUtils.writeBlockPos(guardPost));
+        }
+        if (!patrolRoute.isEmpty()) {
+            net.minecraft.nbt.ListTag route = new net.minecraft.nbt.ListTag();
+            patrolRoute.forEach(p -> route.add(net.minecraft.nbt.NbtUtils.writeBlockPos(p)));
+            tag.put("PatrolRoute", route);
+            tag.putInt("PatrolIndex", patrolIndex);
+        }
         steering.addAdditionalSaveData(tag);
     }
 
@@ -333,6 +407,23 @@ public class MinionEntity extends TamableAnimal implements RangedAttackMob, Item
         }
         setParts(map);
         entityData.set(DATA_POWERED, tag.getBoolean("Powered"));
+        entityData.set(DATA_KILLS, tag.getInt("Kills"));
+        entityData.set(DATA_BOUND, tag.getBoolean("Bound"));
+        if (tag.contains("Stance")) {
+            entityData.set(DATA_STANCE, MinionStance.byName(tag.getString("Stance")).ordinal());
+        }
+        java.util.List<BlockPos> route = new java.util.ArrayList<>();
+        for (net.minecraft.nbt.Tag t : tag.getList("PatrolRoute", net.minecraft.nbt.Tag.TAG_INT_ARRAY)) {
+            if (t instanceof net.minecraft.nbt.IntArrayTag array && array.size() == 3) {
+                route.add(new BlockPos(array.get(0).getAsInt(), array.get(1).getAsInt(), array.get(2).getAsInt()));
+            }
+        }
+        if (tag.contains("Order")) {
+            MinionOrder order = MinionOrder.byName(tag.getString("Order"));
+            BlockPos post = net.minecraft.nbt.NbtUtils.readBlockPos(tag, "GuardPost").orElse(null);
+            giveOrder(order, post, route);
+            patrolIndex = tag.getInt("PatrolIndex");
+        }
         if (tag.contains("Soul")) {
             soul = SoulData.CODEC.parse(net.minecraft.nbt.NbtOps.INSTANCE, tag.get("Soul")).result().orElse(SoulData.UNKNOWN);
         }
@@ -347,10 +438,211 @@ public class MinionEntity extends TamableAnimal implements RangedAttackMob, Item
         if (attackAnimation > 0) {
             attackAnimation--;
         }
+        if (!level().isClientSide && tickCount % 40 == 0 && getHealth() < getMaxHealth()
+                && isInFluidType(com.sirolf2009.necromancy.registry.NecroFluids.BLOOD_TYPE.value())) {
+            heal(1F);
+        }
         if (!level().isClientSide && tickCount > 20 && part(BodyPartLocation.HEAD) == null) {
             // a body without a head does not hold together (as in the original)
             hurt(damageSources().generic(), Float.MAX_VALUE);
         }
+    }
+
+    // --- orders, stance and rank ---
+
+    @Nullable
+    private BlockPos guardPost;
+    private final java.util.List<BlockPos> patrolRoute = new java.util.ArrayList<>();
+    private int patrolIndex;
+
+    public MinionOrder order() {
+        return MinionOrder.values()[Math.floorMod(entityData.get(DATA_ORDER), MinionOrder.values().length)];
+    }
+
+    public MinionStance stance() {
+        return MinionStance.values()[Math.floorMod(entityData.get(DATA_STANCE), MinionStance.values().length)];
+    }
+
+    public void setStance(MinionStance stance) {
+        entityData.set(DATA_STANCE, stance.ordinal());
+        if (stance == MinionStance.PASSIVE) {
+            setTarget(null);
+        }
+    }
+
+    /** Gives an order. {@code pos} is the guard post for GUARD; PATROL uses {@code route}. */
+    public void giveOrder(MinionOrder order, @Nullable BlockPos pos, java.util.List<BlockPos> route) {
+        entityData.set(DATA_ORDER, order.ordinal());
+        setOrderedToSit(order == MinionOrder.STAY);
+        navigation.stop();
+        switch (order) {
+            case GUARD -> {
+                guardPost = pos != null ? pos.immutable() : blockPosition();
+                restrictTo(guardPost, 12);
+            }
+            case PATROL -> {
+                patrolRoute.clear();
+                patrolRoute.addAll(route.stream().limit(4).map(BlockPos::immutable).toList());
+                patrolIndex = 0;
+                clearRestriction();
+            }
+            default -> {
+                guardPost = null;
+                clearRestriction();
+            }
+        }
+    }
+
+    public java.util.List<BlockPos> patrolRoute() {
+        return patrolRoute;
+    }
+
+    public int patrolIndex() {
+        return patrolIndex;
+    }
+
+    public void setPatrolIndex(int index) {
+        patrolIndex = index;
+    }
+
+    @Nullable
+    public BlockPos guardPost() {
+        return guardPost;
+    }
+
+    @Override
+    public void setOrderedToSit(boolean sitting) {
+        super.setOrderedToSit(sitting);
+        if (!level().isClientSide) {
+            if (sitting && order() != MinionOrder.STAY) {
+                entityData.set(DATA_ORDER, MinionOrder.STAY.ordinal());
+            } else if (!sitting && order() == MinionOrder.STAY) {
+                entityData.set(DATA_ORDER, MinionOrder.FOLLOW.ordinal());
+            }
+        }
+    }
+
+    /** Hostile creatures this Minion hunts: with an aggressive stance, or while guarding or on patrol. */
+    private boolean isHuntedMonster(LivingEntity target) {
+        if (!(target instanceof net.minecraft.world.entity.monster.Enemy) || target instanceof MinionEntity) {
+            return false;
+        }
+        MinionStance stance = stance();
+        MinionOrder order = order();
+        if (stance == MinionStance.PASSIVE || stance == MinionStance.DEFENSIVE && order != MinionOrder.GUARD && order != MinionOrder.PATROL) {
+            return false;
+        }
+        if (target.getType().is(NecroTags.MINION_IGNORES)) {
+            boolean creeperSafe = hasRangedWeapon() || hasTrait(BodyPartLocation.TORSO, com.sirolf2009.necromancy.trait.Traits.VOLATILE.id());
+            return creeperSafe && target instanceof net.minecraft.world.entity.monster.Creeper;
+        }
+        return guardPost == null || target.blockPosition().closerThan(guardPost, 16);
+    }
+
+    public int kills() {
+        return entityData.get(DATA_KILLS);
+    }
+
+    public int rank() {
+        int kills = kills();
+        int rank = 0;
+        for (int needed : RANK_KILLS) {
+            if (kills >= needed) {
+                rank++;
+            }
+        }
+        return rank;
+    }
+
+    /** Raised again from Remains: keeps its kills and rank. */
+    public void restoreKills(int kills) {
+        entityData.set(DATA_KILLS, kills);
+        applyRank();
+    }
+
+    /** Counts a kill (the Minion landed the killing blow on something with at least 10 health) and ranks up. */
+    public void addKill(LivingEntity victim) {
+        if (victim.getMaxHealth() < 10 || victim == getOwner()) {
+            return;
+        }
+        int before = rank();
+        entityData.set(DATA_KILLS, kills() + 1);
+        if (rank() > before) {
+            applyRank();
+            playSound(SoundEvents.PLAYER_LEVELUP, 0.6F, 0.6F);
+            if (level() instanceof ServerLevel server) {
+                server.sendParticles(net.minecraft.core.particles.ParticleTypes.SOUL_FIRE_FLAME, getX(), getY(1.0), getZ(), 20, 0.3, 0.4, 0.3, 0.02);
+            }
+            if (getOwner() instanceof Player owner && NecroConfig.MINION_GRIEF_MESSAGES.get()) {
+                owner.sendSystemMessage(Component.translatable("message.necromancy.minion.rank_up", getDisplayName(),
+                        Component.translatable("rank.necromancy." + rank())));
+            }
+        }
+    }
+
+    /** +5% health and damage per rank; the fifth rank (Revenant) also gets a point of armour toughness. */
+    private void applyRank() {
+        int rank = rank();
+        modifier(Attributes.MAX_HEALTH, RANK_MODIFIER, rank * 0.05, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
+        modifier(Attributes.ATTACK_DAMAGE, RANK_MODIFIER, rank * 0.05, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
+        modifier(Attributes.ARMOR_TOUGHNESS, RANK_MODIFIER, rank >= 5 ? 1 : 0, AttributeModifier.Operation.ADD_VALUE);
+    }
+
+    @Override
+    public Component getDisplayName() {
+        Component name = super.getDisplayName();
+        return rank() >= 5 && name instanceof net.minecraft.network.chat.MutableComponent mutable
+                ? mutable.withStyle(net.minecraft.ChatFormatting.DARK_RED) : name;
+    }
+
+    /** Bound to a Phylactery: it leaves Remains when it dies instead of scattering its parts. */
+    public boolean isBound() {
+        return entityData.get(DATA_BOUND);
+    }
+
+    public void setBound(boolean bound) {
+        entityData.set(DATA_BOUND, bound);
+    }
+
+    // --- equipment ---
+
+    public boolean hasArms() {
+        return part(BodyPartLocation.ARM_LEFT) != null || part(BodyPartLocation.ARM_RIGHT) != null;
+    }
+
+    public boolean hasRangedWeapon() {
+        ItemStack held = getMainHandItem();
+        return hasArms() && (held.getItem() instanceof net.minecraft.world.item.BowItem
+                || held.getItem() instanceof net.minecraft.world.item.TridentItem && hasArmTrait("trident_thrower"));
+    }
+
+    private boolean hasArmTrait(String name) {
+        ResourceLocation id = Necromancy.id(name);
+        return hasTrait(BodyPartLocation.ARM_RIGHT, id) || hasTrait(BodyPartLocation.ARM_LEFT, id);
+    }
+
+    /** Ticks between bow shots: skeleton-family arms are quick, others slow (docs/REVIEW.md #1). */
+    public int rangedInterval() {
+        if (getMainHandItem().getItem() instanceof net.minecraft.world.item.TridentItem) {
+            return 40;
+        }
+        if (hasArmTrait("poison_archer")) {
+            return 50;
+        }
+        return hasArmTrait("archer") ? 20 + random.nextInt(21) : 60;
+    }
+
+    @Override
+    public void setItemSlot(net.minecraft.world.entity.EquipmentSlot slot, ItemStack stack) {
+        super.setItemSlot(slot, stack);
+        if (!level().isClientSide && slot != net.minecraft.world.entity.EquipmentSlot.BODY) {
+            setGuaranteedDrop(slot);
+        }
+    }
+
+    @Override
+    public boolean canHoldItem(ItemStack stack) {
+        return false;
     }
 
     // --- traits ---
@@ -525,6 +817,33 @@ public class MinionEntity extends TamableAnimal implements RangedAttackMob, Item
 
     @Override
     public void performRangedAttack(LivingEntity target, float velocity) {
+        ItemStack held = getMainHandItem();
+        if (held.getItem() instanceof net.minecraft.world.item.BowItem && hasArms()) {
+            ItemStack ammo = getProjectile(held);
+            net.minecraft.world.entity.projectile.AbstractArrow arrow = net.minecraft.world.entity.projectile.ProjectileUtil.getMobArrow(this, ammo, velocity, held);
+            if (hasArmTrait("poison_archer") && arrow instanceof net.minecraft.world.entity.projectile.Arrow tipped) {
+                tipped.addEffect(new net.minecraft.world.effect.MobEffectInstance(net.minecraft.world.effect.MobEffects.POISON, 80));
+            }
+            double dx = target.getX() - getX();
+            double dy = target.getY(0.3333) - arrow.getY();
+            double dz = target.getZ() - getZ();
+            arrow.shoot(dx, dy + Math.sqrt(dx * dx + dz * dz) * 0.2, dz, 1.6F, 14 - level().getDifficulty().getId() * 4);
+            arrow.pickup = net.minecraft.world.entity.projectile.AbstractArrow.Pickup.DISALLOWED;
+            playSound(SoundEvents.SKELETON_SHOOT, 1.0F, 1.0F / (getRandom().nextFloat() * 0.4F + 0.8F));
+            level().addFreshEntity(arrow);
+            return;
+        }
+        if (held.getItem() instanceof net.minecraft.world.item.TridentItem) {
+            net.minecraft.world.entity.projectile.ThrownTrident trident = new net.minecraft.world.entity.projectile.ThrownTrident(level(), this, held.copyWithCount(1));
+            double dx = target.getX() - getX();
+            double dy = target.getY(0.3333) - trident.getY();
+            double dz = target.getZ() - getZ();
+            trident.shoot(dx, dy + Math.sqrt(dx * dx + dz * dz) * 0.2, dz, 1.6F, 14 - level().getDifficulty().getId() * 4);
+            trident.pickup = net.minecraft.world.entity.projectile.AbstractArrow.Pickup.DISALLOWED;
+            playSound(SoundEvents.DROWNED_SHOOT, 1.0F, 1.0F / (getRandom().nextFloat() * 0.4F + 0.8F));
+            level().addFreshEntity(trident);
+            return;
+        }
         playSound(NecroSounds.TEAR.get(), 1.0F, 1.0F / (getRandom().nextFloat() * 0.4F + 0.8F));
         TearEntity tear = random.nextInt(5) == 0 ? new BloodTearEntity(level(), this) : new TearEntity(level(), this);
         tear.aimAt(this, target);
@@ -544,9 +863,21 @@ public class MinionEntity extends TamableAnimal implements RangedAttackMob, Item
             }
             return InteractionResult.PASS;
         }
+        if (player.isSecondaryUseActive() && stack.isEmpty() && player instanceof net.minecraft.server.level.ServerPlayer serverPlayer) {
+            serverPlayer.openMenu(new net.minecraft.world.SimpleMenuProvider(
+                    (id, inventory, p) -> new com.sirolf2009.necromancy.menu.MinionMenu(id, inventory, this), getDisplayName()),
+                    buf -> buf.writeVarInt(getId()));
+            return InteractionResult.SUCCESS;
+        }
+        if (stack.is(NecroItems.JAR_OF_BLOOD.get()) && getHealth() < getMaxHealth()) {
+            heal(8F);
+            player.setItemInHand(hand, net.minecraft.world.item.ItemUtils.createFilledResult(stack, player, new ItemStack(Items.GLASS_BOTTLE)));
+            playSound(SoundEvents.GENERIC_DRINK, 1F, 0.8F);
+            return InteractionResult.SUCCESS;
+        }
         // mend with flesh
         if (isHealingFood(stack) && getHealth() < getMaxHealth()) {
-            heal(stack.is(Items.ROTTEN_FLESH) ? 4F : 8F);
+            heal(stack.is(Items.ROTTEN_FLESH) ? 2F : 6F);
             stack.consume(1, player);
             playSound(SoundEvents.GENERIC_EAT, 1F, 0.8F);
             ((ServerLevel) level()).sendParticles(net.minecraft.core.particles.ParticleTypes.HEART, getX(), getY() + getBbHeight(), getZ(), 3, 0.3, 0.2, 0.3, 0);
@@ -601,6 +932,7 @@ public class MinionEntity extends TamableAnimal implements RangedAttackMob, Item
     public void die(DamageSource source) {
         if (!level().isClientSide) {
             forEachTrait((location, trait) -> trait.onDeath(this, location, source));
+            dropRemains();
         }
         if (!level().isClientSide && level().getServer() != null) {
             UUID owner = getOwnerUUID();
@@ -609,6 +941,29 @@ public class MinionEntity extends TamableAnimal implements RangedAttackMob, Item
             }
         }
         super.die(source);
+    }
+
+    /**
+     * A Minion bound to a Phylactery leaves Minion Remains to raise it again. Any other Minion scatters: each part has a
+     * one in four chance to drop as its item (docs/REVIEW.md #7).
+     */
+    private void dropRemains() {
+        if (isBound()) {
+            ItemStack remains = new ItemStack(NecroItems.MINION_REMAINS.get());
+            remains.set(com.sirolf2009.necromancy.registry.NecroComponents.MINION_BUILD.get(),
+                    com.sirolf2009.necromancy.soul.MinionBuild.of(parts(), soul, java.util.Optional.ofNullable(getCustomName()), kills()));
+            spawnAtLocation(remains);
+            return;
+        }
+        for (BodyPartLocation location : BodyPartLocation.values()) {
+            NecroMob mob = part(location);
+            if (mob != null && random.nextFloat() < 0.25F) {
+                mob.partItem(location.type()).ifPresent(item -> spawnAtLocation(new ItemStack(item)));
+            }
+        }
+        if (level() instanceof ServerLevel server) {
+            server.sendParticles(net.minecraft.core.particles.ParticleTypes.SOUL, getX(), getY(0.6), getZ(), 12, 0.3, 0.4, 0.3, 0.05);
+        }
     }
 
     @Override
@@ -666,6 +1021,10 @@ public class MinionEntity extends TamableAnimal implements RangedAttackMob, Item
     @Override
     public boolean isSaddled() {
         return steering.hasSaddle();
+    }
+
+    public void removeSaddle() {
+        steering.setSaddle(false);
     }
 
     @Override

@@ -12,16 +12,11 @@ import net.minecraft.world.item.TooltipFlag;
 
 /**
  * Isaac's severed head, worn as a helmet. While worn, the "Shoot Tear" and "Shoot Blood Tear" keys fire tears where you
- * look. It is also the head of the Isaac Minion. It never breaks.
+ * look (blood tears hit harder but cost half a heart). It is also the head of the Isaac Minion. Repaired with Skin.
  */
 public class IsaacsHeadItem extends ArmorItem {
     public IsaacsHeadItem(Holder<ArmorMaterial> material, Properties properties) {
         super(material, Type.HELMET, properties);
-    }
-
-    @Override
-    public boolean isDamageable(ItemStack stack) {
-        return false;
     }
 
     @Override

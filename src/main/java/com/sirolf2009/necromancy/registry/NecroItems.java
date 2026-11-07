@@ -45,15 +45,16 @@ public final class NecroItems {
     public static final Holder<ArmorMaterial> ISAAC_MATERIAL = ARMOR_MATERIALS.register("isaac", () -> new ArmorMaterial(
             Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
                 for (ArmorItem.Type type : ArmorItem.Type.values()) {
-                    map.put(type, 0);
+                    map.put(type, type == ArmorItem.Type.HELMET ? 2 : 0);
                 }
             }),
-            0, SoundEvents.ARMOR_EQUIP_LEATHER, () -> Ingredient.EMPTY,
+            9, SoundEvents.ARMOR_EQUIP_LEATHER, () -> Ingredient.of(NecroItems.SKIN.get()),
             List.of(new ArmorMaterial.Layer(Necromancy.id("isaac"))), 0F, 0F));
 
-    /** The original scythe materials: 666 uses, speed 7, +2 (blood) / +4 (bone) damage, enchantability 9. */
+    /** Scythe materials (docs/REVIEW.md #14): blood 666 uses as in the original, bone 1332, netherite 2031. */
     public static final SimpleTier BLOOD_TIER = new SimpleTier(BlockTags.INCORRECT_FOR_WOODEN_TOOL, 666, 7F, 2F, 9, () -> Ingredient.of(Items.OBSIDIAN));
-    public static final SimpleTier BONE_TIER = new SimpleTier(BlockTags.INCORRECT_FOR_WOODEN_TOOL, 666, 7F, 4F, 9, () -> Ingredient.of(Items.BONE_BLOCK));
+    public static final SimpleTier BONE_TIER = new SimpleTier(BlockTags.INCORRECT_FOR_WOODEN_TOOL, 1332, 7F, 3F, 9, () -> Ingredient.of(Items.BONE_BLOCK));
+    public static final SimpleTier NETHERITE_TIER = new SimpleTier(BlockTags.INCORRECT_FOR_WOODEN_TOOL, 2031, 7F, 4F, 15, () -> Ingredient.of(Items.NETHERITE_INGOT));
 
     private static final FoodProperties ORGAN_FOOD = new FoodProperties.Builder()
             .nutrition(2)
@@ -63,20 +64,28 @@ public final class NecroItems {
 
     // Tools of the trade
     public static final DeferredItem<NecronomiconItem> NECRONOMICON = ITEMS.register("necronomicon", () -> new NecronomiconItem(new Item.Properties().stacksTo(1).rarity(Rarity.UNCOMMON)));
-    public static final DeferredItem<BoneNeedleItem> BONE_NEEDLE = ITEMS.register("bone_needle", () -> new BoneNeedleItem(new Item.Properties().durability(10)));
+    public static final DeferredItem<BoneNeedleItem> BONE_NEEDLE = ITEMS.register("bone_needle", () -> new BoneNeedleItem(new Item.Properties().durability(32)));
     public static final DeferredItem<com.sirolf2009.necromancy.item.SoulJarItem> SOUL_IN_A_JAR = ITEMS.register("soul_in_a_jar",
             () -> new com.sirolf2009.necromancy.item.SoulJarItem(new Item.Properties().rarity(Rarity.UNCOMMON)));
     public static final DeferredItem<Item> JAR_OF_BLOOD = ITEMS.registerSimpleItem("jar_of_blood", new Item.Properties().craftRemainder(Items.GLASS_BOTTLE));
     public static final DeferredItem<BrainOnAStickItem> BRAIN_ON_A_STICK = ITEMS.register("brain_on_a_stick",
             () -> new BrainOnAStickItem(new Item.Properties().durability(25)));
     public static final DeferredItem<ScytheItem> BLOOD_SCYTHE = ITEMS.register("blood_scythe", () -> new ScytheItem(BLOOD_TIER,
-            new Item.Properties().attributes(ScytheItem.createAttributes(BLOOD_TIER, 4, -2.8F))));
+            new Item.Properties().attributes(ScytheItem.scytheAttributes(6, 1.1, 0.5, 0.5))));
     public static final DeferredItem<ScytheItem> BONE_SCYTHE = ITEMS.register("bone_scythe", () -> new ScytheItem(BONE_TIER,
-            new Item.Properties().rarity(Rarity.UNCOMMON).attributes(ScytheItem.createAttributes(BONE_TIER, 4, -2.8F))));
+            new Item.Properties().rarity(Rarity.UNCOMMON).attributes(ScytheItem.scytheAttributes(7, 1.1, 0.5, 0.5))));
+    public static final DeferredItem<ScytheItem> NETHERITE_SCYTHE = ITEMS.register("netherite_scythe", () -> new ScytheItem(NETHERITE_TIER,
+            new Item.Properties().rarity(Rarity.RARE).fireResistant().attributes(ScytheItem.scytheAttributes(8, 1.1, 0.6, 0.75))));
+    public static final DeferredItem<com.sirolf2009.necromancy.item.BoneScepterItem> BONE_SCEPTER = ITEMS.register("bone_scepter",
+            () -> new com.sirolf2009.necromancy.item.BoneScepterItem(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<com.sirolf2009.necromancy.item.PhylacteryItem> PHYLACTERY = ITEMS.register("phylactery",
+            () -> new com.sirolf2009.necromancy.item.PhylacteryItem(new Item.Properties().durability(3).rarity(Rarity.UNCOMMON)));
+    public static final DeferredItem<com.sirolf2009.necromancy.item.MinionRemainsItem> MINION_REMAINS = ITEMS.register("minion_remains",
+            () -> new com.sirolf2009.necromancy.item.MinionRemainsItem(new Item.Properties().stacksTo(1).rarity(Rarity.UNCOMMON)));
     public static final DeferredItem<BucketItem> BLOOD_BUCKET = ITEMS.register("blood_bucket",
             () -> new BucketItem(NecroFluids.BLOOD.get(), new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
     public static final DeferredItem<IsaacsHeadItem> ISAACS_HEAD = ITEMS.register("isaacs_head",
-            () -> new IsaacsHeadItem(ISAAC_MATERIAL, new Item.Properties().stacksTo(1).rarity(Rarity.RARE)));
+            () -> new IsaacsHeadItem(ISAAC_MATERIAL, new Item.Properties().durability(275).rarity(Rarity.RARE)));
     public static final DeferredItem<SoulHeartItem> SOUL_HEART = ITEMS.register("soul_heart", () -> new SoulHeartItem(new Item.Properties().rarity(Rarity.UNCOMMON)));
 
     // Organs: edible, but not good for you

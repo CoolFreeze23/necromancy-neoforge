@@ -25,6 +25,9 @@ public final class NecroTabs {
                 output.accept(NecroItems.BLOOD_BUCKET.get());
                 output.accept(NecroItems.BLOOD_SCYTHE.get());
                 output.accept(NecroItems.BONE_SCYTHE.get());
+                output.accept(NecroItems.NETHERITE_SCYTHE.get());
+                output.accept(NecroItems.BONE_SCEPTER.get());
+                output.accept(NecroItems.PHYLACTERY.get());
                 output.accept(NecroItems.BRAIN_ON_A_STICK.get());
                 output.accept(NecroItems.BRAINS.get());
                 output.accept(NecroItems.HEART.get());

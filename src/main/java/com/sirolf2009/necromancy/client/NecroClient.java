@@ -45,6 +45,7 @@ public final class NecroClient {
     public static void setup(FMLClientSetupEvent event) {
         event.enqueueWork(() -> {
             VanillaPartModels.registerAll();
+            com.sirolf2009.necromancy.item.NecronomiconItem.openGuide = NecroClientEvents::openGuide;
             ClientParts.registerAll();
         });
     }
@@ -66,6 +67,7 @@ public final class NecroClient {
     public static void screens(RegisterMenuScreensEvent event) {
         event.register(NecroMenus.ALTAR.get(), AltarScreen::new);
         event.register(NecroMenus.SEWING.get(), SewingScreen::new);
+        event.register(NecroMenus.MINION.get(), com.sirolf2009.necromancy.client.screen.MinionScreen::new);
     }
 
     @SubscribeEvent

@@ -45,7 +45,7 @@ public final class NecroConfig {
                 .define("creeperTorsoBreaksBlocks", false);
         b.pop();
         b.push("drops");
-        ORGAN_DROP_CHANCE = b.comment("Multiplier on the organ drop chances (brains 1%, heart 1%, muscle 4%, lungs 1%, skin from leather in the Sewing Machine). 0 turns organ drops off.")
+        ORGAN_DROP_CHANCE = b.comment("Multiplier on the organ drop chances (brains, heart, lungs 2%, muscle 5%, skin 15%, more from organ-rich creatures, +1% per Looting or Reaping level). 0 turns organ drops off.")
                 .defineInRange("organDropMultiplier", 1.0, 0.0, 100.0);
         b.pop();
         SPEC = b.build();

@@ -27,8 +27,28 @@ import net.minecraft.world.level.gameevent.GameEvent;
  * facing along the row. The book is used up, as in the original.
  */
 public class NecronomiconItem extends Item {
+    /** Set by the client: opens the guide book. */
+    public static Runnable openGuide = () -> {
+    };
+
     public NecronomiconItem(Properties properties) {
         super(properties);
+    }
+
+    /** Read it: a guide to the art (docs/REVIEW.md #15). Using it on planks beside cobblestone still binds an altar. */
+    @Override
+    public net.minecraft.world.InteractionResultHolder<net.minecraft.world.item.ItemStack> use(Level level, Player player, net.minecraft.world.InteractionHand hand) {
+        if (level.isClientSide) {
+            openGuide.run();
+        }
+        player.awardStat(net.minecraft.stats.Stats.ITEM_USED.get(this));
+        return net.minecraft.world.InteractionResultHolder.sidedSuccess(player.getItemInHand(hand), level.isClientSide);
+    }
+
+    @Override
+    public void appendHoverText(net.minecraft.world.item.ItemStack stack, TooltipContext context, java.util.List<net.minecraft.network.chat.Component> tooltip,
+            net.minecraft.world.item.TooltipFlag flag) {
+        tooltip.add(net.minecraft.network.chat.Component.translatable("tooltip.necromancy.necronomicon").withStyle(net.minecraft.ChatFormatting.GRAY));
     }
 
     @Override

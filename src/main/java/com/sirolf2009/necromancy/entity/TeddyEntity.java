@@ -58,7 +58,7 @@ public class TeddyEntity extends TamableAnimal {
 
     public static AttributeSupplier.Builder createAttributes() {
         return Mob.createMobAttributes()
-                .add(Attributes.MAX_HEALTH, 8.0)
+                .add(Attributes.MAX_HEALTH, 12.0)
                 .add(Attributes.FOLLOW_RANGE, 32.0)
                 .add(Attributes.MOVEMENT_SPEED, 0.3)
                 .add(Attributes.ATTACK_DAMAGE, 3.0);
@@ -98,6 +98,13 @@ public class TeddyEntity extends TamableAnimal {
             tame(player);
         } else if (!isOwnedBy(player)) {
             return InteractionResult.PASS;
+        }
+        var stack = player.getItemInHand(hand);
+        if (stack.is(net.minecraft.tags.ItemTags.WOOL) && getHealth() < getMaxHealth()) {
+            heal(4F);
+            stack.consume(1, player);
+            playSound(SoundEvents.WOOL_PLACE, 1F, 1F);
+            return InteractionResult.SUCCESS;
         }
         State next = State.values()[(state().ordinal() + 1) % State.values().length];
         setState(next);
