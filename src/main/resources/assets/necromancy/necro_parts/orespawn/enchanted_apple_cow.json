@@ -3,13 +3,11 @@
   "requires": "orespawn",
   "layer": "minecraft:cow#main",
   "texture": "orespawn:textures/entity/enchanted_apple_cow.png",
-  "scale": 1.0,
-  "head": {
-    "groups": [ { "bones": ["head"] } ],
-    "plug": [0, 8, -11]
-  },
+  "glint": true,
+  "scale": 1,
+  "head": { "groups": [{ "bones": ["head"] }], "plug": [0, 8, -11] },
   "torso": {
-    "groups": [ { "bones": ["body"] } ],
+    "groups": [{ "bones": ["body"] }],
     "plug": [0, 12, 7],
     "neck": [0, 8, -11],
     "shoulder_left": [4, 12, -6],
@@ -22,8 +20,5 @@
     "plug_right": [-4, 12, -6],
     "animator": "front_leg"
   },
-  "legs": {
-    "groups": [ { "bones": ["right_hind_leg", "left_hind_leg"] } ],
-    "hip": [0, 12, 7]
-  }
+  "legs": { "groups": [{ "bones": ["right_hind_leg", "left_hind_leg"] }], "hip": [0, 12, 7] }
 }

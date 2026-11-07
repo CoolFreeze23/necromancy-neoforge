@@ -3,11 +3,21 @@
   "requires": "orespawn",
   "geo": "orespawn:geo/entity/dragon.geo.json",
   "texture": "orespawn:textures/entity/dragon.png",
-  "scale": 1.0,
+  "scale": 1,
+  "pose": {
+    "wing3": [-0.521, -20.041, -16.23],
+    "wing8": [0.13, 72.426, -17.23],
+    "wing2": [0, 59.645, -24.35],
+    "wing7": [0, 59.645, -24.35],
+    "wing9": [0.13, 72.426, -24.35],
+    "wing5": [-0.521, 19.041, 16.23],
+    "wing10": [-0.13, -70.296, 16.23],
+    "wing6": [0, -59.645, 24.35],
+    "wing11": [0, -59.645, 24.35],
+    "wing12": [0.13, -72.426, 24.35]
+  },
   "head": {
-    "groups": [
-      { "bones": ["head", "horn1", "horn2", "mouth1", "mouth2"], "pivot": [0, 6, -23] }
-    ],
+    "groups": [{ "bones": ["head", "horn1", "horn2", "mouth1", "mouth2"], "pivot": [0, 6, -23] }],
     "plug": [0, 10, -24],
     "animator": "look"
   },
@@ -15,7 +25,7 @@
     "groups": [
       {
         "bones": ["body", "body2", "body3", "neck2", "neck3", "neck1", "tail1", "tail2", "tail3", "tail4", "tail5", "tail6", "spike1",
-                  "spike2", "spike3", "spike4", "spike5", "spike6", "spike7", "spike8", "spike9", "spike10"]
+          "spike2", "spike3", "spike4", "spike5", "spike6", "spike7", "spike8", "spike9", "spike10"]
       }
     ],
     "plug": [0, 12, 1.5],
@@ -24,8 +34,12 @@
     "shoulder_right": [-7, 4, -5]
   },
   "arm": {
-    "left": { "bones": ["wing1", "wing15", "wing3", "wing8", "wing2", "wing7", "wing9"] },
-    "right": { "bones": ["wing4", "wing14", "wing5", "wing10", "wing6", "wing11", "wing12"] },
+    "left": { "bones": ["wing1", "wing15", "wing3", "wing8", "wing2", "wing7", "wing9"], "pivot": [4, 3, -5], "rotation": [0, 0, -48.7] },
+    "right": {
+      "bones": ["wing4", "wing14", "wing5", "wing10", "wing6", "wing11", "wing12"],
+      "pivot": [-4, 3, -5],
+      "rotation": [0, 0, 48.7]
+    },
     "plug_left": [7, 4, -5],
     "plug_right": [-7, 4, -5],
     "animator": "none"

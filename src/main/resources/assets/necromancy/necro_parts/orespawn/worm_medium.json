@@ -5,17 +5,13 @@
   "texture": "orespawn:textures/entity/wormmedium.png",
   "scale": 0.442,
   "head": {
-    "groups": [
-      { "bones": ["head", "head2", "tooth1", "tooth2", "tooth3", "tooth4"], "pivot": [0, 1, 0] }
-    ],
+    "groups": [{ "bones": ["head", "head2", "tooth1", "tooth2", "tooth3", "tooth4"], "pivot": [0, 1, 0] }],
     "plug": [0, 1, 0],
     "animator": "look"
   },
   "torso": {
-    "groups": [
-      { "bones": ["body", "tail"] }
-    ],
-    "plug": [0, -3.149, 0],
+    "groups": [{ "bones": ["body", "tail"] }],
+    "plug": [0, 25, 0],
     "neck": [0, 1, 0],
     "shoulder_left": [2.5, 3, 0],
     "shoulder_right": [-2.5, 3, 0]

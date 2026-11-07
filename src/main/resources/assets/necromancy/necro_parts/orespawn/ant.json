@@ -4,17 +4,9 @@
   "geo": "orespawn:geo/entity/ant.geo.json",
   "texture": "orespawn:textures/entity/ant.png",
   "scale": 1.8,
-  "head": {
-    "groups": [
-      {"bones": ["head", "jawsl", "jawsr"], "pivot": [1.5, 17.5, -1]}
-    ],
-    "plug": [1.5, 19, -2.5],
-    "animator": "look"
-  },
+  "head": { "groups": [{ "bones": ["head", "jawsl", "jawsr"], "pivot": [1.5, 17.5, -1] }], "plug": [1.5, 19, -2.5], "animator": "look" },
   "torso": {
-    "groups": [
-      {"bones": ["thorax", "thorax1", "thorax3", "abdomen", "abdomen1"]}
-    ],
+    "groups": [{ "bones": ["thorax", "thorax1", "thorax3", "abdomen", "abdomen1"] }],
     "plug": [1.5, 20, 1.5],
     "neck": [1.5, 19, -2.5],
     "shoulder_left": [4, 19, 1.5],
@@ -22,14 +14,15 @@
   },
   "legs": {
     "groups": [
-      {"bones": ["llegtop3", "llegbot3"], "pivot": [2, 19.5, -0.5]},
-      {"bones": ["rlegtop2", "rlegbot2"], "pivot": [1, 19.5, 0]},
-      {"bones": ["rlegtop1", "rlegbot1"], "pivot": [1, 19.5, 1.5]},
-      {"bones": ["llegtop1", "llegbot1"], "pivot": [2, 19.5, 1.5]},
-      {"bones": ["llegtop2", "llegbot2"], "pivot": [2, 19.5, 3]},
-      {"bones": ["rlegtop3", "rlegbot3"], "pivot": [1, 19.5, 3]}
+      { "bones": ["llegtop3", "llegbot3"], "pivot": [2, 19.5, -0.5] },
+      { "bones": ["rlegtop2", "rlegbot2"], "pivot": [1, 19.5, 0] },
+      { "bones": ["rlegtop1", "rlegbot1"], "pivot": [1, 19.5, 1.5] },
+      { "bones": ["llegtop1", "llegbot1"], "pivot": [2, 19.5, 1.5] },
+      { "bones": ["llegtop2", "llegbot2"], "pivot": [2, 19.5, 3] },
+      { "bones": ["rlegtop3", "rlegbot3"], "pivot": [1, 19.5, 3] }
     ],
-    "hip": [1.5, 20, 1.5],
+    "hip": [0, 20.64, 1.5],
+    "offset": [-1.5, 0.64, 0],
     "animator": "walk_pair"
   }
 }

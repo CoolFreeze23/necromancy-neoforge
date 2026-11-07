@@ -4,14 +4,11 @@
   "geo": "orespawn:geo/entity/beaver.geo.json",
   "texture": "orespawn:textures/entity/beaver.png",
   "scale": 1.75,
-  "head": {
-    "groups": [ { "bones": ["head", "nose", "teeth"], "pivot": [3, 17.5, -3] } ],
-    "plug": [3, 20, -5.5]
-  },
+  "head": { "groups": [{ "bones": ["head", "nose", "teeth"], "pivot": [3, 17.5, -3] }], "plug": [3, 20, -3] },
   "torso": {
-    "groups": [ { "bones": ["body", "tail"] } ],
+    "groups": [{ "bones": ["body", "tail"] }],
     "plug": [3, 22, 2],
-    "neck": [3, 20, -5.5],
+    "neck": [3, 20, -3],
     "shoulder_left": [8, 16, -1],
     "shoulder_right": [-2, 16, -1]
   },
@@ -22,6 +19,7 @@
       { "bones": ["rrf"], "pivot": [0.5, 22, 5.5] },
       { "bones": ["lrf"], "pivot": [5.5, 22, 5.5] }
     ],
-    "hip": [3, 22, 2]
+    "hip": [0, 22, 2],
+    "offset": [-3, 0, 0]
   }
 }

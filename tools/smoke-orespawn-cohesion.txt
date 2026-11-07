@@ -1,0 +1,1789 @@
+# OreSpawn parts, the cohesion pass: each subject framed alone (3/4 front, profile), spawnlings, item icons
+# (tools/smoke-orespawn.sh tools/smoke-orespawn-cohesion.txt)
+wait 20
+difficulty easy
+gamerule doMobSpawning false
+gamerule doDaylightCycle false
+time set 6000
+weather clear
+gamerule doWeatherCycle false
+gamemode spectator
+hud off
+kill @e[type=!player]
+wait 10
+
+# --- f alien peacock whale ender_reaper cephadrome bee
+tp @s 39.4 -54 10 180 10
+wait 30
+summon necromancy:minion 10.40 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:alien",torso:"orespawn:alien",arm_left:"orespawn:alien",arm_right:"orespawn:alien",legs:"orespawn:alien"}}
+summon necromancy:minion 10.40 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:alien",torso:"orespawn:alien",arm_left:"orespawn:alien",arm_right:"orespawn:alien",legs:"orespawn:alien"}}
+summon orespawn:alien 2.90 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f]}
+summon orespawn:alien 2.90 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f]}
+summon necromancy:minion 27.44 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:peacock",torso:"orespawn:peacock",legs:"orespawn:peacock"}}
+summon necromancy:minion 27.44 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:peacock",torso:"orespawn:peacock",legs:"orespawn:peacock"}}
+summon orespawn:peacock 23.07 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f]}
+summon orespawn:peacock 23.07 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f]}
+summon necromancy:minion 40.97 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:whale",torso:"orespawn:whale"}}
+summon necromancy:minion 40.97 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:whale",torso:"orespawn:whale"}}
+summon necromancy:minion 55.11 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:ender_reaper",torso:"orespawn:ender_reaper",arm_left:"orespawn:ender_reaper",arm_right:"orespawn:ender_reaper",legs:"orespawn:ender_reaper"}}
+summon necromancy:minion 55.11 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:ender_reaper",torso:"orespawn:ender_reaper",arm_left:"orespawn:ender_reaper",arm_right:"orespawn:ender_reaper",legs:"orespawn:ender_reaper"}}
+summon orespawn:ender_reaper 50.23 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f]}
+summon orespawn:ender_reaper 50.23 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f]}
+summon necromancy:minion 67.10 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:cephadrome",torso:"orespawn:cephadrome",arm_left:"orespawn:cephadrome",arm_right:"orespawn:cephadrome",legs:"orespawn:cephadrome"}}
+summon necromancy:minion 67.10 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:cephadrome",torso:"orespawn:cephadrome",arm_left:"orespawn:cephadrome",arm_right:"orespawn:cephadrome",legs:"orespawn:cephadrome"}}
+summon necromancy:minion 75.33 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:bee",torso:"orespawn:bee",arm_left:"orespawn:bee",arm_right:"orespawn:bee",legs:"orespawn:bee"}}
+summon necromancy:minion 75.33 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:bee",torso:"orespawn:bee",arm_left:"orespawn:bee",arm_right:"orespawn:bee",legs:"orespawn:bee"}}
+wait 40
+hitboxes on
+tp @s 13.25 -56.92 10.49 150.0 16.0
+wait 10
+shot f_alien_a
+hitboxes off
+tp @s 7.59 -59.24 -34.05 180.0 7.0
+wait 10
+shot f_alien_b
+hitboxes on
+tp @s 29.07 -58.93 5.69 150.0 16.0
+wait 10
+shot f_peacock_a
+hitboxes off
+tp @s 26.11 -60.26 -38.72 180.0 7.0
+wait 10
+shot f_peacock_b
+tp @s 45.38 -58.48 7.17 150.0 16.0
+wait 10
+shot f_whale_a
+tp @s 41.44 -60.04 -37.69 180.0 7.0
+wait 10
+shot f_whale_b
+hitboxes on
+tp @s 56.91 -57.44 6.29 150.0 16.0
+wait 10
+shot f_ender_reaper_a
+hitboxes off
+tp @s 53.72 -58.94 -37.98 180.0 7.0
+wait 10
+shot f_ender_reaper_b
+tp @s 69.96 -58.62 4.07 150.0 16.0
+wait 10
+shot f_cephadrome_a
+tp @s 68.00 -59.59 -39.85 180.0 7.0
+wait 10
+shot f_cephadrome_b
+tp @s 77.30 -59.71 3.93 150.0 16.0
+wait 10
+shot f_bee_a
+tp @s 74.83 -60.38 -41.52 180.0 7.0
+wait 10
+shot f_bee_b
+
+# --- f spider_driver enchanted_apple_cow kyuubi dungeon_beast cater_killer firefly
+tp @s 113.8 -54 10 180 10
+wait 30
+summon necromancy:minion 89.38 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:spider_driver",torso:"orespawn:spider_driver",legs:"orespawn:spider_driver"}}
+summon necromancy:minion 89.38 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:spider_driver",torso:"orespawn:spider_driver",legs:"orespawn:spider_driver"}}
+summon orespawn:spider_driver 85.09 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f]}
+summon orespawn:spider_driver 85.09 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f]}
+summon necromancy:minion 100.33 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:enchanted_apple_cow",torso:"orespawn:enchanted_apple_cow",arm_left:"orespawn:enchanted_apple_cow",arm_right:"orespawn:enchanted_apple_cow",legs:"orespawn:enchanted_apple_cow"}}
+summon necromancy:minion 100.33 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:enchanted_apple_cow",torso:"orespawn:enchanted_apple_cow",arm_left:"orespawn:enchanted_apple_cow",arm_right:"orespawn:enchanted_apple_cow",legs:"orespawn:enchanted_apple_cow"}}
+summon orespawn:enchanted_apple_cow 97.83 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f]}
+summon orespawn:enchanted_apple_cow 97.83 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f]}
+summon necromancy:minion 109.32 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:kyuubi",torso:"orespawn:kyuubi",arm_left:"orespawn:kyuubi",arm_right:"orespawn:kyuubi",legs:"orespawn:kyuubi"}}
+summon necromancy:minion 109.32 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:kyuubi",torso:"orespawn:kyuubi",arm_left:"orespawn:kyuubi",arm_right:"orespawn:kyuubi",legs:"orespawn:kyuubi"}}
+summon orespawn:kyuubi 106.66 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f]}
+summon orespawn:kyuubi 106.66 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f]}
+summon necromancy:minion 121.44 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:dungeon_beast",torso:"orespawn:dungeon_beast",arm_left:"orespawn:dungeon_beast",arm_right:"orespawn:dungeon_beast",legs:"orespawn:dungeon_beast"}}
+summon necromancy:minion 121.44 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:dungeon_beast",torso:"orespawn:dungeon_beast",arm_left:"orespawn:dungeon_beast",arm_right:"orespawn:dungeon_beast",legs:"orespawn:dungeon_beast"}}
+summon orespawn:dungeon_beast 116.33 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f]}
+summon orespawn:dungeon_beast 116.33 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f]}
+summon necromancy:minion 133.33 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:cater_killer",torso:"orespawn:cater_killer"}}
+summon necromancy:minion 133.33 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:cater_killer",torso:"orespawn:cater_killer"}}
+summon necromancy:minion 141.18 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:firefly",torso:"orespawn:firefly",arm_left:"orespawn:firefly",arm_right:"orespawn:firefly",legs:"orespawn:firefly"}}
+summon necromancy:minion 141.18 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:firefly",torso:"orespawn:firefly",arm_left:"orespawn:firefly",arm_right:"orespawn:firefly",legs:"orespawn:firefly"}}
+wait 40
+hitboxes on
+tp @s 90.95 -58.91 6.29 150.0 16.0
+wait 10
+shot f_spider_driver_a
+hitboxes off
+tp @s 87.37 -60.22 -38.86 180.0 7.0
+wait 10
+shot f_spider_driver_b
+hitboxes on
+tp @s 101.18 -59.68 3.76 150.0 16.0
+wait 10
+shot f_enchanted_apple_cow_a
+hitboxes off
+tp @s 98.96 -60.42 -41.55 180.0 7.0
+wait 10
+shot f_enchanted_apple_cow_b
+hitboxes on
+tp @s 110.24 -59.64 3.59 150.0 16.0
+wait 10
+shot f_kyuubi_a
+hitboxes off
+tp @s 108.28 -60.43 -41.30 180.0 7.0
+wait 10
+shot f_kyuubi_b
+hitboxes on
+tp @s 123.34 -58.35 7.06 150.0 16.0
+wait 10
+shot f_dungeon_beast_a
+hitboxes off
+tp @s 119.54 -59.92 -37.63 180.0 7.0
+wait 10
+shot f_dungeon_beast_b
+tp @s 135.84 -59.57 3.94 150.0 16.0
+wait 10
+shot f_cater_killer_a
+tp @s 133.75 -60.46 -40.86 180.0 7.0
+wait 10
+shot f_cater_killer_b
+tp @s 142.42 -60.62 2.23 150.0 16.0
+wait 10
+shot f_firefly_a
+tp @s 141.09 -61.05 -42.90 180.0 7.0
+wait 10
+shot f_firefly_b
+
+# --- f cricket ender_knight beaver dragon
+tp @s 167.6 -54 10 180 10
+wait 30
+summon necromancy:minion 152.18 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:cricket",torso:"orespawn:cricket",legs:"orespawn:cricket"}}
+summon necromancy:minion 152.18 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:cricket",torso:"orespawn:cricket",legs:"orespawn:cricket"}}
+summon necromancy:minion 159.77 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:ender_knight",torso:"orespawn:ender_knight",arm_left:"orespawn:ender_knight",arm_right:"orespawn:ender_knight",legs:"orespawn:ender_knight"}}
+summon necromancy:minion 159.77 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:ender_knight",torso:"orespawn:ender_knight",arm_left:"orespawn:ender_knight",arm_right:"orespawn:ender_knight",legs:"orespawn:ender_knight"}}
+summon orespawn:ender_knight 157.53 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f]}
+summon orespawn:ender_knight 157.53 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f]}
+summon necromancy:minion 169.55 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:beaver",torso:"orespawn:beaver",legs:"orespawn:beaver"}}
+summon necromancy:minion 169.55 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:beaver",torso:"orespawn:beaver",legs:"orespawn:beaver"}}
+summon orespawn:beaver 165.98 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f]}
+summon orespawn:beaver 165.98 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f]}
+summon necromancy:minion 180.91 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:dragon",torso:"orespawn:dragon",arm_left:"orespawn:dragon",arm_right:"orespawn:dragon",legs:"orespawn:dragon"}}
+summon necromancy:minion 180.91 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:dragon",torso:"orespawn:dragon",arm_left:"orespawn:dragon",arm_right:"orespawn:dragon",legs:"orespawn:dragon"}}
+wait 40
+tp @s 154.08 -60.10 2.78 150.0 16.0
+wait 10
+shot f_cricket_a
+tp @s 152.62 -60.76 -41.92 180.0 7.0
+wait 10
+shot f_cricket_b
+hitboxes on
+tp @s 161.49 -58.67 5.31 150.0 16.0
+wait 10
+shot f_ender_knight_a
+hitboxes off
+tp @s 158.25 -59.62 -39.91 180.0 7.0
+wait 10
+shot f_ender_knight_b
+hitboxes on
+tp @s 170.83 -59.38 5.04 150.0 16.0
+wait 10
+shot f_beaver_a
+hitboxes off
+tp @s 168.03 -60.47 -39.94 180.0 7.0
+wait 10
+shot f_beaver_b
+tp @s 184.63 -57.56 5.80 150.0 16.0
+wait 10
+shot f_dragon_a
+tp @s 181.60 -58.81 -38.23 180.0 7.0
+wait 10
+shot f_dragon_b
+
+# --- l rubber_ducky dragonfly basilisk worm_large worm_medium worm_small
+tp @s 215.6 -54 10 180 10
+wait 30
+summon necromancy:minion 194.09 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:rubber_ducky",torso:"orespawn:rubber_ducky",arm_left:"orespawn:rubber_ducky",arm_right:"orespawn:rubber_ducky"}}
+summon necromancy:minion 194.09 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:rubber_ducky",torso:"orespawn:rubber_ducky",arm_left:"orespawn:rubber_ducky",arm_right:"orespawn:rubber_ducky"}}
+summon necromancy:minion 201.12 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:dragonfly",torso:"orespawn:dragonfly",arm_left:"orespawn:dragonfly",arm_right:"orespawn:dragonfly"}}
+summon necromancy:minion 201.12 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:dragonfly",torso:"orespawn:dragonfly",arm_left:"orespawn:dragonfly",arm_right:"orespawn:dragonfly"}}
+summon necromancy:minion 211.78 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:basilisk",torso:"orespawn:basilisk"}}
+summon necromancy:minion 211.78 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:basilisk",torso:"orespawn:basilisk"}}
+summon necromancy:minion 222.77 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:worm_large",torso:"orespawn:worm_large"}}
+summon necromancy:minion 222.77 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:worm_large",torso:"orespawn:worm_large"}}
+summon necromancy:minion 230.14 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:worm_medium",torso:"orespawn:worm_medium"}}
+summon necromancy:minion 230.14 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:worm_medium",torso:"orespawn:worm_medium"}}
+summon necromancy:minion 237.14 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:worm_small",torso:"orespawn:worm_small"}}
+summon necromancy:minion 237.14 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:worm_small",torso:"orespawn:worm_small"}}
+wait 40
+tp @s 195.43 -60.49 2.28 150.0 16.0
+wait 10
+shot l_rubber_ducky_a
+tp @s 194.13 -60.95 -42.70 180.0 7.0
+wait 10
+shot l_rubber_ducky_b
+tp @s 203.02 -60.23 2.86 150.0 16.0
+wait 10
+shot l_dragonfly_a
+tp @s 201.55 -60.90 -41.89 180.0 7.0
+wait 10
+shot l_dragonfly_b
+tp @s 216.37 -57.86 6.70 150.0 16.0
+wait 10
+shot l_basilisk_a
+tp @s 213.04 -59.48 -37.39 180.0 7.0
+wait 10
+shot l_basilisk_b
+tp @s 224.93 -59.72 2.83 150.0 16.0
+wait 10
+shot l_worm_large_a
+tp @s 223.68 -60.48 -41.46 180.0 7.0
+wait 10
+shot l_worm_large_b
+tp @s 231.70 -60.22 2.70 150.0 16.0
+wait 10
+shot l_worm_medium_a
+tp @s 230.14 -60.76 -42.29 180.0 7.0
+wait 10
+shot l_worm_medium_b
+tp @s 238.53 -60.43 2.40 150.0 16.0
+wait 10
+shot l_worm_small_a
+tp @s 237.14 -60.91 -42.61 180.0 7.0
+wait 10
+shot l_worm_small_b
+
+# --- l gold_fish cloud_shark cliff_racer sea_monster sea_viper flounder
+tp @s 270.3 -54 10 180 10
+wait 30
+summon necromancy:minion 248.14 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:gold_fish",torso:"orespawn:gold_fish"}}
+summon necromancy:minion 248.14 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:gold_fish",torso:"orespawn:gold_fish"}}
+summon necromancy:minion 255.14 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:cloud_shark",torso:"orespawn:cloud_shark"}}
+summon necromancy:minion 255.14 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:cloud_shark",torso:"orespawn:cloud_shark"}}
+summon necromancy:minion 262.14 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:cliff_racer",torso:"orespawn:cliff_racer",arm_left:"orespawn:cliff_racer",arm_right:"orespawn:cliff_racer"}}
+summon necromancy:minion 262.14 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:cliff_racer",torso:"orespawn:cliff_racer",arm_left:"orespawn:cliff_racer",arm_right:"orespawn:cliff_racer"}}
+summon necromancy:minion 269.41 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:sea_monster",torso:"orespawn:sea_monster"}}
+summon necromancy:minion 269.41 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:sea_monster",torso:"orespawn:sea_monster"}}
+summon necromancy:minion 281.11 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:sea_viper",torso:"orespawn:sea_viper"}}
+summon necromancy:minion 281.11 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:sea_viper",torso:"orespawn:sea_viper"}}
+summon necromancy:minion 292.54 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:flounder",torso:"orespawn:flounder"}}
+summon necromancy:minion 292.54 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:flounder",torso:"orespawn:flounder"}}
+wait 40
+tp @s 249.70 -60.40 2.46 150.0 16.0
+wait 10
+shot l_gold_fish_a
+tp @s 248.38 -60.95 -42.46 180.0 7.0
+wait 10
+shot l_gold_fish_b
+tp @s 256.81 -60.28 2.70 150.0 16.0
+wait 10
+shot l_cloud_shark_a
+tp @s 255.33 -60.87 -42.27 180.0 7.0
+wait 10
+shot l_cloud_shark_b
+tp @s 263.60 -60.63 2.27 150.0 16.0
+wait 10
+shot l_cliff_racer_a
+tp @s 262.39 -61.15 -42.63 180.0 7.0
+wait 10
+shot l_cliff_racer_b
+tp @s 271.49 -59.81 3.38 150.0 16.0
+wait 10
+shot l_sea_monster_a
+tp @s 269.63 -60.54 -41.59 180.0 7.0
+wait 10
+shot l_sea_monster_b
+tp @s 286.39 -58.08 6.67 150.0 16.0
+wait 10
+shot l_sea_viper_a
+tp @s 283.45 -59.91 -36.31 180.0 7.0
+wait 10
+shot l_sea_viper_b
+tp @s 293.72 -60.95 1.96 150.0 16.0
+wait 10
+shot l_flounder_a
+tp @s 292.62 -61.37 -43.09 180.0 7.0
+wait 10
+shot l_flounder_b
+
+# --- l skate brutalfly butterfly luna_moth vampire_butterfly mosquito
+tp @s 321.0 -54 10 180 10
+wait 30
+summon necromancy:minion 303.54 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:skate",torso:"orespawn:skate"}}
+summon necromancy:minion 303.54 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:skate",torso:"orespawn:skate"}}
+summon necromancy:minion 310.54 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:brutalfly",torso:"orespawn:brutalfly",arm_left:"orespawn:brutalfly",arm_right:"orespawn:brutalfly"}}
+summon necromancy:minion 310.54 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:brutalfly",torso:"orespawn:brutalfly",arm_left:"orespawn:brutalfly",arm_right:"orespawn:brutalfly"}}
+summon necromancy:minion 317.54 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:butterfly",torso:"orespawn:butterfly",arm_left:"orespawn:butterfly",arm_right:"orespawn:butterfly"}}
+summon necromancy:minion 317.54 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:butterfly",torso:"orespawn:butterfly",arm_left:"orespawn:butterfly",arm_right:"orespawn:butterfly"}}
+summon necromancy:minion 324.54 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:luna_moth",torso:"orespawn:luna_moth",arm_left:"orespawn:luna_moth",arm_right:"orespawn:luna_moth"}}
+summon necromancy:minion 324.54 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:luna_moth",torso:"orespawn:luna_moth",arm_left:"orespawn:luna_moth",arm_right:"orespawn:luna_moth"}}
+summon necromancy:minion 331.54 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:vampire_butterfly",torso:"orespawn:vampire_butterfly",arm_left:"orespawn:vampire_butterfly",arm_right:"orespawn:vampire_butterfly"}}
+summon necromancy:minion 331.54 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:vampire_butterfly",torso:"orespawn:vampire_butterfly",arm_left:"orespawn:vampire_butterfly",arm_right:"orespawn:vampire_butterfly"}}
+summon necromancy:minion 338.54 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:mosquito",torso:"orespawn:mosquito",arm_left:"orespawn:mosquito",arm_right:"orespawn:mosquito"}}
+summon necromancy:minion 338.54 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:mosquito",torso:"orespawn:mosquito",arm_left:"orespawn:mosquito",arm_right:"orespawn:mosquito"}}
+wait 40
+tp @s 304.91 -60.72 2.00 150.0 16.0
+wait 10
+shot l_skate_a
+tp @s 303.91 -61.21 -42.77 180.0 7.0
+wait 10
+shot l_skate_b
+tp @s 312.42 -60.52 2.87 150.0 16.0
+wait 10
+shot l_brutalfly_a
+tp @s 310.92 -61.19 -41.92 180.0 7.0
+wait 10
+shot l_brutalfly_b
+tp @s 318.83 -60.88 2.01 150.0 16.0
+wait 10
+shot l_butterfly_a
+tp @s 317.76 -61.34 -42.91 180.0 7.0
+wait 10
+shot l_butterfly_b
+tp @s 326.10 -60.72 2.36 150.0 16.0
+wait 10
+shot l_luna_moth_a
+tp @s 324.87 -61.27 -42.46 180.0 7.0
+wait 10
+shot l_luna_moth_b
+tp @s 332.83 -60.88 2.01 150.0 16.0
+wait 10
+shot l_vampire_butterfly_a
+tp @s 331.76 -61.34 -42.91 180.0 7.0
+wait 10
+shot l_vampire_butterfly_b
+tp @s 339.66 -60.96 1.94 150.0 16.0
+wait 10
+shot l_mosquito_a
+tp @s 338.54 -61.36 -43.18 180.0 7.0
+wait 10
+shot l_mosquito_b
+
+# --- l crab hammerhead hydrolisc leon terrible_terror cockateil
+tp @s 372.0 -54 10 180 10
+wait 30
+summon necromancy:minion 350.62 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:crab",torso:"orespawn:crab",arm_left:"orespawn:crab",arm_right:"orespawn:crab",legs:"orespawn:crab"}}
+summon necromancy:minion 350.62 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:crab",torso:"orespawn:crab",arm_left:"orespawn:crab",arm_right:"orespawn:crab",legs:"orespawn:crab"}}
+summon necromancy:minion 360.19 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:hammerhead",torso:"orespawn:hammerhead",legs:"orespawn:hammerhead"}}
+summon necromancy:minion 360.19 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:hammerhead",torso:"orespawn:hammerhead",legs:"orespawn:hammerhead"}}
+summon necromancy:minion 369.29 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:hydrolisc",torso:"orespawn:hydrolisc",legs:"orespawn:hydrolisc"}}
+summon necromancy:minion 369.29 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:hydrolisc",torso:"orespawn:hydrolisc",legs:"orespawn:hydrolisc"}}
+summon necromancy:minion 378.69 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:leon",torso:"orespawn:leon",arm_left:"orespawn:leon",arm_right:"orespawn:leon",legs:"orespawn:leon"}}
+summon necromancy:minion 378.69 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:leon",torso:"orespawn:leon",arm_left:"orespawn:leon",arm_right:"orespawn:leon",legs:"orespawn:leon"}}
+summon necromancy:minion 387.48 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:terrible_terror",torso:"orespawn:terrible_terror",arm_left:"orespawn:terrible_terror",arm_right:"orespawn:terrible_terror",legs:"orespawn:terrible_terror"}}
+summon necromancy:minion 387.48 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:terrible_terror",torso:"orespawn:terrible_terror",arm_left:"orespawn:terrible_terror",arm_right:"orespawn:terrible_terror",legs:"orespawn:terrible_terror"}}
+summon necromancy:minion 394.48 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:cockateil",torso:"orespawn:cockateil",arm_left:"orespawn:cockateil",arm_right:"orespawn:cockateil",legs:"orespawn:cockateil"}}
+summon necromancy:minion 394.48 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:cockateil",torso:"orespawn:cockateil",arm_left:"orespawn:cockateil",arm_right:"orespawn:cockateil",legs:"orespawn:cockateil"}}
+wait 40
+tp @s 353.30 -59.38 4.34 150.0 16.0
+wait 10
+shot l_crab_a
+tp @s 350.93 -60.33 -40.58 180.0 7.0
+wait 10
+shot l_crab_b
+tp @s 363.22 -58.71 6.19 150.0 16.0
+wait 10
+shot l_hammerhead_a
+tp @s 359.19 -59.77 -40.02 180.0 7.0
+wait 10
+shot l_hammerhead_b
+tp @s 371.62 -59.62 3.43 150.0 16.0
+wait 10
+shot l_hydrolisc_a
+tp @s 369.89 -60.44 -41.17 180.0 7.0
+wait 10
+shot l_hydrolisc_b
+tp @s 382.48 -57.56 6.55 150.0 16.0
+wait 10
+shot l_leon_a
+tp @s 378.71 -58.82 -38.11 180.0 7.0
+wait 10
+shot l_leon_b
+tp @s 388.93 -60.45 2.21 150.0 16.0
+wait 10
+shot l_terrible_terror_a
+tp @s 387.79 -60.97 -42.62 180.0 7.0
+wait 10
+shot l_terrible_terror_b
+tp @s 396.16 -60.24 2.51 150.0 16.0
+wait 10
+shot l_cockateil_a
+tp @s 394.89 -60.83 -42.24 180.0 7.0
+wait 10
+shot l_cockateil_b
+
+# --- l ruby_bird ant termite baryonyx emperor_scorpion triffid
+tp @s 425.2 -54 10 180 10
+wait 30
+summon necromancy:minion 405.48 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:ruby_bird",torso:"orespawn:ruby_bird",arm_left:"orespawn:ruby_bird",arm_right:"orespawn:ruby_bird",legs:"orespawn:ruby_bird"}}
+summon necromancy:minion 405.48 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:ruby_bird",torso:"orespawn:ruby_bird",arm_left:"orespawn:ruby_bird",arm_right:"orespawn:ruby_bird",legs:"orespawn:ruby_bird"}}
+summon necromancy:minion 412.48 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:ant",torso:"orespawn:ant",legs:"orespawn:ant"}}
+summon necromancy:minion 412.48 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:ant",torso:"orespawn:ant",legs:"orespawn:ant"}}
+summon necromancy:minion 419.48 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:termite",torso:"orespawn:termite",legs:"orespawn:termite"}}
+summon necromancy:minion 419.48 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:termite",torso:"orespawn:termite",legs:"orespawn:termite"}}
+summon necromancy:minion 428.08 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:baryonyx",torso:"orespawn:baryonyx",arm_left:"orespawn:baryonyx",arm_right:"orespawn:baryonyx",legs:"orespawn:baryonyx"}}
+summon necromancy:minion 428.08 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:baryonyx",torso:"orespawn:baryonyx",arm_left:"orespawn:baryonyx",arm_right:"orespawn:baryonyx",legs:"orespawn:baryonyx"}}
+summon necromancy:minion 437.28 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:emperor_scorpion",torso:"orespawn:emperor_scorpion",arm_left:"orespawn:emperor_scorpion",arm_right:"orespawn:emperor_scorpion",legs:"orespawn:emperor_scorpion"}}
+summon necromancy:minion 437.28 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:emperor_scorpion",torso:"orespawn:emperor_scorpion",arm_left:"orespawn:emperor_scorpion",arm_right:"orespawn:emperor_scorpion",legs:"orespawn:emperor_scorpion"}}
+summon necromancy:minion 444.88 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:triffid",torso:"orespawn:triffid",legs:"orespawn:triffid"}}
+summon necromancy:minion 444.88 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:triffid",torso:"orespawn:triffid",legs:"orespawn:triffid"}}
+wait 40
+tp @s 407.16 -60.24 2.51 150.0 16.0
+wait 10
+shot l_ruby_bird_a
+tp @s 405.89 -60.83 -42.24 180.0 7.0
+wait 10
+shot l_ruby_bird_b
+tp @s 414.01 -60.35 2.55 150.0 16.0
+wait 10
+shot l_ant_a
+tp @s 412.63 -60.90 -42.47 180.0 7.0
+wait 10
+shot l_ant_b
+tp @s 421.01 -60.35 2.55 150.0 16.0
+wait 10
+shot l_termite_a
+tp @s 419.63 -60.90 -42.47 180.0 7.0
+wait 10
+shot l_termite_b
+tp @s 431.16 -58.74 5.28 150.0 16.0
+wait 10
+shot l_baryonyx_a
+tp @s 428.13 -59.83 -39.92 180.0 7.0
+wait 10
+shot l_baryonyx_b
+tp @s 439.62 -59.54 4.46 150.0 16.0
+wait 10
+shot l_emperor_scorpion_a
+tp @s 436.85 -60.36 -41.16 180.0 7.0
+wait 10
+shot l_emperor_scorpion_b
+tp @s 446.63 -59.51 3.93 150.0 16.0
+wait 10
+shot l_triffid_a
+tp @s 444.78 -60.26 -41.53 180.0 7.0
+wait 10
+shot l_triffid_b
+
+# --- l water_dragon attack_squid creeping_horror leaf_monster robot_3
+tp @s 470.4 -54 10 180 10
+wait 30
+summon necromancy:minion 456.15 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:water_dragon",torso:"orespawn:water_dragon",legs:"orespawn:water_dragon"}}
+summon necromancy:minion 456.15 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:water_dragon",torso:"orespawn:water_dragon",legs:"orespawn:water_dragon"}}
+summon necromancy:minion 463.43 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:attack_squid",torso:"orespawn:attack_squid",legs:"orespawn:attack_squid"}}
+summon necromancy:minion 463.43 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:attack_squid",torso:"orespawn:attack_squid",legs:"orespawn:attack_squid"}}
+summon necromancy:minion 470.66 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:creeping_horror",torso:"orespawn:creeping_horror",arm_left:"orespawn:creeping_horror",arm_right:"orespawn:creeping_horror",legs:"orespawn:creeping_horror"}}
+summon necromancy:minion 470.66 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:creeping_horror",torso:"orespawn:creeping_horror",arm_left:"orespawn:creeping_horror",arm_right:"orespawn:creeping_horror",legs:"orespawn:creeping_horror"}}
+summon necromancy:minion 477.89 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:leaf_monster",torso:"orespawn:leaf_monster",arm_left:"orespawn:leaf_monster",arm_right:"orespawn:leaf_monster",legs:"orespawn:leaf_monster"}}
+summon necromancy:minion 477.89 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:leaf_monster",torso:"orespawn:leaf_monster",arm_left:"orespawn:leaf_monster",arm_right:"orespawn:leaf_monster",legs:"orespawn:leaf_monster"}}
+summon necromancy:minion 484.89 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:robot_3",torso:"orespawn:robot_3",arm_left:"orespawn:robot_3",arm_right:"orespawn:robot_3",legs:"orespawn:robot_3"}}
+summon necromancy:minion 484.89 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:robot_3",torso:"orespawn:robot_3",arm_left:"orespawn:robot_3",arm_right:"orespawn:robot_3",legs:"orespawn:robot_3"}}
+wait 40
+tp @s 458.21 -59.80 2.89 150.0 16.0
+wait 10
+shot l_water_dragon_a
+tp @s 456.87 -60.51 -41.38 180.0 7.0
+wait 10
+shot l_water_dragon_b
+tp @s 465.55 -59.73 3.59 150.0 16.0
+wait 10
+shot l_attack_squid_a
+tp @s 463.25 -60.39 -41.38 180.0 7.0
+wait 10
+shot l_attack_squid_b
+tp @s 472.71 -59.99 3.13 150.0 16.0
+wait 10
+shot l_creeping_horror_a
+tp @s 471.08 -60.72 -41.64 180.0 7.0
+wait 10
+shot l_creeping_horror_b
+tp @s 479.80 -59.79 3.31 150.0 16.0
+wait 10
+shot l_leaf_monster_a
+tp @s 477.89 -60.44 -41.63 180.0 7.0
+wait 10
+shot l_leaf_monster_b
+tp @s 487.19 -59.32 3.95 150.0 16.0
+wait 10
+shot l_robot_3_a
+tp @s 484.91 -60.10 -40.91 180.0 7.0
+wait 10
+shot l_robot_3_b
+
+# --- c 00 01 02 03 04 05
+tp @s 516.2 -54 10 180 10
+wait 30
+summon necromancy:minion 495.99 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:trex",torso:"orespawn:gold_cow",arm_left:"orespawn:dragon",arm_right:"orespawn:dragon",legs:"orespawn:ant"}}
+summon necromancy:minion 495.99 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:trex",torso:"orespawn:gold_cow",arm_left:"orespawn:dragon",arm_right:"orespawn:dragon",legs:"orespawn:ant"}}
+summon necromancy:minion 503.10 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:worm_large",torso:"orespawn:red_cow",arm_left:"orespawn:red_cow",arm_right:"orespawn:red_cow",legs:"orespawn:red_cow"}}
+summon necromancy:minion 503.10 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:worm_large",torso:"orespawn:red_cow",arm_left:"orespawn:red_cow",arm_right:"orespawn:red_cow",legs:"orespawn:red_cow"}}
+summon necromancy:minion 510.50 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:alien",torso:"orespawn:gold_fish",legs:"orespawn:red_ant"}}
+summon necromancy:minion 510.50 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:alien",torso:"orespawn:gold_fish",legs:"orespawn:red_ant"}}
+summon necromancy:minion 518.70 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:robot_2",torso:"orespawn:robot_3",arm_left:"orespawn:cephadrome",arm_right:"orespawn:cephadrome",legs:"orespawn:robot_4"}}
+summon necromancy:minion 518.70 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:robot_2",torso:"orespawn:robot_3",arm_left:"orespawn:cephadrome",arm_right:"orespawn:cephadrome",legs:"orespawn:robot_4"}}
+summon necromancy:minion 526.51 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:ender_knight",torso:"orespawn:apple_cow",arm_left:"orespawn:apple_cow",arm_right:"orespawn:apple_cow",legs:"orespawn:apple_cow"}}
+summon necromancy:minion 526.51 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:ender_knight",torso:"orespawn:apple_cow",arm_left:"orespawn:apple_cow",arm_right:"orespawn:apple_cow",legs:"orespawn:apple_cow"}}
+summon necromancy:minion 535.05 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:baryonyx",torso:"orespawn:nastysaurus",arm_left:"orespawn:baryonyx",arm_right:"orespawn:baryonyx",legs:"orespawn:emperor_scorpion"}}
+summon necromancy:minion 535.05 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:baryonyx",torso:"orespawn:nastysaurus",arm_left:"orespawn:baryonyx",arm_right:"orespawn:baryonyx",legs:"orespawn:emperor_scorpion"}}
+wait 40
+tp @s 499.06 -58.36 6.06 150.0 16.0
+wait 10
+shot c_00_a
+tp @s 495.28 -59.39 -39.45 180.0 7.0
+wait 10
+shot c_00_b
+tp @s 505.15 -59.62 3.97 150.0 16.0
+wait 10
+shot c_01_a
+tp @s 502.68 -60.32 -41.37 180.0 7.0
+wait 10
+shot c_01_b
+tp @s 512.65 -59.81 4.05 150.0 16.0
+wait 10
+shot c_02_a
+tp @s 510.21 -60.58 -41.45 180.0 7.0
+wait 10
+shot c_02_b
+tp @s 521.84 -58.22 4.69 150.0 16.0
+wait 10
+shot c_03_a
+tp @s 519.57 -59.29 -39.28 180.0 7.0
+wait 10
+shot c_03_b
+tp @s 528.29 -59.95 3.19 150.0 16.0
+wait 10
+shot c_04_a
+tp @s 526.40 -60.56 -41.88 180.0 7.0
+wait 10
+shot c_04_b
+tp @s 538.10 -58.99 5.26 150.0 16.0
+wait 10
+shot c_05_a
+tp @s 535.04 -60.07 -39.98 180.0 7.0
+wait 10
+shot c_05_b
+
+# --- c 06 07 08 09 10 11
+tp @s 574.2 -54 10 180 10
+wait 30
+summon necromancy:minion 547.59 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:kyuubi",torso:"orespawn:band_p",arm_left:"orespawn:kyuubi",arm_right:"orespawn:kyuubi",legs:"orespawn:cassowary"}}
+summon necromancy:minion 547.59 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:kyuubi",torso:"orespawn:band_p",arm_left:"orespawn:kyuubi",arm_right:"orespawn:kyuubi",legs:"orespawn:cassowary"}}
+summon necromancy:minion 557.75 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:basilisk",torso:"orespawn:whale",arm_left:"orespawn:mantis",arm_right:"orespawn:mantis"}}
+summon necromancy:minion 557.75 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:basilisk",torso:"orespawn:whale",arm_left:"orespawn:mantis",arm_right:"orespawn:mantis"}}
+summon necromancy:minion 568.77 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:cephadrome",torso:"orespawn:camarasaurus",arm_left:"orespawn:dragon",arm_right:"orespawn:dragon",legs:"orespawn:spider_driver"}}
+summon necromancy:minion 568.77 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:cephadrome",torso:"orespawn:camarasaurus",arm_left:"orespawn:dragon",arm_right:"orespawn:dragon",legs:"orespawn:spider_driver"}}
+summon necromancy:minion 580.02 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:hammerhead",torso:"orespawn:molenoid",arm_left:"orespawn:molenoid",arm_right:"orespawn:molenoid",legs:"orespawn:hercules_beetle"}}
+summon necromancy:minion 580.02 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:hammerhead",torso:"orespawn:molenoid",arm_left:"orespawn:molenoid",arm_right:"orespawn:molenoid",legs:"orespawn:hercules_beetle"}}
+summon necromancy:minion 591.70 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:pointysaurus",torso:"orespawn:alosaurus",arm_left:"orespawn:velocity_raptor",arm_right:"orespawn:velocity_raptor",legs:"orespawn:velocity_raptor"}}
+summon necromancy:minion 591.70 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:pointysaurus",torso:"orespawn:alosaurus",arm_left:"orespawn:velocity_raptor",arm_right:"orespawn:velocity_raptor",legs:"orespawn:velocity_raptor"}}
+summon necromancy:minion 600.44 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:cryolophosaurus",torso:"orespawn:lizard",arm_left:"orespawn:easter_bunny",arm_right:"orespawn:easter_bunny",legs:"orespawn:gazelle"}}
+summon necromancy:minion 600.44 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:cryolophosaurus",torso:"orespawn:lizard",arm_left:"orespawn:easter_bunny",arm_right:"orespawn:easter_bunny",legs:"orespawn:gazelle"}}
+wait 40
+tp @s 550.02 -59.17 3.97 150.0 16.0
+wait 10
+shot c_06_a
+tp @s 547.81 -59.99 -40.67 180.0 7.0
+wait 10
+shot c_06_b
+tp @s 561.99 -58.81 6.69 150.0 16.0
+wait 10
+shot c_07_a
+tp @s 558.41 -60.30 -37.98 180.0 7.0
+wait 10
+shot c_07_b
+tp @s 572.65 -57.38 6.75 150.0 16.0
+wait 10
+shot c_08_a
+tp @s 568.74 -58.67 -37.96 180.0 7.0
+wait 10
+shot c_08_b
+tp @s 584.40 -58.04 10.27 150.0 16.0
+wait 10
+shot c_09_a
+tp @s 577.40 -59.60 -37.73 180.0 7.0
+wait 10
+shot c_09_b
+tp @s 594.54 -58.94 4.46 150.0 16.0
+wait 10
+shot c_10_a
+tp @s 592.15 -59.94 -40.32 180.0 7.0
+wait 10
+shot c_10_b
+tp @s 602.65 -59.56 3.02 150.0 16.0
+wait 10
+shot c_11_a
+tp @s 601.25 -60.35 -41.36 180.0 7.0
+wait 10
+shot c_11_b
+
+# --- c 12 13 14 15 16 17
+tp @s 632.1 -54 10 180 10
+wait 30
+summon necromancy:minion 613.33 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:spyro",torso:"orespawn:rat",arm_left:"orespawn:baby_dragon",arm_right:"orespawn:baby_dragon",legs:"orespawn:chipmunk"}}
+summon necromancy:minion 613.33 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:spyro",torso:"orespawn:rat",arm_left:"orespawn:baby_dragon",arm_right:"orespawn:baby_dragon",legs:"orespawn:chipmunk"}}
+summon necromancy:minion 621.77 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:water_dragon",torso:"orespawn:beaver",arm_left:"orespawn:terrible_terror",arm_right:"orespawn:terrible_terror",legs:"orespawn:water_dragon"}}
+summon necromancy:minion 621.77 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:water_dragon",torso:"orespawn:beaver",arm_left:"orespawn:terrible_terror",arm_right:"orespawn:terrible_terror",legs:"orespawn:water_dragon"}}
+summon necromancy:minion 630.01 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:leon",torso:"orespawn:dungeon_beast",arm_left:"orespawn:leon",arm_right:"orespawn:leon",legs:"orespawn:robot_2"}}
+summon necromancy:minion 630.01 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:leon",torso:"orespawn:dungeon_beast",arm_left:"orespawn:leon",arm_right:"orespawn:leon",legs:"orespawn:robot_2"}}
+summon necromancy:minion 638.25 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:terrible_terror",torso:"orespawn:termite",arm_left:"orespawn:fairy",arm_right:"orespawn:fairy",legs:"orespawn:frog"}}
+summon necromancy:minion 638.25 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:terrible_terror",torso:"orespawn:termite",arm_left:"orespawn:fairy",arm_right:"orespawn:fairy",legs:"orespawn:frog"}}
+summon necromancy:minion 645.25 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:worm_small",torso:"orespawn:worm_medium"}}
+summon necromancy:minion 645.25 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:worm_small",torso:"orespawn:worm_medium"}}
+summon necromancy:minion 652.25 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:leaf_monster",torso:"orespawn:stinky",arm_left:"orespawn:leaf_monster",arm_right:"orespawn:leaf_monster",legs:"orespawn:triffid"}}
+summon necromancy:minion 652.25 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:leaf_monster",torso:"orespawn:stinky",arm_left:"orespawn:leaf_monster",arm_right:"orespawn:leaf_monster",legs:"orespawn:triffid"}}
+wait 40
+tp @s 616.27 -59.63 3.76 150.0 16.0
+wait 10
+shot c_12_a
+tp @s 614.69 -60.68 -40.14 180.0 7.0
+wait 10
+shot c_12_b
+tp @s 623.60 -59.94 2.74 150.0 16.0
+wait 10
+shot c_13_a
+tp @s 622.26 -60.61 -41.97 180.0 7.0
+wait 10
+shot c_13_b
+tp @s 632.81 -59.19 4.13 150.0 16.0
+wait 10
+shot c_14_a
+tp @s 630.73 -60.18 -40.37 180.0 7.0
+wait 10
+shot c_14_b
+tp @s 640.00 -60.20 2.98 150.0 16.0
+wait 10
+shot c_15_a
+tp @s 638.30 -60.83 -42.12 180.0 7.0
+wait 10
+shot c_15_b
+tp @s 646.71 -60.34 2.53 150.0 16.0
+wait 10
+shot c_16_a
+tp @s 645.25 -60.84 -42.47 180.0 7.0
+wait 10
+shot c_16_b
+tp @s 654.09 -60.18 2.94 150.0 16.0
+wait 10
+shot c_17_a
+tp @s 652.55 -60.85 -41.96 180.0 7.0
+wait 10
+shot c_17_b
+
+# --- c 18 19 20 21 22 23
+tp @s 682.9 -54 10 180 10
+wait 30
+summon necromancy:minion 663.45 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:gazelle",torso:"orespawn:ostrich",arm_left:"orespawn:stinky",arm_right:"orespawn:stinky",legs:"orespawn:ostrich"}}
+summon necromancy:minion 663.45 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:gazelle",torso:"orespawn:ostrich",arm_left:"orespawn:stinky",arm_right:"orespawn:stinky",legs:"orespawn:ostrich"}}
+summon necromancy:minion 670.66 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:triffid",torso:"orespawn:crystal_cow",arm_left:"orespawn:crystal_cow",arm_right:"orespawn:crystal_cow",legs:"orespawn:peacock"}}
+summon necromancy:minion 670.66 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:triffid",torso:"orespawn:crystal_cow",arm_left:"orespawn:crystal_cow",arm_right:"orespawn:crystal_cow",legs:"orespawn:peacock"}}
+summon necromancy:minion 677.66 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:peacock",torso:"orespawn:cassowary",arm_left:"orespawn:ruby_bird",arm_right:"orespawn:ruby_bird",legs:"orespawn:rainbow_ant"}}
+summon necromancy:minion 677.66 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:peacock",torso:"orespawn:cassowary",arm_left:"orespawn:ruby_bird",arm_right:"orespawn:ruby_bird",legs:"orespawn:rainbow_ant"}}
+summon necromancy:minion 685.80 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:easter_bunny",torso:"orespawn:hydrolisc",arm_left:"orespawn:cave_fisher",arm_right:"orespawn:cave_fisher",legs:"orespawn:cannon_fodder"}}
+summon necromancy:minion 685.80 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:easter_bunny",torso:"orespawn:hydrolisc",arm_left:"orespawn:cave_fisher",arm_right:"orespawn:cave_fisher",legs:"orespawn:cannon_fodder"}}
+summon necromancy:minion 693.95 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:gamma_metroid",torso:"orespawn:golden_apple_cow",arm_left:"orespawn:golden_apple_cow",arm_right:"orespawn:golden_apple_cow",legs:"orespawn:gamma_metroid"}}
+summon necromancy:minion 693.95 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:gamma_metroid",torso:"orespawn:golden_apple_cow",arm_left:"orespawn:golden_apple_cow",arm_right:"orespawn:golden_apple_cow",legs:"orespawn:gamma_metroid"}}
+summon necromancy:minion 701.73 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:molenoid",torso:"orespawn:enchanted_apple_cow",arm_left:"orespawn:enchanted_apple_cow",arm_right:"orespawn:enchanted_apple_cow",legs:"orespawn:stink_bug"}}
+summon necromancy:minion 701.73 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:molenoid",torso:"orespawn:enchanted_apple_cow",arm_left:"orespawn:enchanted_apple_cow",arm_right:"orespawn:enchanted_apple_cow",legs:"orespawn:stink_bug"}}
+wait 40
+tp @s 665.53 -59.59 3.43 150.0 16.0
+wait 10
+shot c_18_a
+tp @s 663.62 -60.29 -41.32 180.0 7.0
+wait 10
+shot c_18_b
+tp @s 671.84 -60.18 3.44 150.0 16.0
+wait 10
+shot c_19_a
+tp @s 670.17 -60.76 -42.54 180.0 7.0
+wait 10
+shot c_19_b
+tp @s 679.26 -60.17 2.91 150.0 16.0
+wait 10
+shot c_20_a
+tp @s 677.52 -60.72 -42.21 180.0 7.0
+wait 10
+shot c_20_b
+tp @s 688.53 -59.45 4.24 150.0 16.0
+wait 10
+shot c_21_a
+tp @s 686.30 -60.42 -40.50 180.0 7.0
+wait 10
+shot c_21_b
+tp @s 695.76 -60.27 3.64 150.0 16.0
+wait 10
+shot c_22_a
+tp @s 693.44 -60.91 -42.04 180.0 7.0
+wait 10
+shot c_22_b
+tp @s 704.20 -59.71 5.71 150.0 16.0
+wait 10
+shot c_23_a
+tp @s 700.28 -60.58 -40.95 180.0 7.0
+wait 10
+shot c_23_b
+
+# --- c 24 25 26 27 28 29
+tp @s 739.0 -54 10 180 10
+wait 30
+summon necromancy:minion 713.52 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:ender_reaper",torso:"orespawn:robot_4",arm_left:"orespawn:ender_knight",arm_right:"orespawn:ender_knight",legs:"orespawn:alien"}}
+summon necromancy:minion 713.52 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:ender_reaper",torso:"orespawn:robot_4",arm_left:"orespawn:ender_knight",arm_right:"orespawn:ender_knight",legs:"orespawn:alien"}}
+summon necromancy:minion 722.05 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:band_p",torso:"orespawn:alien",arm_left:"orespawn:band_p",arm_right:"orespawn:band_p",legs:"orespawn:hydrolisc"}}
+summon necromancy:minion 722.05 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:band_p",torso:"orespawn:alien",arm_left:"orespawn:band_p",arm_right:"orespawn:band_p",legs:"orespawn:hydrolisc"}}
+summon necromancy:minion 731.18 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:spider_driver",torso:"orespawn:emperor_scorpion",arm_left:"orespawn:emperor_scorpion",arm_right:"orespawn:emperor_scorpion",legs:"orespawn:spit_bug"}}
+summon necromancy:minion 731.18 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:spider_driver",torso:"orespawn:emperor_scorpion",arm_left:"orespawn:emperor_scorpion",arm_right:"orespawn:emperor_scorpion",legs:"orespawn:spit_bug"}}
+summon necromancy:minion 738.77 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:scorpion",torso:"orespawn:spit_bug",arm_left:"orespawn:scorpion",arm_right:"orespawn:scorpion",legs:"orespawn:scorpion"}}
+summon necromancy:minion 738.77 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:scorpion",torso:"orespawn:spit_bug",arm_left:"orespawn:scorpion",arm_right:"orespawn:scorpion",legs:"orespawn:scorpion"}}
+summon necromancy:minion 747.80 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:hercules_beetle",torso:"orespawn:trooper_bug",arm_left:"orespawn:hercules_beetle",arm_right:"orespawn:hercules_beetle",legs:"orespawn:mantis"}}
+summon necromancy:minion 747.80 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:hercules_beetle",torso:"orespawn:trooper_bug",arm_left:"orespawn:hercules_beetle",arm_right:"orespawn:hercules_beetle",legs:"orespawn:mantis"}}
+summon necromancy:minion 760.68 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:mantis",torso:"orespawn:sea_viper",arm_left:"orespawn:spit_bug",arm_right:"orespawn:spit_bug"}}
+summon necromancy:minion 760.68 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:mantis",torso:"orespawn:sea_viper",arm_left:"orespawn:spit_bug",arm_right:"orespawn:spit_bug"}}
+wait 40
+tp @s 716.27 -58.76 4.73 150.0 16.0
+wait 10
+shot c_24_a
+tp @s 713.57 -59.69 -40.05 180.0 7.0
+wait 10
+shot c_24_b
+tp @s 725.07 -59.17 4.17 150.0 16.0
+wait 10
+shot c_25_a
+tp @s 723.12 -60.24 -40.01 180.0 7.0
+wait 10
+shot c_25_b
+tp @s 733.50 -59.34 4.33 150.0 16.0
+wait 10
+shot c_26_a
+tp @s 730.87 -60.14 -40.99 180.0 7.0
+wait 10
+shot c_26_b
+tp @s 740.51 -60.00 3.06 150.0 16.0
+wait 10
+shot c_27_a
+tp @s 738.71 -60.60 -41.96 180.0 7.0
+wait 10
+shot c_27_b
+tp @s 751.22 -58.69 7.30 150.0 16.0
+wait 10
+shot c_28_a
+tp @s 746.37 -59.89 -39.36 180.0 7.0
+wait 10
+shot c_28_b
+tp @s 765.52 -58.15 5.44 150.0 16.0
+wait 10
+shot c_29_a
+tp @s 763.49 -59.83 -37.03 180.0 7.0
+wait 10
+shot c_29_b
+
+# --- c 30 31 32 33 34 35
+tp @s 794.8 -54 10 180 10
+wait 30
+summon necromancy:minion 776.00 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:trooper_bug",torso:"orespawn:creeping_horror",arm_left:"orespawn:creeping_horror",arm_right:"orespawn:creeping_horror",legs:"orespawn:lurking_terror"}}
+summon necromancy:minion 776.00 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:trooper_bug",torso:"orespawn:creeping_horror",arm_left:"orespawn:creeping_horror",arm_right:"orespawn:creeping_horror",legs:"orespawn:lurking_terror"}}
+summon necromancy:minion 783.71 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:lurking_terror",torso:"orespawn:cave_fisher",arm_left:"orespawn:lurking_terror",arm_right:"orespawn:lurking_terror",legs:"orespawn:creeping_horror"}}
+summon necromancy:minion 783.71 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:lurking_terror",torso:"orespawn:cave_fisher",arm_left:"orespawn:lurking_terror",arm_right:"orespawn:lurking_terror",legs:"orespawn:creeping_horror"}}
+summon necromancy:minion 790.94 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:cater_killer",torso:"orespawn:urchin",legs:"orespawn:leaf_monster"}}
+summon necromancy:minion 790.94 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:cater_killer",torso:"orespawn:urchin",legs:"orespawn:leaf_monster"}}
+summon necromancy:minion 797.94 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:sea_monster",torso:"orespawn:irukandji",arm_left:"orespawn:crab",arm_right:"orespawn:crab"}}
+summon necromancy:minion 797.94 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:sea_monster",torso:"orespawn:irukandji",arm_left:"orespawn:crab",arm_right:"orespawn:crab"}}
+summon necromancy:minion 804.94 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:attack_squid",torso:"orespawn:skate",arm_left:"orespawn:rubber_ducky",arm_right:"orespawn:rubber_ducky",legs:"orespawn:attack_squid"}}
+summon necromancy:minion 804.94 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:attack_squid",torso:"orespawn:skate",arm_left:"orespawn:rubber_ducky",arm_right:"orespawn:rubber_ducky",legs:"orespawn:attack_squid"}}
+summon necromancy:minion 813.02 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:crab",torso:"orespawn:flounder",arm_left:"orespawn:giant_robot",arm_right:"orespawn:giant_robot",legs:"orespawn:crab"}}
+summon necromancy:minion 813.02 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:crab",torso:"orespawn:flounder",arm_left:"orespawn:giant_robot",arm_right:"orespawn:giant_robot",legs:"orespawn:crab"}}
+wait 40
+tp @s 778.24 -59.66 3.65 150.0 16.0
+wait 10
+shot c_30_a
+tp @s 776.21 -60.45 -41.33 180.0 7.0
+wait 10
+shot c_30_b
+tp @s 785.76 -60.10 3.80 150.0 16.0
+wait 10
+shot c_31_a
+tp @s 783.46 -60.83 -41.64 180.0 7.0
+wait 10
+shot c_31_b
+tp @s 793.49 -59.01 4.54 150.0 16.0
+wait 10
+shot c_32_a
+tp @s 790.81 -59.87 -40.44 180.0 7.0
+wait 10
+shot c_32_b
+tp @s 799.63 -60.38 3.66 150.0 16.0
+wait 10
+shot c_33_a
+tp @s 797.20 -60.98 -42.23 180.0 7.0
+wait 10
+shot c_33_b
+tp @s 807.06 -59.73 3.47 150.0 16.0
+wait 10
+shot c_34_a
+tp @s 804.88 -60.39 -41.38 180.0 7.0
+wait 10
+shot c_34_b
+tp @s 815.70 -59.65 3.70 150.0 16.0
+wait 10
+shot c_35_a
+tp @s 813.96 -60.59 -40.58 180.0 7.0
+wait 10
+shot c_35_b
+
+# --- c 36 37 38 39 40 41
+tp @s 844.9 -54 10 180 10
+wait 30
+summon necromancy:minion 825.09 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:skate",torso:"orespawn:cloud_shark",arm_left:"orespawn:robot_2",arm_right:"orespawn:robot_2",legs:"orespawn:robot_1"}}
+summon necromancy:minion 825.09 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:skate",torso:"orespawn:cloud_shark",arm_left:"orespawn:robot_2",arm_right:"orespawn:robot_2",legs:"orespawn:robot_1"}}
+summon necromancy:minion 832.09 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:flounder",torso:"orespawn:robot_5",arm_left:"orespawn:robot_3",arm_right:"orespawn:robot_3",legs:"orespawn:robot_5"}}
+summon necromancy:minion 832.09 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:flounder",torso:"orespawn:robot_5",arm_left:"orespawn:robot_3",arm_right:"orespawn:robot_3",legs:"orespawn:robot_5"}}
+summon necromancy:minion 839.09 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:gold_fish",torso:"orespawn:robot_1",arm_left:"orespawn:bee",arm_right:"orespawn:bee",legs:"orespawn:ant"}}
+summon necromancy:minion 839.09 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:gold_fish",torso:"orespawn:robot_1",arm_left:"orespawn:bee",arm_right:"orespawn:bee",legs:"orespawn:ant"}}
+summon necromancy:minion 846.47 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:cloud_shark",torso:"orespawn:sea_monster"}}
+summon necromancy:minion 846.47 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:cloud_shark",torso:"orespawn:sea_monster"}}
+summon necromancy:minion 855.63 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:giant_robot",torso:"orespawn:dragon",arm_left:"orespawn:giant_robot",arm_right:"orespawn:giant_robot",legs:"necromancy:zombie"}}
+summon necromancy:minion 855.63 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:giant_robot",torso:"orespawn:dragon",arm_left:"orespawn:giant_robot",arm_right:"orespawn:giant_robot",legs:"necromancy:zombie"}}
+summon necromancy:minion 864.52 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:unstable_ant",torso:"orespawn:dragonfly",arm_left:"orespawn:dragonfly",arm_right:"orespawn:dragonfly",legs:"orespawn:unstable_ant"}}
+summon necromancy:minion 864.52 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:unstable_ant",torso:"orespawn:dragonfly",arm_left:"orespawn:dragonfly",arm_right:"orespawn:dragonfly",legs:"orespawn:unstable_ant"}}
+wait 40
+tp @s 826.74 -60.71 2.53 150.0 16.0
+wait 10
+shot c_36_a
+tp @s 825.37 -61.29 -42.32 180.0 7.0
+wait 10
+shot c_36_b
+tp @s 833.68 -60.20 2.86 150.0 16.0
+wait 10
+shot c_37_a
+tp @s 831.98 -60.74 -42.24 180.0 7.0
+wait 10
+shot c_37_b
+tp @s 840.54 -60.38 2.49 150.0 16.0
+wait 10
+shot c_38_a
+tp @s 839.11 -60.89 -42.56 180.0 7.0
+wait 10
+shot c_38_b
+tp @s 848.62 -59.68 3.60 150.0 16.0
+wait 10
+shot c_39_a
+tp @s 846.60 -60.45 -41.46 180.0 7.0
+wait 10
+shot c_39_b
+tp @s 858.84 -59.13 4.65 150.0 16.0
+wait 10
+shot c_40_a
+tp @s 856.54 -60.26 -39.69 180.0 7.0
+wait 10
+shot c_40_b
+tp @s 866.47 -60.01 2.91 150.0 16.0
+wait 10
+shot c_41_a
+tp @s 864.98 -60.70 -41.80 180.0 7.0
+wait 10
+shot c_41_b
+
+# --- c 42 43 44 45 46 47
+tp @s 893.1 -54 10 180 10
+wait 30
+summon necromancy:minion 875.62 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:cricket",torso:"orespawn:mosquito",arm_left:"orespawn:mosquito",arm_right:"orespawn:mosquito",legs:"orespawn:cricket"}}
+summon necromancy:minion 875.62 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:cricket",torso:"orespawn:mosquito",arm_left:"orespawn:mosquito",arm_right:"orespawn:mosquito",legs:"orespawn:cricket"}}
+summon necromancy:minion 882.62 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:stink_bug",torso:"orespawn:butterfly",arm_left:"orespawn:butterfly",arm_right:"orespawn:butterfly",legs:"orespawn:stink_bug"}}
+summon necromancy:minion 882.62 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:stink_bug",torso:"orespawn:butterfly",arm_left:"orespawn:butterfly",arm_right:"orespawn:butterfly",legs:"orespawn:stink_bug"}}
+summon necromancy:minion 889.62 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:dragonfly",torso:"orespawn:luna_moth",arm_left:"orespawn:luna_moth",arm_right:"orespawn:luna_moth",legs:"orespawn:termite"}}
+summon necromancy:minion 889.62 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:dragonfly",torso:"orespawn:luna_moth",arm_left:"orespawn:luna_moth",arm_right:"orespawn:luna_moth",legs:"orespawn:termite"}}
+summon necromancy:minion 896.62 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:mosquito",torso:"orespawn:vampire_butterfly",arm_left:"orespawn:vampire_butterfly",arm_right:"orespawn:vampire_butterfly",legs:"orespawn:firefly"}}
+summon necromancy:minion 896.62 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:mosquito",torso:"orespawn:vampire_butterfly",arm_left:"orespawn:vampire_butterfly",arm_right:"orespawn:vampire_butterfly",legs:"orespawn:firefly"}}
+summon necromancy:minion 903.62 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:butterfly",torso:"orespawn:firefly",arm_left:"orespawn:firefly",arm_right:"orespawn:firefly",legs:"orespawn:cockateil"}}
+summon necromancy:minion 903.62 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:butterfly",torso:"orespawn:firefly",arm_left:"orespawn:firefly",arm_right:"orespawn:firefly",legs:"orespawn:cockateil"}}
+summon necromancy:minion 910.62 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:luna_moth",torso:"orespawn:cliff_racer",arm_left:"orespawn:cliff_racer",arm_right:"orespawn:cliff_racer",legs:"orespawn:ruby_bird"}}
+summon necromancy:minion 910.62 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:luna_moth",torso:"orespawn:cliff_racer",arm_left:"orespawn:cliff_racer",arm_right:"orespawn:cliff_racer",legs:"orespawn:ruby_bird"}}
+wait 40
+tp @s 877.47 -60.12 2.66 150.0 16.0
+wait 10
+shot c_42_a
+tp @s 876.10 -60.77 -41.98 180.0 7.0
+wait 10
+shot c_42_b
+tp @s 884.12 -60.28 2.60 150.0 16.0
+wait 10
+shot c_43_a
+tp @s 882.63 -60.80 -42.39 180.0 7.0
+wait 10
+shot c_43_b
+tp @s 891.23 -60.29 2.44 150.0 16.0
+wait 10
+shot c_44_a
+tp @s 889.97 -60.87 -42.36 180.0 7.0
+wait 10
+shot c_44_b
+tp @s 897.99 -60.73 2.36 150.0 16.0
+wait 10
+shot c_45_a
+tp @s 896.64 -61.22 -42.75 180.0 7.0
+wait 10
+shot c_45_b
+tp @s 904.87 -60.59 1.94 150.0 16.0
+wait 10
+shot c_46_a
+tp @s 903.85 -61.03 -42.86 180.0 7.0
+wait 10
+shot c_46_b
+tp @s 912.01 -60.55 1.90 150.0 16.0
+wait 10
+shot c_47_a
+tp @s 911.12 -61.05 -42.73 180.0 7.0
+wait 10
+shot c_47_b
+
+# --- c 48 49 50 51 52 53
+tp @s 939.4 -54 10 180 10
+wait 30
+summon necromancy:minion 921.62 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:vampire_butterfly",torso:"orespawn:cockateil",arm_left:"orespawn:cockateil",arm_right:"orespawn:cockateil",legs:"orespawn:fairy"}}
+summon necromancy:minion 921.62 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:vampire_butterfly",torso:"orespawn:cockateil",arm_left:"orespawn:cockateil",arm_right:"orespawn:cockateil",legs:"orespawn:fairy"}}
+summon necromancy:minion 928.85 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:firefly",torso:"orespawn:ruby_bird",arm_left:"orespawn:brutalfly",arm_right:"orespawn:brutalfly",legs:"orespawn:cricket"}}
+summon necromancy:minion 928.85 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:firefly",torso:"orespawn:ruby_bird",arm_left:"orespawn:brutalfly",arm_right:"orespawn:brutalfly",legs:"orespawn:cricket"}}
+summon necromancy:minion 936.08 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:cliff_racer",torso:"orespawn:rubber_ducky",arm_left:"orespawn:rubber_ducky",arm_right:"orespawn:rubber_ducky",legs:"orespawn:chipmunk"}}
+summon necromancy:minion 936.08 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:cliff_racer",torso:"orespawn:rubber_ducky",arm_left:"orespawn:rubber_ducky",arm_right:"orespawn:rubber_ducky",legs:"orespawn:chipmunk"}}
+summon necromancy:minion 943.08 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:cockateil",torso:"orespawn:fairy",arm_left:"orespawn:fairy",arm_right:"orespawn:fairy",legs:"orespawn:beaver"}}
+summon necromancy:minion 943.08 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:cockateil",torso:"orespawn:fairy",arm_left:"orespawn:fairy",arm_right:"orespawn:fairy",legs:"orespawn:beaver"}}
+summon necromancy:minion 950.08 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:ruby_bird",torso:"orespawn:frog",arm_left:"orespawn:bee",arm_right:"orespawn:bee",legs:"orespawn:rat"}}
+summon necromancy:minion 950.08 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:ruby_bird",torso:"orespawn:frog",arm_left:"orespawn:bee",arm_right:"orespawn:bee",legs:"orespawn:rat"}}
+summon necromancy:minion 957.12 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:rubber_ducky",torso:"orespawn:brutalfly",arm_left:"orespawn:brutalfly",arm_right:"orespawn:brutalfly",legs:"necromancy:zombie"}}
+summon necromancy:minion 957.12 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:rubber_ducky",torso:"orespawn:brutalfly",arm_left:"orespawn:brutalfly",arm_right:"orespawn:brutalfly",legs:"necromancy:zombie"}}
+wait 40
+tp @s 923.14 -60.40 2.14 150.0 16.0
+wait 10
+shot c_48_a
+tp @s 922.12 -60.94 -42.51 180.0 7.0
+wait 10
+shot c_48_b
+tp @s 930.93 -59.99 3.15 150.0 16.0
+wait 10
+shot c_49_a
+tp @s 929.24 -60.72 -41.61 180.0 7.0
+wait 10
+shot c_49_b
+tp @s 937.27 -60.66 2.01 150.0 16.0
+wait 10
+shot c_50_a
+tp @s 936.14 -61.08 -42.97 180.0 7.0
+wait 10
+shot c_50_b
+tp @s 944.68 -60.17 2.55 150.0 16.0
+wait 10
+shot c_51_a
+tp @s 943.30 -60.72 -42.21 180.0 7.0
+wait 10
+shot c_51_b
+tp @s 951.93 -60.19 2.88 150.0 16.0
+wait 10
+shot c_52_a
+tp @s 950.35 -60.83 -41.98 180.0 7.0
+wait 10
+shot c_52_b
+tp @s 959.02 -59.98 2.95 150.0 16.0
+wait 10
+shot c_53_a
+tp @s 957.46 -60.65 -41.88 180.0 7.0
+wait 10
+shot c_53_b
+
+# --- c 54 55 56 57 58 59
+tp @s 992.1 -54 10 180 10
+wait 30
+summon necromancy:minion 968.15 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:frog",torso:"orespawn:bee",arm_left:"orespawn:bee",arm_right:"orespawn:bee",legs:"orespawn:bee"}}
+summon necromancy:minion 968.15 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:frog",torso:"orespawn:bee",arm_left:"orespawn:bee",arm_right:"orespawn:bee",legs:"orespawn:bee"}}
+summon necromancy:minion 978.32 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:fairy",torso:"orespawn:basilisk"}}
+summon necromancy:minion 978.32 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:fairy",torso:"orespawn:basilisk"}}
+summon necromancy:minion 988.49 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:rainbow_ant",torso:"orespawn:red_ant",arm_left:"orespawn:mantis",arm_right:"orespawn:mantis",legs:"orespawn:trex"}}
+summon necromancy:minion 988.49 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:rainbow_ant",torso:"orespawn:red_ant",arm_left:"orespawn:mantis",arm_right:"orespawn:mantis",legs:"orespawn:trex"}}
+summon necromancy:minion 996.14 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:red_ant",torso:"orespawn:cater_killer"}}
+summon necromancy:minion 996.14 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:red_ant",torso:"orespawn:cater_killer"}}
+summon necromancy:minion 1003.80 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:ant",torso:"orespawn:velocity_raptor",arm_left:"orespawn:dungeon_beast",arm_right:"orespawn:dungeon_beast",legs:"orespawn:nastysaurus"}}
+summon necromancy:minion 1003.80 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:ant",torso:"orespawn:velocity_raptor",arm_left:"orespawn:dungeon_beast",arm_right:"orespawn:dungeon_beast",legs:"orespawn:nastysaurus"}}
+summon necromancy:minion 1013.43 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:termite",torso:"orespawn:whale",legs:"necromancy:zombie"}}
+summon necromancy:minion 1013.43 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:termite",torso:"orespawn:whale",legs:"necromancy:zombie"}}
+wait 40
+tp @s 970.30 -59.49 4.42 150.0 16.0
+wait 10
+shot c_54_a
+tp @s 967.47 -60.22 -41.19 180.0 7.0
+wait 10
+shot c_54_b
+tp @s 982.57 -58.28 5.72 150.0 16.0
+wait 10
+shot c_55_a
+tp @s 979.96 -59.78 -37.97 180.0 7.0
+wait 10
+shot c_55_b
+tp @s 990.54 -59.65 2.76 150.0 16.0
+wait 10
+shot c_56_a
+tp @s 989.23 -60.34 -41.39 180.0 7.0
+wait 10
+shot c_56_b
+tp @s 998.51 -59.65 3.52 150.0 16.0
+wait 10
+shot c_57_a
+tp @s 996.72 -60.49 -41.11 180.0 7.0
+wait 10
+shot c_57_b
+tp @s 1005.78 -59.70 2.55 150.0 16.0
+wait 10
+shot c_58_a
+tp @s 1004.68 -60.38 -41.50 180.0 7.0
+wait 10
+shot c_58_b
+tp @s 1017.28 -58.42 5.57 150.0 16.0
+wait 10
+shot c_59_a
+tp @s 1014.53 -59.77 -38.64 180.0 7.0
+wait 10
+shot c_59_b
+
+# --- c 60 61 62 63 64 65
+tp @s 1049.4 -54 10 180 10
+wait 30
+summon necromancy:minion 1027.06 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:chipmunk",torso:"orespawn:kyuubi",arm_left:"orespawn:cockateil",arm_right:"orespawn:cockateil",legs:"orespawn:kyuubi"}}
+summon necromancy:minion 1027.06 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:chipmunk",torso:"orespawn:kyuubi",arm_left:"orespawn:cockateil",arm_right:"orespawn:cockateil",legs:"orespawn:kyuubi"}}
+summon necromancy:minion 1034.06 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:beaver",torso:"orespawn:gazelle",arm_left:"orespawn:crab",arm_right:"orespawn:crab",legs:"orespawn:beaver"}}
+summon necromancy:minion 1034.06 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:beaver",torso:"orespawn:gazelle",arm_left:"orespawn:crab",arm_right:"orespawn:crab",legs:"orespawn:beaver"}}
+summon necromancy:minion 1042.17 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:rat",torso:"orespawn:camarasaurus",arm_left:"orespawn:baryonyx",arm_right:"orespawn:baryonyx",legs:"orespawn:camarasaurus"}}
+summon necromancy:minion 1042.17 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:rat",torso:"orespawn:camarasaurus",arm_left:"orespawn:baryonyx",arm_right:"orespawn:baryonyx",legs:"orespawn:camarasaurus"}}
+summon necromancy:minion 1051.58 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:ostrich",torso:"orespawn:trex",arm_left:"orespawn:alien",arm_right:"orespawn:alien",legs:"orespawn:trex"}}
+summon necromancy:minion 1051.58 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:ostrich",torso:"orespawn:trex",arm_left:"orespawn:alien",arm_right:"orespawn:alien",legs:"orespawn:trex"}}
+summon necromancy:minion 1061.83 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:cassowary",torso:"orespawn:pointysaurus",arm_left:"orespawn:molenoid",arm_right:"orespawn:molenoid",legs:"orespawn:pointysaurus"}}
+summon necromancy:minion 1061.83 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:cassowary",torso:"orespawn:pointysaurus",arm_left:"orespawn:molenoid",arm_right:"orespawn:molenoid",legs:"orespawn:pointysaurus"}}
+summon necromancy:minion 1071.22 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:dungeon_beast",torso:"orespawn:baby_dragon",arm_left:"orespawn:spyro",arm_right:"orespawn:spyro",legs:"orespawn:baby_dragon"}}
+summon necromancy:minion 1071.22 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:dungeon_beast",torso:"orespawn:baby_dragon",arm_left:"orespawn:spyro",arm_right:"orespawn:spyro",legs:"orespawn:baby_dragon"}}
+wait 40
+tp @s 1028.89 -59.90 2.94 150.0 16.0
+wait 10
+shot c_60_a
+tp @s 1027.29 -60.52 -41.78 180.0 7.0
+wait 10
+shot c_60_b
+tp @s 1035.87 -59.95 3.68 150.0 16.0
+wait 10
+shot c_61_a
+tp @s 1033.53 -60.58 -41.93 180.0 7.0
+wait 10
+shot c_61_b
+tp @s 1044.88 -59.04 4.65 150.0 16.0
+wait 10
+shot c_62_a
+tp @s 1042.22 -59.99 -40.53 180.0 7.0
+wait 10
+shot c_62_b
+tp @s 1054.60 -58.48 3.92 150.0 16.0
+wait 10
+shot c_63_a
+tp @s 1052.84 -59.48 -39.59 180.0 7.0
+wait 10
+shot c_63_b
+tp @s 1065.13 -59.26 5.65 150.0 16.0
+wait 10
+shot c_64_a
+tp @s 1061.97 -60.43 -39.52 180.0 7.0
+wait 10
+shot c_64_b
+tp @s 1073.42 -59.76 3.66 150.0 16.0
+wait 10
+shot c_65_a
+tp @s 1071.38 -60.54 -41.38 180.0 7.0
+wait 10
+shot c_65_b
+
+# --- c 66 67 68 69 70 71
+tp @s 1100.9 -54 10 180 10
+wait 30
+summon necromancy:minion 1083.12 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:whale",torso:"orespawn:stink_bug",arm_left:"orespawn:stinky",arm_right:"orespawn:stinky",legs:"orespawn:dragon"}}
+summon necromancy:minion 1083.12 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:whale",torso:"orespawn:stink_bug",arm_left:"orespawn:stinky",arm_right:"orespawn:stinky",legs:"orespawn:dragon"}}
+summon necromancy:minion 1090.58 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:hydrolisc",torso:"orespawn:lurking_terror",arm_left:"orespawn:kyuubi",arm_right:"orespawn:kyuubi",legs:"orespawn:hydrolisc"}}
+summon necromancy:minion 1090.58 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:hydrolisc",torso:"orespawn:lurking_terror",arm_left:"orespawn:kyuubi",arm_right:"orespawn:kyuubi",legs:"orespawn:hydrolisc"}}
+summon necromancy:minion 1097.76 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:stinky",torso:"orespawn:cannon_fodder",arm_left:"orespawn:dragon",arm_right:"orespawn:dragon",legs:"orespawn:cannon_fodder"}}
+summon necromancy:minion 1097.76 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:stinky",torso:"orespawn:cannon_fodder",arm_left:"orespawn:dragon",arm_right:"orespawn:dragon",legs:"orespawn:cannon_fodder"}}
+summon necromancy:minion 1104.94 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:cannon_fodder",torso:"orespawn:cricket",arm_left:"orespawn:mantis",arm_right:"orespawn:mantis",legs:"orespawn:gamma_metroid"}}
+summon necromancy:minion 1104.94 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:cannon_fodder",torso:"orespawn:cricket",arm_left:"orespawn:mantis",arm_right:"orespawn:mantis",legs:"orespawn:gamma_metroid"}}
+summon necromancy:minion 1112.04 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:nastysaurus",torso:"orespawn:spider_driver",arm_left:"orespawn:trooper_bug",arm_right:"orespawn:trooper_bug",legs:"orespawn:alosaurus"}}
+summon necromancy:minion 1112.04 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:nastysaurus",torso:"orespawn:spider_driver",arm_left:"orespawn:trooper_bug",arm_right:"orespawn:trooper_bug",legs:"orespawn:alosaurus"}}
+summon necromancy:minion 1119.14 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:alosaurus",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 1119.14 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:alosaurus",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+wait 40
+tp @s 1085.34 -59.48 4.26 150.0 16.0
+wait 10
+shot c_66_a
+tp @s 1082.71 -60.26 -41.24 180.0 7.0
+wait 10
+shot c_66_b
+tp @s 1092.29 -60.04 2.71 150.0 16.0
+wait 10
+shot c_67_a
+tp @s 1090.83 -60.62 -42.01 180.0 7.0
+wait 10
+shot c_67_b
+tp @s 1101.16 -57.96 6.11 150.0 16.0
+wait 10
+shot c_68_a
+tp @s 1097.57 -59.10 -38.85 180.0 7.0
+wait 10
+shot c_68_b
+tp @s 1106.46 -60.50 2.51 150.0 16.0
+wait 10
+shot c_69_a
+tp @s 1105.07 -61.04 -42.52 180.0 7.0
+wait 10
+shot c_69_b
+tp @s 1114.15 -59.57 2.77 150.0 16.0
+wait 10
+shot c_70_a
+tp @s 1112.90 -60.28 -41.28 180.0 7.0
+wait 10
+shot c_70_b
+tp @s 1121.42 -59.34 4.34 150.0 16.0
+wait 10
+shot c_71_a
+tp @s 1118.76 -60.11 -40.94 180.0 7.0
+wait 10
+shot c_71_b
+
+# --- c 72 73 74 75 76 77
+tp @s 1153.2 -54 10 180 10
+wait 30
+summon necromancy:minion 1134.11 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:velocity_raptor",torso:"orespawn:sea_viper"}}
+summon necromancy:minion 1134.11 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:velocity_raptor",torso:"orespawn:sea_viper"}}
+summon necromancy:minion 1145.41 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:lizard",torso:"orespawn:worm_large",legs:"orespawn:lizard"}}
+summon necromancy:minion 1145.41 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:lizard",torso:"orespawn:worm_large",legs:"orespawn:lizard"}}
+summon necromancy:minion 1153.57 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:camarasaurus",torso:"orespawn:hercules_beetle",arm_left:"orespawn:cephadrome",arm_right:"orespawn:cephadrome",legs:"orespawn:stink_bug"}}
+summon necromancy:minion 1153.57 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:camarasaurus",torso:"orespawn:hercules_beetle",arm_left:"orespawn:cephadrome",arm_right:"orespawn:cephadrome",legs:"orespawn:stink_bug"}}
+summon necromancy:minion 1161.63 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:baby_dragon",torso:"orespawn:spyro",arm_left:"orespawn:baby_dragon",arm_right:"orespawn:baby_dragon",legs:"orespawn:spyro"}}
+summon necromancy:minion 1161.63 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:baby_dragon",torso:"orespawn:spyro",arm_left:"orespawn:baby_dragon",arm_right:"orespawn:baby_dragon",legs:"orespawn:spyro"}}
+summon necromancy:minion 1168.87 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:dragon",torso:"orespawn:terrible_terror",arm_left:"orespawn:dragon",arm_right:"orespawn:dragon",legs:"orespawn:termite"}}
+summon necromancy:minion 1168.87 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:dragon",torso:"orespawn:terrible_terror",arm_left:"orespawn:dragon",arm_right:"orespawn:dragon",legs:"orespawn:termite"}}
+summon necromancy:minion 1176.02 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:emperor_scorpion",torso:"orespawn:gamma_metroid",arm_left:"orespawn:emperor_scorpion",arm_right:"orespawn:emperor_scorpion",legs:"orespawn:leon"}}
+summon necromancy:minion 1176.02 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:emperor_scorpion",torso:"orespawn:gamma_metroid",arm_left:"orespawn:emperor_scorpion",arm_right:"orespawn:emperor_scorpion",legs:"orespawn:leon"}}
+wait 40
+tp @s 1139.04 -58.27 5.68 150.0 16.0
+wait 10
+shot c_72_a
+tp @s 1136.83 -59.98 -36.89 180.0 7.0
+wait 10
+shot c_72_b
+tp @s 1147.53 -59.61 3.12 150.0 16.0
+wait 10
+shot c_73_a
+tp @s 1145.97 -60.35 -41.45 180.0 7.0
+wait 10
+shot c_73_b
+tp @s 1156.05 -59.29 3.91 150.0 16.0
+wait 10
+shot c_74_a
+tp @s 1153.98 -60.17 -40.90 180.0 7.0
+wait 10
+shot c_74_b
+tp @s 1163.70 -60.15 3.54 150.0 16.0
+wait 10
+shot c_75_a
+tp @s 1161.65 -60.87 -41.61 180.0 7.0
+wait 10
+shot c_75_b
+tp @s 1171.97 -58.31 5.39 150.0 16.0
+wait 10
+shot c_76_a
+tp @s 1168.89 -59.36 -39.39 180.0 7.0
+wait 10
+shot c_76_b
+tp @s 1178.28 -59.37 3.60 150.0 16.0
+wait 10
+shot c_77_a
+tp @s 1176.34 -60.13 -40.98 180.0 7.0
+wait 10
+shot c_77_b
+
+# --- c 78 79 80 81 82 83
+tp @s 1206.2 -54 10 180 10
+wait 30
+summon necromancy:minion 1187.18 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:spit_bug",torso:"orespawn:ostrich",arm_left:"orespawn:velocity_raptor",arm_right:"orespawn:velocity_raptor",legs:"orespawn:triffid"}}
+summon necromancy:minion 1187.18 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:spit_bug",torso:"orespawn:ostrich",arm_left:"orespawn:velocity_raptor",arm_right:"orespawn:velocity_raptor",legs:"orespawn:triffid"}}
+summon necromancy:minion 1195.05 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:creeping_horror",torso:"orespawn:crab",arm_left:"orespawn:crab",arm_right:"orespawn:crab",legs:"orespawn:hammerhead"}}
+summon necromancy:minion 1195.05 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:creeping_horror",torso:"orespawn:crab",arm_left:"orespawn:crab",arm_right:"orespawn:crab",legs:"orespawn:hammerhead"}}
+summon necromancy:minion 1203.54 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:cave_fisher",torso:"orespawn:hammerhead",arm_left:"orespawn:cave_fisher",arm_right:"orespawn:cave_fisher",legs:"orespawn:cave_fisher"}}
+summon necromancy:minion 1203.54 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:cave_fisher",torso:"orespawn:hammerhead",arm_left:"orespawn:cave_fisher",arm_right:"orespawn:cave_fisher",legs:"orespawn:cave_fisher"}}
+summon necromancy:minion 1211.16 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:sea_viper",torso:"orespawn:rubber_ducky",legs:"orespawn:frog"}}
+summon necromancy:minion 1211.16 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:sea_viper",torso:"orespawn:rubber_ducky",legs:"orespawn:frog"}}
+summon necromancy:minion 1218.16 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:robot_3",torso:"orespawn:band_p",arm_left:"orespawn:robot_3",arm_right:"orespawn:robot_3",legs:"orespawn:band_p"}}
+summon necromancy:minion 1218.16 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:robot_3",torso:"orespawn:band_p",arm_left:"orespawn:robot_3",arm_right:"orespawn:robot_3",legs:"orespawn:band_p"}}
+summon necromancy:minion 1225.16 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:robot_4",torso:"orespawn:robot_2",arm_left:"orespawn:robot_4",arm_right:"orespawn:robot_4",legs:"orespawn:robot_3"}}
+summon necromancy:minion 1225.16 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:robot_4",torso:"orespawn:robot_2",arm_left:"orespawn:robot_4",arm_right:"orespawn:robot_4",legs:"orespawn:robot_3"}}
+wait 40
+tp @s 1188.87 -60.15 3.27 150.0 16.0
+wait 10
+shot c_78_a
+tp @s 1186.95 -60.77 -42.19 180.0 7.0
+wait 10
+shot c_78_b
+tp @s 1197.61 -59.49 4.85 150.0 16.0
+wait 10
+shot c_79_a
+tp @s 1194.58 -60.38 -40.80 180.0 7.0
+wait 10
+shot c_79_b
+tp @s 1205.89 -59.46 4.17 150.0 16.0
+wait 10
+shot c_80_a
+tp @s 1203.42 -60.29 -41.14 180.0 7.0
+wait 10
+shot c_80_b
+tp @s 1212.91 -60.13 3.44 150.0 16.0
+wait 10
+shot c_81_a
+tp @s 1210.76 -60.75 -42.12 180.0 7.0
+wait 10
+shot c_81_b
+tp @s 1220.29 -59.52 3.60 150.0 16.0
+wait 10
+shot c_82_a
+tp @s 1218.25 -60.24 -41.21 180.0 7.0
+wait 10
+shot c_82_b
+tp @s 1227.40 -59.39 4.11 150.0 16.0
+wait 10
+shot c_83_a
+tp @s 1224.93 -60.15 -41.02 180.0 7.0
+wait 10
+shot c_83_b
+
+# --- c 84 85 86 87 88 89
+tp @s 1254.0 -54 10 180 10
+wait 30
+summon necromancy:minion 1236.16 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:red_cow",torso:"orespawn:robot_1",arm_left:"orespawn:red_cow",arm_right:"orespawn:red_cow",legs:"orespawn:robot_1"}}
+summon necromancy:minion 1236.16 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:red_cow",torso:"orespawn:robot_1",arm_left:"orespawn:red_cow",arm_right:"orespawn:red_cow",legs:"orespawn:robot_1"}}
+summon necromancy:minion 1243.16 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:apple_cow",torso:"orespawn:cave_fisher",arm_left:"orespawn:ender_reaper",arm_right:"orespawn:ender_reaper",legs:"orespawn:ender_reaper"}}
+summon necromancy:minion 1243.16 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:apple_cow",torso:"orespawn:cave_fisher",arm_left:"orespawn:ender_reaper",arm_right:"orespawn:ender_reaper",legs:"orespawn:ender_reaper"}}
+summon necromancy:minion 1250.16 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:crystal_cow",torso:"orespawn:leaf_monster",arm_left:"orespawn:leaf_monster",arm_right:"orespawn:leaf_monster",legs:"orespawn:crystal_cow"}}
+summon necromancy:minion 1250.16 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:crystal_cow",torso:"orespawn:leaf_monster",arm_left:"orespawn:leaf_monster",arm_right:"orespawn:leaf_monster",legs:"orespawn:crystal_cow"}}
+summon necromancy:minion 1257.16 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:gold_cow",torso:"orespawn:mantis",arm_left:"orespawn:gold_cow",arm_right:"orespawn:gold_cow",legs:"orespawn:gold_cow"}}
+summon necromancy:minion 1257.16 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:gold_cow",torso:"orespawn:mantis",arm_left:"orespawn:gold_cow",arm_right:"orespawn:gold_cow",legs:"orespawn:gold_cow"}}
+summon necromancy:minion 1264.16 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:golden_apple_cow",torso:"orespawn:skate",legs:"orespawn:golden_apple_cow"}}
+summon necromancy:minion 1264.16 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:golden_apple_cow",torso:"orespawn:skate",legs:"orespawn:golden_apple_cow"}}
+summon necromancy:minion 1271.46 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:enchanted_apple_cow",torso:"orespawn:peacock",arm_left:"orespawn:enchanted_apple_cow",arm_right:"orespawn:enchanted_apple_cow",legs:"orespawn:red_cow"}}
+summon necromancy:minion 1271.46 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:enchanted_apple_cow",torso:"orespawn:peacock",arm_left:"orespawn:enchanted_apple_cow",arm_right:"orespawn:enchanted_apple_cow",legs:"orespawn:red_cow"}}
+wait 40
+tp @s 1237.66 -60.58 2.46 150.0 16.0
+wait 10
+shot c_84_a
+tp @s 1236.25 -61.08 -42.42 180.0 7.0
+wait 10
+shot c_84_b
+tp @s 1245.42 -59.15 3.39 150.0 16.0
+wait 10
+shot c_85_a
+tp @s 1243.58 -59.89 -41.02 180.0 7.0
+wait 10
+shot c_85_b
+tp @s 1252.24 -59.58 3.18 150.0 16.0
+wait 10
+shot c_86_a
+tp @s 1250.59 -60.28 -41.30 180.0 7.0
+wait 10
+shot c_86_b
+tp @s 1259.35 -59.45 3.32 150.0 16.0
+wait 10
+shot c_87_a
+tp @s 1257.63 -60.19 -41.11 180.0 7.0
+wait 10
+shot c_87_b
+tp @s 1265.89 -60.01 2.20 150.0 16.0
+wait 10
+shot c_88_a
+tp @s 1264.96 -60.60 -41.96 180.0 7.0
+wait 10
+shot c_88_b
+tp @s 1273.57 -59.67 2.20 150.0 16.0
+wait 10
+shot c_89_a
+tp @s 1272.91 -60.41 -41.55 180.0 7.0
+wait 10
+shot c_89_b
+
+# --- c 90 91 92 93 94 95
+tp @s 1307.0 -54 10 180 10
+wait 30
+summon necromancy:minion 1282.77 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:bee",torso:"orespawn:scorpion",arm_left:"orespawn:bee",arm_right:"orespawn:bee",legs:"orespawn:scorpion"}}
+summon necromancy:minion 1282.77 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:bee",torso:"orespawn:scorpion",arm_left:"orespawn:bee",arm_right:"orespawn:bee",legs:"orespawn:scorpion"}}
+summon necromancy:minion 1290.82 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:brutalfly",torso:"orespawn:flounder",arm_left:"orespawn:brutalfly",arm_right:"orespawn:brutalfly",legs:"orespawn:hercules_beetle"}}
+summon necromancy:minion 1290.82 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:brutalfly",torso:"orespawn:flounder",arm_left:"orespawn:brutalfly",arm_right:"orespawn:brutalfly",legs:"orespawn:hercules_beetle"}}
+summon necromancy:minion 1301.38 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:gold_cow",torso:"orespawn:whale",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 1301.38 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:gold_cow",torso:"orespawn:whale",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 1314.05 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:red_cow",torso:"orespawn:basilisk",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 1314.05 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:red_cow",torso:"orespawn:basilisk",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 1324.27 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:apple_cow",torso:"orespawn:worm_large",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 1324.27 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:apple_cow",torso:"orespawn:worm_large",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 1331.32 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:gold_cow",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:firefly"}}
+summon necromancy:minion 1331.32 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:gold_cow",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:firefly"}}
+wait 40
+tp @s 1284.31 -60.23 2.66 150.0 16.0
+wait 10
+shot c_90_a
+tp @s 1282.78 -60.76 -42.31 180.0 7.0
+wait 10
+shot c_90_b
+tp @s 1293.48 -59.87 4.18 150.0 16.0
+wait 10
+shot c_91_a
+tp @s 1291.25 -60.81 -40.61 180.0 7.0
+wait 10
+shot c_91_b
+tp @s 1305.14 -58.47 5.30 150.0 16.0
+wait 10
+shot c_92_a
+tp @s 1302.58 -59.79 -38.79 180.0 7.0
+wait 10
+shot c_92_b
+tp @s 1318.30 -57.75 5.72 150.0 16.0
+wait 10
+shot c_93_a
+tp @s 1315.70 -59.25 -37.97 180.0 7.0
+wait 10
+shot c_93_b
+tp @s 1326.64 -59.23 2.94 150.0 16.0
+wait 10
+shot c_94_a
+tp @s 1325.44 -60.03 -40.77 180.0 7.0
+wait 10
+shot c_94_b
+tp @s 1333.20 -59.83 3.35 150.0 16.0
+wait 10
+shot c_95_a
+tp @s 1331.23 -60.47 -41.69 180.0 7.0
+wait 10
+shot c_95_b
+
+# --- c 96 97 98 99
+tp @s 1353.4 -54 10 180 10
+wait 30
+summon necromancy:minion 1342.32 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:gold_cow",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:cricket"}}
+summon necromancy:minion 1342.32 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:gold_cow",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:cricket"}}
+summon necromancy:minion 1349.32 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:gold_cow",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:ant"}}
+summon necromancy:minion 1349.32 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:gold_cow",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:ant"}}
+summon necromancy:minion 1356.32 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:crystal_cow",torso:"orespawn:gold_fish",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 1356.32 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:crystal_cow",torso:"orespawn:gold_fish",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 1363.85 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:red_cow",torso:"orespawn:cater_killer",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 1363.85 -60 -45.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[90f,0f],Parts:{head:"orespawn:red_cow",torso:"orespawn:cater_killer",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+wait 40
+tp @s 1344.27 -59.79 2.83 150.0 16.0
+wait 10
+shot c_96_a
+tp @s 1342.81 -60.44 -41.59 180.0 7.0
+wait 10
+shot c_96_b
+tp @s 1351.32 -59.66 3.48 150.0 16.0
+wait 10
+shot c_97_a
+tp @s 1349.34 -60.35 -41.46 180.0 7.0
+wait 10
+shot c_97_b
+tp @s 1358.32 -59.68 3.15 150.0 16.0
+wait 10
+shot c_98_a
+tp @s 1356.64 -60.36 -41.46 180.0 7.0
+wait 10
+shot c_98_b
+tp @s 1366.17 -59.30 3.33 150.0 16.0
+wait 10
+shot c_99_a
+tp @s 1364.53 -60.08 -40.88 180.0 7.0
+wait 10
+shot c_99_b
+
+# --- spawnlings at half size
+tp @s 1374.9 -54 10 180 10
+wait 30
+summon necromancy:minion 1371.89 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:scorpion",torso:"orespawn:scorpion",arm_left:"orespawn:scorpion",arm_right:"orespawn:scorpion",legs:"orespawn:scorpion"}}
+summon necromancy:minion 1372.99 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:scorpion",torso:"orespawn:scorpion",arm_left:"orespawn:scorpion",arm_right:"orespawn:scorpion",legs:"orespawn:scorpion"},attributes:[{id:"minecraft:generic.scale",base:0.5d}]}
+summon necromancy:minion 1374.29 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:spit_bug",torso:"orespawn:spit_bug",arm_left:"orespawn:spit_bug",arm_right:"orespawn:spit_bug",legs:"orespawn:spit_bug"}}
+summon necromancy:minion 1375.39 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:spit_bug",torso:"orespawn:spit_bug",arm_left:"orespawn:spit_bug",arm_right:"orespawn:spit_bug",legs:"orespawn:spit_bug"},attributes:[{id:"minecraft:generic.scale",base:0.5d}]}
+summon necromancy:minion 1376.69 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:worm_small",torso:"orespawn:worm_small"}}
+summon necromancy:minion 1377.79 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:worm_small",torso:"orespawn:worm_small"},attributes:[{id:"minecraft:generic.scale",base:0.5d}]}
+wait 30
+hitboxes on
+tp @s 1374.89 -60.02 4.20 180.0 18.0
+wait 10
+shot spawnlings
+hitboxes off
+
+# --- item icons: every part, 35 to a page of the survival inventory (the slot under the cursor is left empty)
+tp @s 0 -60 60 180 0
+gamemode survival
+recipe give @s *
+wait 120
+clear @s
+item replace entity @s hotbar.0 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:alien",type:"head"}]
+item replace entity @s hotbar.1 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:alien",type:"torso"}]
+item replace entity @s hotbar.2 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:alien",type:"arm"}]
+item replace entity @s hotbar.3 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:alien",type:"legs"}]
+item replace entity @s hotbar.4 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:alosaurus",type:"head"}]
+item replace entity @s hotbar.5 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:alosaurus",type:"torso"}]
+item replace entity @s hotbar.6 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:alosaurus",type:"legs"}]
+item replace entity @s hotbar.7 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:ant",type:"head"}]
+item replace entity @s hotbar.8 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:ant",type:"torso"}]
+item replace entity @s inventory.0 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:ant",type:"legs"}]
+item replace entity @s inventory.1 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:apple_cow",type:"head"}]
+item replace entity @s inventory.2 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:apple_cow",type:"torso"}]
+item replace entity @s inventory.3 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:apple_cow",type:"arm"}]
+item replace entity @s inventory.5 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:apple_cow",type:"legs"}]
+item replace entity @s inventory.6 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:attack_squid",type:"head"}]
+item replace entity @s inventory.7 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:attack_squid",type:"torso"}]
+item replace entity @s inventory.8 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:attack_squid",type:"legs"}]
+item replace entity @s inventory.9 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:baby_dragon",type:"head"}]
+item replace entity @s inventory.10 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:baby_dragon",type:"torso"}]
+item replace entity @s inventory.11 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:baby_dragon",type:"arm"}]
+item replace entity @s inventory.12 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:baby_dragon",type:"legs"}]
+item replace entity @s inventory.13 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:band_p",type:"head"}]
+item replace entity @s inventory.14 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:band_p",type:"torso"}]
+item replace entity @s inventory.15 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:band_p",type:"arm"}]
+item replace entity @s inventory.16 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:band_p",type:"legs"}]
+item replace entity @s inventory.17 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:baryonyx",type:"head"}]
+item replace entity @s inventory.18 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:baryonyx",type:"torso"}]
+item replace entity @s inventory.19 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:baryonyx",type:"arm"}]
+item replace entity @s inventory.20 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:baryonyx",type:"legs"}]
+item replace entity @s inventory.21 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:basilisk",type:"head"}]
+item replace entity @s inventory.22 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:basilisk",type:"torso"}]
+item replace entity @s inventory.23 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:beaver",type:"head"}]
+item replace entity @s inventory.24 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:beaver",type:"torso"}]
+item replace entity @s inventory.25 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:beaver",type:"legs"}]
+item replace entity @s inventory.26 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:bee",type:"head"}]
+hud on
+inventory
+wait 12
+shot items_00
+closegui
+hud off
+clear @s
+item replace entity @s hotbar.0 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:bee",type:"torso"}]
+item replace entity @s hotbar.1 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:bee",type:"arm"}]
+item replace entity @s hotbar.2 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:bee",type:"legs"}]
+item replace entity @s hotbar.3 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:brutalfly",type:"head"}]
+item replace entity @s hotbar.4 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:brutalfly",type:"torso"}]
+item replace entity @s hotbar.5 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:brutalfly",type:"arm"}]
+item replace entity @s hotbar.6 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:butterfly",type:"head"}]
+item replace entity @s hotbar.7 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:butterfly",type:"torso"}]
+item replace entity @s hotbar.8 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:butterfly",type:"arm"}]
+item replace entity @s inventory.0 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:camarasaurus",type:"head"}]
+item replace entity @s inventory.1 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:camarasaurus",type:"torso"}]
+item replace entity @s inventory.2 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:camarasaurus",type:"legs"}]
+item replace entity @s inventory.3 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:cannon_fodder",type:"head"}]
+item replace entity @s inventory.5 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:cannon_fodder",type:"torso"}]
+item replace entity @s inventory.6 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:cannon_fodder",type:"legs"}]
+item replace entity @s inventory.7 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:cassowary",type:"head"}]
+item replace entity @s inventory.8 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:cassowary",type:"torso"}]
+item replace entity @s inventory.9 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:cassowary",type:"legs"}]
+item replace entity @s inventory.10 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:cater_killer",type:"head"}]
+item replace entity @s inventory.11 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:cater_killer",type:"torso"}]
+item replace entity @s inventory.12 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:cave_fisher",type:"head"}]
+item replace entity @s inventory.13 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:cave_fisher",type:"torso"}]
+item replace entity @s inventory.14 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:cave_fisher",type:"arm"}]
+item replace entity @s inventory.15 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:cave_fisher",type:"legs"}]
+item replace entity @s inventory.16 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:cephadrome",type:"head"}]
+item replace entity @s inventory.17 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:cephadrome",type:"torso"}]
+item replace entity @s inventory.18 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:cephadrome",type:"arm"}]
+item replace entity @s inventory.19 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:cephadrome",type:"legs"}]
+item replace entity @s inventory.20 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:chipmunk",type:"head"}]
+item replace entity @s inventory.21 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:chipmunk",type:"torso"}]
+item replace entity @s inventory.22 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:chipmunk",type:"legs"}]
+item replace entity @s inventory.23 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:cliff_racer",type:"head"}]
+item replace entity @s inventory.24 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:cliff_racer",type:"torso"}]
+item replace entity @s inventory.25 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:cliff_racer",type:"arm"}]
+item replace entity @s inventory.26 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:cloud_shark",type:"head"}]
+hud on
+inventory
+wait 12
+shot items_01
+closegui
+hud off
+clear @s
+item replace entity @s hotbar.0 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:cloud_shark",type:"torso"}]
+item replace entity @s hotbar.1 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:cockateil",type:"head"}]
+item replace entity @s hotbar.2 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:cockateil",type:"torso"}]
+item replace entity @s hotbar.3 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:cockateil",type:"arm"}]
+item replace entity @s hotbar.4 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:cockateil",type:"legs"}]
+item replace entity @s hotbar.5 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:crab",type:"head"}]
+item replace entity @s hotbar.6 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:crab",type:"torso"}]
+item replace entity @s hotbar.7 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:crab",type:"arm"}]
+item replace entity @s hotbar.8 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:crab",type:"legs"}]
+item replace entity @s inventory.0 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:creeping_horror",type:"head"}]
+item replace entity @s inventory.1 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:creeping_horror",type:"torso"}]
+item replace entity @s inventory.2 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:creeping_horror",type:"arm"}]
+item replace entity @s inventory.3 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:creeping_horror",type:"legs"}]
+item replace entity @s inventory.5 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:cricket",type:"head"}]
+item replace entity @s inventory.6 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:cricket",type:"torso"}]
+item replace entity @s inventory.7 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:cricket",type:"legs"}]
+item replace entity @s inventory.8 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:cryolophosaurus",type:"head"}]
+item replace entity @s inventory.9 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:cryolophosaurus",type:"torso"}]
+item replace entity @s inventory.10 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:cryolophosaurus",type:"legs"}]
+item replace entity @s inventory.11 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:crystal_cow",type:"head"}]
+item replace entity @s inventory.12 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:crystal_cow",type:"torso"}]
+item replace entity @s inventory.13 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:crystal_cow",type:"arm"}]
+item replace entity @s inventory.14 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:crystal_cow",type:"legs"}]
+item replace entity @s inventory.15 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:dragon",type:"head"}]
+item replace entity @s inventory.16 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:dragon",type:"torso"}]
+item replace entity @s inventory.17 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:dragon",type:"arm"}]
+item replace entity @s inventory.18 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:dragon",type:"legs"}]
+item replace entity @s inventory.19 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:dragonfly",type:"head"}]
+item replace entity @s inventory.20 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:dragonfly",type:"torso"}]
+item replace entity @s inventory.21 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:dragonfly",type:"arm"}]
+item replace entity @s inventory.22 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:dungeon_beast",type:"head"}]
+item replace entity @s inventory.23 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:dungeon_beast",type:"torso"}]
+item replace entity @s inventory.24 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:dungeon_beast",type:"arm"}]
+item replace entity @s inventory.25 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:dungeon_beast",type:"legs"}]
+item replace entity @s inventory.26 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:easter_bunny",type:"head"}]
+hud on
+inventory
+wait 12
+shot items_02
+closegui
+hud off
+clear @s
+item replace entity @s hotbar.0 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:easter_bunny",type:"torso"}]
+item replace entity @s hotbar.1 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:easter_bunny",type:"arm"}]
+item replace entity @s hotbar.2 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:easter_bunny",type:"legs"}]
+item replace entity @s hotbar.3 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:emperor_scorpion",type:"head"}]
+item replace entity @s hotbar.4 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:emperor_scorpion",type:"torso"}]
+item replace entity @s hotbar.5 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:emperor_scorpion",type:"arm"}]
+item replace entity @s hotbar.6 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:emperor_scorpion",type:"legs"}]
+item replace entity @s hotbar.7 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:enchanted_apple_cow",type:"head"}]
+item replace entity @s hotbar.8 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:enchanted_apple_cow",type:"torso"}]
+item replace entity @s inventory.0 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:enchanted_apple_cow",type:"arm"}]
+item replace entity @s inventory.1 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:enchanted_apple_cow",type:"legs"}]
+item replace entity @s inventory.2 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:ender_knight",type:"head"}]
+item replace entity @s inventory.3 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:ender_knight",type:"torso"}]
+item replace entity @s inventory.5 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:ender_knight",type:"arm"}]
+item replace entity @s inventory.6 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:ender_knight",type:"legs"}]
+item replace entity @s inventory.7 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:ender_reaper",type:"head"}]
+item replace entity @s inventory.8 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:ender_reaper",type:"torso"}]
+item replace entity @s inventory.9 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:ender_reaper",type:"arm"}]
+item replace entity @s inventory.10 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:ender_reaper",type:"legs"}]
+item replace entity @s inventory.11 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:fairy",type:"head"}]
+item replace entity @s inventory.12 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:fairy",type:"torso"}]
+item replace entity @s inventory.13 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:fairy",type:"arm"}]
+item replace entity @s inventory.14 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:fairy",type:"legs"}]
+item replace entity @s inventory.15 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:firefly",type:"head"}]
+item replace entity @s inventory.16 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:firefly",type:"torso"}]
+item replace entity @s inventory.17 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:firefly",type:"arm"}]
+item replace entity @s inventory.18 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:firefly",type:"legs"}]
+item replace entity @s inventory.19 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:flounder",type:"head"}]
+item replace entity @s inventory.20 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:flounder",type:"torso"}]
+item replace entity @s inventory.21 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:frog",type:"head"}]
+item replace entity @s inventory.22 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:frog",type:"torso"}]
+item replace entity @s inventory.23 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:frog",type:"legs"}]
+item replace entity @s inventory.24 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:gamma_metroid",type:"head"}]
+item replace entity @s inventory.25 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:gamma_metroid",type:"torso"}]
+item replace entity @s inventory.26 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:gamma_metroid",type:"legs"}]
+hud on
+inventory
+wait 12
+shot items_03
+closegui
+hud off
+clear @s
+item replace entity @s hotbar.0 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:gazelle",type:"head"}]
+item replace entity @s hotbar.1 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:gazelle",type:"torso"}]
+item replace entity @s hotbar.2 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:gazelle",type:"legs"}]
+item replace entity @s hotbar.3 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:giant_robot",type:"head"}]
+item replace entity @s hotbar.4 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:giant_robot",type:"arm"}]
+item replace entity @s hotbar.5 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:gold_cow",type:"head"}]
+item replace entity @s hotbar.6 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:gold_cow",type:"torso"}]
+item replace entity @s hotbar.7 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:gold_cow",type:"arm"}]
+item replace entity @s hotbar.8 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:gold_cow",type:"legs"}]
+item replace entity @s inventory.0 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:gold_fish",type:"head"}]
+item replace entity @s inventory.1 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:gold_fish",type:"torso"}]
+item replace entity @s inventory.2 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:golden_apple_cow",type:"head"}]
+item replace entity @s inventory.3 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:golden_apple_cow",type:"torso"}]
+item replace entity @s inventory.5 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:golden_apple_cow",type:"arm"}]
+item replace entity @s inventory.6 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:golden_apple_cow",type:"legs"}]
+item replace entity @s inventory.7 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:hammerhead",type:"head"}]
+item replace entity @s inventory.8 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:hammerhead",type:"torso"}]
+item replace entity @s inventory.9 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:hammerhead",type:"legs"}]
+item replace entity @s inventory.10 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:hercules_beetle",type:"head"}]
+item replace entity @s inventory.11 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:hercules_beetle",type:"torso"}]
+item replace entity @s inventory.12 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:hercules_beetle",type:"arm"}]
+item replace entity @s inventory.13 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:hercules_beetle",type:"legs"}]
+item replace entity @s inventory.14 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:hydrolisc",type:"head"}]
+item replace entity @s inventory.15 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:hydrolisc",type:"torso"}]
+item replace entity @s inventory.16 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:hydrolisc",type:"legs"}]
+item replace entity @s inventory.17 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:irukandji",type:"torso"}]
+item replace entity @s inventory.18 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:kyuubi",type:"head"}]
+item replace entity @s inventory.19 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:kyuubi",type:"torso"}]
+item replace entity @s inventory.20 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:kyuubi",type:"arm"}]
+item replace entity @s inventory.21 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:kyuubi",type:"legs"}]
+item replace entity @s inventory.22 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:leaf_monster",type:"head"}]
+item replace entity @s inventory.23 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:leaf_monster",type:"torso"}]
+item replace entity @s inventory.24 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:leaf_monster",type:"arm"}]
+item replace entity @s inventory.25 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:leaf_monster",type:"legs"}]
+item replace entity @s inventory.26 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:leon",type:"head"}]
+hud on
+inventory
+wait 12
+shot items_04
+closegui
+hud off
+clear @s
+item replace entity @s hotbar.0 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:leon",type:"torso"}]
+item replace entity @s hotbar.1 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:leon",type:"arm"}]
+item replace entity @s hotbar.2 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:leon",type:"legs"}]
+item replace entity @s hotbar.3 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:lizard",type:"head"}]
+item replace entity @s hotbar.4 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:lizard",type:"torso"}]
+item replace entity @s hotbar.5 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:lizard",type:"legs"}]
+item replace entity @s hotbar.6 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:luna_moth",type:"head"}]
+item replace entity @s hotbar.7 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:luna_moth",type:"torso"}]
+item replace entity @s hotbar.8 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:luna_moth",type:"arm"}]
+item replace entity @s inventory.0 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:lurking_terror",type:"head"}]
+item replace entity @s inventory.1 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:lurking_terror",type:"torso"}]
+item replace entity @s inventory.2 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:lurking_terror",type:"arm"}]
+item replace entity @s inventory.3 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:lurking_terror",type:"legs"}]
+item replace entity @s inventory.5 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:mantis",type:"head"}]
+item replace entity @s inventory.6 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:mantis",type:"torso"}]
+item replace entity @s inventory.7 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:mantis",type:"arm"}]
+item replace entity @s inventory.8 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:mantis",type:"legs"}]
+item replace entity @s inventory.9 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:molenoid",type:"head"}]
+item replace entity @s inventory.10 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:molenoid",type:"torso"}]
+item replace entity @s inventory.11 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:molenoid",type:"arm"}]
+item replace entity @s inventory.12 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:molenoid",type:"legs"}]
+item replace entity @s inventory.13 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:mosquito",type:"head"}]
+item replace entity @s inventory.14 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:mosquito",type:"torso"}]
+item replace entity @s inventory.15 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:mosquito",type:"arm"}]
+item replace entity @s inventory.16 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:nastysaurus",type:"head"}]
+item replace entity @s inventory.17 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:nastysaurus",type:"torso"}]
+item replace entity @s inventory.18 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:nastysaurus",type:"legs"}]
+item replace entity @s inventory.19 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:ostrich",type:"head"}]
+item replace entity @s inventory.20 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:ostrich",type:"torso"}]
+item replace entity @s inventory.21 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:ostrich",type:"legs"}]
+item replace entity @s inventory.22 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:peacock",type:"head"}]
+item replace entity @s inventory.23 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:peacock",type:"torso"}]
+item replace entity @s inventory.24 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:peacock",type:"legs"}]
+item replace entity @s inventory.25 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:pointysaurus",type:"head"}]
+item replace entity @s inventory.26 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:pointysaurus",type:"torso"}]
+hud on
+inventory
+wait 12
+shot items_05
+closegui
+hud off
+clear @s
+item replace entity @s hotbar.0 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:pointysaurus",type:"legs"}]
+item replace entity @s hotbar.1 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:rainbow_ant",type:"head"}]
+item replace entity @s hotbar.2 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:rainbow_ant",type:"torso"}]
+item replace entity @s hotbar.3 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:rainbow_ant",type:"legs"}]
+item replace entity @s hotbar.4 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:rat",type:"head"}]
+item replace entity @s hotbar.5 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:rat",type:"torso"}]
+item replace entity @s hotbar.6 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:rat",type:"legs"}]
+item replace entity @s hotbar.7 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:red_ant",type:"head"}]
+item replace entity @s hotbar.8 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:red_ant",type:"torso"}]
+item replace entity @s inventory.0 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:red_ant",type:"legs"}]
+item replace entity @s inventory.1 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:red_cow",type:"head"}]
+item replace entity @s inventory.2 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:red_cow",type:"torso"}]
+item replace entity @s inventory.3 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:red_cow",type:"arm"}]
+item replace entity @s inventory.5 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:red_cow",type:"legs"}]
+item replace entity @s inventory.6 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:robot_1",type:"torso"}]
+item replace entity @s inventory.7 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:robot_1",type:"legs"}]
+item replace entity @s inventory.8 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:robot_2",type:"head"}]
+item replace entity @s inventory.9 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:robot_2",type:"torso"}]
+item replace entity @s inventory.10 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:robot_2",type:"arm"}]
+item replace entity @s inventory.11 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:robot_2",type:"legs"}]
+item replace entity @s inventory.12 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:robot_3",type:"head"}]
+item replace entity @s inventory.13 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:robot_3",type:"torso"}]
+item replace entity @s inventory.14 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:robot_3",type:"arm"}]
+item replace entity @s inventory.15 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:robot_3",type:"legs"}]
+item replace entity @s inventory.16 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:robot_4",type:"head"}]
+item replace entity @s inventory.17 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:robot_4",type:"torso"}]
+item replace entity @s inventory.18 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:robot_4",type:"arm"}]
+item replace entity @s inventory.19 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:robot_4",type:"legs"}]
+item replace entity @s inventory.20 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:robot_5",type:"torso"}]
+item replace entity @s inventory.21 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:robot_5",type:"legs"}]
+item replace entity @s inventory.22 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:rubber_ducky",type:"head"}]
+item replace entity @s inventory.23 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:rubber_ducky",type:"torso"}]
+item replace entity @s inventory.24 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:rubber_ducky",type:"arm"}]
+item replace entity @s inventory.25 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:ruby_bird",type:"head"}]
+item replace entity @s inventory.26 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:ruby_bird",type:"torso"}]
+hud on
+inventory
+wait 12
+shot items_06
+closegui
+hud off
+clear @s
+item replace entity @s hotbar.0 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:ruby_bird",type:"arm"}]
+item replace entity @s hotbar.1 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:ruby_bird",type:"legs"}]
+item replace entity @s hotbar.2 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:scorpion",type:"head"}]
+item replace entity @s hotbar.3 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:scorpion",type:"torso"}]
+item replace entity @s hotbar.4 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:scorpion",type:"arm"}]
+item replace entity @s hotbar.5 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:scorpion",type:"legs"}]
+item replace entity @s hotbar.6 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:sea_monster",type:"head"}]
+item replace entity @s hotbar.7 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:sea_monster",type:"torso"}]
+item replace entity @s hotbar.8 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:sea_viper",type:"head"}]
+item replace entity @s inventory.0 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:sea_viper",type:"torso"}]
+item replace entity @s inventory.1 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:skate",type:"head"}]
+item replace entity @s inventory.2 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:skate",type:"torso"}]
+item replace entity @s inventory.3 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:spider_driver",type:"head"}]
+item replace entity @s inventory.5 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:spider_driver",type:"torso"}]
+item replace entity @s inventory.6 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:spider_driver",type:"legs"}]
+item replace entity @s inventory.7 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:spit_bug",type:"head"}]
+item replace entity @s inventory.8 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:spit_bug",type:"torso"}]
+item replace entity @s inventory.9 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:spit_bug",type:"arm"}]
+item replace entity @s inventory.10 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:spit_bug",type:"legs"}]
+item replace entity @s inventory.11 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:spyro",type:"head"}]
+item replace entity @s inventory.12 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:spyro",type:"torso"}]
+item replace entity @s inventory.13 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:spyro",type:"arm"}]
+item replace entity @s inventory.14 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:spyro",type:"legs"}]
+item replace entity @s inventory.15 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:stink_bug",type:"head"}]
+item replace entity @s inventory.16 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:stink_bug",type:"torso"}]
+item replace entity @s inventory.17 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:stink_bug",type:"legs"}]
+item replace entity @s inventory.18 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:stinky",type:"head"}]
+item replace entity @s inventory.19 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:stinky",type:"torso"}]
+item replace entity @s inventory.20 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:stinky",type:"arm"}]
+item replace entity @s inventory.21 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:stinky",type:"legs"}]
+item replace entity @s inventory.22 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:termite",type:"head"}]
+item replace entity @s inventory.23 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:termite",type:"torso"}]
+item replace entity @s inventory.24 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:termite",type:"legs"}]
+item replace entity @s inventory.25 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:terrible_terror",type:"head"}]
+item replace entity @s inventory.26 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:terrible_terror",type:"torso"}]
+hud on
+inventory
+wait 12
+shot items_07
+closegui
+hud off
+clear @s
+item replace entity @s hotbar.0 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:terrible_terror",type:"arm"}]
+item replace entity @s hotbar.1 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:terrible_terror",type:"legs"}]
+item replace entity @s hotbar.2 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:trex",type:"head"}]
+item replace entity @s hotbar.3 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:trex",type:"torso"}]
+item replace entity @s hotbar.4 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:trex",type:"legs"}]
+item replace entity @s hotbar.5 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:triffid",type:"head"}]
+item replace entity @s hotbar.6 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:triffid",type:"torso"}]
+item replace entity @s hotbar.7 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:triffid",type:"legs"}]
+item replace entity @s hotbar.8 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:trooper_bug",type:"head"}]
+item replace entity @s inventory.0 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:trooper_bug",type:"torso"}]
+item replace entity @s inventory.1 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:trooper_bug",type:"arm"}]
+item replace entity @s inventory.2 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:trooper_bug",type:"legs"}]
+item replace entity @s inventory.3 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:unstable_ant",type:"head"}]
+item replace entity @s inventory.5 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:unstable_ant",type:"torso"}]
+item replace entity @s inventory.6 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:unstable_ant",type:"legs"}]
+item replace entity @s inventory.7 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:urchin",type:"torso"}]
+item replace entity @s inventory.8 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:vampire_butterfly",type:"head"}]
+item replace entity @s inventory.9 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:vampire_butterfly",type:"torso"}]
+item replace entity @s inventory.10 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:vampire_butterfly",type:"arm"}]
+item replace entity @s inventory.11 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:velocity_raptor",type:"head"}]
+item replace entity @s inventory.12 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:velocity_raptor",type:"torso"}]
+item replace entity @s inventory.13 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:velocity_raptor",type:"arm"}]
+item replace entity @s inventory.14 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:velocity_raptor",type:"legs"}]
+item replace entity @s inventory.15 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:water_dragon",type:"head"}]
+item replace entity @s inventory.16 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:water_dragon",type:"torso"}]
+item replace entity @s inventory.17 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:water_dragon",type:"legs"}]
+item replace entity @s inventory.18 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:whale",type:"head"}]
+item replace entity @s inventory.19 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:whale",type:"torso"}]
+item replace entity @s inventory.20 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:worm_large",type:"head"}]
+item replace entity @s inventory.21 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:worm_large",type:"torso"}]
+item replace entity @s inventory.22 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:worm_medium",type:"head"}]
+item replace entity @s inventory.23 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:worm_medium",type:"torso"}]
+item replace entity @s inventory.24 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:worm_small",type:"head"}]
+item replace entity @s inventory.25 with necromancy:creature_part[necromancy:creature_part={mob:"orespawn:worm_small",type:"torso"}]
+hud on
+inventory
+wait 12
+shot items_08
+closegui
+hud off
+gamemode spectator
+report items 314
+report done

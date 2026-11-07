@@ -5,34 +5,28 @@
   "texture": "orespawn:textures/entity/bird6.png",
   "scale": 1.45,
   "head": {
-    "groups": [
-      {"bones": ["Head", "Beak", "LowerBeak", "feather1", "feather2", "feather3"], "pivot": [1.5, 18.5, 0]}
-    ],
+    "groups": [{ "bones": ["Head", "Beak", "LowerBeak", "feather1", "feather2", "feather3"], "pivot": [1.5, 18.5, 0] }],
     "plug": [1.5, 19, -1],
     "animator": "look"
   },
   "torso": {
-    "groups": [
-      {"bones": ["Body", "tailfeather1", "tailfeather2", "tailfeather3"]}
-    ],
+    "groups": [{ "bones": ["Body", "tailfeather1", "tailfeather2", "tailfeather3"] }],
     "plug": [1.5, 21, 3],
     "neck": [1.5, 19, -1],
     "shoulder_left": [5, 19, 3],
     "shoulder_right": [-2, 19, 3]
   },
   "arm": {
-    "left": {"bones": ["lwing1", "lwing2"], "pivot": [4, 18.5, 3]},
-    "right": {"bones": ["rwing1", "rwing2"], "pivot": [-1, 18.5, 3]},
+    "left": { "bones": ["lwing1", "lwing2"], "pivot": [4, 18.5, 3] },
+    "right": { "bones": ["rwing1", "rwing2"], "pivot": [-1, 18.5, 3] },
     "plug_left": [5, 19, 3],
     "plug_right": [-2, 19, 3],
-    "animator": "none"
+    "animator": "flap"
   },
   "legs": {
-    "groups": [
-      {"bones": ["leg"], "pivot": [2.5, 21, 3.5]},
-      {"bones": ["otherleg"], "pivot": [0.5, 21, 3.5]}
-    ],
-    "hip": [1.5, 21, 3],
+    "groups": [{ "bones": ["leg"], "pivot": [2.5, 21, 3.5] }, { "bones": ["otherleg"], "pivot": [0.5, 21, 3.5] }],
+    "hip": [0, 21.54, 3],
+    "offset": [-1.5, 0.54, 0],
     "animator": "walk_pair"
   }
 }

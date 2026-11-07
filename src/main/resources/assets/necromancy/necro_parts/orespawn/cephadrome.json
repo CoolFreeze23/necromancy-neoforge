@@ -4,10 +4,20 @@
   "geo": "orespawn:geo/entity/cephadrome.geo.json",
   "texture": "orespawn:textures/entity/cephadrome.png",
   "scale": 0.505,
+  "pose": {
+    "lefwingfin1": [-15, -10, -48.7],
+    "leftwingfin2": [-15, -25, -48.7],
+    "leftwingfin3": [-15, -45, -48.7],
+    "leftwingfin4": [-15, -68, -48.7],
+    "leftwingmembrane": [-5, -10, -48.7],
+    "rightwingfin1": [-15, 10, 48.7],
+    "rightwingfin2": [-15, 25, 48.7],
+    "rightwingfin3": [-15, 44, 48.7],
+    "rightwingfin4": [-15, 68, 48.7],
+    "rightwingmembrane": [-5, 10, 48.7]
+  },
   "head": {
-    "groups": [
-      { "bones": ["head", "hammerhead", "hammerhead2", "mouth"], "pivot": [0, 3, -43] }
-    ],
+    "groups": [{ "bones": ["head", "hammerhead", "hammerhead2", "mouth"], "pivot": [0, 3, -43] }],
     "plug": [0, 3, -43],
     "animator": "look"
   },
@@ -15,8 +25,8 @@
     "groups": [
       {
         "bones": ["chest", "chest1", "body", "body2", "butt", "neck1", "neck2", "neck3", "tail1", "tail2", "tail3", "tailfin1",
-                  "tailfin2", "tailfin3", "tailfin4", "tailmembrane1", "tailmembrane2", "tailmembrane3", "topfin1",
-                  "topfin2", "topfin3", "topfin4", "topmem1", "topmem2", "topmem3", "topmem4"]
+          "tailfin2", "tailfin3", "tailfin4", "tailmembrane1", "tailmembrane2", "tailmembrane3", "topfin1", "topfin2", "topfin3",
+          "topfin4", "topmem1", "topmem2", "topmem3", "topmem4"]
       }
     ],
     "plug": [0, 0, 15],

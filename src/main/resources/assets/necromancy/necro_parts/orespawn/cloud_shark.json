@@ -4,25 +4,12 @@
   "geo": "orespawn:geo/entity/cloudshark.geo.json",
   "texture": "orespawn:textures/entity/cloudshark.png",
   "scale": 0.86,
-  "head": {
-    "groups": [
-      {
-        "bones": ["head", "jaw"],
-        "pivot": [-1.0, 14.0, 0.0]
-      }
-    ],
-    "plug": [-1.0, 19.0, 0.0],
-    "animator": "look"
-  },
+  "head": { "groups": [{ "bones": ["head", "jaw"], "pivot": [-1, 14, 0] }], "plug": [-1, 19, 0], "animator": "look" },
   "torso": {
-    "groups": [
-      {
-        "bones": ["body", "bbody", "fins", "topfin", "leftfin", "rightfin"]
-      }
-    ],
-    "plug": [-1.0, 19.0, 7.5],
-    "neck": [-1.0, 19.0, 0.0],
-    "shoulder_left": [2.0, 15.0, 3.0],
-    "shoulder_right": [-4.0, 15.0, 3.0]
+    "groups": [{ "bones": ["body", "bbody", "fins", "topfin", "leftfin", "rightfin"] }],
+    "plug": [-1, 22, 7.5],
+    "neck": [-1, 19, 0],
+    "shoulder_left": [2, 15, 3],
+    "shoulder_right": [-4, 15, 3]
   }
 }

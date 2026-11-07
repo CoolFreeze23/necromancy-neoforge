@@ -7,45 +7,31 @@
   "head": {
     "groups": [
       {
-        "bones": ["Head", "LA1", "LA2", "LA3", "RA1", "RA2", "RA3", "LeftPom", "RightPom", "LeftPincerExtra", "LeftPincerMain", "RightPincerExtra", "RightPincerMain"],
-        "pivot": [0.0, -13.0, -28.0]
+        "bones": ["Head", "LA1", "LA2", "LA3", "RA1", "RA2", "RA3", "LeftPom", "RightPom", "LeftPincerExtra", "LeftPincerMain",
+          "RightPincerExtra", "RightPincerMain"],
+        "pivot": [0, -13, -28]
       }
     ],
-    "plug": [0.0, -6.0, -28.0],
+    "plug": [0, -6, -28],
     "animator": "look"
   },
   "torso": {
-    "groups": [
-      {
-        "bones": ["MainBody", "Neck", "Abdomnem5", "Abdomnem4"]
-      }
-    ],
-    "plug": [0.0, 2.0, 0.0],
-    "neck": [0.0, -6.0, -28.0],
-    "shoulder_left": [3.0, -14.0, -15.0],
-    "shoulder_right": [-4.0, -14.0, -15.0]
+    "groups": [{ "bones": ["MainBody", "Neck", "Abdomnem5", "Abdomnem4"] }],
+    "plug": [0, 2, 0],
+    "neck": [0, -6, -28],
+    "shoulder_left": [3, -14, -15],
+    "shoulder_right": [-4, -14, -15]
   },
   "arm": {
-    "left": {
-      "bones": ["WingLeft"],
-      "pivot": [3.0, -14.0, -15.0]
-    },
-    "right": {
-      "bones": ["WingRight"],
-      "pivot": [-4.0, -14.0, -15.0]
-    },
-    "plug_left": [3.0, -14.0, -15.0],
-    "plug_right": [-4.0, -14.0, -15.0],
-    "animator": "none"
+    "left": { "bones": ["WingLeft"], "pivot": [3, -14, -15], "rotation": [0, 0, 50] },
+    "right": { "bones": ["WingRight"], "pivot": [-4, -14, -15], "rotation": [0, 0, -50] },
+    "plug_left": [3, -14, -15],
+    "plug_right": [-4, -14, -15],
+    "animator": "flap"
   },
   "legs": {
-    "groups": [
-      {
-        "bones": ["Abdomnem3", "Abdomnem2", "Abdomnem1", "Sting"],
-        "pivot": [0.0, 1.0, -2.0]
-      }
-    ],
-    "hip": [0.0, 2.0, 0.0],
+    "groups": [{ "bones": ["Abdomnem3", "Abdomnem2", "Abdomnem1", "Sting"], "pivot": [0, 1, -2] }],
+    "hip": [0, 2, 0],
     "animator": "none"
   }
 }

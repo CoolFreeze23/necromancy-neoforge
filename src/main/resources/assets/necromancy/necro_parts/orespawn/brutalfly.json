@@ -3,39 +3,20 @@
   "requires": "orespawn",
   "geo": "orespawn:geo/entity/brutalfly.geo.json",
   "texture": "orespawn:textures/entity/brutalfly.png",
-  "scale": 2.0,
-  "head": {
-    "groups": [
-      {
-        "bones": ["head"],
-        "pivot": [0.5, 18.0, -4.0]
-      }
-    ],
-    "plug": [0.5, 18.0, -4.0],
-    "animator": "look"
-  },
+  "scale": 2,
+  "head": { "groups": [{ "bones": ["head"], "pivot": [0.5, 18, -4] }], "plug": [0.5, 18, -4], "animator": "look" },
   "torso": {
-    "groups": [
-      {
-        "bones": ["body"]
-      }
-    ],
-    "plug": [0.5, 18.0, 0.0],
-    "neck": [0.5, 18.0, -4.0],
-    "shoulder_left": [1.0, 17.5, 0.0],
-    "shoulder_right": [0.0, 17.5, 0.0]
+    "groups": [{ "bones": ["body"] }],
+    "plug": [0.5, 18, 0],
+    "neck": [0.5, 18, -4],
+    "shoulder_left": [1, 17.5, 0],
+    "shoulder_right": [0, 17.5, 0]
   },
   "arm": {
-    "left": {
-      "bones": ["leftwing", "leftwing2", "leftwing3", "leftwing4", "leftwing5", "leftwing6"],
-      "pivot": [1.0, 17.5, 0.0]
-    },
-    "right": {
-      "bones": ["rightwing", "rightwing2", "rightwing3", "rightwing4", "rightwing5", "rightwing6"],
-      "pivot": [0.0, 17.5, 0.0]
-    },
-    "plug_left": [1.0, 17.5, 0.0],
-    "plug_right": [0.0, 17.5, 0.0],
-    "animator": "none"
+    "left": { "bones": ["leftwing", "leftwing2", "leftwing3", "leftwing4", "leftwing5", "leftwing6"], "pivot": [1, 17.5, 0] },
+    "right": { "bones": ["rightwing", "rightwing2", "rightwing3", "rightwing4", "rightwing5", "rightwing6"], "pivot": [0, 17.5, 0] },
+    "plug_left": [1, 17.5, 0],
+    "plug_right": [0, 17.5, 0],
+    "animator": "flap"
   }
 }
