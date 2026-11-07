@@ -64,6 +64,10 @@ public final class NecroClientEvents {
     public static void openGuide() {
         List<Component> pages = new ArrayList<>();
         for (int i = 1; i <= GUIDE_PAGES; i++) {
+            if (i == GUIDE_PAGES && com.sirolf2009.necromancy.compat.OreSpawnCompat.loaded()) {
+                // before the last page: the creatures OreSpawn brings
+                pages.add(Component.translatable("book.necromancy.guide.orespawn"));
+            }
             pages.add(Component.translatable("book.necromancy.guide." + i));
         }
         Minecraft.getInstance().setScreen(new BookViewScreen(new BookViewScreen.BookAccess(pages)));

@@ -33,6 +33,7 @@
   "book.necromancy.guide.7": "§4O Santuário§r\n\nOs mortos são atraídos por lugares sombrios. Velas acesas, luzes das almas, poças de sangue e cabeças de criaturas a até quatro blocos do altar dão poder a ele.\n\nNível I mantém 3 Lacaios, Nível II 5 e Nível III 8. A tela do altar mostra o seu santuário.",
   "book.necromancy.guide.8": "§4No Comando§r\n\nO §lCetro de Osso§r dá as ordens. Use-o nos seus Lacaios para escolhê-los; use-o no ar para escolher uma ordem e depois num bloco para dá-la: Seguir, Ficar, Vigiar, Patrulhar ou Trabalhar.\n\nAgache e use-o no ar para mudar a postura deles.",
   "book.necromancy.guide.9": "§4Cuidados§r\n\nAgache com a mão vazia num Lacaio para armá-lo e vesti-lo. Carne podre, órgãos e Frascos de Sangue o curam; ele também se cura parado no sangue.\n\nSele um torso de porco, vaca, aranha ou lula e guie-o com uma Vara com Cérebro. Lacaios ficam mais fortes a cada abate.",
+  "book.necromancy.guide.orespawn": "§4Feras de Outros Mundos§r\n\nOnde vagam as criaturas do OreSpawn, seus corpos também servem: o crânio do T-Rex, as asas do Dragão, os dentes do Castor. Costure-os com o que a própria criatura deixa cair.\n\nTanto corpo guarda menos alma do que você esperaria.",
   "commands.necromancy.minion.aggressive": "Seus Lacaios agora atacam todo jogador que não for seu amigo",
   "commands.necromancy.minion.enemy": "Seus Lacaios vão caçar %s assim que o virem",
   "commands.necromancy.minion.follow": "%s Lacaios seguem você",

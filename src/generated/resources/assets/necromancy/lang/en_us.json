@@ -33,6 +33,7 @@
   "book.necromancy.guide.7": "§4The Shrine§r\n\nThe dead are drawn to dark places. Lit candles, soul lights, pools of blood and mob heads within four blocks of the altar give it power.\n\nTier I keeps 3 Minions, Tier II 5 and Tier III 8. The altar's screen shows your shrine.",
   "book.necromancy.guide.8": "§4Commanding§r\n\nThe §lBone Scepter§r gives orders. Use it on your Minions to select them; use it in the air to pick an order, then on a block to give it: Follow, Stay, Guard, Patrol or Work.\n\nSneak and use it in the air to change their stance.",
   "book.necromancy.guide.9": "§4Care§r\n\nSneak with an empty hand on a Minion to arm and armour it. Rotten flesh, organs and Jars of Blood mend it; it heals standing in blood.\n\nSaddle a pig, cow, spider or squid torso and steer it with a Brain on a Stick. Minions grow stronger with every kill.",
+  "book.necromancy.guide.orespawn": "§4Beasts of Other Worlds§r\n\nWhere OreSpawn's creatures roam, their bodies serve as well: the T-Rex's skull, the Dragon's wings, the Beaver's teeth. Sew them from the creature's own drops.\n\nTheir great bulk holds less soul than you would hope.",
   "commands.necromancy.minion.aggressive": "Your Minions now attack every player who is not your friend",
   "commands.necromancy.minion.enemy": "Your Minions will hunt %s on sight",
   "commands.necromancy.minion.follow": "%s Minions follow you",

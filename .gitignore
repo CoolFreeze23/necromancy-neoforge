@@ -9,3 +9,4 @@ bin/
 *.log
 .idea/
 dist/
+runmods/

@@ -84,7 +84,7 @@ public class NecromancyGameTests {
         for (NecroMob mob : NecroMobRegistry.all()) {
             for (PartType type : PartType.values()) {
                 if (mob.hasPart(type)) {
-                    ItemStack stack = new ItemStack(mob.partItem(type).orElseThrow());
+                    ItemStack stack = mob.partStack(type);
                     h.assertFalse(stack.isEmpty(), mob.id() + " " + type + " has no item");
                     var ref = NecroMobRegistry.partOf(stack).orElseThrow(() -> new AssertionError(mob.id() + " " + type + " does not map back"));
                     h.assertTrue(ref.type() == type, "part type of " + stack);
@@ -105,8 +105,8 @@ public class NecromancyGameTests {
         for (NecroMob mob : NecroMobRegistry.all()) {
             for (PartType type : PartType.values()) {
                 if (mob.hasPart(type) && mob.isSewable(type)) {
-                    var item = mob.partItem(type).orElseThrow();
-                    boolean found = recipes.stream().anyMatch(r -> r.value().getResultItem(h.getLevel().registryAccess()).is(item));
+                    boolean found = recipes.stream().anyMatch(r -> NecroMobRegistry.partOf(r.value().getResultItem(h.getLevel().registryAccess()))
+                            .map(p -> p.mob() == mob && p.type() == type).orElse(false));
                     if (!found) {
                         missing.add(mob.id() + "/" + type.getSerializedName());
                     }

@@ -115,6 +115,10 @@ dependencies {
     if (project.hasProperty('withJei')) {
         runtimeOnly "mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}"
     }
+    if (project.hasProperty('withOreSpawn')) {
+        // OreSpawn and GeckoLib jars put in runmods/ (not part of the repository), for the OreSpawn GameTests
+        runtimeOnly fileTree('runmods') { include '*.jar' }
+    }
 }
 
 tasks.withType(ProcessResources).configureEach {

@@ -1,6 +1,6 @@
 # OreSpawn creatures as Necromancy body parts: design review
 
-Reviewed 2026-11-08 against the OreSpawn port at `C:\Homework\Projects\Orespawn` (commit d1597f31: `ModEntities.java`, 627 entity classes, 104 GeckoLib models, `sounds.json`, the item registry, loot tables and `audit_sections/`) and Necromancy as it stands (`VanillaNecroMobs.java`, `Traits.java`, `SoulPotency.java`, `docs/REVIEW.md`).
+Reviewed 2026-11-08 against the OreSpawn 1.21.1 port (commit d1597f31: `ModEntities.java`, 627 entity classes, 104 GeckoLib models, `sounds.json`, the item registry, loot tables and `audit_sections/`) and Necromancy as it stands (`VanillaNecroMobs.java`, `Traits.java`, `SoulPotency.java`, `docs/REVIEW.md`).
 This is a design document. Every number is a proposal for tuning, not a measured value. The machine-readable twin is `docs/orespawn_parts_spec.json`. Both were generated from one design table and checked by a script: every id, bone pattern, balance band and essence pair below was verified. Treat the JSON as the source of truth for later edits.
 
 **Conventions** (the same as `docs/REVIEW.md`)
@@ -9,7 +9,7 @@ This is a design document. Every number is a proposal for tuning, not a measured
 - **Extra attributes** are flat `ADD_VALUE` modifiers with 1.21.1 ids (`minecraft:generic.armor`, `generic.scale`, `generic.step_height` and so on). Part armour totals at most 20.
 - **Weight** is 1 to 4 per part. A soul's potency caps the sum: Faint 6, Lesser 9, Common 12, Potent 16, Mighty 20, Legendary 20 plus its bonuses.
 - **Ticks:** t = ticks (20 t = 1 s). **W** = weight. **H T A L** = head, torso, arm, legs.
-- ★ marks the 15 creatures I think are the most exciting to stitch (section 7).
+- ★ marks the 15 most exciting creatures to stitch (section 7).
 
 ---
 
@@ -18,7 +18,7 @@ This is a design document. Every number is a proposal for tuning, not a measured
 - **97 creatures give parts** (99 entity ids, because Jeffery shares the Giant Robot's parts and the second Leonopteryx id shares the Leon's). They give 315 part items. **29 living registrations give no parts:** 9 bosses, 2 royal hatchlings, 3 boss hitbox sidecars, 9 objects and vehicles, 4 incorporeal things and 2 companion NPCs. The 17 projectile and item entities are not creatures at all.
 - **Weights:** 35 at weight 1, 23 at weight 2, 23 at weight 3, 16 at weight 4. Nothing is heavier than a golem. No OreSpawn torso or legs beats the Iron Golem's, and the sturdiest possible hybrid (OreSpawn head and arms on golem legs) reaches 280 HP, below the 300 HP of the Warden-head golem that REVIEW #16 already allows.
 - **32 trait types** cover every ability. Each one is a single Java class driven by parameters. 29 of the 31 existing hand-written traits become instances of these types, and 5 new trait flags are added.
-- **One rule change is needed:** an OreSpawn creature's health counts half toward soul potency (config `souls.oreSpawnHealthScale = 0.5`). OreSpawn's health numbers run two to five times vanilla's, so without the rule a passive Whale would give a Mighty soul.
+- **One rule change is needed:** an OreSpawn creature's health counts half toward soul potency (config `compat.oreSpawnSoulHealthFactor = 0.5`). OreSpawn's health numbers run two to five times vanilla's, so without the rule a passive Whale would give a Mighty soul.
 - **Essences** are unique for every creature and part type. Every id is checked against the vanilla 1.21.1 data and the OreSpawn item registry, and none clashes with the vanilla table.
 
 ---
@@ -42,7 +42,7 @@ OreSpawn runs from a 1 HP ant to the 7000 HP King. Necromancy's spine is narrow:
 
 4. **Bosses are souls, not parts**, the same rule as `docs/REVIEW.md` #16. Mobzilla, the Kraken, the King and Queen, the Prince's adult and teen forms, the Nightmare, Mothra and the Alien Boss go into `necromancy:legendary_souls`. Their size, boss bars and multipart hitboxes don't fit a five-slot frame. Even their smallest part would be above weight 4.
 
-5. **Soul potency is scaled for OreSpawn.** `SoulPotency.ofHealth` sees `max health × souls.oreSpawnHealthScale` (default 0.5) for any entity in the `orespawn` namespace. Under that rule:
+5. **Soul potency is scaled for OreSpawn.** `SoulPotency.ofHealth` sees `max health × compat.oreSpawnSoulHealthFactor` (default 0.5) for any entity in the `orespawn` namespace. Under that rule:
    - The true heavies stay Mighty (raw 200 HP or more): Hercules Beetle, Emperor Scorpion, Caterkiller, Molenoid, Nastysaurus, Basilisk, Trooper Bug, Robo-Pounder, Giant Robot, Hammerhead, Leonopteryx, Cephadrome, Dragon, Spyro and the royal hatchlings.
    - The 80 to 199 HP band becomes Potent: T-Rex, Alien, Whale, Hydrolisc, Sea Viper and others.
    - A full weight-20 OreSpawn build therefore means killing one of OreSpawn's apex creatures with a scythe, the same "reap something strong" rule the vanilla golem body follows.
@@ -429,7 +429,7 @@ Ranked by how much each changes what a Minion can do:
 
 ## 9. Open questions
 
-- **The soul-health rule** (`oreSpawnHealthScale = 0.5`) is the one change to Necromancy's own rules. Without it, the Whale, Hydrolisc, Stinky and Gamma Metroid (100 HP, two of them passive) give Mighty souls. Owner ruling needed. The alternative is to leave potency alone and accept that OreSpawn worlds give out Mighty souls easily.
+- **The soul-health rule** (`compat.oreSpawnSoulHealthFactor = 0.5`) is the one change to Necromancy's own rules. Without it, the Whale, Hydrolisc, Stinky and Gamma Metroid (100 HP, two of them passive) give Mighty souls. Setting the factor to 1 leaves potency alone, and OreSpawn worlds then give out Mighty souls easily.
 - **Companions** (Girlfriend, Boyfriend) are excluded on tone (section 2). They are easy to add as weight-2 bipeds if wanted.
 - **Mothra and the Nightmare** are treated as bosses because they have boss bars. Both also spawn naturally. If they become part-givers, they would be weight-4 wings and head respectively.
 - **True flight** is still left out (REVIEW #4). The Dragon, Leonopteryx and Cephadrome are the obvious place to break that rule later. Their `mount` trait already has the field (`steering`), and gliding is the stopgap.

@@ -31,6 +31,24 @@ public class NecroJeiPlugin implements IModPlugin {
         return UID;
     }
 
+    /** Creature parts are one item: tell their mob and part type apart, so each shows with its own recipe. */
+    @Override
+    public void registerItemSubtypes(mezz.jei.api.registration.ISubtypeRegistration registration) {
+        registration.registerSubtypeInterpreter(com.sirolf2009.necromancy.registry.NecroItems.CREATURE_PART.get(),
+                new mezz.jei.api.ingredients.subtypes.ISubtypeInterpreter<net.minecraft.world.item.ItemStack>() {
+                    @Override
+                    public Object getSubtypeData(net.minecraft.world.item.ItemStack stack, mezz.jei.api.ingredients.subtypes.UidContext context) {
+                        return stack.get(com.sirolf2009.necromancy.registry.NecroComponents.CREATURE_PART.get());
+                    }
+
+                    @Override
+                    public String getLegacyStringSubtypeInfo(net.minecraft.world.item.ItemStack stack, mezz.jei.api.ingredients.subtypes.UidContext context) {
+                        var part = stack.get(com.sirolf2009.necromancy.registry.NecroComponents.CREATURE_PART.get());
+                        return part == null ? "" : part.mob() + "/" + part.type().getSerializedName();
+                    }
+                });
+    }
+
     @Override
     public void registerCategories(IRecipeCategoryRegistration registration) {
         registration.addRecipeCategories(new SewingCategory(registration.getJeiHelpers().getGuiHelper()));

@@ -778,6 +778,11 @@ public class MinionEntity extends TamableAnimal implements RangedAttackMob, Item
     private int spawnlingLife;
     private int pendingJump;
 
+    /** Every trait timer ready again (tests). */
+    public void clearCooldowns() {
+        cooldowns.clear();
+    }
+
     /** Starts the named cooldown now, whether or not it has run out. */
     public void setCooldown(String key, int ticks) {
         cooldowns.put(key, tickCount + ticks);
