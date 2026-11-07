@@ -1924,8 +1924,8 @@
    "entity": "orespawn:cannon_fodder",
    "weight": 1,
    "shape": [
-    0.3,
-    0.35,
+    0.5,
+    0.15,
     0.5
    ],
    "saddleable": false,
@@ -1986,8 +1986,8 @@
    "entity": "orespawn:molenoid",
    "weight": 4,
    "shape": [
-    0.7,
-    0.8,
+    0.2,
+    1.3,
     1.3
    ],
    "saddleable": false,
@@ -2328,8 +2328,8 @@
    "entity": "orespawn:gamma_metroid",
    "weight": 3,
    "shape": [
-    0.5,
-    0.7,
+    0.4,
+    0.8,
     0.9
    ],
    "saddleable": false,
@@ -7465,8 +7465,8 @@
    "entity": "orespawn:spider_driver",
    "weight": 2,
    "shape": [
-    0.45,
-    0.5,
+    0.6,
+    0.35,
     1.2
    ],
    "saddleable": true,

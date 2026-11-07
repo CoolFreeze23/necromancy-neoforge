@@ -3612,8 +3612,8 @@
    "saddleable": false,
    "rider_offset": 0.0,
    "shape": [
-    0.3,
-    0.35,
+    0.5,
+    0.15,
     0.5
    ],
    "sounds": {
@@ -3751,8 +3751,8 @@
    "saddleable": false,
    "rider_offset": 0.0,
    "shape": [
-    0.7,
-    0.8,
+    0.2,
+    1.3,
     1.3
    ],
    "sounds": {
@@ -4193,8 +4193,8 @@
    "saddleable": false,
    "rider_offset": 0.0,
    "shape": [
-    0.5,
-    0.7,
+    0.4,
+    0.8,
     0.9
    ],
    "sounds": {
@@ -11254,8 +11254,8 @@
    "saddleable": true,
    "rider_offset": 0.0,
    "shape": [
-    0.45,
-    0.5,
+    0.6,
+    0.35,
     1.2
    ],
    "sounds": {
