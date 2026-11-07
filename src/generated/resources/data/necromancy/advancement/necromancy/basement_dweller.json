@@ -1,0 +1,34 @@
+{
+  "parent": "necromancy:necromancy/crying_shame",
+  "criteria": {
+    "has_isaacs_head": {
+      "conditions": {
+        "items": [
+          {
+            "items": "necromancy:isaacs_head"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.necromancy.basement_dweller.description"
+    },
+    "frame": "challenge",
+    "icon": {
+      "count": 1,
+      "id": "necromancy:isaacs_head"
+    },
+    "title": {
+      "translate": "advancements.necromancy.basement_dweller.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_isaacs_head"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

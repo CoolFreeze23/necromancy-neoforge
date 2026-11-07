@@ -1,0 +1,37 @@
+{
+  "parent": "necromancy:necromancy/root",
+  "criteria": {
+    "killed_blood_isaac": {
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "necromancy:blood_isaac"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:player_killed_entity"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.necromancy.crying_shame.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "necromancy:tear"
+    },
+    "title": {
+      "translate": "advancements.necromancy.crying_shame.title"
+    }
+  },
+  "requirements": [
+    [
+      "killed_blood_isaac"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,10 @@
+// 1.21.1	2026-11-08T02:01:46.2969626	Tags for minecraft:item mod id necromancy
+8f939ac015825647875039747cbc4005b61ef5e5 data/minecraft/tags/item/enchantable/durability.json
+8f939ac015825647875039747cbc4005b61ef5e5 data/minecraft/tags/item/enchantable/fire_aspect.json
+8f939ac015825647875039747cbc4005b61ef5e5 data/minecraft/tags/item/enchantable/sharp_weapon.json
+8f939ac015825647875039747cbc4005b61ef5e5 data/minecraft/tags/item/enchantable/sword.json
+8f939ac015825647875039747cbc4005b61ef5e5 data/minecraft/tags/item/enchantable/weapon.json
+7c0c64462878a4eba9adca14a2547f850f7ece16 data/necromancy/tags/item/body_parts.json
+491c4213e80ed7e8b6a6693f56132784313c912b data/necromancy/tags/item/organs.json
+db949816759ed2faf9769899680b8682c3ef3541 data/necromancy/tags/item/scythes.json
+6bb01ece43dc060b7f6e508c68ea0179c30e853f data/necromancy/tags/item/sewing_thread.json

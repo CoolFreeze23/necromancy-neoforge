@@ -1,0 +1,33 @@
+{
+  "parent": "necromancy:necromancy/root",
+  "criteria": {
+    "has_sewing_machine": {
+      "conditions": {
+        "items": [
+          {
+            "items": "necromancy:sewing_machine"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.necromancy.stitches.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "necromancy:bone_needle"
+    },
+    "title": {
+      "translate": "advancements.necromancy.stitches.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_sewing_machine"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

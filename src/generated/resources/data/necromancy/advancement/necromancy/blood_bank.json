@@ -1,0 +1,33 @@
+{
+  "parent": "necromancy:necromancy/stitches",
+  "criteria": {
+    "has_blood_bucket": {
+      "conditions": {
+        "items": [
+          {
+            "items": "necromancy:blood_bucket"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.necromancy.blood_bank.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "necromancy:blood_bucket"
+    },
+    "title": {
+      "translate": "advancements.necromancy.blood_bank.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_blood_bucket"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

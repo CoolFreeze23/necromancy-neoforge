@@ -1,0 +1,6 @@
+// 1.21.1	2026-11-08T02:01:46.2964594	Tags for minecraft:enchantment mod id necromancy
+ece90b4edac281ae7203ddd09d963206e7b743f8 data/minecraft/tags/enchantment/in_enchanting_table.json
+ece90b4edac281ae7203ddd09d963206e7b743f8 data/minecraft/tags/enchantment/non_treasure.json
+ece90b4edac281ae7203ddd09d963206e7b743f8 data/minecraft/tags/enchantment/on_random_loot.json
+ece90b4edac281ae7203ddd09d963206e7b743f8 data/minecraft/tags/enchantment/tradeable.json
+b9f7a7f9d3f0ade0e94332cb8038959b5b43c7da data/necromancy/tags/enchantment/exclusive_set/harvest.json

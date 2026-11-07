@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_jar_of_blood": {
+      "conditions": {
+        "items": [
+          {
+            "items": "necromancy:jar_of_blood"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "necromancy:necronomicon"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_jar_of_blood"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "necromancy:necronomicon"
+    ]
+  }
+}

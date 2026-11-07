@@ -1,0 +1,11 @@
+// 1.21.1	2026-11-08T02:01:46.2954548	Loot Tables
+64c2b304197782b4051389985b524e18ce52ccb3 data/necromancy/loot_table/blocks/altar_side.json
+de4b69e41ce5f739c0d5af38231e319b9f098329 data/necromancy/loot_table/blocks/sewing_machine.json
+36bacd01cf84a16f261aff0cea7e1d18852f74e8 data/necromancy/loot_table/blocks/summoning_altar.json
+f37142e96acbe125c64a56563b6ff3afc0a00c07 data/necromancy/loot_table/entities/blood_isaac.json
+e237430383d069dd7980cc0599c5a8c115f837d9 data/necromancy/loot_table/entities/isaac.json
+c9d704ea901872b8366a9a51c866e0c90a034d2f data/necromancy/loot_table/entities/isaac_body.json
+447c2cb9a47b3b25a882d83cf82a3f52ce7029c5 data/necromancy/loot_table/entities/isaac_head.json
+e195d5d65feda4675b4cf0a8f014b7c0d0f9df95 data/necromancy/loot_table/entities/minion.json
+b846d7df6ae8a0372fef87af8a387e9bd813036a data/necromancy/loot_table/entities/night_crawler.json
+f8e495d85384a12416a5556153ed110cf1a8b8eb data/necromancy/loot_table/entities/teddy.json

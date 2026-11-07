@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:bucket"
+    },
+    {
+      "item": "necromancy:jar_of_blood"
+    },
+    {
+      "item": "necromancy:jar_of_blood"
+    },
+    {
+      "item": "necromancy:jar_of_blood"
+    },
+    {
+      "item": "necromancy:jar_of_blood"
+    },
+    {
+      "item": "necromancy:jar_of_blood"
+    },
+    {
+      "item": "necromancy:jar_of_blood"
+    },
+    {
+      "item": "necromancy:jar_of_blood"
+    },
+    {
+      "item": "necromancy:jar_of_blood"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "necromancy:blood_bucket"
+  }
+}

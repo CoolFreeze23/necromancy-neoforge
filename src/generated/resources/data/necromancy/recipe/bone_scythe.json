@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "B": {
+      "item": "minecraft:diamond"
+    },
+    "H": {
+      "item": "necromancy:blood_scythe"
+    },
+    "I": {
+      "item": "minecraft:obsidian"
+    },
+    "S": {
+      "item": "minecraft:bone"
+    }
+  },
+  "pattern": [
+    "IH",
+    " S",
+    " B"
+  ],
+  "result": {
+    "count": 1,
+    "id": "necromancy:bone_scythe"
+  }
+}

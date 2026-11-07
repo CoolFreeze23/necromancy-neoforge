@@ -1,0 +1,27 @@
+{
+  "type": "necromancy:sewing_shaped",
+  "key": {
+    "B": {
+      "item": "minecraft:bone"
+    },
+    "E": {
+      "item": "minecraft:iron_block"
+    },
+    "L": {
+      "item": "necromancy:skin"
+    },
+    "M": {
+      "item": "necromancy:muscle"
+    }
+  },
+  "pattern": [
+    "LBBL",
+    "LMML",
+    "LEEL",
+    "LBBL"
+  ],
+  "result": {
+    "count": 1,
+    "id": "necromancy:iron_golem_legs"
+  }
+}

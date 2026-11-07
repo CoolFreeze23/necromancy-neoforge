@@ -1,0 +1,34 @@
+{
+  "parent": "necromancy:necromancy/root",
+  "criteria": {
+    "bound_altar": {
+      "conditions": {
+        "location": [
+          {
+            "block": "necromancy:summoning_altar",
+            "condition": "minecraft:block_state_property"
+          }
+        ]
+      },
+      "trigger": "minecraft:placed_block"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.necromancy.bound_in_blood.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "necromancy:jar_of_blood"
+    },
+    "title": {
+      "translate": "advancements.necromancy.bound_in_blood.title"
+    }
+  },
+  "requirements": [
+    [
+      "bound_altar"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

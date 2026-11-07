@@ -1,0 +1,21 @@
+{
+  "type": "necromancy:sewing_shaped",
+  "key": {
+    "L": {
+      "item": "minecraft:leather"
+    },
+    "W": {
+      "tag": "minecraft:wool"
+    }
+  },
+  "pattern": [
+    "LLLL",
+    "LWWL",
+    "LWWL",
+    "LLLL"
+  ],
+  "result": {
+    "count": 1,
+    "id": "necromancy:teddy_spawn_egg"
+  }
+}

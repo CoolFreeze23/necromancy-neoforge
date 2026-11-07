@@ -1,0 +1,26 @@
+{
+  "type": "necromancy:sewing_shaped",
+  "key": {
+    "B": {
+      "item": "necromancy:brains"
+    },
+    "E": {
+      "item": "minecraft:spider_eye"
+    },
+    "F": {
+      "item": "minecraft:carved_pumpkin"
+    },
+    "S": {
+      "item": "necromancy:skin"
+    }
+  },
+  "pattern": [
+    "SSSS",
+    "SBFS",
+    "SEES"
+  ],
+  "result": {
+    "count": 1,
+    "id": "necromancy:iron_golem_head"
+  }
+}
