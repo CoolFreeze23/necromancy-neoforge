@@ -1,0 +1,28 @@
+{
+  "processors": [
+    {
+      "processor_type": "minecraft:rule",
+      "rules": [
+        {
+          "block_entity_modifier": {
+            "type": "minecraft:append_loot",
+            "loot_table": "necromancy:archaeology/cemetery_grave"
+          },
+          "input_predicate": {
+            "predicate_type": "minecraft:block_match",
+            "block": "minecraft:suspicious_sand"
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "minecraft:suspicious_sand",
+            "Properties": {
+              "dusted": "0"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

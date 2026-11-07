@@ -1,0 +1,10 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": [
+    "minecraft:nether_wastes",
+    "minecraft:crimson_forest",
+    "minecraft:soul_sand_valley"
+  ],
+  "features": "necromancy:nether_chalice",
+  "step": "surface_structures"
+}

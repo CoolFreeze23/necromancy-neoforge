@@ -1,0 +1,38 @@
+# Worldgen pictures: the five village cemeteries side by side, and a Nether Chalice on a lava pool (flat world, ground at -61)
+wait 40
+hud off
+/gamerule doDaylightCycle false
+/gamerule doMobSpawning false
+/time set 6000
+/weather clear
+/place template necromancy:village/plains/cemetery 0 -61 0
+/place template necromancy:village/taiga/cemetery 16 -61 0
+/place template necromancy:village/snowy/cemetery 32 -61 0
+/place template necromancy:village/savanna/cemetery 48 -61 0
+/place template necromancy:village/desert/cemetery 64 -61 0
+/fill 98 -63 -2 118 -61 18 minecraft:lava
+/place feature necromancy:nether_chalice 100 -50 0
+wait 40
+/setblock 6 -51 -13 minecraft:barrier
+/tp @s 6.5 -50 -13 0 38
+wait 60
+shot cemetery_plains
+/tp @s 6.5 -60 -6 0 5
+wait 40
+shot cemetery_gate
+/setblock 38 -39 -22 minecraft:barrier
+/tp @s 38.5 -38 -22 0 42
+wait 60
+shot cemetery_all_types
+/setblock 70 -51 -13 minecraft:barrier
+/tp @s 70.5 -50 -13 0 38
+wait 40
+shot cemetery_desert
+/setblock 103 -48 -18 minecraft:barrier
+/tp @s 103.5 -47 -18 0 -8
+wait 60
+shot nether_chalice
+/setblock 103 -34 -3 minecraft:barrier
+/tp @s 103.5 -33 -3 0 55
+wait 40
+shot nether_chalice_cup
