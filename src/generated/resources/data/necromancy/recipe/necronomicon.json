@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:book"
+    },
+    "F": {
+      "item": "minecraft:feather"
+    },
+    "I": {
+      "item": "minecraft:ink_sac"
+    },
+    "L": {
+      "item": "minecraft:leather"
+    },
+    "N": {
+      "item": "minecraft:nether_wart"
+    },
+    "S": {
+      "item": "necromancy:jar_of_blood"
+    }
+  },
+  "pattern": [
+    "LSL",
+    "IBF",
+    "LNL"
+  ],
+  "result": {
+    "count": 1,
+    "id": "necromancy:necronomicon"
+  }
+}

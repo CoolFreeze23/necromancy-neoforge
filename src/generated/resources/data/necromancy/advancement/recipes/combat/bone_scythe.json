@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_blood_scythe": {
+      "conditions": {
+        "items": [
+          {
+            "items": "necromancy:blood_scythe"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "necromancy:bone_scythe"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_blood_scythe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "necromancy:bone_scythe"
+    ]
+  }
+}

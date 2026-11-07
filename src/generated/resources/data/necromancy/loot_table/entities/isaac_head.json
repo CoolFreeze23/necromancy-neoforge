@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:entity",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "necromancy:isaacs_head"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "necromancy:entities/isaac_head"
+}

@@ -1,0 +1,9 @@
+// 1.21.1	2026-11-08T02:01:46.2979668	Block States: necromancy
+868364a6deb2eb2e66348db63a9f52795381cc4f assets/necromancy/blockstates/altar_side.json
+68cc2c908524bddbb4b83d28429e777ffd176d9a assets/necromancy/blockstates/blood.json
+4af226b1f576eba5aa318adb312b66b590727ff9 assets/necromancy/blockstates/sewing_machine.json
+fcd555e2252e837c9f93cf66c611f52024f83b16 assets/necromancy/blockstates/summoning_altar.json
+1b326e41aa593223f50759b5c3cedca0b448e4bf assets/necromancy/models/block/altar_side.json
+50812bd51e14ec5ea223afe239c89730a63e43b1 assets/necromancy/models/block/blood.json
+85c701d80e4572b606201f6720ff1e39979eaa78 assets/necromancy/models/block/sewing_machine.json
+1dbfff9b6cf804221a17378d793fb7f2b00fb35c assets/necromancy/models/block/summoning_altar.json

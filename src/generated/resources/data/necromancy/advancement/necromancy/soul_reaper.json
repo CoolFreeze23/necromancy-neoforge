@@ -1,0 +1,33 @@
+{
+  "parent": "necromancy:necromancy/root",
+  "criteria": {
+    "has_soul": {
+      "conditions": {
+        "items": [
+          {
+            "items": "necromancy:soul_in_a_jar"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.necromancy.soul_reaper.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "necromancy:soul_in_a_jar"
+    },
+    "title": {
+      "translate": "advancements.necromancy.soul_reaper.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_soul"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

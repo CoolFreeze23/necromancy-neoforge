@@ -1,0 +1,13 @@
+// 1.21.1	2026-11-08T02:01:46.2989735	Tags for minecraft:entity_type mod id necromancy
+f2232310923bec1945a922db9243fcac96d582a7 data/minecraft/tags/entity_type/ignores_poison_and_regen.json
+f2232310923bec1945a922db9243fcac96d582a7 data/minecraft/tags/entity_type/inverted_healing_and_harm.json
+f2232310923bec1945a922db9243fcac96d582a7 data/minecraft/tags/entity_type/sensitive_to_smite.json
+f2232310923bec1945a922db9243fcac96d582a7 data/minecraft/tags/entity_type/undead.json
+017163b70344f3661c3bff56b15d5cc0b5cafb61 data/necromancy/tags/entity_type/bloodless.json
+5e5f4d7a54c25242a7c07cd9dc3e4a0beea9074b data/necromancy/tags/entity_type/legendary_souls.json
+999760f4a02fe6a47bd3b7e60834d4b0524a39d9 data/necromancy/tags/entity_type/organ_rich/brains.json
+818744b6387a3e357095712d72b895ec500b138c data/necromancy/tags/entity_type/organ_rich/heart.json
+773a92f7fdbc29148bcebe7f186759b713766a6f data/necromancy/tags/entity_type/organ_rich/lungs.json
+bfa5943a99eb5bf10495ae60b03df16794502725 data/necromancy/tags/entity_type/organ_rich/lungs_plenty.json
+d02c05955ce6bdb47665cd9b5ea1ed92e7a0e8f2 data/necromancy/tags/entity_type/organ_rich/muscle.json
+eb0b16b9c1c356ebec7cf67cbdc8d64681901e19 data/necromancy/tags/entity_type/replaceable_undead.json

@@ -1,0 +1,33 @@
+{
+  "criteria": {
+    "has_necronomicon": {
+      "conditions": {
+        "items": [
+          {
+            "items": "necromancy:necronomicon"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "background": "minecraft:textures/block/soul_soil.png",
+    "description": {
+      "translate": "advancements.necromancy.root.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "necromancy:necronomicon"
+    },
+    "title": {
+      "translate": "advancements.necromancy.root.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_necronomicon"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

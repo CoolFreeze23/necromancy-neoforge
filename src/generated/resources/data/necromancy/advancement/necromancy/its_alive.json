@@ -1,0 +1,38 @@
+{
+  "parent": "necromancy:necromancy/bound_in_blood",
+  "criteria": {
+    "summoned_minion": {
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "necromancy:minion"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:summoned_entity"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.necromancy.its_alive.description"
+    },
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "necromancy:soul_in_a_jar"
+    },
+    "title": {
+      "translate": "advancements.necromancy.its_alive.title"
+    }
+  },
+  "requirements": [
+    [
+      "summoned_minion"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

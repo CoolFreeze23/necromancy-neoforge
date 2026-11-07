@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "B": {
+      "item": "necromancy:jar_of_blood"
+    },
+    "H": {
+      "item": "minecraft:iron_hoe"
+    },
+    "I": {
+      "item": "minecraft:obsidian"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "IH",
+    " S",
+    " B"
+  ],
+  "result": {
+    "count": 1,
+    "id": "necromancy:blood_scythe"
+  }
+}

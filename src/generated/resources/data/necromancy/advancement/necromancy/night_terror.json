@@ -1,0 +1,37 @@
+{
+  "parent": "necromancy:necromancy/root",
+  "criteria": {
+    "killed_night_crawler": {
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "necromancy:night_crawler"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:player_killed_entity"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.necromancy.night_terror.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "necromancy:night_crawler_spawn_egg"
+    },
+    "title": {
+      "translate": "advancements.necromancy.night_terror.title"
+    }
+  },
+  "requirements": [
+    [
+      "killed_night_crawler"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "necromancy:item/bodypart/zombie_legs"
+  }
+}

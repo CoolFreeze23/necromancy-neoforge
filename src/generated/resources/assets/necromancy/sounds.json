@@ -1,0 +1,26 @@
+{
+  "nightcrawler.howl": {
+    "sounds": [
+      "necromancy:nightcrawler/howl"
+    ],
+    "subtitle": "subtitles.necromancy.nightcrawler.howl"
+  },
+  "nightcrawler.scream": {
+    "sounds": [
+      "necromancy:nightcrawler/scream"
+    ],
+    "subtitle": "subtitles.necromancy.nightcrawler.scream"
+  },
+  "spawn": {
+    "sounds": [
+      "necromancy:spawn"
+    ],
+    "subtitle": "subtitles.necromancy.spawn"
+  },
+  "tear": {
+    "sounds": [
+      "necromancy:tear"
+    ],
+    "subtitle": "subtitles.necromancy.tear"
+  }
+}

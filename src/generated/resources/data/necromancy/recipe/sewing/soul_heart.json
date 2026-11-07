@@ -1,0 +1,36 @@
+{
+  "type": "necromancy:sewing_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:rotten_flesh"
+    },
+    {
+      "item": "minecraft:rotten_flesh"
+    },
+    {
+      "item": "minecraft:rotten_flesh"
+    },
+    {
+      "item": "minecraft:rotten_flesh"
+    },
+    {
+      "item": "minecraft:rotten_flesh"
+    },
+    {
+      "item": "minecraft:ghast_tear"
+    },
+    {
+      "item": "minecraft:ghast_tear"
+    },
+    {
+      "item": "necromancy:soul_in_a_jar"
+    },
+    {
+      "item": "necromancy:heart"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "necromancy:soul_heart"
+  }
+}
