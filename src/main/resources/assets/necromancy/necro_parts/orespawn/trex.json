@@ -3,32 +3,32 @@
   "requires": "orespawn",
   "geo": "orespawn:geo/entity/trex.geo.json",
   "texture": "orespawn:textures/entity/trex.png",
-  "scale": 0.5,
+  "scale": 0.8,
   "head": {
-    "groups": [ { "bones": ["shape4", "shape5", "shape6", "jaw", "shape18", "shape19", "spine4", "spine5"], "pivot": [0, -21, -10] } ],
-    "plug": [0, -21, -10],
+    "groups": [
+      { "bones": ["shape5", "shape6", "jaw", "shape18", "shape19"], "pivot": [0.5, -16, -17] }
+    ],
+    "plug": [0.5, -16, -17],
     "animator": "look"
   },
   "torso": {
-    "groups": [ { "bones": ["shape1", "shape2", "shape3", "tail_extension", "spine1", "spine2", "spine3"] } ],
-    "plug": [0, -3, 11],
-    "neck": [0, -21, -10],
-    "shoulder_left": [6, -8, -6],
-    "shoulder_right": [-5, -8, -6]
-  },
-  "arm": {
-    "left": { "bones": ["shape20", "shape11"] },
-    "right": { "bones": ["shape21", "shape17"] },
-    "plug_left": [6, -8, -6],
-    "plug_right": [-5, -8, -6],
-    "animator": "none"
+    "groups": [
+      {
+        "bones": ["shape1", "shape2", "shape3", "tail_extension", "spine1", "spine2", "spine3", "shape4", "spine4", "spine5", "shape20",
+                  "shape11", "shape21", "shape17"]
+      }
+    ],
+    "plug": [0.5, -1, 11],
+    "neck": [0.5, -16, -17],
+    "shoulder_left": [6.5, -8, -6],
+    "shoulder_right": [-5.5, -8, -6]
   },
   "legs": {
     "groups": [
       { "bones": ["leftleg", "leftleg2", "leftleg3", "leftleg4"], "pivot": [6, -10, 11] },
       { "bones": ["rightleg", "rightleg2", "rightleg3", "rightleg4"], "pivot": [-7, -10, 11] }
     ],
-    "hip": [0, -3, 11],
+    "hip": [0.5, -1, 11],
     "animator": "walk_pair"
   }
 }

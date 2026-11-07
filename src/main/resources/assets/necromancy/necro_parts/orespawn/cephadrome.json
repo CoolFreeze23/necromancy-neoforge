@@ -1,0 +1,42 @@
+{
+  "mob": "orespawn:cephadrome",
+  "requires": "orespawn",
+  "geo": "orespawn:geo/entity/cephadrome.geo.json",
+  "texture": "orespawn:textures/entity/cephadrome.png",
+  "scale": 0.505,
+  "head": {
+    "groups": [
+      { "bones": ["head", "hammerhead", "hammerhead2", "mouth"], "pivot": [0, 3, -43] }
+    ],
+    "plug": [0, 3, -43],
+    "animator": "look"
+  },
+  "torso": {
+    "groups": [
+      {
+        "bones": ["chest", "chest1", "body", "body2", "butt", "neck1", "neck2", "neck3", "tail1", "tail2", "tail3", "tailfin1",
+                  "tailfin2", "tailfin3", "tailfin4", "tailmembrane1", "tailmembrane2", "tailmembrane3", "topfin1",
+                  "topfin2", "topfin3", "topfin4", "topmem1", "topmem2", "topmem3", "topmem4"]
+      }
+    ],
+    "plug": [0, 0, 15],
+    "neck": [0, 3, -43],
+    "shoulder_left": [7, -13.8, -8.3],
+    "shoulder_right": [-7, -13.8, -8.3]
+  },
+  "arm": {
+    "left": { "bones": ["leftshoulder", "lefwingfin1", "leftwingfin2", "leftwingfin3", "leftwingfin4", "leftwingmembrane"] },
+    "right": { "bones": ["rightshoulder", "rightwingfin1", "rightwingfin2", "rightwingfin3", "rightwingfin4", "rightwingmembrane"] },
+    "plug_left": [7, -13.8, -8.3],
+    "plug_right": [-7, -13.8, -8.3],
+    "animator": "none"
+  },
+  "legs": {
+    "groups": [
+      { "bones": ["leftleg1", "leftleg2", "leftleg3", "leftfoot"], "pivot": [9.5, -14, 17] },
+      { "bones": ["rightleg1", "rightleg2", "rightleg3", "rightfoot"], "pivot": [-9.5, -14, 17] }
+    ],
+    "hip": [0, 0, 15],
+    "animator": "walk_pair"
+  }
+}

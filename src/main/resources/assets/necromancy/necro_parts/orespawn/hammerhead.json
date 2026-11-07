@@ -1,0 +1,42 @@
+{
+  "mob": "orespawn:hammerhead",
+  "requires": "orespawn",
+  "geo": "orespawn:geo/entity/hammerhead.geo.json",
+  "texture": "orespawn:textures/entity/hammerhead.png",
+  "scale": 1.07,
+  "head": {
+    "groups": [
+      {
+        "bones": ["neck", "neck_armour", "head", "snout", "horn_base", "horn_1", "horn_2", "horn_L", "horn_R", "fan1", "Lfan2", "Lfan3",
+                  "Rfan2", "Rfan3", "Lear", "Rear"],
+        "pivot": [0.5, 13, -12]
+      }
+    ],
+    "plug": [0.5, 13, -12],
+    "animator": "look"
+  },
+  "torso": {
+    "groups": [
+      {
+        "bones": ["chest", "abdomen", "back_armour1", "back_armour_2", "back_armour_3", "back_armour_3R", "back_armour_4",
+                  "back_armour_4R", "tail"]
+      }
+    ],
+    "plug": [0.5, 14, 2],
+    "neck": [0.5, 13, -12],
+    "shoulder_left": [11, 1, -6],
+    "shoulder_right": [-10, 1, -6]
+  },
+  "legs": {
+    "groups": [
+      { "bones": ["leg_1", "leg_1b"], "pivot": [10, 11, -10] },
+      { "bones": ["leg_1R", "leg_1Rb"], "pivot": [-9, 11, -10] },
+      { "bones": ["leg_2R", "leg_2Rb"], "pivot": [-9, 12, -2] },
+      { "bones": ["leg_2", "leg_2b"], "pivot": [10, 12, -2] },
+      { "bones": ["leg_3", "leg_3b"], "pivot": [9, 9, 14] },
+      { "bones": ["leg_3R", "leg_3Rb"], "pivot": [-8, 9, 14] }
+    ],
+    "hip": [0.5, 14, 2],
+    "animator": "walk_pair"
+  }
+}

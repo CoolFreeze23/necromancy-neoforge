@@ -1,0 +1,43 @@
+{
+  "mob": "orespawn:leon",
+  "requires": "orespawn",
+  "geo": "orespawn:geo/entity/leon.geo.json",
+  "texture": "orespawn:textures/entity/leon.png",
+  "scale": 0.334,
+  "head": {
+    "groups": [
+      {
+        "bones": ["head", "upper_jaw", "bottom_jaw", "eye_ridge_L", "eye_ridge_R", "anntena_1_L", "anntena_1_R", "anntena_2_L",
+                  "anntena_2_R", "upper_sail_1", "upper_sail2_", "upper_sail3", "lower_sail1", "lower_sail2",
+                  "lower_sail_3"],
+        "pivot": [0, -26, -28]
+      }
+    ],
+    "plug": [0, -26, -28],
+    "animator": "look"
+  },
+  "torso": {
+    "groups": [
+      { "bones": ["chest", "chest_ridge", "abdomen", "neck_1", "neck_2", "neck_3", "wing_4_L", "wing_4_R"] }
+    ],
+    "plug": [0, 13, 9],
+    "neck": [0, -26, -28],
+    "shoulder_left": [9, -9, -9],
+    "shoulder_right": [-9, -9, -9]
+  },
+  "arm": {
+    "left": { "bones": ["arm_1_L", "arm_2_L", "wing_1_L", "wing_2_L", "wing_5_L", "wing_6_L", "wing_7_R", "claw_L", "claw_R_2", "wing_3_R"] },
+    "right": { "bones": ["arm_1_R", "arm_2_R", "wing_1_R", "wing_2_R", "wing_5_R", "wing_6_R", "wing_7_L", "claw_R", "claw_L2", "wing_3_L"] },
+    "plug_left": [9, -9, -9],
+    "plug_right": [-9, -9, -9],
+    "animator": "none"
+  },
+  "legs": {
+    "groups": [
+      { "bones": ["leg_1_L", "leg_2_L", "footL"], "pivot": [5, 5, 10] },
+      { "bones": ["leg_1_R", "leg_2_R", "footR"], "pivot": [-6, 5, 10] }
+    ],
+    "hip": [0, 13, 9],
+    "animator": "walk_pair"
+  }
+}

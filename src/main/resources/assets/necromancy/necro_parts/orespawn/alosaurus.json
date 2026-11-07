@@ -1,0 +1,31 @@
+{
+  "mob": "orespawn:alosaurus",
+  "requires": "orespawn",
+  "geo": "orespawn:geo/entity/alosaurus.geo.json",
+  "texture": "orespawn:textures/entity/alosaurus.png",
+  "scale": 0.76,
+  "head": {
+    "groups": [
+      { "bones": ["shape5", "shape6", "jaw", "shape18", "shape19"], "pivot": [0.5, -16, -17] }
+    ],
+    "plug": [0.5, -16, -17],
+    "animator": "look"
+  },
+  "torso": {
+    "groups": [
+      { "bones": ["shape1", "shape2", "shape3", "shape4", "shape20", "shape11", "shape21", "shape17"] }
+    ],
+    "plug": [0.5, -1, 11],
+    "neck": [0.5, -16, -17],
+    "shoulder_left": [6.5, -8, -6],
+    "shoulder_right": [-5.5, -8, -6]
+  },
+  "legs": {
+    "groups": [
+      { "bones": ["leftleg", "leftleg2", "leftleg3", "leftleg4"], "pivot": [6, -10, 11] },
+      { "bones": ["rightleg", "rightleg2", "rightleg3", "rightleg4"], "pivot": [-7, -10, 11] }
+    ],
+    "hip": [0.5, -1, 11],
+    "animator": "walk_pair"
+  }
+}

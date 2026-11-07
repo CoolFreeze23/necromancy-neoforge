@@ -1,0 +1,43 @@
+{
+  "mob": "orespawn:baby_dragon",
+  "requires": "orespawn",
+  "geo": "orespawn:geo/entity/dragon.geo.json",
+  "texture": "orespawn:textures/entity/dragon.png",
+  "scale": 0.88,
+  "head": {
+    "groups": [
+      { "bones": ["head", "horn1", "horn2", "mouth1", "mouth2"], "pivot": [0, 6, -23] }
+    ],
+    "plug": [0, 10, -24],
+    "animator": "look"
+  },
+  "torso": {
+    "groups": [
+      {
+        "bones": ["body", "body2", "body3", "neck2", "neck3", "neck1", "tail1", "tail2", "tail3", "tail4", "tail5", "tail6", "spike1",
+                  "spike2", "spike3", "spike4", "spike5", "spike6", "spike7", "spike8", "spike9", "spike10"]
+      }
+    ],
+    "plug": [0, 12, 1.5],
+    "neck": [0, 10, -24],
+    "shoulder_left": [7, 4, -5],
+    "shoulder_right": [-7, 4, -5]
+  },
+  "arm": {
+    "left": { "bones": ["wing1", "wing15", "wing3", "wing8", "wing2", "wing7", "wing9"] },
+    "right": { "bones": ["wing4", "wing14", "wing5", "wing10", "wing6", "wing11", "wing12"] },
+    "plug_left": [7, 4, -5],
+    "plug_right": [-7, 4, -5],
+    "animator": "none"
+  },
+  "legs": {
+    "groups": [
+      { "bones": ["leg1", "leg11", "leg9", "foot4"], "pivot": [-6, 11, 8] },
+      { "bones": ["leg2", "leg10", "leg7", "foot3"], "pivot": [6, 11, 8] },
+      { "bones": ["leg4", "leg5", "foot2"], "pivot": [5, 11, -5] },
+      { "bones": ["leg3", "leg6", "foot1"], "pivot": [-5, 11, -5] }
+    ],
+    "hip": [0, 12, 1.5],
+    "animator": "walk_pair"
+  }
+}

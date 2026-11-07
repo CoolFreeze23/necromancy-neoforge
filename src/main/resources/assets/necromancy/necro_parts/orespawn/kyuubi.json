@@ -1,0 +1,47 @@
+{
+  "mob": "orespawn:kyuubi",
+  "requires": "orespawn",
+  "geo": "orespawn:geo/entity/kyuubi.geo.json",
+  "texture": "orespawn:textures/entity/kyuubi.png",
+  "translucent": true,
+  "yaw": 180,
+  "scale": 0.66,
+  "head": {
+    "groups": [
+      {
+        "bones": ["head", "headFire", "lfHorn1", "lfHorn2", "lfHorn3", "lfHorn4", "lfHorn5", "rtHorn1", "rtHorn2", "rtHorn3", "rtHorn4",
+                  "rtHorn5"],
+        "pivot": [0, 0.5, 6.5]
+      }
+    ],
+    "plug": [0, 0.5, 6.5],
+    "animator": "look"
+  },
+  "torso": {
+    "groups": [
+      {
+        "bones": ["body", "bodyFire", "chest", "chestFire", "tail0", "tail1", "tail2", "tail3", "tail4", "tail5", "tail6", "tail7",
+                  "tail8", "tail9"]
+      }
+    ],
+    "plug": [0, 12, 0],
+    "neck": [0, 0.5, 6.5],
+    "shoulder_left": [-5, 1.2, 3],
+    "shoulder_right": [5, 1.2, 2]
+  },
+  "arm": {
+    "left": { "bones": ["lfArmUpper", "lfArmUpperFire", "lfArmLower", "lfArmLowerFire"] },
+    "right": { "bones": ["rtArmUpper", "rtArmUpperFire", "rtArmLower", "rtArmLowerFire"] },
+    "plug_left": [-5, 1.2, 3],
+    "plug_right": [5, 1.2, 2],
+    "animator": "arm"
+  },
+  "legs": {
+    "groups": [
+      { "bones": ["lfLegUpper", "lfLegUppperFire", "lfLegLower", "lfLegLowerFire"], "pivot": [-2, 12, 0] },
+      { "bones": ["rtLegUpper", "rtLegUpperFire", "rtLegLower", "rtLegLowerFire"], "pivot": [2, 12, 0] }
+    ],
+    "hip": [0, 12, 0],
+    "animator": "walk_pair"
+  }
+}

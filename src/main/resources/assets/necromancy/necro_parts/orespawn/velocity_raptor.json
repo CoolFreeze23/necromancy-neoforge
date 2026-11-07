@@ -1,0 +1,38 @@
+{
+  "mob": "orespawn:velocity_raptor",
+  "requires": "orespawn",
+  "geo": "orespawn:geo/entity/velocityraptor.geo.json",
+  "texture": "orespawn:textures/entity/velocityraptor.png",
+  "scale": 1.15,
+  "head": {
+    "groups": [
+      { "bones": ["head1", "head2", "Hat1", "Hat2", "hf1", "hf2", "hf3", "hf4"], "pivot": [0, 11, -3] }
+    ],
+    "plug": [0, 11, -3],
+    "animator": "look"
+  },
+  "torso": {
+    "groups": [
+      { "bones": ["Shape1", "neck", "tail1", "tail2", "tf1", "tf2", "tf3", "tf4"] }
+    ],
+    "plug": [0, 17, 8],
+    "neck": [0, 11, -3],
+    "shoulder_left": [3, 15.4, 2.3],
+    "shoulder_right": [-3, 15.4, 2.3]
+  },
+  "arm": {
+    "left": { "bones": ["lf1", "lf2", "lff1", "lff2", "lff3"] },
+    "right": { "bones": ["rf1", "rf2", "rff1", "rff2", "rff3"] },
+    "plug_left": [3, 15.4, 2.3],
+    "plug_right": [-3, 15.4, 2.3],
+    "animator": "arm"
+  },
+  "legs": {
+    "groups": [
+      { "bones": ["bl1", "bl2", "bl3", "bl4"], "pivot": [2, 13, 6] },
+      { "bones": ["br1", "br2", "br3", "br4"], "pivot": [-2, 13, 6] }
+    ],
+    "hip": [0, 17, 8],
+    "animator": "walk_pair"
+  }
+}

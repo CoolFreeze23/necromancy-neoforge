@@ -1,0 +1,23 @@
+{
+  "mob": "orespawn:basilisk",
+  "requires": "orespawn",
+  "geo": "orespawn:geo/entity/basilisk.geo.json",
+  "texture": "orespawn:textures/entity/basilisk.png",
+  "scale": 0.45,
+  "head": {
+    "groups": [
+      { "bones": ["head", "jaw", "snout", "rog1", "rog2", "rog3", "rog4", "rog5", "rog6"], "pivot": [0, -10, -34] }
+    ],
+    "plug": [0, -10, -34],
+    "animator": "look"
+  },
+  "torso": {
+    "groups": [
+      { "bones": ["neck1", "neck2", "body1", "body2", "body3", "body4", "body5", "body6", "tail1", "tail2", "tail3", "tail4"] }
+    ],
+    "plug": [0, -2.667, 0],
+    "neck": [0, -10, -34],
+    "shoulder_left": [9, 4, -18],
+    "shoulder_right": [-9, 4, -18]
+  }
+}
