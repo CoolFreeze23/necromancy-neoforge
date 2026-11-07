@@ -76,6 +76,8 @@ public class AltarBlockEntity extends BaseContainerBlockEntity {
     public static final int INFO_SIZE = 6;
 
     private Shrine.State shrine = new Shrine.State(0, 1);
+    /** Far enough in the past to force a scan, without overflowing the "once a second" check. */
+    private static final long NEVER_SCANNED = -1_000_000L;
     private long shrineScannedAt = NEVER_SCANNED;
 
     private NonNullList<ItemStack> items = NonNullList.withSize(SIZE, ItemStack.EMPTY);

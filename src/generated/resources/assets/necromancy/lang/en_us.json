@@ -65,7 +65,7 @@
   "gui.necromancy.altar.minions": "Minions %s / %s",
   "gui.necromancy.altar.raise": "Raise",
   "gui.necromancy.altar.raise.tooltip": "Bind the soul to the body and raise your Minion. The body, the blood and the soul are used up.",
-  "gui.necromancy.altar.shrine": "Shrine tier %s (%s points)",
+  "gui.necromancy.altar.shrine": "Shrine %s (%s pts)",
   "gui.necromancy.altar.soul": "Soul",
   "gui.necromancy.altar.tier.1": "I",
   "gui.necromancy.altar.tier.2": "II",
