@@ -29,7 +29,10 @@ Everything that worked in 1.7.1:
 - **Creatures.** Night Crawlers and the Isaac chain (Isaac → Blood Isaac → Head + Body) replace rare natural zombie and
   skeleton spawns. Isaac's Head is a helmet that weeps tears on keys (R and G now, because F is the off-hand key). The
   Necromantic Teddy, sewn from leather and wool, scares monsters away. The Soul Heart spawner.
-- **Village cemetery** with graves, a tomb and a necromancer's house. The **Nether Chalice**.
+- **Village cemetery** with graves, a tomb and a necromancer's house, as an uncommon house piece in plains, taiga,
+  snowy, savanna and desert villages. It is smaller than the original (13x10 instead of 18x19), because the original
+  size never fits beside a village street. Set `-Dnecromancy.villageCemeteryWeight=0` to turn it off.
+- **The Nether Chalice** stands on Nether lava lakes. It holds a cup of blood and a loot chest.
 - **Necromancer villager.** Its job site is the Sewing Machine. Five trade levels.
 - Achievements are now **advancements**.
 
