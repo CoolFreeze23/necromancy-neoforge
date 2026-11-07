@@ -1,0 +1,32 @@
+{
+  "mob": "orespawn:ender_knight",
+  "requires": "orespawn",
+  "geo": "orespawn:geo/entity/enderknight.geo.json",
+  "texture": "orespawn:textures/entity/enderknight.png",
+  "scale": 0.75,
+  "head": {
+    "groups": [ { "bones": ["head"], "pivot": [-3.5, -20, 2] } ],
+    "plug": [-3.5, -20, 2]
+  },
+  "torso": {
+    "groups": [ { "bones": ["neck", "lcollar", "rcollar", "rib1", "rib2", "rib3", "rib4", "spine1", "spine2", "spine3", "pelvis", "cape1", "cape2"] } ],
+    "plug": [-3.5, -3, -1],
+    "neck": [-3.5, -20, 2],
+    "shoulder_left": [4.5, -18, 1.5],
+    "shoulder_right": [-11.5, -18, 1.5]
+  },
+  "arm": {
+    "left": { "bones": ["lshoulder", "larm1", "larm2", "larm3"], "pivot": [4.5, -18, 1.5] },
+    "right": { "bones": ["rshoulder", "rarm1", "rarm2", "rarm3", "handle", "blade"], "pivot": [-11.5, -18, 1.5] },
+    "plug_left": [4.5, -18, 1.5],
+    "plug_right": [-11.5, -18, 1.5],
+    "animator": "none"
+  },
+  "legs": {
+    "groups": [
+      { "bones": ["lhip", "lleg1", "lleg2", "lleg3", "lfoot1", "lfoot2", "lfoot3", "lfoot4"], "pivot": [-0.5, -4, -2] },
+      { "bones": ["rhip", "rleg1", "rleg2", "rleg3", "rfoot1", "rfoot2", "rfoot3", "rfoot4"], "pivot": [-6.5, -4, -2] }
+    ],
+    "hip": [-3.5, -3, -1]
+  }
+}

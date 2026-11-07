@@ -1,0 +1,25 @@
+{
+  "mob": "orespawn:cassowary",
+  "requires": "orespawn",
+  "geo": "orespawn:geo/entity/cassowary.geo.json",
+  "texture": "orespawn:textures/entity/cassowary.png",
+  "scale": 0.95,
+  "head": {
+    "groups": [ { "bones": ["neck", "gobbler", "head", "beak", "crest"], "pivot": [0, 8, -4] } ],
+    "plug": [0, 7, -5]
+  },
+  "torso": {
+    "groups": [ { "bones": ["body", "neck1", "tail"] } ],
+    "plug": [0, 12, 3],
+    "neck": [0, 7, -5],
+    "shoulder_left": [5, 5, 0],
+    "shoulder_right": [-5, 5, 0]
+  },
+  "legs": {
+    "groups": [
+      { "bones": ["leg1", "foot2"], "pivot": [3, 12, 3] },
+      { "bones": ["leg2", "foot1"], "pivot": [-3, 12, 3] }
+    ],
+    "hip": [0, 12, 3]
+  }
+}

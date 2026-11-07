@@ -1,0 +1,26 @@
+{
+  "mob": "orespawn:ostrich",
+  "requires": "orespawn",
+  "geo": "orespawn:geo/entity/ostrich.geo.json",
+  "texture": "orespawn:textures/entity/ostrich.png",
+  "scale": 0.75,
+  "hide": ["Hat1", "Hat2"],
+  "head": {
+    "groups": [ { "bones": ["Neck1", "Head1", "head", "mouth1"], "pivot": [0, 1, -7.5] } ],
+    "plug": [0, 1, -7.5]
+  },
+  "torso": {
+    "groups": [ { "bones": ["Body1", "body2", "Body3", "Body4", "neck2", "Tail1", "Tail2", "Tail3", "Lwing", "Rwing"] } ],
+    "plug": [0, 8, 1],
+    "neck": [0, 1, -7.5],
+    "shoulder_left": [5, 2, -4],
+    "shoulder_right": [-5, 2, -4]
+  },
+  "legs": {
+    "groups": [
+      { "bones": ["leftleg", "LLeg1", "LLeg2", "Lfoot1", "Lfoot2", "Lfoot3", "Lfoot4", "LClaw1", "LClaw2", "LClaw3", "LClaw4"], "pivot": [3, 8, 1] },
+      { "bones": ["rightleg", "Rleg1", "RLeg2", "Rfoot1", "Rfoot2", "Rfoot3", "Rfoot4", "Rclaw1", "Rclaw2", "Rclaw3", "Rclaw4"], "pivot": [-2, 8, 1] }
+    ],
+    "hip": [0, 8, 1]
+  }
+}

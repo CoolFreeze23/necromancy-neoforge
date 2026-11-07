@@ -1,0 +1,23 @@
+{
+  "mob": "orespawn:chipmunk",
+  "requires": "orespawn",
+  "geo": "orespawn:geo/entity/chipmunk.geo.json",
+  "texture": "orespawn:textures/entity/chipmunk.png",
+  "scale": 1.9,
+  "hide": ["hat1", "hat2"],
+  "head": {
+    "groups": [ { "bones": ["head", "nose", "mouth_under", "cheek1", "cheek2", "ear1", "ear2"], "pivot": [0, 20, -3] } ],
+    "plug": [0, 20, -4]
+  },
+  "torso": {
+    "groups": [ { "bones": ["body", "body_tail", "neck", "tail1", "tail2"] } ],
+    "plug": [0, 23, -1.5],
+    "neck": [0, 20, -4],
+    "shoulder_left": [3, 21, -3],
+    "shoulder_right": [-3, 21, -3]
+  },
+  "legs": {
+    "groups": [ { "bones": ["leg2", "leg1", "leg4", "leg3"] } ],
+    "hip": [0, 23, -1.5]
+  }
+}

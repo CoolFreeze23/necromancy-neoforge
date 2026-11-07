@@ -1,0 +1,1093 @@
+# OreSpawn beasts, livestock, orchard cows, ender folk and aliens: each Minion next to its creature, then mixed with zombie parts
+# (tools/smoke-orespawn.sh tools/smoke-orespawn-beasts.txt)
+wait 20
+difficulty easy
+gamerule doMobSpawning false
+gamerule doDaylightCycle false
+gamerule doWeatherCycle false
+gamerule doTileDrops false
+gamerule doMobLoot false
+time set 6000
+weather clear
+hud off
+kill @e[type=!player]
+wait 10
+# --- beaver: minion h 1.09 w 0.88 l 2.57
+tp @s 0 -59 0
+wait 5
+tp @s 0.50 -60 4.50 180 13.3
+wait 5
+summon necromancy:minion -1.69 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["t0"],Parts:{head:"orespawn:beaver",torso:"orespawn:beaver",legs:"orespawn:beaver"}}
+summon orespawn:beaver 1.69 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["t0"]}
+hitboxes on
+wait 40
+shot 00_beaver_front
+hitboxes off
+tp @e[tag=t0] 0 -400 0
+wait 5
+tp @s 0.50 -60 4.50 180 13.3
+wait 5
+summon necromancy:minion -1.69 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["t0"],Parts:{head:"orespawn:beaver",torso:"orespawn:beaver",legs:"orespawn:beaver"}}
+summon orespawn:beaver 1.69 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["t0"]}
+wait 40
+shot 00_beaver_side
+hitboxes off
+tp @e[tag=t0] 0 -400 0
+wait 5
+tp @s 0.50 -60 6.50 180 5.9
+wait 5
+summon necromancy:minion -3.09 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["m0"],Parts:{head:"orespawn:beaver",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 0.00 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[0f,0f],Tags:["m0"],Parts:{head:"necromancy:zombie",torso:"orespawn:beaver",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 3.09 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[0f,0f],Tags:["m0"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:beaver"}}
+wait 40
+shot 00_beaver_mix_front
+tp @e[tag=m0] 0 -400 0
+wait 5
+tp @s 0.50 -60 6.50 180 5.9
+wait 5
+summon necromancy:minion -3.09 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["m0"],Parts:{head:"orespawn:beaver",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 0.00 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[90f,0f],Tags:["m0"],Parts:{head:"necromancy:zombie",torso:"orespawn:beaver",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 3.09 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[90f,0f],Tags:["m0"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:beaver"}}
+wait 40
+shot 00_beaver_mix_side
+tp @e[tag=m0] 0 -400 0
+wait 5
+# --- chipmunk: minion h 0.95 w 0.59 l 1.86
+tp @s 64 -59 0
+wait 5
+tp @s 64.50 -60 3.50 180 17.0
+wait 5
+summon necromancy:minion 62.67 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["t1"],Parts:{head:"orespawn:chipmunk",torso:"orespawn:chipmunk",legs:"orespawn:chipmunk"}}
+summon orespawn:chipmunk 65.33 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["t1"]}
+hitboxes on
+wait 40
+shot 01_chipmunk_front
+hitboxes off
+tp @e[tag=t1] 64 -400 0
+wait 5
+tp @s 64.50 -60 3.50 180 17.0
+wait 5
+summon necromancy:minion 62.67 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["t1"],Parts:{head:"orespawn:chipmunk",torso:"orespawn:chipmunk",legs:"orespawn:chipmunk"}}
+summon orespawn:chipmunk 65.33 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["t1"]}
+wait 40
+shot 01_chipmunk_side
+hitboxes off
+tp @e[tag=t1] 64 -400 0
+wait 5
+tp @s 64.50 -60 5.50 180 7.1
+wait 5
+summon necromancy:minion 61.41 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["m1"],Parts:{head:"orespawn:chipmunk",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 64.00 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[0f,0f],Tags:["m1"],Parts:{head:"necromancy:zombie",torso:"orespawn:chipmunk",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 66.59 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[0f,0f],Tags:["m1"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:chipmunk"}}
+wait 40
+shot 01_chipmunk_mix_front
+tp @e[tag=m1] 64 -400 0
+wait 5
+tp @s 64.50 -60 5.50 180 7.1
+wait 5
+summon necromancy:minion 61.41 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["m1"],Parts:{head:"orespawn:chipmunk",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 64.00 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[90f,0f],Tags:["m1"],Parts:{head:"necromancy:zombie",torso:"orespawn:chipmunk",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 66.59 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[90f,0f],Tags:["m1"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:chipmunk"}}
+wait 40
+shot 01_chipmunk_mix_side
+tp @e[tag=m1] 64 -400 0
+wait 5
+# --- gazelle: minion h 1.92 w 0.39 l 0.99
+tp @s 128 -59 0
+wait 5
+tp @s 128.50 -60 3.50 180 13.3
+wait 5
+summon necromancy:minion 127.10 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["t2"],Parts:{head:"orespawn:gazelle",torso:"orespawn:gazelle",legs:"orespawn:gazelle"}}
+summon orespawn:gazelle 128.90 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["t2"]}
+hitboxes on
+wait 40
+shot 02_gazelle_front
+hitboxes off
+tp @e[tag=t2] 128 -400 0
+wait 5
+tp @s 128.50 -60 3.50 180 13.3
+wait 5
+summon necromancy:minion 127.10 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["t2"],Parts:{head:"orespawn:gazelle",torso:"orespawn:gazelle",legs:"orespawn:gazelle"}}
+summon orespawn:gazelle 128.90 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["t2"]}
+wait 40
+shot 02_gazelle_side
+hitboxes off
+tp @e[tag=t2] 128 -400 0
+wait 5
+tp @s 128.50 -60 4.50 180 8.6
+wait 5
+summon necromancy:minion 126.18 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["m2"],Parts:{head:"orespawn:gazelle",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 128.00 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[0f,0f],Tags:["m2"],Parts:{head:"necromancy:zombie",torso:"orespawn:gazelle",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 129.82 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[0f,0f],Tags:["m2"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:gazelle"}}
+wait 40
+shot 02_gazelle_mix_front
+tp @e[tag=m2] 128 -400 0
+wait 5
+tp @s 128.50 -60 4.50 180 8.6
+wait 5
+summon necromancy:minion 126.18 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["m2"],Parts:{head:"orespawn:gazelle",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 128.00 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[90f,0f],Tags:["m2"],Parts:{head:"necromancy:zombie",torso:"orespawn:gazelle",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 129.82 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[90f,0f],Tags:["m2"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:gazelle"}}
+wait 40
+shot 02_gazelle_mix_side
+tp @e[tag=m2] 128 -400 0
+wait 5
+# --- rat: minion h 0.90 w 1.05 l 5.55
+tp @s 192 -59 0
+wait 5
+tp @s 192.50 -60 8.50 180 8.3
+wait 5
+summon necromancy:minion 188.82 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["t3"],Parts:{head:"orespawn:rat",torso:"orespawn:rat",legs:"orespawn:rat"}}
+summon orespawn:rat 195.18 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["t3"]}
+hitboxes on
+wait 40
+shot 03_rat_front
+hitboxes off
+tp @e[tag=t3] 192 -400 0
+wait 5
+tp @s 192.50 -60 8.50 180 8.3
+wait 5
+summon necromancy:minion 188.82 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["t3"],Parts:{head:"orespawn:rat",torso:"orespawn:rat",legs:"orespawn:rat"}}
+summon orespawn:rat 195.18 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["t3"]}
+wait 40
+shot 03_rat_side
+hitboxes off
+tp @e[tag=t3] 192 -400 0
+wait 5
+tp @s 192.50 -60 11.50 180 3.8
+wait 5
+summon necromancy:minion 186.20 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["m3"],Parts:{head:"orespawn:rat",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 192.00 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[0f,0f],Tags:["m3"],Parts:{head:"necromancy:zombie",torso:"orespawn:rat",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 197.80 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[0f,0f],Tags:["m3"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:rat"}}
+wait 40
+shot 03_rat_mix_front
+tp @e[tag=m3] 192 -400 0
+wait 5
+tp @s 192.50 -60 11.50 180 3.8
+wait 5
+summon necromancy:minion 186.20 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["m3"],Parts:{head:"orespawn:rat",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 192.00 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[90f,0f],Tags:["m3"],Parts:{head:"necromancy:zombie",torso:"orespawn:rat",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 197.80 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[90f,0f],Tags:["m3"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:rat"}}
+wait 40
+shot 03_rat_mix_side
+tp @e[tag=m3] 192 -400 0
+wait 5
+# --- easter_bunny: minion h 1.31 w 0.62 l 0.81
+tp @s 256 -59 0
+wait 5
+tp @s 256.50 -60 2.50 180 21.2
+wait 5
+summon necromancy:minion 255.19 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["t4"],Parts:{head:"orespawn:easter_bunny",torso:"orespawn:easter_bunny",arm_left:"orespawn:easter_bunny",arm_right:"orespawn:easter_bunny",legs:"orespawn:easter_bunny"}}
+summon orespawn:easter_bunny 256.81 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["t4"]}
+hitboxes on
+wait 40
+shot 04_easter_bunny_front
+hitboxes off
+tp @e[tag=t4] 256 -400 0
+wait 5
+tp @s 256.50 -60 2.50 180 21.2
+wait 5
+summon necromancy:minion 255.19 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["t4"],Parts:{head:"orespawn:easter_bunny",torso:"orespawn:easter_bunny",arm_left:"orespawn:easter_bunny",arm_right:"orespawn:easter_bunny",legs:"orespawn:easter_bunny"}}
+summon orespawn:easter_bunny 256.81 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["t4"]}
+wait 40
+shot 04_easter_bunny_side
+hitboxes off
+tp @e[tag=t4] 256 -400 0
+wait 5
+tp @s 256.50 -60 5.50 180 5.7
+wait 5
+summon necromancy:minion 253.08 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["m4"],Parts:{head:"orespawn:easter_bunny",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 255.03 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[0f,0f],Tags:["m4"],Parts:{head:"necromancy:zombie",torso:"orespawn:easter_bunny",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 256.97 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[0f,0f],Tags:["m4"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:easter_bunny"}}
+summon necromancy:minion 258.92 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[0f,0f],Tags:["m4"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:easter_bunny",arm_right:"orespawn:easter_bunny",legs:"necromancy:zombie"}}
+wait 40
+shot 04_easter_bunny_mix_front
+tp @e[tag=m4] 256 -400 0
+wait 5
+tp @s 256.50 -60 5.50 180 5.7
+wait 5
+summon necromancy:minion 253.08 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["m4"],Parts:{head:"orespawn:easter_bunny",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 255.03 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[90f,0f],Tags:["m4"],Parts:{head:"necromancy:zombie",torso:"orespawn:easter_bunny",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 256.97 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[90f,0f],Tags:["m4"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:easter_bunny"}}
+summon necromancy:minion 258.92 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[90f,0f],Tags:["m4"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:easter_bunny",arm_right:"orespawn:easter_bunny",legs:"necromancy:zombie"}}
+wait 40
+shot 04_easter_bunny_mix_side
+tp @e[tag=m4] 256 -400 0
+wait 5
+# --- whale: minion h 1.42 w 5.13 l 8.14
+tp @s 320 -59 0
+wait 5
+tp @s 320.50 -60 11.50 180 4.9
+wait 5
+summon necromancy:minion 315.53 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["t5"],Parts:{head:"orespawn:whale",torso:"orespawn:whale"}}
+summon orespawn:whale 324.47 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["t5"]}
+hitboxes on
+wait 40
+shot 05_whale_front
+hitboxes off
+tp @e[tag=t5] 320 -400 0
+wait 5
+tp @s 320.50 -60 11.50 180 4.9
+wait 5
+summon necromancy:minion 315.53 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["t5"],Parts:{head:"orespawn:whale",torso:"orespawn:whale"}}
+summon orespawn:whale 324.47 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["t5"]}
+wait 40
+shot 05_whale_side
+hitboxes off
+tp @e[tag=t5] 320 -400 0
+wait 5
+tp @s 320.50 -60 11.50 180 2.9
+wait 5
+summon necromancy:minion 315.92 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["m5"],Parts:{head:"orespawn:whale",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 324.08 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[0f,0f],Tags:["m5"],Parts:{head:"necromancy:zombie",torso:"orespawn:whale",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+wait 40
+shot 05_whale_mix_front
+tp @e[tag=m5] 320 -400 0
+wait 5
+tp @s 320.50 -60 11.50 180 2.9
+wait 5
+summon necromancy:minion 315.92 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["m5"],Parts:{head:"orespawn:whale",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 324.08 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[90f,0f],Tags:["m5"],Parts:{head:"necromancy:zombie",torso:"orespawn:whale",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+wait 40
+shot 05_whale_mix_side
+tp @e[tag=m5] 320 -400 0
+wait 5
+# --- peacock: minion h 1.45 w 0.55 l 3.43
+tp @s 384 -59 0
+wait 5
+tp @s 384.50 -60 5.50 180 9.5
+wait 5
+summon necromancy:minion 381.88 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["t6"],Parts:{head:"orespawn:peacock",torso:"orespawn:peacock",legs:"orespawn:peacock"}}
+summon orespawn:peacock 386.12 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["t6"]}
+hitboxes on
+wait 40
+shot 06_peacock_front
+hitboxes off
+tp @e[tag=t6] 384 -400 0
+wait 5
+tp @s 384.50 -60 5.50 180 9.5
+wait 5
+summon necromancy:minion 381.88 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["t6"],Parts:{head:"orespawn:peacock",torso:"orespawn:peacock",legs:"orespawn:peacock"}}
+summon orespawn:peacock 386.12 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["t6"]}
+wait 40
+shot 06_peacock_side
+hitboxes off
+tp @e[tag=t6] 384 -400 0
+wait 5
+tp @s 384.50 -60 7.50 180 4.5
+wait 5
+summon necromancy:minion 380.23 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["m6"],Parts:{head:"orespawn:peacock",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 384.00 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[0f,0f],Tags:["m6"],Parts:{head:"necromancy:zombie",torso:"orespawn:peacock",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 387.77 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[0f,0f],Tags:["m6"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:peacock"}}
+wait 40
+shot 06_peacock_mix_front
+tp @e[tag=m6] 384 -400 0
+wait 5
+tp @s 384.50 -60 7.50 180 4.5
+wait 5
+summon necromancy:minion 380.23 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["m6"],Parts:{head:"orespawn:peacock",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 384.00 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[90f,0f],Tags:["m6"],Parts:{head:"necromancy:zombie",torso:"orespawn:peacock",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 387.77 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[90f,0f],Tags:["m6"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:peacock"}}
+wait 40
+shot 06_peacock_mix_side
+tp @e[tag=m6] 384 -400 0
+wait 5
+# --- ostrich: minion h 2.06 w 0.51 l 1.62
+tp @s 448 -59 0
+wait 5
+tp @s 448.50 -60 3.50 180 10.8
+wait 5
+summon necromancy:minion 446.79 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["t7"],Parts:{head:"orespawn:ostrich",torso:"orespawn:ostrich",legs:"orespawn:ostrich"}}
+summon orespawn:ostrich 449.21 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["t7"]}
+hitboxes on
+wait 40
+shot 07_ostrich_front
+hitboxes off
+tp @e[tag=t7] 448 -400 0
+wait 5
+tp @s 448.50 -60 3.50 180 10.8
+wait 5
+summon necromancy:minion 446.79 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["t7"],Parts:{head:"orespawn:ostrich",torso:"orespawn:ostrich",legs:"orespawn:ostrich"}}
+summon orespawn:ostrich 449.21 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["t7"]}
+wait 40
+shot 07_ostrich_side
+hitboxes off
+tp @e[tag=t7] 448 -400 0
+wait 5
+tp @s 448.50 -60 5.50 180 5.2
+wait 5
+summon necromancy:minion 445.62 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["m7"],Parts:{head:"orespawn:ostrich",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 448.00 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[0f,0f],Tags:["m7"],Parts:{head:"necromancy:zombie",torso:"orespawn:ostrich",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 450.38 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[0f,0f],Tags:["m7"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:ostrich"}}
+wait 40
+shot 07_ostrich_mix_front
+tp @e[tag=m7] 448 -400 0
+wait 5
+tp @s 448.50 -60 5.50 180 5.2
+wait 5
+summon necromancy:minion 445.62 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["m7"],Parts:{head:"orespawn:ostrich",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 448.00 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[90f,0f],Tags:["m7"],Parts:{head:"necromancy:zombie",torso:"orespawn:ostrich",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 450.38 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[90f,0f],Tags:["m7"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:ostrich"}}
+wait 40
+shot 07_ostrich_mix_side
+tp @e[tag=m7] 448 -400 0
+wait 5
+# --- cassowary: minion h 1.66 w 0.48 l 1.45
+tp @s 512 -59 0
+wait 5
+tp @s 512.50 -60 3.50 180 14.3
+wait 5
+summon necromancy:minion 510.87 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["t8"],Parts:{head:"orespawn:cassowary",torso:"orespawn:cassowary",legs:"orespawn:cassowary"}}
+summon orespawn:cassowary 513.13 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["t8"]}
+hitboxes on
+wait 40
+shot 08_cassowary_front
+hitboxes off
+tp @e[tag=t8] 512 -400 0
+wait 5
+tp @s 512.50 -60 3.50 180 14.3
+wait 5
+summon necromancy:minion 510.87 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["t8"],Parts:{head:"orespawn:cassowary",torso:"orespawn:cassowary",legs:"orespawn:cassowary"}}
+summon orespawn:cassowary 513.13 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["t8"]}
+wait 40
+shot 08_cassowary_side
+hitboxes off
+tp @e[tag=t8] 512 -400 0
+wait 5
+tp @s 512.50 -60 4.50 180 7.9
+wait 5
+summon necromancy:minion 510.04 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["m8"],Parts:{head:"orespawn:cassowary",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 512.00 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[0f,0f],Tags:["m8"],Parts:{head:"necromancy:zombie",torso:"orespawn:cassowary",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 513.96 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[0f,0f],Tags:["m8"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:cassowary"}}
+wait 40
+shot 08_cassowary_mix_front
+tp @e[tag=m8] 512 -400 0
+wait 5
+tp @s 512.50 -60 4.50 180 7.9
+wait 5
+summon necromancy:minion 510.04 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["m8"],Parts:{head:"orespawn:cassowary",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 512.00 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[90f,0f],Tags:["m8"],Parts:{head:"necromancy:zombie",torso:"orespawn:cassowary",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 513.96 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[90f,0f],Tags:["m8"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:cassowary"}}
+wait 40
+shot 08_cassowary_mix_side
+tp @e[tag=m8] 512 -400 0
+wait 5
+# --- dungeon_beast: minion h 1.64 w 4.11 l 1.86
+tp @s 576 -59 0
+wait 5
+tp @s 576.50 -60 6.50 180 7.6
+wait 5
+summon necromancy:minion 573.54 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["t9"],Parts:{head:"orespawn:dungeon_beast",torso:"orespawn:dungeon_beast",arm_left:"orespawn:dungeon_beast",arm_right:"orespawn:dungeon_beast",legs:"orespawn:dungeon_beast"}}
+summon orespawn:dungeon_beast 578.46 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["t9"]}
+hitboxes on
+wait 40
+shot 09_dungeon_beast_front
+hitboxes off
+tp @e[tag=t9] 576 -400 0
+wait 5
+tp @s 576.50 -60 6.50 180 7.6
+wait 5
+summon necromancy:minion 573.54 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["t9"],Parts:{head:"orespawn:dungeon_beast",torso:"orespawn:dungeon_beast",arm_left:"orespawn:dungeon_beast",arm_right:"orespawn:dungeon_beast",legs:"orespawn:dungeon_beast"}}
+summon orespawn:dungeon_beast 578.46 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["t9"]}
+wait 40
+shot 09_dungeon_beast_side
+hitboxes off
+tp @e[tag=t9] 576 -400 0
+wait 5
+tp @s 576.50 -60 11.50 180 2.8
+wait 5
+summon necromancy:minion 569.77 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["m9"],Parts:{head:"orespawn:dungeon_beast",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 573.92 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[0f,0f],Tags:["m9"],Parts:{head:"necromancy:zombie",torso:"orespawn:dungeon_beast",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 578.08 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[0f,0f],Tags:["m9"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:dungeon_beast"}}
+summon necromancy:minion 582.23 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[0f,0f],Tags:["m9"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:dungeon_beast",arm_right:"orespawn:dungeon_beast",legs:"necromancy:zombie"}}
+wait 40
+shot 09_dungeon_beast_mix_front
+tp @e[tag=m9] 576 -400 0
+wait 5
+tp @s 576.50 -60 11.50 180 2.8
+wait 5
+summon necromancy:minion 569.77 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["m9"],Parts:{head:"orespawn:dungeon_beast",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 573.92 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[90f,0f],Tags:["m9"],Parts:{head:"necromancy:zombie",torso:"orespawn:dungeon_beast",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 578.08 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[90f,0f],Tags:["m9"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:dungeon_beast"}}
+summon necromancy:minion 582.23 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[90f,0f],Tags:["m9"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:dungeon_beast",arm_right:"orespawn:dungeon_beast",legs:"necromancy:zombie"}}
+wait 40
+shot 09_dungeon_beast_mix_side
+tp @e[tag=m9] 576 -400 0
+wait 5
+# --- cannon_fodder: minion h 1.00 w 0.50 l 1.12
+tp @s 640 -59 0
+wait 5
+tp @s 640.50 -60 3.50 180 21.1
+wait 5
+summon necromancy:minion 639.04 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["t10"],Parts:{head:"orespawn:cannon_fodder",torso:"orespawn:cannon_fodder",legs:"orespawn:cannon_fodder"}}
+summon orespawn:cannon_fodder 640.96 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["t10"]}
+hitboxes on
+wait 40
+shot 10_cannon_fodder_front
+hitboxes off
+tp @e[tag=t10] 640 -400 0
+wait 5
+tp @s 640.50 -60 3.50 180 21.1
+wait 5
+summon necromancy:minion 639.04 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["t10"],Parts:{head:"orespawn:cannon_fodder",torso:"orespawn:cannon_fodder",legs:"orespawn:cannon_fodder"}}
+summon orespawn:cannon_fodder 640.96 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["t10"]}
+wait 40
+shot 10_cannon_fodder_side
+hitboxes off
+tp @e[tag=t10] 640 -400 0
+wait 5
+tp @s 640.50 -60 4.50 180 9.7
+wait 5
+summon necromancy:minion 638.15 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["m10"],Parts:{head:"orespawn:cannon_fodder",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 640.00 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[0f,0f],Tags:["m10"],Parts:{head:"necromancy:zombie",torso:"orespawn:cannon_fodder",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 641.85 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[0f,0f],Tags:["m10"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:cannon_fodder"}}
+wait 40
+shot 10_cannon_fodder_mix_front
+tp @e[tag=m10] 640 -400 0
+wait 5
+tp @s 640.50 -60 4.50 180 9.7
+wait 5
+summon necromancy:minion 638.15 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["m10"],Parts:{head:"orespawn:cannon_fodder",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 640.00 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[90f,0f],Tags:["m10"],Parts:{head:"necromancy:zombie",torso:"orespawn:cannon_fodder",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 641.85 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[90f,0f],Tags:["m10"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:cannon_fodder"}}
+wait 40
+shot 10_cannon_fodder_mix_side
+tp @e[tag=m10] 640 -400 0
+wait 5
+# --- molenoid: minion h 1.65 w 7.03 l 7.69
+tp @s 704 -59 0
+wait 5
+tp @s 704.50 -60 10.50 180 4.6
+wait 5
+summon necromancy:minion 699.75 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["t11"],Parts:{head:"orespawn:molenoid",torso:"orespawn:molenoid",arm_left:"orespawn:molenoid",arm_right:"orespawn:molenoid",legs:"orespawn:molenoid"}}
+summon orespawn:molenoid 708.25 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["t11"]}
+hitboxes on
+wait 40
+shot 11_molenoid_front
+hitboxes off
+tp @e[tag=t11] 704 -400 0
+wait 5
+tp @s 704.50 -60 10.50 180 4.6
+wait 5
+summon necromancy:minion 699.75 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["t11"],Parts:{head:"orespawn:molenoid",torso:"orespawn:molenoid",arm_left:"orespawn:molenoid",arm_right:"orespawn:molenoid",legs:"orespawn:molenoid"}}
+summon orespawn:molenoid 708.25 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["t11"]}
+wait 40
+shot 11_molenoid_side
+hitboxes off
+tp @e[tag=t11] 704 -400 0
+wait 5
+tp @s 704.50 -60 19.50 180 1.3
+wait 5
+summon necromancy:minion 692.57 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["m11"],Parts:{head:"orespawn:molenoid",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 700.19 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[0f,0f],Tags:["m11"],Parts:{head:"necromancy:zombie",torso:"orespawn:molenoid",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 707.81 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[0f,0f],Tags:["m11"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:molenoid"}}
+summon necromancy:minion 715.43 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[0f,0f],Tags:["m11"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:molenoid",arm_right:"orespawn:molenoid",legs:"necromancy:zombie"}}
+wait 40
+shot 11_molenoid_mix_front
+tp @e[tag=m11] 704 -400 0
+wait 5
+tp @s 704.50 -60 19.50 180 1.3
+wait 5
+summon necromancy:minion 692.57 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["m11"],Parts:{head:"orespawn:molenoid",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 700.19 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[90f,0f],Tags:["m11"],Parts:{head:"necromancy:zombie",torso:"orespawn:molenoid",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 707.81 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[90f,0f],Tags:["m11"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:molenoid"}}
+summon necromancy:minion 715.43 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[90f,0f],Tags:["m11"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:molenoid",arm_right:"orespawn:molenoid",legs:"necromancy:zombie"}}
+wait 40
+shot 11_molenoid_mix_side
+tp @e[tag=m11] 704 -400 0
+wait 5
+# --- stinky: minion h 1.71 w 3.25 l 2.72
+tp @s 768 -59 0
+wait 5
+tp @s 768.50 -60 5.50 180 8.7
+wait 5
+summon necromancy:minion 765.98 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["t12"],Parts:{head:"orespawn:stinky",torso:"orespawn:stinky",arm_left:"orespawn:stinky",arm_right:"orespawn:stinky",legs:"orespawn:stinky"}}
+summon orespawn:stinky 770.02 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["t12"]}
+hitboxes on
+wait 40
+shot 12_stinky_front
+hitboxes off
+tp @e[tag=t12] 768 -400 0
+wait 5
+tp @s 768.50 -60 5.50 180 8.7
+wait 5
+summon necromancy:minion 765.98 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["t12"],Parts:{head:"orespawn:stinky",torso:"orespawn:stinky",arm_left:"orespawn:stinky",arm_right:"orespawn:stinky",legs:"orespawn:stinky"}}
+summon orespawn:stinky 770.02 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["t12"]}
+wait 40
+shot 12_stinky_side
+hitboxes off
+tp @e[tag=t12] 768 -400 0
+wait 5
+tp @s 768.50 -60 9.50 180 3.8
+wait 5
+summon necromancy:minion 762.60 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["m12"],Parts:{head:"orespawn:stinky",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 766.20 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[0f,0f],Tags:["m12"],Parts:{head:"necromancy:zombie",torso:"orespawn:stinky",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 769.80 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[0f,0f],Tags:["m12"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:stinky"}}
+summon necromancy:minion 773.40 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[0f,0f],Tags:["m12"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:stinky",arm_right:"orespawn:stinky",legs:"necromancy:zombie"}}
+wait 40
+shot 12_stinky_mix_front
+tp @e[tag=m12] 768 -400 0
+wait 5
+tp @s 768.50 -60 9.50 180 3.8
+wait 5
+summon necromancy:minion 762.60 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["m12"],Parts:{head:"orespawn:stinky",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 766.20 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[90f,0f],Tags:["m12"],Parts:{head:"necromancy:zombie",torso:"orespawn:stinky",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 769.80 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[90f,0f],Tags:["m12"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:stinky"}}
+summon necromancy:minion 773.40 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[90f,0f],Tags:["m12"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:stinky",arm_right:"orespawn:stinky",legs:"necromancy:zombie"}}
+wait 40
+shot 12_stinky_mix_side
+tp @e[tag=m12] 768 -400 0
+wait 5
+# --- hydrolisc: minion h 1.33 w 1.14 l 3.51
+tp @s 832 -59 0
+wait 5
+tp @s 832.50 -60 5.50 180 9.8
+wait 5
+summon necromancy:minion 829.84 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["t13"],Parts:{head:"orespawn:hydrolisc",torso:"orespawn:hydrolisc",legs:"orespawn:hydrolisc"}}
+summon orespawn:hydrolisc 834.16 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["t13"]}
+hitboxes on
+wait 40
+shot 13_hydrolisc_front
+hitboxes off
+tp @e[tag=t13] 832 -400 0
+wait 5
+tp @s 832.50 -60 5.50 180 9.8
+wait 5
+summon necromancy:minion 829.84 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["t13"],Parts:{head:"orespawn:hydrolisc",torso:"orespawn:hydrolisc",legs:"orespawn:hydrolisc"}}
+summon orespawn:hydrolisc 834.16 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["t13"]}
+wait 40
+shot 13_hydrolisc_side
+hitboxes off
+tp @e[tag=t13] 832 -400 0
+wait 5
+tp @s 832.50 -60 8.50 180 4.5
+wait 5
+summon necromancy:minion 827.82 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["m13"],Parts:{head:"orespawn:hydrolisc",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 832.00 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[0f,0f],Tags:["m13"],Parts:{head:"necromancy:zombie",torso:"orespawn:hydrolisc",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 836.18 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[0f,0f],Tags:["m13"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:hydrolisc"}}
+wait 40
+shot 13_hydrolisc_mix_front
+tp @e[tag=m13] 832 -400 0
+wait 5
+tp @s 832.50 -60 8.50 180 4.5
+wait 5
+summon necromancy:minion 827.82 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["m13"],Parts:{head:"orespawn:hydrolisc",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 832.00 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[90f,0f],Tags:["m13"],Parts:{head:"necromancy:zombie",torso:"orespawn:hydrolisc",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 836.18 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[90f,0f],Tags:["m13"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:hydrolisc"}}
+wait 40
+shot 13_hydrolisc_mix_side
+tp @e[tag=m13] 832 -400 0
+wait 5
+# --- gamma_metroid: minion h 1.66 w 1.71 l 2.09
+tp @s 896 -59 0
+wait 5
+tp @s 896.50 -60 4.50 180 11.8
+wait 5
+summon necromancy:minion 894.56 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["t14"],Parts:{head:"orespawn:gamma_metroid",torso:"orespawn:gamma_metroid",legs:"orespawn:gamma_metroid"}}
+summon orespawn:gamma_metroid 897.44 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["t14"]}
+hitboxes on
+wait 40
+shot 14_gamma_metroid_front
+hitboxes off
+tp @e[tag=t14] 896 -400 0
+wait 5
+tp @s 896.50 -60 4.50 180 11.8
+wait 5
+summon necromancy:minion 894.56 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["t14"],Parts:{head:"orespawn:gamma_metroid",torso:"orespawn:gamma_metroid",legs:"orespawn:gamma_metroid"}}
+summon orespawn:gamma_metroid 897.44 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["t14"]}
+wait 40
+shot 14_gamma_metroid_side
+hitboxes off
+tp @e[tag=t14] 896 -400 0
+wait 5
+tp @s 896.50 -60 5.50 180 7.5
+wait 5
+summon necromancy:minion 893.69 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["m14"],Parts:{head:"orespawn:gamma_metroid",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 896.00 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[0f,0f],Tags:["m14"],Parts:{head:"necromancy:zombie",torso:"orespawn:gamma_metroid",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 898.31 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[0f,0f],Tags:["m14"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:gamma_metroid"}}
+wait 40
+shot 14_gamma_metroid_mix_front
+tp @e[tag=m14] 896 -400 0
+wait 5
+tp @s 896.50 -60 5.50 180 7.5
+wait 5
+summon necromancy:minion 893.69 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["m14"],Parts:{head:"orespawn:gamma_metroid",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 896.00 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[90f,0f],Tags:["m14"],Parts:{head:"necromancy:zombie",torso:"orespawn:gamma_metroid",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 898.31 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[90f,0f],Tags:["m14"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:gamma_metroid"}}
+wait 40
+shot 14_gamma_metroid_mix_side
+tp @e[tag=m14] 896 -400 0
+wait 5
+# --- red_cow: minion h 1.56 w 0.75 l 1.50
+tp @s 960 -59 0
+wait 5
+tp @s 960.50 -60 3.50 180 14.8
+wait 5
+summon necromancy:minion 958.85 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["t15"],Parts:{head:"orespawn:red_cow",torso:"orespawn:red_cow",arm_left:"orespawn:red_cow",arm_right:"orespawn:red_cow",legs:"orespawn:red_cow"}}
+summon orespawn:red_cow 961.15 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["t15"]}
+hitboxes on
+wait 40
+shot 15_red_cow_front
+hitboxes off
+tp @e[tag=t15] 960 -400 0
+wait 5
+tp @s 960.50 -60 3.50 180 14.8
+wait 5
+summon necromancy:minion 958.85 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["t15"],Parts:{head:"orespawn:red_cow",torso:"orespawn:red_cow",arm_left:"orespawn:red_cow",arm_right:"orespawn:red_cow",legs:"orespawn:red_cow"}}
+summon orespawn:red_cow 961.15 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["t15"]}
+wait 40
+shot 15_red_cow_side
+hitboxes off
+tp @e[tag=t15] 960 -400 0
+wait 5
+tp @s 960.50 -60 6.50 180 6.0
+wait 5
+summon necromancy:minion 956.66 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["m15"],Parts:{head:"orespawn:red_cow",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 958.89 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[0f,0f],Tags:["m15"],Parts:{head:"necromancy:zombie",torso:"orespawn:red_cow",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 961.11 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[0f,0f],Tags:["m15"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:red_cow"}}
+summon necromancy:minion 963.34 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[0f,0f],Tags:["m15"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:red_cow",arm_right:"orespawn:red_cow",legs:"necromancy:zombie"}}
+wait 40
+shot 15_red_cow_mix_front
+tp @e[tag=m15] 960 -400 0
+wait 5
+tp @s 960.50 -60 6.50 180 6.0
+wait 5
+summon necromancy:minion 956.66 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["m15"],Parts:{head:"orespawn:red_cow",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 958.89 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[90f,0f],Tags:["m15"],Parts:{head:"necromancy:zombie",torso:"orespawn:red_cow",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 961.11 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[90f,0f],Tags:["m15"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:red_cow"}}
+summon necromancy:minion 963.34 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[90f,0f],Tags:["m15"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:red_cow",arm_right:"orespawn:red_cow",legs:"necromancy:zombie"}}
+wait 40
+shot 15_red_cow_mix_side
+tp @e[tag=m15] 960 -400 0
+wait 5
+# --- apple_cow: minion h 1.56 w 0.75 l 1.50
+tp @s 1024 -59 0
+wait 5
+tp @s 1024.50 -60 3.50 180 14.8
+wait 5
+summon necromancy:minion 1022.85 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["t16"],Parts:{head:"orespawn:apple_cow",torso:"orespawn:apple_cow",arm_left:"orespawn:apple_cow",arm_right:"orespawn:apple_cow",legs:"orespawn:apple_cow"}}
+summon orespawn:apple_cow 1025.15 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["t16"]}
+hitboxes on
+wait 40
+shot 16_apple_cow_front
+hitboxes off
+tp @e[tag=t16] 1024 -400 0
+wait 5
+tp @s 1024.50 -60 3.50 180 14.8
+wait 5
+summon necromancy:minion 1022.85 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["t16"],Parts:{head:"orespawn:apple_cow",torso:"orespawn:apple_cow",arm_left:"orespawn:apple_cow",arm_right:"orespawn:apple_cow",legs:"orespawn:apple_cow"}}
+summon orespawn:apple_cow 1025.15 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["t16"]}
+wait 40
+shot 16_apple_cow_side
+hitboxes off
+tp @e[tag=t16] 1024 -400 0
+wait 5
+tp @s 1024.50 -60 6.50 180 6.0
+wait 5
+summon necromancy:minion 1020.66 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["m16"],Parts:{head:"orespawn:apple_cow",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 1022.89 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[0f,0f],Tags:["m16"],Parts:{head:"necromancy:zombie",torso:"orespawn:apple_cow",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 1025.11 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[0f,0f],Tags:["m16"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:apple_cow"}}
+summon necromancy:minion 1027.34 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[0f,0f],Tags:["m16"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:apple_cow",arm_right:"orespawn:apple_cow",legs:"necromancy:zombie"}}
+wait 40
+shot 16_apple_cow_mix_front
+tp @e[tag=m16] 1024 -400 0
+wait 5
+tp @s 1024.50 -60 6.50 180 6.0
+wait 5
+summon necromancy:minion 1020.66 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["m16"],Parts:{head:"orespawn:apple_cow",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 1022.89 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[90f,0f],Tags:["m16"],Parts:{head:"necromancy:zombie",torso:"orespawn:apple_cow",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 1025.11 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[90f,0f],Tags:["m16"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:apple_cow"}}
+summon necromancy:minion 1027.34 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[90f,0f],Tags:["m16"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:apple_cow",arm_right:"orespawn:apple_cow",legs:"necromancy:zombie"}}
+wait 40
+shot 16_apple_cow_mix_side
+tp @e[tag=m16] 1024 -400 0
+wait 5
+# --- crystal_cow: minion h 1.56 w 0.75 l 1.50
+tp @s 1088 -59 0
+wait 5
+tp @s 1088.50 -60 3.50 180 14.8
+wait 5
+summon necromancy:minion 1086.85 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["t17"],Parts:{head:"orespawn:crystal_cow",torso:"orespawn:crystal_cow",arm_left:"orespawn:crystal_cow",arm_right:"orespawn:crystal_cow",legs:"orespawn:crystal_cow"}}
+summon orespawn:crystal_cow 1089.15 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["t17"]}
+hitboxes on
+wait 40
+shot 17_crystal_cow_front
+hitboxes off
+tp @e[tag=t17] 1088 -400 0
+wait 5
+tp @s 1088.50 -60 3.50 180 14.8
+wait 5
+summon necromancy:minion 1086.85 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["t17"],Parts:{head:"orespawn:crystal_cow",torso:"orespawn:crystal_cow",arm_left:"orespawn:crystal_cow",arm_right:"orespawn:crystal_cow",legs:"orespawn:crystal_cow"}}
+summon orespawn:crystal_cow 1089.15 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["t17"]}
+wait 40
+shot 17_crystal_cow_side
+hitboxes off
+tp @e[tag=t17] 1088 -400 0
+wait 5
+tp @s 1088.50 -60 6.50 180 6.0
+wait 5
+summon necromancy:minion 1084.66 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["m17"],Parts:{head:"orespawn:crystal_cow",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 1086.89 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[0f,0f],Tags:["m17"],Parts:{head:"necromancy:zombie",torso:"orespawn:crystal_cow",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 1089.11 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[0f,0f],Tags:["m17"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:crystal_cow"}}
+summon necromancy:minion 1091.34 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[0f,0f],Tags:["m17"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:crystal_cow",arm_right:"orespawn:crystal_cow",legs:"necromancy:zombie"}}
+wait 40
+shot 17_crystal_cow_mix_front
+tp @e[tag=m17] 1088 -400 0
+wait 5
+tp @s 1088.50 -60 6.50 180 6.0
+wait 5
+summon necromancy:minion 1084.66 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["m17"],Parts:{head:"orespawn:crystal_cow",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 1086.89 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[90f,0f],Tags:["m17"],Parts:{head:"necromancy:zombie",torso:"orespawn:crystal_cow",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 1089.11 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[90f,0f],Tags:["m17"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:crystal_cow"}}
+summon necromancy:minion 1091.34 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[90f,0f],Tags:["m17"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:crystal_cow",arm_right:"orespawn:crystal_cow",legs:"necromancy:zombie"}}
+wait 40
+shot 17_crystal_cow_mix_side
+tp @e[tag=m17] 1088 -400 0
+wait 5
+# --- gold_cow: minion h 1.56 w 0.75 l 1.50
+tp @s 1152 -59 0
+wait 5
+tp @s 1152.50 -60 3.50 180 14.8
+wait 5
+summon necromancy:minion 1150.85 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["t18"],Parts:{head:"orespawn:gold_cow",torso:"orespawn:gold_cow",arm_left:"orespawn:gold_cow",arm_right:"orespawn:gold_cow",legs:"orespawn:gold_cow"}}
+summon orespawn:gold_cow 1153.15 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["t18"]}
+hitboxes on
+wait 40
+shot 18_gold_cow_front
+hitboxes off
+tp @e[tag=t18] 1152 -400 0
+wait 5
+tp @s 1152.50 -60 3.50 180 14.8
+wait 5
+summon necromancy:minion 1150.85 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["t18"],Parts:{head:"orespawn:gold_cow",torso:"orespawn:gold_cow",arm_left:"orespawn:gold_cow",arm_right:"orespawn:gold_cow",legs:"orespawn:gold_cow"}}
+summon orespawn:gold_cow 1153.15 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["t18"]}
+wait 40
+shot 18_gold_cow_side
+hitboxes off
+tp @e[tag=t18] 1152 -400 0
+wait 5
+tp @s 1152.50 -60 6.50 180 6.0
+wait 5
+summon necromancy:minion 1148.66 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["m18"],Parts:{head:"orespawn:gold_cow",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 1150.89 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[0f,0f],Tags:["m18"],Parts:{head:"necromancy:zombie",torso:"orespawn:gold_cow",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 1153.11 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[0f,0f],Tags:["m18"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:gold_cow"}}
+summon necromancy:minion 1155.34 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[0f,0f],Tags:["m18"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:gold_cow",arm_right:"orespawn:gold_cow",legs:"necromancy:zombie"}}
+wait 40
+shot 18_gold_cow_mix_front
+tp @e[tag=m18] 1152 -400 0
+wait 5
+tp @s 1152.50 -60 6.50 180 6.0
+wait 5
+summon necromancy:minion 1148.66 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["m18"],Parts:{head:"orespawn:gold_cow",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 1150.89 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[90f,0f],Tags:["m18"],Parts:{head:"necromancy:zombie",torso:"orespawn:gold_cow",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 1153.11 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[90f,0f],Tags:["m18"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:gold_cow"}}
+summon necromancy:minion 1155.34 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[90f,0f],Tags:["m18"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:gold_cow",arm_right:"orespawn:gold_cow",legs:"necromancy:zombie"}}
+wait 40
+shot 18_gold_cow_mix_side
+tp @e[tag=m18] 1152 -400 0
+wait 5
+# --- golden_apple_cow: minion h 1.56 w 0.75 l 1.50
+tp @s 1216 -59 0
+wait 5
+tp @s 1216.50 -60 3.50 180 14.8
+wait 5
+summon necromancy:minion 1214.85 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["t19"],Parts:{head:"orespawn:golden_apple_cow",torso:"orespawn:golden_apple_cow",arm_left:"orespawn:golden_apple_cow",arm_right:"orespawn:golden_apple_cow",legs:"orespawn:golden_apple_cow"}}
+summon orespawn:golden_apple_cow 1217.15 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["t19"]}
+hitboxes on
+wait 40
+shot 19_golden_apple_cow_front
+hitboxes off
+tp @e[tag=t19] 1216 -400 0
+wait 5
+tp @s 1216.50 -60 3.50 180 14.8
+wait 5
+summon necromancy:minion 1214.85 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["t19"],Parts:{head:"orespawn:golden_apple_cow",torso:"orespawn:golden_apple_cow",arm_left:"orespawn:golden_apple_cow",arm_right:"orespawn:golden_apple_cow",legs:"orespawn:golden_apple_cow"}}
+summon orespawn:golden_apple_cow 1217.15 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["t19"]}
+wait 40
+shot 19_golden_apple_cow_side
+hitboxes off
+tp @e[tag=t19] 1216 -400 0
+wait 5
+tp @s 1216.50 -60 6.50 180 6.0
+wait 5
+summon necromancy:minion 1212.66 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["m19"],Parts:{head:"orespawn:golden_apple_cow",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 1214.89 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[0f,0f],Tags:["m19"],Parts:{head:"necromancy:zombie",torso:"orespawn:golden_apple_cow",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 1217.11 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[0f,0f],Tags:["m19"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:golden_apple_cow"}}
+summon necromancy:minion 1219.34 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[0f,0f],Tags:["m19"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:golden_apple_cow",arm_right:"orespawn:golden_apple_cow",legs:"necromancy:zombie"}}
+wait 40
+shot 19_golden_apple_cow_mix_front
+tp @e[tag=m19] 1216 -400 0
+wait 5
+tp @s 1216.50 -60 6.50 180 6.0
+wait 5
+summon necromancy:minion 1212.66 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["m19"],Parts:{head:"orespawn:golden_apple_cow",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 1214.89 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[90f,0f],Tags:["m19"],Parts:{head:"necromancy:zombie",torso:"orespawn:golden_apple_cow",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 1217.11 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[90f,0f],Tags:["m19"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:golden_apple_cow"}}
+summon necromancy:minion 1219.34 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[90f,0f],Tags:["m19"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:golden_apple_cow",arm_right:"orespawn:golden_apple_cow",legs:"necromancy:zombie"}}
+wait 40
+shot 19_golden_apple_cow_mix_side
+tp @e[tag=m19] 1216 -400 0
+wait 5
+# --- enchanted_apple_cow: minion h 1.56 w 0.75 l 1.50
+tp @s 1280 -59 0
+wait 5
+tp @s 1280.50 -60 3.50 180 14.8
+wait 5
+summon necromancy:minion 1278.85 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["t20"],Parts:{head:"orespawn:enchanted_apple_cow",torso:"orespawn:enchanted_apple_cow",arm_left:"orespawn:enchanted_apple_cow",arm_right:"orespawn:enchanted_apple_cow",legs:"orespawn:enchanted_apple_cow"}}
+summon orespawn:enchanted_apple_cow 1281.15 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["t20"]}
+hitboxes on
+wait 40
+shot 20_enchanted_apple_cow_front
+hitboxes off
+tp @e[tag=t20] 1280 -400 0
+wait 5
+tp @s 1280.50 -60 3.50 180 14.8
+wait 5
+summon necromancy:minion 1278.85 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["t20"],Parts:{head:"orespawn:enchanted_apple_cow",torso:"orespawn:enchanted_apple_cow",arm_left:"orespawn:enchanted_apple_cow",arm_right:"orespawn:enchanted_apple_cow",legs:"orespawn:enchanted_apple_cow"}}
+summon orespawn:enchanted_apple_cow 1281.15 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["t20"]}
+wait 40
+shot 20_enchanted_apple_cow_side
+hitboxes off
+tp @e[tag=t20] 1280 -400 0
+wait 5
+tp @s 1280.50 -60 6.50 180 6.0
+wait 5
+summon necromancy:minion 1276.66 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["m20"],Parts:{head:"orespawn:enchanted_apple_cow",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 1278.89 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[0f,0f],Tags:["m20"],Parts:{head:"necromancy:zombie",torso:"orespawn:enchanted_apple_cow",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 1281.11 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[0f,0f],Tags:["m20"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:enchanted_apple_cow"}}
+summon necromancy:minion 1283.34 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[0f,0f],Tags:["m20"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:enchanted_apple_cow",arm_right:"orespawn:enchanted_apple_cow",legs:"necromancy:zombie"}}
+wait 40
+shot 20_enchanted_apple_cow_mix_front
+tp @e[tag=m20] 1280 -400 0
+wait 5
+tp @s 1280.50 -60 6.50 180 6.0
+wait 5
+summon necromancy:minion 1276.66 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["m20"],Parts:{head:"orespawn:enchanted_apple_cow",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 1278.89 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[90f,0f],Tags:["m20"],Parts:{head:"necromancy:zombie",torso:"orespawn:enchanted_apple_cow",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 1281.11 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[90f,0f],Tags:["m20"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:enchanted_apple_cow"}}
+summon necromancy:minion 1283.34 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[90f,0f],Tags:["m20"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:enchanted_apple_cow",arm_right:"orespawn:enchanted_apple_cow",legs:"necromancy:zombie"}}
+wait 40
+shot 20_enchanted_apple_cow_mix_side
+tp @e[tag=m20] 1280 -400 0
+wait 5
+# --- alien: minion h 2.58 w 2.69 l 4.43
+tp @s 1344 -59 0
+wait 5
+tp @s 1344.50 -60 6.50 180 3.8
+wait 5
+summon necromancy:minion 1341.38 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["t21"],Parts:{head:"orespawn:alien",torso:"orespawn:alien",arm_left:"orespawn:alien",arm_right:"orespawn:alien",legs:"orespawn:alien"}}
+summon orespawn:alien 1346.62 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["t21"]}
+hitboxes on
+wait 40
+shot 21_alien_front
+hitboxes off
+tp @e[tag=t21] 1344 -400 0
+wait 5
+tp @s 1344.50 -60 6.50 180 3.8
+wait 5
+summon necromancy:minion 1341.38 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["t21"],Parts:{head:"orespawn:alien",torso:"orespawn:alien",arm_left:"orespawn:alien",arm_right:"orespawn:alien",legs:"orespawn:alien"}}
+summon orespawn:alien 1346.62 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["t21"]}
+wait 40
+shot 21_alien_side
+hitboxes off
+tp @e[tag=t21] 1344 -400 0
+wait 5
+tp @s 1344.50 -60 11.50 180 1.4
+wait 5
+summon necromancy:minion 1337.42 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["m21"],Parts:{head:"orespawn:alien",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 1341.81 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[0f,0f],Tags:["m21"],Parts:{head:"necromancy:zombie",torso:"orespawn:alien",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 1346.19 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[0f,0f],Tags:["m21"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:alien"}}
+summon necromancy:minion 1350.58 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[0f,0f],Tags:["m21"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:alien",arm_right:"orespawn:alien",legs:"necromancy:zombie"}}
+wait 40
+shot 21_alien_mix_front
+tp @e[tag=m21] 1344 -400 0
+wait 5
+tp @s 1344.50 -60 11.50 180 1.4
+wait 5
+summon necromancy:minion 1337.42 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["m21"],Parts:{head:"orespawn:alien",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 1341.81 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[90f,0f],Tags:["m21"],Parts:{head:"necromancy:zombie",torso:"orespawn:alien",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 1346.19 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[90f,0f],Tags:["m21"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:alien"}}
+summon necromancy:minion 1350.58 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[90f,0f],Tags:["m21"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:alien",arm_right:"orespawn:alien",legs:"necromancy:zombie"}}
+wait 40
+shot 21_alien_mix_side
+tp @e[tag=m21] 1344 -400 0
+wait 5
+# --- ender_knight: minion h 2.78 w 0.98 l 1.24
+time set 18000
+effect give @s minecraft:night_vision infinite 0 true
+tp @s 1408 -59 0
+wait 5
+tp @s 1408.50 -60 4.50 180 5.1
+wait 5
+summon necromancy:minion 1406.98 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["t22"],Parts:{head:"orespawn:ender_knight",torso:"orespawn:ender_knight",arm_left:"orespawn:ender_knight",arm_right:"orespawn:ender_knight",legs:"orespawn:ender_knight"}}
+summon orespawn:ender_knight 1409.02 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["t22"]}
+hitboxes on
+wait 40
+shot 22_ender_knight_front
+hitboxes off
+tp @e[tag=t22] 1408 -400 0
+wait 5
+tp @s 1408.50 -60 4.50 180 5.1
+wait 5
+summon necromancy:minion 1406.98 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["t22"],Parts:{head:"orespawn:ender_knight",torso:"orespawn:ender_knight",arm_left:"orespawn:ender_knight",arm_right:"orespawn:ender_knight",legs:"orespawn:ender_knight"}}
+summon orespawn:ender_knight 1409.02 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["t22"]}
+wait 40
+shot 22_ender_knight_side
+hitboxes off
+tp @e[tag=t22] 1408 -400 0
+wait 5
+tp @s 1408.50 -60 5.50 180 4.8
+wait 5
+summon necromancy:minion 1405.11 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["m22"],Parts:{head:"orespawn:ender_knight",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 1407.04 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[0f,0f],Tags:["m22"],Parts:{head:"necromancy:zombie",torso:"orespawn:ender_knight",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 1408.96 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[0f,0f],Tags:["m22"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:ender_knight"}}
+summon necromancy:minion 1410.89 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[0f,0f],Tags:["m22"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:ender_knight",arm_right:"orespawn:ender_knight",legs:"necromancy:zombie"}}
+wait 40
+shot 22_ender_knight_mix_front
+tp @e[tag=m22] 1408 -400 0
+wait 5
+tp @s 1408.50 -60 5.50 180 4.8
+wait 5
+summon necromancy:minion 1405.11 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["m22"],Parts:{head:"orespawn:ender_knight",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 1407.04 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[90f,0f],Tags:["m22"],Parts:{head:"necromancy:zombie",torso:"orespawn:ender_knight",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 1408.96 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[90f,0f],Tags:["m22"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:ender_knight"}}
+summon necromancy:minion 1410.89 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[90f,0f],Tags:["m22"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:ender_knight",arm_right:"orespawn:ender_knight",legs:"necromancy:zombie"}}
+wait 40
+shot 22_ender_knight_mix_side
+tp @e[tag=m22] 1408 -400 0
+wait 5
+time set 6000
+effect clear @s
+# --- ender_reaper: minion h 2.82 w 3.88 l 2.42
+time set 18000
+effect give @s minecraft:night_vision infinite 0 true
+tp @s 1472 -59 0
+wait 5
+tp @s 1472.50 -60 6.50 180 3.2
+wait 5
+summon necromancy:minion 1469.66 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["t23"],Parts:{head:"orespawn:ender_reaper",torso:"orespawn:ender_reaper",arm_left:"orespawn:ender_reaper",arm_right:"orespawn:ender_reaper",legs:"orespawn:ender_reaper"}}
+summon orespawn:ender_reaper 1474.34 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["t23"]}
+hitboxes on
+wait 40
+shot 23_ender_reaper_front
+hitboxes off
+tp @e[tag=t23] 1472 -400 0
+wait 5
+tp @s 1472.50 -60 6.50 180 3.2
+wait 5
+summon necromancy:minion 1469.66 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["t23"],Parts:{head:"orespawn:ender_reaper",torso:"orespawn:ender_reaper",arm_left:"orespawn:ender_reaper",arm_right:"orespawn:ender_reaper",legs:"orespawn:ender_reaper"}}
+summon orespawn:ender_reaper 1474.34 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["t23"]}
+wait 40
+shot 23_ender_reaper_side
+hitboxes off
+tp @e[tag=t23] 1472 -400 0
+wait 5
+tp @s 1472.50 -60 11.50 180 2.3
+wait 5
+summon necromancy:minion 1465.28 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["m23"],Parts:{head:"orespawn:ender_reaper",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 1469.76 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[0f,0f],Tags:["m23"],Parts:{head:"necromancy:zombie",torso:"orespawn:ender_reaper",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 1474.24 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[0f,0f],Tags:["m23"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:ender_reaper"}}
+summon necromancy:minion 1478.72 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[0f,0f],Tags:["m23"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:ender_reaper",arm_right:"orespawn:ender_reaper",legs:"necromancy:zombie"}}
+wait 40
+shot 23_ender_reaper_mix_front
+tp @e[tag=m23] 1472 -400 0
+wait 5
+tp @s 1472.50 -60 11.50 180 2.3
+wait 5
+summon necromancy:minion 1465.28 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["m23"],Parts:{head:"orespawn:ender_reaper",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 1469.76 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[90f,0f],Tags:["m23"],Parts:{head:"necromancy:zombie",torso:"orespawn:ender_reaper",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 1474.24 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[90f,0f],Tags:["m23"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:ender_reaper"}}
+summon necromancy:minion 1478.72 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[90f,0f],Tags:["m23"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:ender_reaper",arm_right:"orespawn:ender_reaper",legs:"necromancy:zombie"}}
+wait 40
+shot 23_ender_reaper_mix_side
+tp @e[tag=m23] 1472 -400 0
+wait 5
+time set 6000
+effect clear @s
+# --- band_p: minion h 1.93 w 1.77 l 1.15
+tp @s 1536 -59 0
+wait 5
+tp @s 1536.50 -60 6.50 180 6.2
+wait 5
+summon necromancy:minion 1534.71 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["t24"],Parts:{head:"orespawn:band_p",torso:"orespawn:band_p",arm_left:"orespawn:band_p",arm_right:"orespawn:band_p",legs:"orespawn:band_p"}}
+summon orespawn:band_p 1537.29 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["t24"]}
+summon orespawn:band_p 1539.86 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["t24"]}
+summon orespawn:band_p 1542.43 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["t24"]}
+hitboxes on
+wait 40
+shot 24_band_p_front
+hitboxes off
+tp @e[tag=t24] 1536 -400 0
+wait 5
+tp @s 1536.50 -60 6.50 180 6.2
+wait 5
+summon necromancy:minion 1534.71 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["t24"],Parts:{head:"orespawn:band_p",torso:"orespawn:band_p",arm_left:"orespawn:band_p",arm_right:"orespawn:band_p",legs:"orespawn:band_p"}}
+summon orespawn:band_p 1537.29 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["t24"]}
+summon orespawn:band_p 1539.86 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["t24"]}
+summon orespawn:band_p 1542.43 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["t24"]}
+wait 40
+shot 24_band_p_side
+hitboxes off
+tp @e[tag=t24] 1536 -400 0
+wait 5
+tp @s 1536.50 -60 6.50 180 5.6
+wait 5
+summon necromancy:minion 1532.74 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["m24"],Parts:{head:"orespawn:band_p",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 1534.91 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[0f,0f],Tags:["m24"],Parts:{head:"necromancy:zombie",torso:"orespawn:band_p",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 1537.09 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[0f,0f],Tags:["m24"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:band_p"}}
+summon necromancy:minion 1539.26 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[0f,0f],Tags:["m24"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:band_p",arm_right:"orespawn:band_p",legs:"necromancy:zombie"}}
+wait 40
+shot 24_band_p_mix_front
+tp @e[tag=m24] 1536 -400 0
+wait 5
+tp @s 1536.50 -60 6.50 180 5.6
+wait 5
+summon necromancy:minion 1532.74 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["m24"],Parts:{head:"orespawn:band_p",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 1534.91 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[90f,0f],Tags:["m24"],Parts:{head:"necromancy:zombie",torso:"orespawn:band_p",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 1537.09 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[90f,0f],Tags:["m24"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:band_p"}}
+summon necromancy:minion 1539.26 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[90f,0f],Tags:["m24"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:band_p",arm_right:"orespawn:band_p",legs:"necromancy:zombie"}}
+wait 40
+shot 24_band_p_mix_side
+tp @e[tag=m24] 1536 -400 0
+wait 5
+# --- spider_driver: minion h 1.30 w 3.29 l 2.73
+tp @s 1600 -59 0
+wait 5
+tp @s 1600.50 -60 5.50 180 10.4
+wait 5
+summon necromancy:minion 1597.95 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["t25"],Parts:{head:"orespawn:spider_driver",torso:"orespawn:spider_driver",legs:"orespawn:spider_driver"}}
+summon orespawn:spider_driver 1602.05 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["t25"]}
+hitboxes on
+wait 40
+shot 25_spider_driver_front
+hitboxes off
+tp @e[tag=t25] 1600 -400 0
+wait 5
+tp @s 1600.50 -60 5.50 180 10.4
+wait 5
+summon necromancy:minion 1597.95 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["t25"],Parts:{head:"orespawn:spider_driver",torso:"orespawn:spider_driver",legs:"orespawn:spider_driver"}}
+summon orespawn:spider_driver 1602.05 -60 0 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["t25"]}
+wait 40
+shot 25_spider_driver_side
+hitboxes off
+tp @e[tag=t25] 1600 -400 0
+wait 5
+tp @s 1600.50 -60 8.50 180 4.1
+wait 5
+summon necromancy:minion 1596.11 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[0f,0f],Tags:["m25"],Parts:{head:"orespawn:spider_driver",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 1600.00 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[0f,0f],Tags:["m25"],Parts:{head:"necromancy:zombie",torso:"orespawn:spider_driver",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 1603.89 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[0f,0f],Tags:["m25"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:spider_driver"}}
+wait 40
+shot 25_spider_driver_mix_front
+tp @e[tag=m25] 1600 -400 0
+wait 5
+tp @s 1600.50 -60 8.50 180 4.1
+wait 5
+summon necromancy:minion 1596.11 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,Rotation:[90f,0f],Tags:["m25"],Parts:{head:"orespawn:spider_driver",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 1600.00 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[90f,0f],Tags:["m25"],Parts:{head:"necromancy:zombie",torso:"orespawn:spider_driver",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 1603.89 -60 0.00 {NoAI:1b,PersistenceRequired:1b,Silent:1b,ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",count:1}],Rotation:[90f,0f],Tags:["m25"],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:spider_driver"}}
+wait 40
+shot 25_spider_driver_mix_side
+tp @e[tag=m25] 1600 -400 0
+wait 5
+report done

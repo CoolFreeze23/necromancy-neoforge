@@ -1,0 +1,169 @@
+{
+  "mob": "orespawn:ender_reaper",
+  "requires": "orespawn",
+  "geo": "orespawn:geo/entity/enderreaper.geo.json",
+  "texture": "orespawn:textures/entity/enderreaper.png",
+  "scale": 0.8,
+  "head": {
+    "groups": [
+      {
+        "bones": [
+          "head"
+        ],
+        "pivot": [
+          0,
+          -16,
+          3.5
+        ]
+      }
+    ],
+    "plug": [
+      0,
+      -16,
+      3.5
+    ]
+  },
+  "torso": {
+    "groups": [
+      {
+        "bones": [
+          "Shape3",
+          "Shape6",
+          "Shape7",
+          "Shape8",
+          "Shape9",
+          "Shape10",
+          "Shape11",
+          "Shape12",
+          "Shape13",
+          "Shape14",
+          "Shape15",
+          "Shape16",
+          "Shape17",
+          "Shape18",
+          "Shape19",
+          "Shape20",
+          "Shape21",
+          "Shape22",
+          "Shape23",
+          "Shape24",
+          "Shape25",
+          "Shape26",
+          "Shape27",
+          "Shape28",
+          "Shape29",
+          "Shape30",
+          "Shape31",
+          "Shape32",
+          "Shape33",
+          "Shape34",
+          "Shape35",
+          "Shape36",
+          "Shape37",
+          "Shape38",
+          "Shape39",
+          "Shape40",
+          "Shape41",
+          "Shape42",
+          "Shape43",
+          "Shape44",
+          "Shape45",
+          "Shape46",
+          "Shape47",
+          "Shape48",
+          "lwing1",
+          "lwing2",
+          "lwing3",
+          "rwing1",
+          "rwing2",
+          "rwing3"
+        ]
+      }
+    ],
+    "plug": [
+      0,
+      -2,
+      8
+    ],
+    "neck": [
+      0,
+      -16,
+      3.5
+    ],
+    "shoulder_left": [
+      7,
+      -14,
+      4
+    ],
+    "shoulder_right": [
+      -7,
+      -14,
+      4
+    ]
+  },
+  "arm": {
+    "left": {
+      "bones": [
+        "Shape54",
+        "larm2",
+        "larm3",
+        "lelbow",
+        "larm1"
+      ],
+      "pivot": [
+        7,
+        -14,
+        4
+      ]
+    },
+    "right": {
+      "bones": [
+        "Shape49",
+        "rarm2",
+        "rarm3",
+        "relbow",
+        "rarm1",
+        "scythe1",
+        "scythe2",
+        "scythe3"
+      ],
+      "pivot": [
+        -7,
+        -14,
+        4
+      ]
+    },
+    "plug_left": [
+      7,
+      -14,
+      4
+    ],
+    "plug_right": [
+      -7,
+      -14,
+      4
+    ],
+    "animator": "none"
+  },
+  "legs": {
+    "groups": [
+      {
+        "bones": [
+          "Shape4",
+          "Shape5"
+        ],
+        "pivot": [
+          0,
+          -2,
+          8
+        ]
+      }
+    ],
+    "hip": [
+      0,
+      -2,
+      8
+    ],
+    "animator": "none"
+  }
+}

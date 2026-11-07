@@ -1,0 +1,27 @@
+{
+  "mob": "orespawn:beaver",
+  "requires": "orespawn",
+  "geo": "orespawn:geo/entity/beaver.geo.json",
+  "texture": "orespawn:textures/entity/beaver.png",
+  "scale": 1.75,
+  "head": {
+    "groups": [ { "bones": ["head", "nose", "teeth"], "pivot": [3, 17.5, -3] } ],
+    "plug": [3, 20, -5.5]
+  },
+  "torso": {
+    "groups": [ { "bones": ["body", "tail"] } ],
+    "plug": [3, 22, 2],
+    "neck": [3, 20, -5.5],
+    "shoulder_left": [8, 16, -1],
+    "shoulder_right": [-2, 16, -1]
+  },
+  "legs": {
+    "groups": [
+      { "bones": ["lff"], "pivot": [5.5, 22, -1.5] },
+      { "bones": ["rff"], "pivot": [0.5, 22, -1.5] },
+      { "bones": ["rrf"], "pivot": [0.5, 22, 5.5] },
+      { "bones": ["lrf"], "pivot": [5.5, 22, 5.5] }
+    ],
+    "hip": [3, 22, 2]
+  }
+}
