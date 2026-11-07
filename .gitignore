@@ -8,4 +8,4 @@ out/
 bin/
 *.log
 .idea/
-.claude/
+dist/
