@@ -140,7 +140,7 @@ public class OreSpawnGameTests {
                 }
             }
         }
-        h.assertTrue(parts == 315, "expected 315 parts, got " + parts);
+        h.assertTrue(parts == 314, "expected 314 parts, got " + parts);
         h.assertTrue(problems.isEmpty(), problems.size() + " problems, e.g. " + problems.subList(0, Math.min(4, problems.size())));
         h.succeed();
     }

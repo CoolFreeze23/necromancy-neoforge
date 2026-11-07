@@ -3,7 +3,7 @@
   "requires": "orespawn",
   "geo": "orespawn:geo/entity/basilisk.geo.json",
   "texture": "orespawn:textures/entity/basilisk.png",
-  "scale": 0.45,
+  "scale": 0.82,
   "head": {
     "groups": [
       { "bones": ["head", "jaw", "snout", "rog1", "rog2", "rog3", "rog4", "rog5", "rog6"], "pivot": [0, -10, -34] }

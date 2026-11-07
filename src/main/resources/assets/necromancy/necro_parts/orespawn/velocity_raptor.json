@@ -3,7 +3,7 @@
   "requires": "orespawn",
   "geo": "orespawn:geo/entity/velocityraptor.geo.json",
   "texture": "orespawn:textures/entity/velocityraptor.png",
-  "scale": 1.15,
+  "scale": 0.76,
   "head": {
     "groups": [
       { "bones": ["head1", "head2", "Hat1", "Hat2", "hf1", "hf2", "hf3", "hf4"], "pivot": [0, 11, -3] }

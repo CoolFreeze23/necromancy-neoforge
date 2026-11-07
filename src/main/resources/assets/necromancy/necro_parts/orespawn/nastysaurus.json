@@ -7,37 +7,125 @@
   "head": {
     "groups": [
       {
-        "bones": ["head3", "head7", "jaw1", "jaw5", "tooth1", "tooth2", "tooth3", "tooth4", "tooth5", "tooth6", "tooth7", "tooth8",
-                  "tooth9", "tooth10", "tooth11", "tooth12", "tooth13", "tooth14", "tooth15", "tooth16", "tooth17",
-                  "tooth18", "tooth19", "tooth20", "tooth21", "tooth22", "tooth23"],
-        "pivot": [0, -24, -9]
+        "bones": [
+          "head3",
+          "head7",
+          "jaw1",
+          "jaw5",
+          "tooth1",
+          "tooth2",
+          "tooth3",
+          "tooth4",
+          "tooth5",
+          "tooth6",
+          "tooth7",
+          "tooth8",
+          "tooth9",
+          "tooth10",
+          "tooth11",
+          "tooth12",
+          "tooth13",
+          "tooth14",
+          "tooth15",
+          "tooth16",
+          "tooth17",
+          "tooth18",
+          "tooth19",
+          "tooth20",
+          "tooth21",
+          "tooth22",
+          "tooth23"
+        ],
+        "pivot": [
+          0,
+          -24,
+          -9
+        ]
       }
     ],
-    "plug": [0, -24, -9],
+    "plug": [
+      0,
+      -24,
+      -9
+    ],
     "animator": "look"
   },
   "torso": {
     "groups": [
-      { "bones": ["body", "body2", "neck1", "neck2", "neck3", "Spike1", "Spike2", "Spike3", "tail1", "tail2", "tail3", "tail4"] }
+      {
+        "bones": [
+          "body",
+          "body2",
+          "neck1",
+          "neck2",
+          "neck3",
+          "Spike1",
+          "Spike2",
+          "Spike3",
+          "tail1",
+          "tail2",
+          "tail3",
+          "tail4"
+        ]
+      }
     ],
-    "plug": [0, 4, 14],
-    "neck": [0, -24, -9],
-    "shoulder_left": [7, -8, 1],
-    "shoulder_right": [-7, -8, 1]
-  },
-  "arm": {
-    "left": { "bones": ["lclaw1", "lclaw3", "lclaw4", "lclaw5", "lclaw6"] },
-    "right": { "bones": ["rclaw1", "rclaw3", "rclaw4", "rclaw5", "rclaw6"] },
-    "plug_left": [7, 21, 12],
-    "plug_right": [-8, 21, 12],
-    "animator": "arm"
+    "plug": [
+      0,
+      4,
+      14
+    ],
+    "neck": [
+      0,
+      -24,
+      -9
+    ],
+    "shoulder_left": [
+      7,
+      -8,
+      1
+    ],
+    "shoulder_right": [
+      -7,
+      -8,
+      1
+    ]
   },
   "legs": {
     "groups": [
-      { "bones": ["leftleg1", "leftleg2", "leftleg3", "lclaw2", "lclaw7"], "pivot": [9, 2, 26] },
-      { "bones": ["rightleg1", "rightleg2", "rightleg3", "rclaw2", "rclaw7"], "pivot": [-9, 2, 26] }
+      {
+        "bones": [
+          "leftleg1",
+          "leftleg2",
+          "leftleg3",
+          "lclaw2",
+          "lclaw7"
+        ],
+        "pivot": [
+          9,
+          2,
+          26
+        ]
+      },
+      {
+        "bones": [
+          "rightleg1",
+          "rightleg2",
+          "rightleg3",
+          "rclaw2",
+          "rclaw7"
+        ],
+        "pivot": [
+          -9,
+          2,
+          26
+        ]
+      }
     ],
-    "hip": [0, 4, 14],
+    "hip": [
+      0,
+      4,
+      14
+    ],
     "animator": "walk_pair"
   }
 }

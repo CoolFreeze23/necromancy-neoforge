@@ -3,7 +3,7 @@
   "requires": "orespawn",
   "geo": "orespawn:geo/entity/leon.geo.json",
   "texture": "orespawn:textures/entity/leon.png",
-  "scale": 0.334,
+  "scale": 0.91,
   "head": {
     "groups": [
       {

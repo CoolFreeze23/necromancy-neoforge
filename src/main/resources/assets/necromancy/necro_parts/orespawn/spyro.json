@@ -3,7 +3,7 @@
   "requires": "orespawn",
   "geo": "orespawn:geo/entity/spyro.geo.json",
   "texture": "orespawn:textures/entity/spyro.png",
-  "scale": 1.31,
+  "scale": 0.78,
   "head": {
     "groups": [
       {

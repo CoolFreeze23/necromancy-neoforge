@@ -1197,25 +1197,6 @@
       ]
      }
     },
-    "arm": {
-     "stats": [
-      0.75,
-      0,
-      0,
-      0,
-      1.25
-     ],
-     "attributes": [],
-     "traits": [],
-     "bones": {
-      "arm_left": [
-       "lclaw"
-      ],
-      "arm_right": [
-       "rclaw"
-      ]
-     }
-    },
     "legs": {
      "stats": [
       2,
@@ -1432,8 +1413,8 @@
    "saddleable": false,
    "rider_offset": 0.0,
    "shape": [
-    0.5,
-    0.45,
+    0.3,
+    0.2,
     0.5
    ],
    "sounds": {
@@ -1673,8 +1654,8 @@
    "saddleable": false,
    "rider_offset": 0.0,
    "shape": [
-    0.55,
-    0.45,
+    0.25,
+    0.25,
     0.45
    ],
    "sounds": {
@@ -1777,9 +1758,9 @@
    "saddleable": false,
    "rider_offset": 0.0,
    "shape": [
-    0.0,
-    0.9,
-    1.0
+    0,
+    2.0,
+    1.6
    ],
    "sounds": {
     "ambient": "orespawn:basilisk_living",
@@ -4374,8 +4355,8 @@
    "saddleable": true,
    "rider_offset": 0.3,
    "shape": [
-    0.9,
-    0.9,
+    0.5,
+    0.6,
     1.2
    ],
    "sounds": {
@@ -4518,8 +4499,8 @@
    "saddleable": false,
    "rider_offset": 0.0,
    "shape": [
-    0.4,
-    0.5,
+    0.1,
+    0.15,
     0.6
    ],
    "sounds": {
@@ -4668,8 +4649,8 @@
    "saddleable": false,
    "rider_offset": 0.0,
    "shape": [
-    0.4,
-    0.5,
+    0.15,
+    0.2,
     0.6
    ],
    "sounds": {
@@ -4974,9 +4955,9 @@
    "saddleable": true,
    "rider_offset": 0.4,
    "shape": [
-    0.0,
-    1.0,
-    1.4
+    1.5,
+    2.0,
+    2.0
    ],
    "sounds": {
     "ambient": "orespawn:leon_living",
@@ -5270,8 +5251,8 @@
    "saddleable": false,
    "rider_offset": 0.0,
    "shape": [
-    0.3,
-    0.4,
+    0.15,
+    0.2,
     0.5
    ],
    "sounds": {
@@ -10444,7 +10425,7 @@
    "shape": [
     0.5,
     0.6,
-    0.6
+    1.5
    ],
    "sounds": {
     "ambient": null,

@@ -3,7 +3,7 @@
   "requires": "orespawn",
   "geo": "orespawn:geo/entity/dragon.geo.json",
   "texture": "orespawn:textures/entity/dragon.png",
-  "scale": 0.88,
+  "scale": 0.46,
   "head": {
     "groups": [
       { "bones": ["head", "horn1", "horn2", "mouth1", "mouth2"], "pivot": [0, 6, -23] }

@@ -265,17 +265,6 @@
       }
      ]
     },
-    "arm": {
-     "stats": [
-      0.75,
-      0,
-      0,
-      0,
-      1.25
-     ],
-     "attributes": [],
-     "traits": []
-    },
     "legs": {
      "stats": [
       2,
@@ -372,8 +361,8 @@
    "entity": "orespawn:cryolophosaurus",
    "weight": 1,
    "shape": [
-    0.5,
-    0.45,
+    0.3,
+    0.2,
     0.5
    ],
    "saddleable": false,
@@ -516,8 +505,8 @@
    "entity": "orespawn:velocity_raptor",
    "weight": 2,
    "shape": [
-    0.55,
-    0.45,
+    0.25,
+    0.25,
     0.45
    ],
    "saddleable": false,
@@ -607,9 +596,9 @@
    "entity": "orespawn:basilisk",
    "weight": 4,
    "shape": [
-    0.0,
-    0.9,
-    1.0
+    0,
+    2.0,
+    1.6
    ],
    "saddleable": false,
    "rider_offset": 0.0,
@@ -2425,8 +2414,8 @@
    "entity": "orespawn:dragon",
    "weight": 4,
    "shape": [
-    0.9,
-    0.9,
+    0.5,
+    0.6,
     1.2
    ],
    "saddleable": true,
@@ -2550,8 +2539,8 @@
    "entity": "orespawn:baby_dragon",
    "weight": 2,
    "shape": [
-    0.4,
-    0.5,
+    0.1,
+    0.15,
     0.6
    ],
    "saddleable": false,
@@ -2657,8 +2646,8 @@
    "entity": "orespawn:spyro",
    "weight": 3,
    "shape": [
-    0.4,
-    0.5,
+    0.15,
+    0.2,
     0.6
    ],
    "saddleable": false,
@@ -2868,9 +2857,9 @@
    "entity": "orespawn:leon",
    "weight": 4,
    "shape": [
-    0.0,
-    1.0,
-    1.4
+    1.5,
+    2.0,
+    2.0
    ],
    "saddleable": true,
    "rider_offset": 0.4,
@@ -3090,8 +3079,8 @@
    "entity": "orespawn:terrible_terror",
    "weight": 2,
    "shape": [
-    0.3,
-    0.4,
+    0.15,
+    0.2,
     0.5
    ],
    "saddleable": false,
@@ -6879,7 +6868,7 @@
    "shape": [
     0.5,
     0.6,
-    0.6
+    1.5
    ],
    "saddleable": false,
    "rider_offset": 0.0,

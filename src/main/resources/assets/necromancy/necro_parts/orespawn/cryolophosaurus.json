@@ -3,7 +3,7 @@
   "requires": "orespawn",
   "geo": "orespawn:geo/entity/cryolophosaurus.geo.json",
   "texture": "orespawn:textures/entity/cryolophosaurus.png",
-  "scale": 0.8,
+  "scale": 0.54,
   "head": {
     "groups": [
       { "bones": ["shape3", "shape11", "jaw", "shape9"], "pivot": [4, 2, -7] }

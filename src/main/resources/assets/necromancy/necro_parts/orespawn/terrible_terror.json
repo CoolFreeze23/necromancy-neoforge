@@ -3,7 +3,7 @@
   "requires": "orespawn",
   "geo": "orespawn:geo/entity/terribleterror.geo.json",
   "texture": "orespawn:textures/entity/terribleterror.png",
-  "scale": 1.09,
+  "scale": 0.76,
   "head": {
     "groups": [
       { "bones": ["head", "horn1", "horn2", "jaw", "snout"], "pivot": [0, 17, -6] }
