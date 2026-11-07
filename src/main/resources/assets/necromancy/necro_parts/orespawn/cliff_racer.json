@@ -1,0 +1,30 @@
+{
+  "mob": "orespawn:cliff_racer",
+  "requires": "orespawn",
+  "geo": "orespawn:geo/entity/cliffracer.geo.json",
+  "texture": "orespawn:textures/entity/cliffracer.png",
+  "scale": 1.0,
+  "head": {
+    "groups": [
+      {"bones": ["head", "beak"], "pivot": [0.5, 15, -4]}
+    ],
+    "plug": [0.5, 16, -5],
+    "animator": "look"
+  },
+  "torso": {
+    "groups": [
+      {"bones": ["body", "fins", "tail", "tailend"]}
+    ],
+    "plug": [0.5, 16, 0.5],
+    "neck": [0.5, 16, -5],
+    "shoulder_left": [3, 16, 1],
+    "shoulder_right": [-2, 16, 1]
+  },
+  "arm": {
+    "left": {"bones": ["lwing"], "pivot": [2, 15.5, 1]},
+    "right": {"bones": ["rwing"], "pivot": [-1, 15.5, 1]},
+    "plug_left": [3, 16, 1],
+    "plug_right": [-2, 16, 1],
+    "animator": "none"
+  }
+}

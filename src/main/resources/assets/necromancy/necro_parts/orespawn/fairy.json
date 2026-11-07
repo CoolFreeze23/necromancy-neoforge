@@ -1,0 +1,38 @@
+{
+  "mob": "orespawn:fairy",
+  "requires": "orespawn",
+  "geo": "orespawn:geo/entity/fairy.geo.json",
+  "texture": "orespawn:textures/entity/fairytexture.png",
+  "scale": 0.6,
+  "head": {
+    "groups": [
+      {"bones": ["head"], "pivot": [0, 0, 0]}
+    ],
+    "plug": [0, 0, 0],
+    "animator": "look"
+  },
+  "torso": {
+    "groups": [
+      {"bones": ["chest", "waist", "hips", "b1", "b2", "lwing1", "lwing2", "rwing1", "rwing2"]}
+    ],
+    "plug": [0, 11, 1],
+    "neck": [0, 0, 0],
+    "shoulder_left": [4, 2, 0.4],
+    "shoulder_right": [-4, 2, 0.4]
+  },
+  "arm": {
+    "left": {"bones": ["larm"], "pivot": [3, 0, 0.4]},
+    "right": {"bones": ["rarm"], "pivot": [-3, 0, 0.4]},
+    "plug_left": [4, 2, 0.4],
+    "plug_right": [-4, 2, 0.4],
+    "animator": "arm"
+  },
+  "legs": {
+    "groups": [
+      {"bones": ["rleg"], "pivot": [-2, 11, 1]},
+      {"bones": ["lleg1", "lleg2"], "pivot": [2, 10.5, 1]}
+    ],
+    "hip": [0, 11, 1],
+    "animator": "walk_pair"
+  }
+}
