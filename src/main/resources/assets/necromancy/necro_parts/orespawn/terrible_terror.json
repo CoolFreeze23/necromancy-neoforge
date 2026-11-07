@@ -1,0 +1,40 @@
+{
+  "mob": "orespawn:terrible_terror",
+  "requires": "orespawn",
+  "geo": "orespawn:geo/entity/terribleterror.geo.json",
+  "texture": "orespawn:textures/entity/terribleterror.png",
+  "scale": 1.09,
+  "head": {
+    "groups": [
+      { "bones": ["head", "horn1", "horn2", "jaw", "snout"], "pivot": [0, 17, -6] }
+    ],
+    "plug": [0, 17, -6],
+    "animator": "look"
+  },
+  "torso": {
+    "groups": [
+      { "bones": ["body", "neck", "tail1", "tail2", "tail3", "tail4"] }
+    ],
+    "plug": [0, 20, 0],
+    "neck": [0, 17, -6],
+    "shoulder_left": [2, 19, -1],
+    "shoulder_right": [-2, 19, -1]
+  },
+  "arm": {
+    "left": { "bones": ["wing1"] },
+    "right": { "bones": ["wing2"] },
+    "plug_left": [2, 19, -1],
+    "plug_right": [-2, 19, -1],
+    "animator": "none"
+  },
+  "legs": {
+    "groups": [
+      { "bones": ["bl11", "bl12"], "pivot": [-2, 18, 4] },
+      { "bones": ["bl21", "bl22"], "pivot": [1, 18, 4] },
+      { "bones": ["fl21", "fl22"], "pivot": [1, 19, -4] },
+      { "bones": ["fl11", "fl12"], "pivot": [-2, 19, -4] }
+    ],
+    "hip": [0, 20, 0],
+    "animator": "walk_pair"
+  }
+}

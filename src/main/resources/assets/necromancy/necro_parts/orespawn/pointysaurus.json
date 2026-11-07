@@ -1,0 +1,37 @@
+{
+  "mob": "orespawn:pointysaurus",
+  "requires": "orespawn",
+  "geo": "orespawn:geo/entity/pointysaurus.geo.json",
+  "texture": "orespawn:textures/entity/pointysaurus.png",
+  "scale": 0.82,
+  "head": {
+    "groups": [
+      {
+        "bones": ["head", "nose", "chorn", "lhorn", "rhorn", "guard", "bump1", "bump2", "bump3", "bump4", "bump5", "bump6", "bump7",
+                  "bump8", "bump9", "bump10", "bump11", "bump12", "bump13", "bump14", "bump15", "bump16"],
+        "pivot": [0, 11, -12]
+      }
+    ],
+    "plug": [0, 11, -12],
+    "animator": "look"
+  },
+  "torso": {
+    "groups": [
+      { "bones": ["body1", "body2", "body3", "tail"] }
+    ],
+    "plug": [0, 18, 2.5],
+    "neck": [0, 11, -12],
+    "shoulder_left": [12, 11, -6],
+    "shoulder_right": [-12, 11, -6]
+  },
+  "legs": {
+    "groups": [
+      { "bones": ["rrleg"], "pivot": [-9, 16, 12] },
+      { "bones": ["lrleg"], "pivot": [9, 16, 12] },
+      { "bones": ["lfleg"], "pivot": [9, 16, -8] },
+      { "bones": ["rfleg"], "pivot": [-9, 16, -8] }
+    ],
+    "hip": [0, 18, 2.5],
+    "animator": "walk_pair"
+  }
+}

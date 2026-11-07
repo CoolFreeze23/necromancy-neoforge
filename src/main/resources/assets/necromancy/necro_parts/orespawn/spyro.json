@@ -1,0 +1,47 @@
+{
+  "mob": "orespawn:spyro",
+  "requires": "orespawn",
+  "geo": "orespawn:geo/entity/spyro.geo.json",
+  "texture": "orespawn:textures/entity/spyro.png",
+  "scale": 1.31,
+  "head": {
+    "groups": [
+      {
+        "bones": ["HeadPieceTop", "HeadPieceBottom", "JawPiece", "SnoutLeft", "SnoutRight", "HornLeftBottom", "HornLeftTop",
+                  "HornRightBottom", "HornRightTop", "ScaleHead", "ScaleTop1", "ScaleBackHead"],
+        "pivot": [0.5, 16, -3]
+      }
+    ],
+    "plug": [0.5, 16, -3],
+    "animator": "look"
+  },
+  "torso": {
+    "groups": [
+      {
+        "bones": ["Torso", "Neck", "ScaleBackPiece1", "ScaleBackPiece2", "ScaleTailPiece", "TailBack", "TailFront", "TailPieceLarge",
+                  "TailPieceSmall"]
+      }
+    ],
+    "plug": [0.5, 21, 0],
+    "neck": [0.5, 16, -3],
+    "shoulder_left": [4, 17, 0],
+    "shoulder_right": [-3, 17, 0]
+  },
+  "arm": {
+    "left": { "bones": ["WingRight", "WingPieceRight"] },
+    "right": { "bones": ["WingLeft", "WingPieceLeft"] },
+    "plug_left": [4, 17, 0],
+    "plug_right": [-3, 17, 0],
+    "animator": "none"
+  },
+  "legs": {
+    "groups": [
+      { "bones": ["LegLeftBackTop", "LegLeftBackBottom", "LeftBackPaw"], "pivot": [-3, 18, 3] },
+      { "bones": ["LegRightBackTop", "LegRightBackBottom", "RightBackPaw"], "pivot": [4, 18, 3] },
+      { "bones": ["LegRightFrontTop", "LegRightFrontBottom", "RightFrontPaw"], "pivot": [4, 18, -2] },
+      { "bones": ["LegLeftFrontTop", "LegLeftFrontBottom", "LeftFrontPaw"], "pivot": [-3, 18, -3] }
+    ],
+    "hip": [0.5, 21, 0],
+    "animator": "walk_pair"
+  }
+}

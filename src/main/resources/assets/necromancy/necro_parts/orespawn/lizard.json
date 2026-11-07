@@ -1,0 +1,43 @@
+{
+  "mob": "orespawn:lizard",
+  "requires": "orespawn",
+  "geo": "orespawn:geo/entity/lizard.geo.json",
+  "texture": "orespawn:textures/entity/lizard.png",
+  "scale": 0.71,
+  "head": {
+    "groups": [
+      {
+        "bones": ["Neck", "JawTop", "BottomJaw", "TopNose", "BottomNose", "CenterLeftNose", "CenterMiddleNose", "CenterRightNose",
+                  "Hat1", "Hat2", "LeftEye", "RightEye", "Tooth1", "Tooth2", "Tooth3", "Tooth4", "Tooth5", "Tooth6",
+                  "Tooth7", "Tooth8", "Tooth9", "Tooth10", "Tooth11", "Tooth12", "Tooth13", "Tooth14", "Tooth15",
+                  "Tooth16"],
+        "pivot": [0, 12, -16]
+      }
+    ],
+    "plug": [0, 15, -16],
+    "animator": "look"
+  },
+  "torso": {
+    "groups": [
+      {
+        "bones": ["BodyFront", "BodyCenter", "BodyBack", "TailBase1", "Tail2", "Tail3", "Tail4", "TailTip", "Fin2", "Fin3", "Fin5",
+                  "Fin6", "Fin7", "Fin8", "Fin9", "Fin10", "FinRidge1", "FinRidge2", "FinRidge3", "FinRidge4",
+                  "FinRidge5", "FinRidge6", "FinRidge7"]
+      }
+    ],
+    "plug": [0, 18, -6],
+    "neck": [0, 15, -16],
+    "shoulder_left": [5, 12, -12],
+    "shoulder_right": [-5, 12, -12]
+  },
+  "legs": {
+    "groups": [
+      { "bones": ["TopBackRightLeg", "BottomBackRightLeg", "BackRightFoot", "Toe4", "Toe5"], "pivot": [-3, 13, 2] },
+      { "bones": ["TopBackLeftLeg", "BottomBackLeftLeg", "BackLeftFoot", "Toe6", "Toe7"], "pivot": [3, 13, 2] },
+      { "bones": ["TopFrontLeftLeg", "BottomFrontLeftLeg", "FrontLeftFoot", "Toe1", "Toe8"], "pivot": [3, 13, -12] },
+      { "bones": ["TopFrontRightLeg", "BottomFrontRightLeg", "FrontRightFoot", "Toe2", "Toe3"], "pivot": [-3, 13, -12] }
+    ],
+    "hip": [0, 18, -6],
+    "animator": "walk_pair"
+  }
+}

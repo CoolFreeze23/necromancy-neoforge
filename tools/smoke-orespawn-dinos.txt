@@ -1,0 +1,669 @@
+# OreSpawn dinosaurs, dragons, plants and worms as Minion parts (tools/smoke-orespawn.sh tools/smoke-orespawn-dinos.txt)
+# per creature: the Minion beside the creature (front, hitboxes), the two in a line (side), then zombie mixes (front, three-quarter)
+wait 20
+difficulty easy
+gamerule doMobSpawning false
+gamerule doDaylightCycle false
+time set 6000
+weather clear
+gamerule doWeatherCycle false
+gamerule sendCommandFeedback false
+hud off
+kill @e[type=!player]
+wait 10
+# --- trex
+tp @s 1.06 -58.17 8.45 180 10.2
+wait 40
+summon necromancy:minion 0 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:trex",torso:"orespawn:trex",legs:"orespawn:trex"}}
+summon orespawn:trex 2.12 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+hitboxes on
+wait 40
+shot trex_front
+hitboxes off
+tp @s -11.33 -57.65 -17.07 -90 10.2
+wait 15
+summon necromancy:minion 0 -60 -13.88 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:trex",torso:"orespawn:trex",legs:"orespawn:trex"}}
+summon orespawn:trex 0 -60 -22.75 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+wait 30
+shot trex_side
+fill -3 -49 -43 7 -49 -34 stone
+tp @s 1.8 -59.36 -34.02 180 10.2
+wait 15
+summon necromancy:minion 0 -60 -38.62 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:trex",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 1.8 -60 -38.62 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:trex",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 3.6 -60 -38.62 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:trex"}}
+wait 30
+shot trex_mix_front
+tp @s -1.45 -59.36 -35.37 -135 10.2
+wait 20
+shot trex_mix_side
+report trex done
+# --- nastysaurus
+tp @s 45.57 -56.96 10.39 180 10.2
+wait 40
+summon necromancy:minion 43.62 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:nastysaurus",torso:"orespawn:nastysaurus",arm_left:"orespawn:nastysaurus",arm_right:"orespawn:nastysaurus",legs:"orespawn:nastysaurus"}}
+summon orespawn:nastysaurus 47.51 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+hitboxes on
+wait 40
+shot nastysaurus_front
+hitboxes off
+tp @s 29.39 -56.27 -18.63 -90 10.2
+wait 15
+summon necromancy:minion 43.62 -60 -15.45 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:nastysaurus",torso:"orespawn:nastysaurus",arm_left:"orespawn:nastysaurus",arm_right:"orespawn:nastysaurus",legs:"orespawn:nastysaurus"}}
+summon orespawn:nastysaurus 43.62 -60 -25.9 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+wait 30
+shot nastysaurus_side
+fill 40 -49 -48 53 -49 -39 stone
+tp @s 46.51 -59.07 -37.36 180 10.2
+wait 15
+summon necromancy:minion 43.62 -60 -43.35 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:nastysaurus",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 45.55 -60 -43.35 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:nastysaurus",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 47.47 -60 -43.35 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:nastysaurus"}}
+summon necromancy:minion 49.39 -60 -43.35 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:nastysaurus",arm_right:"orespawn:nastysaurus",legs:"necromancy:zombie"}}
+wait 30
+shot nastysaurus_mix_front
+tp @s 42.27 -59.07 -39.12 -135 10.2
+wait 20
+shot nastysaurus_mix_side
+report nastysaurus done
+# --- alosaurus
+tp @s 92.95 -58.75 7.04 180 10.2
+wait 40
+summon necromancy:minion 91.98 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:alosaurus",torso:"orespawn:alosaurus",legs:"orespawn:alosaurus"}}
+summon orespawn:alosaurus 93.92 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+hitboxes on
+wait 40
+shot alosaurus_front
+hitboxes off
+tp @s 83.23 -58.44 -14.69 -90 10.2
+wait 15
+summon necromancy:minion 91.98 -60 -11.94 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:alosaurus",torso:"orespawn:alosaurus",legs:"orespawn:alosaurus"}}
+summon orespawn:alosaurus 91.98 -60 -18.88 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+wait 30
+shot alosaurus_side
+fill 88 -49 -37 99 -49 -28 stone
+tp @s 93.78 -59.42 -28.21 180 10.2
+wait 15
+summon necromancy:minion 91.98 -60 -32.81 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:alosaurus",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 93.78 -60 -32.81 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:alosaurus",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 95.58 -60 -32.81 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:alosaurus"}}
+wait 30
+shot alosaurus_mix_front
+tp @s 90.53 -59.42 -29.56 -135 10.2
+wait 20
+shot alosaurus_mix_side
+report alosaurus done
+# --- cryolophosaurus
+tp @s 132.88 -60.14 4.35 180 10.2
+wait 40
+summon necromancy:minion 131.98 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:cryolophosaurus",torso:"orespawn:cryolophosaurus",legs:"orespawn:cryolophosaurus"}}
+summon orespawn:cryolophosaurus 133.78 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+hitboxes on
+wait 40
+shot cryolophosaurus_front
+hitboxes off
+tp @s 127.42 -60.1 -10.25 -90 10.2
+wait 15
+summon necromancy:minion 131.98 -60 -8.85 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:cryolophosaurus",torso:"orespawn:cryolophosaurus",legs:"orespawn:cryolophosaurus"}}
+summon orespawn:cryolophosaurus 131.98 -60 -12.7 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+wait 30
+shot cryolophosaurus_side
+fill 128 -49 -28 139 -49 -19 stone
+tp @s 133.78 -59.64 -18.95 180 10.2
+wait 15
+summon necromancy:minion 131.98 -60 -23.55 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:cryolophosaurus",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 133.78 -60 -23.55 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:cryolophosaurus",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 135.58 -60 -23.55 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:cryolophosaurus"}}
+wait 30
+shot cryolophosaurus_mix_front
+tp @s 130.53 -59.64 -20.3 -135 10.2
+wait 20
+shot cryolophosaurus_mix_side
+report cryolophosaurus done
+# --- baryonyx
+tp @s 172.98 -58.95 7.38 180 10.2
+wait 40
+summon necromancy:minion 171.98 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:baryonyx",torso:"orespawn:baryonyx",arm_left:"orespawn:baryonyx",arm_right:"orespawn:baryonyx",legs:"orespawn:baryonyx"}}
+summon orespawn:baryonyx 173.98 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+hitboxes on
+wait 40
+shot baryonyx_front
+hitboxes off
+tp @s 163.44 -58.74 -15.12 -90 10.2
+wait 15
+summon necromancy:minion 171.98 -60 -11.75 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:baryonyx",torso:"orespawn:baryonyx",arm_left:"orespawn:baryonyx",arm_right:"orespawn:baryonyx",legs:"orespawn:baryonyx"}}
+summon orespawn:baryonyx 171.98 -60 -18.5 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+wait 30
+shot baryonyx_side
+fill 168 -49 -37 181 -49 -28 stone
+tp @s 174.68 -59.22 -26.49 180 10.2
+wait 15
+summon necromancy:minion 171.98 -60 -32.25 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:baryonyx",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 173.78 -60 -32.25 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:baryonyx",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 175.58 -60 -32.25 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:baryonyx"}}
+summon necromancy:minion 177.38 -60 -32.25 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:baryonyx",arm_right:"orespawn:baryonyx",legs:"necromancy:zombie"}}
+wait 30
+shot baryonyx_mix_front
+tp @s 170.61 -59.22 -28.18 -135 10.2
+wait 20
+shot baryonyx_mix_side
+report baryonyx done
+# --- velocity_raptor
+tp @s 212.88 -60.15 4.19 180 10.2
+wait 40
+summon necromancy:minion 211.98 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:velocity_raptor",torso:"orespawn:velocity_raptor",arm_left:"orespawn:velocity_raptor",arm_right:"orespawn:velocity_raptor",legs:"orespawn:velocity_raptor"}}
+summon orespawn:velocity_raptor 213.78 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+hitboxes on
+wait 40
+shot velocity_raptor_front
+hitboxes off
+tp @s 207.56 -60.11 -10.06 -90 10.2
+wait 15
+summon necromancy:minion 211.98 -60 -8.77 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:velocity_raptor",torso:"orespawn:velocity_raptor",arm_left:"orespawn:velocity_raptor",arm_right:"orespawn:velocity_raptor",legs:"orespawn:velocity_raptor"}}
+summon orespawn:velocity_raptor 211.98 -60 -12.54 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+wait 30
+shot velocity_raptor_side
+fill 208 -49 -28 221 -49 -19 stone
+tp @s 214.68 -59.43 -17.56 180 10.2
+wait 15
+summon necromancy:minion 211.98 -60 -23.32 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:velocity_raptor",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 213.78 -60 -23.32 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:velocity_raptor",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 215.58 -60 -23.32 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:velocity_raptor"}}
+summon necromancy:minion 217.38 -60 -23.32 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:velocity_raptor",arm_right:"orespawn:velocity_raptor",legs:"necromancy:zombie"}}
+wait 30
+shot velocity_raptor_mix_front
+tp @s 210.61 -59.43 -19.25 -135 10.2
+wait 20
+shot velocity_raptor_mix_side
+report velocity_raptor done
+# --- basilisk
+tp @s 253.32 -57.74 11.17 180 10.2
+wait 40
+summon necromancy:minion 251.98 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:basilisk",torso:"orespawn:basilisk"}}
+summon orespawn:basilisk 254.65 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+hitboxes on
+wait 40
+shot basilisk_front
+hitboxes off
+tp @s 233.75 -56.47 -24.12 -90 10.2
+wait 15
+summon necromancy:minion 251.98 -60 -19.03 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:basilisk",torso:"orespawn:basilisk"}}
+summon orespawn:basilisk 251.98 -60 -33.05 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+wait 30
+shot basilisk_side
+fill 248 -49 -59 257 -49 -50 stone
+tp @s 252.88 -59.75 -50.08 180 10.2
+wait 15
+summon necromancy:minion 251.98 -60 -54.08 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:basilisk",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 253.78 -60 -54.08 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:basilisk",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+wait 30
+shot basilisk_mix_front
+tp @s 250.05 -59.75 -51.25 -135 10.2
+wait 20
+shot basilisk_mix_side
+report basilisk done
+# --- kyuubi
+tp @s 312.24 -59.47 5.54 180 10.2
+wait 40
+summon necromancy:minion 311.06 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:kyuubi",torso:"orespawn:kyuubi",arm_left:"orespawn:kyuubi",arm_right:"orespawn:kyuubi",legs:"orespawn:kyuubi"}}
+summon orespawn:kyuubi 313.41 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+hitboxes on
+wait 40
+shot kyuubi_front
+hitboxes off
+tp @s 306.51 -59.65 -10.7 -90 10.2
+wait 15
+summon necromancy:minion 311.06 -60 -8.51 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:kyuubi",torso:"orespawn:kyuubi",arm_left:"orespawn:kyuubi",arm_right:"orespawn:kyuubi",legs:"orespawn:kyuubi"}}
+summon orespawn:kyuubi 311.06 -60 -12.02 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+wait 30
+shot kyuubi_side
+fill 308 -49 -27 320 -49 -18 stone
+tp @s 313.76 -59.43 -16.77 180 10.2
+wait 15
+summon necromancy:minion 311.06 -60 -22.53 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:kyuubi",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 312.86 -60 -22.53 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:kyuubi",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 314.66 -60 -22.53 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:kyuubi"}}
+summon necromancy:minion 316.46 -60 -22.53 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:kyuubi",arm_right:"orespawn:kyuubi",legs:"necromancy:zombie"}}
+wait 30
+shot kyuubi_mix_front
+tp @s 309.69 -59.43 -18.46 -135 10.2
+wait 20
+shot kyuubi_mix_side
+report kyuubi done
+# --- pointysaurus
+tp @s 352.56 -59.36 6.24 180 10.2
+wait 40
+summon necromancy:minion 351.06 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:pointysaurus",torso:"orespawn:pointysaurus",legs:"orespawn:pointysaurus"}}
+summon orespawn:pointysaurus 354.06 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+hitboxes on
+wait 40
+shot pointysaurus_front
+hitboxes off
+tp @s 344.86 -59.37 -12.06 -90 10.2
+wait 15
+summon necromancy:minion 351.06 -60 -9.54 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:pointysaurus",torso:"orespawn:pointysaurus",legs:"orespawn:pointysaurus"}}
+summon orespawn:pointysaurus 351.06 -60 -14.09 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+wait 30
+shot pointysaurus_side
+fill 348 -49 -30 359 -49 -21 stone
+tp @s 353.3 -59.54 -20.47 180 10.2
+wait 15
+summon necromancy:minion 351.06 -60 -25.63 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:pointysaurus",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 353.3 -60 -25.63 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:pointysaurus",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 355.54 -60 -25.63 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:pointysaurus"}}
+wait 30
+shot pointysaurus_mix_front
+tp @s 349.65 -59.54 -21.98 -135 10.2
+wait 20
+shot pointysaurus_mix_side
+report pointysaurus done
+# --- camarasaurus
+tp @s 391.98 -59.56 5.47 180 10.2
+wait 40
+summon necromancy:minion 391.06 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:camarasaurus",torso:"orespawn:camarasaurus",legs:"orespawn:camarasaurus"}}
+summon orespawn:camarasaurus 392.91 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+hitboxes on
+wait 40
+shot camarasaurus_front
+hitboxes off
+tp @s 385.07 -59.46 -11.97 -90 10.2
+wait 15
+summon necromancy:minion 391.06 -60 -9.83 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:camarasaurus",torso:"orespawn:camarasaurus",legs:"orespawn:camarasaurus"}}
+summon orespawn:camarasaurus 391.06 -60 -14.65 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+wait 30
+shot camarasaurus_side
+fill 388 -49 -31 398 -49 -22 stone
+tp @s 392.86 -59.56 -21.88 180 10.2
+wait 15
+summon necromancy:minion 391.06 -60 -26.48 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:camarasaurus",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 392.86 -60 -26.48 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:camarasaurus",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 394.66 -60 -26.48 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:camarasaurus"}}
+wait 30
+shot camarasaurus_mix_front
+tp @s 389.61 -59.56 -23.22 -135 10.2
+wait 20
+shot camarasaurus_mix_side
+report camarasaurus done
+# --- hammerhead
+tp @s 435.71 -54.52 23.54 180 10.2
+wait 40
+summon necromancy:minion 431.06 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:hammerhead",torso:"orespawn:hammerhead",legs:"orespawn:hammerhead"}}
+summon orespawn:hammerhead 440.37 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+hitboxes on
+wait 40
+shot hammerhead_front
+hitboxes off
+tp @s 411.29 -55.2 -26.29 -90 10.2
+wait 15
+summon necromancy:minion 431.06 -60 -17.65 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:hammerhead",torso:"orespawn:hammerhead",legs:"orespawn:hammerhead"}}
+summon orespawn:hammerhead 431.06 -60 -30.3 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+wait 30
+shot hammerhead_side
+fill 428 -49 -54 443 -49 -45 stone
+tp @s 435.21 -58.87 -42.32 180 10.2
+wait 15
+summon necromancy:minion 431.06 -60 -49.94 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:hammerhead",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 435.21 -60 -49.94 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:hammerhead",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 439.37 -60 -49.94 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:hammerhead"}}
+wait 30
+shot hammerhead_mix_front
+tp @s 429.82 -58.87 -44.55 -135 10.2
+wait 20
+shot hammerhead_mix_side
+report hammerhead done
+# --- lizard
+tp @s 487.38 -59.69 6 180 10.2
+wait 40
+summon necromancy:minion 486 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:lizard",torso:"orespawn:lizard",legs:"orespawn:lizard"}}
+summon orespawn:lizard 488.75 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+hitboxes on
+wait 40
+shot lizard_front
+hitboxes off
+tp @s 477.98 -59.33 -13.56 -90 10.2
+wait 15
+summon necromancy:minion 486 -60 -11.06 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:lizard",torso:"orespawn:lizard",legs:"orespawn:lizard"}}
+summon orespawn:lizard 486 -60 -17.12 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+wait 30
+shot lizard_side
+fill 483 -49 -35 493 -49 -26 stone
+tp @s 487.85 -59.63 -25.53 180 10.2
+wait 15
+summon necromancy:minion 486 -60 -30.19 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:lizard",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 487.85 -60 -30.19 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:lizard",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 489.69 -60 -30.19 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:lizard"}}
+wait 30
+shot lizard_mix_front
+tp @s 484.56 -59.63 -26.9 -135 10.2
+wait 20
+shot lizard_mix_side
+report lizard done
+# --- dragon
+tp @s 531.23 -57.25 18.03 180 10.2
+wait 40
+summon necromancy:minion 526 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:dragon",torso:"orespawn:dragon",arm_left:"orespawn:dragon",arm_right:"orespawn:dragon",legs:"orespawn:dragon"}}
+summon orespawn:dragon 536.45 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+hitboxes on
+wait 40
+shot dragon_front
+hitboxes off
+tp @s 509.06 -57.45 -19 -90 10.2
+wait 15
+summon necromancy:minion 526 -60 -15 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:dragon",torso:"orespawn:dragon",arm_left:"orespawn:dragon",arm_right:"orespawn:dragon",legs:"orespawn:dragon"}}
+summon orespawn:dragon 526 -60 -25.01 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+wait 30
+shot dragon_side
+fill 523 -49 -47 543 -49 -38 stone
+tp @s 532.9 -58.34 -30.85 180 10.2
+wait 15
+summon necromancy:minion 526 -60 -42.01 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:dragon",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 530.6 -60 -42.01 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:dragon",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 535.2 -60 -42.01 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:dragon"}}
+summon necromancy:minion 539.8 -60 -42.01 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:dragon",arm_right:"orespawn:dragon",legs:"necromancy:zombie"}}
+wait 30
+shot dragon_mix_front
+tp @s 525.01 -58.34 -34.12 -135 10.2
+wait 20
+shot dragon_mix_side
+report dragon done
+# --- baby_dragon
+tp @s 577.68 -58.96 11.05 180 10.2
+wait 40
+summon necromancy:minion 574.35 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:baby_dragon",torso:"orespawn:baby_dragon",arm_left:"orespawn:baby_dragon",arm_right:"orespawn:baby_dragon",legs:"orespawn:baby_dragon"}}
+summon orespawn:baby_dragon 581.01 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+hitboxes on
+wait 40
+shot baby_dragon_front
+hitboxes off
+tp @s 563.95 -59.08 -13.98 -90 10.2
+wait 15
+summon necromancy:minion 574.35 -60 -11.39 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:baby_dragon",torso:"orespawn:baby_dragon",arm_left:"orespawn:baby_dragon",arm_right:"orespawn:baby_dragon",legs:"orespawn:baby_dragon"}}
+summon orespawn:baby_dragon 574.35 -60 -17.78 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+wait 30
+shot baby_dragon_side
+fill 571 -49 -36 592 -49 -27 stone
+tp @s 581.25 -58.46 -20.01 180 10.2
+wait 15
+summon necromancy:minion 574.35 -60 -31.17 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:baby_dragon",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 578.95 -60 -31.17 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:baby_dragon",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 583.55 -60 -31.17 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:baby_dragon"}}
+summon necromancy:minion 588.15 -60 -31.17 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:baby_dragon",arm_right:"orespawn:baby_dragon",legs:"necromancy:zombie"}}
+wait 30
+shot baby_dragon_mix_front
+tp @s 573.36 -58.46 -23.28 -135 10.2
+wait 20
+shot baby_dragon_mix_side
+report baby_dragon done
+# --- spyro
+tp @s 615.8 -60.21 4.06 180 10.2
+wait 40
+summon necromancy:minion 614.35 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:spyro",torso:"orespawn:spyro",arm_left:"orespawn:spyro",arm_right:"orespawn:spyro",legs:"orespawn:spyro"}}
+summon orespawn:spyro 617.25 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+hitboxes on
+wait 40
+shot spyro_front
+hitboxes off
+tp @s 610.41 -60.23 -8.79 -90 10.2
+wait 15
+summon necromancy:minion 614.35 -60 -7.64 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:spyro",torso:"orespawn:spyro",arm_left:"orespawn:spyro",arm_right:"orespawn:spyro",legs:"orespawn:spyro"}}
+summon orespawn:spyro 614.35 -60 -10.28 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+wait 30
+shot spyro_side
+fill 611 -49 -24 625 -49 -15 stone
+tp @s 618.1 -59.19 -12.82 180 10.2
+wait 15
+summon necromancy:minion 614.35 -60 -19.92 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:spyro",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 616.85 -60 -19.92 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:spyro",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 619.35 -60 -19.92 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:spyro"}}
+summon necromancy:minion 621.84 -60 -19.92 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:spyro",arm_right:"orespawn:spyro",legs:"necromancy:zombie"}}
+wait 30
+shot spyro_mix_front
+tp @s 613.08 -59.19 -14.89 -135 10.2
+wait 20
+shot spyro_mix_side
+report spyro done
+# --- water_dragon
+tp @s 655.69 -59.61 4.65 180 10.2
+wait 40
+summon necromancy:minion 654.35 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:water_dragon",torso:"orespawn:water_dragon",legs:"orespawn:water_dragon"}}
+summon orespawn:water_dragon 657.03 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+hitboxes on
+wait 40
+shot water_dragon_front
+hitboxes off
+tp @s 647.77 -59.26 -11.57 -90 10.2
+wait 15
+summon necromancy:minion 654.35 -60 -9.97 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:water_dragon",torso:"orespawn:water_dragon",legs:"orespawn:water_dragon"}}
+summon orespawn:water_dragon 654.35 -60 -14.94 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+wait 30
+shot water_dragon_side
+fill 651 -49 -31 662 -49 -22 stone
+tp @s 656.2 -59.63 -22.25 180 10.2
+wait 15
+summon necromancy:minion 654.35 -60 -26.91 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:water_dragon",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 656.2 -60 -26.91 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:water_dragon",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 658.05 -60 -26.91 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:water_dragon"}}
+wait 30
+shot water_dragon_mix_front
+tp @s 652.91 -59.63 -23.62 -135 10.2
+wait 20
+shot water_dragon_mix_side
+report water_dragon done
+# --- leon
+tp @s 699.27 -54.23 19.97 180 10.2
+wait 40
+summon necromancy:minion 694.35 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:leon",torso:"orespawn:leon",arm_left:"orespawn:leon",arm_right:"orespawn:leon",legs:"orespawn:leon"}}
+summon orespawn:leon 704.18 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+hitboxes on
+wait 40
+shot leon_front
+hitboxes off
+tp @s 675.74 -54.48 -22.37 -90 10.2
+wait 15
+summon necromancy:minion 694.35 -60 -16.55 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:leon",torso:"orespawn:leon",arm_left:"orespawn:leon",arm_right:"orespawn:leon",legs:"orespawn:leon"}}
+summon orespawn:leon 694.35 -60 -28.09 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+wait 30
+shot leon_side
+fill 691 -49 -51 705 -49 -42 stone
+tp @s 697.78 -59.27 -39.94 180 10.2
+wait 15
+summon necromancy:minion 694.35 -60 -46.64 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:leon",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 696.64 -60 -46.64 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:leon",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 698.92 -60 -46.64 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:leon"}}
+summon necromancy:minion 701.21 -60 -46.64 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:leon",arm_right:"orespawn:leon",legs:"necromancy:zombie"}}
+wait 30
+shot leon_mix_front
+tp @s 693.05 -59.27 -41.9 -135 10.2
+wait 20
+shot leon_mix_side
+report leon done
+# --- cephadrome
+tp @s 751.38 -56.13 18.7 180 10.2
+wait 40
+summon necromancy:minion 745.99 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:cephadrome",torso:"orespawn:cephadrome",arm_left:"orespawn:cephadrome",arm_right:"orespawn:cephadrome",legs:"orespawn:cephadrome"}}
+summon orespawn:cephadrome 756.77 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+hitboxes on
+wait 40
+shot cephadrome_front
+hitboxes off
+tp @s 728.85 -56.41 -19.18 -90 10.2
+wait 15
+summon necromancy:minion 745.99 -60 -15.03 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:cephadrome",torso:"orespawn:cephadrome",arm_left:"orespawn:cephadrome",arm_right:"orespawn:cephadrome",legs:"orespawn:cephadrome"}}
+summon orespawn:cephadrome 745.99 -60 -25.05 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+wait 30
+shot cephadrome_side
+fill 742 -49 -47 763 -49 -38 stone
+tp @s 752.89 -58.39 -30.92 180 10.2
+wait 15
+summon necromancy:minion 745.99 -60 -42.08 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:cephadrome",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 750.59 -60 -42.08 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:cephadrome",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 755.19 -60 -42.08 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:cephadrome"}}
+summon necromancy:minion 759.79 -60 -42.08 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:cephadrome",arm_right:"orespawn:cephadrome",legs:"necromancy:zombie"}}
+wait 30
+shot cephadrome_mix_front
+tp @s 745 -58.39 -34.19 -135 10.2
+wait 20
+shot cephadrome_mix_side
+report cephadrome done
+# --- terrible_terror
+tp @s 796.58 -60.32 4.02 180 10.2
+wait 40
+summon necromancy:minion 795.33 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:terrible_terror",torso:"orespawn:terrible_terror",arm_left:"orespawn:terrible_terror",arm_right:"orespawn:terrible_terror",legs:"orespawn:terrible_terror"}}
+summon orespawn:terrible_terror 797.82 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+hitboxes on
+wait 40
+shot terrible_terror_front
+hitboxes off
+tp @s 791.05 -60.27 -9.43 -90 10.2
+wait 15
+summon necromancy:minion 795.33 -60 -8.25 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:terrible_terror",torso:"orespawn:terrible_terror",arm_left:"orespawn:terrible_terror",arm_right:"orespawn:terrible_terror",legs:"orespawn:terrible_terror"}}
+summon orespawn:terrible_terror 795.33 -60 -11.5 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+wait 30
+shot terrible_terror_side
+fill 792 -49 -26 805 -49 -17 stone
+tp @s 798.47 -59.33 -15.43 180 10.2
+wait 15
+summon necromancy:minion 795.33 -60 -21.75 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:terrible_terror",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 797.42 -60 -21.75 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:terrible_terror",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 799.51 -60 -21.75 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:terrible_terror"}}
+summon necromancy:minion 801.6 -60 -21.75 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:terrible_terror",arm_right:"orespawn:terrible_terror",legs:"necromancy:zombie"}}
+wait 30
+shot terrible_terror_mix_front
+tp @s 794 -59.33 -17.28 -135 10.2
+wait 20
+shot terrible_terror_mix_side
+report terrible_terror done
+# --- leaf_monster
+tp @s 837.33 -59.17 5.25 180 10.2
+wait 40
+summon necromancy:minion 835.33 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:leaf_monster",torso:"orespawn:leaf_monster",arm_left:"orespawn:leaf_monster",arm_right:"orespawn:leaf_monster",legs:"orespawn:leaf_monster"}}
+summon orespawn:leaf_monster 839.33 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+hitboxes on
+wait 40
+shot leaf_monster_front
+hitboxes off
+tp @s 830.4 -59.23 -8 -90 10.2
+wait 15
+summon necromancy:minion 835.33 -60 -7 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:leaf_monster",torso:"orespawn:leaf_monster",arm_left:"orespawn:leaf_monster",arm_right:"orespawn:leaf_monster",legs:"orespawn:leaf_monster"}}
+summon orespawn:leaf_monster 835.33 -60 -9 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+wait 30
+shot leaf_monster_side
+fill 832 -49 -22 845 -49 -14 stone
+tp @s 838.56 -59.31 -11.57 180 10.2
+wait 15
+summon necromancy:minion 835.33 -60 -18 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:leaf_monster",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 837.48 -60 -18 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:leaf_monster",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 839.63 -60 -18 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:leaf_monster"}}
+summon necromancy:minion 841.79 -60 -18 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"orespawn:leaf_monster",arm_right:"orespawn:leaf_monster",legs:"necromancy:zombie"}}
+wait 30
+shot leaf_monster_mix_front
+tp @s 834.01 -59.31 -13.45 -135 10.2
+wait 20
+shot leaf_monster_mix_side
+report leaf_monster done
+# --- triffid
+tp @s 877.98 -58.1 8.04 180 10.2
+wait 40
+summon necromancy:minion 875.33 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:triffid",torso:"orespawn:triffid",legs:"orespawn:triffid"}}
+summon orespawn:triffid 880.62 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+hitboxes on
+wait 40
+shot triffid_front
+hitboxes off
+tp @s 868.44 -58.3 -9.92 -90 10.2
+wait 15
+summon necromancy:minion 875.33 -60 -8.17 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:triffid",torso:"orespawn:triffid",legs:"orespawn:triffid"}}
+summon orespawn:triffid 875.33 -60 -11.34 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+wait 30
+shot triffid_side
+fill 872 -49 -26 884 -49 -17 stone
+tp @s 877.95 -59.45 -15.86 180 10.2
+wait 15
+summon necromancy:minion 875.33 -60 -21.51 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:triffid",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 877.95 -60 -21.51 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:triffid",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 880.56 -60 -21.51 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"orespawn:triffid"}}
+wait 30
+shot triffid_mix_front
+tp @s 873.95 -59.45 -17.52 -135 10.2
+wait 20
+shot triffid_mix_side
+report triffid done
+# --- worm_small
+tp @s 916.23 -60.6 3.05 180 10.2
+wait 40
+summon necromancy:minion 915.33 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:worm_small",torso:"orespawn:worm_small"}}
+summon orespawn:worm_small 917.13 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+hitboxes on
+wait 40
+shot worm_small_front
+hitboxes off
+tp @s 912.3 -60.61 -6.59 -90 10.2
+wait 15
+summon necromancy:minion 915.33 -60 -6.06 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:worm_small",torso:"orespawn:worm_small"}}
+summon orespawn:worm_small 915.33 -60 -7.12 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+wait 30
+shot worm_small_side
+fill 912 -49 -20 921 -49 -11 stone
+tp @s 916.23 -59.75 -11.19 180 10.2
+wait 15
+summon necromancy:minion 915.33 -60 -15.19 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:worm_small",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 917.13 -60 -15.19 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:worm_small",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+wait 30
+shot worm_small_mix_front
+tp @s 913.4 -59.75 -12.36 -135 10.2
+wait 20
+shot worm_small_mix_side
+report worm_small done
+# --- worm_medium
+tp @s 956.23 -59.86 3.19 180 10.2
+wait 40
+summon necromancy:minion 955.33 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:worm_medium",torso:"orespawn:worm_medium"}}
+summon orespawn:worm_medium 957.13 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+hitboxes on
+wait 40
+shot worm_medium_front
+hitboxes off
+tp @s 952.21 -59.87 -6.88 -90 10.2
+wait 15
+summon necromancy:minion 955.33 -60 -6.25 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:worm_medium",torso:"orespawn:worm_medium"}}
+summon orespawn:worm_medium 955.33 -60 -7.5 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+wait 30
+shot worm_medium_side
+fill 952 -49 -20 961 -49 -11 stone
+tp @s 956.23 -59.75 -11.75 180 10.2
+wait 15
+summon necromancy:minion 955.33 -60 -15.75 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:worm_medium",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 957.13 -60 -15.75 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:worm_medium",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+wait 30
+shot worm_medium_mix_front
+tp @s 953.4 -59.75 -12.92 -135 10.2
+wait 20
+shot worm_medium_mix_side
+report worm_medium done
+# --- worm_large
+tp @s 996.52 -59.7 4.59 180 10.2
+wait 40
+summon necromancy:minion 995.33 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:worm_large",torso:"orespawn:worm_large"}}
+summon orespawn:worm_large 997.71 -60 0 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+hitboxes on
+wait 40
+shot worm_large_front
+hitboxes off
+tp @s 987.51 -59.12 -12.61 -90 10.2
+wait 15
+summon necromancy:minion 995.33 -60 -11.05 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:worm_large",torso:"orespawn:worm_large"}}
+summon orespawn:worm_large 995.33 -60 -17.1 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}
+wait 30
+shot worm_large_side
+fill 992 -49 -35 1001 -49 -26 stone
+tp @s 996.23 -59.75 -26.15 180 10.2
+wait 15
+summon necromancy:minion 995.33 -60 -30.15 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"orespawn:worm_large",torso:"necromancy:zombie",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+summon necromancy:minion 997.13 -60 -30.15 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f],Parts:{head:"necromancy:zombie",torso:"orespawn:worm_large",arm_left:"necromancy:zombie",arm_right:"necromancy:zombie",legs:"necromancy:zombie"}}
+wait 30
+shot worm_large_mix_front
+tp @s 993.4 -59.75 -27.32 -135 10.2
+wait 20
+shot worm_large_mix_side
+report worm_large done
+report done

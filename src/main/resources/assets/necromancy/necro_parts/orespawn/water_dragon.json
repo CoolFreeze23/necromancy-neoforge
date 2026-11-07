@@ -1,0 +1,36 @@
+{
+  "mob": "orespawn:water_dragon",
+  "requires": "orespawn",
+  "geo": "orespawn:geo/entity/waterdragon.geo.json",
+  "texture": "orespawn:textures/entity/waterdragon.png",
+  "scale": 0.82,
+  "head": {
+    "groups": [
+      { "bones": ["Head", "nose", "jaw", "headfin", "leftear", "rightear"], "pivot": [-0.5, 4, -6] }
+    ],
+    "plug": [-0.5, 4, -6],
+    "animator": "look"
+  },
+  "torso": {
+    "groups": [
+      {
+        "bones": ["body1", "body2", "body3", "body4", "Bodyfin", "tail1", "tailtop", "tailmiddle", "tailbottom", "neck1", "neck2",
+                  "neck3", "neck4", "neackfin"]
+      }
+    ],
+    "plug": [-0.5, 22, 5],
+    "neck": [-0.5, 4, -6],
+    "shoulder_left": [5, 17, -1],
+    "shoulder_right": [-6, 17, -1]
+  },
+  "legs": {
+    "groups": [
+      { "bones": ["Leg1"], "pivot": [-3, 22, 14] },
+      { "bones": ["Leg2"], "pivot": [2, 22, 13] },
+      { "bones": ["Leg8"], "pivot": [3, 22, -2] },
+      { "bones": ["Leg7"], "pivot": [-4, 22, -1] }
+    ],
+    "hip": [-0.5, 22, 5],
+    "animator": "walk_pair"
+  }
+}

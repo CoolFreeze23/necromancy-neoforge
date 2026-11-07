@@ -1,0 +1,27 @@
+{
+  "mob": "orespawn:worm_large",
+  "requires": "orespawn",
+  "geo": "orespawn:geo/entity/wormlarge.geo.json",
+  "texture": "orespawn:textures/entity/wormlarge.png",
+  "scale": 0.617,
+  "head": {
+    "groups": [
+      {
+        "bones": ["head1", "head2", "head3", "head4", "head5", "tooth1", "tooth2", "tooth3", "tooth4", "tooth5", "tooth6", "tooth7",
+                  "tooth8"],
+        "pivot": [0, 8, 3]
+      }
+    ],
+    "plug": [0, 8, 3],
+    "animator": "look"
+  },
+  "torso": {
+    "groups": [
+      { "bones": ["neck1", "neck2", "neck3", "neck4", "neck5", "tail1", "tail2", "tail3", "tail4", "tailtip"] }
+    ],
+    "plug": [0, 4.551, 0],
+    "neck": [0, 8, 3],
+    "shoulder_left": [9, 8, 14],
+    "shoulder_right": [-9, 8, 14]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "mob": "orespawn:worm_small",
+  "requires": "orespawn",
+  "geo": "orespawn:geo/entity/wormsmall.geo.json",
+  "texture": "orespawn:textures/entity/wormsmall.png",
+  "scale": 0.907,
+  "head": {
+    "groups": [
+      { "bones": ["head"], "pivot": [0, 14, 0] }
+    ],
+    "plug": [0, 14, 0],
+    "animator": "look"
+  },
+  "torso": {
+    "groups": [
+      { "bones": ["body", "tail"] }
+    ],
+    "plug": [0, 10.77, 0],
+    "neck": [0, 14, 0],
+    "shoulder_left": [1.5, 16, 0],
+    "shoulder_right": [-1.5, 16, 0]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "mob": "orespawn:camarasaurus",
+  "requires": "orespawn",
+  "geo": "orespawn:geo/entity/camarasaurus.geo.json",
+  "texture": "orespawn:textures/entity/camarasaurus.png",
+  "scale": 0.85,
+  "head": {
+    "groups": [
+      { "bones": ["Head1", "Head2"], "pivot": [0, -10, -24] }
+    ],
+    "plug": [0, -10, -24],
+    "animator": "look"
+  },
+  "torso": {
+    "groups": [
+      { "bones": ["Body1", "Body2", "Body3", "Body4", "Neck1", "Neck2", "Neck3", "Tail0", "Tail1", "Tail2", "Tail3"] }
+    ],
+    "plug": [0, 11, 4.5],
+    "neck": [0, -10, -24],
+    "shoulder_left": [7, 1, -2],
+    "shoulder_right": [-7, 1, -2]
+  },
+  "legs": {
+    "groups": [
+      { "bones": ["BLegupright", "BLegdownright"], "pivot": [-5, 9, 9] },
+      { "bones": ["BLegupleft", "BLegdownleft"], "pivot": [5, 9, 9] },
+      { "bones": ["FLegupleft", "FLegdownleft"], "pivot": [5, 8, -1] },
+      { "bones": ["FLegupright", "FLegdownright"], "pivot": [-5, 8, -1] }
+    ],
+    "hip": [0, 11, 4.5],
+    "animator": "walk_pair"
+  }
+}

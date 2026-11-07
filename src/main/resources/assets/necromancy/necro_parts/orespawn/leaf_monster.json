@@ -1,0 +1,32 @@
+{
+  "mob": "orespawn:leaf_monster",
+  "requires": "orespawn",
+  "geo": "orespawn:geo/entity/leafmonster.geo.json",
+  "texture": "orespawn:textures/entity/leafmonster.png",
+  "scale": 0.517,
+  "head": {
+    "groups": [
+      { "bones": ["body"], "pivot": [0, 0, 0] }
+    ],
+    "plug": [0, 0, 0],
+    "animator": "none"
+  },
+  "torso": {
+    "groups": [
+      { "bones": ["body"] }
+    ],
+    "plug": [0, 8, 0],
+    "neck": [0, 0, 0],
+    "shoulder_left": [9, -6, 0],
+    "shoulder_right": [-9, -6, 0]
+  },
+  "arm": { "left": { "bones": ["larm"] }, "right": { "bones": ["rarm"] }, "plug_left": [9, -6, 0], "plug_right": [-9, -6, 0], "animator": "arm" },
+  "legs": {
+    "groups": [
+      { "bones": ["lleg"], "pivot": [16, 8, 0] },
+      { "bones": ["rleg"], "pivot": [-16, 8, 0] }
+    ],
+    "hip": [0, 8, 0],
+    "animator": "walk_pair"
+  }
+}
