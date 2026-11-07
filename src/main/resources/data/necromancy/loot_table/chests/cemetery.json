@@ -1,0 +1,514 @@
+{
+  "type": "minecraft:chest",
+  "random_sequence": "necromancy:chests/cemetery",
+  "pools": [
+    {
+      "rolls": {
+        "type": "minecraft:uniform",
+        "min": 2,
+        "max": 4
+      },
+      "bonus_rolls": 0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "necromancy:skin",
+          "weight": 8,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 5
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "necromancy:muscle",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "necromancy:brains",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "necromancy:heart",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "necromancy:lungs",
+          "weight": 3
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "bonus_rolls": 0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "necromancy:jar_of_blood",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "bonus_rolls": 0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "necromancy:bone_needle"
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "bonus_rolls": 0,
+      "conditions": [
+        {
+          "condition": "minecraft:random_chance",
+          "chance": 0.3
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "weight": 1,
+          "value": {
+            "pools": [
+              {
+                "rolls": 1,
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:cave_spider_head"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:cave_spider_torso"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:cave_spider_legs"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:chicken_head"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:chicken_torso"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:chicken_arm"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:chicken_legs"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:cow_head"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:cow_torso"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:cow_arm"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:cow_legs"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:pig_head"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:pig_torso"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:pig_arm"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:pig_legs"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:sheep_head"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:sheep_torso"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:sheep_arm"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:sheep_legs"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:squid_head"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:squid_torso"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:squid_legs"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:villager_head"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:villager_torso"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:villager_arm"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:villager_legs"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:slime_head"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:slime_torso"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:slime_legs"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:mooshroom_head"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:mooshroom_torso"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:mooshroom_arm"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:mooshroom_legs"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:snow_golem_head"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:snow_golem_torso"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:snow_golem_arm"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:snow_golem_legs"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:creeper_torso"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:creeper_legs"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:zombified_piglin_head"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:zombified_piglin_torso"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:zombified_piglin_arm"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:zombified_piglin_legs"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:skeleton_torso"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:skeleton_arm"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:skeleton_legs"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:spider_head"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:spider_torso"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:spider_legs"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:witch_head"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:witch_torso"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:witch_arm"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:witch_legs"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:wolf_head"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:zombie_torso"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:zombie_arm"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:zombie_legs"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:husk_head"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:husk_torso"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:husk_arm"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:husk_legs"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:drowned_head"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:drowned_torso"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:drowned_arm"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:drowned_legs"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:bogged_head"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:bogged_torso"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:bogged_arm"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:bogged_legs"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:armadillo_head"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:armadillo_torso"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:armadillo_legs"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "necromancy:goat_head"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "bonus_rolls": 0,
+      "conditions": [
+        {
+          "condition": "minecraft:random_chance",
+          "chance": 0.06
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "necromancy:necronomicon"
+        }
+      ]
+    },
+    {
+      "rolls": {
+        "type": "minecraft:uniform",
+        "min": 2,
+        "max": 4
+      },
+      "bonus_rolls": 0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:bone",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 6
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:rotten_flesh",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 6
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:candle",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:black_candle",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:soul_torch",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 4
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:cobweb",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
